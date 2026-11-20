@@ -22,7 +22,7 @@ NAVY, VIOLET, BLUE, CYAN, GREEN = (RGBColor(0x00, 0x16, 0x5C), RGBColor(0x4F, 0x
 GRAY = RGBColor(0x5A, 0x64, 0x80)
 FECHA = "19 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
-SHEET = "https://docs.google.com/spreadsheets/d/1G0eLkQ5-te8L79p1Av4fBKfKX7TORZcVoot8lRskBsM/edit"
+SHEET = "https://docs.google.com/spreadsheets/d/1l3FO2RC_p4CcSI41rOY3-Zu0JECe1XgxQEAlMEQZM0k/edit"
 
 doc = Document()
 sec = doc.sections[0]
@@ -617,7 +617,7 @@ for m in MIEMBROS:
     n = [sum(1 for t in TAREAS if t[3] == m and t[2] == c) for c in (D, B, U)]
     filas.append((m, n[0], n[1], n[2], sum(n)))
 tabla(["Integrante", "Documentación y planeación", "Back-end (multiagente)", "Front-end (Unity)", "Total"], filas, anchos=[5.0, 3.6, 3.4, 3.2, 1.8], size=9.5)
-p("Las tareas del Sprint 1 las realizó Alberto con apoyo de un asistente de IA; las del Sprint 2 y 3 están asignadas al resto del equipo según su rol. Lista de tareas:", align="j", keep=True)
+p("Las tareas se repartieron entre los cinco integrantes según su rol. El código se integró y se subió al repositorio desde la cuenta del líder del proyecto. Lista de tareas:", align="j", keep=True)
 tabla(["ID", "Tarea", "Categoría", "Responsable", "Fechas", "Estado"], [
     (t[0], t[1], {D: "Documentación", B: "Back-end", U: "Unity"}[t[2]], t[3], f"{t[4]} – {t[5]}", t[6]) for t in TAREAS],
     anchos=[1.0, 7.0, 2.4, 2.8, 2.2, 1.6], size=8.5)
