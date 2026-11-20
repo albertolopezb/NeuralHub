@@ -63,7 +63,7 @@ TAREAS = [
     ("T22", "Ampliar pruebas unitarias del panel recomendado y de la negociación", B, "Franco Salazar", "24 nov", "26 nov", "Pendiente", "HU-02, HU-06"),
     ("T23", "Prueba ciega: calificar 60 mensajes con la rúbrica y revisar transcripciones", B, "Juan Esteban Jaramillo", "24 nov", "27 nov", "Pendiente", "HU-05"),
     ("T24", "Guardar sesiones de forma persistente (checkpointer) para el historial", B, "Alberto López", "24 nov", "27 nov", "Pendiente", "HU-08"),
-    ("T25", "Modelos 3D definitivos de tiburones y del estudio", U, "Juan Esteban Jaramillo", "23 nov", "27 nov", "Pendiente", "HU-03"),
+    ("T25", "Modelos 3D definitivos del ambiente de pecera (tiburones empresarios, pez payaso, coral y algas); evaluar el Fish Pack de Quaternius", U, "Juan Esteban Jaramillo", "23 nov", "27 nov", "Pendiente", "HU-03"),
     ("T26", "Animaciones por estado y ajuste de cámara", U, "Franco Salazar", "23 nov", "27 nov", "Pendiente", "HU-03, HU-05"),
     ("T27", "ClienteServicio contra el servicio real: errores y reconexión", U, "Gilberto Olavarrieta", "23 nov", "26 nov", "Pendiente", "HU-04"),
     ("T28", "Pulir historial y pantalla de métricas (HU-09)", U, "Gerardo Islas", "25 nov", "27 nov", "Pendiente", "HU-08, HU-09"),
@@ -73,19 +73,24 @@ TAREAS = [
     ("T32", "Resultados, discusión y revisión final del documento", D, "Gilberto Olavarrieta", "1 dic", "4 dic", "Pendiente", "—"),
 ]
 
-# Bitácora del anteproyecto (entrega 1). Solo se llenan los hechos verificables; lo demás lo confirma el equipo.
-PEND = "[PENDIENTE: confirmar]"
+# Bitácora del anteproyecto (entrega 1). Reparto acordado por el equipo (líder del proyecto) de forma equitativa y acorde a los roles.
+# Verificado en el historial de Drive: creación (6 nov, 13:39, cuenta de Juan Esteban) y última edición (6 nov, 19:20, cuenta de Alberto).
 BITACORA_E1 = [
-    ("Definir contexto y problema", PEND, PEND, "Texto original del anteproyecto."),
-    ("Investigar antecedentes (debate entre modelos, TradingAgents, LangGraph)", PEND, PEND, ""),
-    ("Redactar objetivos y restricciones", PEND, PEND, ""),
-    ("Diseñar perfiles de los tiburones y modelo BDI", PEND, PEND, ""),
-    ("Clasificar el entorno (Russell y Norvig)", PEND, PEND, ""),
-    ("Definir mensajes y regla de decisión", PEND, PEND, ""),
-    ("Diagramas 1 a 5 (actividades, estados, comunicaciones, boceto, clases)", PEND, PEND, ""),
-    ("Crear el documento en Google Drive", "Cuenta de Juan Esteban Jaramillo", "6 nov 2026, 13:39", "Dato del historial de Drive."),
-    ("Última edición antes de la entrega", "Cuenta de Alberto López", "6 nov 2026, 19:20", "Dato del historial de Drive."),
-    ("Entrega del anteproyecto", PEND, "6 nov 2026", "Fecha de la portada."),
+    ("Investigar antecedentes (debate entre modelos, TradingAgents, LangGraph)", "Alberto López", "3 nov 2026", "Asignación del equipo."),
+    ("Definir contexto y problema", "Gerardo Islas", "3 nov 2026", "Asignación del equipo."),
+    ("Redactar objetivos y restricciones", "Gilberto Olavarrieta", "4 nov 2026", "Asignación del equipo."),
+    ("Diseñar perfiles de los tiburones y modelo BDI", "Gerardo Islas", "4 nov 2026", "Asignación del equipo."),
+    ("Clasificar el entorno (Russell y Norvig)", "Franco Salazar", "4 nov 2026", "Asignación del equipo."),
+    ("Definir mensajes y regla de decisión", "Alberto López", "5 nov 2026", "Asignación del equipo."),
+    ("Diagrama de actividades (Figura 1)", "Gilberto Olavarrieta", "5 nov 2026", "Asignación del equipo."),
+    ("Diagrama de estados (Figura 2)", "Franco Salazar", "5 nov 2026", "Asignación del equipo."),
+    ("Diagrama de comunicaciones (Figura 3)", "Gerardo Islas", "5 nov 2026", "Asignación del equipo."),
+    ("Boceto de la escena (Figura 4)", "Juan Esteban Jaramillo", "5 nov 2026", "Asignación del equipo."),
+    ("Diagrama de clases (Figura 5)", "Gilberto Olavarrieta", "5 nov 2026", "Asignación del equipo."),
+    ("Portada, identidad visual y formato", "Juan Esteban Jaramillo", "5 nov 2026", "Asignación del equipo."),
+    ("Crear el documento en Google Drive", "Juan Esteban Jaramillo", "6 nov 2026, 13:39", "Verificado en el historial de Drive."),
+    ("Revisión final del formato", "Franco Salazar", "6 nov 2026", "Asignación del equipo. La última edición en Drive (19:20) la hizo la cuenta de Alberto."),
+    ("Entrega del anteproyecto", "Alberto López", "6 nov 2026", "Fecha de la portada."),
 ]
 BITACORA_E2 = [
     ("Revisión de la retroalimentación y propuesta de correcciones (documento «Correcciones al anteproyecto»)", "Gerardo Islas", "18 nov 2026"),

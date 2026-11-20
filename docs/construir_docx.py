@@ -22,7 +22,7 @@ NAVY, VIOLET, BLUE, CYAN, GREEN = (RGBColor(0x00, 0x16, 0x5C), RGBColor(0x4F, 0x
 GRAY = RGBColor(0x5A, 0x64, 0x80)
 FECHA = "19 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
-SHEET = "https://docs.google.com/spreadsheets/d/1qQ7XVZEyXceYm_rBV9UyWS4alyxXVCebZEkm9T9qiSg/edit"
+SHEET = "https://docs.google.com/spreadsheets/d/1G0eLkQ5-te8L79p1Av4fBKfKX7TORZcVoot8lRskBsM/edit"
 
 doc = Document()
 sec = doc.sections[0]
@@ -217,7 +217,7 @@ h1("1. Introducción")
 p("Cuando una persona emprendedora presenta su idea a inversionistas, rara vez sabe qué criterio pesó en su decisión ni cuánto habría cambiado el resultado con otros datos. "
   "NeuralHub es un simulador de un panel de inversionistas al estilo de Shark Tank: el usuario captura su propio pitch, elige a tres tiburones de un catálogo de seis "
   "(cada uno con un criterio distinto), responde sus preguntas en un máximo de tres rondas, ve cómo debaten entre ellos, y recibe una decisión de inversión justificada "
-  "y un reporte de retroalimentación. Todo se representa como un estudio de televisión en Unity.", align="j")
+  "y un reporte de retroalimentación. Todo se representa en Unity como un estudio de televisión submarino: una pecera con tiburones empresarios, el «Tanque de tiburones».", align="j")
 p("**Estrategia de solución.** Un servicio en Python ejecuta los agentes con LangGraph sobre un modelo de lenguaje de Azure OpenAI y expone sus eventos por HTTP. "
   "Unity no ejecuta a los agentes: pide los eventos y los reproduce en la escena. Las cuentas (valuación, recomendación del panel, regla de votación) se hacen en código determinista, "
   "no en el modelo, para controlar el costo y evitar cifras inventadas.", align="j")
@@ -299,7 +299,7 @@ bullets([
     "**Pitch del usuario:** el usuario escribe su pitch en un formulario con campos obligatorios y un límite de 300 caracteres por campo; las respuestas tienen máximo 600 caracteres.",
     "**Costo y latencia:** máximo 19 llamadas al modelo por sesión con usuario humano (16 sin negociación) y 22 en autopiloto. La recomendación del panel, la valuación y la regla de votación no usan el modelo.",
     "**Idioma y moneda:** todo el diálogo es en español y los montos están en pesos mexicanos.",
-    "**Una sola escena:** un estudio de televisión con una cámara principal que cambia de plano y 3 sillones fijos; el personaje de cada sillón cambia según el panel elegido.",
+    "**Una sola escena:** un estudio de televisión submarino (pecera) con una cámara principal que cambia de plano y 3 sillones concha fijos; el personaje de cada sillón cambia según el panel elegido.",
     "**Comunicación solo por HTTP:** Unity y el servicio se comunican únicamente por HTTP; los agentes no corren dentro de Unity.",
     "**Interfaz:** el usuario captura su pitch, elige su panel, inicia la sesión, responde por escrito, decide en la negociación, y cuenta con pausa, velocidad 1x/2x, saltar animación e historial. No controla a los tiburones ni su orden de turnos.",
     "**Aviso:** es una simulación educativa; no constituye asesoría financiera.",
@@ -518,9 +518,10 @@ def color_par(texto):
         else:
             par.add_run(t)
     return par
-color_par("Se ve un {n|estudio de televisión} {a|oscuro} con un {n|escenario} {a|iluminado} y una {a|gran} {n|pantalla} al fondo que {v|muestra} el nombre del {n|negocio}, el {n|monto} {a|solicitado} y el {n|porcentaje} {a|ofrecido}. "
-          "Al frente, el {n|emprendedor}, avatar del {n|usuario}, {a|de pie} junto al {n|podio} sobre un {n|círculo} {a|luminoso}, {v|presenta} su idea, {v|responde} las preguntas y {v|negocia}. "
-          "Detrás, {a|tres} {n|tiburones} {a|sentados} en {n|sillones} {a|fijos} en semicírculo, cada uno con su {n|escritorio} y un {n|letrero} con su nombre, {v|escuchan}, {v|preguntan}, {v|replican} a otro tiburón, {v|votan} y {v|reaccionan}: el personaje de cada sillón {v|cambia} según el panel elegido. "
+color_par("Se ve un {n|estudio de televisión} {a|submarino}, una {n|pecera} {a|profunda} con {n|arena}, {n|rocas}, {n|corales}, {n|algas} que se mecen, {n|peces}, {n|medusas} y {n|burbujas}. "
+          "Al fondo, una {a|gran} {n|pantalla} {v|muestra} el nombre del {n|negocio}, el {n|monto} {a|solicitado} y el {n|porcentaje} {a|ofrecido}. "
+          "Al frente, el {n|emprendedor}, un {n|pez payaso} {a|naranja} que es el avatar del {n|usuario}, {a|de pie} junto al {n|podio} de coral sobre un {n|círculo} {a|luminoso}, {v|presenta} su idea, {v|responde} las preguntas y {v|negocia}. "
+          "Detrás, {a|tres} {n|tiburones} {a|empresarios} con {n|traje} y {n|corbata}, {a|sentados} en {n|sillones} {n|concha} {a|fijos} en semicírculo, cada uno con su {n|escritorio} y un {n|letrero} con su nombre, {v|escuchan}, {v|preguntan}, {v|replican} a otro tiburón, {v|votan} y {v|reaccionan}: el personaje de cada sillón {v|cambia} según el panel elegido. "
           "Una {n|cámara} {a|principal} {v|cambia} de plano para {v|enfocar} a quien habla y un {n|reflector} {v|ilumina} al agente en turno. En la parte inferior se ve un {n|cuadro de diálogo} con el texto de cada turno, un {n|indicador de ronda} y un {n|marcador} con los votos; "
           "al final aparece un {n|letrero de resultado}: trato o sin trato.")
 p("Siguiendo el método de diseño del curso, marcamos en **violeta** los sustantivos (clases), en **azul** los verbos (métodos) y en **verde** los adjetivos (atributos). Con esta lista se armó el diagrama de clases.", align="j")
@@ -537,7 +538,7 @@ tabla(["Pantalla", "Qué ve", "Controles"], [
 p(f"**Expectativa y realidad.** {F('boceto').capitalize()} es el boceto inicial visto desde arriba (ahora con 3 sillones); {F('general')} y {F('arriba')} son el resultado en Unity. "
   "Las capturas de las pantallas (Figuras " + f"{NUM['s_inicio']} a {NUM['s_resultado']}) son del ejecutable compilado, con la sesión de ejemplo.", align="j")
 figura("boceto", 11.5, "Boceto de la escena vista desde arriba (3 sillones).")
-figura("general", 13.5, "Estudio en Unity: plano general con el panel de 3 tiburones.")
+figura("general", 13.5, "Estudio-pecera en Unity: plano general con el panel de 3 tiburones empresarios.")
 figura("arriba", 11.5, "Estudio en Unity visto desde arriba, para compararlo con el boceto.")
 figura("s_inicio", 11.5, "Pantalla de inicio con la sesión de ejemplo sin conexión.")
 figura("s_form", 11.5, "Formulario del pitch con la valuación calculada.")
@@ -550,19 +551,26 @@ figura("s_decision", 11.5, "Decisión del panel.")
 figura("s_resultado", 11.5, "Pantalla de resultado con votos y retroalimentación.")
 
 h2("8.2 Componentes gráficos")
-p("El estudio se construyó con primitivas de Unity (cubos, esferas, cápsulas y cilindros) mediante un script de editor reproducible (menú NeuralHub → Construir estudio); no se usaron assets externos todavía. "
-  "El modelado definitivo está planeado en la tarea T25. La fuente de cada componente es el script de construcción.", align="j")
+p("El ambiente se construyó con primitivas de Unity (cubos, esferas, cápsulas y cilindros) mediante un script de editor reproducible (menú NeuralHub → Construir estudio), sin assets externos en este incremento. "
+  "Los modelos y animaciones definitivos están planeados en la tarea T25; la tabla de assets tentativos al final de esta sección indica autor, fuente y licencia de cada candidato.", align="j")
 comp = [
-    ("Piso y muros del estudio", "Escenario oscuro con franjas de luz neón violeta y cian en los colores del equipo.", "estudio_general", "Alberto López; primitivas de Unity (Assets/Editor/ConstruirEstudio.cs)."),
+    ("Estudio-pecera (piso, muros y niebla)", "Piso de arena, muros de agua profunda, niebla azul-verde y franjas de luz; define el ambiente submarino.", "estudio_general", "Alberto López; primitivas de Unity (Assets/Editor/ConstruirEstudio.cs)."),
     ("Pantalla grande", "Marco, fondo y texto 3D con el negocio, el monto, el porcentaje y la valuación; muestra TRATO o SIN TRATO al final.", "estudio_general", "Alberto López; fuente de texto integrada de Unity (LegacyRuntime)."),
-    ("Sillón y escritorio", "Sillón de respaldo alto con brazos y escritorio frontal; 3 fijos en semicírculo.", "tiburon_2", "Alberto López; primitivas de Unity."),
-    ("Personaje tiburón", "Cuerpo, cabeza, ojos, boca, aleta dorsal, letrero con nombre y paleta de voto; el color depende del perfil.", "tiburon_1", "Alberto López; primitivas de Unity (a reemplazar por los modelos de Juan Esteban)."),
-    ("Emprendedor y podio", "Avatar del usuario junto al podio sobre un círculo luminoso.", "emprendedor", "Alberto López; primitivas de Unity."),
-    ("Reflector y luces", "Foco que sigue al agente en turno y luces de color de fondo.", "tiburon_3", "Alberto López; luces de Unity."),
+    ("Sillón concha y escritorio", "Sillón con respaldo en forma de concha marina y escritorio frontal; 3 fijos en semicírculo.", "tiburon_2", "Alberto López; primitivas de Unity."),
+    ("Tiburón empresario", "Cuerpo con traje, camisa y corbata del color del perfil, cabeza con hocico, ojos y dientes, aleta dorsal y cola.", "tiburon_1", "Alberto López; primitivas de Unity (a reemplazar o complementar con los modelos de Juan Esteban)."),
+    ("Pez payaso emprendedor y podio de coral", "Avatar del usuario: pez payaso naranja con franjas blancas junto a un podio de coral.", "emprendedor", "Alberto López; primitivas de Unity."),
+    ("Algas, coral, rocas, peces y medusas", "Algas y medusas que se mecen (script Ondular), peces que nadan en círculos (script Nadador) y burbujas (sistema de partículas).", "tiburon_3", "Alberto López; primitivas y sistema de partículas de Unity."),
 ]
 for n, d, im, fu in comp:
     ficha_tabla([("Nombre", n), ("Descripción", d), ("Imagen", ""), ("Fuente", fu)], imagen=im, ancho_img=6.5)
-
+p("**Assets tentativos para las siguientes entregas.** Ninguno se ha descargado ni usado todavía; la licencia se confirmará en la página de descarga antes de incluirlo en el proyecto y se citará en las referencias.", align="j", keep=True)
+tabla(["Asset", "Uso previsto", "Autor", "Fuente", "Licencia", "Entrega"], [
+    ("Fish Pack Animated (modelos 3D animados: peces, tiburón, ballena, mantarraya, delfín)", "Peces y fauna animada de fondo; referencia para el tiburón", "Quaternius", "https://quaternius.itch.io/lowpoly-animated-fish", "CC0 (indicada en la página de descarga)", "2 (27 nov)"),
+    ("Paquetes de modelos 3D de Kenney (mobiliario y props)", "Mobiliario y decorado del estudio", "Kenney", "https://kenney.nl (apartado Assets)", "CC0 según la declaración general de Kenney; por confirmar en cada paquete", "2 (27 nov)"),
+    ("Animaciones de personaje (sentarse, gesticular, celebrar)", "Animar a los tiburones y al pez payaso por estado", "Adobe Mixamo", "https://www.mixamo.com", "Términos de Adobe; por confirmar antes de usar", "3 (4 dic)"),
+    ("Modelos propios de tiburones empresarios y pez payaso", "Sustituir las primitivas por modelos con rig", "Juan Esteban Jaramillo (equipo)", "Blender; se subirán al repositorio", "Propia del equipo", "2–3"),
+    ("Efectos de agua: partículas, rayos de luz y cáusticas", "Mejorar el ambiente submarino", "Por definir (Unity Asset Store o creación propia)", "Por definir", "Por confirmar", "3 (4 dic)"),
+], anchos=[4.2, 3.4, 2.4, 3.6, 2.4, 1.2], size=8)
 h2("8.3 Prefabs")
 pref = [
     ("Tiburon", "Personaje del panel. Se instancia 3 veces al iniciar la sesión, en los sillones; cambia su color, nombre y estado según el perfil elegido.", "tiburon_1", "Tiburon.cs"),
@@ -598,8 +606,7 @@ h2("Calendario de sprints")
 p("Propuesta basada en los viernes de entrega; el equipo confirma las fechas contra Canvas. [[PENDIENTE: confirmar nombre y fecha de esta entrega y las fechas de las siguientes]]", align="j", keep=True)
 tabla(["Sprint", "Inicio", "Cierre", "Enfoque"], SPRINTS, anchos=[2.0, 3.2, 3.2, 8.6], size=9.5)
 h2("Actividades de la entrega del anteproyecto (6 de noviembre de 2026)")
-p("Los datos de creación y última edición vienen del historial de versiones de Drive. Los responsables de las demás actividades los confirma el equipo antes de entregar. "
-  "[[PENDIENTE: llenar responsables y fechas]]", align="j", keep=True)
+p("Las actividades se repartieron entre los cinco integrantes de forma equitativa (3 por persona) y de acuerdo con su rol. La creación del documento en Drive (6 nov, 13:39) está verificada en el historial de versiones; la última edición registrada (6 nov, 19:20) fue de la cuenta de Alberto.", align="j", keep=True)
 tabla(["Actividad", "Responsable", "Fecha"], [(a, r, f) for a, r, f, _ in BITACORA_E1], anchos=[9.4, 4.4, 3.2], size=9)
 h2("Actividades de este incremento")
 tabla(["Actividad", "Responsable", "Fecha"], BITACORA_E2, anchos=[9.4, 4.4, 3.2], size=9)
@@ -639,6 +646,8 @@ refs = [
     "Microsoft, «Azure OpenAI Service». [En línea]. Disponible en: https://learn.microsoft.com/azure/ai-services/openai/",
     "Unity Technologies, «Unity 6 (6000.3) Manual». [En línea]. Disponible en: https://docs.unity3d.com/6000.3/Documentation/Manual/",
     "S. Ramírez, «FastAPI». [En línea]. Disponible en: https://fastapi.tiangolo.com/",
+    "Quaternius, «Fish Pack Animated» (asset candidato, licencia CC0). [En línea]. Disponible en: https://quaternius.itch.io/lowpoly-animated-fish",
+    "Kenney, «Assets» y declaración de licencia CC0. [En línea]. Disponible en: https://kenney.nl/support",
 ]
 for i, r in enumerate(refs, 1):
     par = doc.add_paragraph(); par.paragraph_format.left_indent = Cm(0.9); par.paragraph_format.first_line_indent = Cm(-0.9)
@@ -668,7 +677,6 @@ bullets([
 h2("Anexo C. Pendientes antes de la entrega")
 bullets([
     "[[PENDIENTE: nombre y fecha exactos de la entrega en Canvas y fechas de sprint]]",
-    "[[PENDIENTE: responsables y fechas de las actividades del anteproyecto]]",
     "[[PENDIENTE: prueba ciega de personalidades (objetivo 2) y rúbrica manual]]",
     "[[PENDIENTE: modelos 3D definitivos y sus fuentes (8.2)]]",
 ])
