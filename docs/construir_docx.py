@@ -603,7 +603,7 @@ p("Herramienta: **Google Sheets**, hoja «NeuralHub – Gestión» con las pesta
 p("Enlace de la hoja: " + SHEET, align="j")
 p("Repositorio de código: " + REPO, align="j")
 h2("Calendario de sprints")
-p("Propuesta basada en los viernes de entrega; el equipo confirma las fechas contra Canvas. [[PENDIENTE: confirmar nombre y fecha de esta entrega y las fechas de las siguientes]]", align="j", keep=True)
+p("Calendario tentativo: las fechas oficiales de las entregas todavía no se han comunicado, así que se planeó con los viernes como cierre de cada sprint y se ajustará cuando se conozcan.", align="j", keep=True)
 tabla(["Sprint", "Inicio", "Cierre", "Enfoque"], SPRINTS, anchos=[2.0, 3.2, 3.2, 8.6], size=9.5)
 h2("Actividades de la entrega del anteproyecto (6 de noviembre de 2026)")
 p("Las actividades se repartieron entre los cinco integrantes de forma equitativa (3 por persona) y de acuerdo con su rol. La creación del documento en Drive (6 nov, 13:39) está verificada en el historial de versiones; la última edición registrada (6 nov, 19:20) fue de la cuenta de Alberto.", align="j", keep=True)
@@ -674,13 +674,6 @@ bullets([
     "«Verifica en la fuente cada cifra de Contexto y problema antes de citarla».",
     "Instrucciones del sistema para los agentes: se encuentran en servicio/neuralhub/grafo.py (funciones sistema_tiburon y sistema_emprendedor y los prompts de cada nodo).",
 ])
-h2("Anexo C. Pendientes antes de la entrega")
-bullets([
-    "[[PENDIENTE: nombre y fecha exactos de la entrega en Canvas y fechas de sprint]]",
-    "[[PENDIENTE: prueba ciega de personalidades (objetivo 2) y rúbrica manual]]",
-    "[[PENDIENTE: modelos 3D definitivos y sus fuentes (8.2)]]",
-])
-
 # número de página en el pie
 def pie():
     f = sec.footer.paragraphs[0]; f.alignment = WD_ALIGN_PARAGRAPH.CENTER
