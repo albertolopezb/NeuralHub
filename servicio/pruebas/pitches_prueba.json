@@ -1,0 +1,117 @@
+[
+  {
+    "id": "P1", "tipo": "solido", "criterio_debil": null,
+    "panel": ["tiburona_consumo", "tiburon_financiero", "tiburon_negociador"],
+    "pitch": {
+      "nombre": "Tamales Express", "sector": "alimentos_y_bebidas", "etapa": "crecimiento",
+      "problema": "Comer tamales caseros de calidad entre semana es difícil: los puestos cierran temprano y los congelados saben distinto.",
+      "solucion": "Tamales hechos a diario con recetas regionales, entregados calientes en 40 minutos por suscripción semanal o por pedido.",
+      "mercado_objetivo": "Oficinistas y familias del área metropolitana de Monterrey que piden comida a domicilio al menos dos veces por semana.",
+      "modelo_ingresos": "Venta por pedido (promedio $210 MXN) y suscripción semanal de $480 MXN con envío incluido.",
+      "competencia": "Puestos de calle, restaurantes con servicio a domicilio y marcas de tamales congelados.",
+      "diferenciador": "Producción diaria sin conservadores, rastreo del pedido y entrega en 40 minutos con bolsa térmica.",
+      "validacion": "420 clientes recurrentes, 38 % repite en el mes y 3 convenios con oficinas.",
+      "propiedad_intelectual": "marca",
+      "equipo_fundadores": 3, "equipo_roles": "Cocina y calidad, operaciones y logística, ventas y marketing", "equipo_dedicacion": "tiempo completo",
+      "equipo_experiencia": "Una fundadora con 8 años en restaurantes y un fundador con 5 años en logística de reparto.",
+      "monto_mxn": 600000, "porcentaje": 12, "uso_fondos": "Segunda cocina, dos vehículos de reparto y campaña de suscripciones.",
+      "ventas_12m_mxn": 1450000, "margen_bruto_pct": 46, "gasto_mensual_mxn": 85000
+    },
+    "guion": {
+      "tiburona_consumo": ["Nuestro canal principal es la app de pedidos propia y WhatsApp; 61 % de las ventas son recompra de los mismos 420 clientes. El producto tiene una demanda estable entre semana.", "La marca ya se reconoce en tres colonias de Monterrey; el 38 % que repite cada mes viene sobre todo de las suscripciones.", "Queremos sumar tiendas de conveniencia como segundo canal, sin perder la entrega en 40 minutos que es lo que valoran los clientes."],
+      "tiburon_financiero": ["Ventas de los últimos 12 meses: $1,450,000 MXN con margen bruto de 46 % y un gasto mensual de $85,000 MXN. El costo de adquisición por cliente ronda los $120 MXN.", "Con el margen bruto actual y un gasto fijo de $85,000 MXN mensuales, el punto de equilibrio mensual son unos $185,000 MXN de ventas, y vamos arriba de eso desde hace 5 meses.", "La valuación de $5,000,000 MXN equivale a 3.4 veces las ventas anuales, y el dinero se usa en capacidad de producción que ya está saturada."],
+      "tiburon_negociador": ["Pedimos $600,000 MXN por el 12 %, que da una valuación de $5,000,000 MXN. Podemos negociar entre 12 % y 15 % si el inversionista aporta distribución.", "No aceptaríamos más de 18 % porque necesitamos conservar el control para decidir sobre la cocina y las recetas.", "Si hay contraoferta, preferimos más dinero por el mismo porcentaje antes que el mismo dinero por más porcentaje."]
+    }
+  },
+  {
+    "id": "P2", "tipo": "solido", "criterio_debil": null,
+    "panel": ["tiburon_financiero", "tiburon_estratega", "tiburon_tecnologico"],
+    "pitch": {
+      "nombre": "ClinicaFácil", "sector": "salud", "etapa": "crecimiento",
+      "problema": "Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp.",
+      "solucion": "Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+      "mercado_objetivo": "Consultorios y clínicas independientes de México con 1 a 10 médicos; hay unos 90,000 consultorios privados según nuestra estimación.",
+      "modelo_ingresos": "Suscripción mensual de $890 MXN por consultorio y $2,400 MXN para clínicas con varios médicos.",
+      "competencia": "Software médico grande y caro, y agendas genéricas como Calendly y hojas de cálculo.",
+      "diferenciador": "Se configura en 10 minutos, está hecho para México (WhatsApp, facturación) y baja las ausencias de 30 % a 12 % en clientes actuales.",
+      "validacion": "140 clientes pagando y 4 % de cancelación mensual.",
+      "propiedad_intelectual": "ninguna",
+      "equipo_fundadores": 3, "equipo_roles": "Ingeniería, producto y ventas", "equipo_dedicacion": "tiempo completo",
+      "equipo_experiencia": "Dos fundadores vienen de empresas de software de salud; uno tiene 6 años en ventas B2B.",
+      "monto_mxn": 1200000, "porcentaje": 10, "uso_fondos": "Equipo de ventas, integraciones con laboratorios y marketing digital.",
+      "ventas_12m_mxn": 1100000, "margen_bruto_pct": 78, "gasto_mensual_mxn": 140000
+    },
+    "guion": {
+      "tiburon_financiero": ["Ventas de $1,100,000 MXN en 12 meses con margen bruto de 78 %. Gasto mensual de $140,000 MXN. El costo de adquisición es de $2,100 MXN por consultorio y se recupera en unos 3 meses.", "Cancelan 4 % mensual; el ingreso recurrente mensual hoy es de unos $125,000 MXN y crece cerca de 9 % al mes.", "La valuación de $12,000,000 MXN son 11 veces las ventas anuales, justificada por el crecimiento y el margen alto de software."],
+      "tiburon_estratega": ["El mercado estimado es de 90,000 consultorios privados; con 140 clientes tenemos 0.15 %. Competimos contra software caro y herramientas genéricas.", "Nuestra ventaja defendible es la integración con WhatsApp y facturación mexicana, más la base de datos de ausencias que mejora los recordatorios.", "Después de consultorios iremos a cadenas de clínicas dentales, donde el ticket por cliente es tres veces mayor."],
+      "tiburon_tecnologico": ["La tecnología es un software en la nube con un modelo que predice qué pacientes tienen más probabilidad de faltar y adelanta recordatorios.", "No tenemos patente; la protección es el algoritmo y los datos que acumulamos con cada cita. Tenemos el código en repositorio privado.", "El siguiente paso técnico son integraciones con laboratorios y receta electrónica; ya hay un prototipo funcionando con dos clientes."]
+    }
+  },
+  {
+    "id": "P3", "tipo": "debil_financiero", "criterio_debil": "tiburon_financiero",
+    "panel": ["tiburon_financiero", "tiburona_consumo", "tiburon_mentor"],
+    "pitch": {
+      "nombre": "ModaRaíz", "sector": "consumo_y_moda", "etapa": "primeras_ventas",
+      "problema": "La ropa con diseños indígenas la fabrican grandes marcas sin pagar a las comunidades artesanas.",
+      "solucion": "Marca de ropa con bordados hechos por cooperativas de artesanas, vendida en línea con la historia de cada pieza.",
+      "mercado_objetivo": "Mujeres de 25 a 45 años de ciudades grandes que valoran la moda sostenible y el diseño mexicano.",
+      "modelo_ingresos": "Venta directa por tienda en línea y pop-ups; precio promedio de $1,400 MXN por prenda.",
+      "competencia": "Marcas mexicanas de moda sostenible y grandes marcas que copian diseños.",
+      "diferenciador": "Cada prenda indica la cooperativa que la bordó y parte del precio va directo a ella.",
+      "validacion": "Aún no lo sé",
+      "propiedad_intelectual": "marca",
+      "equipo_fundadores": 2, "equipo_roles": "Diseño de producto y relación con las cooperativas", "equipo_dedicacion": "tiempo completo",
+      "equipo_experiencia": "Una fundadora estudió diseño de moda; la otra trabajó 4 años con cooperativas artesanales.",
+      "monto_mxn": 400000, "porcentaje": 8, "uso_fondos": "Inventario de la próxima colección, fotografía y publicidad en redes.",
+      "ventas_12m_mxn": null, "margen_bruto_pct": null, "gasto_mensual_mxn": null
+    },
+    "guion": {
+      "tiburon_financiero": ["Todavía no llevamos la contabilidad separada, así que aún no sé mis ventas de los últimos 12 meses ni el margen exacto por prenda. Estimo que vendimos unas 150 prendas.", "No tengo calculado el costo de adquisición de clientes ni el gasto mensual; me enfoqué en el producto y las cooperativas. Es lo primero que voy a ordenar.", "Entiendo que la valuación de $5,000,000 MXN no se puede defender sin cifras. Aún no sé cuánto cuesta cada prenda ya terminada."],
+      "tiburona_consumo": ["Vendemos por tienda en línea y en dos pop-ups; los clientes llegan por Instagram. La demanda se ve en que algunas piezas se agotan, pero aún no tengo datos formales.", "Aún no sé qué porcentaje repite compra. La marca se reconoce por el bordado y la historia de cada cooperativa.", "Queremos entrar a tiendas departamentales, pero primero necesito definir bien precios y producción."],
+      "tiburon_mentor": ["Somos dos fundadoras dedicadas de tiempo completo; una diseña y la otra se encarga de las cooperativas. Nos conocemos desde la universidad.", "Lo que me impulsa es que las artesanas reciban un pago justo; soy honesta en que me falta experiencia financiera y busco quien me asesore.", "Si invierten, aceptaría un consejo de administración chico para ordenar finanzas y operación."]
+    }
+  },
+  {
+    "id": "P4", "tipo": "debil_equipo", "criterio_debil": "tiburon_mentor",
+    "panel": ["tiburon_mentor", "tiburon_estratega", "tiburon_tecnologico"],
+    "pitch": {
+      "nombre": "TutorBot", "sector": "educacion", "etapa": "prototipo",
+      "problema": "Muchos estudiantes de secundaria no tienen quien los ayude con matemáticas fuera de la escuela.",
+      "solucion": "Un asistente de IA por WhatsApp que explica paso a paso los ejercicios de matemáticas y propone ejercicios nuevos.",
+      "mercado_objetivo": "Estudiantes de secundaria en escuelas públicas y privadas de México y sus familias.",
+      "modelo_ingresos": "Suscripción mensual de $99 MXN para familias y licencias para escuelas.",
+      "competencia": "Videos de YouTube, apps como Khan Academy y tutores particulares.",
+      "diferenciador": "Responde en el chat que los estudiantes ya usan y se adapta a su nivel con el temario de la SEP.",
+      "validacion": "Un piloto con 30 estudiantes de una secundaria durante un mes; 22 lo usaron más de 5 veces.",
+      "propiedad_intelectual": "ninguna",
+      "equipo_fundadores": 1, "equipo_roles": null, "equipo_dedicacion": null, "equipo_experiencia": null,
+      "monto_mxn": 350000, "porcentaje": 10, "uso_fondos": "Desarrollo del producto, pruebas con más escuelas y servidores.",
+      "ventas_12m_mxn": null, "margen_bruto_pct": null, "gasto_mensual_mxn": null
+    },
+    "guion": {
+      "tiburon_mentor": ["Soy yo solo; estudio ingeniería y trabajo en el proyecto en las tardes, tiempo parcial. Aún no he tenido un socio ni un equipo.", "Aún no he trabajado antes en una empresa; esta es mi primera. Sé que depender de una sola persona es un riesgo y por eso busco mentoría.", "Mi compromiso es seguir con el proyecto aunque no me inviertan, pero con dinero podría dedicarme tiempo completo."],
+      "tiburon_estratega": ["El mercado son unos 6 millones de estudiantes de secundaria en México según datos de la SEP, y compito con videos gratuitos y tutores.", "Mi ventaja es que funciona dentro de WhatsApp y sigue el temario oficial; defenderla requiere crecer rápido con escuelas.", "El plan es llegar a escuelas primero y después a familias con la suscripción."],
+      "tiburon_tecnologico": ["Uso un modelo de lenguaje con instrucciones y ejemplos del temario de la SEP; el prototipo ya resuelve ejercicios de álgebra y geometría básica.", "No tengo patente ni creo que el modelo sea protegible; la ventaja es el contenido adaptado y los datos de uso del piloto.", "Lo siguiente es medir si los estudiantes realmente mejoran sus calificaciones, aún no tengo esa evidencia."]
+    }
+  },
+  {
+    "id": "P5", "tipo": "incompleto", "criterio_debil": "tiburon_tecnologico",
+    "panel": ["tiburon_tecnologico", "tiburon_mentor", "tiburon_financiero"],
+    "pitch": {
+      "nombre": "AguaLimpia", "sector": "sustentabilidad_y_energia", "etapa": "idea",
+      "problema": "Hay colonias donde el agua de la llave no se puede tomar.",
+      "solucion": "Un filtro barato.",
+      "mercado_objetivo": "Familias de colonias sin agua potable.",
+      "modelo_ingresos": "Venta del filtro.",
+      "competencia": null, "diferenciador": null, "validacion": null, "propiedad_intelectual": null,
+      "equipo_fundadores": 2, "equipo_roles": null, "equipo_dedicacion": null, "equipo_experiencia": null,
+      "monto_mxn": 200000, "porcentaje": 5, "uso_fondos": "Fabricar los primeros filtros.",
+      "ventas_12m_mxn": null, "margen_bruto_pct": null, "gasto_mensual_mxn": null
+    },
+    "guion": {
+      "tiburon_tecnologico": ["Todavía es una idea; aún no tenemos prototipo. Pensamos usar carbón activado y arena, pero no lo hemos probado en laboratorio.", "No sé si se puede patentar y aún no hemos hablado con nadie sobre eso. Falta definir qué tecnología usaremos exactamente.", "Lo primero sería construir un prototipo y medirlo con una prueba de calidad del agua; todavía no tengo fecha."],
+      "tiburon_mentor": ["Somos dos amigos; aún no hemos definido roles ni cuánto tiempo dedicamos al proyecto, por ahora es después de clases.", "No tenemos experiencia en tratamiento de agua. Hemos hablado con una profesora, pero no es parte del proyecto.", "Queremos hacerlo, pero reconozco que todavía no tenemos un plan claro."],
+      "tiburon_financiero": ["No hay ventas, ni costos calculados. Pedimos $200,000 MXN por 5 %, o sea una valuación de $4,000,000 MXN, pero no sé cómo justificarla.", "No sé cuánto costaría fabricar cada filtro ni a qué precio se vendería; supongo que alrededor de $300 MXN.", "Aún no sé mi gasto mensual ni cuántos filtros necesitaría vender para recuperar la inversión."]
+    }
+  }
+]

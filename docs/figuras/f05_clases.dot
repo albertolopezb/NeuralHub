@@ -1,0 +1,37 @@
+digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=TB; nodesep=.25; ranksep=.5; splines=true;
+subgraph cluster_py{label="Servicio de agentes (Python: LangGraph + FastAPI)";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded,dashed";fontname="Helvetica";
+Pitch[shape=record,style=filled,fillcolor="#F1ECFF",label="{Pitch|nombre, sector, etapa\lproblema, solucion\lequipo_*, monto_mxn\lporcentaje, ventas_12m_mxn\l|valuacion_mxn()\les_hueco(campo)\l}",fontsize=11];
+Panel[shape=record,style=filled,fillcolor="#F1ECFF",label="{Panel|tamaño = 3\l|recomendar(pitch)\lorden_de_turnos()\l}",fontsize=11];
+AgenteTiburon[shape=record,style=filled,fillcolor="#F1ECFF",label="{AgenteTiburon|id, nombre, perfil\lcriterio, campos\l|preguntar()\lreplicar()\lvotar()\lrevotar()\l}",fontsize=11];
+AgenteEmprendedor[shape=record,style=filled,fillcolor="#F1ECFF",label="{AgenteEmprendedor|modo: humano | autopiloto\l|responder(preguntas)\lnegociar()\l}",fontsize=11];
+Moderador[shape=record,style=filled,fillcolor="#F1ECFF",label="{Moderador||fija_orden()\lasigna_replica()\l}",fontsize=11];
+NodoVotacion[shape=record,style=filled,fillcolor="#F1ECFF",label="{NodoVotacion||primera_votacion()\lsegunda_votacion()\l}",fontsize=11];
+GrafoSesion[shape=record,style=filled,fillcolor="#F1ECFF",label="{GrafoSesion|estado: Estado\lcheckpointer\l|presentar()\lpreguntar()\lresponder()\lreplicar()\lvotar()\ldecidir()\lnegociar()\lreporte()\l}",fontsize=11];
+Sesion_FastAPI[shape=record,style=filled,fillcolor="#F1ECFF",label="{Sesion FastAPI|eventos[], estado\lpendiente\l|emit(evento)\liniciar()\lreanudar()\lmetricas()\l}",fontsize=11];
+}
+subgraph cluster_un{label="Unity (C#)";fontcolor="#1060D0";color="#1060D0";style="rounded,dashed";fontname="Helvetica";
+AppNeuralHub[shape=record,style=filled,fillcolor="#E8F0FF",label="{AppNeuralHub|vista\l|Ir(vista)\lIniciarSesion()\l}",fontsize=11];
+ClienteServicio[shape=record,style=filled,fillcolor="#E8F0FF",label="{ClienteServicio|urlBase, usarMock\lrecibidos: Evento[]\l|CrearSesion()\lSondear() cada 1 s\lEnviarRespuestas()\lEnviarNegociacion()\l}",fontsize=11];
+ReproductorSesion[shape=record,style=filled,fillcolor="#E8F0FF",label="{ReproductorSesion|pausado, velocidad\lhistorial\l|ReproducirSiguiente()\lAlternarPausa()\lSaltarAnimacion()\l}",fontsize=11];
+Estudio[shape=record,style=filled,fillcolor="#E8F0FF",label="{Estudio|sillones[3]\l|IniciarSesion()\lAplicar(evento)\l}",fontsize=11];
+Tiburon_Unity[shape=record,style=filled,fillcolor="#E8F0FF",label="{Tiburon Unity|perfilId, estado\l|Escuchar()\lPreguntar()\lReplicar()\lVotar()\lReaccionar()\l}",fontsize=11];
+Emprendedor[shape=record,style=filled,fillcolor="#E8F0FF",label="{Emprendedor|estado\l|Presentar()\lResponder()\lNegociar()\l}",fontsize=11];
+CamaraEstudio[shape=record,style=filled,fillcolor="#E8F0FF",label="{CamaraEstudio|plano\l|Cambiar(plano)\l}",fontsize=11];
+Reflector[shape=record,style=filled,fillcolor="#E8F0FF",label="{Reflector||Iluminar(punto)\l}",fontsize=11];
+Pantalla[shape=record,style=filled,fillcolor="#E8F0FF",label="{Pantalla||MostrarOferta()\l}",fontsize=11];
+Evento[shape=record,style=filled,fillcolor="#E8F0FF",label="{Evento|n, ronda, tipo\lemisor, destino\ltexto, estado, decision\l|}",fontsize=11];
+InterfazDebate[shape=record,style=filled,fillcolor="#E8F0FF",label="{InterfazDebate||Dibujar(): dialogo, ronda, votos\l}",fontsize=11];
+MenuInicio[shape=record,style=filled,fillcolor="#E8F0FF",label="{MenuInicio||Dibujar()\l}",fontsize=11];
+FormularioPitch[shape=record,style=filled,fillcolor="#E8F0FF",label="{FormularioPitch|pitch\l|Json()\lCompleto()\l}",fontsize=11];
+EleccionPanel[shape=record,style=filled,fillcolor="#E8F0FF",label="{EleccionPanel|elegidos (3)\l|PrecargarRecomendados()\l}",fontsize=11];
+ControlReproduccion[shape=record,style=filled,fillcolor="#E8F0FF",label="{ControlReproduccion||pausa, 1x/2x, saltar\l}",fontsize=11];
+PanelHistorial[shape=record,style=filled,fillcolor="#E8F0FF",label="{PanelHistorial||Dibujar()\l}",fontsize=11];
+PanelRespuestas[shape=record,style=filled,fillcolor="#E8F0FF",label="{PanelRespuestas||Dibujar()\l}",fontsize=11];
+PanelNegociacion[shape=record,style=filled,fillcolor="#E8F0FF",label="{PanelNegociacion||Dibujar()\l}",fontsize=11];
+PantallaResultado[shape=record,style=filled,fillcolor="#E8F0FF",label="{PantallaResultado||Dibujar()\l}",fontsize=11];
+}
+Pitch->Panel; Panel->GrafoSesion; GrafoSesion->AgenteTiburon[label="3"]; GrafoSesion->AgenteEmprendedor; GrafoSesion->Moderador; GrafoSesion->NodoVotacion; Sesion_FastAPI->GrafoSesion;
+ClienteServicio->Sesion_FastAPI[label="HTTP",color="#13B8F0",penwidth=2]; AppNeuralHub->ClienteServicio; AppNeuralHub->ReproductorSesion; ReproductorSesion->Estudio; ReproductorSesion->Evento;
+Estudio->Tiburon_Unity[label="3"]; Estudio->Emprendedor; Estudio->CamaraEstudio; Estudio->Reflector; Estudio->Pantalla;
+AppNeuralHub->MenuInicio; AppNeuralHub->FormularioPitch; AppNeuralHub->EleccionPanel; AppNeuralHub->ControlReproduccion; AppNeuralHub->PanelHistorial; AppNeuralHub->PanelRespuestas; AppNeuralHub->PanelNegociacion; AppNeuralHub->PantallaResultado; AppNeuralHub->InterfazDebate;
+}

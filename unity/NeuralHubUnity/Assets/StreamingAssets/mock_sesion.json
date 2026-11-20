@@ -1,0 +1,487 @@
+{
+  "id": "f67f19cc",
+  "modo": "autopiloto",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "DataSense AI",
+    "sector": "tecnologia",
+    "etapa": "crecimiento",
+    "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+    "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+    "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+    "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+    "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+    "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+    "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+    "propiedad_intelectual": "marca",
+    "equipo_fundadores": 4,
+    "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+    "monto_mxn": 500000,
+    "porcentaje": 15,
+    "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+    "ventas_12m_mxn": 270000,
+    "margen_bruto_pct": 72,
+    "gasto_mensual_mxn": 60000
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "DataSense AI: pide $500,000 MXN por el 15 % (valuación implícita $3,333,333 MXN). Problema: Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos. Solución: Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "DataSense AI",
+        "sector": "tecnologia",
+        "etapa": "crecimiento",
+        "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+        "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+        "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+        "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+        "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+        "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+        "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 4,
+        "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+        "monto_mxn": 500000,
+        "porcentaje": 15,
+        "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+        "ventas_12m_mxn": 270000,
+        "margen_bruto_pct": 72,
+        "gasto_mensual_mxn": 60000
+      },
+      "valuacion_mxn": 3333333.33
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de clientes para sus 50 clientes actuales, considerando que sus ventas anuales son $270,000 MXN y el gasto mensual es $60,000 MXN?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el tamaño total del mercado de PyMEs mexicanas con 10 a 100 empleados en comercio y servicios que podrían usar su plataforma?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Han considerado proteger con patente la tecnología de IA que facilita el análisis en lenguaje natural, más allá de registrar solo la marca? No me dices si tienen propiedad intelectual sobre la innovación clave.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "El gasto anual es de $720,000 MXN y tenemos 50 clientes, pero no hemos separado específicamente el costo de adquisición de clientes. Para calcularlo, analizaremos cuánto del gasto corresponde a marketing y ventas para dividirlo entre los nuevos clientes adquiridos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aún no cuento con una cifra precisa del tamaño total del mercado de PyMEs mexicanas con 10 a 100 empleados en comercio y servicios. Para averiguarlo, consultaría fuentes oficiales como el INEGI y reportes de asociaciones empresariales para obtener datos actualizados y relevantes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente solo contamos con la marca registrada y no con patente para nuestra tecnología de IA. Consideramos explorar la protección de propiedad intelectual para la innovación clave y consultaremos con especialistas para evaluar la viabilidad de patentar nuestra solución.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Estoy de acuerdo con tu pregunta sobre el costo de adquisición, es crucial para evaluar la escalabilidad y rentabilidad del negocio. La respuesta del emprendedor muestra que aún no tienen ese dato claro, lo que es un riesgo tecnológico y financiero que deben resolver para validar la sostenibilidad del modelo SaaS.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean diferenciarse frente a herramientas generalistas como Power BI, que tienen gran presencia y recursos, para capturar una cuota significativa del mercado PyME, considerando que solo cuentan con marca registrada y no patente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué avances tecnológicos específicos planean para mejorar la IA y cómo asegurarán que estos desarrollos sean protegibles como propiedad intelectual para mantener ventaja competitiva?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con un margen bruto del 72 % y gastos mensuales de $60,000, ¿cómo planean reducir el costo de adquisición de clientes para que el crecimiento del 15 % mensual sea rentable y sostenible, considerando que aún no tienen ese dato claro?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nos diferenciamos porque nuestra plataforma no requiere configuración técnica y entrega análisis en lenguaje natural, algo que Power BI no ofrece. Esto facilita el uso a PyMEs sin científicos de datos. Aunque no tenemos patente, nuestra ventaja está en la experiencia de usuario y enfoque específico en PyMEs mexicanas, adaptando nuestra solución a sus necesidades particulares.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Planeamos mejorar la IA para que el análisis sea más preciso y personalizado, integrando aprendizaje automático avanzado. Para proteger estos desarrollos, consultaremos especialistas en propiedad intelectual y consideraremos patentar algoritmos o procesos clave que representen innovación y ventaja competitiva.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Para reducir el costo de adquisición, analizaremos específicamente los gastos en marketing y ventas para optimizar y enfocar recursos en canales más efectivos. También mejoraremos nuestra plataforma para aumentar la retención y recomendación de clientes, haciendo el crecimiento del 15 % mensual más rentable y sostenible.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con tu pregunta sobre la diferenciación frente a Power BI. La respuesta del emprendedor señala ventaja en usabilidad y enfoque PyME, pero sin patente y con competencia fuerte, la valuación y crecimiento dependen de que esos diferenciales se traduzcan en ventas reales y margen sostenible.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué elementos específicos de su IA consideran patentables para proteger la innovación clave y evitar que competidores copien su ventaja, considerando que actualmente solo tienen la marca registrada?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cómo justifican la valuación de $3.3 MDP si las ventas anuales son $270,000 MXN y aún no tienen claro ni el costo de adquisición ni un plan preciso para su reducción?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices el tamaño exacto del mercado PyME mexicano con 10-100 empleados en comercio y servicios; ¿pueden presentar un estudio o dato que valide que ese mercado es lo suficientemente grande para sostener crecimiento y competencia a largo plazo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Consideramos patentables aspectos como los algoritmos que traducen datos complejos en análisis en lenguaje natural sin configuración técnica. Evaluaremos con especialistas qué procesos o métodos únicos de IA podemos proteger para evitar copia y mantener ventaja competitiva, ya que actualmente solo contamos con marca registrada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $3.3 MDP se basa en el crecimiento mensual del 15 %, margen bruto del 72 % y potencial de mercado. Reconocemos la falta de claridad en costo de adquisición y trabajamos en un plan para optimizarlo, lo que fortalecerá la rentabilidad y justificará la valuación en el mediano plazo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "No tengo el dato exacto ahora, pero para validar el tamaño del mercado PyME mexicano 10-100 empleados en comercio y servicios, consultaremos fuentes oficiales como INEGI y reportes sectoriales. Esto nos permitirá presentar un estudio confiable que sustente el potencial y competencia a largo plazo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Estoy de acuerdo con tu pregunta sobre qué partes de la IA pueden ser patentables. La respuesta del emprendedor menciona algoritmos para análisis en lenguaje natural sin configuración técnica, pero sin detalles claros ni patente, su ventaja defendible es débil frente a competidores grandes. Eso es un riesgo estratégico importante.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No tienen claro el costo de adquisición de clientes clave para un SaaS, y la valuación de $3.3 MDP no se justifica con ventas anuales de $270,000 y gastos de $720,000 anuales. Sin patente, la ventaja competitiva es débil frente a Power BI.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No hay dato claro del tamaño del mercado ni ventaja defendible patente; competencia con Power BI es fuerte. Valuación $3.3 MDP con solo $270,000 MXN en ventas anuales y sin CAC definido es riesgo alto.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me interesa la innovación en IA para análisis en lenguaje natural, pero falta patente para proteger la tecnología. Ofrezco $400,000 MXN por 20% para reflejar riesgo tecnológico y necesidad de inversión en propiedad intelectual. Contraoferta: $400,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 4,
+      "tipo": "NEGOCIACION",
+      "emisor": "nodo_votacion",
+      "destino": "emprendedor",
+      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
+      "estado": ""
+    },
+    {
+      "n": 28,
+      "ronda": 4,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $400,000 MXN por el 20 %.",
+      "estado": "Negociando",
+      "oferta": {
+        "monto_mxn": 400000.0,
+        "porcentaje": 20.0
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "La valuación implícita sigue siendo alta respecto a ventas anuales de $270,000 MXN y gastos de $720,000 MXN; sin costo de adquisición claro y sin patente, el riesgo es alto y no justifican inversión con la oferta actual.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 30,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No me dicen el tamaño exacto del mercado ni tienen patente que defienda la ventaja competitiva frente a Power BI. La valuación implícita y ventas actuales ($270,000 MXN anuales) no justifican la inversión, además no hay claridad en el costo de adquisición.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 31,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "La innovación en IA para análisis en lenguaje natural es disruptiva y con alto potencial; aunque falta patente, la contraoferta de $400,000 MXN por 20 % refleja valoración más realista y me interesa proteger esa ventaja tecnológica.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 32,
+      "ronda": 4,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 33,
+      "ronda": 4,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: El producto resuelve un problema real y relevante para PyMEs que no cuentan con científicos de datos.; La plataforma ofrece análisis en lenguaje natural sin necesidad de configuración técnica, facilitando su uso a clientes objetivos.; Tienen validación inicial con 50 clientes que pagan y un crecimiento mensual del 15 %.. Alertas: No tienen definido ni separado el costo de adquisición de clientes, clave para la rentabilidad y escalabilidad de un SaaS.; No cuentan con patente que proteja la tecnología de IA, solo la marca registrada, lo que deja vulnerable la ventaja competitiva.; No presentaron datos claros ni estudios sobre el tamaño del mercado objetivo para validar el potencial y justificar la valuación.. Siguientes pasos: Realizar un análisis detallado y separado del costo de adquisición de clientes para optimizar inversión en marketing y ventas.; Investigar y presentar un estudio confiable sobre el tamaño del mercado objetivo para sustentar el potencial de crecimiento.; Consultar con especialistas en propiedad intelectual para identificar qué desarrollos pueden patentarse y comenzar el proceso de protección tecnológica..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "No tienen claro el costo de adquisición de clientes clave para un SaaS, y la valuación de $3.3 MDP no se justifica con ventas anuales de $270,000 y gastos de $720,000 anuales.",
+            "necesitaria": "Necesito ver un desglose claro del costo de adquisición de clientes, un plan sólido para su reducción y que la valuación esté respaldada por métricas financieras consistentes y realistas."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "No hay dato claro del tamaño del mercado ni ventaja defendible patente; competencia con Power BI es fuerte. Valuación $3.3 MDP con solo $270,000 MXN en ventas anuales y sin CAC definido es riesgo alto.",
+            "necesitaria": "Requiero un estudio detallado del tamaño del mercado objetivo y evidencia de una ventaja competitiva protegible, preferentemente con propiedad intelectual o barreras claras para competidores grandes."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 3,
+            "frase_clave": "La innovación en IA para análisis en lenguaje natural es disruptiva y con alto potencial; aunque falta patente, la contraoferta de $400,000 MXN por 20 % refleja valoración más realista y me interesa proteger esa ventaja tecnológica.",
+            "necesitaria": "Quiero ver avances concretos en la protección de la propiedad intelectual, como la solicitud o concesión de patentes sobre algoritmos clave, y un plan claro para mantener la ventaja tecnológica."
+          }
+        ],
+        "fortalezas": [
+          "El producto resuelve un problema real y relevante para PyMEs que no cuentan con científicos de datos.",
+          "La plataforma ofrece análisis en lenguaje natural sin necesidad de configuración técnica, facilitando su uso a clientes objetivos.",
+          "Tienen validación inicial con 50 clientes que pagan y un crecimiento mensual del 15 %."
+        ],
+        "alertas": [
+          "No tienen definido ni separado el costo de adquisición de clientes, clave para la rentabilidad y escalabilidad de un SaaS.",
+          "No cuentan con patente que proteja la tecnología de IA, solo la marca registrada, lo que deja vulnerable la ventaja competitiva.",
+          "No presentaron datos claros ni estudios sobre el tamaño del mercado objetivo para validar el potencial y justificar la valuación."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo de adquisición de clientes específico?",
+          "¿Cuál es el tamaño total del mercado de PyMEs mexicanas con 10 a 100 empleados en comercio y servicios?",
+          "¿Qué elementos específicos de la IA son patentables y cómo planean protegerlos?"
+        ],
+        "siguientes_pasos": [
+          "Realizar un análisis detallado y separado del costo de adquisición de clientes para optimizar inversión en marketing y ventas.",
+          "Investigar y presentar un estudio confiable sobre el tamaño del mercado objetivo para sustentar el potencial de crecimiento.",
+          "Consultar con especialistas en propiedad intelectual para identificar qué desarrollos pueden patentarse y comenzar el proceso de protección tecnológica."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 3333333.33,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburon_estratega": "salir",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 22,
+    "segundos_modelo": 41.3,
+    "segundos_total": 36.7,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "id": "P2_s2",
+  "pitch_id": "P2",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "ClinicaFácil: pide $1,200,000 MXN por el 10 % (valuación implícita $12,000,000 MXN). Problema: Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp. Solución: Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "ClinicaFácil",
+        "sector": "salud",
+        "etapa": "crecimiento",
+        "problema": "Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp.",
+        "solucion": "Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+        "mercado_objetivo": "Consultorios y clínicas independientes de México con 1 a 10 médicos; hay unos 90,000 consultorios privados según nuestra estimación.",
+        "modelo_ingresos": "Suscripción mensual de $890 MXN por consultorio y $2,400 MXN para clínicas con varios médicos.",
+        "competencia": "Software médico grande y caro, y agendas genéricas como Calendly y hojas de cálculo.",
+        "diferenciador": "Se configura en 10 minutos, está hecho para México (WhatsApp, facturación) y baja las ausencias de 30 % a 12 % en clientes actuales.",
+        "validacion": "140 clientes pagando y 4 % de cancelación mensual.",
+        "propiedad_intelectual": "ninguna",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, producto y ventas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos fundadores vienen de empresas de software de salud; uno tiene 6 años en ventas B2B.",
+        "monto_mxn": 1200000,
+        "porcentaje": 10,
+        "uso_fondos": "Equipo de ventas, integraciones con laboratorios y marketing digital.",
+        "ventas_12m_mxn": 1100000,
+        "margen_bruto_pct": 78,
+        "gasto_mensual_mxn": 140000
+      },
+      "valuacion_mxn": 12000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "no hay datos que lo hagan imprescindible"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de clientes (CAC) considerando que el gasto mensual es de $140,000 MXN y tienen 140 clientes pagando?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices si tienen alguna ventaja defendible como patente o exclusividad para protegerse de la competencia grande en software médico y agendas genéricas.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "No mencionas propiedad intelectual ni patente; ¿qué innovación tecnológica específica protege tu software para mantener ventaja en un mercado con competencia grande y genérica?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Ventas de $1,100,000 MXN en 12 meses con margen bruto de 78 %. Gasto mensual de $140,000 MXN. El costo de adquisición es de $2,100 MXN por consultorio y se recupera en unos 3 meses.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "El mercado estimado es de 90,000 consultorios privados; con 140 clientes tenemos 0.15 %. Competimos contra software caro y herramientas genéricas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "La tecnología es un software en la nube con un modelo que predice qué pacientes tienen más probabilidad de faltar y adelanta recordatorios.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Concuerdo con que el CAC es clave para evaluar la eficiencia de adquisición. Con $2,100 MXN y recuperación en 3 meses, la propuesta muestra un buen balance entre inversión y retorno, clave para escalar tecnología disruptiva en salud y mantener ventaja en el mercado.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Dado que no tienen patente ni marca registrada, ¿cómo planean defenderse de la competencia grande que podría copiar su modelo o integrarlo con otras funciones y ganar cuota de mercado?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué avances tecnológicos concretos tienen en el algoritmo predictivo para evitar ausencias, y cómo planean proteger esa innovación sin patente ni marca registrada?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con un margen bruto de 78 % y un CAC de $2,100, ¿cuál es el margen neto actual considerando el gasto mensual de $140,000 MXN sobre las ventas de $1,100,000 MXN? No me dices esa cifra.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra ventaja defendible es la integración con WhatsApp y facturación mexicana, más la base de datos de ausencias que mejora los recordatorios.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "No tenemos patente; la protección es el algoritmo y los datos que acumulamos con cada cita. Tenemos el código en repositorio privado.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Cancelan 4 % mensual; el ingreso recurrente mensual hoy es de unos $125,000 MXN y crece cerca de 9 % al mes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Tiburón estratega, coincido que sin patente ni marca registrada la defensa es débil. La ventaja en integración y base de datos es buena, pero puede ser replicada por competencia grande. Para mí es un riesgo alto en valuación y crecimiento sostenible.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean escalar y proteger tecnológicamente el algoritmo predictivo sin patente ni marca, dado que esta es su ventaja clave frente a competidores grandes y genéricos?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Puedes mostrar un desglose exacto del margen neto actual, considerando el gasto mensual de $140,000 MXN sobre ventas anuales de $1,100,000 MXN, para entender la rentabilidad real de la operación?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios, ¿cuál es su estrategia concreta para crecer rápido y mantener ventaja frente a la competencia grande que puede copiar su modelo sin patente ni marca registrada?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "El siguiente paso técnico son integraciones con laboratorios y receta electrónica; ya hay un prototipo funcionando con dos clientes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $12,000,000 MXN son 11 veces las ventas anuales, justificada por el crecimiento y el margen alto de software.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Después de consultorios iremos a cadenas de clínicas dentales, donde el ticket por cliente es tres veces mayor.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Concuerdo con Tiburón tecnológico: sin patente ni marca, la protección del algoritmo predictivo es débil. La innovación es clave, pero sin barreras legales ni escalabilidad clara, la competencia grande puede replicar rápido. Es un riesgo serio para una ventaja defendible sostenible.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Valuación alta a 12 M con solo 140 clientes y 0.15% mercado; sin patente ni defensa clara; CAC $2,100 y margen neto no claro. Riesgo alto por competencia capaz de replicar rápido.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado es grande pero la falta de patente o marca registrada debilita la ventaja competitiva, lo que implica alto riesgo frente a competencia consolidada; sólo 0.15 % de penetración y riesgo de replicación rápida sin barreras legales claras.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "El algoritmo predictivo es una innovación clave sin patente ni marca registrada, lo que representa un riesgo tecnológico y legal. Con solo 0.15% de penetración y gasto mensual alto, ofreceré menos para balancear riesgo y potencial. Contraoferta: $600,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 27,
+      "ronda": 4,
+      "tipo": "NEGOCIACION",
+      "emisor": "nodo_votacion",
+      "destino": "emprendedor",
+      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
+      "estado": ""
+    },
+    {
+      "n": 28,
+      "ronda": 4,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $600,000 MXN por el 15 %.",
+      "estado": "Negociando",
+      "oferta": {
+        "monto_mxn": 600000.0,
+        "porcentaje": 15.0
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "La contraoferta ajusta la valuación a $4,000,000 con un CAC de $2,100 y margen bruto alto de 78 %, equilibrando riesgo y potencial de crecimiento.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 30,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado de 90,000 consultorios es grande y la integración con WhatsApp es una ventaja defendible frente a competencia genérica. La contraoferta de $600,000 por 15 % valora la empresa en $4,000,000 MXN, más acorde al riesgo detectado y crecimiento actual.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 31,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Acepto la contraoferta de $600,000 MXN por 15 %; el algoritmo predictivo y la integración local son innovaciones clave aunque sin patente, y el CAC de $2,100 MXN con recuperación en 3 meses muestra buen equilibrio para escalar tecnología disruptiva en salud.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 32,
+      "ronda": 4,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $600,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 600000.0,
+        "porcentaje": 15.0,
+        "origen": "negociacion"
+      }
+    },
+    {
+      "n": 33,
+      "ronda": 4,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Solución específica para un problema real y frecuente en clínicas pequeñas en México.; Modelo de negocio con suscripción mensual y buena recuperación del CAC en 3 meses.; Integración con WhatsApp y facturación mexicana, adaptándose bien al mercado local.. Alertas: No cuentan con patente ni marca registrada, lo que debilita la protección frente a competidores grandes.; Penetración de mercado muy baja (0.15 %) con riesgo alto de replicación rápida por competidores.; Falta claridad en margen neto actual y estrategia concreta para escalar rápido y defender la ventaja competitiva.. Siguientes pasos: Desarrollar y documentar una estrategia clara para proteger la ventaja competitiva, incluyendo barreras legales y comerciales.; Optimizar y detallar el margen neto y la rentabilidad real para mejorar la toma de decisiones financieras.; Avanzar con las integraciones tecnológicas (laboratorios y receta electrónica) y validar su impacto en la retención y crecimiento de clientes..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "Con $2,100 MXN y recuperación en 3 meses, la propuesta muestra un buen balance entre inversión y retorno, clave para escalar tecnología disruptiva en salud y mantener ventaja en el mercado.",
+            "necesitaria": "Un desglose claro del margen neto actual para evaluar la rentabilidad real y más claridad sobre la escalabilidad y sostenibilidad financiera."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "Sin patente ni marca registrada la defensa es débil. La ventaja en integración y base de datos es buena, pero puede ser replicada por competencia grande. Es un riesgo alto en valuación y crecimiento sostenible.",
+            "necesitaria": "Una estrategia clara para proteger la ventaja competitiva y acelerar la penetración de mercado, además de barreras legales o comerciales que dificulten la copia."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 3,
+            "frase_clave": "El algoritmo predictivo es una innovación clave sin patente ni marca registrada, lo que representa un riesgo tecnológico y legal.",
+            "necesitaria": "Pruebas más sólidas de la innovación tecnológica, planes para proteger el algoritmo y evidencia de que las integraciones planeadas se traducirán en ventaja competitiva sostenible."
+          }
+        ],
+        "fortalezas": [
+          "Solución específica para un problema real y frecuente en clínicas pequeñas en México.",
+          "Modelo de negocio con suscripción mensual y buena recuperación del CAC en 3 meses.",
+          "Integración con WhatsApp y facturación mexicana, adaptándose bien al mercado local."
+        ],
+        "alertas": [
+          "No cuentan con patente ni marca registrada, lo que debilita la protección frente a competidores grandes.",
+          "Penetración de mercado muy baja (0.15 %) con riesgo alto de replicación rápida por competidores.",
+          "Falta claridad en margen neto actual y estrategia concreta para escalar rápido y defender la ventaja competitiva."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el margen neto exacto considerando gastos y ventas?",
+          "¿Cómo protegerán tecnológicamente el algoritmo predictivo sin patente ni marca registrada?",
+          "¿Cuál es la estrategia concreta para crecer rápido y defenderse de la competencia grande?"
+        ],
+        "siguientes_pasos": [
+          "Desarrollar y documentar una estrategia clara para proteger la ventaja competitiva, incluyendo barreras legales y comerciales.",
+          "Optimizar y detallar el margen neto y la rentabilidad real para mejorar la toma de decisiones financieras.",
+          "Avanzar con las integraciones tecnológicas (laboratorios y receta electrónica) y validar su impacto en la retención y crecimiento de clientes."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 600000.0,
+          "porcentaje": 15.0,
+          "origen": "negociacion"
+        },
+        "valuacion_mxn": 12000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburon_estratega": "salir",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 19,
+    "segundos_modelo": 24.5,
+    "segundos_total": 20.2,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  "error": null
+}

@@ -1,0 +1,602 @@
+[
+  {
+    "pitch_id": "P1",
+    "tipo": "solido",
+    "sesion": 1,
+    "panel": [
+      "tiburona_consumo",
+      "tiburon_financiero",
+      "tiburon_negociador"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburona_consumo",
+      "tiburon_negociador",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburona_consumo": "contraoferta",
+      "tiburon_financiero": "contraoferta",
+      "tiburon_negociador": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 21.9,
+    "segundos_total": 18.9,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P1",
+    "tipo": "solido",
+    "sesion": 2,
+    "panel": [
+      "tiburona_consumo",
+      "tiburon_financiero",
+      "tiburon_negociador"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburona_consumo",
+      "tiburon_negociador",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburona_consumo": "contraoferta",
+      "tiburon_financiero": "salir",
+      "tiburon_negociador": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 21.4,
+    "segundos_total": 18.7,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P1",
+    "tipo": "solido",
+    "sesion": 3,
+    "panel": [
+      "tiburona_consumo",
+      "tiburon_financiero",
+      "tiburon_negociador"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburona_consumo",
+      "tiburon_negociador",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburona_consumo": "contraoferta",
+      "tiburon_financiero": "salir",
+      "tiburon_negociador": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 23.5,
+    "segundos_total": 21.3,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P2",
+    "tipo": "solido",
+    "sesion": 1,
+    "panel": [
+      "tiburon_financiero",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_tecnologico"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 19,
+    "segundos_modelo": 25.4,
+    "segundos_total": 20.9,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P2",
+    "tipo": "solido",
+    "sesion": 2,
+    "panel": [
+      "tiburon_financiero",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_tecnologico"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 19,
+    "segundos_modelo": 24.5,
+    "segundos_total": 20.2,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P2",
+    "tipo": "solido",
+    "sesion": 3,
+    "panel": [
+      "tiburon_financiero",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": null,
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_tecnologico"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "contraoferta"
+    },
+    "error": null,
+    "llamadas_modelo": 19,
+    "segundos_modelo": 23.5,
+    "segundos_total": 19.4,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P3",
+    "tipo": "debil_financiero",
+    "sesion": 1,
+    "panel": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_mentor"
+    ],
+    "criterio_debil": "tiburon_financiero",
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_negociador"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburona_consumo": "salir",
+      "tiburon_mentor": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 22.3,
+    "segundos_total": 20.4,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 2,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P3",
+    "tipo": "debil_financiero",
+    "sesion": 2,
+    "panel": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_mentor"
+    ],
+    "criterio_debil": "tiburon_financiero",
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_negociador"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburona_consumo": "salir",
+      "tiburon_mentor": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 21.2,
+    "segundos_total": 18.9,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 2,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P3",
+    "tipo": "debil_financiero",
+    "sesion": 3,
+    "panel": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_mentor"
+    ],
+    "criterio_debil": "tiburon_financiero",
+    "panel_recomendado": [
+      "tiburon_financiero",
+      "tiburona_consumo",
+      "tiburon_negociador"
+    ],
+    "votos_primera": {
+      "tiburon_financiero": "salir",
+      "tiburona_consumo": "salir",
+      "tiburon_mentor": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 20.5,
+    "segundos_total": 18.3,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P4",
+    "tipo": "debil_equipo",
+    "sesion": 1,
+    "panel": [
+      "tiburon_mentor",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": "tiburon_mentor",
+    "panel_recomendado": [
+      "tiburon_mentor",
+      "tiburon_financiero",
+      "tiburon_estratega"
+    ],
+    "votos_primera": {
+      "tiburon_mentor": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 19.8,
+    "segundos_total": 17.7,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 1,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P4",
+    "tipo": "debil_equipo",
+    "sesion": 2,
+    "panel": [
+      "tiburon_mentor",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": "tiburon_mentor",
+    "panel_recomendado": [
+      "tiburon_mentor",
+      "tiburon_financiero",
+      "tiburon_estratega"
+    ],
+    "votos_primera": {
+      "tiburon_mentor": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 18.9,
+    "segundos_total": 16.8,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 1,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P4",
+    "tipo": "debil_equipo",
+    "sesion": 3,
+    "panel": [
+      "tiburon_mentor",
+      "tiburon_estratega",
+      "tiburon_tecnologico"
+    ],
+    "criterio_debil": "tiburon_mentor",
+    "panel_recomendado": [
+      "tiburon_mentor",
+      "tiburon_financiero",
+      "tiburon_estratega"
+    ],
+    "votos_primera": {
+      "tiburon_mentor": "salir",
+      "tiburon_estratega": "salir",
+      "tiburon_tecnologico": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 20.4,
+    "segundos_total": 18.2,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 0,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P5",
+    "tipo": "incompleto",
+    "sesion": 1,
+    "panel": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "criterio_debil": "tiburon_tecnologico",
+    "panel_recomendado": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburon_tecnologico": "salir",
+      "tiburon_mentor": "salir",
+      "tiburon_financiero": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 19.2,
+    "segundos_total": 17.1,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P5",
+    "tipo": "incompleto",
+    "sesion": 2,
+    "panel": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "criterio_debil": "tiburon_tecnologico",
+    "panel_recomendado": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburon_tecnologico": "salir",
+      "tiburon_mentor": "salir",
+      "tiburon_financiero": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 29.2,
+    "segundos_total": 27.2,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  {
+    "pitch_id": "P5",
+    "tipo": "incompleto",
+    "sesion": 3,
+    "panel": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "criterio_debil": "tiburon_tecnologico",
+    "panel_recomendado": [
+      "tiburon_tecnologico",
+      "tiburon_mentor",
+      "tiburon_financiero"
+    ],
+    "votos_primera": {
+      "tiburon_tecnologico": "salir",
+      "tiburon_mentor": "salir",
+      "tiburon_financiero": "salir"
+    },
+    "error": null,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 18.3,
+    "segundos_total": 16.1,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 2,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+]

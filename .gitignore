@@ -1,0 +1,15 @@
+.env
+**/.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Unity
+unity/NeuralHubUnity/Library/
+unity/NeuralHubUnity/Temp/
+unity/NeuralHubUnity/Logs/
+unity/NeuralHubUnity/UserSettings/
+unity/NeuralHubUnity/Build/
+unity/NeuralHubUnity/obj/
+unity/NeuralHubUnity/*.csproj
+unity/NeuralHubUnity/*.sln

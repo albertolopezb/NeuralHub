@@ -1,0 +1,71 @@
+{
+ "valuacion_mxn": 3333333.33,
+ "ranking": [
+  {
+   "tiburon_id": "tiburon_financiero",
+   "puntaje": 0.5,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": false,
+   "afinidad_etapa": true,
+   "indice": 0,
+   "motivo": "evalúa bien negocios en tu etapa",
+   "recomendado": true
+  },
+  {
+   "tiburon_id": "tiburon_estratega",
+   "puntaje": 0.5,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": true,
+   "afinidad_etapa": false,
+   "indice": 1,
+   "motivo": "su perfil encaja con tu sector",
+   "recomendado": true
+  },
+  {
+   "tiburon_id": "tiburon_tecnologico",
+   "puntaje": 0.5,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": true,
+   "afinidad_etapa": false,
+   "indice": 2,
+   "motivo": "su perfil encaja con tu sector",
+   "recomendado": true
+  },
+  {
+   "tiburon_id": "tiburona_consumo",
+   "puntaje": 0.5,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": false,
+   "afinidad_etapa": true,
+   "indice": 3,
+   "motivo": "evalúa bien negocios en tu etapa",
+   "recomendado": false
+  },
+  {
+   "tiburon_id": "tiburon_negociador",
+   "puntaje": 0.5,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": false,
+   "afinidad_etapa": true,
+   "indice": 5,
+   "motivo": "evalúa bien negocios en tu etapa",
+   "recomendado": false
+  },
+  {
+   "tiburon_id": "tiburon_mentor",
+   "puntaje": 0.0,
+   "huecos": [],
+   "fraccion_huecos": 0.0,
+   "afinidad_sector": false,
+   "afinidad_etapa": false,
+   "indice": 4,
+   "motivo": "no hay datos que lo hagan imprescindible",
+   "recomendado": false
+  }
+ ]
+}

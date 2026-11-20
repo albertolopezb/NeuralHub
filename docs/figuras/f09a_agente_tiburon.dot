@@ -1,0 +1,6 @@
+digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=LR; nodesep=.4; ranksep=.6;
+subgraph cluster_a{label="Agente tiburón (6 perfiles; 3 activos por sesión)";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded";fontname="Helvetica";fontsize=14;
+ P[label="Percepciones\npitch y cifras calculadas\lpreguntas y respuestas\lréplicas de otros\lresultado de la 1.ª votación\l(solo en negociación)\l"]; B[label="Creencias\nsu perfil y criterio\lpitch + valuación\lhistorial público\l(NO los votos de otros)\l"]; D[label="Deseos / metas\nobtener datos de su criterio\ldecidir con justificación\l"]; I[label="Planes / intenciones\npreguntar sobre su criterio\levaluar respuestas\lreplicar si se le asigna\lvotar / contraofertar\l"]; Ac[label="Acciones\nPREGUNTA · RÉPLICA\lVOTO (secreto)\lCONTRAOFERTA\l",fillcolor="#D3F9D8"]; P->B->D->I->Ac;
+ B->I[style=dashed,label="LLM (salida estructurada)"];}
+Ent[label="Entorno\n(historial público de la sesión,\ngrafo de LangGraph)",shape=box3d,fillcolor="#FFF3BF"];
+Ent->P[label="eventos"]; Ac->Ent[label="mensajes"];}

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "tiburon_financiero",
+  "nombre": "Tiburón financiero",
+  "perfil": "Escéptico; solo invierte si los números cuadran.",
+  "criterio": "márgenes, costo de adquisición de clientes y valuación",
+  "color": "#1060D0",
+  "campos": [
+   "monto_mxn",
+   "porcentaje",
+   "ventas_12m_mxn",
+   "margen_bruto_pct",
+   "gasto_mensual_mxn"
+  ]
+ },
+ {
+  "id": "tiburon_estratega",
+  "nombre": "Tiburón estratega",
+  "perfil": "Piensa en el crecimiento a largo plazo.",
+  "criterio": "tamaño de mercado, competencia y ventaja defendible",
+  "color": "#4F1FD0",
+  "campos": [
+   "mercado_objetivo",
+   "competencia",
+   "diferenciador"
+  ]
+ },
+ {
+  "id": "tiburon_tecnologico",
+  "nombre": "Tiburón tecnológico",
+  "perfil": "Le atraen las ideas disruptivas aunque tengan riesgo.",
+  "criterio": "innovación, tecnología y propiedad intelectual",
+  "color": "#13B8F0",
+  "campos": [
+   "solucion",
+   "propiedad_intelectual"
+  ]
+ },
+ {
+  "id": "tiburona_consumo",
+  "nombre": "Tiburona de consumo",
+  "perfil": "Piensa en el cliente final.",
+  "criterio": "marca, canales de venta y demanda del producto",
+  "color": "#E8590C",
+  "campos": [
+   "mercado_objetivo",
+   "modelo_ingresos",
+   "validacion"
+  ]
+ },
+ {
+  "id": "tiburon_mentor",
+  "nombre": "Tiburón mentor",
+  "perfil": "Invierte en personas más que en cifras.",
+  "criterio": "equipo, compromiso y honestidad del fundador",
+  "color": "#2F9E44",
+  "campos": [
+   "equipo_fundadores",
+   "equipo_roles",
+   "equipo_dedicacion",
+   "equipo_experiencia"
+  ]
+ },
+ {
+  "id": "tiburon_negociador",
+  "nombre": "Tiburón negociador",
+  "perfil": "Duro con las condiciones.",
+  "criterio": "porcentaje de capital, valuación y contraofertas",
+  "color": "#C92A2A",
+  "campos": [
+   "monto_mxn",
+   "porcentaje",
+   "uso_fondos"
+  ]
+ }
+]

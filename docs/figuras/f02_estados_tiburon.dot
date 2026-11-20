@@ -1,0 +1,14 @@
+digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=LR; nodesep=.5; ranksep=.7;
+s[shape=circle,label="",width=.25,fillcolor="#00165C"];
+Fuera[label="Fuera del panel"]; Esp[label="Esperando"]; Esc[label="Escuchando"]; Pre[label="Preguntando"]; Eva[label="Evaluando"]; Rep[label="Replicando",fillcolor="#E5DBFF"]; Vot[label="Votando"]; Rea[label="Reaccionando"];
+s->Fuera; Fuera->Esp[label="elegido en
+el panel"]; Esp->Esc[label="pitch"]; Esc->Pre[label="su turno
+de preguntar"]; Pre->Eva[label="el usuario
+responde"];
+Eva->Esc[label="pregunta
+de otro"]; Eva->Rep[label="se le asigna
+replicar"]; Rep->Eva[label="réplica
+enviada"]; Eva->Pre[label="siguiente
+ronda"]; Eva->Vot[label="terminan
+las 3 rondas"];
+Vot->Eva[label="negociación"]; Vot->Rea[label="DECISIÓN"]; Rea->Fuera[label="sesión cerrada"];}

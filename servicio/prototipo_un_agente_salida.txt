@@ -1,0 +1,12 @@
+=== ecotrack / tiburon_financiero
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 8.1 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_ecotrack_tiburon_financiero_1795134355.json 
+=== ecotrack / tiburona_consumo
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 9.0 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_ecotrack_tiburona_consumo_1795134366.json 
+=== greenplate / tiburon_financiero
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 9.0 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_greenplate_tiburon_financiero_1795134378.json 
+=== greenplate / tiburona_consumo
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 8.8 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_greenplate_tiburona_consumo_1795134390.json 
+=== datasense / tiburon_financiero
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 8.8 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_datasense_tiburon_financiero_1795134402.json 
+=== datasense / tiburona_consumo
+--- Métricas de la sesión --- Llamadas al modelo: 8 Rondas de preguntas: 3 Tiempo total: 7.1 s La justificación menciona el criterio principal: sí Eventos guardados en D:\TEC\TC2008B\Reto\NeuralHub\prototipo_un_agente\sesiones\sesion_datasense_tiburona_consumo_1795134413.json 

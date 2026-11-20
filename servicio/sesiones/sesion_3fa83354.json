@@ -1,0 +1,432 @@
+{
+  "id": "3fa83354",
+  "modo": "autopiloto",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "EcoTrack",
+    "sector": "sustentabilidad_y_energia",
+    "etapa": "primeras_ventas",
+    "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+    "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+    "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+    "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+    "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+    "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+    "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+    "propiedad_intelectual": "marca",
+    "equipo_fundadores": 3,
+    "equipo_roles": "Ingeniería, ventas y finanzas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+    "monto_mxn": 300000,
+    "porcentaje": 10,
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+    "ventas_12m_mxn": 180000,
+    "margen_bruto_pct": 38,
+    "gasto_mensual_mxn": 25000
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "EcoTrack: pide $300,000 MXN por el 10 % (valuación implícita $3,000,000 MXN). Problema: Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos. Solución: Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "EcoTrack",
+        "sector": "sustentabilidad_y_energia",
+        "etapa": "primeras_ventas",
+        "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+        "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+        "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+        "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+        "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+        "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+        "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, ventas y finanzas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+        "monto_mxn": 300000,
+        "porcentaje": 10,
+        "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+        "ventas_12m_mxn": 180000,
+        "margen_bruto_pct": 38,
+        "gasto_mensual_mxn": 25000
+      },
+      "valuacion_mxn": 3000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de clientes con un gasto mensual de $25,000 MXN y ventas de $180,000 MXN en 12 meses? No me dices ese dato.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el tamaño estimado del mercado en Nuevo León para hogares y pequeños negocios con recibos mayores a $2,500 MXN bimestrales? No me dices ese dato en el pitch.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Tienen alguna patente o tecnología propia en la IA del medidor, o solo cuentan con la marca registrada? No me dices propiedad intelectual más allá de la marca.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Con ventas de $180,000 MXN y un gasto mensual de $25,000 MXN, el costo total en 12 meses es $300,000 MXN. Aún no tenemos el dato exacto del costo de adquisición por cliente, pero para calcularlo dividiríamos el gasto en marketing entre los nuevos clientes adquiridos en ese periodo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aún no tengo la cifra exacta del tamaño del mercado en Nuevo León para hogares y pequeños negocios con recibos mayores a $2,500 MXN bimestrales. Para averiguarlo, analizaría datos públicos de consumo eléctrico y segmentos de clientes en la región con apoyo de consultoras o la CFE.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente contamos con la marca registrada, pero no tenemos patente ni tecnología propia registrada para la IA del medidor. Para proteger nuestra innovación, estamos evaluando el proceso de patente y seguiremos desarrollando tecnología propia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Concuerdo con la pregunta del tiburón financiero; conocer el costo de adquisición es crucial para validar la escalabilidad del modelo, especialmente en un negocio tecnológico que depende de suscripciones. La respuesta del emprendedor muestra falta de datos concretos, lo que es un riesgo para inversión.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con un margen bruto de 38 %, ¿cómo planean mantener ventaja frente a medidores genéricos y apps gratuitas, cuando la competencia puede bajar precios o mejorar funciones? No me dices ventaja defendible clara más allá de la marca.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Sin patente o tecnología propia registrada, ¿qué planes concretos tienen para proteger la innovación en IA y evitar que competidores copien su algoritmo, considerando que solo cuentan con marca registrada?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo real de adquisición de clientes si el gasto mensual es $25,000 MXN y tienen solo 500 usuarios beta y $50,000 MXN en preventas? No me dices ese dato clave.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra ventaja clave es la IA que personaliza recomendaciones sin necesidad de instalación profesional, algo que medidores genéricos y apps gratuitas no ofrecen. Aunque la competencia baje precios, nuestra propuesta de valor y facilidad de uso nos diferencian. Además, planeamos mejorar continuamente el producto con los fondos para mantener esa ventaja competitiva.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Estamos evaluando la solicitud de patente para nuestra tecnología de IA para protegerla formalmente. Mientras tanto, mantenemos confidencialidad en el desarrollo y planeamos fortalecer nuestra innovación con actualizaciones constantes que dificulten la copia. La marca registrada nos da identidad, pero la protección tecnológica será prioridad con la inversión solicitada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Con 500 usuarios beta y $50,000 MXN en preventas, aún no tenemos el costo exacto de adquisición por cliente. Para obtenerlo, dividiríamos los gastos de marketing específicos por los clientes adquiridos recientemente. Estamos trabajando para medir este indicador con precisión y mejorar la eficiencia en la captación conforme escalamos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con la preocupación del tiburón estratega. Con un margen bruto del 38 % y competencia que ofrece productos más baratos o gratuitos, la ventaja debe ser clara y defendible. La respuesta del emprendedor menciona IA y facilidad, pero sin patente ni datos de costo de adquisición, la ventaja no me convence para invertir.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean desarrollar y registrar formalmente la tecnología de IA para que sea una barrera de entrada clara, considerando que actualmente solo tienen la marca registrada y no una patente ni propiedad intelectual protegida?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cómo justifican una valuación de $3,000,000 MXN con ventas de $180,000 MXN y un margen bruto de solo 38 %, sin datos claros del CAC ni crecimiento proyectado?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean escalar y capturar una porción significativa del mercado en Nuevo León sin tener cifras claras del tamaño del mercado ni una ventaja tecnológica protegida, considerando que su margen bruto es de solo 38 % y enfrentan competencia genérica y apps gratuitas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Planeamos solicitar la patente para nuestra tecnología de IA y fortalecerla con actualizaciones constantes que dificulten la copia. Además, mantendremos confidencialidad en el desarrollo. La inversión pedida se usará para formalizar esta protección y consolidar nuestra innovación como barrera de entrada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $3,000,000 MXN se basa en la preventa y validación con 500 usuarios beta, además del potencial de escalabilidad. Reconocemos que falta medir el CAC con precisión y proyectar crecimiento; con la inversión planeamos fortalecer estos indicadores y optimizar márgenes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aunque aún no tenemos cifra exacta del tamaño del mercado, planeamos obtenerla con análisis de datos públicos y apoyo de consultoras. Nuestra ventaja competitiva es la IA personalizada sin instalación profesional, que junto con mejoras continuas y marketing, nos permitirá escalar en Nuevo León frente a competencia genérica.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Concuerdo con tu preocupación sobre la falta de patente y protección tecnológica. Aunque el emprendedor planea solicitar patente y mantener confidencialidad, sin una barrera de entrada clara y protegida, la ventaja competitiva es débil frente a competidores genéricos y gratuitos.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Margen bruto bajo (38%) y sin datos claros de costo de adquisición de clientes ni protección tecnológica, la valuación de $3,000,000 MXN no se justifica. Falta evidencia de escalabilidad y ventaja competitiva real.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No hay datos claros del tamaño de mercado ni costo de adquisición; margen bruto bajo (38 %) y falta protección tecnológica (solo marca registrada). La ventaja competitiva es débil y vulnerable a competencia genérica y apps gratuitas.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "No tienen patente ni tecnología propia registrada para la IA, solo marca, lo que expone alta vulnerabilidad. Además, falta claridad en costo de adquisición y en tamaño del mercado, claves para validar escalabilidad y valor tecnológico. El riesgo tecnológico es alto para invertir en esta etapa.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Validación inicial con 500 usuarios beta y $50,000 MXN en preventas.; Equipo fundador con experiencia en energía y dedicación a tiempo completo.; Propuesta de valor clara basada en IA que personaliza recomendaciones sin instalación profesional.. Alertas: Falta de datos concretos sobre costo de adquisición de clientes (CAC).; No hay patente ni propiedad intelectual registrada para la tecnología de IA, solo marca registrada.; Margen bruto bajo (38 %) que puede dificultar la competitividad frente a opciones gratuitas o más baratas.. Siguientes pasos: Realizar un análisis detallado del costo de adquisición de clientes y establecer métricas claras para medirlo.; Investigar y definir con precisión el tamaño del mercado objetivo en Nuevo León con apoyo de consultoras o datos públicos.; Iniciar el proceso formal de solicitud de patente y fortalecer la protección tecnológica para crear barreras de entrada..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "Sin datos claros de costo de adquisición de clientes ni protección tecnológica, la valuación de $3,000,000 MXN no se justifica.",
+            "necesitaria": "Necesito conocer con precisión el costo de adquisición de clientes y proyecciones financieras claras que justifiquen la valuación."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "No hay datos claros del tamaño de mercado ni costo de adquisición; margen bruto bajo (38 %) y falta protección tecnológica (solo marca registrada).",
+            "necesitaria": "Requiero un análisis detallado del tamaño del mercado objetivo y una ventaja competitiva tecnológica bien protegida."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 1,
+            "frase_clave": "No tienen patente ni tecnología propia registrada para la IA, solo marca, lo que expone alta vulnerabilidad.",
+            "necesitaria": "Necesito ver propiedad intelectual sólida y barreras tecnológicas claras para proteger la innovación."
+          }
+        ],
+        "fortalezas": [
+          "Validación inicial con 500 usuarios beta y $50,000 MXN en preventas.",
+          "Equipo fundador con experiencia en energía y dedicación a tiempo completo.",
+          "Propuesta de valor clara basada en IA que personaliza recomendaciones sin instalación profesional."
+        ],
+        "alertas": [
+          "Falta de datos concretos sobre costo de adquisición de clientes (CAC).",
+          "No hay patente ni propiedad intelectual registrada para la tecnología de IA, solo marca registrada.",
+          "Margen bruto bajo (38 %) que puede dificultar la competitividad frente a opciones gratuitas o más baratas."
+        ],
+        "preguntas_sin_responder": [
+          "Costo exacto de adquisición de clientes con los gastos actuales.",
+          "Tamaño estimado del mercado en Nuevo León para el segmento objetivo.",
+          "Planes concretos para proteger la innovación tecnológica más allá de la marca registrada."
+        ],
+        "siguientes_pasos": [
+          "Realizar un análisis detallado del costo de adquisición de clientes y establecer métricas claras para medirlo.",
+          "Investigar y definir con precisión el tamaño del mercado objetivo en Nuevo León con apoyo de consultoras o datos públicos.",
+          "Iniciar el proceso formal de solicitud de patente y fortalecer la protección tecnológica para crear barreras de entrada."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 3000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburon_estratega": "salir",
+          "tiburon_tecnologico": "salir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 19,
+    "segundos_modelo": 29.6,
+    "segundos_total": 27.7,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 2,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+}

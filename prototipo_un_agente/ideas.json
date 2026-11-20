@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ecotrack",
+    "nombre": "EcoTrack",
+    "descripcion": "Sistema para hogares y pequeños negocios que mide el consumo eléctrico y usa IA para sugerir ahorros.",
+    "mercado": "Hogares y pequeños negocios con recibos de luz altos.",
+    "modelo_ingresos": "Venta del medidor más una suscripción mensual a funciones premium.",
+    "traccion": "500 usuarios beta y 50,000 USD en preventas.",
+    "monto": "300,000 USD",
+    "porcentaje": "10 %",
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo."
+  },
+  {
+    "id": "greenplate",
+    "nombre": "GreenPlate",
+    "descripcion": "Contenedores de comida biodegradables hechos de plantas que reemplazan al unicel y al plástico.",
+    "mercado": "Restaurantes, apps de entrega y consumidores conscientes del ambiente.",
+    "modelo_ingresos": "Venta directa a restaurantes y mayoreo a tiendas.",
+    "traccion": "Alianzas con 10 restaurantes locales y cartas de intención de 2 cadenas regionales.",
+    "monto": "250,000 USD",
+    "porcentaje": "20 %",
+    "uso_fondos": "Aumentar la producción, certificaciones y distribución."
+  },
+  {
+    "id": "datasense",
+    "nombre": "DataSense AI",
+    "descripcion": "Plataforma de análisis de datos con IA para pequeñas y medianas empresas sin equipo de datos.",
+    "mercado": "PyMEs sin científicos de datos.",
+    "modelo_ingresos": "Suscripción SaaS por niveles según volumen de datos.",
+    "traccion": "50 clientes que pagan, 15,000 USD de ingreso mensual recurrente y 15 % de crecimiento mensual.",
+    "monto": "500,000 USD",
+    "porcentaje": "15 %",
+    "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas."
+  }
+]

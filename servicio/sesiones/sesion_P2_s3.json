@@ -1,0 +1,487 @@
+{
+  "id": "P2_s3",
+  "modo": "guion",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "ClinicaFácil",
+    "sector": "salud",
+    "etapa": "crecimiento",
+    "problema": "Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp.",
+    "solucion": "Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+    "mercado_objetivo": "Consultorios y clínicas independientes de México con 1 a 10 médicos; hay unos 90,000 consultorios privados según nuestra estimación.",
+    "modelo_ingresos": "Suscripción mensual de $890 MXN por consultorio y $2,400 MXN para clínicas con varios médicos.",
+    "competencia": "Software médico grande y caro, y agendas genéricas como Calendly y hojas de cálculo.",
+    "diferenciador": "Se configura en 10 minutos, está hecho para México (WhatsApp, facturación) y baja las ausencias de 30 % a 12 % en clientes actuales.",
+    "validacion": "140 clientes pagando y 4 % de cancelación mensual.",
+    "propiedad_intelectual": "ninguna",
+    "equipo_fundadores": 3,
+    "equipo_roles": "Ingeniería, producto y ventas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos fundadores vienen de empresas de software de salud; uno tiene 6 años en ventas B2B.",
+    "monto_mxn": 1200000,
+    "porcentaje": 10,
+    "uso_fondos": "Equipo de ventas, integraciones con laboratorios y marketing digital.",
+    "ventas_12m_mxn": 1100000,
+    "margen_bruto_pct": 78,
+    "gasto_mensual_mxn": 140000
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "ClinicaFácil: pide $1,200,000 MXN por el 10 % (valuación implícita $12,000,000 MXN). Problema: Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp. Solución: Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "ClinicaFácil",
+        "sector": "salud",
+        "etapa": "crecimiento",
+        "problema": "Las clínicas pequeñas pierden hasta 30 % de sus citas por ausencias y llevan la agenda en papel o WhatsApp.",
+        "solucion": "Software en la nube que agenda citas, envía recordatorios automáticos y reduce ausencias con confirmación por mensaje.",
+        "mercado_objetivo": "Consultorios y clínicas independientes de México con 1 a 10 médicos; hay unos 90,000 consultorios privados según nuestra estimación.",
+        "modelo_ingresos": "Suscripción mensual de $890 MXN por consultorio y $2,400 MXN para clínicas con varios médicos.",
+        "competencia": "Software médico grande y caro, y agendas genéricas como Calendly y hojas de cálculo.",
+        "diferenciador": "Se configura en 10 minutos, está hecho para México (WhatsApp, facturación) y baja las ausencias de 30 % a 12 % en clientes actuales.",
+        "validacion": "140 clientes pagando y 4 % de cancelación mensual.",
+        "propiedad_intelectual": "ninguna",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, producto y ventas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos fundadores vienen de empresas de software de salud; uno tiene 6 años en ventas B2B.",
+        "monto_mxn": 1200000,
+        "porcentaje": 10,
+        "uso_fondos": "Equipo de ventas, integraciones con laboratorios y marketing digital.",
+        "ventas_12m_mxn": 1100000,
+        "margen_bruto_pct": 78,
+        "gasto_mensual_mxn": 140000
+      },
+      "valuacion_mxn": 12000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "no hay datos que lo hagan imprescindible"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de clientes (CAC), considerando que gastan $140,000 MXN mensuales y tienen 140 clientes actuales?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices cómo planean defender su ventaja frente a competidores grandes y genéricos que podrían adaptar sus productos para el mercado mexicano.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "No mencionan ninguna patente o propiedad intelectual; ¿qué estrategia tienen para proteger su tecnología y mantener ventaja tecnológica frente a competidores que podrían copiar su modelo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Ventas de $1,100,000 MXN en 12 meses con margen bruto de 78 %. Gasto mensual de $140,000 MXN. El costo de adquisición es de $2,100 MXN por consultorio y se recupera en unos 3 meses.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "El mercado estimado es de 90,000 consultorios privados; con 140 clientes tenemos 0.15 %. Competimos contra software caro y herramientas genéricas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "La tecnología es un software en la nube con un modelo que predice qué pacientes tienen más probabilidad de faltar y adelanta recordatorios.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Preguntaste por el CAC y el emprendedor respondió que es $2,100 MXN por consultorio y se recupera en 3 meses. Estoy de acuerdo con tu enfoque; conocer el CAC es clave para evaluar la escalabilidad y sostenibilidad del modelo tecnológico y de ventas.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios, ¿cómo planean escalar rápido y mantener su ventaja competitiva frente a grandes jugadores que pueden bajar precios o copiar funcionalidades?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué innovaciones tecnológicas planean para evolucionar el modelo predictivo que reduce ausencias y así proteger su ventaja ante posibles copias, considerando que no tienen patentada ninguna tecnología?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con un margen bruto del 78 % y un gasto mensual de $140,000 MXN, ¿cuál es su EBITDA actual y en cuánto tiempo proyectan alcanzar rentabilidad neta con la base y crecimiento actual de clientes? No me dices eso.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra ventaja defendible es la integración con WhatsApp y facturación mexicana, más la base de datos de ausencias que mejora los recordatorios.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "No tenemos patente; la protección es el algoritmo y los datos que acumulamos con cada cita. Tenemos el código en repositorio privado.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Cancelan 4 % mensual; el ingreso recurrente mensual hoy es de unos $125,000 MXN y crece cerca de 9 % al mes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con la preocupación del Tiburón estratega. La penetración actual es muy baja y no hay barreras fuertes contra competidores grandes que podrían bajar precios o copiar funciones. La ventaja basada en integración y base de datos es débil para sostener un crecimiento rápido y rentable.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué planes específicos tienen para desarrollar propiedad intelectual o innovaciones tecnológicas protegibles, más allá del algoritmo y datos, para asegurar ventaja competitiva en un mercado con competidores grandes y copias posibles?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el EBITDA actual ni la proyección clara de rentabilidad neta; ¿cuándo esperan que el negocio deje de ser deficitario con el crecimiento y gastos actuales?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con una penetración actual de solo 0.15 % en un mercado de 90,000 consultorios, ¿qué estrategia concreta tienen para crecer rápido y sostener una ventaja competitiva real frente a competidores grandes que pueden bajar precios o copiar funciones?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "El siguiente paso técnico son integraciones con laboratorios y receta electrónica; ya hay un prototipo funcionando con dos clientes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $12,000,000 MXN son 11 veces las ventas anuales, justificada por el crecimiento y el margen alto de software.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Después de consultorios iremos a cadenas de clínicas dentales, donde el ticket por cliente es tres veces mayor.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Concuerdo con tu pregunta sobre la falta de propiedad intelectual clara. La respuesta del emprendedor solo menciona integraciones y prototipos, sin una estrategia sólida para protección tecnológica que asegure ventaja frente a competidores grandes que pueden copiar fácilmente.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "El CAC de $2,100 MXN y margen bruto de 78 % son buenos, pero la valuación de $12 M es 11 veces ventas y no hay estrategia clara para defender ventaja competitiva ni propiedad intelectual, con solo 0.15 % de penetración actual.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado es grande pero la penetración actual es mínima (0.15 %) y no hay una ventaja competitiva defendible clara frente a competidores grandes que pueden copiar funciones o bajar precios.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "El software es innovador para el mercado mexicano y reduce ausencias de 30% a 12%, pero falta propiedad intelectual clara; propongo $1,200,000 MXN por 20% para compensar el riesgo tecnológico y la baja penetración actual. Contraoferta: $1,200,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 1200000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 4,
+      "tipo": "NEGOCIACION",
+      "emisor": "nodo_votacion",
+      "destino": "emprendedor",
+      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
+      "estado": ""
+    },
+    {
+      "n": 28,
+      "ronda": 4,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $1,200,000 MXN por el 20 %.",
+      "estado": "Negociando",
+      "oferta": {
+        "monto_mxn": 1200000.0,
+        "porcentaje": 20.0
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Aunque el CAC de $2,100 y margen bruto del 78% son positivos, la valuación y penetración del 0.15% son bajas, y no hay estrategia clara para proteger la ventaja competitiva. La contraoferta diluye mucho sin resolver estas debilidades.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 30,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "Mercado grande pero con solo 0.15 % de penetración y sin ventajas competitivas claras ni propiedad intelectual protegida. La contraoferta diluye mucho sin resolver riesgos estratégicos importantes.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 31,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Aunque no tienen patente, el software innovador reduce ausencias de 30% a 12% y el emprendedor aceptó $1.2M por 20%, lo que refleja un menor riesgo tecnológico para mí y buen potencial de propiedad intelectual basada en datos y algoritmo.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 32,
+      "ronda": 4,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 33,
+      "ronda": 4,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Modelo de negocio con buen margen bruto (78 %) y CAC razonable ($2,100 MXN) recuperable en 3 meses.; Producto validado con 140 clientes y reducción significativa de ausencias de 30 % a 12 %.; Equipo con experiencia en software de salud y ventas B2B, dedicación de tiempo completo y enfoque en integración local (WhatsApp y facturación mexicana).. Alertas: Penetración actual muy baja (0.15 %) en un mercado de 90,000 consultorios, sin estrategia clara para escalar rápido.; No cuentan con patente ni propiedad intelectual protegida, lo que pone en riesgo la ventaja ante competidores que pueden copiar el modelo.; Valuación alta (11 veces ventas) sin proyecciones claras de rentabilidad y sin barreras fuertes contra competidores grandes. . Siguientes pasos: Desarrollar y presentar proyecciones financieras claras que incluyan EBITDA y rentabilidad neta esperada.; Definir una estrategia clara y diferenciada para escalar rápidamente y proteger la ventaja competitiva frente a competidores grandes.; Crear un plan para proteger la propiedad intelectual, ya sea mediante patentes, innovaciones tecnológicas o fortalecimiento de la base de datos y algoritmos..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "El CAC de $2,100 MXN y margen bruto de 78 % son buenos, pero la valuación de $12 M es 11 veces ventas y no hay estrategia clara para defender ventaja competitiva ni propiedad intelectual, con solo 0.15 % de penetración actual.",
+            "necesitaria": "Proyecciones claras de EBITDA y rentabilidad neta, así como una estrategia sólida para defender la ventaja competitiva y justificar la valuación."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "El mercado es grande pero la penetración actual es mínima (0.15 %) y no hay una ventaja competitiva defendible clara frente a competidores grandes que pueden copiar funciones o bajar precios.",
+            "necesitaria": "Una estrategia concreta y diferenciada para escalar rápido y sostener una ventaja competitiva real frente a competidores grandes."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 3,
+            "frase_clave": "Aunque no tienen patente, el software innovador reduce ausencias de 30% a 12% y el emprendedor aceptó $1.2M por 20%, lo que refleja un menor riesgo tecnológico para mí y buen potencial de propiedad intelectual basada en datos y algoritmo.",
+            "necesitaria": "Un plan claro para desarrollar propiedad intelectual protegible y continuar innovando tecnológicamente para mantener la ventaja."
+          }
+        ],
+        "fortalezas": [
+          "Modelo de negocio con buen margen bruto (78 %) y CAC razonable ($2,100 MXN) recuperable en 3 meses.",
+          "Producto validado con 140 clientes y reducción significativa de ausencias de 30 % a 12 %.",
+          "Equipo con experiencia en software de salud y ventas B2B, dedicación de tiempo completo y enfoque en integración local (WhatsApp y facturación mexicana)."
+        ],
+        "alertas": [
+          "Penetración actual muy baja (0.15 %) en un mercado de 90,000 consultorios, sin estrategia clara para escalar rápido.",
+          "No cuentan con patente ni propiedad intelectual protegida, lo que pone en riesgo la ventaja ante competidores que pueden copiar el modelo.",
+          "Valuación alta (11 veces ventas) sin proyecciones claras de rentabilidad y sin barreras fuertes contra competidores grandes. "
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el EBITDA actual y cuándo proyectan alcanzar rentabilidad neta con el crecimiento y gastos actuales?",
+          "¿Qué estrategia concreta tienen para escalar rápido y mantener ventaja competitiva frente a grandes jugadores?",
+          "¿Qué planes específicos tienen para desarrollar propiedad intelectual o innovaciones tecnológicas protegibles?"
+        ],
+        "siguientes_pasos": [
+          "Desarrollar y presentar proyecciones financieras claras que incluyan EBITDA y rentabilidad neta esperada.",
+          "Definir una estrategia clara y diferenciada para escalar rápidamente y proteger la ventaja competitiva frente a competidores grandes.",
+          "Crear un plan para proteger la propiedad intelectual, ya sea mediante patentes, innovaciones tecnológicas o fortalecimiento de la base de datos y algoritmos."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 12000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburon_estratega": "salir",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 19,
+    "segundos_modelo": 23.5,
+    "segundos_total": 0.0,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+}

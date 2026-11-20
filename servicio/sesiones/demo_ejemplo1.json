@@ -1,0 +1,449 @@
+{
+  "id": "0f61ee02",
+  "modo": "autopiloto",
+  "panel": [
+    "tiburon_financiero",
+    "tiburona_consumo",
+    "tiburon_negociador"
+  ],
+  "pitch": {
+    "nombre": "GreenPlate",
+    "sector": "alimentos_y_bebidas",
+    "etapa": "primeras_ventas",
+    "problema": "Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más.",
+    "solucion": "Contenedores de comida biodegradables hechos de fibra de plantas que se degradan en 90 días.",
+    "mercado_objetivo": "Restaurantes, apps de entrega y consumidores conscientes del ambiente en el área metropolitana de Monterrey.",
+    "modelo_ingresos": "Venta directa a restaurantes y mayoreo a tiendas, con margen por pieza.",
+    "competencia": "Proveedores de unicel (más baratos) y otras marcas de cartón compostable.",
+    "diferenciador": "Costo por pieza 15 % menor que el cartón compostable y resistencia al calor.",
+    "validacion": "Alianzas con 10 restaurantes locales y cartas de intención de 2 cadenas regionales.",
+    "propiedad_intelectual": "ninguna",
+    "equipo_fundadores": 2,
+    "equipo_roles": "Operaciones y desarrollo de producto",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Un fundador con experiencia en manufactura de empaques.",
+    "monto_mxn": 250000,
+    "porcentaje": 20,
+    "uso_fondos": "Aumentar la producción, certificaciones y distribución.",
+    "ventas_12m_mxn": null,
+    "margen_bruto_pct": null,
+    "gasto_mensual_mxn": null
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "GreenPlate: pide $250,000 MXN por el 20 % (valuación implícita $1,250,000 MXN). Problema: Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más. Solución: Contenedores de comida biodegradables hechos de fibra de plantas que se degradan en 90 días.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "GreenPlate",
+        "sector": "alimentos_y_bebidas",
+        "etapa": "primeras_ventas",
+        "problema": "Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más.",
+        "solucion": "Contenedores de comida biodegradables hechos de fibra de plantas que se degradan en 90 días.",
+        "mercado_objetivo": "Restaurantes, apps de entrega y consumidores conscientes del ambiente en el área metropolitana de Monterrey.",
+        "modelo_ingresos": "Venta directa a restaurantes y mayoreo a tiendas, con margen por pieza.",
+        "competencia": "Proveedores de unicel (más baratos) y otras marcas de cartón compostable.",
+        "diferenciador": "Costo por pieza 15 % menor que el cartón compostable y resistencia al calor.",
+        "validacion": "Alianzas con 10 restaurantes locales y cartas de intención de 2 cadenas regionales.",
+        "propiedad_intelectual": "ninguna",
+        "equipo_fundadores": 2,
+        "equipo_roles": "Operaciones y desarrollo de producto",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Un fundador con experiencia en manufactura de empaques.",
+        "monto_mxn": 250000,
+        "porcentaje": 20,
+        "uso_fondos": "Aumentar la producción, certificaciones y distribución.",
+        "ventas_12m_mxn": null,
+        "margen_bruto_pct": null,
+        "gasto_mensual_mxn": null
+      },
+      "valuacion_mxn": 1250000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburona de consumo, Tiburón negociador.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "te faltan datos de ventas de los últimos 12 meses, margen bruto, gasto mensual; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_negociador",
+          "nombre": "Tiburón negociador",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el margen bruto ni el costo de adquisición de clientes; ¿cuál es el margen por pieza y cuánto gastan para conseguir un cliente restaurante?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "No me dices qué canales específicos usarán para vender a restaurantes y tiendas, ni cómo planean escalar la distribución en Monterrey. ¿Cuáles serán sus principales canales de venta y cómo garantizan la demanda creciente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices las ventas en los últimos 12 meses; ¿qué ventas han logrado y qué porcentaje de la valuación esperas justificar con esa tracción?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no tengo datos precisos del margen bruto ni del costo de adquisición por cliente restaurante. Para obtenerlos, analizaré los costos de producción por pieza y los gastos en marketing directo a restaurantes. Así, podré calcular el margen y optimizar la inversión para captar clientes de manera eficiente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestros canales principales serán venta directa a restaurantes y mayoreo a tiendas locales. Para escalar en Monterrey, fortaleceremos alianzas con distribuidores y plataformas de entrega. La demanda la garantizamos con la ventaja de costo y resistencia, junto con la creciente regulación ambiental que impulsa la sustitución del unicel.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "No cuento aún con cifras de ventas en los últimos 12 meses. Para justificar la valuación, planeo consolidar las alianzas actuales y cerrar acuerdos con cadenas regionales, generando tracción medible que respalde el crecimiento y valor de GreenPlate.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_negociador",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido contigo en que sin margen bruto ni costo de adquisición no puedo valorar bien. El emprendedor no da cifras claras, es riesgo para la inversión; necesito esos datos para decidir porcentaje y valuación justos.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean construir y posicionar la marca GreenPlate frente a proveedores de unicel más baratos, considerando que no tienen patente ni marca registrada aún?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices las ventas ni el margen bruto; ¿qué porcentaje del 20 % que pides estás dispuesto a ceder si me entregas ventas mensuales claras y márgenes que justifiquen la valuación?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el gasto mensual actual ni el costo total para aumentar producción y certificaciones; ¿cómo aseguran que $250,000 MXN sea suficiente para escalar sin afectar márgenes ni flujo de caja?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Planeamos construir la marca GreenPlate mediante alianzas estratégicas con restaurantes y cadenas, además de comunicación enfocada en sostenibilidad y beneficios del producto. Aunque no tenemos patente ni marca registrada, buscaremos registrar la marca pronto y aprovechar nuestro diferenciador de costo y resistencia para posicionarnos frente a unicel.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Aún no tengo ventas mensuales claras ni márgenes definitivos para justificar la valuación. Estoy dispuesto a negociar un porcentaje menor al 20 % que pido si puedo entregar reportes transparentes de ventas y márgenes que respalden el valor de GreenPlate en el futuro cercano.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no cuento con datos precisos de gasto mensual ni del costo total para aumentar producción y certificaciones. Para asegurarlo, realizaré un análisis detallado de costos y un plan financiero que permita usar eficientemente los $250,000 MXN, protegiendo márgenes y flujo de caja durante la expansión.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Tiburona de consumo, coincido en que sin patente ni marca registrada es crítico para posicionar GreenPlate frente a unicel más barato. La estrategia de alianzas y comunicación es válida, pero falta un plan claro para proteger y escalar la marca, lo cual impacta directamente en márgenes y valuación.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices cuánto estás dispuesto a ajustar la valuación del millón 250 mil si no logras justificar ventas ni márgenes pronto; ¿qué oferta concreta haces para reducir tu porcentaje del 20 % y bajar la valuación en función del riesgo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el costo de adquisición de clientes ni el gasto mensual actual; ¿cómo piensas mantener márgenes y flujo de caja sin esos datos claros para escalar con $250,000?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "No me dices cómo piensan diferenciar GreenPlate en canales digitales ni si tienen plan para posicionar la marca en plataformas de entrega, clave para escalar en Monterrey. ¿Qué estrategia específica usarán para asegurar visibilidad y demanda en esos canales?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Estoy abierto a negociar una reducción en el porcentaje del 20 % y una valuación ajustada a medida que pueda entregar ventas mensuales y márgenes claros que demuestren el crecimiento y valor de GreenPlate, para mitigar el riesgo y generar confianza en la inversión.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Para mantener márgenes y flujo de caja con $250,000 MXN, realizaré un análisis detallado del gasto mensual y costo de adquisición, ajustando producción y marketing según resultados, para garantizar eficiencia y escalabilidad sin afectar la rentabilidad.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Usaremos marketing digital enfocado en sostenibilidad y alianzas con plataformas de entrega para posicionar GreenPlate. La estrategia incluye contenido en redes, promociones y colaboraciones con influencers ambientales para asegurar visibilidad y demanda en canales digitales clave en Monterrey.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_negociador",
+      "texto": "Estoy de acuerdo con tu preocupación. Sin ventas ni márgenes claros, la valuación y porcentaje a ofrecer son riesgosos. El emprendedor debe ser más concreto y ofrecer una reducción clara en porcentaje y valuación para proteger la inversión y asegurar que la demanda y marca se consoliden.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Sin margen bruto, costo de adquisición ni ventas, no puedo evaluar la rentabilidad ni justificar la valuación de $1,250,000 MXN; el riesgo es alto sin datos financieros claros.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "Sin canales digitales claros y sin marca registrada, la marca no está posicionada frente a unicel barato. Propongo $150,000 MXN por 15 % para mitigar riesgo por falta de datos de ventas y margen. Contraoferta: $150,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 150000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_negociador",
+      "destino": "nodo_votacion",
+      "texto": "No hay ventas ni margen bruto claros para justificar la valuación de $1,250,000 MXN. Ofrezco $250,000 por 30%, bajando valuación para mitigar riesgo y esperar datos concretos que respalden crecimiento. Contraoferta: $250,000 MXN por el 30 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 250000.0,
+      "contraoferta_porcentaje": 30.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $250,000 MXN por el 20 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $250,000 MXN por el 20 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 250000.0,
+        "porcentaje": 20.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Producto ecol\u0000gico con ventaja competitiva de costo y resistencia frente a cart\u0000n compostable.; Alianzas ya establecidas con 10 restaurantes locales y cartas de intenci\u0000n de cadenas regionales.; Equipo comprometido con experiencia relevante en manufactura de empaques y desarrollo de producto.. Alertas: Falta de datos financieros clave: margen bruto, costo de adquisici\u0000n, ventas y gasto mensual.; Ausencia de patente o marca registrada para proteger la propiedad intelectual y posicionar la marca.; Estrategia comercial y de escalamiento poco detallada, especialmente en canales digitales y marketing.. Siguientes pasos: Realizar un an\u0000lisis financiero detallado que incluya margen bruto, costo de adquisici\u0000n de clientes, ventas y gastos mensuales.; Registrar la marca GreenPlate y desarrollar un plan de protecci\u0000n de propiedad intelectual para fortalecer el posicionamiento.; Definir y ejecutar una estrategia clara de marketing digital y canales de venta, incluyendo colaboraciones con plataformas de entrega e influencers..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "Sin margen bruto, costo de adquisici\u0000n ni ventas, no puedo evaluar la rentabilidad ni justificar la valuaci\u0000n de $1,250,000 MXN; el riesgo es alto sin datos financieros claros.",
+            "necesitaria": "Necesito ver datos claros y detallados de margen bruto, costo de adquisici\u0000n de clientes y ventas concretas para evaluar la rentabilidad y justificar la valuaci\u0000n."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 3,
+            "frase_clave": "Sin canales digitales claros y sin marca registrada, la marca no est\u0000 posicionada frente a unicel barato.",
+            "necesitaria": "Me gustar\u0000a ver un plan detallado de canales digitales, una estrategia clara para posicionar la marca y un registro de marca para proteger la identidad."
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "calificacion": 2,
+            "frase_clave": "No hay ventas ni margen bruto claros para justificar la valuaci\u0000n de $1,250,000 MXN.",
+            "necesitaria": "Quisiera ver ventas mensuales claras, margenes definidos y un ajuste en la valuaci\u0000n y participaci\u0000n acorde al riesgo asumido."
+          }
+        ],
+        "fortalezas": [
+          "Producto ecol\u0000gico con ventaja competitiva de costo y resistencia frente a cart\u0000n compostable.",
+          "Alianzas ya establecidas con 10 restaurantes locales y cartas de intenci\u0000n de cadenas regionales.",
+          "Equipo comprometido con experiencia relevante en manufactura de empaques y desarrollo de producto."
+        ],
+        "alertas": [
+          "Falta de datos financieros clave: margen bruto, costo de adquisici\u0000n, ventas y gasto mensual.",
+          "Ausencia de patente o marca registrada para proteger la propiedad intelectual y posicionar la marca.",
+          "Estrategia comercial y de escalamiento poco detallada, especialmente en canales digitales y marketing."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cu\u0000e1l es el margen bruto por pieza y cu\u0000e1nto gastan para adquirir un cliente restaurante?",
+          "¿Cu\u0000e1nto han vendido en los \u0000ltimos 12 meses y cu\u0000e1l es la tracci\u0000f3n actual?",
+          "¿Cu\u0000e1l es el gasto mensual actual y cu\u0000e1l es el costo real para aumentar producci\u0000f3n y certificaciones?"
+        ],
+        "siguientes_pasos": [
+          "Realizar un an\u0000lisis financiero detallado que incluya margen bruto, costo de adquisici\u0000n de clientes, ventas y gastos mensuales.",
+          "Registrar la marca GreenPlate y desarrollar un plan de protecci\u0000n de propiedad intelectual para fortalecer el posicionamiento.",
+          "Definir y ejecutar una estrategia clara de marketing digital y canales de venta, incluyendo colaboraciones con plataformas de entrega e influencers."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 250000.0,
+          "porcentaje": 20.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 1250000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburona_consumo": "contraoferta",
+          "tiburon_negociador": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 19,
+    "segundos_modelo": 28.2,
+    "segundos_total": 25.9,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

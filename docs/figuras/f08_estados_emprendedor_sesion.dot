@@ -1,0 +1,8 @@
+digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=LR; nodesep=.45; ranksep=.55;
+subgraph cluster_e{label="Emprendedor (usuario o autopiloto)";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded,dashed";fontname="Helvetica";
+ e0[shape=circle,label="",width=.2,fillcolor="#00165C"]; Pres[label="Presentando"]; EspE[label="Esperando"]; Resp[label="Respondiendo"]; Neg[label="Negociando"]; Rec[label="Recibiendo\nresultado"];
+ e0->Pres; Pres->EspE[label="pitch enviado"]; EspE->Resp[label="llegan 3\npreguntas"]; Resp->EspE[label="respuestas\nenviadas"]; EspE->Neg[label="1 voto a favor"]; Neg->EspE[label="oferta enviada"]; EspE->Rec[label="DECISIÓN"];}
+subgraph cluster_s{label="Sesión (moderador y nodo de votación)";fontcolor="#1060D0";color="#1060D0";style="rounded,dashed";fontname="Helvetica";
+ s0[shape=circle,label="",width=.2,fillcolor="#00165C"]; Cre[label="Creada"]; Pan[label="Panel de 3\nlisto"]; Ron[label="Ronda k\n(k = 1..3)"]; Vot[label="Votación"]; Ngc[label="Negociación"]; Cer[label="Cerrada"];
+ s0->Cre; Cre->Pan[label="usuario inicia"]; Pan->Ron[label="pitch"]; Ron->Ron[label="k < 3"]; Ron->Vot[label="k = 3"]; Vot->Ngc[label="1 a favor"]; Ngc->Vot[label="2.ª votación"]; Vot->Cer[label="trato / sin trato\n+ reporte"];}
+}
