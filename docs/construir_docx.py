@@ -209,7 +209,7 @@ tabla(["Comentario de la profesora", "Cómo se atendió", "Sección"], [
     ("Escena: no se describen los controles del usuario.",
      "Se describen y se construyeron en Unity: formulario, elección de panel, respuestas, negociación, pausa, velocidad, saltar, historial y repetir sesión.", "8.1"),
     ("Portada, créditos e identidad (10/10) y roles por integrante.",
-     "Se conservan el logo, los colores y los roles de cada integrante; se agregó el pie de página con el nombre del equipo.", "Portada, 2"),
+     "Se conservan el logo, los colores y los roles de cada integrante; se agregó un encabezado con el nombre del equipo en todas las páginas.", "Portada, 2"),
     ("Restricciones (10/10): concretas y cuantificadas.",
      "Se mantienen y se actualizan las cifras (6 tiburones con 3 activos, máximo de llamadas, controles del usuario, un solo escenario).", "5"),
     ("Gestión: sin lista de actividades, responsables, fechas ni herramienta.",
