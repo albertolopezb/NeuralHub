@@ -22,7 +22,7 @@ NAVY, VIOLET, BLUE, CYAN, GREEN = (RGBColor(0x00, 0x16, 0x5C), RGBColor(0x4F, 0x
 GRAY = RGBColor(0x5A, 0x64, 0x80)
 FECHA = "19 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
-VIDEO = "https://github.com/albertolopezb/NeuralHub/blob/main/docs/video/NeuralHub_corrida.mp4"
+VIDEO = "https://youtu.be/STD4X71H2I0"
 SHEET = "https://docs.google.com/spreadsheets/d/1l3FO2RC_p4CcSI41rOY3-Zu0JECe1XgxQEAlMEQZM0k/edit"
 
 doc = Document()
