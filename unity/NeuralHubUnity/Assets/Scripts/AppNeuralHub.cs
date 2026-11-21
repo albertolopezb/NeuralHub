@@ -42,12 +42,13 @@ namespace NeuralHub
         {
             cliente.alError = m => mensaje = m;
             foreach (var a in Environment.GetCommandLineArgs())
-                if (a == "-nh-mock" || a == "-nh-capturar") cliente.usarMock = true;
+                if (a == "-nh-mock" || a == "-nh-capturar" || a == "-nh-video") cliente.usarMock = true;
             for (int i = 0; i < Environment.GetCommandLineArgs().Length - 1; i++)
                 if (Environment.GetCommandLineArgs()[i] == "-nh-url") cliente.urlBase = Environment.GetCommandLineArgs()[i + 1];
             ProbarConexion();
             CargarCatalogos();
             foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-capturar") { cliente.usarMock = true; StartCoroutine(Capturas()); }
+            foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-video") { cliente.usarMock = true; StartCoroutine(Video()); }
         }
 
         // ---------- navegación ----------
@@ -150,6 +151,53 @@ namespace NeuralHub
             }
             if (mostrarHistorial && (vista == Vista.Sesion || vista == Vista.Resultado)) panelHistorial.Dibujar(this, W, H);
             if (vista != Vista.Inicio && !string.IsNullOrEmpty(mensaje)) GUI.Label(new Rect(24, H - 40, W - 48, 34), mensaje, Estilos.TextoChico);
+        }
+
+
+        // ---------- grabación de video (fotogramas a velocidad fija; se unen con ffmpeg) ----------
+        int fotograma;
+        const int FPS = 12;
+
+        IEnumerator Grabar(string carpeta, float segundos)
+        {
+            int total = Mathf.Max(1, (int)(segundos * FPS));
+            for (int i = 0; i < total; i++)
+            {
+                yield return new WaitForEndOfFrame();
+                ScreenCapture.CaptureScreenshot(Path.Combine(carpeta, "f" + (fotograma++).ToString("D5") + ".png"));
+            }
+        }
+
+        IEnumerator GrabarHasta(string carpeta, Func<bool> cond, float maxSeg)
+        {
+            int max = (int)(maxSeg * FPS), i = 0;
+            while (!cond() && i++ < max) yield return Grabar(carpeta, 1f / FPS);
+        }
+
+        IEnumerator Video()
+        {
+            string carpeta = ArgValor("-nh-salida", Path.Combine(Application.persistentDataPath, "video"));
+            Directory.CreateDirectory(carpeta);
+            Time.captureFramerate = FPS;
+            yield return Grabar(carpeta, 2.5f);
+            IrAFormulario();
+            yield return GrabarHasta(carpeta, () => ejemplos != null, 10);
+            formulario.Cargar(ejemplos[ejemplos.Length - 1].pitch);
+            yield return Grabar(carpeta, 3.5f);
+            IrAEleccionPanel(formulario.Json());
+            yield return GrabarHasta(carpeta, () => vista == Vista.Panel, 10);
+            yield return Grabar(carpeta, 3.5f);
+            IniciarSesion(new List<string>(eleccion.elegidos));
+            reproductor.factorExtra = 2.2f;
+            yield return GrabarHasta(carpeta, () => vista == Vista.Resultado, 400);
+            yield return Grabar(carpeta, 6f);
+            mostrarHistorial = true;
+            yield return Grabar(carpeta, 3f);
+            File.WriteAllText(Path.Combine(carpeta, "listo.txt"), fotograma.ToString());
+            Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
 
         // ---------- capturas automáticas (para la documentación) ----------

@@ -13,3 +13,5 @@ unity/NeuralHubUnity/Build/
 unity/NeuralHubUnity/obj/
 unity/NeuralHubUnity/*.csproj
 unity/NeuralHubUnity/*.sln
+unity/video_frames*/
+unity/capturas/

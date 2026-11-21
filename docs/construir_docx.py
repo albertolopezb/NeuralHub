@@ -22,6 +22,7 @@ NAVY, VIOLET, BLUE, CYAN, GREEN = (RGBColor(0x00, 0x16, 0x5C), RGBColor(0x4F, 0x
 GRAY = RGBColor(0x5A, 0x64, 0x80)
 FECHA = "19 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
+VIDEO = "https://github.com/albertolopezb/NeuralHub/blob/main/docs/video/NeuralHub_corrida.mp4"
 SHEET = "https://docs.google.com/spreadsheets/d/1l3FO2RC_p4CcSI41rOY3-Zu0JECe1XgxQEAlMEQZM0k/edit"
 
 doc = Document()
@@ -462,7 +463,7 @@ tabla(["Ruta", "Para qué"], [
 
 h2("7.5 Implementación preliminar del modelo")
 p("Se implementaron dos niveles. El primero es **un agente resolviendo el problema**: un tiburón y el agente emprendedor se comunican con los mensajes del modelo (PITCH, PREGUNTA, RESPUESTA, VOTO, DECISIÓN) en un grafo de 5 nodos sobre Azure OpenAI. "
-  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Código y evidencia ejecutable: " + REPO + " (carpetas prototipo_un_agente y servicio; las transcripciones completas están en las carpetas sesiones y los comandos para repetir cada corrida en el README).", align="j")
+  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Video de una corrida completa (2 min): " + VIDEO + ". Código y evidencia ejecutable: " + REPO + " (carpetas prototipo_un_agente y servicio; las transcripciones completas están en las carpetas sesiones y los comandos para repetir cada corrida en el README).", align="j")
 p(f"**Grafo.** {F('grafo').capitalize()} es el grafo exportado del código. Los nodos son presentar, preguntar, responder, replicar, votar, decidir, condiciones, negociar, revotar y reporte; "
   "las aristas punteadas son condicionales (¿k < 3?, resultado de la votación). El estado de LangGraph guarda el pitch, el panel, la ronda, el historial público, los votos y la oferta vigente; "
   "el nodo «responder» usa interrupt para pausar el grafo hasta que el usuario responde.", align="j")
@@ -668,6 +669,7 @@ h1("12. Anexos")
 h2("Anexo A. Evidencias y código")
 bullets([
     "Repositorio: " + REPO + " (carpetas servicio, prototipo_un_agente, unity y docs).",
+    "Video de la corrida (2 min): " + VIDEO,
     "Transcripciones completas y métricas: servicio/sesiones/ y servicio/resultados_prueba.json (15 sesiones); prototipo_un_agente/sesiones/ (6 corridas).",
     "Pruebas automáticas: servicio/tests (21 pruebas con el modelo simulado, incluidas las 27 combinaciones de votos).",
     "Set de prueba: servicio/pruebas/pitches_prueba.json (5 pitches, paneles y guiones). Los pitches son ficticios.",
