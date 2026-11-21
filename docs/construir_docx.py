@@ -42,7 +42,7 @@ for nombre, tam, color in (("Heading 1", 16, NAVY), ("Heading 2", 13, VIOLET), (
     s.paragraph_format.space_before = Pt(14 if nombre == "Heading 1" else 10); s.paragraph_format.space_after = Pt(4)
     s.paragraph_format.keep_with_next = True
 
-FIGS = ["act", "clases", "agente_t", "agente_e", "est_t", "est_es", "com", "sec", "grafo", "boceto", "general", "arriba",
+FIGS = ["act", "clases", "agente_t", "agente_e", "est_t", "est_es", "vot", "com", "sec", "grafo", "boceto", "general", "arriba",
         "s_inicio", "s_form", "s_panel", "s_pregunta", "s_replica", "s_historial", "s_votos", "s_decision", "s_resultado"]
 NUM = {k: i + 1 for i, k in enumerate(FIGS)}
 usadas = []
@@ -139,7 +139,7 @@ def figura(k, ancho_cm, leyenda):
     assert FIGS[len(usadas) - 1] == k, f"orden de figuras: se esperaba {FIGS[len(usadas) - 1]} y llegó {k}"
     par = doc.add_paragraph(); par.alignment = WD_ALIGN_PARAGRAPH.CENTER; par.paragraph_format.keep_with_next = True
     NOMBRES = {"act": "f01_actividades", "clases": "f05_clases", "agente_t": "f09a_agente_tiburon", "agente_e": "f09b_agente_emprendedor",
-                                         "est_t": "f02_estados_tiburon", "est_es": "f08_estados_emprendedor_sesion", "com": "f03_comunicaciones",
+                                         "est_t": "f02_estados_tiburon", "est_es": "f08_estados_emprendedor_sesion", "vot": "f10_votacion", "com": "f03_comunicaciones",
                                          "sec": "f07_secuencia_ronda", "grafo": "f06_grafo_langgraph", "boceto": "f04_boceto_escena", "general": "estudio_general",
                                          "arriba": "vista_arriba", "s_inicio": "01_inicio", "s_form": "02_formulario", "s_panel": "03_eleccion_panel",
                                          "s_pregunta": "05_pregunta", "s_replica": "06_replica", "s_historial": "07_historial", "s_votos": "08_votos",
@@ -208,6 +208,10 @@ tabla(["Comentario de la profesora", "Cómo se atendió", "Sección"], [
      "Hay 6 tiburones y en cada sesión participan 3, recomendados por una regla en Python (0 llamadas) y elegidos por el usuario. Presupuesto: máximo 19 llamadas con usuario humano; medido: máximo %d." % llam_max, "7, 7.3"),
     ("Escena: no se describen los controles del usuario.",
      "Se describen y se construyeron en Unity: formulario, elección de panel, respuestas, negociación, pausa, velocidad, saltar, historial y repetir sesión.", "8.1"),
+    ("Portada, créditos e identidad (10/10) y roles por integrante.",
+     "Se conservan el logo, los colores y los roles de cada integrante; se agregó el pie de página con el nombre del equipo.", "Portada, 2"),
+    ("Restricciones (10/10): concretas y cuantificadas.",
+     "Se mantienen y se actualizan las cifras (6 tiburones con 3 activos, máximo de llamadas, controles del usuario, un solo escenario).", "5"),
     ("Gestión: sin lista de actividades, responsables, fechas ni herramienta.",
      "Hoja de gestión con product backlog, sprint backlog, calendario, bitácoras y matriz de participación, y resumen en este documento.", "9"),
 ], anchos=[5.6, 9.2, 2.2])
@@ -309,7 +313,7 @@ bullets([
 # ---------- 6 historias de usuario ----------
 h1("6. Historias de usuario")
 p("Los usuarios son las personas que usan la simulación; ni el sistema ni los agentes son usuarios. Se definen tres tipos: el **emprendedor** (persona con una idea que quiere practicar su pitch), "
-  "el **espectador** (quien observa cómo se decide un panel) y el **profesor evaluador** (quien revisa la calidad y el costo de una sesión). Formato de Atlassian: «Como [usuario], quiero [acción], para [beneficio]». "
+  "el **espectador** (quien observa cómo se decide un panel) y el **evaluador** (profesor o socio formador que revisa la calidad y el costo de una sesión). Formato de Atlassian: «Como [usuario], quiero [acción], para [beneficio]». "
   "Estas historias son el product backlog (sección 9).", align="j")
 for hid, hist, usr, pri, pts, sp, est in HISTORIAS:
     t = doc.add_table(rows=2, cols=1); t.style = "Table Grid"; t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -375,6 +379,8 @@ p(f"El diagrama de estados del tiburón ({F('est_t')}) agrega el estado «Replic
   f"{F('est_es').capitalize()} muestra los estados del emprendedor y de la sesión (moderador).", align="j")
 figura("est_t", 16.5, "Diagrama de estados del agente tiburón.")
 figura("est_es", 16.5, "Diagramas de estados del emprendedor y de la sesión.")
+p(f"El nodo de votación y el moderador no usan el modelo de lenguaje; {F('vot')} muestra el diagrama de flujo del nodo de votación, que implementa la regla de decisión de la sección 7.3.", align="j", keep=True)
+figura("vot", 8.8, "Diagrama de flujo del nodo de votación.")
 p("**Acciones de los agentes**", keep=True)
 tabla(["Agente", "Acción", "Precondición", "Efecto", "Mensaje", "Modelo"], [
     ("Usuario/Emprendedor", "Presentar pitch", "Formulario completo", "Se calcula la valuación y se muestra en pantalla", "PITCH", "No"),
@@ -456,7 +462,7 @@ tabla(["Ruta", "Para qué"], [
 
 h2("7.5 Implementación preliminar del modelo")
 p("Se implementaron dos niveles. El primero es **un agente resolviendo el problema**: un tiburón y el agente emprendedor se comunican con los mensajes del modelo (PITCH, PREGUNTA, RESPUESTA, VOTO, DECISIÓN) en un grafo de 5 nodos sobre Azure OpenAI. "
-  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Código: " + REPO + " (carpetas prototipo_un_agente y servicio).", align="j")
+  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Código y evidencia ejecutable: " + REPO + " (carpetas prototipo_un_agente y servicio; las transcripciones completas están en las carpetas sesiones y los comandos para repetir cada corrida en el README).", align="j")
 p(f"**Grafo.** {F('grafo').capitalize()} es el grafo exportado del código. Los nodos son presentar, preguntar, responder, replicar, votar, decidir, condiciones, negociar, revotar y reporte; "
   "las aristas punteadas son condicionales (¿k < 3?, resultado de la votación). El estado de LangGraph guarda el pitch, el panel, la ronda, el historial público, los votos y la oferta vigente; "
   "el nodo «responder» usa interrupt para pausar el grafo hasta que el usuario responde.", align="j")
@@ -475,6 +481,10 @@ for f in sorted((SERV.parent / "prototipo_un_agente" / "sesiones").glob("*.json"
     from neuralhub.tiburones import TIBURONES
     crit = "sí" if menciona_criterio(voto["texto"], tib) else "no"
     rows.append((idea, TIBURONES[tib]["nombre"], d["llamadas"], rondas, d["segundos"], dec.title(), crit))
+p("**Salida estructurada.** Cada agente devuelve su resultado con un esquema validado (Pydantic) y no como texto libre: la pregunta (Pregunta), la réplica (Replica con postura de acuerdo o desacuerdo), el voto (Voto con decisión, justificación y contraoferta opcional) y el reporte (Reporte con calificación de 1 a 5 por tiburón). Ejemplo de un evento real de voto producido por una corrida:", align="j", keep=True)
+ev_demo = next(e for e in json.load(open(SERV / "sesiones" / "demo_ejemplo2.json", encoding="utf8"))["eventos"] if e["tipo"] == "VOTO" and e.get("votacion") == 1)
+ev_demo = {k: ev_demo[k] for k in ("n", "ronda", "tipo", "emisor", "destino", "decision", "votacion", "texto")}
+p(json.dumps(ev_demo, ensure_ascii=False), size=8.5, color=GRAY)
 p("**Un agente resolviendo el problema.** Se corrió contra Azure OpenAI con 3 ideas y 2 tiburones distintos:", keep=True)
 tabla(["Idea", "Tiburón", "Llamadas", "Rondas", "Segundos", "Decisión", "Menciona su criterio"], rows, anchos=[2.6, 3.6, 1.8, 1.6, 1.8, 3.6, 2.0], size=9)
 p("Cada corrida usó 8 llamadas (pitch, 3 preguntas, 3 respuestas y 1 voto). Una ficha de las ideas (EcoTrack, GreenPlate, DataSense AI) viene en el código.", align="j")

@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola, soy fundador de EcoTrack, un sistema innovador que mide el consumo eléctrico en hogares y pequeños negocios, usando inteligencia artificial para sugerir ahorros personalizados. Nuestro mercado son quienes enfrentan recibos de luz altos, y ya contamos con 500 usuarios beta y 50,000 USD en preventas. Nuestro modelo combina la venta del medidor con una suscripción mensual premium. Buscamos 300,000 USD por el 10 % de la empresa para mejorar el producto, potenciar marketing y contratar talento clave. ¿Quién se suma para hacer EcoTrack una realidad rentable?"
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el margen bruto actual por unidad vendida y el costo de adquisición de cada cliente?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nuestro margen bruto por unidad vendida es aproximadamente del 60 %, gracias a una producción optimizada. El costo de adquisición de cliente está en torno a 40 USD, basado en nuestras campañas piloto y preventas. Estamos enfocados en reducir ambos para escalar de forma rentable, y la inversión solicitada nos permitirá mejorar marketing y producto para lograrlo."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la tasa de cancelación mensual de la suscripción y cómo afecta esto a la valuación?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente, nuestra tasa de cancelación mensual de suscripción es del 5 %, un nivel típico en este mercado. Esto impacta en la valuación porque nos obliga a mantener un enfoque fuerte en retención y valor agregado para los usuarios. Con la inversión, mejoraremos las funciones premium y el soporte, reduciendo la cancelación y aumentando el valor de vida del cliente, lo que fortalecerá nuestra posición y justifica la valuación propuesta."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el valor de vida del cliente (LTV) y cómo se compara con el costo de adquisición (CAC) en cifras concretas?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "El valor de vida del cliente (LTV) actual es aproximadamente 240 USD, considerando la suscripción mensual y la retención promedio, frente a un costo de adquisición (CAC) de 40 USD. Esto nos da una relación LTV/CAC de 6, lo que indica un negocio rentable y escalable. Con la inversión, planeamos aumentar el LTV mejorando la retención y el valor percibido, manteniendo o reduciendo el CAC para maximizar la rentabilidad y justificar nuestra valuación."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Márgenes del 60%, LTV/CAC de 6 sólido y valuación justificada con planes claros para escalar y mejorar retención.",
+      "decision": "invertir"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 8.1
+}

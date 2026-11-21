@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola, soy fundador de DataSense AI, una plataforma de análisis de datos impulsada por inteligencia artificial diseñada específicamente para pequeñas y medianas empresas que no cuentan con un equipo de datos. Ayudamos a PyMEs a tomar decisiones basadas en datos sin necesidad de expertos, con un modelo de suscripción SaaS escalable según volumen. Actualmente tenemos 50 clientes y 15,000 USD mensuales con un crecimiento del 15 % mensual. Buscamos 500,000 USD por el 15 % de la empresa para expandir ingeniería, mejorar la IA y potenciar ventas. ¿Quién se une?"
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de clientes (CAC) y el margen neto actual de la empresa?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nuestro costo de adquisición de clientes (CAC) promedio es de aproximadamente 800 USD, gracias a estrategias digitales eficientes y referencias. En cuanto al margen neto, actualmente estamos en un 25 %, ya que reinvertimos una parte importante en desarrollo y marketing para acelerar el crecimiento. Buscamos inversión para optimizar estos indicadores y escalar rápidamente."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el valor de vida del cliente (LTV) y cómo se compara con el CAC?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "El valor de vida del cliente (LTV) promedio en DataSense AI es aproximadamente 3,200 USD, basado en una retención media y el ingreso mensual recurrente por cliente. Esto nos da una relación LTV/CAC de 4:1, lo que indica un negocio rentable y con buen potencial de escalabilidad. Con la inversión, planeamos mejorar aún más la retención y reducir el CAC para maximizar el valor de cada cliente y acelerar el crecimiento sostenible."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la tasa de churn mensual y cómo afecta al crecimiento proyectado?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nuestra tasa de churn mensual es del 5 %, lo que representa una pérdida moderada de clientes. Sin embargo, con el crecimiento del 15 % mensual y las mejoras planificadas en la plataforma y atención, proyectamos reducir el churn a menos del 3 % en los próximos 12 meses. Esto permitirá un crecimiento neto más sólido y sostenible, aumentando el valor de vida del cliente y la rentabilidad a largo plazo. La inversión será clave para lograr estas metas."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "La relación LTV/CAC es sólida y el margen neto es aceptable, pero la tasa de churn del 5% es alta, lo que afecta la valuación; propongo un monto menor con mayor porcentaje para equilibrar riesgo y retorno. Contraoferta: 350,000 USD por 20%",
+      "decision": "contraoferta"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO CON CONTRAOFERTA"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 8.8
+}

@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola tiburones, soy fundador de DataSense AI, una plataforma que permite a pequeñas y medianas empresas sin equipo de datos analizar sus datos fácilmente usando inteligencia artificial. Ya tenemos 50 clientes que pagan, generando 15,000 dólares mensuales con un crecimiento del 15 % mensual. Nuestro modelo de suscripción por niveles se adapta al volumen de datos de cada empresa. Buscamos 500,000 dólares por el 15 % de la empresa para ampliar nuestro equipo de ingeniería, mejorar la IA y potenciar ventas. ¿Quién se suma?"
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es tu estrategia de venta y canales para escalar rápidamente la demanda?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestra estrategia de ventas se basa en marketing digital dirigido a PyMEs, alianzas con cámaras de comercio y programas de incubación. Utilizamos campañas en redes sociales y webinars para educar sobre el valor de la analítica con IA. Además, contamos con un equipo de ventas enfocadas en inbound y outbound para captar clientes de distintos sectores. Con el aporte, fortaleceremos este equipo y escalaremos rápidamente nuestra presencia en mercados clave."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué tan reconocida es tu marca en el mercado y cómo planeas fortalecerla para generar confianza y demanda entre las PyMEs?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Actualmente, DataSense AI está ganando reconocimiento entre PyMEs gracias a nuestros primeros 50 clientes satisfechos y testimonios positivos. Para fortalecer la marca, invertiremos en contenido educativo, casos de éxito y presencia en eventos del sector. También impulsaremos alianzas estratégicas con cámaras de comercio y líderes de opinión para aumentar la confianza. Nuestro objetivo es posicionarnos como la plataforma accesible y confiable de análisis de datos con IA para PyMEs sin equipo especializado."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean mantener la demanda y retención en un mercado donde hay competidores consolidados y soluciones gratuitas o más baratas?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nos enfocamos en la simplicidad y personalización que ofrecemos a PyMEs sin equipo de datos, algo que competidores consolidados no siempre logran. Nuestra IA adapta el análisis al volumen y necesidades específicas de cada cliente, brindando valor tangible y fácil uso. Además, nuestro modelo de suscripción escalable y el soporte cercano generan alta retención. Con la inversión, fortaleceremos el servicio al cliente y mejoraremos continuamente la plataforma para mantenernos competitivos frente a opciones gratuitas o más baratas."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "La marca está en crecimiento con buena demanda y canales claros para escalar ventas, lo que asegura tracción y potencial para captar más clientes PyMEs.",
+      "decision": "invertir"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 7.1
+}

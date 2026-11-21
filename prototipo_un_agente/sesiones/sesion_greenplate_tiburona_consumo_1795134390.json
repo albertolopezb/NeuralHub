@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola, soy fundador de GreenPlate. Ofrecemos contenedores biodegradables hechos de plantas que reemplazan el unicel y plástico, ayudando a reducir la contaminación. Nuestro mercado incluye restaurantes, apps de entrega y consumidores conscientes del ambiente. Ya tenemos alianzas con 10 restaurantes locales y cartas de intención de dos cadenas regionales. Buscamos 250,000 dólares por el 20 % de la empresa para aumentar producción, obtener certificaciones y expandir distribución. Únanse a GreenPlate y transformemos juntos la industria del empaque sustentable."
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el canal de venta principal y cómo piensan escalar la distribución para alcanzar a más clientes?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestro canal principal es la venta directa a restaurantes, complementada con ventas al mayoreo a tiendas especializadas. Para escalar, planeamos fortalecer alianzas con distribuidores locales y usar las cartas de intención de cadenas regionales para entrar rápidamente a nuevos mercados. Además, invertiremos en logística y marketing digital para llegar a consumidores finales conscientes del ambiente. Con estos pasos, aceleraremos la adopción de GreenPlate y ampliaremos nuestra presencia en el mercado de empaques sustentables."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la marca o propuesta diferencial de GreenPlate frente a competidores similares en empaques biodegradables?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "GreenPlate se diferencia por fabricar contenedores 100 % biodegradables hechos exclusivamente de plantas, garantizando una descomposición rápida y sin residuos tóxicos, a diferencia de otros que usan materiales mixtos. Además, ofrecemos un producto con diseño funcional y resistencia comparable al unicel, pero completamente sustentable. Nuestra propuesta no solo protege el ambiente, sino que también satisface las necesidades operativas de restaurantes y apps de entrega, posicionándonos como una opción confiable y ecológica en el mercado."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la demanda actual y proyectada del producto, y cómo aseguran que los restaurantes y consumidores estén dispuestos a pagar un precio premium por GreenPlate?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Actualmente, contamos con alianzas con 10 restaurantes locales y cartas de intención de dos cadenas regionales, lo que demuestra una demanda creciente. La tendencia global hacia productos sostenibles valida la proyección de un mercado en expansión. Aseguramos la disposición a pagar un precio premium por la calidad, biodegradabilidad y funcionalidad superior de GreenPlate, que reduce el impacto ambiental sin sacrificar operatividad. Nuestro enfoque en educación y marketing resalta estos beneficios, generando valor percibido y fidelidad en clientes conscientes del ambiente."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "GreenPlate tiene una marca clara y diferenciada en un mercado en crecimiento con canales de venta definidos y alianzas estratégicas que garantizan demanda y escalabilidad.",
+      "decision": "invertir"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 8.8
+}

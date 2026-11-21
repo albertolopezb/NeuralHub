@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola tiburones, soy el fundador de EcoTrack, un sistema inteligente que mide el consumo eléctrico en hogares y pequeños negocios, usando IA para sugerir ahorros concretos. Nuestro mercado son quienes enfrentan recibos de luz altos, y ya tenemos 500 usuarios beta y 50,000 USD en preventas. Nuestro modelo combina la venta del medidor con una suscripción premium. Buscamos 300,000 USD por el 10 % de la empresa para mejorar el producto, impulsar marketing y ampliar nuestro equipo. ¿Quién se une a revolucionar el ahorro energético?"
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué canales de venta usáis para llegar a esos 500 usuarios beta y cómo planeáis escalar esa distribución?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Actualmente, hemos llegado a nuestros 500 usuarios beta principalmente a través de campañas digitales en redes sociales y colaboraciones con tiendas de tecnología local. Para escalar, planeamos fortalecer alianzas con distribuidores eléctricos y expandir nuestro marketing digital segmentado, además de explorar ventas directas a través de plataformas online. Con la inversión, mejoraremos nuestro equipo para optimizar estos canales y aumentar significativamente nuestra base de usuarios."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la estrategia de marca para diferenciar EcoTrack en un mercado con competidores tecnológicos similares?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestra estrategia de marca se basa en la combinación única de hardware y software con IA personalizada, enfocándonos en hogares y pequeños negocios con altos consumos eléctricos. Destacamos la facilidad de uso y el impacto real en ahorros, respaldado por datos concretos. Además, comunicamos un compromiso ecológico y ahorro económico tangible, diferenciándonos de competidores que solo ofrecen mediciones sin recomendaciones inteligentes. Queremos que EcoTrack sea sinónimo de eficiencia accesible y sostenible para el usuario final."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la demanda real y recurrente del producto después del periodo beta, y cómo aseguran que la suscripción premium mantenga un alto nivel de retención?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Después del periodo beta, la demanda ha sido sólida: el 70 % de los usuarios beta han optado por la suscripción premium, atraídos por las recomendaciones personalizadas que generan ahorros reales. Para mantener alta la retención, actualizamos constantemente las funciones premium con nuevas herramientas de análisis y alertas, y ofrecemos un soporte cercano que fomenta la confianza. Esto crea un valor continuo que incentiva a los usuarios a renovar mes a mes, asegurando ingresos recurrentes y un crecimiento sostenible."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "La marca EcoTrack es clara y diferenciada, usan canales digitales y distribuidores para escalar, y la demanda con alta retención en la suscripción premium es sólida y recurrente.",
+      "decision": "invertir"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 9.0
+}

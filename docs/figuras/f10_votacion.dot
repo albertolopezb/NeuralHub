@@ -1,0 +1,9 @@
+digraph G{ bgcolor=white; rankdir=TB; nodesep=.35; ranksep=.35;
+node[fontname="Helvetica",fontsize=12,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=10,color="#4F1FD0",fontcolor="#00165C"];
+s[shape=circle,label="",width=.22,fillcolor="#00165C"]; fin[shape=doublecircle,label="",width=.22,fillcolor="#00165C"];
+v1[label="Recibe los 3 votos secretos\n(invertir, contraoferta, salir)"]; r1[label="Revela los votos\n(eventos VOTO juntos)"];
+c1[shape=diamond,fillcolor=white,label="¿votos a favor?\n(invertir + contraoferta)"];
+t1[label="Trato: el usuario elige condiciones\n(oferta original o contraoferta)"]; n1[label="Negociación: el usuario ajusta\nla oferta o acepta una contraoferta"]; rv[label="Segunda votación\n(solo invertir o salir)"];
+c2[shape=diamond,fillcolor=white,label="¿2 o más\na favor?"];
+T[label="DECISIÓN: TRATO",fillcolor="#D3F9D8"]; S[label="DECISIÓN: SIN TRATO",fillcolor="#FFE3E3"];
+s->v1->r1->c1; c1->t1[label="2 o 3"]; c1->n1[label="1"]; c1->S[label="0"]; t1->T; n1->rv->c2; c2->T[label="sí"]; c2->S[label="no"]; T->fin; S->fin;}

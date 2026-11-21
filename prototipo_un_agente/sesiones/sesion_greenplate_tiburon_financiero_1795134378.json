@@ -1,0 +1,79 @@
+{
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Hola, soy fundador de GreenPlate. Ofrecemos contenedores biodegradables hechos de plantas que sustituyen al unicel y plástico, ayudando a reducir el impacto ambiental en el sector alimentario. Ya contamos con alianzas en 10 restaurantes locales y cartas de intención de dos cadenas regionales. Nuestro modelo de ingresos es venta directa y mayoreo. Buscamos 250,000 dólares por el 20 % de la empresa para aumentar producción, obtener certificaciones y expandir distribución. ¿Quién se suma a cambiar el futuro del empaque sostenible?"
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es su margen bruto actual y cómo esperan que cambie al escalar producción?"
+    },
+    {
+      "n": 3,
+      "ronda": 0,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente, nuestro margen bruto es del 40 %, gracias a la reducción en costos de materia prima vegetal y procesos eficientes. Al escalar producción con los fondos, esperamos aumentar el margen a un 50 % por economías de escala y optimización en la cadena de suministro, además de certificaciones que nos permitirán acceder a mercados premium con precios superiores. Esto fortalecerá nuestra rentabilidad y crecimiento sostenido."
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de cliente (CAC) actual y cómo planean reducirlo al escalar?"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nuestro CAC actual es de aproximadamente 30 dólares, principalmente por marketing directo y participación en ferias del sector. Al escalar, prevemos reducirlo a 15 dólares mediante alianzas estratégicas con apps de entrega y cadenas regionales, aprovechando la recomendación y compras recurrentes. Además, invertiremos en marketing digital segmentado y optimización de ventas B2B, lo que disminuirá costos y aumentará la eficiencia en la adquisición de clientes."
+    },
+    {
+      "n": 6,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cómo justifican la valuación pre-money de 1.25 millones con base en sus ventas actuales y proyecciones a 12 meses?"
+    },
+    {
+      "n": 7,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nuestra valuación pre-money de 1.25 millones se fundamenta en las alianzas sólidas con 10 restaurantes y cartas de intención de dos cadenas regionales, que proyectan un crecimiento significativo en ventas durante los próximos 12 meses. Además, el mercado de empaques sostenibles está en rápido crecimiento y nuestra tecnología biodegradable nos posiciona como líderes emergentes. Con la inversión, aceleraremos producción y certificaciones, lo que potenciará ingresos recurrentes y márgenes mayores, justificando así una valuación acorde a nuestro potencial y tracción actual."
+    },
+    {
+      "n": 8,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "El margen actual del 40% es aceptable pero la valuación parece alta para la etapa y ventas actuales; el CAC es alto aunque con plan de reducción. Propongo una inversión menor para equilibrar riesgo y potencial. Contraoferta: 150,000 dólares por el 20 %",
+      "decision": "contraoferta"
+    },
+    {
+      "n": 9,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO CON CONTRAOFERTA"
+    }
+  ],
+  "llamadas": 8,
+  "segundos": 9.0
+}
