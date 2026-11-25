@@ -95,7 +95,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el costo de adquisición de cada cliente, considerando que tienes 140 clientes pagando y un gasto mensual de $140,000 MXN?",
+      "texto": "¿Cuál es el costo de adquisición de cliente si tienen 140 clientes y un gasto mensual de $140,000 MXN? No me dices cuánto invierten específicamente en ventas y marketing.",
       "estado": "Preguntando"
     },
     {
@@ -104,7 +104,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean defenderse de competidores grandes y económicos, si no tienen patente o marca registrada que proteja su software?",
+      "texto": "No me dices si tienen barreras de entrada claras para defenderse de competidores grandes que podrían adaptar su software para el mercado mexicano en menos de 5 años. ¿Cómo planean escalar y defender su ventaja competitiva? ¿Tienen alguna estrategia para proteger su mercado?.",
       "estado": "Preguntando"
     },
     {
@@ -113,7 +113,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "No me dices si el software tiene alguna tecnología propia o algoritmo único que pueda considerarse propiedad intelectual para fortalecer su ventaja competitiva.",
+      "texto": "No mencionas si el algoritmo o la tecnología del software está protegida mediante patente o propiedad intelectual; ¿qué innovación tecnológica desarrollaron y cómo planean protegerla para mantener ventaja competitiva?",
       "estado": "Preguntando"
     },
     {
@@ -149,7 +149,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Coincido con la pregunta del Tiburón financiero sobre el costo de adquisición, es crucial para la escalabilidad. El costo de $2,100 MXN recuperado en 3 meses es razonable, pero me preocupa que no haya propiedad intelectual fuerte para sostener ventaja tecnológica a largo plazo.",
+      "texto": "Tiburón financiero, coincido contigo; aunque mencionan un costo promedio de adquisición de $2,100 MXN, no detallan cuánto del gasto mensual va específicamente a ventas y marketing, esencial para evaluar la eficiencia del algoritmo y su escalabilidad tecnológica.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -159,7 +159,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con solo 0.15 % del mercado actual, ¿qué estrategia específica tienen para escalar y alcanzar una masa crítica que les permita sostener ventaja frente a competidores más grandes y baratos?",
+      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios y sin barreras de entrada claras ni patente, ¿cómo defenderán su ventaja competitiva y escalarán frente a competidores grandes que podrían adaptar su software para México en menos de 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -168,7 +168,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "No me dices si han protegido el algoritmo predictivo con patente o si planean hacerlo para asegurar propiedad intelectual y ventaja tecnológica ante competencia futura.",
+      "texto": "¿Tienen prototipo del algoritmo predictivo que usa IA para reducir ausencias y han considerado registrar patente para proteger esta innovación tecnológica clave?",
       "estado": "Preguntando"
     },
     {
@@ -177,7 +177,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es su margen neto actual después de gastos, considerando que el margen bruto es 78 % y el gasto mensual es $140,000 MXN con ventas anuales de $1,100,000 MXN?",
+      "texto": "Con ventas de $1,100,000 MXN y 140 clientes, ¿cuánto gastan exactamente en ventas y marketing para justificar un costo de adquisición de cliente de $2,100 MXN? No me dices el desglose del gasto mensual de $140,000 MXN.",
       "estado": "Preguntando"
     },
     {
@@ -213,7 +213,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Coincido con la preocupación del Tiburón estratega sobre la baja penetración del mercado (0.15 %) y la competencia más grande y barata. La integración con WhatsApp y facturación es buena, pero sin patente ni marca, escalar y sostener ventaja será difícil, más aún con 4 % de cancelación mensual.",
+      "texto": "Tiburón estratega, coincido: 0.15 % de penetración y sin patente ni barreras claras es riesgoso. La única defensa que mencionan es integración con WhatsApp y facturación, pero eso puede replicarse rápido. Sin protección tecnológica ni barreras sólidas, la escalabilidad y defensa del mercado serán un gran reto.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -223,7 +223,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Dado que no cuentan con patente y solo protegen el algoritmo con código privado, ¿qué planes tienen para desarrollar propiedad intelectual que realmente pueda blindar su tecnología y evitar copias de competidores en el mercado mexicano?",
+      "texto": "¿Podrían mostrar un prototipo funcional del algoritmo predictivo basado en IA y comentar si planean desarrollar propiedad intelectual formal, como patentes, para proteger esta tecnología clave y mantener ventaja competitiva?",
       "estado": "Preguntando"
     },
     {
@@ -232,7 +232,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con un 4 % de cancelación mensual y solo 140 clientes actuales, ¿cómo planean mantener o mejorar el margen neto considerando que el gasto mensual es alto ($140,000 MXN) y la facturación anual es $1,100,000 MXN?",
+      "texto": "No me dices cuánto de los $140,000 MXN mensuales destinan específicamente a ventas y marketing para sostener un costo de adquisición de cliente de $2,100 MXN; ¿pueden dar ese desglose exacto?",
       "estado": "Preguntando"
     },
     {
@@ -241,7 +241,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con un mercado potencial de 90,000 consultorios y solo 140 clientes (0.15 %), ¿qué barreras específicas planean construir para evitar que competidores grandes y baratos, con más recursos, les quiten clientes conforme escalen?",
+      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios y sin barreras de entrada ni patente, ¿qué estrategias concretas tienen para escalar rápido y crear barreras difíciles de replicar ante competidores grandes que pueden adaptar su software para México en menos de 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -277,7 +277,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Coincido con tu preocupación sobre la falta de patente para blindar el algoritmo y la tecnología; sin una propiedad intelectual sólida, la ventaja competitiva es débil y difícil de defender frente a competidores grandes, especialmente en un mercado con 90,000 consultorios y baja penetración actual.",
+      "texto": "Tiburón tecnológico, coincido contigo; sin patente ni protección formal, el algoritmo predictivo es vulnerable. Aunque tengan prototipo y datos, eso no asegura barreras sólidas para defender la ventaja competitiva frente a jugadores grandes que podrían replicar o mejorar la tecnología.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -287,12 +287,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "El margen bruto es bueno (78 %), pero el gasto mensual alto ($140,000 MXN) y la baja penetración del mercado (0.15 %) con 4 % de cancelación mensual generan dudas sobre escalabilidad y margen neto. Además, no tienen propiedad intelectual sólida para defender ventaja competitiva.",
+      "texto": "No me dices cuánto del gasto de $140,000 MXN mensuales va a ventas y marketing para validar costo de adquisición de $2,100 MXN, además la valuación de $12,000,000 MXN parece alta para 140 clientes y 0.15% penetración. Pido $1,200,000 MXN por 20%. Contraoferta: $1,200,000 MXN por el 20 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 1200000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 25,
@@ -300,12 +300,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado es grande pero la penetración actual es mínima (0.15 %) y no hay patente ni marca registrada para defender la tecnología frente a competidores más grandes y baratos; la ventaja competitiva es débil y el riesgo alto a largo plazo.",
+      "texto": "El mercado de 90,000 consultorios es grande, pero la penetración actual es solo 0.15 % y no hay barreras claras ni patente para defenderse de competidores grandes. La valuación de $12,000,000 MXN parece alta sin estrategia sólida de defensa y escalabilidad. Contraoferta: $800,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 800000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 26,
@@ -313,134 +313,96 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "La idea es innovadora y el algoritmo predictivo es un plus, pero sin patente ni protección fuerte, la ventaja tecnológica es débil. Ofrezco $900,000 MXN por el 15 %, buscando mayor participación para impulsar propiedad intelectual. Contraoferta: $900,000 MXN por el 15 %.",
+      "texto": "Me interesa la innovación del algoritmo predictivo y el prototipo operativo, pero no tienen patente ni protección formal, lo que pone en riesgo la ventaja competitiva pese a $1,100,000 MXN en ventas y 140 clientes. Ofrezco $600,000 MXN por 15% para mejorar protección y desarrollo tecnológico. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 900000.0,
+      "contraoferta_monto_mxn": 600000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
       "n": 27,
-      "ronda": 4,
-      "tipo": "NEGOCIACION",
-      "emisor": "nodo_votacion",
-      "destino": "emprendedor",
-      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
-      "estado": ""
-    },
-    {
-      "n": 28,
-      "ronda": 4,
+      "ronda": 3,
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $900,000 MXN por el 15 %.",
-      "estado": "Negociando",
-      "oferta": {
-        "monto_mxn": 900000.0,
-        "porcentaje": 15.0
+      "texto": "Mantengo mi oferta original. $1,200,000 MXN por el 10 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $1,200,000 MXN por el 10 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 1200000.0,
+        "porcentaje": 10.0,
+        "origen": "original"
       }
     },
     {
       "n": 29,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_financiero",
-      "destino": "nodo_votacion",
-      "texto": "Aunque la contraoferta reduce valuación a $6,000,000 MXN, el gasto mensual alto ($140,000 MXN) y la baja penetración (0.15 %) con 4 % cancelación mensual generan dudas sobre escalabilidad y margen neto. Sin propiedad intelectual sólida, no veo ventaja competitiva defendible.",
-      "estado": "Votando",
-      "decision": "salir",
-      "votacion": 2
-    },
-    {
-      "n": 30,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_estratega",
-      "destino": "nodo_votacion",
-      "texto": "El mercado es grande pero la penetración es muy baja (0.15 %) y no hay patente ni marca registrada que proteja su ventaja competitiva. La falta de defensa frente a competidores grandes y baratos me hace dudar de la escalabilidad a largo plazo.",
-      "estado": "Votando",
-      "decision": "salir",
-      "votacion": 2
-    },
-    {
-      "n": 31,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_tecnologico",
-      "destino": "nodo_votacion",
-      "texto": "La innovación del algoritmo predictivo y la integración con WhatsApp son valiosos; aunque falta patente, la contraoferta de $900,000 MXN por 15 % refleja mejor riesgo y oportunidad tecnológica.",
-      "estado": "Votando",
-      "decision": "invertir",
-      "votacion": 2
-    },
-    {
-      "n": 32,
-      "ronda": 4,
-      "tipo": "DECISION",
-      "emisor": "nodo_votacion",
-      "destino": "todos",
-      "texto": "SIN TRATO",
-      "estado": "Reaccionando",
-      "resultado": "SIN_TRATO",
-      "condiciones": null
-    },
-    {
-      "n": 33,
-      "ronda": 4,
+      "ronda": 3,
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto enfocado en un problema real y relevante para clínicas pequeñas.; Alta retención con baja tasa de cancelación mensual (4 %) y crecimiento mensual del 9 %.; Margen bruto alto del 78 %, típico de software SaaS.. Alertas: Muy baja penetración de mercado actual (0.15 %) que dificulta escalabilidad.; Falta de propiedad intelectual (patentes o marcas registradas) que proteja la tecnología.; Gastos mensuales altos ($140,000 MXN) que impactan la rentabilidad neta.. Siguientes pasos: Desarrollar y registrar propiedad intelectual para el algoritmo y tecnología clave.; Implementar una estrategia clara y detallada para escalar clientes y reducir tasa de cancelación.; Optimizar gastos operativos y fortalecer el equipo de ventas para acelerar crecimiento y mejorar margen neto..",
+      "texto": "Fortalezas: Producto adaptado al mercado mexicano con integración a WhatsApp y facturación local.; Reducción comprobada de ausencias de 30 % a 12 % en clientes actuales.; Margen bruto alto (78 %) y crecimiento mensual del ingreso recurrente del 9 %.. Alertas: Falta de protección formal del algoritmo y ausencia de patente o propiedad intelectual clara.; Baja penetración actual en el mercado (0.15 %) sin barreras sólidas para defenderse de competidores grandes.; Falta de claridad en el desglose del gasto en ventas y marketing para justificar el costo de adquisición.. Siguientes pasos: Proporcionar un desglose detallado del gasto mensual en ventas y marketing para validar el costo de adquisición de clientes.; Desarrollar e implementar una estrategia clara para escalar el negocio y crear barreras de entrada que dificulten la competencia.; Avanzar en la protección formal del algoritmo mediante patentes o propiedad intelectual para asegurar la ventaja competitiva..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "El margen bruto es bueno (78 %), pero el gasto mensual alto ($140,000 MXN) y la baja penetraci\u0000f3n del mercado (0.15 %) con 4 % de cancelaci\u0000f3n mensual generan dudas sobre escalabilidad y margen neto.",
-            "necesitaria": "Reducir gastos o aumentar significativamente la base de clientes para mejorar margen neto y mostrar una estrategia clara de escalabilidad."
+            "frase_clave": "No me dices cuánto de los $140,000 MXN mensuales va a ventas y marketing para validar costo de adquisición de $2,100 MXN, además la valuación de $12,000,000 MXN parece alta para 140 clientes y 0.15% penetración.",
+            "necesitaria": "Un desglose claro del gasto mensual en ventas y marketing para justificar el costo de adquisición y una valoración más realista acorde al tamaño y penetración actual."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 2,
-            "frase_clave": "El mercado es grande pero la penetraci\u0000f3n actual es m\u0000ednima (0.15 %) y no hay patente ni marca registrada para defender la tecnolog\u0000eda frente a competidores m\u0000e1s grandes y baratos; la ventaja competitiva es d\u0000e9bil y el riesgo alto a largo plazo.",
-            "necesitaria": "Una estrategia clara de barreras competitivas, como propiedad intelectual o alianzas fuertes, para proteger la ventaja y escalar en el mercado."
+            "frase_clave": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios y sin barreras de entrada claras ni patente, ¿cómo defenderán su ventaja competitiva y escalarán frente a competidores grandes?",
+            "necesitaria": "Una estrategia sólida de escalamiento y creación de barreras de entrada que protejan el mercado frente a competidores grandes que pueden replicar rápidamente la solución."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 3,
-            "frase_clave": "La idea es innovadora y el algoritmo predictivo es un plus, pero sin patente ni protecci\u0000f3n fuerte, la ventaja tecnol\u0000f3gica es d\u0000e9bil.",
-            "necesitaria": "Desarrollar propiedad intelectual sólida, como patentes o derechos de autor, para proteger el algoritmo y la tecnología."
+            "calificacion": 2,
+            "frase_clave": "No tienen patente; la protección es el algoritmo y los datos que acumulamos con cada cita. Tenemos el código en repositorio privado.",
+            "necesitaria": "Un desarrollo formal de propiedad intelectual, como patentes, para proteger la innovación tecnológica y mantener la ventaja competitiva a largo plazo."
           }
         ],
         "fortalezas": [
-          "Producto enfocado en un problema real y relevante para clínicas pequeñas.",
-          "Alta retención con baja tasa de cancelación mensual (4 %) y crecimiento mensual del 9 %.",
-          "Margen bruto alto del 78 %, típico de software SaaS."
+          "Producto adaptado al mercado mexicano con integración a WhatsApp y facturación local.",
+          "Reducción comprobada de ausencias de 30 % a 12 % en clientes actuales.",
+          "Margen bruto alto (78 %) y crecimiento mensual del ingreso recurrente del 9 %."
         ],
         "alertas": [
-          "Muy baja penetración de mercado actual (0.15 %) que dificulta escalabilidad.",
-          "Falta de propiedad intelectual (patentes o marcas registradas) que proteja la tecnología.",
-          "Gastos mensuales altos ($140,000 MXN) que impactan la rentabilidad neta."
+          "Falta de protección formal del algoritmo y ausencia de patente o propiedad intelectual clara.",
+          "Baja penetración actual en el mercado (0.15 %) sin barreras sólidas para defenderse de competidores grandes.",
+          "Falta de claridad en el desglose del gasto en ventas y marketing para justificar el costo de adquisición."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es la estrategia concreta para escalar y alcanzar masa crítica en el mercado?",
-          "¿Qué planes específicos tienen para proteger su algoritmo con patentes?",
-          "¿Cómo mantendrán o mejorarán el margen neto con la tasa actual de cancelación y gastos altos?"
+          "¿Cuánto exactamente se destina del gasto mensual a ventas y marketing para validar el costo de adquisición?",
+          "¿Qué estrategias concretas tienen para escalar rápido y crear barreras difíciles de replicar?",
+          "¿Tienen prototipo funcional del algoritmo predictivo basado en IA y han considerado registrar patente para protegerlo?"
         ],
         "siguientes_pasos": [
-          "Desarrollar y registrar propiedad intelectual para el algoritmo y tecnología clave.",
-          "Implementar una estrategia clara y detallada para escalar clientes y reducir tasa de cancelación.",
-          "Optimizar gastos operativos y fortalecer el equipo de ventas para acelerar crecimiento y mejorar margen neto."
+          "Proporcionar un desglose detallado del gasto mensual en ventas y marketing para validar el costo de adquisición de clientes.",
+          "Desarrollar e implementar una estrategia clara para escalar el negocio y crear barreras de entrada que dificulten la competencia.",
+          "Avanzar en la protección formal del algoritmo mediante patentes o propiedad intelectual para asegurar la ventaja competitiva."
         ],
-        "resultado": "SIN_TRATO",
-        "condiciones": null,
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 1200000.0,
+          "porcentaje": 10.0,
+          "origen": "original"
+        },
         "valuacion_mxn": 12000000.0,
         "votos_primera_votacion": {
-          "tiburon_financiero": "salir",
-          "tiburon_estratega": "salir",
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
           "tiburon_tecnologico": "contraoferta"
         },
         "criterios_no_evaluados": [
@@ -465,23 +427,23 @@
     }
   ],
   "metricas": {
-    "llamadas_modelo": 19,
-    "segundos_modelo": 25.4,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 28.3,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
-    "n_eventos": 33,
+    "n_eventos": 29,
     "eventos_en_orden": true,
     "preguntas": 9,
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "votos": 6,
-    "justificaciones_mencionan_criterio": 6,
-    "justificaciones_con_dato": 6,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
     "votos_publicados_juntos": true,
-    "hubo_negociacion": true,
-    "resultado": "SIN_TRATO",
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
     "terminada": true
   }
 }

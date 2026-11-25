@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices cuál es el margen bruto ni el costo de adquisición de clientes. ¿Cuánto te cuesta fabricar y vender cada prenda y cuánto gastas en publicidad para conseguir una venta?",
+      "texto": "No me dices margen bruto ni ventas, ¿cuál es el margen bruto actual y el costo de adquisición por cliente para una prenda promedio a $1,400?",
       "estado": "Preguntando"
     },
     {
@@ -81,7 +81,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean escalar las ventas en línea y los pop-ups para alcanzar demanda suficiente, considerando que aún no tienen validación con clientes ni ventas en los últimos 12 meses?",
+      "texto": "No me dices si ya tienes canales de venta activos ni cómo planeas hacer que el cliente conozca la tienda en línea y vuelva a comprar; ¿qué canales de venta tienes y cómo asegurarás la demanda recurrente para prendas de $1,400?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "¿Cómo garantizan el compromiso y la honestidad de las cooperativas artesanas para que el proyecto funcione a largo plazo, si no mencionan cómo manejan esa relación ni su compromiso?",
+      "texto": "Me dices que hay 2 fundadoras con experiencia, pero ¿qué compromiso a largo plazo tienen tú y tu equipo para enfrentar retos y sacar adelante ModaRaíz?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_financiero",
-      "texto": "Coincido contigo en que sin margen bruto ni costo de adquisición, no sabemos si el modelo es rentable. El emprendedor no tiene claridad en costos y ventas, eso es un riesgo. El equipo debe tener control financiero para tomar decisiones y demostrar compromiso con el negocio.",
+      "texto": "Estoy de acuerdo con tu pregunta, Tiburón financiero. Sin margen bruto ni ventas claras, es difícil evaluar la viabilidad del negocio. El emprendedor dice que no tiene esos datos, lo que me preocupa sobre su control y compromiso con la contabilidad y finanzas, aspectos clave para confiar en ellos y su honestidad.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean construir y fortalecer la marca ModaRaíz para que las mujeres de 25 a 45 años en ciudades grandes prefieran sus prendas sobre otras marcas mexicanas de moda sostenible, considerando que aún no tienen validación formal ni ventas claras?",
+      "texto": "¿Cómo es el empaque y la experiencia de compra en línea para que el cliente valore la historia y decida volver a comprar una prenda de $1,400? No me dices nada del empaque ni reseñas.",
       "estado": "Preguntando"
     },
     {
@@ -145,7 +145,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que hay dos fundadoras dedicadas tiempo completo, pero no me dices cómo miden y aseguran el compromiso a largo plazo de cada una para que la empresa no dependa solo de ustedes.",
+      "texto": "¿Cómo garantizan tú y tu socia la honestidad y transparencia con las cooperativas artesanas en la distribución de ingresos, considerando que parte del precio va directo a ellas y son pieza clave de ModaRaíz?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con un precio promedio de $1,400 y sin margen bruto ni costo de adquisición claros, ¿cómo justifican la valuación implícita de $5 millones y qué proyección financiera concreta tienen para recuperar la inversión de $400,000 MXN?",
+      "texto": "Me dices que la valuación implícita es de $5,000,000 por 8% y que vendieron 150 prendas a $1,400 sin margen ni flujo claros. ¿Cuál es el flujo neto actual y cómo justifican una valuación tan alta sin datos de utilidad o margen bruto?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Coincido contigo, Tiburona de consumo; sin validación formal ni ventas claras, no hay base sólida para construir y fortalecer la marca. El emprendedor no tiene datos de repetición de compra ni estrategia clara para diferenciarse más allá del bordado y la historia, lo cual es arriesgado desde el punto de vista financiero.",
+      "texto": "Estoy de acuerdo contigo, Tiburona de consumo. Sin detalles del empaque ni experiencia de compra que justifique un precio de $1,400, no hay base para esperar recompra ni fidelidad, lo que afecta el CAC y el margen a largo plazo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean formalizar y medir el compromiso de cada fundadora a largo plazo para que el equipo sea estable y confiable, considerando que solo son dos y no mencionan planes para ampliar o fortalecer el equipo?",
+      "texto": "Me dices que son dos fundadoras con dedicación completa desde universidad, pero ¿cómo han enfrentado juntas el primer gran reto difícil en ModaRaíz y qué aprendieron sobre su compromiso y honestidad en ese momento?",
       "estado": "Preguntando"
     },
     {
@@ -209,7 +209,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices margen bruto ni costo de adquisición; ¿puedes mostrar proyecciones financieras con esos datos para justificar la valuación de $5 millones y cómo recuperarás los $400,000 invertidos?",
+      "texto": "Sin datos de margen bruto, costo de adquisición ni flujo neto, ¿cómo justifican la valuación implícita de $5,000,000 MXN y qué proyecciones financieras tienen para validar ese valor?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Me falta saber cómo piensan usar el canal en línea y pop-ups para crear una marca sólida que genere demanda recurrente, si aún no tienen validación ni datos formales de ventas ni repetición de compra.",
+      "texto": "No me dices si ya tienen reseñas o testimonios que demuestren que el cliente valora la marca y volvería a comprar prendas de $1,400; ¿qué retroalimentación han recibido y cómo planean fidelizar al cliente final?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_mentor",
-      "texto": "Estoy de acuerdo con tu pregunta sobre formalizar y medir el compromiso, porque sin un equipo sólido y estable será difícil construir una marca fuerte y generar demanda recurrente, sobre todo en un mercado competitivo donde aún no tienen validación ni ventas claras.",
+      "texto": "Estoy de acuerdo contigo, Tiburón mentor. Sin enfrentar un reto difícil juntas y aprender sobre compromiso y honestidad, es difícil confiar en la capacidad del equipo para sostener la marca y mantener la relación con las cooperativas y clientes en el largo plazo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No hay datos de margen bruto ni costo de adquisición, ni ventas claras para validar valuación de $5M. Sin números y sin validación de cliente, el riesgo es alto y no puedo evaluar recuperación de inversión.",
+      "texto": "No hay margen bruto ni costo de adquisición, no justifican valuación de $5,000,000 ni el pedido de $400,000 por 8%. Sin flujo ni ventas claras (150 prendas estimadas), no puedo evaluar márgenes ni retorno. Falta control financiero para mi inversión.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "No tienen validación formal ni ventas claras, falta margen bruto y estrategia para escalar canales de venta y marca. La valuación de $5 millones no está justificada sin datos de demanda y costos.",
+      "texto": "No me dices datos clave de la marca ni reseñas que muestren demanda real para prendas de $1,400; sólo vendieron 150 piezas sin margen ni costos claros, y la valuación de $5,000,000 MXN no está justificada para el cliente final.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "No hay claridad financiera ni validación de mercado, y falta control y compromiso formal del equipo para largo plazo. Sin margen bruto ni ventas claras, la inversión es muy riesgosa.",
+      "texto": "No me dices compromiso real frente a retos ni experiencia financiera clara. Sin margen ni ventas, y con valuación de $5,000,000 por solo 150 prendas, no puedo confiar en el control ni honestidad del equipo para hacer crecer ModaRaíz.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -314,51 +314,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: El negocio tiene un propósito social claro al beneficiar directamente a cooperativas de artesanas.; Las fundadoras están dedicadas tiempo completo y tienen experiencia relevante en diseño y trabajo con cooperativas.; El producto tiene un diferenciador único: cada prenda muestra su origen y parte del precio va directo a la cooperativa.; El modelo de venta incluye tienda en línea y pop-ups, con presencia inicial en Instagram.. Alertas: No tienen datos claros ni formales de ventas, margen bruto ni costos de adquisición de clientes.; No hay validación formal del mercado ni datos de repetición de compra o demanda sostenida.; Falta formalidad y medición en el compromiso a largo plazo del equipo fundador y no hay plan para ampliar o fortalecer el equipo.. Siguientes pasos: Implementar un sistema contable para conocer ventas, margen bruto y costos de adquisición con datos claros.; Realizar validación formal del mercado con métricas de demanda, repetición de compra y retroalimentación de clientes.; Formalizar compromiso del equipo con acuerdos y buscar asesoría para control financiero y operación profesional..",
+      "texto": "Fortalezas: Fundadoras dedicadas a tiempo completo con experiencia en dise\u0000f1o y cooperativas artesanales.; Negocio con un enfoque social claro: pagar justo a las artesanas y mostrar la historia de cada pieza.; Modelo de negocio con venta directa en l\u0000ednea y eventos pop-up que ya generaron algunas ventas iniciales.. Alertas: Falta de datos financieros cr\u0000edticos como margen bruto, costo de adquisici\u0000f3n y flujo neto.; Valuaci\u0000f3n impl\u0000edcita de $5,000,000 que no se justifica con ventas o utilidad clara.; Ausencia de estrategia de fidelizaci\u0000f3n, experiencia de compra y validaci\u0000f3n de mercado con clientes reales y rese\u0000f1as.. Siguientes pasos: Implementar contabilidad separada y obtener estados financieros claros con margen bruto y flujo neto.; Definir y medir indicadores clave como costo de adquisici\u0000f3n por cliente y tasa de recompra.; Desarrollar una estrategia de marketing y experiencia de compra que incluya empaques, rese\u0000f1as y fidelizaci\u0000f3n del cliente..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 1,
-            "frase_clave": "No hay datos de margen bruto ni costo de adquisición, ni ventas claras para validar valuación de $5M. Sin números y sin validación de cliente, el riesgo es alto y no puedo evaluar recuperación de inversión.",
-            "necesitaria": "Necesito ver márgenes claros, costos de adquisición de clientes, ventas históricas y proyecciones financieras que justifiquen la valuación y muestren cómo se recuperará la inversión."
+            "frase_clave": "No hay margen bruto ni costo de adquisici\u0000f3n, no justifican valuaci\u0000f3n de $5,000,000 ni el pedido de $400,000 por 8%. Sin flujo ni ventas claras (150 prendas estimadas), no puedo evaluar m\u0000e1rgenes ni retorno.",
+            "necesitaria": "Ver estados financieros claros con margen bruto, costo de adquisici\u0000f3n de clientes, flujo neto y proyecciones que justifiquen la valuaci\u0000f3n."
           },
           {
             "tiburon_id": "tiburona_consumo",
             "calificacion": 1,
-            "frase_clave": "No tienen validación formal ni ventas claras, falta margen bruto y estrategia para escalar canales de venta y marca. La valuación de $5 millones no está justificada sin datos de demanda y costos.",
-            "necesitaria": "Quiero ver validación formal del mercado con datos de ventas, repetición de compra, estrategia clara para construir y escalar la marca y canales de venta efectivos."
+            "frase_clave": "No me dices datos clave de la marca ni rese\u0000f1as que muestren demanda real para prendas de $1,400; s\u0000f3lo vendieron 150 piezas sin margen ni costos claros, y la valuaci\u0000f3n de $5,000,000 MXN no est\u0000e1 justificada para el cliente final.",
+            "necesitaria": "Presentar datos de canales de venta activos, rese\u0000f1as o testimonios que demuestren demanda y fidelidad de clientes, adem\u0000e1s de una estrategia clara de retenci\u0000f3n."
           },
           {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 1,
-            "frase_clave": "No hay claridad financiera ni validación de mercado, y falta control y compromiso formal del equipo para largo plazo. Sin margen bruto ni ventas claras, la inversión es muy riesgosa.",
-            "necesitaria": "Necesito evidencia de control financiero, compromiso formal y medible del equipo, así como validación de mercado y un plan para asegurar la operación a largo plazo."
+            "frase_clave": "No me dices compromiso real frente a retos ni experiencia financiera clara. Sin margen ni ventas, y con valuaci\u0000f3n de $5,000,000 por solo 150 prendas, no puedo confiar en el control ni honestidad del equipo para hacer crecer ModaRa\u0000edz.",
+            "necesitaria": "Mostrar compromiso probado en enfrentar retos, experiencia en finanzas o un plan para ordenarlas, as\u0000ed como evidencia de control y honestidad en la gesti\u0000f3n."
           }
         ],
         "fortalezas": [
-          "El negocio tiene un propósito social claro al beneficiar directamente a cooperativas de artesanas.",
-          "Las fundadoras están dedicadas tiempo completo y tienen experiencia relevante en diseño y trabajo con cooperativas.",
-          "El producto tiene un diferenciador único: cada prenda muestra su origen y parte del precio va directo a la cooperativa.",
-          "El modelo de venta incluye tienda en línea y pop-ups, con presencia inicial en Instagram."
+          "Fundadoras dedicadas a tiempo completo con experiencia en dise\u0000f1o y cooperativas artesanales.",
+          "Negocio con un enfoque social claro: pagar justo a las artesanas y mostrar la historia de cada pieza.",
+          "Modelo de negocio con venta directa en l\u0000ednea y eventos pop-up que ya generaron algunas ventas iniciales."
         ],
         "alertas": [
-          "No tienen datos claros ni formales de ventas, margen bruto ni costos de adquisición de clientes.",
-          "No hay validación formal del mercado ni datos de repetición de compra o demanda sostenida.",
-          "Falta formalidad y medición en el compromiso a largo plazo del equipo fundador y no hay plan para ampliar o fortalecer el equipo."
+          "Falta de datos financieros cr\u0000edticos como margen bruto, costo de adquisici\u0000f3n y flujo neto.",
+          "Valuaci\u0000f3n impl\u0000edcita de $5,000,000 que no se justifica con ventas o utilidad clara.",
+          "Ausencia de estrategia de fidelizaci\u0000f3n, experiencia de compra y validaci\u0000f3n de mercado con clientes reales y rese\u0000f1as."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el margen bruto exacto por prenda y el costo de adquisición de clientes?",
-          "¿Cómo planean escalar y fortalecer la marca para generar demanda recurrente?",
-          "¿Cómo formalizarán y medirán el compromiso y estabilidad del equipo a largo plazo?",
-          "¿Cómo justificarán la valuación implícita de $5 millones con proyecciones financieras concretas?",
-          "¿Qué porcentaje de clientes repite compra y cómo lo medirán?"
+          "Cu\u0000e1l es el margen bruto actual y el costo de adquisici\u0000f3n por cliente para una prenda promedio.",
+          "Qu\u0000e9 porcentaje de clientes repiten compra y cu\u0000e1les son los canales efectivos para asegurar demanda recurrente.",
+          "C\u0000f3mo garantizan honestidad y transparencia con las cooperativas en la distribuci\u0000f3n de ingresos."
         ],
         "siguientes_pasos": [
-          "Implementar un sistema contable para conocer ventas, margen bruto y costos de adquisición con datos claros.",
-          "Realizar validación formal del mercado con métricas de demanda, repetición de compra y retroalimentación de clientes.",
-          "Formalizar compromiso del equipo con acuerdos y buscar asesoría para control financiero y operación profesional."
+          "Implementar contabilidad separada y obtener estados financieros claros con margen bruto y flujo neto.",
+          "Definir y medir indicadores clave como costo de adquisici\u0000f3n por cliente y tasa de recompra.",
+          "Desarrollar una estrategia de marketing y experiencia de compra que incluya empaques, rese\u0000f1as y fidelizaci\u0000f3n del cliente."
         ],
         "resultado": "SIN_TRATO",
         "condiciones": null,
@@ -391,8 +388,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 21.2,
-    "segundos_total": 18.9,
+    "segundos_modelo": 30.5,
+    "segundos_total": 26.8,
     "rondas_preguntas": 3,
     "n_eventos": 28,
     "eventos_en_orden": true,
@@ -403,7 +400,7 @@
     "preguntas_mencionan_criterio": 9,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
-    "justificaciones_con_dato": 2,
+    "justificaciones_con_dato": 3,
     "votos_publicados_juntos": true,
     "hubo_negociacion": false,
     "resultado": "SIN_TRATO",

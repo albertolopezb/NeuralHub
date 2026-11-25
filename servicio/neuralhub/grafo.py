@@ -24,6 +24,10 @@ from .tiburones import TIBURONES
 MAX_RONDAS = 3
 RONDA_NEGOCIACION = MAX_RONDAS + 1
 MAX_CHARS_RESPUESTA = 600
+REGLA_JUSTIFICACION = (
+    "Tu justificación (máximo 45 palabras) debe nombrar tu criterio principal y citar AL MENOS UNA CIFRA escrita con número "
+    "que aparezca en el pitch o en la conversación (por ejemplo el monto, el porcentaje, la valuación, el margen, las ventas o "
+    "el número de clientes). Si el dato de tu criterio no existe, dilo y cita de todos modos una cifra del pitch.")
 
 
 class Estado(TypedDict, total=False):
@@ -69,7 +73,7 @@ def sistema_tiburon(tid: str) -> str:
     t = TIBURONES[tid]
     return (
         f"[id:{tid}]\nEres el {t['nombre']} de un panel de inversionistas tipo Shark Tank México. {t['perfil']} "
-        f"Tu criterio principal es: {t['criterio']}.\nReglas: hablas en español de México, directo y breve (máximo 60 palabras); "
+        f"Tu criterio principal es: {t['criterio']}. Tu estilo: {t['estilo']}\nReglas: hablas en español de México, directo y breve (máximo 60 palabras); "
         "los montos van en pesos mexicanos; solo usas datos de la ficha y de la conversación: si falta un dato, dilo "
         "(\"no me dices X\") en lugar de inventarlo; usa las cifras calculadas tal cual, no hagas cuentas propias; "
         "si algo contradice lo dicho antes, señálalo."
@@ -192,9 +196,8 @@ def construir_grafo(checkpointer=None):
         of = estado["oferta"]
         base = (f"PANEL: {', '.join(estado['panel'])}\nPITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN COMPLETA:\n{hist_texto(estado)}\n\n"
                 f"OFERTA ACTUAL: monto={of['monto_mxn']} porcentaje={of['porcentaje']}\n\n"
-                "Emite tu voto en secreto: invertir, contraoferta o salir. Tu justificación debe mencionar tu criterio principal "
-                "y al menos un dato concreto del pitch o de la conversación. Si haces contraoferta, da monto en MXN y porcentaje. "
-                "No sabes cómo votan los demás.")
+                "Emite tu voto en secreto: invertir, contraoferta o salir. Calibra tu voto: invertir si los datos cumplen tu criterio; contraoferta si el negocio te interesa pero las condiciones o algún dato no te convencen; salir solo si tu criterio falla claramente o faltan los datos clave. " + REGLA_JUSTIFICACION +
+                " Si haces contraoferta, da monto en MXN y porcentaje. No sabes cómo votan los demás.")
 
         def uno(tid):
             return tid, llm.estructurado(E.Voto, sistema_tiburon(tid), base).model_dump()
@@ -302,8 +305,7 @@ def construir_grafo(checkpointer=None):
                    (", ".join(f"{nombre(c['tiburon_id'])}: {mxn(c['monto_mxn'])} por {c['porcentaje']:g} %" for c in _contraofertas(estado)) or "ninguna"))
         base = (f"PANEL: {', '.join(estado['panel'])}\nPITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN COMPLETA:\n{hist_texto(estado)}\n\n"
                 f"{resumen}\nOFERTA ACTUAL: monto={of['monto_mxn']} porcentaje={of['porcentaje']}\n\n"
-                "Esta es la votación final. Vota solo invertir o salir con la oferta actual. Tu justificación debe mencionar "
-                "tu criterio principal y un dato concreto.")
+                "Esta es la votación final. Vota solo invertir o salir con la oferta actual. " + REGLA_JUSTIFICACION)
 
         def uno(tid):
             return tid, llm.estructurado(E.VotoFinal, sistema_tiburon(tid), base).model_dump()

@@ -1,0 +1,32 @@
+{
+ "sesion": "15bd14cf",
+ "eventos": 29,
+ "llamadas": 16,
+ "resultado": "TRATO",
+ "segundos_modelo": 24.4,
+ "latencias": [
+  {
+   "tipo": "RESPUESTAS",
+   "segundos": 1.6
+  },
+  {
+   "tipo": "RESPUESTAS",
+   "segundos": 1.5
+  },
+  {
+   "tipo": "RESPUESTAS",
+   "segundos": 1.5
+  },
+  {
+   "tipo": "CONDICIONES",
+   "segundos": 0.1
+  }
+ ],
+ "replicas": 3,
+ "panel": [
+  "tiburon_financiero",
+  "tiburon_estratega",
+  "tiburon_tecnologico"
+ ],
+ "negocio": "DataSense AI"
+}

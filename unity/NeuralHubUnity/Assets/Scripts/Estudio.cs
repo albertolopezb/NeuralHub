@@ -17,6 +17,8 @@ namespace NeuralHub
 
         public readonly List<Tiburon> panel = new List<Tiburon>();
 
+        public void Preparar() { if (pantalla) pantalla.MostrarTexto("NeuralHub", "Preparando sesión..."); }
+
         public void IniciarSesion(string[] ids, string[] nombres)
         {
             foreach (var t in panel) if (t) Destroy(t.gameObject);
@@ -32,7 +34,6 @@ namespace NeuralHub
                 panel.Add(t);
             }
             if (letreroResultado) letreroResultado.text = "";
-            if (pantalla) pantalla.MostrarTexto("NeuralHub", "Preparando sesión...");
             camara.Cambiar(Plano.General, null);
             reflector.Apagar();
         }
@@ -54,7 +55,7 @@ namespace NeuralHub
             switch (e.tipo)
             {
                 case "PITCH":
-                    if (e.pitch != null && pantalla) pantalla.MostrarOferta(e.pitch.nombre, e.pitch.monto_mxn, e.pitch.porcentaje, e.valuacion_mxn);
+                    if (e.pitch != null && pantalla) pantalla.MostrarOferta(e.pitch.nombre, e.pitch.monto_mxn, e.pitch.porcentaje, e.valuacion_mxn, e.pitch.sector);
                     emprendedor.Presentar();
                     foreach (var t in panel) t.Escuchar();
                     camara.Cambiar(Plano.Emprendedor, emprendedor.PuntoCabeza());

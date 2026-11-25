@@ -5,8 +5,11 @@ import os
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+import tempfile
+
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, ValidationError
 
 from . import panel as P
@@ -89,15 +92,78 @@ def crear_sesion(body: NuevaSesion):
     return {"sesion_id": s.id}
 
 
+CARPETA_SESIONES = BASE / "sesiones"
+
+
+def _guardadas() -> dict:
+    """Sesiones terminadas que se guardaron en disco (persisten aunque se reinicie el servicio)."""
+    out = {}
+    for f in sorted(CARPETA_SESIONES.glob("sesion_*.json")):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+            out[d["id"]] = d
+        except (ValueError, KeyError):
+            continue
+    return out
+
+
 @app.get("/sesiones")
 def listar():
-    return [{"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado,
-             "resultado": s.metricas()["resultado"], "creada": s.creada} for s in gestor.sesiones.values()]
+    vivas = {s.id: {"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado,
+                    "resultado": s.metricas()["resultado"], "creada": s.creada} for s in gestor.sesiones.values()}
+    for id_, d in _guardadas().items():
+        if id_ not in vivas:
+            vivas[id_] = {"sesion_id": id_, "negocio": d.get("pitch", {}).get("nombre"), "panel": d.get("panel"),
+                          "estado": "terminada", "resultado": d.get("metricas", {}).get("resultado"), "creada": 0}
+    return sorted(vivas.values(), key=lambda x: -x["creada"])
 
 
 @app.get("/sesiones/{id_}/eventos")
 def eventos(id_: str, desde: int = 0):
-    return _ses(id_).estado_publico(desde)
+    s = gestor.sesiones.get(id_)
+    if s:
+        return s.estado_publico(desde)
+    d = _guardadas().get(id_)
+    if not d:
+        raise HTTPException(404, "Sesión no encontrada")
+    evs = d["eventos"]
+    return {"sesion_id": id_, "estado": "terminada", "pendiente": None, "eventos": evs[desde:], "total_eventos": len(evs), "error": None}
+
+
+def _evento(id_: str, n: int) -> dict:
+    s = gestor.sesiones.get(id_)
+    evs = s.eventos if s else (_guardadas().get(id_) or {}).get("eventos", [])
+    if not 1 <= n <= len(evs):
+        raise HTTPException(404, "Evento no encontrado")
+    return evs[n - 1]
+
+
+@app.get("/sesiones/{id_}/audio/{n}")
+def audio(id_: str, n: int):
+    """Voz del personaje que emite el evento n (WAV, voz es-MX de Windows)."""
+    from .voz import sintetizar
+    e = _evento(id_, n)
+    if e["tipo"] in ("REPORTE",):
+        raise HTTPException(404, "Este evento no tiene voz")
+    return FileResponse(sintetizar(e["texto"], e["emisor"]), media_type="audio/wav")
+
+
+@app.post("/voz/transcribir")
+async def transcribir_voz(request: Request):
+    """Recibe un WAV (cuerpo de la petición) y devuelve el texto en español (Whisper local)."""
+    from .voz import transcribir
+    datos = await request.body()
+    if len(datos) < 1000:
+        raise HTTPException(422, "Audio vacío")
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
+        f.write(datos)
+        ruta = Path(f.name)
+    try:
+        return transcribir(ruta)
+    except ValueError as e:
+        raise HTTPException(422, str(e)) from e
+    finally:
+        ruta.unlink(missing_ok=True)
 
 
 @app.post("/sesiones/{id_}/respuestas")

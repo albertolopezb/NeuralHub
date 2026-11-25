@@ -12,7 +12,7 @@ namespace NeuralHub.Editor
         const string Escena = "Assets/Scenes/Estudio.unity";
 
         // ---------- materiales ----------
-        static Material Mat(string nombre, Color c, float brillo = 0.3f, bool emision = false)
+        internal static Material Mat(string nombre, Color c, float brillo = 0.3f, bool emision = false)
         {
             string ruta = "Assets/Materiales/" + nombre + ".mat";
             var m = AssetDatabase.LoadAssetAtPath<Material>(ruta);
@@ -23,7 +23,7 @@ namespace NeuralHub.Editor
             return m;
         }
 
-        static GameObject Prim(PrimitiveType t, string nombre, Transform padre, Vector3 pos, Vector3 esc, Material m)
+        internal static GameObject Prim(PrimitiveType t, string nombre, Transform padre, Vector3 pos, Vector3 esc, Material m)
         {
             var g = GameObject.CreatePrimitive(t);
             g.name = nombre; g.transform.SetParent(padre, false);
@@ -33,7 +33,7 @@ namespace NeuralHub.Editor
             return g;
         }
 
-        static TextMesh Texto(string nombre, Transform padre, Vector3 pos, string txt, int tam, float car, Color c, TextAnchor ancla = TextAnchor.MiddleCenter)
+        internal static TextMesh Texto(string nombre, Transform padre, Vector3 pos, string txt, int tam, float car, Color c, TextAnchor ancla = TextAnchor.MiddleCenter)
         {
             var g = new GameObject(nombre); g.transform.SetParent(padre, false); g.transform.localPosition = pos;
             var tm = g.AddComponent<TextMesh>();
@@ -252,6 +252,7 @@ namespace NeuralHub.Editor
             var tit = Texto("Titulo", pantallaGO.transform, new Vector3(0, 5.9f, 10.4f), "NeuralHub", 140, 0.06f, Color.white);
             var det = Texto("Detalle", pantallaGO.transform, new Vector3(0, 4.1f, 10.4f), "Panel de inversionistas con agentes de IA", 80, 0.06f, Estilos.Cian);
             var pantalla = pantallaGO.AddComponent<Pantalla>(); pantalla.titulo = tit; pantalla.detalle = det;
+            pantalla.icono = ConstruirExtras.IconoPantalla(pantallaGO.transform);
 
             // Letrero 3D del resultado
             var letrero = Texto("LetreroResultado", estudioGO.transform, new Vector3(0, 8.0f, 9.8f), "", 200, 0.1f, Color.white);
@@ -275,10 +276,12 @@ namespace NeuralHub.Editor
             }
 
             Decorar(estudioGO.transform);
+            var datos = ConstruirExtras.PantallasLaterales(estudioGO.transform);
+            ConstruirExtras.LucesDeAgua(estudioGO.transform);
 
             // Luces
             var dir = new GameObject("LuzGeneral").AddComponent<Light>();
-            dir.type = LightType.Directional; dir.intensity = 0.55f; dir.color = new Color(0.8f, 0.85f, 1f);
+            dir.type = LightType.Directional; dir.intensity = 0.35f; dir.color = new Color(0.8f, 0.85f, 1f);
             dir.transform.rotation = Quaternion.Euler(50, 20, 0);
             foreach (var par in new[] { (new Vector3(-8, 6, 6), new Color(0.2f, 0.9f, 0.9f)), (new Vector3(8, 6, 6), new Color(0.3f, 0.6f, 1f)) })
             {
@@ -310,6 +313,8 @@ namespace NeuralHub.Editor
             reproductor.cliente = cliente; reproductor.estudio = estudio;
             var ctl = app.AddComponent<AppNeuralHub>();
             ctl.cliente = cliente; ctl.reproductor = reproductor; ctl.estudio = estudio; ctl.camara = camara;
+            var sonidos = app.AddComponent<Sonidos>();
+            ctl.sonidos = sonidos; ctl.datos = datos; reproductor.sonidos = sonidos; reproductor.datos = datos;
 
             EditorSceneManager.SaveScene(escena, Escena);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(Escena, true) };

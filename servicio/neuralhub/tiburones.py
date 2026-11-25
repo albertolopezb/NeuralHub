@@ -3,6 +3,7 @@
 # Orden fijo: se usa como desempate en la recomendación del panel.
 TIBURONES = {
     "tiburon_financiero": {
+        "estilo": "Habla como contador desconfiado: pide cifras exactas (márgenes, costo por cliente, flujo) y hace cuentas en voz alta. Nunca habla de marca ni de personas.",
         "nombre": "Tiburón financiero",
         "corto": "Financiero",
         "perfil": "Escéptico; solo invierte si los números cuadran.",
@@ -14,6 +15,7 @@ TIBURONES = {
         "color": "#1060D0",
     },
     "tiburon_estratega": {
+        "estilo": "Habla como estratega de largo plazo: piensa en 5 años, en el tamaño del mercado, en competidores y en barreras de entrada; usa palabras como «escalar», «defender» y «mercado».",
         "nombre": "Tiburón estratega",
         "corto": "Estratega",
         "perfil": "Piensa en el crecimiento a largo plazo.",
@@ -25,6 +27,7 @@ TIBURONES = {
         "color": "#4F1FD0",
     },
     "tiburon_tecnologico": {
+        "estilo": "Habla como ingeniero entusiasta: pregunta por la tecnología, el producto, la innovación y la propiedad intelectual; usa palabras como «prototipo», «algoritmo» y «patente».",
         "nombre": "Tiburón tecnológico",
         "corto": "Tecnológico",
         "perfil": "Le atraen las ideas disruptivas aunque tengan riesgo.",
@@ -36,6 +39,7 @@ TIBURONES = {
         "color": "#13B8F0",
     },
     "tiburona_consumo": {
+        "estilo": "Habla como experta en el cliente final: se pone en los zapatos del consumidor, pregunta por la marca, el empaque, los canales de venta, las reseñas y si la gente volvería a comprar. Usa «el cliente», «la marca» y «el canal».",
         "nombre": "Tiburona de consumo",
         "corto": "Consumo",
         "perfil": "Piensa en el cliente final.",
@@ -47,6 +51,7 @@ TIBURONES = {
         "color": "#E8590C",
     },
     "tiburon_mentor": {
+        "estilo": "Habla como mentor cálido pero exigente: pregunta por las personas, la historia del fundador, su compromiso y su honestidad; usa «tú» y «tu equipo».",
         "nombre": "Tiburón mentor",
         "corto": "Mentor",
         "perfil": "Invierte en personas más que en cifras.",
@@ -58,6 +63,7 @@ TIBURONES = {
         "color": "#2F9E44",
     },
     "tiburon_negociador": {
+        "estilo": "Habla como negociador de trato: no analiza costos ni márgenes; siempre plantea una propuesta concreta con la fórmula «Te ofrezco X pesos por Y %» o pregunta qué porcentaje está dispuesto a ceder, y habla de condiciones, control y plazos. Usa «trato», «condiciones» y «mi oferta».",
         "nombre": "Tiburón negociador",
         "corto": "Negociador",
         "perfil": "Duro con las condiciones.",

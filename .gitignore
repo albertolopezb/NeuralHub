@@ -15,3 +15,8 @@ unity/NeuralHubUnity/*.csproj
 unity/NeuralHubUnity/*.sln
 unity/video_frames*/
 unity/capturas/
+docs/revision/
+unity/video_vivo*/
+unity/capturas_inc2/
+servicio/audio_cache/
+unity/*.log

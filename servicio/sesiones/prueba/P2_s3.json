@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el costo de adquisición de clientes (CAC), considerando que gastan $140,000 MXN mensuales y tienen 140 clientes actuales?",
+      "texto": "¿Cuál es el costo de adquisición de clientes para esos 140 clientes actuales y cómo impacta eso en tu margen neto, considerando que tu margen bruto es 78% y gasto mensual $140,000 MXN?",
       "estado": "Preguntando"
     },
     {
@@ -81,7 +81,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "No me dices cómo planean defender su ventaja frente a competidores grandes y genéricos que podrían adaptar sus productos para el mercado mexicano.",
+      "texto": "No me dices cómo planean defenderse de competidores grandes con software médico caro y agendas genéricas, ¿qué barreras de entrada y ventajas competitivas a largo plazo tienen para escalar en un mercado de 90,000 consultorios?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "No mencionan ninguna patente o propiedad intelectual; ¿qué estrategia tienen para proteger su tecnología y mantener ventaja tecnológica frente a competidores que podrían copiar su modelo?",
+      "texto": "¿Tienen desarrollado un prototipo con algoritmos propios o alguna patente para proteger la tecnología que reduce ausencias del 30 % al 12 %? No veo datos sobre propiedad intelectual en su pitch.",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Preguntaste por el CAC y el emprendedor respondió que es $2,100 MXN por consultorio y se recupera en 3 meses. Estoy de acuerdo con tu enfoque; conocer el CAC es clave para evaluar la escalabilidad y sostenibilidad del modelo tecnológico y de ventas.",
+      "texto": "Financiero, coincido en que el CAC es clave para validar la escalabilidad, especialmente con un margen bruto del 78 % y gastos fijos de $140,000 MXN. El CAC de $2,100 MXN recuperado en 3 meses es positivo, pero me gustaría ver cómo mejora con el algoritmo y si la tecnología puede reducir aún más esos costos.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios, ¿cómo planean escalar rápido y mantener su ventaja competitiva frente a grandes jugadores que pueden bajar precios o copiar funcionalidades?",
+      "texto": "Con solo 0.15 % de penetración en un mercado de 90,000 consultorios, ¿cuál es su plan para escalar y defenderse de que competidores grandes bajen precios o integren WhatsApp, considerando que no tienen patente ni barreras legales claras?",
       "estado": "Preguntando"
     },
     {
@@ -145,7 +145,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué innovaciones tecnológicas planean para evolucionar el modelo predictivo que reduce ausencias y así proteger su ventaja ante posibles copias, considerando que no tienen patentada ninguna tecnología?",
+      "texto": "No mencionas patente ni protección de propiedad intelectual; ¿planean desarrollar algoritmos únicos o registrar alguna patente para proteger su tecnología y mantener ventaja competitiva en la reducción de ausencias?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con un margen bruto del 78 % y un gasto mensual de $140,000 MXN, ¿cuál es su EBITDA actual y en cuánto tiempo proyectan alcanzar rentabilidad neta con la base y crecimiento actual de clientes? No me dices eso.",
+      "texto": "No me dices el flujo de caja mensual actual ni cuándo esperan ser rentables con $140,000 MXN de gasto y CAC de $2,100 MXN; ¿puedes darme esas cifras exactas para entender la viabilidad financiera?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estoy de acuerdo con la preocupación del Tiburón estratega. La penetración actual es muy baja y no hay barreras fuertes contra competidores grandes que podrían bajar precios o copiar funciones. La ventaja basada en integración y base de datos es débil para sostener un crecimiento rápido y rentable.",
+      "texto": "Estratega, coincido en que sin patente ni barreras legales claras, la integración con WhatsApp y facturación no garantiza defensa ante grandes competidores que pueden bajar precios o copiar funciones, poniendo en riesgo la escalabilidad y la valuación.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué planes específicos tienen para desarrollar propiedad intelectual o innovaciones tecnológicas protegibles, más allá del algoritmo y datos, para asegurar ventaja competitiva en un mercado con competidores grandes y copias posibles?",
+      "texto": "¿Han considerado patentar el algoritmo predictivo que reduce ausencias, o desarrollar prototipos con tecnología propietaria para fortalecer la propiedad intelectual y proteger su ventaja competitiva en un mercado con competencia fuerte?",
       "estado": "Preguntando"
     },
     {
@@ -209,7 +209,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices el EBITDA actual ni la proyección clara de rentabilidad neta; ¿cuándo esperan que el negocio deje de ser deficitario con el crecimiento y gastos actuales?",
+      "texto": "No me dices el flujo de caja mensual exacto actual ni cuándo esperan ser rentables con gastos de $140,000 MXN y CAC de $2,100 MXN; ¿puedes darme esas cifras precisas para evaluar la viabilidad financiera?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con una penetración actual de solo 0.15 % en un mercado de 90,000 consultorios, ¿qué estrategia concreta tienen para crecer rápido y sostener una ventaja competitiva real frente a competidores grandes que pueden bajar precios o copiar funciones?",
+      "texto": "Con solo 140 clientes y 0.15 % de penetración en un mercado de 90,000 consultorios, y sin barreras legales ni patente, ¿cómo planean construir ventajas competitivas sostenibles para defender y escalar su participación frente a competidores grandes que pueden replicar integración con WhatsApp y facturación mexicana?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Concuerdo con tu pregunta sobre la falta de propiedad intelectual clara. La respuesta del emprendedor solo menciona integraciones y prototipos, sin una estrategia sólida para protección tecnológica que asegure ventaja frente a competidores grandes que pueden copiar fácilmente.",
+      "texto": "Tecnológico, coincido en que sin patente ni protección formal, la ventaja tecnológica es frágil. El algoritmo y prototipo son valiosos, pero sin barreras legales o propiedad intelectual clara, es difícil defenderse y escalar frente a grandes competidores que podrían replicar o integrar funciones similares.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,12 +264,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "El CAC de $2,100 MXN y margen bruto de 78 % son buenos, pero la valuación de $12 M es 11 veces ventas y no hay estrategia clara para defender ventaja competitiva ni propiedad intelectual, con solo 0.15 % de penetración actual.",
+      "texto": "El CAC de $2,100 recuperado en 3 meses con margen bruto del 78% es aceptable, pero sin flujo de caja mensual exacto ni barreras legales claras, la valuación de $12,000,000 parece alta para 140 clientes y $1,100,000 en ventas anuales. Contraoferta: $600,000 MXN por el 10 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 10.0
     },
     {
       "n": 25,
@@ -277,12 +277,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado es grande pero la penetración actual es mínima (0.15 %) y no hay una ventaja competitiva defendible clara frente a competidores grandes que pueden copiar funciones o bajar precios.",
+      "texto": "El mercado es grande (90,000 consultorios), pero solo tienen 0.15 % de penetración y no hay barreras legales ni patente clara para defenderse. La valuación de 12 M y 140 clientes es alta sin ventaja competitiva sólida. Propongo $600,000 MXN por 15 % para equilibrar riesgo y potencial. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 26,
@@ -290,134 +290,96 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "El software es innovador para el mercado mexicano y reduce ausencias de 30% a 12%, pero falta propiedad intelectual clara; propongo $1,200,000 MXN por 20% para compensar el riesgo tecnológico y la baja penetración actual. Contraoferta: $1,200,000 MXN por el 20 %.",
+      "texto": "El prototipo y algoritmo predictivo son innovadores, pero sin patente ni protección de propiedad intelectual la ventaja competitiva es débil. Con 140 clientes y $1,100,000 MXN en ventas, la valuación de $12,000,000 MXN es alta. Propongo $900,000 MXN por 15% para fortalecer IP y tecnología. Contraoferta: $900,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 1200000.0,
-      "contraoferta_porcentaje": 20.0
+      "contraoferta_monto_mxn": 900000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 27,
-      "ronda": 4,
-      "tipo": "NEGOCIACION",
-      "emisor": "nodo_votacion",
-      "destino": "emprendedor",
-      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
-      "estado": ""
-    },
-    {
-      "n": 28,
-      "ronda": 4,
+      "ronda": 3,
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $1,200,000 MXN por el 20 %.",
-      "estado": "Negociando",
-      "oferta": {
+      "texto": "Mantengo mi oferta original. $1,200,000 MXN por el 10 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $1,200,000 MXN por el 10 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
         "monto_mxn": 1200000.0,
-        "porcentaje": 20.0
+        "porcentaje": 10.0,
+        "origen": "original"
       }
     },
     {
       "n": 29,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_financiero",
-      "destino": "nodo_votacion",
-      "texto": "Aunque el CAC de $2,100 y margen bruto del 78% son positivos, la valuación y penetración del 0.15% son bajas, y no hay estrategia clara para proteger la ventaja competitiva. La contraoferta diluye mucho sin resolver estas debilidades.",
-      "estado": "Votando",
-      "decision": "salir",
-      "votacion": 2
-    },
-    {
-      "n": 30,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_estratega",
-      "destino": "nodo_votacion",
-      "texto": "Mercado grande pero con solo 0.15 % de penetración y sin ventajas competitivas claras ni propiedad intelectual protegida. La contraoferta diluye mucho sin resolver riesgos estratégicos importantes.",
-      "estado": "Votando",
-      "decision": "salir",
-      "votacion": 2
-    },
-    {
-      "n": 31,
-      "ronda": 4,
-      "tipo": "VOTO",
-      "emisor": "tiburon_tecnologico",
-      "destino": "nodo_votacion",
-      "texto": "Aunque no tienen patente, el software innovador reduce ausencias de 30% a 12% y el emprendedor aceptó $1.2M por 20%, lo que refleja un menor riesgo tecnológico para mí y buen potencial de propiedad intelectual basada en datos y algoritmo.",
-      "estado": "Votando",
-      "decision": "invertir",
-      "votacion": 2
-    },
-    {
-      "n": 32,
-      "ronda": 4,
-      "tipo": "DECISION",
-      "emisor": "nodo_votacion",
-      "destino": "todos",
-      "texto": "SIN TRATO",
-      "estado": "Reaccionando",
-      "resultado": "SIN_TRATO",
-      "condiciones": null
-    },
-    {
-      "n": 33,
-      "ronda": 4,
+      "ronda": 3,
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Modelo de negocio con buen margen bruto (78 %) y CAC razonable ($2,100 MXN) recuperable en 3 meses.; Producto validado con 140 clientes y reducción significativa de ausencias de 30 % a 12 %.; Equipo con experiencia en software de salud y ventas B2B, dedicación de tiempo completo y enfoque en integración local (WhatsApp y facturación mexicana).. Alertas: Penetración actual muy baja (0.15 %) en un mercado de 90,000 consultorios, sin estrategia clara para escalar rápido.; No cuentan con patente ni propiedad intelectual protegida, lo que pone en riesgo la ventaja ante competidores que pueden copiar el modelo.; Valuación alta (11 veces ventas) sin proyecciones claras de rentabilidad y sin barreras fuertes contra competidores grandes. . Siguientes pasos: Desarrollar y presentar proyecciones financieras claras que incluyan EBITDA y rentabilidad neta esperada.; Definir una estrategia clara y diferenciada para escalar rápidamente y proteger la ventaja competitiva frente a competidores grandes.; Crear un plan para proteger la propiedad intelectual, ya sea mediante patentes, innovaciones tecnológicas o fortalecimiento de la base de datos y algoritmos..",
+      "texto": "Fortalezas: Solución tecnológica que reduce ausencias de citas del 30% al 12%, demostrando impacto positivo.; Modelo de negocio con suscripción mensual y margen bruto alto del 78%, con crecimiento mensual del 9%.; Integración con WhatsApp y facturación mexicana, adaptada al mercado local y fácil configuración en 10 minutos.. Alertas: Falta de protección legal o patente para el algoritmo y tecnología, dejando vulnerable la ventaja competitiva.; Penetración de mercado muy baja (0.15%) en un mercado amplio sin barreras claras para evitar competencia agresiva.; Falta de claridad en flujo de caja mensual exacto y proyecciones financieras detalladas para validar la viabilidad.. Siguientes pasos: Desarrollar y registrar propiedad intelectual para proteger el algoritmo y tecnología, fortaleciendo la ventaja competitiva.; Mejorar la presentación financiera incluyendo flujo de caja mensual detallado y proyecciones claras de rentabilidad.; Diseñar e implementar una estrategia clara para escalar la penetración en el mercado y construir barreras de entrada frente a competidores grandes..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "El CAC de $2,100 MXN y margen bruto de 78 % son buenos, pero la valuación de $12 M es 11 veces ventas y no hay estrategia clara para defender ventaja competitiva ni propiedad intelectual, con solo 0.15 % de penetración actual.",
-            "necesitaria": "Proyecciones claras de EBITDA y rentabilidad neta, así como una estrategia sólida para defender la ventaja competitiva y justificar la valuación."
+            "frase_clave": "El CAC de $2,100 MXN recuperado en 3 meses con margen bruto del 78% es aceptable, pero sin flujo de caja mensual exacto ni barreras legales claras, la valuación de $12,000,000 parece alta para 140 clientes y $1,100,000 en ventas anuales.",
+            "necesitaria": "Información precisa sobre flujo de caja mensual actual y proyecciones claras de rentabilidad para evaluar viabilidad financiera."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 2,
-            "frase_clave": "El mercado es grande pero la penetración actual es mínima (0.15 %) y no hay una ventaja competitiva defendible clara frente a competidores grandes que pueden copiar funciones o bajar precios.",
-            "necesitaria": "Una estrategia concreta y diferenciada para escalar rápido y sostener una ventaja competitiva real frente a competidores grandes."
+            "frase_clave": "El mercado es grande (90,000 consultorios), pero solo tienen 0.15 % de penetración y no hay barreras legales ni patente clara para defenderse. La valuación de 12 M y 140 clientes es alta sin ventaja competitiva sólida.",
+            "necesitaria": "Estrategias claras y diferenciadas para crear barreras de entrada y ventajas competitivas sostenibles, además de un plan de escalabilidad frente a competidores grandes."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 3,
-            "frase_clave": "Aunque no tienen patente, el software innovador reduce ausencias de 30% a 12% y el emprendedor aceptó $1.2M por 20%, lo que refleja un menor riesgo tecnológico para mí y buen potencial de propiedad intelectual basada en datos y algoritmo.",
-            "necesitaria": "Un plan claro para desarrollar propiedad intelectual protegible y continuar innovando tecnológicamente para mantener la ventaja."
+            "calificacion": 2,
+            "frase_clave": "El prototipo y algoritmo predictivo son innovadores, pero sin patente ni protección de propiedad intelectual la ventaja competitiva es débil.",
+            "necesitaria": "Desarrollo y registro de propiedad intelectual (patentes) o tecnologías propietarias que protejan la innovación y aseguren ventaja competitiva."
           }
         ],
         "fortalezas": [
-          "Modelo de negocio con buen margen bruto (78 %) y CAC razonable ($2,100 MXN) recuperable en 3 meses.",
-          "Producto validado con 140 clientes y reducción significativa de ausencias de 30 % a 12 %.",
-          "Equipo con experiencia en software de salud y ventas B2B, dedicación de tiempo completo y enfoque en integración local (WhatsApp y facturación mexicana)."
+          "Solución tecnológica que reduce ausencias de citas del 30% al 12%, demostrando impacto positivo.",
+          "Modelo de negocio con suscripción mensual y margen bruto alto del 78%, con crecimiento mensual del 9%.",
+          "Integración con WhatsApp y facturación mexicana, adaptada al mercado local y fácil configuración en 10 minutos."
         ],
         "alertas": [
-          "Penetración actual muy baja (0.15 %) en un mercado de 90,000 consultorios, sin estrategia clara para escalar rápido.",
-          "No cuentan con patente ni propiedad intelectual protegida, lo que pone en riesgo la ventaja ante competidores que pueden copiar el modelo.",
-          "Valuación alta (11 veces ventas) sin proyecciones claras de rentabilidad y sin barreras fuertes contra competidores grandes. "
+          "Falta de protección legal o patente para el algoritmo y tecnología, dejando vulnerable la ventaja competitiva.",
+          "Penetración de mercado muy baja (0.15%) en un mercado amplio sin barreras claras para evitar competencia agresiva.",
+          "Falta de claridad en flujo de caja mensual exacto y proyecciones financieras detalladas para validar la viabilidad."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el EBITDA actual y cuándo proyectan alcanzar rentabilidad neta con el crecimiento y gastos actuales?",
-          "¿Qué estrategia concreta tienen para escalar rápido y mantener ventaja competitiva frente a grandes jugadores?",
-          "¿Qué planes específicos tienen para desarrollar propiedad intelectual o innovaciones tecnológicas protegibles?"
+          "¿Cuál es el flujo de caja mensual actual y en qué momento proyectan ser rentables?",
+          "¿Qué barreras de entrada concretas tienen para defenderse de grandes competidores que podrían replicar su solución?",
+          "¿Planean registrar patentes o proteger de manera formal su tecnología y algoritmo para asegurar ventaja competitiva?"
         ],
         "siguientes_pasos": [
-          "Desarrollar y presentar proyecciones financieras claras que incluyan EBITDA y rentabilidad neta esperada.",
-          "Definir una estrategia clara y diferenciada para escalar rápidamente y proteger la ventaja competitiva frente a competidores grandes.",
-          "Crear un plan para proteger la propiedad intelectual, ya sea mediante patentes, innovaciones tecnológicas o fortalecimiento de la base de datos y algoritmos."
+          "Desarrollar y registrar propiedad intelectual para proteger el algoritmo y tecnología, fortaleciendo la ventaja competitiva.",
+          "Mejorar la presentación financiera incluyendo flujo de caja mensual detallado y proyecciones claras de rentabilidad.",
+          "Diseñar e implementar una estrategia clara para escalar la penetración en el mercado y construir barreras de entrada frente a competidores grandes."
         ],
-        "resultado": "SIN_TRATO",
-        "condiciones": null,
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 1200000.0,
+          "porcentaje": 10.0,
+          "origen": "original"
+        },
         "valuacion_mxn": 12000000.0,
         "votos_primera_votacion": {
-          "tiburon_financiero": "salir",
-          "tiburon_estratega": "salir",
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
           "tiburon_tecnologico": "contraoferta"
         },
         "criterios_no_evaluados": [
@@ -442,23 +404,23 @@
     }
   ],
   "metricas": {
-    "llamadas_modelo": 19,
-    "segundos_modelo": 23.5,
-    "segundos_total": 19.4,
+    "llamadas_modelo": 16,
+    "segundos_modelo": 26.4,
+    "segundos_total": 22.9,
     "rondas_preguntas": 3,
-    "n_eventos": 33,
+    "n_eventos": 29,
     "eventos_en_orden": true,
     "preguntas": 9,
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "votos": 6,
-    "justificaciones_mencionan_criterio": 6,
-    "justificaciones_con_dato": 6,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
     "votos_publicados_juntos": true,
-    "hubo_negociacion": true,
-    "resultado": "SIN_TRATO",
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
     "terminada": true
   },
   "error": null

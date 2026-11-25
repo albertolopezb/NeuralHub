@@ -209,6 +209,38 @@ namespace NeuralHub
             yield return Post("/sesiones/" + sesionId + "/condiciones", "{\"opcion\":\"" + opcion + "\"}", null);
         }
 
+        // ---------- voz ----------
+        /// <summary>Audio (WAV) de la línea del evento n: del servicio en vivo o de StreamingAssets/audio en modo sin conexión.</summary>
+        public IEnumerator ObtenerAudio(int n, Action<AudioClip> listo)
+        {
+            string url = (usarMock || sesionId == "mock")
+                ? new Uri(Path.Combine(Application.streamingAssetsPath, "audio", n + ".wav")).AbsoluteUri
+                : urlBase + "/sesiones/" + sesionId + "/audio/" + n;
+            using (var req = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
+            {
+                req.timeout = 20;
+                yield return req.SendWebRequest();
+                listo(req.result == UnityWebRequest.Result.Success ? DownloadHandlerAudioClip.GetContent(req) : null);
+            }
+        }
+
+        [Serializable] class Transcripcion { public string texto; }
+
+        /// <summary>Envía la voz grabada (WAV) al servicio, que la transcribe con Whisper.</summary>
+        public IEnumerator Transcribir(byte[] wav, Action<string> listo)
+        {
+            using (var req = new UnityWebRequest(urlBase + "/voz/transcribir", "POST"))
+            {
+                req.uploadHandler = new UploadHandlerRaw(wav);
+                req.downloadHandler = new DownloadHandlerBuffer();
+                req.SetRequestHeader("Content-Type", "audio/wav");
+                req.timeout = 60;
+                yield return req.SendWebRequest();
+                if (req.result == UnityWebRequest.Result.Success) listo(JsonUtility.FromJson<Transcripcion>(req.downloadHandler.text).texto);
+                else { Error("No se pudo transcribir la voz: " + req.error); listo(null); }
+            }
+        }
+
         // ---------- HTTP ----------
         IEnumerator Get(string ruta, Action<string> ok)
         {

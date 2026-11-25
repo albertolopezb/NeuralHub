@@ -1,4 +1,4 @@
-VBCSCompilerServerWatchdog: watching VBCSCompiler (PID 23000)
+VBCSCompilerServerWatchdog: watching VBCSCompiler (PID 30316)
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/respin/6000.3.28f1-21f78c3e21d1' branch; Version is '6000.3.28f1 (8f082d2fe476) revision 9373741'; Using compiler version '194234433'; Build Type 'Release'
 [Licensing::IpcConnector] Channel LicenseClient-Bet49 doesn't exist
@@ -6,22 +6,22 @@ OS: 'Windows 11  (10.0.26300) CoreSingleLanguage' Language: 'es' Physical Memory
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-21T01:41:28Z
-[Licensing::Module] Successfully launched the LicensingClient (PId: 12400)
+Date: 2026-11-25T17:01:05Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 21952)
 Starting IPC server.
 Waiting for clients to connect on \\.\pipe\Unity-LicenseClient-Bet49, press Ctrl-C to exit.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bet49" at "2026-11-21T01:41:28.5826705Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 12400, path: "D:/Unity/Installs/6000.3.28f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bet49" at "2026-11-25T17:01:05.6714402Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21952, path: "D:/Unity/Installs/6000.3.28f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.19.0+4cc3dda
-  Session Id:              f7f7e19496044cf1b34be886682a1a87
-  Correlation Id:          5ed37aa84bb172ac8fecde833a32db36
-  External correlation Id: 8476276600944730147
+  Session Id:              db0f0e8227294b9a9b2f3f2dbbdfb36f
+  Correlation Id:          b63da8f525f0501b5f6e643a7278c26b
+  External correlation Id: 2597528281478322788
   Machine Id:              ab0AA1liqX2P3GgdQfA5SUYUGtU=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Bet49" (connect: 0.07s, validation: 0.13s, handshake: 0.05s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bet49-notifications" at "2026-11-21T01:41:28.7663463Z"
-[Licensing::Module] Connected to LicensingClient (PId: 12400, launch time: 0.01, total connection time: 0.25s)
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Bet49" (connect: 0.04s, validation: 0.08s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bet49-notifications" at "2026-11-25T17:01:05.7978879Z"
+[Licensing::Module] Connected to LicensingClient (PId: 21952, launch time: 0.00, total connection time: 0.17s)
 [Licensing::Module] Error: Access token is unavailable; failed to update
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -31,7 +31,7 @@ Waiting for clients to connect on \\.\pipe\Unity-LicenseClient-Bet49, press Ctrl
   Expiration: Unlimited
 [Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
 [Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] Licensing Background thread has ended after 0.26s
+[Licensing::Module] Licensing Background thread has ended after 0.18s
 
 COMMAND LINE ARGUMENTS:
 D:\Unity\Installs\6000.3.28f1\Editor\Unity.exe
@@ -81,20 +81,20 @@ D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [30388]  Target information:
+Player connection [8248]  Target information:
 
-Player connection [30388]  * "[IP] 192.168.56.1 [Port] 55504 [Flags] 2 [Guid] 1102651721 [EditorId] 1102651721 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [8248]  * "[IP] 192.168.56.1 [Port] 55504 [Flags] 2 [Guid] 3145130808 [EditorId] 3145130808 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [30388]  * "[IP] 172.19.144.1 [Port] 55504 [Flags] 2 [Guid] 1102651721 [EditorId] 1102651721 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [8248]  * "[IP] 172.19.144.1 [Port] 55504 [Flags] 2 [Guid] 3145130808 [EditorId] 3145130808 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [30388]  * "[IP] 192.168.119.2 [Port] 55504 [Flags] 2 [Guid] 1102651721 [EditorId] 1102651721 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [8248]  * "[IP] 10.22.157.200 [Port] 55504 [Flags] 2 [Guid] 3145130808 [EditorId] 3145130808 [Version] 1048832 [Id] WindowsEditor(7,AlbertoGPT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [30388] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [30388] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8248] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8248] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Package Manager] Connected to IPC stream "Upm-27408" after 0.2 seconds.
+[Package Manager] Connected to IPC stream "Upm-2992" after 0.2 seconds.
 [Licensing::Client] Successfully resolved entitlement details
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
@@ -124,7 +124,7 @@ Initialize mono
 Mono path[0] = 'D:/Unity/Installs/6000.3.28f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/Installs/6000.3.28f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/Installs/6000.3.28f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56992
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 ImportWorker Server TCP listen port: 0
@@ -133,42 +133,42 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/Installs/6000.3.28f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Unity/Installs/6000.3.28f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001370 seconds.
-- Loaded All Assemblies, in  0.367 seconds
+Registered in 0.001316 seconds.
+- Loaded All Assemblies, in  0.357 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.356 seconds
-Domain Reload Profiling: 723ms
-	BeginReloadAssembly (162ms)
+- Finished resetting the current domain, in  0.312 seconds
+Domain Reload Profiling: 668ms
+	BeginReloadAssembly (158ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (12ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (136ms)
-		LoadAssemblies (152ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (131ms)
+		LoadAssemblies (158ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (131ms)
-			TypeCache.Refresh (130ms)
-				TypeCache.ScanAssembly (118ms)
+		AnalyzeDomain (127ms)
+			TypeCache.Refresh (126ms)
+				TypeCache.ScanAssembly (114ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (356ms)
+	FinalizeReload (312ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (325ms)
+		SetupLoadedEditorAssemblies (285ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (39ms)
+			InitializePlatformSupportModulesInManaged (38ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (58ms)
-			ProcessInitializeOnLoadAttributes (112ms)
-			ProcessInitializeOnLoadMethodAttributes (113ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (98ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -234,160 +234,173 @@ info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 28.5817ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 27.2310ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
 DisplayProgressbar: Compiling Scripts
-ExitCode: 0 Duration: 2s57ms
-[168/174    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+ExitCode: 0 Duration: 3s560ms
+[168/174    2s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\AppNeuralHub.cs(20,14): warning CS0414: The field 'AppNeuralHub.vivoAuto' is assigned but its value is never used
 [169/174    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
-[173/174    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
-*** Tundra build success (2.02 seconds), 3 items updated, 174 evaluated
-AssetDatabase: script compilation time: 2.388762s
+[170/174    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[171/174    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets\Editor\ConstruirExtras.cs(91,75): warning CS0618: 'Light.cookieSize' is obsolete: 'Light.cookieSize has been deprecated. Use Light.cookieSize2D instead.'
+[172/174    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[173/174    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.52 seconds), 6 items updated, 174 evaluated
+Assets\Scripts\AppNeuralHub.cs(20,14): warning CS0414: The field 'AppNeuralHub.vivoAuto' is assigned but its value is never used
+Assets\Editor\ConstruirExtras.cs(91,75): warning CS0618: 'Light.cookieSize' is obsolete: 'Light.cookieSize has been deprecated. Use Light.cookieSize2D instead.'
+AssetDatabase: script compilation time: 3.911154s
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.741 seconds
+- Loaded All Assemblies, in  0.910 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.333 seconds
-Domain Reload Profiling: 1074ms
-	BeginReloadAssembly (269ms)
+- Finished resetting the current domain, in  0.302 seconds
+Domain Reload Profiling: 1213ms
+	BeginReloadAssembly (271ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (17ms)
+		DisableScriptedObjects (15ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (133ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (147ms)
+	RebuildCommonClasses (24ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (422ms)
-		LoadAssemblies (503ms)
+	initialDomainReloadingComplete (12ms)
+	LoadAllAssembliesAndSetupDomain (596ms)
+		LoadAssemblies (668ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (8ms)
+		AnalyzeDomain (9ms)
 			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (2ms)
 			BuildScriptInfoCaches (1ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (334ms)
+	FinalizeReload (303ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (227ms)
+		SetupLoadedEditorAssemblies (204ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (22ms)
+			InitializePlatformSupportModulesInManaged (20ms)
 			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (87ms)
-			ProcessInitializeOnLoadMethodAttributes (35ms)
-			AfterProcessingInitializeOnLoad (2ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
 Refreshing native plugins compatible for Editor in 0.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=b373db1da3e44304f9ae60e1a222bd06): Total: 3.672 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+Asset Pipeline Refresh (id=567df6aa9e79d4e4ba32ff6f419310f3): Total: 5.323 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
 	Summary:
 		Imports: total=0 (actual=0, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=452 ms
-		Asset DB Callback time: managed=64 ms, native=17 ms
-		Scripting: domain reloads=1, domain reload time=743 ms, compile time=2390 ms, other=2 ms
-		Project Asset Count: scripts=118, non-scripts=127
-		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Asset DB Process Time: managed=0 ms, native=419 ms
+		Asset DB Callback time: managed=60 ms, native=17 ms
+		Scripting: domain reloads=1, domain reload time=910 ms, compile time=3913 ms, other=2 ms
+		Project Asset Count: scripts=123, non-scripts=183
+		Asset File Changes: new=0, changed=2, moved=0, deleted=0
 		Scan Filter Count: 0
 	InvokeCustomDependenciesCallbacks: 0.001ms
-	InvokePackagesCallback: 14.228ms
-	ApplyChangesToAssetFolders: 0.530ms
-	Scan: 40.123ms
-	OnSourceAssetsModified: 0.816ms
-	CategorizeAssetsWithTransientArtifact: 0.277ms
-	ProcessAssetsWithTransientArtifactChanges: 1.108ms
-	CategorizeAssets: 1.107ms
-	ImportOutOfDateAssets: 335.175ms (-2056.076ms without children)
-		CompileScripts: 2390.149ms
-		ReloadNativeAssets: 0.001ms
-		UnloadImportedAssets: 0.926ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.027ms
+	InvokePackagesCallback: 14.103ms
+	ApplyChangesToAssetFolders: 0.543ms
+	Scan: 48.496ms
+	OnSourceAssetsModified: 0.726ms
+	CategorizeAssetsWithTransientArtifact: 0.289ms
+	ProcessAssetsWithTransientArtifactChanges: 1.073ms
+	CategorizeAssets: 1.718ms
+	ImportOutOfDateAssets: 304.129ms (-3609.490ms without children)
+		CompileScripts: 3912.617ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.808ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.035ms
 		InitializingProgressBar: 0.000ms
 		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
-		OnDemandSchedulerStart: 0.148ms
-	PostProcessAllAssets: 65.188ms
-	Hotreload: 4.003ms
+		OnDemandSchedulerStart: 0.159ms
+	PostProcessAllAssets: 60.945ms
+	Hotreload: 3.799ms
 	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
-	UnloadStreamsBegin: 1.063ms
+	UnloadStreamsBegin: 1.124ms
 	PersistCurrentRevisions: 0.007ms
-	UnloadStreamsEnd: 0.002ms
-	GenerateScriptTypeHashes: 0.177ms
-	Untracked: 3208.001ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.186ms
+	Untracked: 4886.461ms
 
 Application.AssetDatabase Initial Refresh End
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Scanning for USB devices : 0.482ms
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 0.725ms
 Initializing Unity extensions:
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-NeuralHub
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 93 unused Assets / (507.5 KB). Loaded Objects now: 724.
-Memory consumption went from 92.3 MB to 91.8 MB.
-Total: 4.465500 ms (FindLiveObjects: 0.045400 ms CreateObjectMapping: 0.008700 ms MarkObjects: 4.198800 ms  DeleteObjects: 0.211700 ms)
+Unloading 98 unused Assets / (507.7 KB). Loaded Objects now: 729.
+Memory consumption went from 92.6 MB to 92.1 MB.
+Total: 4.682000 ms (FindLiveObjects: 0.035200 ms CreateObjectMapping: 0.007300 ms MarkObjects: 4.464300 ms  DeleteObjects: 0.174600 ms)
 
-Start importing Assets/Prefabs/Tiburon.prefab using Guid(d2a4aa198188fe74f9366056307e02ba) (PrefabImporter) -> (artifact id: 'a229e65cc445de1a107a9b83b2b5f9df') in 0.0081101 seconds
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=c341d7f1707253844b5d8b2b4158bcfb): Total: 0.055 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Asset Pipeline Refresh (id=77cccbd20b25644468da1a73a2599543): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Prefabs/Emprendedor.prefab using Guid(256701b76b9b56044aa47410b4fed86b) (PrefabImporter) -> (artifact id: '985a823537096608ada460824cb45f88') in 0.0052512 seconds
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=fb2ed26f6c6a8de43a63e23e4cf79d91): Total: 0.035 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 212 unused Assets / (24.4 KB). Loaded Objects now: 746.
-Memory consumption went from 91.6 MB to 91.5 MB.
-Total: 4.076100 ms (FindLiveObjects: 0.062800 ms CreateObjectMapping: 0.011700 ms MarkObjects: 3.907500 ms  DeleteObjects: 0.092700 ms)
-
-Start importing Assets/Materiales/Neon_circulo.mat using Guid(a1b0c8fcb61dd8e44b7c0fb7aedf42a1) (NativeFormatImporter) -> (artifact id: '44bfeb28840c2eb71aeb78c149d11738') in 0.0014357 seconds
-Start importing Assets/Materiales/Medusa.mat using Guid(d107d5448f235c44499d354c07f30474) (NativeFormatImporter) -> (artifact id: 'bd6869d1e29dc4126a0c966c4408d1cf') in 0.0010947 seconds
-Start importing Assets/Materiales/Podio.mat using Guid(028d49dc6b0c4ba44b4e6cb8401e28b9) (NativeFormatImporter) -> (artifact id: '1adbc84d6037cf3791bfaef0f5d5fc42') in 0.0013837 seconds
-Start importing Assets/Materiales/Coral_naranja.mat using Guid(32a74b66c3d6f0d4ca9933a8e1796b99) (NativeFormatImporter) -> (artifact id: 'f03ab7ce8c74b246e08ad8ae0a02ff8f') in 0.0013707 seconds
-Start importing Assets/Materiales/Tiburon_corbata.mat using Guid(45afa76a9d977f74abc76674f215875f) (NativeFormatImporter) -> (artifact id: '9f1b489157182980570e7a3d78870964') in 0.0010699 seconds
-Start importing Assets/Materiales/Neon_cian.mat using Guid(8512ded4800f7eb42a414be87f632284) (NativeFormatImporter) -> (artifact id: '6c98be45fadc66944aeb31a465c96ba6') in 0.0009321 seconds
-Start importing Assets/Materiales/Tiburon_traje.mat using Guid(e57bd1a753efcd249a4424e3e9afb714) (NativeFormatImporter) -> (artifact id: '0d776e1bc60c5f5ec94d7dc1e2e7ca03') in 0.0010418 seconds
-Start importing Assets/Materiales/Roca.mat using Guid(06f0680da93fc4548b263c88a081ddef) (NativeFormatImporter) -> (artifact id: '4b762f06388bc98971547353abfb04df') in 0.0010097 seconds
-Start importing Assets/Materiales/Negro.mat using Guid(16be89fc2c72f8d4390054b5a7698db5) (NativeFormatImporter) -> (artifact id: '5d30e9efac0d7107f391f31fe578fa5e') in 0.0009079 seconds
-Start importing Assets/Materiales/Pez_0.mat using Guid(766606021c629ae4a8aa2290d1e6c75c) (NativeFormatImporter) -> (artifact id: 'f5956e7f250d933986c3b8efac8e0635') in 0.0008845 seconds
-Start importing Assets/Materiales/Tiburon_panza.mat using Guid(7793f11c4c483e1439174dd45025b680) (NativeFormatImporter) -> (artifact id: '3e803533a7c9e420e737c8f6abe60458') in 0.0008961 seconds
-Start importing Assets/Materiales/Neon_violeta.mat using Guid(787da883f82c6974abf110bcd4221703) (NativeFormatImporter) -> (artifact id: 'daa1b9166785352840d9a580f4344bd3') in 0.0010792 seconds
-Start importing Assets/Materiales/Alga.mat using Guid(a821d5291eff74b409f5c1f04184797d) (NativeFormatImporter) -> (artifact id: '2ea109d4fc7c4f5759bd776d53b47936') in 0.0009073 seconds
-Start importing Assets/Materiales/Pez_4.mat using Guid(c84be16a7c0f9d34fad27bbdf7ff8541) (NativeFormatImporter) -> (artifact id: '895b483ffbbd367ffb1e6c02c42f7d55') in 0.0008794 seconds
-Start importing Assets/Materiales/Pez_2.mat using Guid(39ac37bd684c81d489b2507622ad2504) (NativeFormatImporter) -> (artifact id: '017eeb24b4c2f35b4dc61f9599b13e94') in 0.0009218 seconds
-Start importing Assets/Materiales/Pantalla_fondo.mat using Guid(a9c6b59adf1c5734897e97b94d4daf39) (NativeFormatImporter) -> (artifact id: '7d56604215d2c94a1ad1c81d064d08c9') in 0.0008501 seconds
-Start importing Assets/Materiales/Blanco.mat using Guid(f9ae6c8701519a7498fcc4e03734d1e5) (NativeFormatImporter) -> (artifact id: '34b5801dcffdeda50e915dac248a4e69') in 0.0011118 seconds
-Start importing Assets/Materiales/Emprendedor_pez.mat using Guid(0ae4bb5f161693e45a79930a96a57ae2) (NativeFormatImporter) -> (artifact id: '01ef821cd7fddcc5146a80b4abf1e9c8') in 0.0009578 seconds
-Start importing Assets/Materiales/Marco_pantalla.mat using Guid(3ae5ccebd14ea974a99b85def30f61e9) (NativeFormatImporter) -> (artifact id: '1d96ec32e1c9d160335939ae20c19ad8') in 0.0010265 seconds
-Start importing Assets/Materiales/Piso.mat using Guid(ea82d676e931105409f8b8b3b772a845) (NativeFormatImporter) -> (artifact id: '391a499ab16d23b2602711ea8841cb3e') in 0.0009902 seconds
-Start importing Assets/Materiales/Tiburon_camisa.mat using Guid(0b079178063493e45a6c7c5a723ca9f5) (NativeFormatImporter) -> (artifact id: '260ea358b50677fdd77f6e986ddc129e') in 0.0009494 seconds
-Start importing Assets/Materiales/Pez_1.mat using Guid(2b0f0d8d040512c43a67430da5f233f9) (NativeFormatImporter) -> (artifact id: '3aa2701ace044da8a0bdab78507c10cc') in 0.0009806 seconds
-Start importing Assets/Materiales/Muro.mat using Guid(3bb9a2d054b6d7f47bb9b3c7082b21d0) (NativeFormatImporter) -> (artifact id: '2f13bc582b428ab30f5431993bb17f34') in 0.001172 seconds
-Start importing Assets/Materiales/Pez_3.mat using Guid(5b928be54c24a124bbc3889e4583850e) (NativeFormatImporter) -> (artifact id: '27e2d46f7f51ef893cd1d7faeab62c85') in 0.000945 seconds
-Start importing Assets/Materiales/Coral_violeta.mat using Guid(fb849948fd58d0042be4f6c651e3805b) (NativeFormatImporter) -> (artifact id: '7a0eaba3119ca1d10791fd99f01ff5be') in 0.0008613 seconds
-Start importing Assets/Materiales/Sillon_interior.mat using Guid(4c4000ebd75ba434c8ae663f597c80e4) (NativeFormatImporter) -> (artifact id: 'bb76cf64461ba745d28fa62f45b46aa7') in 0.0008896 seconds
-Start importing Assets/Materiales/Coral_rosa.mat using Guid(5ce8d83b938c5fe49babd59df179e2cc) (NativeFormatImporter) -> (artifact id: '5eba4fc20f729af6eb6ce98de9de64fa') in 0.001373 seconds
-Start importing Assets/Materiales/Alga_clara.mat using Guid(7c42d42996b21994582c59ef24747508) (NativeFormatImporter) -> (artifact id: '9ef03506fe05fa9b0ec70af4f0f2d3af') in 0.0009467 seconds
-Start importing Assets/Materiales/Escritorio_madera.mat using Guid(2d63cf379c668a744adebc9aa287264b) (NativeFormatImporter) -> (artifact id: 'c0238186229ad8ec878e6f27f6dd2031') in 0.0016103 seconds
-Start importing Assets/Materiales/Podio_tope.mat using Guid(3d7300161d1ac76429f3fda43679e752) (NativeFormatImporter) -> (artifact id: 'd2af3a0150743004f81b628e4bf8f440') in 0.0008913 seconds
-Start importing Assets/Materiales/Tiburon_piel.mat using Guid(6daf8cf9db1688a4e867d9387fe11e40) (NativeFormatImporter) -> (artifact id: '67eafd8142409cae4b65d113a2227f9b') in 0.0012569 seconds
-Start importing Assets/Materiales/Escritorio_tope.mat using Guid(4eee80593d82dd145bbc453ac1a2acb5) (NativeFormatImporter) -> (artifact id: '07e76dbc0581e7fa857790aa33a9d65d') in 0.0012308 seconds
-Start importing Assets/Materiales/Sillon_concha.mat using Guid(dea98f42753e851449676cc780526be4) (NativeFormatImporter) -> (artifact id: 'fb6c1f19b418b39d2fe0acbd752f9a87') in 0.0015473 seconds
-Start importing Assets/Materiales/Arena.mat using Guid(ef7ea0c2c22e5d043854b294975aaf00) (NativeFormatImporter) -> (artifact id: 'e96a58599bcbeac38c72493ba2065b63') in 0.0010246 seconds
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=8103943639390b140bb6a14b937f59ed): Total: 0.055 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Start importing Assets/Scenes/Estudio.unity using Guid(3edd6f1bcb5cf9349ab4dec9bdf374b9) (DefaultImporter) -> (artifact id: 'fb45d50afe932daab6b4865e26412ee8') in 0.0007513 seconds
+Start importing Assets/Prefabs/Tiburon.prefab using Guid(d2a4aa198188fe74f9366056307e02ba) (PrefabImporter) -> (artifact id: '1742a4fbc672d2951a4eb14a9599a296') in 0.0113283 seconds
 Refreshing native plugins compatible for Editor in 0.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=a55ccd4a2f5ddaf47a18ac9a9db3a24f): Total: 0.023 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Asset Pipeline Refresh (id=55eaa4424c23a1a4a97b9d9f52c444a4): Total: 0.005 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=9db72fc3305631042b9e45f7837b1414): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=781f049d7285ba544829692d849df711): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Emprendedor.prefab using Guid(256701b76b9b56044aa47410b4fed86b) (PrefabImporter) -> (artifact id: '2f2bb8ea9c516f34d21f44b204abfe34') in 0.0050614 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e3888ff681698d64cb9ccb3b17405505): Total: 0.034 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 212 unused Assets / (24.5 KB). Loaded Objects now: 751.
+Memory consumption went from 91.9 MB to 91.8 MB.
+Total: 3.426100 ms (FindLiveObjects: 0.065100 ms CreateObjectMapping: 0.011600 ms MarkObjects: 3.270100 ms  DeleteObjects: 0.078300 ms)
+
+Start importing Assets/Materiales/Pantallita_fondo.mat using Guid(50fe0e9f190f053499428e7ebb629528) (NativeFormatImporter) -> (artifact id: '96c3f9bcfca91f0dbe973b2da5d71ba5') in 0.0015976 seconds
+Start importing Assets/Materiales/Pantallita_riel.mat using Guid(610795481dbd7e44b807eee0e323cbd6) (NativeFormatImporter) -> (artifact id: '5dfd39e194e4b8ebc8c699ca347ad931') in 0.0010037 seconds
+Start importing Assets/Materiales/Neon_circulo.mat using Guid(a1b0c8fcb61dd8e44b7c0fb7aedf42a1) (NativeFormatImporter) -> (artifact id: '44bfeb28840c2eb71aeb78c149d11738') in 0.0009013 seconds
+Start importing Assets/Materiales/Medusa.mat using Guid(d107d5448f235c44499d354c07f30474) (NativeFormatImporter) -> (artifact id: 'bd6869d1e29dc4126a0c966c4408d1cf') in 0.0009574 seconds
+Start importing Assets/Materiales/Podio.mat using Guid(028d49dc6b0c4ba44b4e6cb8401e28b9) (NativeFormatImporter) -> (artifact id: '1adbc84d6037cf3791bfaef0f5d5fc42') in 0.001103 seconds
+Start importing Assets/Materiales/Coral_naranja.mat using Guid(32a74b66c3d6f0d4ca9933a8e1796b99) (NativeFormatImporter) -> (artifact id: 'f03ab7ce8c74b246e08ad8ae0a02ff8f') in 0.0009288 seconds
+Start importing Assets/Materiales/Tiburon_corbata.mat using Guid(45afa76a9d977f74abc76674f215875f) (NativeFormatImporter) -> (artifact id: '9f1b489157182980570e7a3d78870964') in 0.0008085 seconds
+Start importing Assets/Materiales/Neon_cian.mat using Guid(8512ded4800f7eb42a414be87f632284) (NativeFormatImporter) -> (artifact id: '6c98be45fadc66944aeb31a465c96ba6') in 0.0008962 seconds
+Start importing Assets/Materiales/Tiburon_traje.mat using Guid(e57bd1a753efcd249a4424e3e9afb714) (NativeFormatImporter) -> (artifact id: '0d776e1bc60c5f5ec94d7dc1e2e7ca03') in 0.0008962 seconds
+Start importing Assets/Materiales/Roca.mat using Guid(06f0680da93fc4548b263c88a081ddef) (NativeFormatImporter) -> (artifact id: '4b762f06388bc98971547353abfb04df') in 0.0008827 seconds
+Start importing Assets/Materiales/Negro.mat using Guid(16be89fc2c72f8d4390054b5a7698db5) (NativeFormatImporter) -> (artifact id: '5d30e9efac0d7107f391f31fe578fa5e') in 0.0009096 seconds
+Start importing Assets/Materiales/Pez_0.mat using Guid(766606021c629ae4a8aa2290d1e6c75c) (NativeFormatImporter) -> (artifact id: 'f5956e7f250d933986c3b8efac8e0635') in 0.0007623 seconds
+Start importing Assets/Materiales/Icono_lateral.mat using Guid(17267eef6829a254ab81614d625fc367) (NativeFormatImporter) -> (artifact id: '9dc1799fa6a2721e3b9bbdfa2f1db3d8') in 0.0007523 seconds
+Start importing Assets/Materiales/Tiburon_panza.mat using Guid(7793f11c4c483e1439174dd45025b680) (NativeFormatImporter) -> (artifact id: '3e803533a7c9e420e737c8f6abe60458') in 0.0008416 seconds
+Start importing Assets/Materiales/Pantallita_franja.mat using Guid(58f6d586baed02445a95dc1b427e87d1) (NativeFormatImporter) -> (artifact id: 'd2de2dd3b64a5e521e3913fe58f52419') in 0.0008493 seconds
+Start importing Assets/Materiales/Neon_violeta.mat using Guid(787da883f82c6974abf110bcd4221703) (NativeFormatImporter) -> (artifact id: 'daa1b9166785352840d9a580f4344bd3') in 0.0009923 seconds
+Start importing Assets/Materiales/Alga.mat using Guid(a821d5291eff74b409f5c1f04184797d) (NativeFormatImporter) -> (artifact id: '2ea109d4fc7c4f5759bd776d53b47936') in 0.000757 seconds
+Start importing Assets/Materiales/Pez_4.mat using Guid(c84be16a7c0f9d34fad27bbdf7ff8541) (NativeFormatImporter) -> (artifact id: '895b483ffbbd367ffb1e6c02c42f7d55') in 0.0008897 seconds
+Start importing Assets/Materiales/Pez_2.mat using Guid(39ac37bd684c81d489b2507622ad2504) (NativeFormatImporter) -> (artifact id: '017eeb24b4c2f35b4dc61f9599b13e94') in 0.0008533 seconds
+Start importing Assets/Materiales/Pantalla_fondo.mat using Guid(a9c6b59adf1c5734897e97b94d4daf39) (NativeFormatImporter) -> (artifact id: '7d56604215d2c94a1ad1c81d064d08c9') in 0.0008585 seconds
+Start importing Assets/Materiales/Blanco.mat using Guid(f9ae6c8701519a7498fcc4e03734d1e5) (NativeFormatImporter) -> (artifact id: '34b5801dcffdeda50e915dac248a4e69') in 0.0009368 seconds
+Start importing Assets/Materiales/Emprendedor_pez.mat using Guid(0ae4bb5f161693e45a79930a96a57ae2) (NativeFormatImporter) -> (artifact id: '01ef821cd7fddcc5146a80b4abf1e9c8') in 0.0008121 seconds
+Start importing Assets/Materiales/Marco_pantalla.mat using Guid(3ae5ccebd14ea974a99b85def30f61e9) (NativeFormatImporter) -> (artifact id: '1d96ec32e1c9d160335939ae20c19ad8') in 0.0008632 seconds
+Start importing Assets/Materiales/Piso.mat using Guid(ea82d676e931105409f8b8b3b772a845) (NativeFormatImporter) -> (artifact id: '391a499ab16d23b2602711ea8841cb3e') in 0.0007643 seconds
+Start importing Assets/Materiales/Tiburon_camisa.mat using Guid(0b079178063493e45a6c7c5a723ca9f5) (NativeFormatImporter) -> (artifact id: '260ea358b50677fdd77f6e986ddc129e') in 0.000836 seconds
+Start importing Assets/Materiales/Pez_1.mat using Guid(2b0f0d8d040512c43a67430da5f233f9) (NativeFormatImporter) -> (artifact id: '3aa2701ace044da8a0bdab78507c10cc') in 0.0008108 seconds
+Start importing Assets/Materiales/Muro.mat using Guid(3bb9a2d054b6d7f47bb9b3c7082b21d0) (NativeFormatImporter) -> (artifact id: '2f13bc582b428ab30f5431993bb17f34') in 0.0009254 seconds
+Start importing Assets/Materiales/Pez_3.mat using Guid(5b928be54c24a124bbc3889e4583850e) (NativeFormatImporter) -> (artifact id: '27e2d46f7f51ef893cd1d7faeab62c85') in 0.0015335 seconds
+Start importing Assets/Materiales/Coral_violeta.mat using Guid(fb849948fd58d0042be4f6c651e3805b) (NativeFormatImporter) -> (artifact id: '7a0eaba3119ca1d10791fd99f01ff5be') in 0.0008671 seconds
+Start importing Assets/Materiales/Sillon_interior.mat using Guid(4c4000ebd75ba434c8ae663f597c80e4) (NativeFormatImporter) -> (artifact id: 'bb76cf64461ba745d28fa62f45b46aa7') in 0.0008291 seconds
+Start importing Assets/Materiales/Coral_rosa.mat using Guid(5ce8d83b938c5fe49babd59df179e2cc) (NativeFormatImporter) -> (artifact id: '5eba4fc20f729af6eb6ce98de9de64fa') in 0.0007806 seconds
+Start importing Assets/Materiales/Alga_clara.mat using Guid(7c42d42996b21994582c59ef24747508) (NativeFormatImporter) -> (artifact id: '9ef03506fe05fa9b0ec70af4f0f2d3af') in 0.0007795 seconds
+Start importing Assets/Materiales/Icono_sector.mat using Guid(ecc05ef11d6c84e45a4f5c46f0b8ebe9) (NativeFormatImporter) -> (artifact id: '5bc0074157051dec5b697339541ff03b') in 0.0008806 seconds
+Start importing Assets/Materiales/Rayo_luz.mat using Guid(ec0aa8ce28160d14486f9558a203110b) (NativeFormatImporter) -> (artifact id: '2089b738e4bbb9ddaca6c77b5e8ba8e0') in 0.0009005 seconds
+Start importing Assets/Materiales/Escritorio_madera.mat using Guid(2d63cf379c668a744adebc9aa287264b) (NativeFormatImporter) -> (artifact id: 'c0238186229ad8ec878e6f27f6dd2031') in 0.0011935 seconds
+Start importing Assets/Materiales/Podio_tope.mat using Guid(3d7300161d1ac76429f3fda43679e752) (NativeFormatImporter) -> (artifact id: 'd2af3a0150743004f81b628e4bf8f440') in 0.0008468 seconds
+Start importing Assets/Materiales/Tiburon_piel.mat using Guid(6daf8cf9db1688a4e867d9387fe11e40) (NativeFormatImporter) -> (artifact id: '67eafd8142409cae4b65d113a2227f9b') in 0.0008318 seconds
+Start importing Assets/Materiales/Escritorio_tope.mat using Guid(4eee80593d82dd145bbc453ac1a2acb5) (NativeFormatImporter) -> (artifact id: '07e76dbc0581e7fa857790aa33a9d65d') in 0.0008517 seconds
+Start importing Assets/Materiales/Sillon_concha.mat using Guid(dea98f42753e851449676cc780526be4) (NativeFormatImporter) -> (artifact id: 'fb6c1f19b418b39d2fe0acbd752f9a87') in 0.0007971 seconds
+Start importing Assets/Materiales/Arena.mat using Guid(ef7ea0c2c22e5d043854b294975aaf00) (NativeFormatImporter) -> (artifact id: 'e96a58599bcbeac38c72493ba2065b63') in 0.0008483 seconds
+Refreshing native plugins compatible for Editor in 0.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2b60b30dc5d87164fb07aa68a43b67ef): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Scenes/Estudio.unity using Guid(3edd6f1bcb5cf9349ab4dec9bdf374b9) (DefaultImporter) -> (artifact id: '4855eb881623ac77d30c3a7b291e580b') in 0.0009394 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fb679c19314cd8f4c9447d80c930abb4): Total: 0.020 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=06baa87d231c1fe4d8afde7ebc848439): Total: 0.005 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
 NeuralHub: estudio construido en Assets/Scenes/Estudio.unity
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -395,10 +408,10 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-NeuralHub.Editor.ConstruirEstudio:Construir () (at Assets/Editor/ConstruirEstudio.cs:317)
-NeuralHub.Editor.ConstruirEstudio:Compilar () (at Assets/Editor/ConstruirEstudio.cs:324)
+NeuralHub.Editor.ConstruirEstudio:Construir () (at Assets/Editor/ConstruirEstudio.cs:322)
+NeuralHub.Editor.ConstruirEstudio:Compilar () (at Assets/Editor/ConstruirEstudio.cs:329)
 
-(Filename: Assets/Editor/ConstruirEstudio.cs Line: 317)
+(Filename: Assets/Editor/ConstruirEstudio.cs Line: 322)
 
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
@@ -407,13 +420,13 @@ info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 1.0716ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 2.6782ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aESkipCompile.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
-ExitCode: 0 Duration: 0s216ms
+ExitCode: 0 Duration: 0s217ms
 [2/3        0s] BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json
 *** Tundra build success (0.19 seconds), 1 items updated, 3 evaluated
-Asset Pipeline Refresh (id=84604e26d3aaf0143810ce983f470bb0): Total: 0.002 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=4de16099b91adb34c94c2538dc6963fe): Total: 0.002 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
 [ScriptCompilation] Requested script compilation because: Recompiling scripts for player build.
 BuildPlayer: start building target 19
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
@@ -423,35 +436,37 @@ info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.3265ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.4767ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aP.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
 Total cache size 111643112
-Total cache size after purge 111643112, took 00:00:00.1073801
-ExitCode: 0 Duration: 1s277ms
+Total cache size after purge 111643112, took 00:00:00.0903805
+ExitCode: 0 Duration: 1s506ms
 [92/99      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Multiplayer.Center.Common.dll
 [93/99      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Multiplayer.Center.Common.pdb
 [94/99      0s] Csc Library/Bee/artifacts/1900b0aP.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\AppNeuralHub.cs(20,14): warning CS0414: The field 'AppNeuralHub.vivoAuto' is assigned but its value is never used
 [95/99      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.pdb
 [96/99      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll
 [98/99      0s] BuildPlayerDataGenerator Library/BuildPlayerData/Player/RuntimeInitializeOnLoads.json (+1 other)
-*** Tundra build success (1.25 seconds), 6 items updated, 99 evaluated
+*** Tundra build success (1.48 seconds), 6 items updated, 99 evaluated
+Assets\Scripts\AppNeuralHub.cs(20,14): warning CS0414: The field 'AppNeuralHub.vivoAuto' is assigned but its value is never used
 Rebuilding Data files because Assets/Scenes/Estudio.unity is dirty (hash)
 Opening scene 'Assets/Scenes/Estudio.unity'
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/Scenes/Estudio.unity'
-	Deserialize:            22.715 ms
-	Integration:            5.331 ms
-	Integration of assets:  0.116 ms
-	Thread Wait Time:       0.040 ms
-	Total Operation Time:   28.201 ms
-Unloading 23 unused Assets / (0.7 MB). Loaded Objects now: 2899.
-Memory consumption went from 99.0 MB to 98.2 MB.
-Total: 3.886400 ms (FindLiveObjects: 0.115900 ms CreateObjectMapping: 0.016700 ms MarkObjects: 3.505100 ms  DeleteObjects: 0.247900 ms)
+	Deserialize:            22.428 ms
+	Integration:            7.065 ms
+	Integration of assets:  0.090 ms
+	Thread Wait Time:       0.113 ms
+	Total Operation Time:   29.695 ms
+Unloading 24 unused Assets / (0.7 MB). Loaded Objects now: 3047.
+Memory consumption went from 99.7 MB to 99.0 MB.
+Total: 3.473700 ms (FindLiveObjects: 0.098800 ms CreateObjectMapping: 0.015000 ms MarkObjects: 3.130600 ms  DeleteObjects: 0.228800 ms)
 
-Created GICache directory at C:/Users/Bet49/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.016s, timestamps: [7.995 - 8.010]
 Total cache size 111643112
-Total cache size after purge 111643112, took 00:00:00.1006594
+Total cache size after purge 111643112, took 00:00:00.0857247
+Created GICache directory at C:/Users/Bet49/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.012s, timestamps: [10.034 - 10.045]
 
 
 Mono dependencies included in the build
@@ -741,20 +756,20 @@ Dependency assembly - System.Reflection.Emit.Lightweight.dll
 Dependency assembly - System.Security.Cryptography.Hashing.Algorithms.dll
 Dependency assembly - Mono.Options.dll
 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 259 unused Assets / (0.8 MB). Loaded Objects now: 752.
-Memory consumption went from 99.1 MB to 98.3 MB.
-Total: 3.903100 ms (FindLiveObjects: 0.038500 ms CreateObjectMapping: 0.009800 ms MarkObjects: 3.542100 ms  DeleteObjects: 0.311900 ms)
+Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 290 unused Assets / (1.2 MB). Loaded Objects now: 758.
+Memory consumption went from 100.0 MB to 98.8 MB.
+Total: 3.560700 ms (FindLiveObjects: 0.036000 ms CreateObjectMapping: 0.008400 ms MarkObjects: 3.170400 ms  DeleteObjects: 0.345300 ms)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 0 unused Assets / (2.4 KB). Loaded Objects now: 752.
-Memory consumption went from 98.2 MB to 98.2 MB.
-Total: 3.222800 ms (FindLiveObjects: 0.034600 ms CreateObjectMapping: 0.005100 ms MarkObjects: 3.179400 ms  DeleteObjects: 0.003000 ms)
+Unloading 0 unused Assets / (2.7 KB). Loaded Objects now: 758.
+Memory consumption went from 98.7 MB to 98.7 MB.
+Total: 2.674300 ms (FindLiveObjects: 0.024100 ms CreateObjectMapping: 0.003500 ms MarkObjects: 2.644100 ms  DeleteObjects: 0.002000 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 177 unused Assets / (150.3 MB). Loaded Objects now: 752.
-Memory consumption went from 249.4 MB to 99.1 MB.
-Total: 17.369600 ms (FindLiveObjects: 0.038400 ms CreateObjectMapping: 0.008000 ms MarkObjects: 3.534800 ms  DeleteObjects: 13.787300 ms)
+Unloading 174 unused Assets / (150.2 MB). Loaded Objects now: 758.
+Memory consumption went from 248.0 MB to 97.8 MB.
+Total: 15.829400 ms (FindLiveObjects: 0.041800 ms CreateObjectMapping: 0.008600 ms MarkObjects: 3.421200 ms  DeleteObjects: 12.357200 ms)
 
 Compiling shader "Standard"
   Pass "FORWARD" (vp)
@@ -763,7 +778,7 @@ Compiling shader "Standard"
     After settings filtering:   664
     After built-in stripping:   16
     After scriptable stripping: 16
-    Processed in 0.01 seconds
+    Processed in 0.00 seconds
   Pass "FORWARD" (fp)
     Target graphics API: d3d11
     Full variant space:         1.008
@@ -861,7 +876,7 @@ Compiling shader "Standard"
     Prepared data for serialisation in 0.00s
   Pass FORWARD_DELTA (vp, d3d11) finished in 0.00 seconds. Local cache hits 26 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
-  Pass FORWARD_DELTA (fp, d3d11) finished in 0.00 seconds. Local cache hits 26 (0.03s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+  Pass FORWARD_DELTA (fp, d3d11) finished in 0.00 seconds. Local cache hits 26 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
   Pass ShadowCaster (vp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
@@ -871,13 +886,13 @@ Compiling shader "Standard"
     Prepared data for serialisation in 0.00s
   Pass DEFERRED (fp, d3d11) finished in 0.00 seconds. Local cache hits 8 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
-  Pass FORWARD (vp, d3d11) finished in 0.00 seconds. Local cache hits 16 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+  Pass FORWARD (vp, d3d11) finished in 0.00 seconds. Local cache hits 16 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
   Pass FORWARD (fp, d3d11) finished in 0.00 seconds. Local cache hits 16 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
-  Pass FORWARD_DELTA (vp, d3d11) finished in 0.00 seconds. Local cache hits 20 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+  Pass FORWARD_DELTA (vp, d3d11) finished in 0.00 seconds. Local cache hits 20 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
-  Pass FORWARD_DELTA (fp, d3d11) finished in 0.00 seconds. Local cache hits 20 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+  Pass FORWARD_DELTA (fp, d3d11) finished in 0.00 seconds. Local cache hits 20 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
   Pass ShadowCaster (vp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
     Prepared data for serialisation in 0.00s
@@ -906,6 +921,69 @@ Compiling shader "Skybox/Procedural"
     Prepared data for serialisation in 0.00s
 Serialized binary data for shader Skybox/Procedural in 0.00s
     d3d11 (total internal programs: 6, unique: 6)
+Compiling shader "Legacy Shaders/Particles/Additive"
+  Pass "" (vp)
+    Target graphics API: d3d11
+    Full variant space:         8
+    After settings filtering:   8
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+  Pass "" (fp)
+    Target graphics API: d3d11
+    Full variant space:         8
+    After settings filtering:   8
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+  Pass  (vp, d3d11) finished in 0.00 seconds. Local cache hits 4 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+  Pass  (fp, d3d11) finished in 0.00 seconds. Local cache hits 4 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+Serialized binary data for shader Legacy Shaders/Particles/Additive in 0.00s
+    d3d11 (total internal programs: 8, unique: 8)
+Compiling shader "Unlit/Transparent"
+  Pass "" (vp)
+    Target graphics API: d3d11
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   2
+    After scriptable stripping: 2
+    Processed in 0.00 seconds
+  Pass "" (fp)
+    Target graphics API: d3d11
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   2
+    After scriptable stripping: 2
+    Processed in 0.00 seconds
+  Pass  (vp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+  Pass  (fp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+Serialized binary data for shader Unlit/Transparent in 0.00s
+    d3d11 (total internal programs: 4, unique: 4)
+Compiling shader "Unlit/Color"
+  Pass "" (vp)
+    Target graphics API: d3d11
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   2
+    After scriptable stripping: 2
+    Processed in 0.00 seconds
+  Pass "" (fp)
+    Target graphics API: d3d11
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   2
+    After scriptable stripping: 2
+    Processed in 0.00 seconds
+  Pass  (vp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+  Pass  (fp, d3d11) finished in 0.00 seconds. Local cache hits 2 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants.
+    Prepared data for serialisation in 0.00s
+Serialized binary data for shader Unlit/Color in 0.00s
+    d3d11 (total internal programs: 4, unique: 4)
 Compiling shader "Legacy Shaders/VertexLit"
   Pass "" (vp)
     Target graphics API: d3d11
@@ -2753,54 +2831,74 @@ info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.1441ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.3187ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --dagfile="Library/Bee/Player39acbdb1.dag" --profile="Library/Bee/backend1.traceevents" Player
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
 DisplayProgressbar: Incremental Player Build
-[141/361    0s] CopyFiles Build/NeuralHub_Data/Resources/unity_builtin_extra
-[142/361    0s] CopyFiles Build/NeuralHub_Data/sharedassets0.assets.resS
-[143/361    0s] CopyFiles Build/NeuralHub_Data/sharedassets0.assets
-[144/361    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers.assets
-[145/361    0s] CopyFiles Build/NeuralHub_Data/level0
-[146/361    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers.assets.resS
-[147/361    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers
-[148/361    0s] AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config
-[149/361    0s] CopyFiles Build/NeuralHub_Data/boot.config
-[150/361    0s] UnityLinker D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity/Library/Bee/artifacts/unitylinker_dwek.traceevents
+[173/396    0s] CopyFiles Build/NeuralHub_Data/resources.resource
+[174/396    0s] CopyFiles Build/NeuralHub_Data/sharedassets0.assets.resS
+[175/396    0s] CopyFiles Build/NeuralHub_Data/sharedassets0.assets
+[176/396    0s] CopyFiles Build/NeuralHub_Data/Resources/unity_builtin_extra
+[177/396    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers.assets
+[178/396    0s] CopyFiles Build/NeuralHub_Data/resources.assets.resS
+[179/396    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers
+[180/396    0s] CopyFiles Build/NeuralHub_Data/resources.assets
+[181/396    0s] CopyFiles Build/NeuralHub_Data/level0
+[182/396    0s] CopyFiles Build/NeuralHub_Data/globalgamemanagers.assets.resS
+[183/396    0s] AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config
+[184/396    0s] CopyFiles Build/NeuralHub_Data/boot.config
+[185/396    0s] UnityLinker D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity/Library/Bee/artifacts/unitylinker_dwek.traceevents
 D:\Unity\Installs\6000.3.28f1\Editor\Data\il2cpp\build\deploy\UnityLinker.exe @Library\Bee\artifacts\rsp\6777103668771572251.rsp
-[345/361    0s] CopyFiles Build/NeuralHub_Data/Managed/Assembly-CSharp.dll
-[360/361    0s] ExtractUsedFeatures Library/Bee/artifacts/WinPlayerBuildProgram/Features/Assembly-CSharp-FeaturesChecked.txt
-*** Tundra requires additional run (2.18 seconds), 12 items updated, 361 evaluated
+[386/396    0s] CopyFiles Build/NeuralHub_Data/Managed/Assembly-CSharp.dll
+[395/396    0s] ExtractUsedFeatures Library/Bee/artifacts/WinPlayerBuildProgram/Features/Assembly-CSharp-FeaturesChecked.txt
+*** Tundra requires additional run (2.09 seconds), 15 items updated, 396 evaluated
 *** Additional run caused by: timestamp change of Library/Bee/artifacts/WinPlayerBuildProgram/Features/Assembly-CSharp-FeaturesChecked.txt
-ExitCode: 4 Duration: 2s206ms
+ExitCode: 4 Duration: 2s115ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\netcorerun\netcorerun.exe "D:\Unity\Installs\6000.3.28f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\WinPlayerBuildProgram.exe" "D:/Unity/Installs/6000.3.28f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Bee;D:/Unity/Installs/6000.3.28f1/Editor/Data/Tools/BuildPipeline" "Library/Bee/Player39acbdb1.dag.json" "Library/Bee/Player39acbdb1-inputdata.json" "Library\Bee\buildprogram0.traceevents"
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
-ExitCode: 0 Duration: 0s284ms
+ExitCode: 0 Duration: 0s234ms
 Starting: D:\Unity\Installs\6000.3.28f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --dagfile="Library/Bee/Player39acbdb1.dag" --dagfilejson="Library\Bee\Player39acbdb1.dag.json" --profile="Library/Bee/backend2.traceevents" Player
 WorkingDir: D:/TEC/TC2008B/Reto/NeuralHub/unity/NeuralHubUnity
-Finished compiling graph: 362 nodes, 930 flattened edges (930 ToBuild, 0 ToUse), maximum node priority 216
-*** Tundra build success (0.07 seconds), 0 items updated, 361 evaluated
-ExitCode: 0 Duration: 0s89ms
+Finished compiling graph: 397 nodes, 1000 flattened edges (1000 ToBuild, 0 ToUse), maximum node priority 216
+*** Tundra build success (0.05 seconds), 0 items updated, 396 evaluated
+ExitCode: 0 Duration: 0s77ms
 Refreshing native plugins compatible for Editor in 0.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 
 -------------------------------------------------------------------------------
 Build Report
 Uncompressed usage by category (Percentages based on user generated assets only):
-Textures               3.2 mb	 89.9% 
+Textures               3.8 mb	 80.7% 
 Meshes                 0.0 kb	 0.0% 
 Animations             0.0 kb	 0.0% 
-Sounds                 0.0 kb	 0.0% 
-Shaders                68.4 kb	 1.9% 
-Other Assets           41.6 kb	 1.2% 
-Levels                 248.1 kb	 6.9% 
-File headers           6.1 kb	 0.2% 
-Total User Assets      3.5 mb	 100.0% 
-Complete build size    85.8 mb
+Sounds                 229.4 kb	 4.7% 
+Shaders                82.3 kb	 1.7% 
+Other Assets           357.4 kb	 7.3% 
+Levels                 262.6 kb	 5.4% 
+File headers           7.5 kb	 0.2% 
+Total User Assets      4.8 mb	 100.0% 
+Complete build size    107.5 mb
 Used Assets and files from the Resources folder, sorted by uncompressed size:
- 2.7 mb	 3.1% Built-in Texture2D: Splash Screen Unity Logo
- 581.1 kb	 0.7% Resources/unity_builtin_extra
+ 2.7 mb	 2.5% Built-in Texture2D: Splash Screen Unity Logo
+ 595.1 kb	 0.5% Resources/unity_builtin_extra
+ 206.1 kb	 0.2% Assets/Resources/Sonidos/ambiente.wav
+ 156.9 kb	 0.1% Assets/Resources/Fuentes/Poppins-Regular.ttf
+ 154.0 kb	 0.1% Assets/Resources/Fuentes/Poppins-SemiBold.ttf
+ 85.5 kb	 0.1% Assets/Resources/Iconos/sustentabilidad_y_energia.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/servicios_profesionales.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/alimentos_y_bebidas.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/consumo_y_moda.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/tecnologia.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/educacion.png
+ 85.5 kb	 0.1% Assets/Resources/Iconos/salud.png
+ 85.5 kb	 0.1% Assets/Resources/causticas.png
  9.8 kb	 0.0% Assets/Prefabs/Tiburon.prefab
+ 7.2 kb	 0.0% Assets/Resources/Sonidos/sin_trato.wav
+ 6.8 kb	 0.0% Assets/Resources/Sonidos/trato.wav
+ 4.7 kb	 0.0% Assets/Resources/Sonidos/burbujas.wav
+ 4.3 kb	 0.0% Assets/Resources/Fuentes/OFL.txt
+ 2.3 kb	 0.0% Assets/Resources/Sonidos/voto.wav
+ 1.4 kb	 0.0% Assets/Resources/Sonidos/turno.wav
  0.9 kb	 0.0% Assets/Materiales/Pantalla_fondo.mat
  0.9 kb	 0.0% Assets/Materiales/Emprendedor_pez.mat
  0.9 kb	 0.0% Assets/Materiales/Neon_violeta.mat
@@ -2835,58 +2933,69 @@ Used Assets and files from the Resources folder, sorted by uncompressed size:
  0.9 kb	 0.0% Assets/Materiales/Piso.mat
  0.9 kb	 0.0% Assets/Materiales/Muro.mat
  0.9 kb	 0.0% Assets/Materiales/Alga.mat
+ 0.8 kb	 0.0% Assets/Resources/Sonidos/clic.wav
  0.4 kb	 0.0% Built-in Sprite: 
  0.2 kb	 0.0% Packages/com.unity.multiplayer.center/Common/IOnboardingSectionAnalyticsProvider.cs
+ 0.2 kb	 0.0% Assets/Materiales/Rayo_luz.mat
  0.1 kb	 0.0% Packages/com.unity.multiplayer.center/Common/SelectedSolutionsData.cs
  0.1 kb	 0.0% Packages/com.unity.multiplayer.center/Common/IOnboardingSection.cs
  0.1 kb	 0.0% Packages/com.unity.multiplayer.center/Common/StyleConstants.cs
  0.1 kb	 0.0% Packages/com.unity.multiplayer.center/Common/AnswerData.cs
+ 0.1 kb	 0.0% Assets/Materiales/Icono_lateral.mat
+ 0.1 kb	 0.0% Assets/Materiales/Icono_sector.mat
+ 0.1 kb	 0.0% Assets/Materiales/Pantallita_franja.mat
+ 0.1 kb	 0.0% Assets/Materiales/Pantallita_riel.mat
+ 0.1 kb	 0.0% Assets/Materiales/Pantallita_fondo.mat
  0.1 kb	 0.0% Assets/Scripts/ReproductorSesion.cs
+ 0.1 kb	 0.0% Assets/Scripts/PantallasDatos.cs
  0.1 kb	 0.0% Assets/Scripts/ClienteServicio.cs
  0.1 kb	 0.0% Assets/Scripts/CamaraEstudio.cs
  0.1 kb	 0.0% Assets/Scripts/Reflector.cs
  0.1 kb	 0.0% Assets/Scripts/Pantallas.cs
+ 0.1 kb	 0.0% Assets/Scripts/GrabadorVoz.cs
  0.1 kb	 0.0% Assets/Scripts/Emprendedor.cs
  0.1 kb	 0.0% Assets/Scripts/AppNeuralHub.cs
  0.1 kb	 0.0% Assets/Scripts/Tiburon.cs
+ 0.1 kb	 0.0% Assets/Scripts/Sonidos.cs
  0.1 kb	 0.0% Assets/Scripts/Pantalla.cs
  0.1 kb	 0.0% Assets/Scripts/Ondular.cs
  0.1 kb	 0.0% Assets/Scripts/Nadador.cs
  0.1 kb	 0.0% Assets/Scripts/Estudio.cs
  0.1 kb	 0.0% Assets/Scripts/Estilos.cs
  0.1 kb	 0.0% Assets/Scripts/Datos.cs
+ 0.1 kb	 0.0% Assets/Scripts/Caustica.cs
 -------------------------------------------------------------------------------
-Unloading 41 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 179 unused Assets / (0.8 MB). Loaded Objects now: 758.
-Memory consumption went from 100.4 MB to 99.7 MB.
-Total: 5.394700 ms (FindLiveObjects: 0.055700 ms CreateObjectMapping: 0.010400 ms MarkObjects: 4.862600 ms  DeleteObjects: 0.463800 ms)
+Unloading 65 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 195 unused Assets / (1.2 MB). Loaded Objects now: 767.
+Memory consumption went from 103.5 MB to 102.4 MB.
+Total: 3.888200 ms (FindLiveObjects: 0.059700 ms CreateObjectMapping: 0.006000 ms MarkObjects: 3.446400 ms  DeleteObjects: 0.375600 ms)
 
 DisplayProgressNotification: Build Successful
 Build Finished, Result: Success.
-##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1795225299582,"processId":27408,"steps":[{"description":"Preprocess Player","duration":6},{"description":"Prepare For Build","duration":7},{"description":"ProducePlayerScriptAssemblies","duration":1642},{"description":"Verify Build setup","duration":13},{"description":"Prepare assets for target platform","duration":1},{"description":"Prepare splash screen","duration":0},{"description":"Building scenes","duration":96},{"description":"Build scripts DLLs","duration":8},{"description":"Build GlobalGameManagers file","duration":106},{"description":"Writing asset files","duration":53},{"description":"Building Resources/unity_builtin_extra","duration":62},{"description":"Write data build dirty tracking information","duration":12},{"description":"Postprocess built player","duration":2728}],"duration":4734}
+##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1795626078589,"processId":2992,"steps":[{"description":"Preprocess Player","duration":6},{"description":"Prepare For Build","duration":6},{"description":"ProducePlayerScriptAssemblies","duration":1884},{"description":"Verify Build setup","duration":10},{"description":"Prepare assets for target platform","duration":1},{"description":"Prepare splash screen","duration":2},{"description":"Building scenes","duration":104},{"description":"Build scripts DLLs","duration":6},{"description":"Build GlobalGameManagers file","duration":124},{"description":"Writing asset files","duration":57},{"description":"Building Resources/unity_builtin_extra","duration":50},{"description":"Write data build dirty tracking information","duration":8},{"description":"Postprocess built player","duration":2572}],"duration":4830}
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Temp/__Backupscenes/0.backup'
-	Deserialize:            13.484 ms
-	Integration:            8.235 ms
-	Integration of assets:  0.037 ms
-	Thread Wait Time:       0.069 ms
-	Total Operation Time:   21.825 ms
-Unloading 0 unused Assets / (0 B). Loaded Objects now: 2752.
-Memory consumption went from 97.5 MB to 97.5 MB.
-Total: 5.586700 ms (FindLiveObjects: 0.150100 ms CreateObjectMapping: 0.014900 ms MarkObjects: 5.410900 ms  DeleteObjects: 0.009000 ms)
+	Deserialize:            7.955 ms
+	Integration:            9.499 ms
+	Integration of assets:  0.486 ms
+	Thread Wait Time:       0.055 ms
+	Total Operation Time:   17.996 ms
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 2895.
+Memory consumption went from 98.8 MB to 98.8 MB.
+Total: 3.223700 ms (FindLiveObjects: 0.091800 ms CreateObjectMapping: 0.012100 ms MarkObjects: 3.116000 ms  DeleteObjects: 0.003300 ms)
 
 Total cache size 111643112
-Total cache size after purge 111643112, took 00:00:00.1377101
-NeuralHub: compilación Succeeded (85 MB)
+Total cache size after purge 111643112, took 00:00:00.0958366
+NeuralHub: compilación Succeeded (107 MB)
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-NeuralHub.Editor.ConstruirEstudio:Compilar () (at Assets/Editor/ConstruirEstudio.cs:336)
+NeuralHub.Editor.ConstruirEstudio:Compilar () (at Assets/Editor/ConstruirEstudio.cs:341)
 
-(Filename: Assets/Editor/ConstruirEstudio.cs Line: 336)
+(Filename: Assets/Editor/ConstruirEstudio.cs Line: 341)
 
 [Physics::Module] Cleanup current backend.
 [Physics::Module] Id: 0xf2b8ea05
@@ -2898,17 +3007,17 @@ Input System module state changed to: Shutdown.
 AcceleratorClientConnectionCallback - disconnected - :0
 Cleanup mono
 Shut down.
-abort_threads: Failed aborting id: 0000000000005B18, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000001708, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 000000000000630C, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000003D40, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 0000000000005B18, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000001708, mono_thread_manage will ignore it
 
-abort_threads: Failed aborting id: 000000000000630C, mono_thread_manage will ignore it
+abort_threads: Failed aborting id: 0000000000003D40, mono_thread_manage will ignore it
 
-debugger-agent: Unable to listen on 3744
+debugger-agent: Unable to listen on 3716
 Checking for leaked weakptr:
   Found no leaked weakptrs.
 [Package Manager] Server process was shutdown
-##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795225300126,"processId":27408,"allocatedMemory":10313194,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":70795},{"Thread":4237960},{"Manager":35069},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":79349},{"Material":24},{"GfxDevice":57936},{"Animation":392},{"Audio":3040},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":552},{"Input":14984},{"JobScheduler":33024},{"TextLib":280},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1620272},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":3937},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":41708},{"DynamicArray":86224},{"HashMap":67613},{"Utility":2661366},{"Curl":2676},{"PoolAlloc":2056},{"AI":80},{"TypeTree":13637},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":13816},{"WebRequest":552},{"VR":48034},{"SceneManager":504},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":640},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":88769},{"VersionControl":4},{"Undo":947},{"AssetDatabase":456425},{"EditorGi":328},{"UnityConnect":29208},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3498},{"Licensing":12757},{"AssetReference":32},{"IPCStream":32}]}
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795626079055,"processId":2992,"allocatedMemory":10332108,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":70939},{"Thread":4237960},{"Manager":35069},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":79349},{"Material":24},{"GfxDevice":57936},{"Animation":392},{"Audio":3040},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":552},{"Input":14984},{"JobScheduler":33024},{"TextLib":280},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1620272},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":3937},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":41717},{"DynamicArray":86341},{"HashMap":67805},{"Utility":2661366},{"Curl":2696},{"PoolAlloc":2056},{"AI":80},{"TypeTree":13637},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":13816},{"WebRequest":552},{"VR":48034},{"SceneManager":504},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":640},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":88769},{"VersionControl":4},{"Undo":947},{"AssetDatabase":474857},{"EditorGi":328},{"UnityConnect":29208},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3498},{"Licensing":12757},{"AssetReference":32},{"IPCStream":32}]}
 ~StackAllocator(ALLOC_TEMP_MAIN) m_LastAlloc not NULL. Did you forget to call FreeAllStackAllocations()? To get more information, run app with -diag-temp-memory-leak-validation cmd line argument

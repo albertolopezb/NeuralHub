@@ -215,15 +215,21 @@ namespace NeuralHub
         public void Dibujar(AppNeuralHub app, float W)
         {
             var r = app.reproductor;
-            GUILayout.BeginArea(new Rect(W / 2 - 430, 14, 860, 54), Estilos.CajaClara);
+            GUILayout.BeginArea(new Rect(W / 2 - 560, 12, 1120, 56), Estilos.CajaClara);
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button(r.pausado ? "▶ Reanudar" : "❚❚ Pausa", Estilos.BotonChico, GUILayout.Width(150), GUILayout.Height(36))) r.AlternarPausa();
-            if (GUILayout.Toggle(r.velocidad == 1f, "1x", Estilos.Seleccion, GUILayout.Width(60), GUILayout.Height(36))) r.FijarVelocidad(1f);
-            if (GUILayout.Toggle(r.velocidad == 2f, "2x", Estilos.Seleccion, GUILayout.Width(60), GUILayout.Height(36))) r.FijarVelocidad(2f);
-            if (GUILayout.Button("Saltar ▸▸", Estilos.BotonChico, GUILayout.Width(130), GUILayout.Height(36))) r.SaltarAnimacion();
-            if (GUILayout.Button("Historial", Estilos.BotonChico, GUILayout.Width(130), GUILayout.Height(36))) app.mostrarHistorial = !app.mostrarHistorial;
+            if (GUILayout.Button("◀ Anterior", Estilos.BotonChico, GUILayout.Width(120), GUILayout.Height(36))) { app.Clic(); r.Anterior(); }
+            if (GUILayout.Button(r.pausado ? "▶ Reanudar" : "❚❚ Pausa", Estilos.BotonChico, GUILayout.Width(130), GUILayout.Height(36))) { app.Clic(); r.AlternarPausa(); }
+            if (GUILayout.Button("Siguiente ▶", Estilos.BotonChico, GUILayout.Width(130), GUILayout.Height(36))) { app.Clic(); r.Siguiente(); }
+            if (GUILayout.Toggle(r.velocidad == 1f, "1x", Estilos.Seleccion, GUILayout.Width(50), GUILayout.Height(36))) r.FijarVelocidad(1f);
+            if (GUILayout.Toggle(r.velocidad == 2f, "2x", Estilos.Seleccion, GUILayout.Width(50), GUILayout.Height(36))) r.FijarVelocidad(2f);
+            GUILayout.Label("Turno " + r.Indice + "/" + r.Total, Estilos.Etiqueta, GUILayout.Width(120), GUILayout.Height(36));
+            bool voz = GUILayout.Toggle(app.sonidos.vozActiva, "Voz", Estilos.Seleccion, GUILayout.Width(70), GUILayout.Height(36));
+            if (voz != app.sonidos.vozActiva) { app.sonidos.vozActiva = voz; if (!voz) app.sonidos.DetenerVoz(); }
+            bool sil = GUILayout.Toggle(app.sonidos.silencio, "Silencio", Estilos.Seleccion, GUILayout.Width(100), GUILayout.Height(36));
+            if (sil != app.sonidos.silencio) app.sonidos.FijarSilencio(sil);
+            if (GUILayout.Button("Historial", Estilos.BotonChico, GUILayout.Width(110), GUILayout.Height(36))) { app.Clic(); app.mostrarHistorial = !app.mostrarHistorial; }
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("Salir", Estilos.BotonChico, GUILayout.Width(100), GUILayout.Height(36))) app.Ir(Vista.Inicio);
+            if (GUILayout.Button("Salir", Estilos.BotonChico, GUILayout.Width(80), GUILayout.Height(36))) app.Ir(Vista.Inicio);
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
         }
@@ -237,19 +243,29 @@ namespace NeuralHub
         {
             GUILayout.BeginArea(new Rect(W - 760, 80, 730, H - 360), Estilos.Caja);
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Historial de la sesión", Estilos.Subtitulo);
+            GUILayout.Label("Conversación", Estilos.Subtitulo);
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("Cerrar ✕", Estilos.BotonChico, GUILayout.Width(110))) app.mostrarHistorial = false;
             GUILayout.EndHorizontal();
+            GUILayout.Label("Pulsa «Ir» para volver a ver la escena desde ese turno.", Estilos.TextoChico);
             scroll = GUILayout.BeginScrollView(scroll);
-            foreach (var e in app.reproductor.historial)
+            var recibidos = app.cliente.recibidos;
+            int actual = app.reproductor.Indice - 1;
+            for (int i = 0; i < recibidos.Count; i++)
             {
+                var e = recibidos[i];
+                if (e.tipo == "REPORTE") continue;
+                bool visto = i <= actual;
                 var c = Perfiles.Color(e.emisor);
                 string etiqueta = (e.ronda > 0 ? "R" + e.ronda + " · " : "") + Perfiles.Corto(e.emisor) + " → " + Perfiles.Corto(e.destino) + " · " + e.tipo +
                                   (!string.IsNullOrEmpty(e.decision) ? " (" + e.decision + ")" : "");
-                var st = new GUIStyle(Estilos.Etiqueta); st.normal.textColor = Color.Lerp(c, Color.white, 0.5f);
-                GUILayout.Label(etiqueta, st);
-                if (e.tipo != "REPORTE") GUILayout.Label(e.texto, Estilos.TextoChico);
+                GUILayout.BeginHorizontal(i == actual ? Estilos.CajaClara : GUIStyle.none);
+                var st = new GUIStyle(Estilos.Etiqueta); st.normal.textColor = visto ? Color.Lerp(c, Color.white, 0.5f) : new Color(1, 1, 1, 0.35f);
+                GUILayout.Label((i == actual ? "▶ " : "") + etiqueta, st);
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button("Ir", Estilos.BotonChico, GUILayout.Width(56), GUILayout.Height(28))) { app.Clic(); app.reproductor.IrA(i); }
+                GUILayout.EndHorizontal();
+                if (visto) GUILayout.Label(e.texto, Estilos.TextoChico);
                 GUILayout.Space(4);
             }
             GUILayout.EndScrollView();
@@ -332,9 +348,10 @@ namespace NeuralHub
     // ====================== Respuestas del usuario ======================
     public class PanelRespuestas
     {
-        readonly Dictionary<string, string> texto = new Dictionary<string, string>();
+        public readonly Dictionary<string, string> texto = new Dictionary<string, string>();
         int rondaActual = -1;
         Vector2 scroll;
+        string grabandoPara, transcribiendo;
 
         public void Dibujar(AppNeuralHub app, Pendiente pend, float W, float H)
         {
@@ -352,7 +369,30 @@ namespace NeuralHub
                 v = GUILayout.TextArea(v ?? "", Estilos.Area, GUILayout.Height(90));
                 if (v.Length > 600) v = v.Substring(0, 600);
                 texto[q.tiburon_id] = v;
-                GUILayout.Label(v.Length + " / 600", Estilos.TextoChico);
+                GUILayout.BeginHorizontal();
+                GUILayout.Label(v.Length + " / 600", Estilos.TextoChico, GUILayout.Width(120));
+                GUILayout.FlexibleSpace();
+                bool este = grabandoPara == q.tiburon_id;
+                if (transcribiendo == q.tiburon_id) GUILayout.Label("Transcribiendo tu voz…", Estilos.Etiqueta);
+                else if (!GrabadorVoz.HayMicrofono) GUILayout.Label("Sin micrófono", Estilos.TextoChico);
+                else if (GUILayout.Button(este ? "■ Detener (" + (Time.realtimeSinceStartup - GrabadorVoz.inicio).ToString("0") + " s)" : "● Dictar con voz",
+                                          este ? Estilos.BotonPrimario : Estilos.BotonChico, GUILayout.Width(230), GUILayout.Height(34)))
+                {
+                    if (este)
+                    {
+                        var wav = GrabadorVoz.Detener(); grabandoPara = null;
+                        string id = q.tiburon_id; transcribiendo = id;
+                        if (wav != null)
+                            app.StartCoroutine(app.cliente.Transcribir(wav, t =>
+                            {
+                                transcribiendo = null;
+                                if (!string.IsNullOrEmpty(t)) { string prev; texto.TryGetValue(id, out prev); texto[id] = ((prev ?? "") + " " + t).Trim(); }
+                            }));
+                        else transcribiendo = null;
+                    }
+                    else if (grabandoPara == null && GrabadorVoz.Iniciar()) grabandoPara = q.tiburon_id;
+                }
+                GUILayout.EndHorizontal();
                 if (string.IsNullOrWhiteSpace(v)) todas = false;
                 GUILayout.Space(6);
             }

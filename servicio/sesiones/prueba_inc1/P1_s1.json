@@ -1,0 +1,427 @@
+{
+  "id": "P1_s1",
+  "pitch_id": "P1",
+  "panel": [
+    "tiburona_consumo",
+    "tiburon_financiero",
+    "tiburon_negociador"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Tamales Express: pide $600,000 MXN por el 12 % (valuación implícita $5,000,000 MXN). Problema: Comer tamales caseros de calidad entre semana es difícil: los puestos cierran temprano y los congelados saben distinto. Solución: Tamales hechos a diario con recetas regionales, entregados calientes en 40 minutos por suscripción semanal o por pedido.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "Tamales Express",
+        "sector": "alimentos_y_bebidas",
+        "etapa": "crecimiento",
+        "problema": "Comer tamales caseros de calidad entre semana es difícil: los puestos cierran temprano y los congelados saben distinto.",
+        "solucion": "Tamales hechos a diario con recetas regionales, entregados calientes en 40 minutos por suscripción semanal o por pedido.",
+        "mercado_objetivo": "Oficinistas y familias del área metropolitana de Monterrey que piden comida a domicilio al menos dos veces por semana.",
+        "modelo_ingresos": "Venta por pedido (promedio $210 MXN) y suscripción semanal de $480 MXN con envío incluido.",
+        "competencia": "Puestos de calle, restaurantes con servicio a domicilio y marcas de tamales congelados.",
+        "diferenciador": "Producción diaria sin conservadores, rastreo del pedido y entrega en 40 minutos con bolsa térmica.",
+        "validacion": "420 clientes recurrentes, 38 % repite en el mes y 3 convenios con oficinas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Cocina y calidad, operaciones y logística, ventas y marketing",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Una fundadora con 8 años en restaurantes y un fundador con 5 años en logística de reparto.",
+        "monto_mxn": 600000,
+        "porcentaje": 12,
+        "uso_fondos": "Segunda cocina, dos vehículos de reparto y campaña de suscripciones.",
+        "ventas_12m_mxn": 1450000,
+        "margen_bruto_pct": 46,
+        "gasto_mensual_mxn": 85000
+      },
+      "valuacion_mxn": 5000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburona de consumo, Tiburón financiero, Tiburón negociador.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_negociador",
+          "nombre": "Tiburón negociador",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo de adquisición de cada cliente considerando tus gastos mensuales de $85,000 MXN y los 420 clientes recurrentes que reportas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean escalar la marca y los canales de venta más allá del área metropolitana de Monterrey para aprovechar la demanda nacional, considerando que solo tienen 3 convenios con oficinas y 420 clientes recurrentes actualmente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "¿Por qué piden $600,000 MXN por solo el 12 % si la valuación implícita es de $5,000,000 MXN? ¿No consideras que das poco capital para el monto solicitado y el riesgo de expansión?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Ventas de los últimos 12 meses: $1,450,000 MXN con margen bruto de 46 % y un gasto mensual de $85,000 MXN. El costo de adquisición por cliente ronda los $120 MXN.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestro canal principal es la app de pedidos propia y WhatsApp; 61 % de las ventas son recompra de los mismos 420 clientes. El producto tiene una demanda estable entre semana.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Pedimos $600,000 MXN por el 12 %, que da una valuación de $5,000,000 MXN. Podemos negociar entre 12 % y 15 % si el inversionista aporta distribución.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_negociador",
+      "destino": "tiburon_financiero",
+      "texto": "Concuerdo con el Tiburón financiero en preguntar por el costo de adquisición. El emprendedor dice que es $120 MXN, con gastos mensuales de $85,000 y 420 clientes recurrentes, lo cual parece razonable para entender la eficiencia del gasto y el riesgo, aunque falta detalle de inversión en marketing para validar esta cifra.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean construir y proteger la marca Tamales Express para diferenciarse claramente de puestos de calle y marcas congeladas, y qué canales de venta adicionales consideran para aumentar la demanda más allá de la app propia y WhatsApp?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices qué porcentaje de capital estarías dispuesto a ofrecer por $600,000 MXN si el inversionista no aporta distribución. ¿Estás abierto a subir el porcentaje para justificar mejor la valuación y el riesgo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con margen bruto del 46 % y gastos mensuales de $85,000, ¿cuál es su EBITDA mensual actual? No me dices datos de utilidades o pérdidas para evaluar la rentabilidad real.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "La marca ya se reconoce en tres colonias de Monterrey; el 38 % que repite cada mes viene sobre todo de las suscripciones.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "No aceptaríamos más de 18 % porque necesitamos conservar el control para decidir sobre la cocina y las recetas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Con el margen bruto actual y un gasto fijo de $85,000 MXN mensuales, el punto de equilibrio mensual son unos $185,000 MXN de ventas, y vamos arriba de eso desde hace 5 meses.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Concuerdo con la tiburona de consumo: la marca y canales son clave para escalar. Aunque reconocen presencia en 3 colonias y repeticiones por suscripción, falta estrategia clara de protección y diversificación de canales para crecer más allá de Monterrey y competir con puestos y marcas congeladas.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices qué porcentaje de capital estarías dispuesto a ofrecer si el inversionista aporta solo capital, sin distribución. ¿Podrías ser más flexible para justificar mejor la valuación y el riesgo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Podrías mostrar estados financieros claros con EBITDA mensual y utilidad neta para validar si tus gastos de $85,000 MXN y margen bruto del 46 % son sostenibles y cómo afectan a la valuación de $5,000,000 MXN?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "Solo tienes 420 clientes recurrentes y 3 convenios con oficinas; ¿qué estrategia concreta usarán para ampliar sus canales de venta y aumentar la demanda nacional, más allá de la app propia y WhatsApp, para escalar la marca Tamales Express?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Si hay contraoferta, preferimos más dinero por el mismo porcentaje antes que el mismo dinero por más porcentaje.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $5,000,000 MXN equivale a 3.4 veces las ventas anuales, y el dinero se usa en capacidad de producción que ya está saturada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Queremos sumar tiendas de conveniencia como segundo canal, sin perder la entrega en 40 minutos que es lo que valoran los clientes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_negociador",
+      "texto": "Concuerdo con el Tiburón negociador: el emprendedor no es claro sobre porcentajes si solo hay capital. Para mí, la marca y canales son clave, y sin distribución ni estrategia clara para escalar, el riesgo es mayor y debería reflejarse en más capital ofrecido.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "La marca Tamales Express tiene reconocimiento local y un canal propio de ventas, pero solo 420 clientes recurrentes y pocos convenios limitan la demanda y escalabilidad. Por el riesgo y la falta de canales diversificados, ofrezco $600,000 MXN por 18 % para reflejar mejor el riesgo y fomentar inversión en distribución. Contraoferta: $600,000 MXN por el 18 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 18.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "El margen bruto es aceptable (46%) pero falta claridad financiera para validar EBITDA y utilidad neta; el costo de adquisición $120 MXN es razonable pero no detallado. La valuación de $5,000,000 MXN parece alta para solo 420 clientes. Propongo $600,000 MXN por 15%, más acorde al riesgo y crecimiento. Contraoferta: $600,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_negociador",
+      "destino": "nodo_votacion",
+      "texto": "Piden $600,000 por 12 %, valuación de $5M, pero ofrecen poco capital para el riesgo y expansión sin distribución. Propongo $600,000 por 15 % para mayor equidad y participación en control. Contraoferta: $600,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $600,000 MXN por el 12 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $600,000 MXN por el 12 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 600000.0,
+        "porcentaje": 12.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Producto con demanda estable y repetición mensual del 38 % gracias a suscripciones.; Margen bruto aceptable del 46 % y ventas que superan el punto de equilibrio desde hace 5 meses.; Equipo con experiencia relevante en cocina/restaurantes y logística de reparto, trabajando a tiempo completo.. Alertas: Valuación alta respecto al número limitado de clientes recurrentes y falta de claridad financiera profunda.; Falta de estrategia clara y canales diversificados para escalar la marca y aumentar la demanda nacional.; Oferta limitada de capital para el riesgo y expansión, con poca flexibilidad en porcentaje para inversionistas sin distribución.. Siguientes pasos: Presentar estados financieros detallados que incluyan EBITDA y utilidad neta para validar la sostenibilidad.; Desarrollar e implementar una estrategia clara de marca y diversificación de canales que incluya nuevos puntos de venta y distribución.; Revisar y flexibilizar la oferta de porcentaje de capital para inversionistas que aporten solo capital, justificando mejor la valuación y riesgos..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "El costo de adquisición por cliente ronda los $120 MXN.",
+            "necesitaria": "Estados financieros claros con EBITDA mensual y utilidad neta para validar sostenibilidad y cómo afecta la valuación."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 2,
+            "frase_clave": "Solo tienes 420 clientes recurrentes y 3 convenios con oficinas; ¿qué estrategia concreta usarán para ampliar sus canales de venta y aumentar la demanda nacional?",
+            "necesitaria": "Estrategia clara para construir y proteger la marca, diversificar canales de venta y escalar más allá de Monterrey."
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "calificacion": 3,
+            "frase_clave": "Piden $600,000 MXN por solo el 12 % si la valuación implícita es de $5,000,000 MXN.",
+            "necesitaria": "Mayor flexibilidad en porcentaje ofrecido si el inversionista no aporta distribución, para justificar valuación y riesgo."
+          }
+        ],
+        "fortalezas": [
+          "Producto con demanda estable y repetición mensual del 38 % gracias a suscripciones.",
+          "Margen bruto aceptable del 46 % y ventas que superan el punto de equilibrio desde hace 5 meses.",
+          "Equipo con experiencia relevante en cocina/restaurantes y logística de reparto, trabajando a tiempo completo."
+        ],
+        "alertas": [
+          "Valuación alta respecto al número limitado de clientes recurrentes y falta de claridad financiera profunda.",
+          "Falta de estrategia clara y canales diversificados para escalar la marca y aumentar la demanda nacional.",
+          "Oferta limitada de capital para el riesgo y expansión, con poca flexibilidad en porcentaje para inversionistas sin distribución."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el EBITDA mensual y utilidad neta exacta para evaluar rentabilidad real?",
+          "¿Cómo planean proteger y construir la marca para diferenciarse de competencia informal y congelados?",
+          "¿Qué canales adicionales concretos usarán para escalar la demanda nacional más allá de app y WhatsApp?"
+        ],
+        "siguientes_pasos": [
+          "Presentar estados financieros detallados que incluyan EBITDA y utilidad neta para validar la sostenibilidad.",
+          "Desarrollar e implementar una estrategia clara de marca y diversificación de canales que incluya nuevos puntos de venta y distribución.",
+          "Revisar y flexibilizar la oferta de porcentaje de capital para inversionistas que aporten solo capital, justificando mejor la valuación y riesgos."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 600000.0,
+          "porcentaje": 12.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 5000000.0,
+        "votos_primera_votacion": {
+          "tiburona_consumo": "contraoferta",
+          "tiburon_financiero": "contraoferta",
+          "tiburon_negociador": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 21.9,
+    "segundos_total": 18.9,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  "error": null
+}

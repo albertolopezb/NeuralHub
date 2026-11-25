@@ -95,7 +95,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el costo de adquisición de cada cliente considerando tus gastos mensuales de $85,000 MXN y los 420 clientes recurrentes que reportas?",
+      "texto": "Me dices margen bruto 46%, ventas $1,450,000 y gasto mensual $85,000, ¿cuánto es el costo de adquisición de cliente y el flujo neto mensual actual? No me dices esas cifras.",
       "estado": "Preguntando"
     },
     {
@@ -104,7 +104,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean escalar la marca y los canales de venta más allá del área metropolitana de Monterrey para aprovechar la demanda nacional, considerando que solo tienen 3 convenios con oficinas y 420 clientes recurrentes actualmente?",
+      "texto": "¿Cómo es la marca y el empaque de Tamales Express para que el cliente perciba calidad y quiera repetir, considerando que 38% repite en el mes? No me dices detalles del empaque ni reseñas.",
       "estado": "Preguntando"
     },
     {
@@ -113,7 +113,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "¿Por qué piden $600,000 MXN por solo el 12 % si la valuación implícita es de $5,000,000 MXN? ¿No consideras que das poco capital para el monto solicitado y el riesgo de expansión?",
+      "texto": "¿Qué porcentaje del total de la empresa estás dispuesto a ceder si te ofrezco menos de 600,000 pesos? No me dices si aceptas negociar valuación o porcentaje.",
       "estado": "Preguntando"
     },
     {
@@ -149,7 +149,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_negociador",
       "destino": "tiburon_financiero",
-      "texto": "Concuerdo con el Tiburón financiero en preguntar por el costo de adquisición. El emprendedor dice que es $120 MXN, con gastos mensuales de $85,000 y 420 clientes recurrentes, lo cual parece razonable para entender la eficiencia del gasto y el riesgo, aunque falta detalle de inversión en marketing para validar esta cifra.",
+      "texto": "Tiburón financiero, coincido en que esas cifras son clave para valorar el riesgo y rentabilidad. El emprendedor aclaró que el costo de adquisición es $120 por cliente, pero falta el flujo neto mensual actual, esencial para definir mi oferta y condiciones.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -159,7 +159,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean construir y proteger la marca Tamales Express para diferenciarse claramente de puestos de calle y marcas congeladas, y qué canales de venta adicionales consideran para aumentar la demanda más allá de la app propia y WhatsApp?",
+      "texto": "¿Cómo es el empaque y la presentación de Tamales Express para que el cliente perciba calidad premium y quiera repetir, considerando que no me diste detalles sobre el empaque ni reseñas?",
       "estado": "Preguntando"
     },
     {
@@ -168,7 +168,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "No me dices qué porcentaje de capital estarías dispuesto a ofrecer por $600,000 MXN si el inversionista no aporta distribución. ¿Estás abierto a subir el porcentaje para justificar mejor la valuación y el riesgo?",
+      "texto": "¿Qué porcentaje del capital total estás dispuesto a ceder si te ofrezco menos de 600,000 pesos? Solo dices que negociarías entre 12 y 15% si el inversionista aporta distribución, ¿qué condiciones específicas manejas para ajustar porcentaje y control?",
       "estado": "Preguntando"
     },
     {
@@ -177,7 +177,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con margen bruto del 46 % y gastos mensuales de $85,000, ¿cuál es su EBITDA mensual actual? No me dices datos de utilidades o pérdidas para evaluar la rentabilidad real.",
+      "texto": "Me dices gasto mensual de $85,000 pero no aclaras el flujo neto mensual; ¿cuánto queda neto después de costos y gastos, y cómo planean que crezca con la nueva inversión?",
       "estado": "Preguntando"
     },
     {
@@ -213,7 +213,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Concuerdo con la tiburona de consumo: la marca y canales son clave para escalar. Aunque reconocen presencia en 3 colonias y repeticiones por suscripción, falta estrategia clara de protección y diversificación de canales para crecer más allá de Monterrey y competir con puestos y marcas congeladas.",
+      "texto": "Coincido en que falta detalle sobre el empaque y presentación, clave para justificar margen y retención. La respuesta solo menciona reconocimiento y repetición, no la percepción de calidad premium que respalde la valuación y la estrategia de crecimiento.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -223,7 +223,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "No me dices qué porcentaje de capital estarías dispuesto a ofrecer si el inversionista aporta solo capital, sin distribución. ¿Podrías ser más flexible para justificar mejor la valuación y el riesgo?",
+      "texto": "Con $600,000 pides 12%, valuación $5M, y dices que negociarías 12-15% si aporto distribución; ¿qué plazo y condiciones de control propones para mi participación y decisión en la operación? No me dices esos detalles.",
       "estado": "Preguntando"
     },
     {
@@ -232,7 +232,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Podrías mostrar estados financieros claros con EBITDA mensual y utilidad neta para validar si tus gastos de $85,000 MXN y margen bruto del 46 % son sostenibles y cómo afectan a la valuación de $5,000,000 MXN?",
+      "texto": "Me dices margen bruto 46% y gasto mensual $85,000, pero no me dices el flujo neto mensual exacto ni la utilidad anual después de gastos; ¿cuánto ganan neto al mes y cómo proyectan ese flujo con la inversión para justificar valuación $5M?",
       "estado": "Preguntando"
     },
     {
@@ -241,7 +241,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Solo tienes 420 clientes recurrentes y 3 convenios con oficinas; ¿qué estrategia concreta usarán para ampliar sus canales de venta y aumentar la demanda nacional, más allá de la app propia y WhatsApp, para escalar la marca Tamales Express?",
+      "texto": "¿Qué características tiene el empaque de Tamales Express para reforzar la percepción premium y lograr que el cliente vuelva a comprar, considerando que no me diste detalles sobre presentación ni reseñas?",
       "estado": "Preguntando"
     },
     {
@@ -277,7 +277,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_negociador",
-      "texto": "Concuerdo con el Tiburón negociador: el emprendedor no es claro sobre porcentajes si solo hay capital. Para mí, la marca y canales son clave, y sin distribución ni estrategia clara para escalar, el riesgo es mayor y debería reflejarse en más capital ofrecido.",
+      "texto": "Concuerdo con Tiburón negociador: sin claridad en plazo y condiciones de control para la participación, el riesgo para el inversionista es alto. El cliente valora calidad y continuidad; un inversionista con control debe asegurar que las decisiones operativas mantengan esa percepción, crucial para que el cliente repita y la marca crezca.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -287,12 +287,12 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "La marca Tamales Express tiene reconocimiento local y un canal propio de ventas, pero solo 420 clientes recurrentes y pocos convenios limitan la demanda y escalabilidad. Por el riesgo y la falta de canales diversificados, ofrezco $600,000 MXN por 18 % para reflejar mejor el riesgo y fomentar inversión en distribución. Contraoferta: $600,000 MXN por el 18 %.",
+      "texto": "No me dices detalles del empaque ni reseñas que refuercen la percepción premium; con 420 clientes y 38% de repetición, la marca es reconocida pero falta claridad en presentación para asegurar demanda. Valuación $5M y pedido $600,000 por 12% me parecen altos sin ese respaldo. Contraoferta: $400,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 600000.0,
-      "contraoferta_porcentaje": 18.0
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 25,
@@ -300,11 +300,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "El margen bruto es aceptable (46%) pero falta claridad financiera para validar EBITDA y utilidad neta; el costo de adquisición $120 MXN es razonable pero no detallado. La valuación de $5,000,000 MXN parece alta para solo 420 clientes. Propongo $600,000 MXN por 15%, más acorde al riesgo y crecimiento. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "El margen bruto 46% y ventas $1,450,000 son decentes, pero falta flujo neto mensual exacto y costo adquisición $120 no me convence para valuación $5M. El gasto mensual $85,000 es alto para el tamaño actual. Propongo $400,000 por 15%. Contraoferta: $400,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_monto_mxn": 400000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -313,7 +313,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_negociador",
       "destino": "nodo_votacion",
-      "texto": "Piden $600,000 por 12 %, valuación de $5M, pero ofrecen poco capital para el riesgo y expansión sin distribución. Propongo $600,000 por 15 % para mayor equidad y participación en control. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Pides $600,000 por 12%, valuación $5M, pero no defines condiciones ni plazo para control ni participación. Prefiero $600,000 por 15% para asegurar control y condiciones claras en 12 meses, dada la falta de claridad en control y riesgos. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -350,48 +350,50 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto con demanda estable y repetición mensual del 38 % gracias a suscripciones.; Margen bruto aceptable del 46 % y ventas que superan el punto de equilibrio desde hace 5 meses.; Equipo con experiencia relevante en cocina/restaurantes y logística de reparto, trabajando a tiempo completo.. Alertas: Valuación alta respecto al número limitado de clientes recurrentes y falta de claridad financiera profunda.; Falta de estrategia clara y canales diversificados para escalar la marca y aumentar la demanda nacional.; Oferta limitada de capital para el riesgo y expansión, con poca flexibilidad en porcentaje para inversionistas sin distribución.. Siguientes pasos: Presentar estados financieros detallados que incluyan EBITDA y utilidad neta para validar la sostenibilidad.; Desarrollar e implementar una estrategia clara de marca y diversificación de canales que incluya nuevos puntos de venta y distribución.; Revisar y flexibilizar la oferta de porcentaje de capital para inversionistas que aporten solo capital, justificando mejor la valuación y riesgos..",
+      "texto": "Fortalezas: El producto ofrece una solución clara a un problema identificado: tamales caseros de calidad entregados calientes durante la semana.; El equipo fundador tiene experiencia relevante en cocina, logística y ventas, con dedicación de tiempo completo.; El negocio ya cuenta con validación de mercado: 420 clientes recurrentes y un 38% de repetición mensual, además de convenios con oficinas.. Alertas: Falta información concreta sobre el empaque y presentación para justificar la percepción premium y la retención de clientes.; Incertidumbre en la parte financiera, principalmente en flujo neto mensual y rentabilidad real después de gastos.; Falta claridad en las condiciones de negociación sobre porcentaje, control y plazos que pueda generar confianza en el inversionista.. Siguientes pasos: Elaborar un informe financiero detallado que incluya flujo neto mensual y utilidad anual para presentar a inversionistas.; Desarrollar y mostrar prototipos o ejemplos del empaque y presentación para evidenciar la percepción premium.; Definir claramente las condiciones de negociación, incluyendo porcentaje ofrecido, control operativo y plazos para facilitar acuerdos con inversionistas..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
-            "tiburon_id": "tiburon_financiero",
+            "tiburon_id": "tiburona_consumo",
             "calificacion": 3,
-            "frase_clave": "El costo de adquisición por cliente ronda los $120 MXN.",
-            "necesitaria": "Estados financieros claros con EBITDA mensual y utilidad neta para validar sostenibilidad y cómo afecta la valuación."
+            "frase_clave": "No me dices detalles del empaque ni reseñas que refuercen la percepción premium; con 420 clientes y 38% de repetición, la marca es reconocida pero falta claridad en presentación para asegurar demanda.",
+            "necesitaria": "Detalles claros del empaque y presentación que justifiquen la percepción de calidad premium y evidencien reseñas o testimonios de clientes que respalden la retención."
           },
           {
-            "tiburon_id": "tiburona_consumo",
-            "calificacion": 2,
-            "frase_clave": "Solo tienes 420 clientes recurrentes y 3 convenios con oficinas; ¿qué estrategia concreta usarán para ampliar sus canales de venta y aumentar la demanda nacional?",
-            "necesitaria": "Estrategia clara para construir y proteger la marca, diversificar canales de venta y escalar más allá de Monterrey."
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "Falta flujo neto mensual exacto y costo adquisición $120 no me convence para valuación $5M, gasto mensual $85,000 es alto para el tamaño actual.",
+            "necesitaria": "Estados financieros claros con flujo neto mensual y utilidad anual, así como un análisis detallado del costo de adquisición de cliente y plan financiero que justifique la valuación."
           },
           {
             "tiburon_id": "tiburon_negociador",
             "calificacion": 3,
-            "frase_clave": "Piden $600,000 MXN por solo el 12 % si la valuación implícita es de $5,000,000 MXN.",
-            "necesitaria": "Mayor flexibilidad en porcentaje ofrecido si el inversionista no aporta distribución, para justificar valuación y riesgo."
+            "frase_clave": "No defines condiciones ni plazo para control ni participación; prefiero $600,000 por 15% para asegurar control y condiciones claras en 12 meses.",
+            "necesitaria": "Condiciones precisas de negociación, con plazos, porcentaje a ceder y control operativo para reducir el riesgo del inversionista y asegurar claridad en la relación."
           }
         ],
         "fortalezas": [
-          "Producto con demanda estable y repetición mensual del 38 % gracias a suscripciones.",
-          "Margen bruto aceptable del 46 % y ventas que superan el punto de equilibrio desde hace 5 meses.",
-          "Equipo con experiencia relevante en cocina/restaurantes y logística de reparto, trabajando a tiempo completo."
+          "El producto ofrece una solución clara a un problema identificado: tamales caseros de calidad entregados calientes durante la semana.",
+          "El equipo fundador tiene experiencia relevante en cocina, logística y ventas, con dedicación de tiempo completo.",
+          "El negocio ya cuenta con validación de mercado: 420 clientes recurrentes y un 38% de repetición mensual, además de convenios con oficinas."
         ],
         "alertas": [
-          "Valuación alta respecto al número limitado de clientes recurrentes y falta de claridad financiera profunda.",
-          "Falta de estrategia clara y canales diversificados para escalar la marca y aumentar la demanda nacional.",
-          "Oferta limitada de capital para el riesgo y expansión, con poca flexibilidad en porcentaje para inversionistas sin distribución."
+          "Falta información concreta sobre el empaque y presentación para justificar la percepción premium y la retención de clientes.",
+          "Incertidumbre en la parte financiera, principalmente en flujo neto mensual y rentabilidad real después de gastos.",
+          "Falta claridad en las condiciones de negociación sobre porcentaje, control y plazos que pueda generar confianza en el inversionista."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el EBITDA mensual y utilidad neta exacta para evaluar rentabilidad real?",
-          "¿Cómo planean proteger y construir la marca para diferenciarse de competencia informal y congelados?",
-          "¿Qué canales adicionales concretos usarán para escalar la demanda nacional más allá de app y WhatsApp?"
+          "¿Cuál es el flujo neto mensual exacto después de costos y gastos?",
+          "¿Qué características específicas tiene el empaque para reforzar la calidad premium?",
+          "¿Qué condiciones y plazos manejan para ajustar porcentaje y control en caso de contraoferta?",
+          "¿Cómo proyectan el crecimiento del flujo con la inversión solicitada?",
+          "¿Qué reseñas o testimonios de clientes tienen que respalden la percepción de calidad?"
         ],
         "siguientes_pasos": [
-          "Presentar estados financieros detallados que incluyan EBITDA y utilidad neta para validar la sostenibilidad.",
-          "Desarrollar e implementar una estrategia clara de marca y diversificación de canales que incluya nuevos puntos de venta y distribución.",
-          "Revisar y flexibilizar la oferta de porcentaje de capital para inversionistas que aporten solo capital, justificando mejor la valuación y riesgos."
+          "Elaborar un informe financiero detallado que incluya flujo neto mensual y utilidad anual para presentar a inversionistas.",
+          "Desarrollar y mostrar prototipos o ejemplos del empaque y presentación para evidenciar la percepción premium.",
+          "Definir claramente las condiciones de negociación, incluyendo porcentaje ofrecido, control operativo y plazos para facilitar acuerdos con inversionistas."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -428,7 +430,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 21.9,
+    "segundos_modelo": 27.8,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,

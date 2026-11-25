@@ -23,6 +23,7 @@ hoja("Sprint backlog", ["ID", "Tarea", "Categoría", "Responsable", "Inicio", "F
 hoja("Calendario", ["Sprint", "Inicio", "Cierre", "Enfoque"], SPRINTS, [12, 18, 18, 80])
 hoja("Bitácora entrega 1", ["Actividad", "Responsable", "Fecha", "Nota"], BITACORA_E1, [70, 36, 22, 40])
 hoja("Bitácora entrega 2", ["Actividad", "Responsable", "Fecha"], BITACORA_E2, [90, 40, 18])
+hoja("Bitácora entrega 3", ["Actividad", "Responsable", "Fecha"], BITACORA_E3, [90, 40, 18])
 filas = []
 for m in MIEMBROS:
     n = [sum(1 for t in TAREAS if t[3] == m and t[2] == c) for c in (D, B, U)]

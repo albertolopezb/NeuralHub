@@ -1,0 +1,449 @@
+{
+  "id": "15bd14cf",
+  "modo": "humano",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "DataSense AI",
+    "sector": "tecnologia",
+    "etapa": "crecimiento",
+    "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+    "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+    "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+    "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+    "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+    "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+    "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+    "propiedad_intelectual": "marca",
+    "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+    "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+    "equipo_fundadores": 4,
+    "ventas_12m_mxn": 270000,
+    "margen_bruto_pct": 72,
+    "gasto_mensual_mxn": 60000,
+    "monto_mxn": 500000,
+    "porcentaje": 15
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "DataSense AI: pide $500,000 MXN por el 15 % (valuación implícita $3,333,333 MXN). Problema: Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos. Solución: Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "DataSense AI",
+        "sector": "tecnologia",
+        "etapa": "crecimiento",
+        "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+        "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+        "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+        "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+        "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+        "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+        "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+        "propiedad_intelectual": "marca",
+        "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+        "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+        "equipo_fundadores": 4,
+        "ventas_12m_mxn": 270000,
+        "margen_bruto_pct": 72,
+        "gasto_mensual_mxn": 60000,
+        "monto_mxn": 500000,
+        "porcentaje": 15
+      },
+      "valuacion_mxn": 3333333.33
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices que tienen 50 clientes y $270,000 MXN ventas anuales, ¿cuánto pagó cada cliente en promedio y cuánto les costó adquirir cada uno? No veo datos de costo de adquisición.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean defenderse de competidores grandes como Power BI que podrían escalar rápido con recursos para integrar análisis en lenguaje natural? No me dices barreras de entrada claras.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Tienen un prototipo funcional del algoritmo de IA que genera análisis en lenguaje natural y han pensado en patentarlo para proteger su ventaja tecnológica? Solo mencionan marca registrada, pero no patente.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Hoy tenemos 50 clientes que pagan y crecemos 15 % al mes; el costo de adquirir un cliente todavía lo estamos midiendo, estimamos unos 3,000 pesos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Competimos con Power BI y con consultores; nuestra ventaja es que no requiere configuración y entrega el análisis en lenguaje natural.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Usamos modelos de lenguaje con conectores propios para hojas de cálculo; no tenemos patente, sí marca registrada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Concuerdo con tu pregunta sobre el costo de adquisición; es clave para validar escalabilidad. El emprendedor estima $3,000 por cliente, pero sin dato exacto no podemos evaluar eficiencia del algoritmo ni retorno tecnológico. Sin patente que proteja su IA, el valor tecnológico puede ser vulnerable, afectando la inversión.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Mencionas crecimiento del 15 % mensual con 50 clientes, pero no me dices cómo planean escalar el equipo de ventas para captar un mercado PyME amplio y fragmentado en 5 años, ni qué barreras claras tienen para defenderse de competidores grandes y rápidos como Power BI.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "El pitch menciona que usan modelos de lenguaje con conectores propios, pero no especifican si desarrollaron un algoritmo propio o si dependen de terceros. ¿Cuál es el nivel de innovación tecnológica en su algoritmo y qué planes tienen para protegerlo con patente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices margen bruto 72% y gasto mensual $60,000; ¿cuál es su flujo neto mensual actual y cómo se traduce esto en tiempo para llegar a punto de equilibrio con esos 50 clientes y crecimiento del 15% mensual? No me dices flujo neto.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestro ingreso recurrente es de unos 22,500 pesos al mes y el margen bruto es de 72 %; con la inversión esperamos duplicar clientes en 9 meses.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "El mercado son PyMEs de comercio y servicios con 10 a 100 empleados; empezamos en Monterrey y luego Guadalajara.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Para proteger la tecnología acumulamos datos anonimizados de uso que mejoran las alertas; evaluaremos una patente del método.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con tu pregunta sobre escalar ventas y barreras contra competidores grandes. El emprendedor solo dice que esperan duplicar clientes en 9 meses, pero no detalla plan de ventas ni barreras claras. Sin eso, la valuación y crecimiento son riesgosos para inversión.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean desarrollar un algoritmo propio y patentable que diferencie su IA de modelos de lenguaje genéricos y conectores comunes? No me dices estrategia clara para innovación y propiedad intelectual.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con $60,000 mensuales de gasto y margen bruto 72%, ¿cuánto flujo neto mensual tienen con 50 clientes y crecimiento 15%? No me dices flujo neto exacto ni tiempo para punto de equilibrio.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con un mercado PyME fragmentado y competidores grandes, ¿qué barreras de entrada claras tiene DataSense AI para defender su participación y escalar en 5 años? No me dices estrategia para crear ventajas competitivas sostenibles.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "La valuación de 3.3 millones se basa en el crecimiento de 15 % mensual; estamos abiertos a negociar el porcentaje si el socio aporta ventas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Somos cuatro fundadores de tiempo completo con experiencia en datos, producto, ventas y operaciones.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "El siguiente paso técnico es integrar facturación electrónica; ya tenemos un piloto con dos clientes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Concuerdo con tu preocupación sobre la falta de estrategia clara para innovar y proteger la IA. El emprendedor no detalla cómo crearán barreras tecnológicas ni patentables, lo que es clave para defenderse de competidores grandes y escalar en este mercado tecnológico.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No me dices flujo neto ni tiempo para punto de equilibrio con gasto mensual $60,000 y margen 72%. Estimo flujo negativo, y el costo de adquisición estimado en $3,000 no está confirmado. Valuación $3,333,333 parece alta para riesgo y falta de barreras claras. Contraoferta: $300,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No veo barreras claras para defenderse de competidores como Power BI ni patente para proteger la IA, clave para defender mercado y escalar. Valoro el crecimiento 15% mensual y ventas $270,000, pero falta estrategia clara para defender la ventaja. Contraoferta: $400,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Falta patente para proteger algoritmo y no hay claridad en desarrollo de propiedad intelectual, clave para innovación tecnológica. La valuación de $3,333,333 MXN parece alta sin barreras tecnológicas sólidas ni patente que asegure ventaja sostenible. Contraoferta: $350,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 350000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $500,000 MXN por el 15 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $500,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 500000.0,
+        "porcentaje": 15.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Crecimiento mensual del 15 % con 50 clientes activos.; Modelo SaaS con margen bruto alto (72 %) y suscripción escalable.; Equipo fundador con experiencia y dedicación de tiempo completo en roles claves.. Alertas: Falta claridad y datos precisos sobre costo de adquisición y flujo neto mensual.; Ausencia de barreras claras para defenderse de competidores grandes y escalables.; No hay patente ni estrategia clara para proteger la tecnología e innovación.. Siguientes pasos: Definir y documentar con datos precisos el costo de adquisición y flujo neto mensual para validar la escalabilidad financiera.; Diseñar una estrategia comercial robusta con barreras de entrada claras para competir y crecer en el mercado PyME.; Desarrollar y patentar un algoritmo propio o innovación tecnológica que proteja la ventaja competitiva y justifique la inversión..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "No veo datos de costo de adquisición. El emprendedor estima $3,000 por cliente, pero sin dato exacto no podemos evaluar eficiencia ni retorno.",
+            "necesitaria": "Ver datos claros y comprobados sobre costo de adquisición de clientes, flujo neto mensual, y proyección clara para llegar a punto de equilibrio."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "No veo barreras claras para defenderse de competidores grandes como Power BI ni estrategia para escalar ventas en mercado PyME fragmentado.",
+            "necesitaria": "Una estrategia definida con barreras de entrada fuertes y plan detallado para escalar ventas y defender mercado ante competidores grandes."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 2,
+            "frase_clave": "No tienen patente para proteger la IA ni estrategia clara para desarrollar algoritmo propio y propiedad intelectual.",
+            "necesitaria": "Un plan concreto para innovar y proteger la tecnología con patente o propiedad intelectual que garantice ventaja tecnológica sostenible."
+          }
+        ],
+        "fortalezas": [
+          "Crecimiento mensual del 15 % con 50 clientes activos.",
+          "Modelo SaaS con margen bruto alto (72 %) y suscripción escalable.",
+          "Equipo fundador con experiencia y dedicación de tiempo completo en roles claves."
+        ],
+        "alertas": [
+          "Falta claridad y datos precisos sobre costo de adquisición y flujo neto mensual.",
+          "Ausencia de barreras claras para defenderse de competidores grandes y escalables.",
+          "No hay patente ni estrategia clara para proteger la tecnología e innovación."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo exacto de adquisición de clientes y el flujo neto mensual?",
+          "¿Qué barreras claras tienen para defenderse de competidores grandes como Power BI?",
+          "¿Cuál es la estrategia para desarrollar y patentar un algoritmo o innovación tecnológica propia?"
+        ],
+        "siguientes_pasos": [
+          "Definir y documentar con datos precisos el costo de adquisición y flujo neto mensual para validar la escalabilidad financiera.",
+          "Diseñar una estrategia comercial robusta con barreras de entrada claras para competir y crecer en el mercado PyME.",
+          "Desarrollar y patentar un algoritmo propio o innovación tecnológica que proteja la ventaja competitiva y justifique la inversión."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 500000.0,
+          "porcentaje": 15.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 3333333.33,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 24.4,
+    "segundos_total": 16.3,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

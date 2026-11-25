@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el costo de adquisición de clientes considerando que tienen 420 clientes recurrentes y un gasto mensual de $85,000 MXN?",
+      "texto": "Me dices margen bruto de 46%, pero ¿cuánto te cuesta adquirir un cliente? Necesito saber el costo de adquisición para ver si $85,000 mensuales cubren ventas y crecimiento.",
       "estado": "Preguntando"
     },
     {
@@ -81,7 +81,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Qué canales de venta usan actualmente y cuántos clientes llegan por cada canal, considerando que su mercado objetivo es oficinistas y familias en Monterrey?",
+      "texto": "¿Me dices que la marca está registrada, pero cómo es el empaque y la presentación para que el cliente sienta que compra tamales caseros y no un producto más en app? ¿Qué reseñas tienen y qué porcentaje vuelve a comprar?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "Pides $600,000 por 12 %, valuación $5,000,000; ¿cómo justificas esa valuación considerando tus ventas de $1,450,000 y margen bruto del 46 %? No me dices tu utilidad neta ni crecimiento proyectado.",
+      "texto": "Me dices que pides $600,000 por 12 %, ¿qué porcentaje estás dispuesto a ceder para que yo pueda tener control y garantizar el plazo para recuperar mi inversión?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_negociador",
       "destino": "tiburon_financiero",
-      "texto": "Coincido con la pregunta del Tiburón financiero sobre el costo de adquisición, es clave entender si $120 MXN por cliente justifica el gasto mensual de $85,000. Sin utilidad neta ni crecimiento proyectado, cuesta evaluar si esta inversión es rentable o sostenible.",
+      "texto": "Estoy de acuerdo contigo, es clave el costo de adquisición para saber si $85,000 mensuales son suficientes. El emprendedor dice que el CAC es $120, pero no detalla si ese gasto mensual incluye marketing para crecimiento. Eso debe aclararse para valorar bien la inversión y condiciones.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Qué marca tienen registrada y cómo la están posicionando para diferenciarse de puestos callejeros y marcas congeladas en Monterrey?",
+      "texto": "¿Cómo es el empaque y presentación para que el cliente sienta que compra tamales caseros y no un producto más en app? ¿Qué reseñas tienen y qué porcentaje vuelve a comprar?",
       "estado": "Preguntando"
     },
     {
@@ -145,7 +145,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el porcentaje de crecimiento mensual o anual proyectado para justificar la valuación de $5,000,000 MXN con ventas de $1,450,000 y margen bruto del 46 %?",
+      "texto": "¿Qué porcentaje de la empresa estás dispuesto a ceder para que yo tenga control mayoritario y asegurar un plazo claro para recuperar mi inversión? No me dices condiciones ni plazos.",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices la utilidad neta mensual ni anual, ¿cuál es para evaluar si el gasto mensual de $85,000 y el costo de adquisición de $120 MXN por cliente son sostenibles con tus ventas y margen?",
+      "texto": "Me dices gasto mensual de $85,000, pero ¿qué parte de eso es marketing para mantener y crecer esos 420 clientes? Sin ese dato no puedo evaluar bien el CAC y la escalabilidad.",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Coincido con la pregunta sobre la marca y posicionamiento; la diferenciación es clave en alimentos. La respuesta del emprendedor indica reconocimiento en tres colonias y repetición del 38 % vía suscripciones, pero falta detalle sobre estrategia de marca para competir con puestos y congelados en todo Monterrey.",
+      "texto": "Coincido con la pregunta sobre empaque y reseñas porque aunque el margen y CAC se ven, sin saber cómo se percibe el producto y la lealtad real (38% repetición), no puedo evaluar bien si el gasto y la valuación son justificados. La experiencia del cliente impacta ventas y márgenes.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "No me dices la tasa de crecimiento mensual o anual proyectada para justificar la valuación de $5,000,000 MXN con ventas actuales de $1,450,000 y margen bruto del 46 %.",
+      "texto": "¿Qué plazo concretas para que mi inversión de $600,000 MXN al 12 % o hasta 18 % se recupere y bajo qué condiciones de control y reporte?",
       "estado": "Preguntando"
     },
     {
@@ -209,7 +209,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices la utilidad neta anual exacta ni cómo planeas mejorar el margen bruto del 46 % para justificar el gasto mensual de $85,000 y el costo de adquisición de $120 por cliente.",
+      "texto": "Me dices ventas anuales de $1,450,000 y margen bruto 46%, pero ¿cuál es el flujo neto mensual actual después de gastos? Necesito saber si $85,000 de gasto mensual incluye todo para saber si el negocio realmente genera caja positiva.",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "No me dices cómo planean ampliar los canales de venta más allá de su app y WhatsApp para aumentar la demanda en Monterrey, considerando que su mercado objetivo son oficinistas y familias.",
+      "texto": "No me dices cómo es el empaque para que el cliente perciba tamales caseros y no un producto más en app, ni qué dicen las reseñas exactas. ¿Podrías describir la presentación y compartir ejemplos de opiniones de clientes?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_negociador",
-      "texto": "Coincido con la pregunta del Tiburón negociador. Sin tasa de crecimiento clara, es difícil evaluar la valuación. Aunque usan fondos para expansión, falta ver proyección de demanda y canales para justificar el valor, clave para sostener la marca y ventas en Monterrey.",
+      "texto": "Estoy de acuerdo contigo en que es fundamental tener claridad sobre plazos, control y reportes para la inversión. Sin esos detalles, no podemos evaluar bien si la estructura propuesta protege al inversionista y asegura una recuperación adecuada.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "La marca tiene buen reconocimiento local y usan canales digitales clave, pero falta diversificar canales y mostrar crecimiento para sostener la demanda. Ofrezco 600,000 MXN por 15% para equilibrar riesgo y control, esperando expansión y mejor posicionamiento. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Falta detalle del empaque y las reseñas para validar la percepción de la marca; 38% repite pero sin saber si el cliente siente valor real. La demanda está estable pero el canal está limitado a app y WhatsApp. Valuación $5,000,000 MXN parece alta sin mejor fidelización. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -277,12 +277,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices utilidad neta ni crecimiento proyectado, el costo de adquisición de $120 por cliente y gasto mensual de $85,000 son altos para márgenes del 46 %. La valuación de $5,000,000 con ventas de $1,450,000 y sin proyecciones claras no me convence.",
+      "texto": "No me dices flujo neto mensual exacto ni desglose de gastos de marketing para validar CAC de $120. Margen bruto 46% y ventas $1,450,000 son buenos, pero $85,000 mensuales sin detalle me impiden confiar plenamente en valuación de $5,000,000. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 26,
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_negociador",
       "destino": "nodo_votacion",
-      "texto": "La valuación de 5 M es alta sin crecimiento ni utilidad neta clara; pido más capital por menor porcentaje para mitigar riesgo. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Me interesa el negocio pero no hay claridad sobre control y plazo para recuperar $600,000 por 12%. El emprendedor acepta hasta 18% pero prefiere más dinero por menos porcentaje. Propongo trato claro: Te ofrezco $600,000 por 15% con control y reporte mensual. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -327,48 +327,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto diferenciado con recetas regionales y entrega rápida en 40 minutos.; Base sólida de 420 clientes recurrentes con 38% de repetición mensual, validando demanda.; Equipo con experiencia relevante en cocina, logística y ventas, y dedicación a tiempo completo.. Alertas: Falta claridad en utilidad neta y proyecciones de crecimiento, dificultando evaluar rentabilidad.; Costo de adquisición de cliente alto ($120 MXN) y gasto mensual elevado ($85,000 MXN) para el margen bruto actual.; Estrategia de marketing y expansión de canales poco definida, limitando potencial de crecimiento.. Siguientes pasos: Elaborar y presentar estados financieros completos incluyendo utilidad neta y flujo de caja.; Definir y comunicar proyecciones claras de crecimiento de ventas y rentabilidad.; Desarrollar plan estratégico para diversificar canales de venta y fortalecer posicionamiento de marca..",
+      "texto": "Fortalezas: Modelo de negocio con suscripción semanal y pedido a la carta que genera ingresos recurrentes.; Producto fresco y regional con entrega rápida (40 minutos) y sin conservadores.; Equipo con experiencia en cocina, logística y ventas, dedicado a tiempo completo y con validación en mercado (420 clientes recurrentes).. Alertas: Falta claridad sobre el desglose del gasto mensual, especialmente en marketing y su impacto en CAC.; Carencia de información detallada sobre la percepción del cliente respecto al empaque y experiencia de compra.; Condiciones de inversión y control no están bien definidas, lo que genera incertidumbre para inversionistas.. Siguientes pasos: Detallar y presentar el desglose del gasto mensual, especialmente el marketing, para justificar el CAC y la escalabilidad.; Mejorar la presentación del producto incluyendo fotos y testimonios de clientes que reflejen la calidad y experiencia.; Definir claramente condiciones de inversión, incluyendo porcentaje a ceder, control y plazos de recuperación para generar confianza en inversionistas..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburona_consumo",
             "calificacion": 3,
-            "frase_clave": "La marca tiene buen reconocimiento local y usan canales digitales clave, pero falta diversificar canales y mostrar crecimiento para sostener la demanda.",
-            "necesitaria": "Ver una estrategia clara y detallada de posicionamiento de marca y diversificación de canales de venta para aumentar la demanda."
+            "frase_clave": "Falta detalle del empaque y las reseñas para validar la percepción de la marca; 38% repite pero sin saber si el cliente siente valor real.",
+            "necesitaria": "Ver detalles claros del empaque y presentación que transmitan la calidad casera, así como ejemplos de reseñas y métricas de satisfacción para confirmar la fidelización."
           },
           {
-            "tiburon_id": "tiburon_financiero",
-            "calificacion": 2,
-            "frase_clave": "No me dices utilidad neta ni crecimiento proyectado, el costo de adquisición de $120 por cliente y gasto mensual de $85,000 son altos para márgenes del 46 %.",
-            "necesitaria": "Presentar estados financieros claros con utilidad neta y proyecciones de crecimiento para evaluar la sostenibilidad financiera."
-          },
-          {
-            "tiburon_id": "tiburon_negociador",
+            "tiburon_id": "tiburón_financiero",
             "calificacion": 3,
-            "frase_clave": "La valuación de 5 M es alta sin crecimiento ni utilidad neta clara; pido más capital por menor porcentaje para mitigar riesgo.",
-            "necesitaria": "Mostrar proyecciones de crecimiento y utilidad neta para justificar la valuación y entender el retorno de inversión."
+            "frase_clave": "No me dices flujo neto mensual exacto ni desglose de gastos de marketing para validar CAC de $120.",
+            "necesitaria": "Información detallada del flujo neto mensual, desglose de gastos operativos y marketing para confirmar que el CAC es sostenible y que el negocio genera caja positiva."
+          },
+          {
+            "tiburon_id": "tiburón_negociador",
+            "calificacion": 3,
+            "frase_clave": "No hay claridad sobre control y plazo para recuperar $600,000 por 12%.",
+            "necesitaria": "Un plan claro con plazos definidos para recuperación de inversión, condiciones de control y reportes periódicos para garantizar seguimiento y seguridad."
           }
         ],
         "fortalezas": [
-          "Producto diferenciado con recetas regionales y entrega rápida en 40 minutos.",
-          "Base sólida de 420 clientes recurrentes con 38% de repetición mensual, validando demanda.",
-          "Equipo con experiencia relevante en cocina, logística y ventas, y dedicación a tiempo completo."
+          "Modelo de negocio con suscripción semanal y pedido a la carta que genera ingresos recurrentes.",
+          "Producto fresco y regional con entrega rápida (40 minutos) y sin conservadores.",
+          "Equipo con experiencia en cocina, logística y ventas, dedicado a tiempo completo y con validación en mercado (420 clientes recurrentes)."
         ],
         "alertas": [
-          "Falta claridad en utilidad neta y proyecciones de crecimiento, dificultando evaluar rentabilidad.",
-          "Costo de adquisición de cliente alto ($120 MXN) y gasto mensual elevado ($85,000 MXN) para el margen bruto actual.",
-          "Estrategia de marketing y expansión de canales poco definida, limitando potencial de crecimiento."
+          "Falta claridad sobre el desglose del gasto mensual, especialmente en marketing y su impacto en CAC.",
+          "Carencia de información detallada sobre la percepción del cliente respecto al empaque y experiencia de compra.",
+          "Condiciones de inversión y control no están bien definidas, lo que genera incertidumbre para inversionistas."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es la utilidad neta mensual y anual exacta?",
-          "¿Cuál es la tasa de crecimiento mensual o anual proyectada?",
-          "¿Cómo planean ampliar y diversificar los canales de venta más allá de app y WhatsApp?"
+          "¿Qué parte del gasto mensual de $85,000 MXN se destina a marketing para crecimiento?",
+          "¿Cómo es específicamente el empaque y presentación para transmitir calidad casera?",
+          "¿Qué plazo y condiciones concretas ofrecen para la recuperación de la inversión y control?"
         ],
         "siguientes_pasos": [
-          "Elaborar y presentar estados financieros completos incluyendo utilidad neta y flujo de caja.",
-          "Definir y comunicar proyecciones claras de crecimiento de ventas y rentabilidad.",
-          "Desarrollar plan estratégico para diversificar canales de venta y fortalecer posicionamiento de marca."
+          "Detallar y presentar el desglose del gasto mensual, especialmente el marketing, para justificar el CAC y la escalabilidad.",
+          "Mejorar la presentación del producto incluyendo fotos y testimonios de clientes que reflejen la calidad y experiencia.",
+          "Definir claramente condiciones de inversión, incluyendo porcentaje a ceder, control y plazos de recuperación para generar confianza en inversionistas."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -379,7 +379,7 @@
         "valuacion_mxn": 5000000.0,
         "votos_primera_votacion": {
           "tiburona_consumo": "contraoferta",
-          "tiburon_financiero": "salir",
+          "tiburon_financiero": "contraoferta",
           "tiburon_negociador": "contraoferta"
         },
         "criterios_no_evaluados": [
@@ -405,8 +405,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 23.5,
-    "segundos_total": 21.3,
+    "segundos_modelo": 26.5,
+    "segundos_total": 23.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,

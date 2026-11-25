@@ -95,7 +95,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el costo de adquisición de clientes, considerando que tienen 420 clientes recurrentes y un gasto mensual de $85,000 MXN?",
+      "texto": "¿Cuál es el costo de adquisición de cada cliente, considerando que tienen 420 clientes recurrentes y gastan $85,000 MXN mensuales en gastos?",
       "estado": "Preguntando"
     },
     {
@@ -104,7 +104,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Qué canales de venta y marketing usan para captar clientes, y cuál es la tasa de conversión de esos canales? No me dices estos datos.",
+      "texto": "¿Cuál es el canal principal para captar clientes y cómo asegura la marca que ellos vuelvan a comprar, considerando que solo el 38 % repite en el mes?",
       "estado": "Preguntando"
     },
     {
@@ -113,7 +113,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "¿Por qué pides $600,000 por solo el 12% si tu margen es del 46% y tus ventas anuales son $1,450,000? No me dices cómo justificas esa valuación de $5,000,000.",
+      "texto": "¿Qué porcentaje del capital están dispuestos a ceder si propongo un plazo de 18 meses para recuperar mi inversión y control parcial de la empresa? No me dices plazo ni condiciones para mi salida.",
       "estado": "Preguntando"
     },
     {
@@ -149,7 +149,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_negociador",
       "destino": "tiburon_financiero",
-      "texto": "Tiburón financiero, coincido con tu pregunta. Me parece vital conocer el costo de adquisición y cómo se compara con el ingreso por cliente, para validar si $120 MXN por cliente es rentable y justifica la valuación y el porcentaje que piden. Sin esos datos, la oferta es arriesgada.",
+      "texto": "Tiburón financiero, coincido con tu enfoque en el costo de adquisición, es clave para valorar la inversión. El emprendedor dice que es $120 por cliente, lo que me parece razonable para este negocio en crecimiento. Esto me ayuda a plantear condiciones claras y valorar mejor el porcentaje a ceder.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -159,7 +159,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo garantizan la fidelidad y el crecimiento de la base de clientes más allá del 38 % de repetición mensual, considerando que su mercado objetivo (oficinistas y familias) puede cambiar hábitos o probar competencia?",
+      "texto": "¿Cómo es el empaque y la presentación de los tamales para garantizar que el cliente perciba calidad y convenza a repetir la compra, considerando que la marca busca una experiencia casera y fresca?",
       "estado": "Preguntando"
     },
     {
@@ -168,7 +168,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "No me dices cómo justifican esa valuación de $5,000,000 si sus ventas son $1,450,000 con margen del 46 % y gastos mensuales de $85,000. ¿Qué proyección o activos respaldan ese valor?",
+      "texto": "No me dices qué porcentaje del capital están dispuestos a ceder si propongo recuperar mi inversión en 18 meses con control parcial y condiciones claras para mi salida. ¿Cuál es tu propuesta concreta?",
       "estado": "Preguntando"
     },
     {
@@ -177,7 +177,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el ingreso promedio por cliente y cómo se compara con el costo de adquisición de $120 MXN para asegurar rentabilidad? No me dices ese dato.",
+      "texto": "Con margen bruto del 46 % y gasto mensual de $85,000 MXN, ¿cuál es el flujo operativo mensual actual? No me dices ese dato, es clave para valorar si la inversión es viable.",
       "estado": "Preguntando"
     },
     {
@@ -213,7 +213,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Coincido contigo en la preocupación por la fidelidad y crecimiento, ya que el 38 % de repetición es bajo para asegurar estabilidad. Aunque mencionan reconocimiento en tres colonias y suscripciones, no me dices planes claros para aumentar retención o expandir mercado, que son clave para justificar la valuación y la inversión.",
+      "texto": "Coincido con la pregunta sobre empaque y presentación porque impactan en la percepción de calidad que sostiene el margen bruto del 46 %. Sin embargo, no me das detalles específicos del empaque o cómo garantizan la frescura en la entrega. Eso es clave para justificar la recompra del 38 % y el costo de adquisición de $120 por cliente.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -223,7 +223,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "No me dices la valuación comparada con competidores o potencial de crecimiento en ventas para justificar $5,000,000 MXN; ¿qué proyecciones financieras o métricas usan para sostener esa valuación?",
+      "texto": "No me dices qué porcentaje del capital están dispuestos a ceder si propongo $600,000 por 18 meses con control parcial y condiciones claras para mi salida. ¿Cuál es tu oferta concreta para cerrar trato?",
       "estado": "Preguntando"
     },
     {
@@ -232,7 +232,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices el ingreso promedio por cliente para comparar con el costo de adquisición de $120 y confirmar si la inversión y valuación son rentables.",
+      "texto": "No me dices el flujo operativo mensual exacto, solo que están arriba del punto de equilibrio. ¿Cuál es el flujo operativo neto actual considerando ventas, margen bruto del 46 % y gasto mensual de $85,000 MXN?",
       "estado": "Preguntando"
     },
     {
@@ -241,7 +241,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Cómo piensan escalar la distribución fuera de las tres colonias actuales para aumentar la demanda y aprovechar la producción diaria sin conservadores, dado que su foco actual limita el canal de venta y crecimiento?",
+      "texto": "¿Me puedes describir detalladamente cómo es el empaque y la presentación de los tamales, y qué feedback directo han recibido del cliente sobre la experiencia de recibir tamales calientes y frescos en 40 minutos?",
       "estado": "Preguntando"
     },
     {
@@ -277,7 +277,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_negociador",
-      "texto": "Tiburón negociador, coincido con tu pregunta. La valuación debe justificar el potencial real del mercado y el crecimiento en demanda. El emprendedor menciona saturación y uso del dinero en producción, pero no da proyecciones claras ni referencias de competidores, lo cual es clave para evaluar riesgos y oportunidades desde consumo y marca.",
+      "texto": "Estoy de acuerdo con que el tiburón negociador pida claridad en el porcentaje y condiciones para cerrar trato, porque el control y la salida afectan la marca y la experiencia del cliente. El emprendedor da rango de 12-15 % y no más de 18 %, pero falta una propuesta concreta y condiciones claras para evaluar bien el impacto en la operación y la marca.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -287,7 +287,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "La marca es reconocida en tres colonias y tienen un canal propio (app + WhatsApp), pero la demanda está limitada y la repetición es baja (38%). Pido $600,000 por 15% para compensar el riesgo y forzar crecimiento en canales y demanda. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Me interesa la marca y el canal propio con 420 clientes recurrentes y 61 % de recompra, pero falta detalle del empaque y experiencia cliente para asegurar repetición. El 38 % de repetición mensual me parece bajo para su modelo. Valoro la valuación en 5,000,000 MXN. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -300,12 +300,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices ingreso promedio por cliente para validar si costo de adquisición $120 es rentable. Valuación 5M sin proyecciones o comparables claros, margen 46% y ventas 1.45M no justifican la inversión. La retención del 38% es baja para crecer y justificar valuación.",
+      "texto": "No me dices flujo operativo neto exacto, solo que están arriba del punto de equilibrio con $85,000 MXN gasto y margen 46%. Valuación de $5,000,000 por $600,000 al 12% parece alta sin flujo claro. Propongo $600,000 por 15% para compensar riesgo. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 26,
@@ -313,7 +313,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_negociador",
       "destino": "nodo_votacion",
-      "texto": "No justifican claramente la valuación de $5,000,000 con sus ventas de $1,450,000 y margen del 46%. Piden $600,000 por 12%, quiero 15% por ese monto para compensar riesgo y falta de datos clave. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Pido claridad sobre condiciones para control y salida, además de plazo. Ofrecen hasta 18 % pero prefieren más dinero por 12 %. Mi criterio es porcentaje y control. Propongo $600,000 por 15 % con control parcial y salida en 18 meses para cerrar trato. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -350,48 +350,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Tienen un producto diferenciado con tamales hechos a diario y entrega rápida en 40 minutos con bolsa térmica.; Cuentan con 420 clientes recurrentes y 3 convenios con oficinas, mostrando validación del mercado.; El equipo fundador tiene experiencia relevante en restaurantes y logística de reparto, trabajando a tiempo completo.. Alertas: Falta información clave sobre ingreso promedio por cliente y rentabilidad por cliente para evaluar el costo de adquisición.; La tasa de repetición mensual del 38% es baja para asegurar estabilidad y crecimiento sostenido.; No se presentan proyecciones financieras ni comparables claros que justifiquen la valuación implícita de $5,000,000 MXN.. Siguientes pasos: Elaborar un análisis financiero detallado que incluya ingreso promedio por cliente, rentabilidad y punto de equilibrio para validar la inversión.; Diseñar y presentar un plan estratégico claro para aumentar la retención de clientes y expandir canales de distribución, incluyendo nuevas colonias y tiendas de conveniencia.; Desarrollar proyecciones financieras a 3-5 años y un análisis comparativo con competidores para justificar la valuación y atraer inversionistas..",
+      "texto": "Fortalezas: Modelo de negocio con clientes recurrentes y suscripción, que asegura ingresos constantes.; Margen bruto del 46 % y ventas arriba del punto de equilibrio en los últimos 5 meses.; Equipo con experiencia relevante en cocina y logística, y dedicación a tiempo completo.. Alertas: Repetición mensual del 38 % es baja para un modelo basado en suscripciones y recompra.; Falta información clara y detallada sobre flujo operativo mensual neto y rentabilidad real.; Negociación sin propuesta concreta en porcentaje y condiciones para control y salida.. Siguientes pasos: Definir y presentar detalle del empaque y experiencia de entrega para mejorar percepción de calidad.; Preparar reporte financiero con flujo operativo neto mensual claro y proyectado.; Formalizar propuesta concreta para inversionistas respecto a porcentaje, control y plan de salida..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburona_consumo",
             "calificacion": 3,
-            "frase_clave": "La marca es reconocida en tres colonias y tienen un canal propio (app + WhatsApp), pero la demanda está limitada y la repetición es baja (38%).",
-            "necesitaria": "Necesitaría ver planes claros y estrategias concretas para aumentar la retención y la base de clientes, así como expansión de canales de venta para justificar la inversión."
+            "frase_clave": "El 38 % de repetición mensual me parece bajo para su modelo. Valoro la valuación en 5,000,000 MXN. Contraoferta: $600,000 MXN por el 15 %.",
+            "necesitaria": "Más detalle del empaque y experiencia del cliente para asegurar repetición y justificar el valor de la marca."
           },
           {
             "tiburon_id": "tiburon_financiero",
-            "calificacion": 2,
-            "frase_clave": "No me dices ingreso promedio por cliente para validar si costo de adquisición $120 es rentable. Valuación 5M sin proyecciones o comparables claros, margen 46% y ventas 1.45M no justifican la inversión.",
-            "necesitaria": "Necesitaría ver un análisis detallado del ingreso promedio por cliente, rentabilidad por cliente, proyecciones financieras y comparables de mercado para validar la valuación y la inversión."
+            "calificacion": 3,
+            "frase_clave": "No me dices flujo operativo neto exacto, solo que están arriba del punto de equilibrio con $85,000 MXN gasto y margen 46%. Valuación de $5,000,000 por $600,000 al 12% parece alta sin flujo claro.",
+            "necesitaria": "Flujo operativo mensual neto claro y justificación más precisa de la valuación para evaluar riesgo y retorno."
           },
           {
             "tiburon_id": "tiburon_negociador",
-            "calificacion": 2,
-            "frase_clave": "No justifican claramente la valuación de $5,000,000 con sus ventas de $1,450,000 y margen del 46%. Piden $600,000 por 12%, quiero 15% por ese monto para compensar riesgo y falta de datos clave.",
-            "necesitaria": "Necesitaría ver una justificación sólida de la valuación con proyecciones de crecimiento, análisis de competencia y métricas clave para justificar el porcentaje que piden."
+            "calificacion": 3,
+            "frase_clave": "Pido claridad sobre condiciones para control y salida, además de plazo. Ofrecen hasta 18 % pero prefieren más dinero por 12 %. Mi criterio es porcentaje y control.",
+            "necesitaria": "Propuesta concreta con condiciones claras de control, porcentaje y plan de salida para cerrar trato."
           }
         ],
         "fortalezas": [
-          "Tienen un producto diferenciado con tamales hechos a diario y entrega rápida en 40 minutos con bolsa térmica.",
-          "Cuentan con 420 clientes recurrentes y 3 convenios con oficinas, mostrando validación del mercado.",
-          "El equipo fundador tiene experiencia relevante en restaurantes y logística de reparto, trabajando a tiempo completo."
+          "Modelo de negocio con clientes recurrentes y suscripción, que asegura ingresos constantes.",
+          "Margen bruto del 46 % y ventas arriba del punto de equilibrio en los últimos 5 meses.",
+          "Equipo con experiencia relevante en cocina y logística, y dedicación a tiempo completo."
         ],
         "alertas": [
-          "Falta información clave sobre ingreso promedio por cliente y rentabilidad por cliente para evaluar el costo de adquisición.",
-          "La tasa de repetición mensual del 38% es baja para asegurar estabilidad y crecimiento sostenido.",
-          "No se presentan proyecciones financieras ni comparables claros que justifiquen la valuación implícita de $5,000,000 MXN."
+          "Repetición mensual del 38 % es baja para un modelo basado en suscripciones y recompra.",
+          "Falta información clara y detallada sobre flujo operativo mensual neto y rentabilidad real.",
+          "Negociación sin propuesta concreta en porcentaje y condiciones para control y salida."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el ingreso promedio por cliente y cómo se compara con el costo de adquisición?",
-          "¿Qué proyecciones financieras o métricas usan para sostener la valuación de $5,000,000 MXN?",
-          "¿Cuáles son los planes específicos para aumentar la retención y escalar la distribución más allá de las tres colonias actuales?"
+          "Detalle específico del empaque y cómo garantiza la frescura y experiencia casera.",
+          "Flujo operativo neto mensual exacto considerando ventas, margen y gastos.",
+          "Propuesta concreta de porcentaje y condiciones para control y salida para el inversionista negociador."
         ],
         "siguientes_pasos": [
-          "Elaborar un análisis financiero detallado que incluya ingreso promedio por cliente, rentabilidad y punto de equilibrio para validar la inversión.",
-          "Diseñar y presentar un plan estratégico claro para aumentar la retención de clientes y expandir canales de distribución, incluyendo nuevas colonias y tiendas de conveniencia.",
-          "Desarrollar proyecciones financieras a 3-5 años y un análisis comparativo con competidores para justificar la valuación y atraer inversionistas."
+          "Definir y presentar detalle del empaque y experiencia de entrega para mejorar percepción de calidad.",
+          "Preparar reporte financiero con flujo operativo neto mensual claro y proyectado.",
+          "Formalizar propuesta concreta para inversionistas respecto a porcentaje, control y plan de salida."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -402,7 +402,7 @@
         "valuacion_mxn": 5000000.0,
         "votos_primera_votacion": {
           "tiburona_consumo": "contraoferta",
-          "tiburon_financiero": "salir",
+          "tiburon_financiero": "contraoferta",
           "tiburon_negociador": "contraoferta"
         },
         "criterios_no_evaluados": [
@@ -428,7 +428,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 21.4,
+    "segundos_modelo": 23.1,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,

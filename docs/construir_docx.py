@@ -20,9 +20,10 @@ SERV = BASE.parent / "servicio"
 NAVY, VIOLET, BLUE, CYAN, GREEN = (RGBColor(0x00, 0x16, 0x5C), RGBColor(0x4F, 0x1F, 0xD0), RGBColor(0x10, 0x60, 0xD0),
                                    RGBColor(0x13, 0xB8, 0xF0), RGBColor(0x2F, 0x9E, 0x44))
 GRAY = RGBColor(0x5A, 0x64, 0x80)
-FECHA = "19 de noviembre de 2026"
+FECHA = "27 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
 VIDEO = "https://youtu.be/STD4X71H2I0"
+VIDEO2 = "https://github.com/albertolopezb/NeuralHub/blob/main/docs/video/NeuralHub_en_vivo.mp4"
 SHEET = "https://docs.google.com/spreadsheets/d/1l3FO2RC_p4CcSI41rOY3-Zu0JECe1XgxQEAlMEQZM0k/edit"
 
 doc = Document()
@@ -43,7 +44,7 @@ for nombre, tam, color in (("Heading 1", 16, NAVY), ("Heading 2", 13, VIOLET), (
     s.paragraph_format.space_before = Pt(14 if nombre == "Heading 1" else 10); s.paragraph_format.space_after = Pt(4)
     s.paragraph_format.keep_with_next = True
 
-FIGS = ["act", "clases", "agente_t", "agente_e", "est_t", "est_es", "vot", "com", "sec", "grafo", "boceto", "general", "arriba",
+FIGS = ["act", "clases", "agente_t", "agente_e", "est_t", "est_es", "vot", "com", "sec", "grafo", "vivo", "arq", "boceto", "general", "arriba",
         "s_inicio", "s_form", "s_panel", "s_pregunta", "s_replica", "s_historial", "s_votos", "s_decision", "s_resultado"]
 NUM = {k: i + 1 for i, k in enumerate(FIGS)}
 usadas = []
@@ -141,7 +142,7 @@ def figura(k, ancho_cm, leyenda):
     par = doc.add_paragraph(); par.alignment = WD_ALIGN_PARAGRAPH.CENTER; par.paragraph_format.keep_with_next = True
     NOMBRES = {"act": "f01_actividades", "clases": "f05_clases", "agente_t": "f09a_agente_tiburon", "agente_e": "f09b_agente_emprendedor",
                                          "est_t": "f02_estados_tiburon", "est_es": "f08_estados_emprendedor_sesion", "vot": "f10_votacion", "com": "f03_comunicaciones",
-                                         "sec": "f07_secuencia_ronda", "grafo": "f06_grafo_langgraph", "boceto": "f04_boceto_escena", "general": "estudio_general",
+                                         "sec": "f07_secuencia_ronda", "grafo": "f06_grafo_langgraph", "vivo": "vivo_replica", "arq": "f11_arquitectura_comunicacion", "boceto": "f04_boceto_escena", "general": "estudio_general",
                                          "arriba": "vista_arriba", "s_inicio": "01_inicio", "s_form": "02_formulario", "s_panel": "03_eleccion_panel",
                                          "s_pregunta": "05_pregunta", "s_replica": "06_replica", "s_historial": "07_historial", "s_votos": "08_votos",
                                          "s_decision": "09_decision", "s_resultado": "10_resultado"}
@@ -176,11 +177,27 @@ for f in sorted((SERV / "sesiones" / "prueba").glob("*.json")):
             cd_tot += 1; cd_ok += menciona_criterio(e["texto"], e["emisor"]) and tiene_dato_concreto(e["texto"])
 pct = lambda a, b: f"{100 * a / b:.1f} %".replace(".0 %", " %")
 
+res1 = json.load(open(SERV / "resultados_prueba_inc1.json", encoding="utf8"))
+def _cd(carpeta):
+    ok = tot = 0
+    for f in sorted((SERV / "sesiones" / carpeta).glob("*.json")):
+        for e in json.load(open(f, encoding="utf8"))["eventos"]:
+            if e["tipo"] == "VOTO":
+                tot += 1; ok += menciona_criterio(e["texto"], e["emisor"]) and tiene_dato_concreto(e["texto"])
+    return ok, tot
+cd1_ok, cd1_tot = _cd("prueba_inc1")
+ciega = json.load(open(SERV / "resultados_prueba_ciega.json", encoding="utf8"))["resumen"]
+ciega1 = {"porcentaje": 56.7, "por_tiburon": {"tiburon_financiero": "10/10", "tiburon_estratega": "7/10", "tiburon_tecnologico": "7/10", "tiburona_consumo": "3/10", "tiburon_mentor": "6/10", "tiburon_negociador": "1/10"}}
+vivo = json.load(open(SERV / "resultados_vivo.json", encoding="utf8"))
+lat = [x["segundos"] for x in vivo["latencias"]]
+lat_ok = sum(1 for x in lat if x < 10)
+seg_prom1 = round(sum(x["segundos_total"] for x in res1) / len(res1), 1)
+
 # ---------- portada ----------
 par = doc.add_paragraph(); par.alignment = WD_ALIGN_PARAGRAPH.CENTER
 par.add_run().add_picture(str(IMG / "logo.jpg"), width=Cm(8.2))
 p("Equipo NeuralHub", bold=True, align="c", size=24, color=NAVY, after=2)
-p("Primer incremento", bold=True, align="c", size=20, color=VIOLET, after=14)
+p("Incremento 2", bold=True, align="c", size=20, color=VIOLET, after=14)
 p("**Integrantes**", align="c", size=12, after=2)
 for n, m in (("Alberto López Barragán", "A00841178"), ("Gerardo Islas Gómez", "A01739896"), ("Gilberto Olavarrieta Sánchez", "A01286889"),
              ("Juan Esteban Jaramillo", "A00841074"), ("Franco Salazar Guerrero", "A01178655")):
@@ -195,7 +212,15 @@ doc.add_page_break()
 
 # ---------- correcciones atendidas ----------
 h1("Correcciones atendidas")
-p("Cada comentario de la retroalimentación del anteproyecto (80/100) y la sección donde se atendió:", align="j", keep=True)
+p("El primer incremento obtuvo 100/100. Sus dos observaciones (que no restaron puntos) y dónde se atendieron:", align="j", keep=True)
+tabla(["Observación del primer incremento", "Cómo se atendió", "Sección"], [
+    ("HU-08 dice solo «usuario»; especifiquen de qué tipo es.",
+     "HU-08 ahora es «Como emprendedor o espectador…». Se revisaron todas las historias: ninguna usa un usuario genérico, y se agregaron HU-10 (emprendedor, voz) y HU-11 (espectador, voces y pantallas).", "6"),
+    ("Siguen clasificando el entorno como estático; con la negociación y la segunda votación, revisen si eso sigue aplicando.",
+     "Se reclasificó como dinámico: la oferta cambia entre la primera y la segunda votación, el usuario actúa en tiempo real (escribe o dicta mientras el servicio espera) y los tres tiburones deliberan en paralelo. Se explica la razón en la tabla del entorno.", "7.2"),
+], anchos=[5.6, 9.2, 2.2])
+h2("Correcciones del anteproyecto (atendidas en el primer incremento)")
+p("Se conservan para dar trazabilidad. Cada comentario de la retroalimentación del anteproyecto (80/100) y la sección donde se atendió:", align="j", keep=True)
 tabla(["Comentario de la profesora", "Cómo se atendió", "Sección"], [
     ("El problema es genérico; falta fundamentar con datos cómo deciden los inversionistas reales.",
      "Se reescribió con datos verificados: encuesta a 885 inversionistas de riesgo, cifras de evaluación y cierre de tratos, fracaso de startups y supervivencia de negocios en México.", "3"),
@@ -226,8 +251,9 @@ p("Cuando una persona emprendedora presenta su idea a inversionistas, rara vez s
 p("**Estrategia de solución.** Un servicio en Python ejecuta los agentes con LangGraph sobre un modelo de lenguaje de Azure OpenAI y expone sus eventos por HTTP. "
   "Unity no ejecuta a los agentes: pide los eventos y los reproduce en la escena. Las cuentas (valuación, recomendación del panel, regla de votación) se hacen en código determinista, "
   "no en el modelo, para controlar el costo y evitar cifras inventadas.", align="j")
-p("**Alcance de este incremento.** Servicio de agentes funcional, evaluado con 15 sesiones reales; prototipo de un agente; escena 3D del estudio con los controles de usuario "
-  "construidos en Unity; y la gestión del proyecto con evidencia. La integración en vivo entre Unity y el servicio con usuario humano queda para el Sprint 2.", align="j")
+p("**Alcance de este incremento.** Múltiples agentes funcionando en vivo: la app de Unity conversa con el servicio real (el usuario escribe o dicta sus respuestas con la voz y los tiburones hablan con voz propia), "
+  "se documenta cómo se comunican y deciden los agentes, se mejoraron los prompts (estilo distintivo por tiburón y justificaciones con cifras), se repitió la evaluación de 15 sesiones y la escena ganó iluminación submarina, "
+  "pantallas con datos, sonido y navegación por la conversación.", align="j")
 
 # ---------- 2 créditos ----------
 h1("2. Créditos")
@@ -273,11 +299,11 @@ h2("Objetivos específicos (SMART)")
 p("**Conjunto de prueba.** 5 pitches escritos por el equipo (2 sólidos, 2 débiles en un criterio conocido y 1 incompleto), 3 sesiones por pitch: 15 sesiones. Cada pitch usa un panel fijo de 3 tiburones "
   "(en los débiles incluye al dueño del criterio débil) y las respuestas del emprendedor salen de un guion fijo. Las métricas automáticas buscan palabras clave del criterio de cada tiburón y cifras en el texto; "
   "son un indicador preliminar y se complementan con la rúbrica manual descrita en el objetivo 2.", align="j")
-tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)", "Estado medido (19 nov)"], [
+tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)", "Estado medido (26 nov)"], [
     ("1", "**Recomendación del panel.** Para el final del Sprint 2 (27 nov), en los 3 pitches débiles o incompletos del conjunto de prueba, el panel recomendado incluye al tiburón dueño del criterio débil, sin usar el modelo (0 llamadas).",
      "3 de 3 pitches (100 %), 0 llamadas. Cumplido en prueba preliminar."),
     ("2", "**Personalidades distinguibles.** Para el final del Sprint 2, en una prueba ciega con 60 mensajes sin nombre (10 por tiburón), un integrante que no escribió los prompts identifica al tiburón autor en al menos el 80 % de los casos.",
-     "Pendiente (tarea T23)."),
+     f"Juez automático (LLM): {ciega['aciertos']} de {ciega['mensajes']} ({ciega['porcentaje']} %); en el incremento 1 era {ciega1['porcentaje']} %. La prueba con una persona usa la planilla pruebas/prueba_ciega_humana.csv (tarea T23)."),
     ("3", "**Análisis por criterio.** Para el final del Sprint 2, en las 15 sesiones, al menos el 85 % de las preguntas aborda el criterio principal del tiburón que pregunta y cita un dato del pitch o señala que falta.",
      f"{p_crit} de {p_tot} preguntas ({pct(p_crit, p_tot)}) mencionan su criterio (indicador automático)."),
     ("4", "**Debate entre tiburones.** Para el final del Sprint 2, el 100 % de las rondas incluye una RÉPLICA de un tiburón dirigida a otro tiburón del panel, con acuerdo o desacuerdo explícito.",
@@ -287,11 +313,11 @@ tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)"
     ("6", "**Costo controlado.** Para el final del Sprint 3 (4 dic), ninguna sesión con usuario humano usa más de 19 llamadas al modelo (22 con el emprendedor en autopiloto) y el modelo responde en menos de 40 s por sesión en total.",
      f"Máximo {llam_max} llamadas ({n16} sesiones con 16 y {n19} con 19); {seg_prom} s en promedio y {seg_max} s como máximo. Cumplido en la prueba."),
     ("7", "**Justificación con evidencia.** Para el final del Sprint 3, al menos el 85 % de las justificaciones de voto menciona el criterio principal del tiburón y al menos un dato concreto de la conversación.",
-     f"{cd_ok} de {cd_tot} ({pct(cd_ok, cd_tot)}). No cumplido todavía: se ajustan los prompts en el Sprint 2 (T20). Solo el criterio: {v_crit} de {v_tot}."),
+     f"{cd_ok} de {cd_tot} ({pct(cd_ok, cd_tot)}); en el incremento 1 era {pct(cd1_ok, cd1_tot)}. Cumplido tras ajustar los prompts (T20)."),
     ("8", "**Coherencia con el perfil.** Para el final del Sprint 3, en los pitches débiles el tiburón dueño del criterio débil vota «salir» o «contraoferta» en al menos el 80 % de las sesiones; en los pitches sólidos hay trato en al menos 4 de 6 sesiones.",
-     f"{dueno_sale} de {len(debiles)} sesiones débiles ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sesiones sólidas. Cumplido en el umbral."),
+     f"{dueno_sale} de {len(debiles)} sesiones débiles ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sesiones sólidas. Cumplido."),
     ("9", "**Integración con Unity.** Para el final del Sprint 3, la escena reproduce en orden el 100 % de los eventos de las 15 sesiones, y en el 90 % de los turnos la siguiente intervención aparece en menos de 10 s tras enviar la respuesta.",
-     f"Eventos con numeración continua: {ordenok} de {NS} sesiones. La sesión de ejemplo se reproduce completa; la prueba en vivo es la tarea T21."),
+     f"Eventos en orden: {ordenok} de {NS} sesiones y la sesión en vivo completa ({vivo['eventos']} eventos). Latencia tras enviar la respuesta: {lat_ok} de {len(lat)} turnos bajo 10 s (máximo {max(lat):.1f} s). Cumplido en la prueba en vivo."),
     ("10", "**Retroalimentación útil.** Para la entrega final, al menos 5 usuarios ajenos al equipo usan la app con su propia idea y al menos el 80 % califica el reporte con 4 o 5 de 5 en utilidad.",
      "Pendiente (tarea T31)."),
 ], anchos=[0.8, 10.4, 5.8], size=9)
@@ -402,7 +428,7 @@ tabla(["Característica", "Clasificación", "Razón"], [
     ("**Observabilidad**", "Parcialmente observable", "Todos ven el pitch y el historial público, pero no el razonamiento interno de los demás. La votación es secreta y simultánea: nadie ve otros votos hasta que el nodo de votación los publica."),
     ("**Determinismo**", "Estocástico", "El modelo de lenguaje puede responder distinto con la misma entrada; el orden de turnos, la recomendación del panel y la regla de decisión son deterministas."),
     ("**Episodios**", "Secuencial", "Cada pregunta, respuesta y réplica depende de lo anterior, y el voto depende de todo el debate."),
-    ("**Cambio**", "Estático", "El entorno solo cambia cuando un agente actúa; mientras uno delibera o el usuario escribe, nada cambia."),
+    ("**Cambio**", "Dinámico", "El entorno cambia por acciones que no controla el tiburón que delibera: el usuario escribe o dicta en tiempo real mientras el servicio espera, la oferta cambia entre la primera y la segunda votación y los tres tiburones deliberan en paralelo sin ver los votos de los demás. Se revisó tras la observación del primer incremento."),
     ("**Valores**", "Discreto", "Hay turnos y rondas contables y un conjunto finito de acciones."),
     ("**Agentes**", "Multiagente", "Tres tiburones por sesión, elegidos de un catálogo de seis, que cooperan y compiten, y un emprendedor con objetivo opuesto (obtener el trato cediendo lo menos posible)."),
 ], anchos=[3.2, 3.4, 10.4], size=9.5)
@@ -513,8 +539,48 @@ for pid in ("P1", "P2", "P3", "P4", "P5"):
                     "/".join(str(x["llamadas_modelo"]) for x in xs), f"{sum(x['segundos_total'] for x in xs) / 3:.1f}",
                     ", ".join(x["resultado"].replace("_", " ").title() for x in xs), "sí" if any(x["hubo_negociacion"] for x in xs) else "no"))
 tabla(["Pitch", "Tipo", "Panel fijo", "Llamadas (3 ses.)", "Seg. prom.", "Resultados", "Negoc."], fil_res, anchos=[1.2, 2.6, 4.2, 2.4, 1.6, 3.6, 1.4], size=8.5)
+p("**Evaluación repetida en el incremento 2** (mismo conjunto de 15 sesiones; cambios: estilo distintivo por tiburón y regla de citar una cifra en cada justificación):", keep=True)
+tabla(["Métrica", "Incremento 1", "Incremento 2"], [
+    ("Justificaciones con criterio y cifra concreta (objetivo 7)", f"{cd1_ok} de {cd1_tot} ({pct(cd1_ok, cd1_tot)})", f"{cd_ok} de {cd_tot} ({pct(cd_ok, cd_tot)})"),
+    ("Preguntas que mencionan el criterio (objetivo 3)", f"{sum(x['preguntas_mencionan_criterio'] for x in res1)} de {sum(x['preguntas'] for x in res1)}", f"{p_crit} de {p_tot}"),
+    ("Prueba ciega con juez automático (objetivo 2)", f"{ciega1['porcentaje']} %", f"{ciega['porcentaje']} %"),
+    ("Trato en pitches sólidos (objetivo 8)", f"{sum(1 for x in res1 if x['tipo'] == 'solido' and x['resultado'] == 'TRATO')} de 6", f"{trato_sol} de {len(solidos)}"),
+    ("Máximo de llamadas por sesión (objetivo 6)", str(max(x['llamadas_modelo'] for x in res1)), str(llam_max)),
+    ("Tiempo de modelo promedio por sesión", f"{seg_prom1} s", f"{seg_prom} s"),
+], anchos=[8.4, 4.3, 4.3], size=9)
+p("**Prueba ciega por tiburón** (10 mensajes sin nombre por perfil; un juez LLM elige el autor entre los 6 perfiles):", keep=True)
+tabla(["Tiburón", "Incremento 1", "Incremento 2"], [(TIBURONES[t]["nombre"], ciega1["por_tiburon"][t], ciega["por_tiburon"][t]) for t in TIBURONES], anchos=[6.0, 5.5, 5.5], size=9)
+h3("Múltiples agentes funcionando en vivo")
+p(f"Se probó el sistema completo de punta a punta: Unity (ejecutable compilado) contra el servicio real con Azure OpenAI, con un usuario automatizado que escribe las respuestas en los mismos campos que usa una persona. "
+  f"La sesión {vivo['sesion']} tuvo {vivo['eventos']} eventos, {vivo['llamadas']} llamadas al modelo y terminó con «{vivo['resultado'].replace('_', ' ')}»; los tres tiburones preguntaron, replicaron entre ellos y votaron en secreto, y cada intervención se escuchó con su voz. "
+  f"Video de la sesión en vivo: " + VIDEO2 + ".", align="j", keep=True)
+tabla(["Momento", "Espera hasta la siguiente intervención de un agente"], [(x["tipo"].title(), f"{x['segundos']:.1f} s") for x in vivo["latencias"]], anchos=[6.0, 11.0], size=9)
+figura("vivo", 13.0, "Sesión en vivo: un tiburón replica a otro mientras las pantallas muestran la oferta y el panel.")
 p("Hallazgos del proceso: (a) el emprendedor en autopiloto inventaba cifras; se corrigió el prompt para que responda «aún no lo sé» y diga qué haría para averiguarlo; "
   "(b) una réplica se dirigía a un tiburón distinto del indicado; ahora el moderador asigna el destino; (c) el mapeo de respuestas por id fallaba en una ronda; ahora tiene un respaldo por posición.", align="j")
+
+h2("7.6 Comunicación entre agentes y toma de decisiones")
+p("**¿Toman decisiones?** Sí, en dos niveles. Cada tiburón decide de forma individual qué preguntar, si está de acuerdo o no con otro tiburón (RÉPLICA) y su voto (invertir, contraoferta o salir, con justificación y contraoferta numérica). "
+  "La decisión colectiva la toma el nodo de votación con una regla explícita: mayoría de 2 de 3 a favor; con un solo voto a favor se abre una negociación y una segunda votación. El emprendedor decide qué responder y qué condiciones acepta. "
+  "El moderador no decide el resultado: solo fija el orden de turnos y a quién se dirige cada réplica.", align="j")
+p(f"**¿Qué usan para hablar entre ellos?** No hay sockets entre agentes: se comunican por **memoria compartida tipo pizarra**, el estado del grafo de LangGraph. Cada mensaje es un evento tipado {{n, ronda, tipo, emisor, destino, texto}} que se agrega al historial público; "
+  "los votos se guardan en una parte privada del estado y solo el nodo de votación los publica. Cada agente produce su mensaje con **salida estructurada** (esquemas Pydantic) validada antes de entrar al estado, así que el contenido siempre tiene la forma esperada. "
+  f"Hacia fuera hay dos protocolos: HTTPS con Azure OpenAI para razonar y una **API REST con JSON** (FastAPI) que Unity consulta cada segundo; cuando el grafo necesita al usuario se pausa con interrupt y se reanuda con Command(resume). {F('arq').capitalize()} resume la arquitectura.", align="j")
+figura("arq", 16.5, "Arquitectura de comunicación: pizarra compartida de LangGraph, salida estructurada, API REST y voz local.")
+p("**Equivalencia con FIPA-ACL.** Aunque no se usa una plataforma FIPA, cada tipo de mensaje corresponde a un acto comunicativo estándar [17]:", keep=True)
+tabla(["Mensaje NeuralHub", "Acto FIPA-ACL", "Emisor → receptor", "Efecto en el estado"], [
+    ("PITCH", "inform", "Emprendedor → tiburones", "Se agrega al historial público y a la pantalla"),
+    ("PANEL / turnos", "inform", "Moderador → todos", "Fija el orden de preguntas y quién replica"),
+    ("PREGUNTA", "query-ref / request", "Tiburón → emprendedor", "El grafo espera la respuesta (interrupt)"),
+    ("RESPUESTA", "inform", "Emprendedor → tiburón", "Se agrega al historial; el grafo se reanuda"),
+    ("RÉPLICA", "agree / refuse (inform)", "Tiburón → tiburón", "Acuerdo o desacuerdo visible para todos"),
+    ("VOTO", "propose / reject-proposal", "Tiburón → nodo de votación", "Se guarda en privado hasta la decisión"),
+    ("CONTRAOFERTA", "propose", "Tiburón → emprendedor", "Viaja dentro del voto"),
+    ("OFERTA / CONDICIONES", "accept-proposal / propose", "Emprendedor → tiburones", "Cambia la oferta vigente"),
+    ("DECISIÓN", "inform", "Nodo de votación → todos", "Cierra la sesión y dispara el reporte"),
+], anchos=[3.4, 3.6, 4.4, 5.6], size=9)
+p("**Por qué así.** Una pizarra compartida con turnos fijos garantiza el orden (los eventos tienen n consecutivo), permite repetir y auditar cada sesión y controla el costo (cada mensaje es una llamada conocida). "
+  "Los votos privados evitan que un tiburón se deje llevar por otro, y la regla determinista hace que la decisión final sea explicable.", align="j")
 
 # ---------- 8 modelado gráfico ----------
 h1("8. Descripción del modelado gráfico")
@@ -535,16 +601,18 @@ color_par("Se ve un {n|estudio de televisión} {a|submarino}, una {n|pecera} {a|
           "Detrás, {a|tres} {n|tiburones} {a|empresarios} con {n|traje} y {n|corbata}, {a|sentados} en {n|sillones} {n|concha} {a|fijos} en semicírculo, cada uno con su {n|escritorio} y un {n|letrero} con su nombre, {v|escuchan}, {v|preguntan}, {v|replican} a otro tiburón, {v|votan} y {v|reaccionan}: el personaje de cada sillón {v|cambia} según el panel elegido. "
           "Una {n|cámara} {a|principal} {v|cambia} de plano para {v|enfocar} a quien habla y un {n|reflector} {v|ilumina} al agente en turno. En la parte inferior se ve un {n|cuadro de diálogo} con el texto de cada turno, un {n|indicador de ronda} y un {n|marcador} con los votos; "
           "al final aparece un {n|letrero de resultado}: trato o sin trato.")
+p("**Novedades del incremento 2 en la escena.** Iluminación submarina con cáusticas que se mueven en el piso y rayos de luz; dos pantallas laterales (datos de la oferta con el ícono del sector, y voto y calificación de cada tiburón); "
+  "voz propia para cada personaje sincronizada con el subtítulo; ambiente y efectos de sonido; navegación por la conversación (anterior, siguiente, ir a un turno); y dictado por voz de las respuestas.", align="j")
 p("Siguiendo el método de diseño del curso, marcamos en **violeta** los sustantivos (clases), en **azul** los verbos (métodos) y en **verde** los adjetivos (atributos). Con esta lista se armó el diagrama de clases.", align="j")
 p("**Controles del usuario.** El usuario controla su pitch, la elección del panel, sus respuestas y su decisión final; nunca a los tiburones.", align="j", keep=True)
 tabla(["Pantalla", "Qué ve", "Controles"], [
     ("Inicio", "Logo, estado de conexión con el servicio", "Nueva sesión, Historial de sesiones, interruptor «Usar sesión de ejemplo (sin conexión)»"),
     ("Formulario del pitch", "Campos del pitch y la valuación calculada al momento", "Campos de texto y numéricos, «Cargar ejemplo», «Siguiente» (activo solo con los obligatorios)"),
     ("Elección del panel", "Tarjetas de los 6 tiburones con perfil y criterio; los 3 recomendados con el motivo", "Seleccionar o quitar tarjetas (exactamente 3) e «Iniciar sesión»"),
-    ("Sesión en el estudio", "Cámara sobre quien habla, subtítulos, indicador de ronda, marcador de votos y panel con el motivo de cada tiburón", "Pausa/Reanudar, 1x/2x, Saltar, Historial, Salir; campos de respuesta y «Enviar respuestas» cuando preguntan"),
+    ("Sesión en el estudio", "Cámara sobre quien habla, subtítulos con voz, indicador de ronda, «Turno k/N», marcador de votos y pantallas con datos", "Anterior, Pausa/Reanudar, Siguiente, 1x/2x, Voz, Silencio, Historial, Salir; campos de respuesta con «Dictar con voz» y «Enviar respuestas»"),
     ("Negociación", "Contraofertas y resultado de la primera votación", "Aceptar contraoferta, ajustar monto y porcentaje, mantener mi oferta; elegir condiciones finales"),
     ("Resultado y reporte", "Trato o sin trato, voto y justificación de cada tiburón, reporte y criterios no evaluados", "Ver historial completo, Repetir con este pitch, Nueva sesión"),
-    ("Historial", "Turnos de la sesión (ronda, quién, tipo, texto) y lista de sesiones pasadas", "Abrir en cualquier momento; «Repetir sesión»"),
+    ("Conversación e historial", "Todos los turnos de la sesión (los futuros atenuados) y la lista de sesiones guardadas", "«Ir» a cualquier turno para volver a verlo; «Repetir sesión»"),
 ], anchos=[3.2, 6.8, 7.0], size=9)
 p(f"**Expectativa y realidad.** {F('boceto').capitalize()} es el boceto inicial visto desde arriba (ahora con 3 sillones); {F('general')} y {F('arriba')} son el resultado en Unity. "
   "Las capturas de las pantallas (Figuras " + f"{NUM['s_inicio']} a {NUM['s_resultado']}) son del ejecutable compilado, con la sesión de ejemplo.", align="j")
@@ -562,8 +630,8 @@ figura("s_decision", 11.5, "Decisión del panel.")
 figura("s_resultado", 11.5, "Pantalla de resultado con votos y retroalimentación.")
 
 h2("8.2 Componentes gráficos")
-p("El ambiente se construyó con primitivas de Unity (cubos, esferas, cápsulas y cilindros) mediante un script de editor reproducible (menú NeuralHub → Construir estudio), sin assets externos en este incremento. "
-  "Los modelos y animaciones definitivos están planeados en la tarea T25; la tabla de assets tentativos al final de esta sección indica autor, fuente y licencia de cada candidato.", align="j")
+p("El ambiente se construye con un script de editor reproducible (menú NeuralHub → Construir estudio). En este incremento se agregaron recursos propios (sonidos sintetizados, íconos por sector y textura de cáusticas, generados con docs/generar_recursos_unity.py) "
+  "y una fuente tipográfica con licencia abierta. Los modelos del Asset Store y los definitivos del equipo se integran en la tarea T25; la tabla al final indica autor, fuente, licencia y estado de cada uno.", align="j")
 comp = [
     ("Estudio-pecera (piso, muros y niebla)", "Piso de arena, muros de agua profunda, niebla azul-verde y franjas de luz; define el ambiente submarino.", "estudio_general", "Alberto López; primitivas de Unity (Assets/Editor/ConstruirEstudio.cs)."),
     ("Pantalla grande", "Marco, fondo y texto 3D con el negocio, el monto, el porcentaje y la valuación; muestra TRATO o SIN TRATO al final.", "estudio_general", "Alberto López; fuente de texto integrada de Unity (LegacyRuntime)."),
@@ -571,16 +639,23 @@ comp = [
     ("Tiburón empresario", "Cuerpo con traje, camisa y corbata del color del perfil, cabeza con hocico, ojos y dientes, aleta dorsal y cola.", "tiburon_1", "Alberto López; primitivas de Unity (a reemplazar o complementar con los modelos de Juan Esteban)."),
     ("Pez payaso emprendedor y podio de coral", "Avatar del usuario: pez payaso naranja con franjas blancas junto a un podio de coral.", "emprendedor", "Alberto López; primitivas de Unity."),
     ("Algas, coral, rocas, peces y medusas", "Algas y medusas que se mecen (script Ondular), peces que nadan en círculos (script Nadador) y burbujas (sistema de partículas).", "tiburon_3", "Alberto López; primitivas y sistema de partículas de Unity."),
+    ("Pantallas laterales con datos", "Izquierda: monto, porcentaje, valuación, ventas, margen e ícono del sector. Derecha: voto (color) y calificación (barra) de cada tiburón.", "inc2_general", "Juan Esteban Jaramillo; primitivas y TextMesh de Unity."),
+    ("Iluminación submarina", "Luz direccional con textura de cáusticas que se mueve (script Caustica), rayos de luz aditivos y luz ambiental de tres tonos.", "inc2_general", "Juan Esteban Jaramillo; textura de cáusticas propia (generada con numpy)."),
+    ("Íconos por sector y sonidos", "7 íconos (energía, tecnología, alimentos, salud, educación, moda, servicios) y 7 sonidos (ambiente, clic, turno, voto, trato, sin trato, burbujas).", "inc2_general", "Equipo; creación propia con PIL y síntesis con numpy (sin licencias de terceros)."),
 ]
 for n, d, im, fu in comp:
     ficha_tabla([("Nombre", n), ("Descripción", d), ("Imagen", ""), ("Fuente", fu)], imagen=im, ancho_img=6.5)
-p("**Assets tentativos para las siguientes entregas.** Ninguno se ha descargado ni usado todavía; la licencia se confirmará en la página de descarga antes de incluirlo en el proyecto y se citará en las referencias.", align="j", keep=True)
+p("**Assets externos y su estado.** Solo la fuente Poppins está integrada; los paquetes del Asset Store se agregaron a la cuenta del equipo y se importan en la tarea T25. La licencia de cada uno se confirma en su página antes de usarlo.", align="j", keep=True)
 tabla(["Asset", "Uso previsto", "Autor", "Fuente", "Licencia", "Entrega"], [
-    ("Fish Pack Animated (modelos 3D animados: peces, tiburón, ballena, mantarraya, delfín)", "Peces y fauna animada de fondo; referencia para el tiburón", "Quaternius", "https://quaternius.itch.io/lowpoly-animated-fish", "CC0 (indicada en la página de descarga)", "2 (27 nov)"),
+    ("Poppins (Regular y SemiBold)", "Tipografía de la interfaz", "Indian Type Foundry / The Poppins Project Authors", "https://github.com/google/fonts/tree/main/ofl/poppins", "SIL Open Font License 1.1 (archivo OFL.txt incluido)", "Integrado (inc. 2)"),
+    ("3D Shark – Character Free", "Modelo de tiburón para los personajes", "Publicador del Asset Store", "https://assetstore.unity.com/packages/3d/characters/animals/fish/3d-shark-character-free-190081", "Licencia estándar del Asset Store", "T25"),
+    ("Low Poly Office Pack: Characters & Props", "Trajes y utilería de oficina", "Publicador del Asset Store", "https://assetstore.unity.com/packages/3d/characters/low-poly-office-pack-characters-props-119386", "Licencia estándar del Asset Store", "T25"),
+    ("Low Poly Simple Furniture FREE; Chair y Table pack (FastMesh)", "Escritorios y sillas del panel", "Publicadores del Asset Store", "https://assetstore.unity.com/packages/3d/props/furniture/low-poly-simple-furniture-free-240197", "Licencia estándar del Asset Store", "T25"),
+    ("Fish Pack Animated (modelos 3D animados: peces, tiburón, ballena, mantarraya, delfín)", "Peces y fauna animada de fondo", "Quaternius", "https://quaternius.itch.io/lowpoly-animated-fish", "CC0 (indicada en la página de descarga)", "T25"),
     ("Paquetes de modelos 3D de Kenney (mobiliario y props)", "Mobiliario y decorado del estudio", "Kenney", "https://kenney.nl (apartado Assets)", "CC0 según la declaración general de Kenney; por confirmar en cada paquete", "2 (27 nov)"),
     ("Animaciones de personaje (sentarse, gesticular, celebrar)", "Animar a los tiburones y al pez payaso por estado", "Adobe Mixamo", "https://www.mixamo.com", "Términos de Adobe; por confirmar antes de usar", "3 (4 dic)"),
     ("Modelos propios de tiburones empresarios y pez payaso", "Sustituir las primitivas por modelos con rig", "Juan Esteban Jaramillo (equipo)", "Blender; se subirán al repositorio", "Propia del equipo", "2–3"),
-    ("Efectos de agua: partículas, rayos de luz y cáusticas", "Mejorar el ambiente submarino", "Por definir (Unity Asset Store o creación propia)", "Por definir", "Por confirmar", "3 (4 dic)"),
+
 ], anchos=[4.2, 3.4, 2.4, 3.6, 2.4, 1.2], size=8)
 h2("8.3 Prefabs")
 pref = [
@@ -594,8 +669,8 @@ for n, d, im, sc in pref:
 h2("8.4 Scripts")
 p("Código propio del equipo; no se reutilizó código externo. Las pantallas de la interfaz se dibujan con IMGUI, sin paquetes adicionales.", align="j")
 scripts = [
-    ("ClienteServicio.cs", "Habla con el servicio por HTTP (UnityWebRequest), sondea los eventos cada segundo y los guarda en una cola; en modo sin conexión lee StreamingAssets/mock_sesion.json.", "Lo usan AppNeuralHub y ReproductorSesion; envía respuestas, negociación y condiciones al servicio."),
-    ("ReproductorSesion.cs", "Reproduce los eventos de uno en uno con pausa, velocidad 1x/2x y saltar; mantiene historial, ronda y votos.", "Lee la cola de ClienteServicio y llama a Estudio.Aplicar(evento)."),
+    ("ClienteServicio.cs", "Habla con el servicio por HTTP (UnityWebRequest), sondea los eventos cada segundo, descarga la voz de cada turno y envía la voz del usuario para transcribirla; en modo sin conexión lee StreamingAssets.", "Lo usan AppNeuralHub y ReproductorSesion; envía respuestas, negociación y condiciones al servicio."),
+    ("ReproductorSesion.cs", "Reproduce los eventos de uno en uno con pausa, velocidad, voz y navegación (anterior, siguiente, ir a un turno, que reconstruye la escena hasta ese punto).", "Lee la cola de ClienteServicio, pide el audio de cada turno y llama a Estudio, PantallasDatos y Sonidos."),
     ("Estudio.cs", "Coloca los 3 tiburones en los sillones y aplica cada evento a la escena (animación, cámara, reflector, pantalla).", "Controla Tiburon, Emprendedor, CamaraEstudio, Reflector y Pantalla."),
     ("CamaraEstudio.cs", "Cámara principal que cambia de plano (general, emprendedor, tiburón, arriba) con movimiento suave.", "La llama Estudio."),
     ("Tiburon.cs", "Máquina de estados del tiburón (Fuera del panel, Esperando, Escuchando, Preguntando, Evaluando, Replicando, Votando, Reaccionando) y su animación.", "Recibe órdenes de Estudio."),
@@ -603,14 +678,18 @@ scripts = [
     ("Reflector.cs / Pantalla.cs", "Spotlight que sigue al turno; pantalla grande que muestra la oferta y el resultado.", "Los llama Estudio."),
     ("AppNeuralHub.cs", "Controlador de la aplicación: navega entre pantallas y conecta servicio, reproductor y estudio; incluye el modo de capturas automáticas.", "Usa ClienteServicio, ReproductorSesion y las pantallas."),
     ("Pantallas.cs", "Clases MenuInicio, FormularioPitch, EleccionPanel, ControlReproduccion, PanelHistorial, InterfazDebate, PanelRespuestas, PanelNegociacion, PantallaResultado y ListaSesiones.", "Las dibuja AppNeuralHub; llaman a ClienteServicio."),
-    ("Datos.cs / Estilos.cs", "Clases de datos (Evento, PitchDto, Pendiente…) y estilos con los colores del equipo.", "Compartidos por todos los scripts."),
+    ("Datos.cs / Estilos.cs", "Clases de datos (Evento, PitchDto, Pendiente…) y estilos con los colores del equipo; paneles y botones redondeados y fuente Poppins.", "Compartidos por todos los scripts."),
+    ("Sonidos.cs", "Ambiente submarino en bucle, efectos (clic, turno, voto, trato, sin trato) y la voz de cada personaje; registra el audio para montar los videos.", "Lo usan ReproductorSesion y AppNeuralHub; los botones Voz y Silencio lo controlan."),
+    ("GrabadorVoz.cs", "Graba la voz del usuario con el micrófono (16 kHz) y la convierte a WAV.", "Lo usa PanelRespuestas; el WAV se envía a ClienteServicio.Transcribir."),
+    ("PantallasDatos.cs", "Pantallas laterales: datos de la oferta con ícono del sector y barras de voto y calificación por tiburón.", "La actualiza ReproductorSesion con PITCH, PANEL, VOTO y REPORTE."),
+    ("Caustica.cs / Ondular.cs / Nadador.cs", "Movimiento de la luz de cáusticas, de algas y medusas, y de los peces de fondo.", "Independientes; los agrega el constructor de la escena."),
 ]
 for n, d, i in scripts:
     ficha_tabla([("Nombre", n), ("Descripción", d), ("Interacciones", i)])
 
 # ---------- 9 gestión ----------
 h1("9. Gestión de proyecto")
-p("Herramienta: **Google Sheets**, hoja «NeuralHub – Gestión» con las pestañas Product backlog, Sprint backlog, Calendario, Bitácora de la entrega 1, Bitácora de la entrega 2 y Participación.", align="j")
+p("Herramienta: **Google Sheets**, hoja «NeuralHub – Gestión» con las pestañas Product backlog, Sprint backlog, Calendario, Bitácoras de cada entrega y Participación.", align="j")
 p("Enlace de la hoja: " + SHEET, align="j")
 p("Repositorio de código: " + REPO, align="j")
 h2("Calendario de sprints")
@@ -619,8 +698,10 @@ tabla(["Sprint", "Inicio", "Cierre", "Enfoque"], SPRINTS, anchos=[2.0, 3.2, 3.2,
 h2("Actividades de la entrega del anteproyecto (6 de noviembre de 2026)")
 p("Las actividades se repartieron entre los cinco integrantes de forma equitativa (3 por persona) y de acuerdo con su rol. La creación del documento en Drive (6 nov, 13:39) está verificada en el historial de versiones; la última edición registrada (6 nov, 19:20) fue de la cuenta de Alberto.", align="j", keep=True)
 tabla(["Actividad", "Responsable", "Fecha"], [(a, r, f) for a, r, f, _ in BITACORA_E1], anchos=[9.4, 4.4, 3.2], size=9)
-h2("Actividades de este incremento")
+h2("Actividades del primer incremento")
 tabla(["Actividad", "Responsable", "Fecha"], BITACORA_E2, anchos=[9.4, 4.4, 3.2], size=9)
+h2("Actividades del incremento 2")
+tabla(["Actividad", "Responsable", "Fecha"], BITACORA_E3, anchos=[9.4, 4.4, 3.2], size=9)
 h2("Sprint backlog y participación")
 p("Cada integrante tiene al menos una tarea en cada una de las tres categorías (documentación y planeación, programación multiagente y programación en Unity). Tareas hechas y planeadas:", align="j", keep=True)
 filas = []
@@ -635,11 +716,11 @@ tabla(["ID", "Tarea", "Categoría", "Responsable", "Fechas", "Estado"], [
 
 # ---------- 10 resultados ----------
 h1("10. Resultados")
-p(f"Resultados preliminares del primer incremento (15 sesiones de prueba contra Azure OpenAI): las {NS} sesiones terminaron con una decisión; la regla de votación pasó las 27 combinaciones; el presupuesto fue de 16 o 19 llamadas por sesión (máximo medido {llam_max}, "
-  f"límite 19); el tiempo de modelo fue de {seg_prom} s en promedio; hubo réplica de tiburón a tiburón en {r_tot} de {r_tot} rondas; y los tiburones dueños de un criterio débil votaron «salir» o «contraoferta» en {dueno_sale} de {len(debiles)} sesiones.", align="j")
-p(f"**Lo que aún no se cumple.** El objetivo 7 (justificaciones con criterio y dato concreto, meta 85 %) está en {pct(cd_ok, cd_tot)}; se ajustarán los prompts en el Sprint 2. "
-  "Las métricas de criterio son un indicador automático por palabras clave; faltan la prueba ciega (objetivo 2), la prueba en vivo Unity–servicio con usuario humano (objetivo 9) y la prueba con 5 usuarios externos (objetivo 10). "
-  "Los pitches de prueba y de ejemplo son ficticios, escritos por el equipo.", align="j")
+p(f"**Incremento 2 (26 nov).** En las {NS} sesiones de prueba contra Azure OpenAI todas terminaron con decisión, con un máximo de {llam_max} llamadas por sesión (límite 19) y {seg_prom} s de modelo en promedio. "
+  f"Las justificaciones con criterio y cifra subieron de {pct(cd1_ok, cd1_tot)} a {pct(cd_ok, cd_tot)} (objetivo 7 cumplido), hubo réplica en {r_tot} de {r_tot} rondas y el dueño del criterio débil votó «salir» o «contraoferta» en {dueno_sale} de {len(debiles)} sesiones. "
+  f"En vivo, Unity y el servicio completaron una sesión de {vivo['eventos']} eventos con {lat_ok} de {len(lat)} esperas bajo 10 s (objetivo 9).", align="j")
+p(f"**Lo que falta.** La prueba ciega con juez automático subió de {ciega1['porcentaje']} % a {ciega['porcentaje']} %; la versión con una persona (objetivo 2) y la prueba con 5 usuarios externos (objetivo 10) se hacen en el Sprint 3. "
+  "Las métricas de criterio son indicadores automáticos por palabras clave. Los pitches de prueba y de ejemplo son ficticios, escritos por el equipo.", align="j")
 
 # ---------- 11 referencias ----------
 h1("11. Referencias")
@@ -659,6 +740,11 @@ refs = [
     "S. Ramírez, «FastAPI». [En línea]. Disponible en: https://fastapi.tiangolo.com/",
     "Quaternius, «Fish Pack Animated» (asset candidato, licencia CC0). [En línea]. Disponible en: https://quaternius.itch.io/lowpoly-animated-fish",
     "Kenney, «Assets» y declaración de licencia CC0. [En línea]. Disponible en: https://kenney.nl/support",
+    "Foundation for Intelligent Physical Agents, «FIPA ACL Message Structure Specification», SC00061G, 2002. [En línea]. Disponible en: http://www.fipa.org/specs/fipa00061/",
+    "A. Radford, J. W. Kim, T. Xu, G. Brockman, C. McLeavey e I. Sutskever, «Robust speech recognition via large-scale weak supervision», arXiv:2212.04356, 2022.",
+    "SYSTRAN, «faster-whisper», repositorio de GitHub. [En línea]. Disponible en: https://github.com/SYSTRAN/faster-whisper",
+    "Microsoft, «Speech API (SAPI 5.4) overview». [En línea]. Disponible en: https://learn.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85)",
+    "The Poppins Project Authors, «Poppins», SIL Open Font License 1.1. [En línea]. Disponible en: https://github.com/google/fonts/tree/main/ofl/poppins",
 ]
 for i, r in enumerate(refs, 1):
     par = doc.add_paragraph(); par.paragraph_format.left_indent = Cm(0.9); par.paragraph_format.first_line_indent = Cm(-0.9)
@@ -671,7 +757,9 @@ bullets([
     "Repositorio: " + REPO + " (carpetas servicio, prototipo_un_agente, unity y docs).",
     "Video de la corrida (2 min): " + VIDEO,
     "Transcripciones completas y métricas: servicio/sesiones/ y servicio/resultados_prueba.json (15 sesiones); prototipo_un_agente/sesiones/ (6 corridas).",
-    "Pruebas automáticas: servicio/tests (21 pruebas con el modelo simulado, incluidas las 27 combinaciones de votos).",
+    "Pruebas automáticas: servicio/tests (22 pruebas con el modelo simulado, incluidas las 27 combinaciones de votos y los endpoints de voz).",
+    "Video de la sesión en vivo (Unity + servicio + voz): " + VIDEO2,
+    "Evaluación del incremento 2: servicio/resultados_prueba.json (15 sesiones), servicio/resultados_prueba_ciega.json y pruebas/prueba_ciega_humana.csv (planilla para la prueba con una persona), servicio/resultados_vivo.json (latencias).",
     "Set de prueba: servicio/pruebas/pitches_prueba.json (5 pitches, paneles y guiones). Los pitches son ficticios.",
     "Hoja de gestión: " + SHEET,
     "Las llaves de Azure OpenAI se guardan solo en archivos .env ignorados por git; no aparecen en el repositorio ni en este documento.",
@@ -684,20 +772,29 @@ bullets([
     "«Cada pregunta/respuesta/voto debe cumplir los objetivos SMART; mide las llamadas al modelo y reporta lo que no se cumple».",
     "«Construye la escena de Unity con 3 sillones, el formulario, la elección del panel, la pausa, la velocidad y el historial».",
     "«Verifica en la fuente cada cifra de Contexto y problema antes de citarla».",
+    "«Mejora la escena: mejor iluminación, pantallas con información, sonidos, voz y navegación por la conversación; luego evalúa el documento con varios revisores distintos y corrige».",
     "Instrucciones del sistema para los agentes: se encuentran en servicio/neuralhub/grafo.py (funciones sistema_tiburon y sistema_emprendedor y los prompts de cada nodo).",
 ])
 # número de página en el pie
 def pie():
     f = sec.footer.paragraphs[0]; f.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = f.add_run("NeuralHub · Primer incremento · página "); r.font.size = Pt(9); r.font.color.rgb = GRAY
+    r = f.add_run("NeuralHub · Incremento 2 · página "); r.font.size = Pt(9); r.font.color.rgb = GRAY
     for tag, txt in (("begin", None), (None, "PAGE"), ("end", None)):
         run = f.add_run(); run.font.size = Pt(9); run.font.color.rgb = GRAY
         if tag:
             e = OxmlElement("w:fldChar"); e.set(qn("w:fldCharType"), tag); run._r.append(e)
         else:
             e = OxmlElement("w:instrText"); e.set(qn("xml:space"), "preserve"); e.text = txt; run._r.append(e)
+def encabezado():
+    h = sec.header.paragraphs[0]; h.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    h.add_run().add_picture(str(IMG / "logo.jpg"), height=Cm(0.75))
+    for txt, col in (("  Neural", NAVY), ("Hub", VIOLET), ("  ·  Equipo NeuralHub  ·  Incremento 2  ·  TC2008B", BLUE)):
+        r = h.add_run(txt); r.bold = txt.strip() in ("Neural", "Hub"); r.font.size = Pt(9.5); r.font.color.rgb = col
+    pPr = h._p.get_or_add_pPr(); b = OxmlElement("w:pBdr"); bot = OxmlElement("w:bottom")
+    bot.set(qn("w:val"), "single"); bot.set(qn("w:sz"), "8"); bot.set(qn("w:space"), "4"); bot.set(qn("w:color"), "13B8F0"); b.append(bot); pPr.append(b)
+encabezado()
 pie()
 assert usadas == FIGS, usadas
-out = BASE / "NeuralHub_Primer_Incremento.docx"
+out = BASE / "NeuralHub_Incremento_2.docx"
 doc.save(out)
 print("guardado", out, out.stat().st_size // 1024, "KB;", len(usadas), "figuras")

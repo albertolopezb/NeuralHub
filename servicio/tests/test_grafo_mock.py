@@ -157,3 +157,19 @@ def test_api_flujo_completo():
     k = est["total_eventos"]
     assert c.get(f"/sesiones/{sid}/eventos", params={"desde": k}).json()["eventos"] == []
     assert c.post("/sesiones", json={"pitch": PITCH, "panel": panel[:2]}).status_code == 422
+
+
+def test_api_voz_e_historial_persistente():
+    from fastapi.testclient import TestClient
+    from neuralhub import api
+    api.gestor.mock = True
+    c = TestClient(api.app)
+    guardadas = c.get("/sesiones").json()
+    assert any(s["estado"] == "terminada" for s in guardadas)
+    sid = next(s["sesion_id"] for s in guardadas if s["estado"] == "terminada")
+    evs = c.get(f"/sesiones/{sid}/eventos").json()["eventos"]
+    n = next(e["n"] for e in evs if e["tipo"] == "PREGUNTA")
+    r = c.get(f"/sesiones/{sid}/audio/{n}")
+    assert r.status_code == 200 and r.headers["content-type"] == "audio/wav" and len(r.content) > 10000
+    t = c.post("/voz/transcribir", content=r.content).json()
+    assert len(t["texto"]) > 10

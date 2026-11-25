@@ -1,0 +1,410 @@
+{
+  "id": "P3_s1",
+  "pitch_id": "P3",
+  "panel": [
+    "tiburon_financiero",
+    "tiburona_consumo",
+    "tiburon_mentor"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "ModaRaíz: pide $400,000 MXN por el 8 % (valuación implícita $5,000,000 MXN). Problema: La ropa con diseños indígenas la fabrican grandes marcas sin pagar a las comunidades artesanas. Solución: Marca de ropa con bordados hechos por cooperativas de artesanas, vendida en línea con la historia de cada pieza.",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "ModaRaíz",
+        "sector": "consumo_y_moda",
+        "etapa": "primeras_ventas",
+        "problema": "La ropa con diseños indígenas la fabrican grandes marcas sin pagar a las comunidades artesanas.",
+        "solucion": "Marca de ropa con bordados hechos por cooperativas de artesanas, vendida en línea con la historia de cada pieza.",
+        "mercado_objetivo": "Mujeres de 25 a 45 años de ciudades grandes que valoran la moda sostenible y el diseño mexicano.",
+        "modelo_ingresos": "Venta directa por tienda en línea y pop-ups; precio promedio de $1,400 MXN por prenda.",
+        "competencia": "Marcas mexicanas de moda sostenible y grandes marcas que copian diseños.",
+        "diferenciador": "Cada prenda indica la cooperativa que la bordó y parte del precio va directo a ella.",
+        "validacion": "Aún no lo sé",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 2,
+        "equipo_roles": "Diseño de producto y relación con las cooperativas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Una fundadora estudió diseño de moda; la otra trabajó 4 años con cooperativas artesanales.",
+        "monto_mxn": 400000,
+        "porcentaje": 8,
+        "uso_fondos": "Inventario de la próxima colección, fotografía y publicidad en redes.",
+        "ventas_12m_mxn": null,
+        "margen_bruto_pct": null,
+        "gasto_mensual_mxn": null
+      },
+      "valuacion_mxn": 5000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburona de consumo, Tiburón mentor.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "te faltan datos de ventas de los últimos 12 meses, margen bruto, gasto mensual; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "te faltan datos de validación con clientes; su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_mentor",
+          "nombre": "Tiburón mentor",
+          "motivo": "no hay datos que lo hagan imprescindible"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el margen bruto que tienen ni el costo de adquisición de clientes, ¿cuánto gastan para vender cada prenda y cuánto ganan realmente por venta?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué canales específicos usarán para vender en línea y en pop-ups, y cómo planean captar a las mujeres de 25 a 45 años en ciudades grandes, que es su mercado objetivo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "¿Cómo aseguran el compromiso y la honestidad de las cooperativas artesanas para mantener la calidad y la historia de cada pieza que venden, si son su principal diferenciador y no hay datos de validación con clientes aún?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Todavía no llevamos la contabilidad separada, así que aún no sé mis ventas de los últimos 12 meses ni el margen exacto por prenda. Estimo que vendimos unas 150 prendas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Vendemos por tienda en línea y en dos pop-ups; los clientes llegan por Instagram. La demanda se ve en que algunas piezas se agotan, pero aún no tengo datos formales.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Somos dos fundadoras dedicadas de tiempo completo; una diseña y la otra se encarga de las cooperativas. Nos conocemos desde la universidad.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_mentor",
+      "destino": "tiburon_financiero",
+      "texto": "Estoy de acuerdo con el Tiburón financiero: sin márgenes claros ni costos de adquisición, es difícil evaluar la viabilidad financiera. La falta de datos concretos sobre ventas y márgenes es un riesgo para la inversión, y el equipo debe priorizar definir estas métricas pronto para mostrar compromiso y transparencia.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "No me dices qué estrategia específica usarán en Instagram para convertir seguidores en compradoras, ni si tienen alianzas con influencers u otros canales para ampliar la demanda y ventas.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "La confianza en las cooperativas es clave para su diferenciador; ¿qué mecanismos formales tienen para garantizar compromiso y honestidad a largo plazo, más allá de la relación personal y experiencia previa?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el costo de adquisición de clientes ni el margen bruto que estiman; sin esos números claros y ventas verificadas, ¿cómo justifican una valuación de $5 millones por solo 150 prendas vendidas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Aún no sé qué porcentaje repite compra. La marca se reconoce por el bordado y la historia de cada cooperativa.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Lo que me impulsa es que las artesanas reciban un pago justo; soy honesta en que me falta experiencia financiera y busco quien me asesore.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "No tengo calculado el costo de adquisición de clientes ni el gasto mensual; me enfoqué en el producto y las cooperativas. Es lo primero que voy a ordenar.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Estoy de acuerdo con la pregunta de la Tiburona de consumo: sin una estrategia clara en Instagram y sin alianzas para ampliar ventas, es difícil escalar. El emprendedor no tiene datos formales ni estrategia definida para convertir seguidores en clientes, lo que impacta directamente en el costo de adquisición y la viabilidad financiera.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "¿Qué estructura formal tienen para garantizar el compromiso y honestidad de las cooperativas, más allá de la relación personal y experiencia? No mencionan mecanismos claros en el pitch ni en la conversación.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices el margen bruto ni el costo de adquisición de clientes, pero pides $400,000 por el 8% con una valuación de $5 millones. ¿Cómo justifican esa valuación sin ventas formales ni métricas financieras claras?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean ampliar los canales de venta más allá de Instagram y pop-ups para llegar a más mujeres urbanas de 25 a 45 años, considerando que no tienen alianzas con influencers ni estrategia formal para escalar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Si invierten, aceptaría un consejo de administración chico para ordenar finanzas y operación.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Entiendo que la valuación de $5,000,000 MXN no se puede defender sin cifras. Aún no sé cuánto cuesta cada prenda ya terminada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Queremos entrar a tiendas departamentales, pero primero necesito definir bien precios y producción.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_mentor",
+      "texto": "Estoy de acuerdo con la pregunta del Tiburón mentor: sin una estructura formal para garantizar compromiso y calidad de las cooperativas, el diferenciador pierde fuerza. La experiencia personal no basta; necesitan procesos claros para asegurar la confianza y la autenticidad que su mercado valora.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No tienen margen bruto ni costo de adquisición, ni ventas formales; la valuación de $5M no se sostiene con solo 150 prendas vendidas y sin métricas claras.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "No hay datos claros sobre canales de venta más allá de Instagram y dos pop-ups, ni estrategia para ampliar demanda, además sin cifras de ventas ni márgenes formales es riesgoso invertir en esta etapa.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_mentor",
+      "destino": "nodo_votacion",
+      "texto": "El equipo tiene compromiso y honestidad, pero no hay datos de ventas, margen ni costos, ni estructura para garantizar calidad con cooperativas. La valuación de $5M no se sostiene sin métricas claras; urge orden financiero antes de invertir.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: El equipo está conformado por dos fundadoras dedicadas tiempo completo con experiencia directa en diseño de moda y trabajo con cooperativas artesanales.; El negocio tiene un diferenciador social claro: parte del precio va directo a las cooperativas y cada prenda cuenta su historia.; Ya existen ventas iniciales y demanda orgánica visible con piezas que se agotan, lo que indica interés en el producto.. Alertas: Falta total de métricas financieras clave como margen bruto, costo de adquisición y ventas formales, lo que dificulta evaluar la viabilidad.; No hay estrategia clara ni alianzas para escalar ventas más allá de Instagram y pop-ups, ni datos formales de clientes recurrentes.; Ausencia de mecanismos formales para garantizar la calidad, compromiso y honestidad de las cooperativas, lo que pone en riesgo el diferenciador del negocio.. Siguientes pasos: Implementar contabilidad y métricas financieras claras para ventas, costos y márgenes lo antes posible.; Definir y ejecutar una estrategia de marketing digital con alianzas para ampliar canales y llegar al mercado objetivo.; Establecer procesos formales y contratos con cooperativas para garantizar calidad y compromiso, respaldando el diferenciador social..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 1,
+            "frase_clave": "No tienen margen bruto ni costo de adquisición, ni ventas formales; la valuación de $5M no se sostiene con solo 150 prendas vendidas y sin métricas claras.",
+            "necesitaria": "Necesitaría ver estados financieros claros con margen bruto, costo de adquisición de clientes y ventas verificadas para justificar la valuación."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 1,
+            "frase_clave": "No hay datos claros sobre canales de venta más allá de Instagram y dos pop-ups, ni estrategia para ampliar demanda, además sin cifras de ventas ni márgenes formales es riesgoso invertir en esta etapa.",
+            "necesitaria": "Necesitaría una estrategia sólida de marketing digital con alianzas y canales claros para llegar al mercado objetivo y datos de ventas formales."
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "calificacion": 1,
+            "frase_clave": "No hay datos de ventas, margen ni costos, ni estructura para garantizar calidad con cooperativas. La valuación de $5M no se sostiene sin métricas claras; urge orden financiero antes de invertir.",
+            "necesitaria": "Necesitaría procesos formales para asegurar la calidad y compromiso de las cooperativas, así como métricas financieras claras y orden operativo."
+          }
+        ],
+        "fortalezas": [
+          "El equipo está conformado por dos fundadoras dedicadas tiempo completo con experiencia directa en diseño de moda y trabajo con cooperativas artesanales.",
+          "El negocio tiene un diferenciador social claro: parte del precio va directo a las cooperativas y cada prenda cuenta su historia.",
+          "Ya existen ventas iniciales y demanda orgánica visible con piezas que se agotan, lo que indica interés en el producto."
+        ],
+        "alertas": [
+          "Falta total de métricas financieras clave como margen bruto, costo de adquisición y ventas formales, lo que dificulta evaluar la viabilidad.",
+          "No hay estrategia clara ni alianzas para escalar ventas más allá de Instagram y pop-ups, ni datos formales de clientes recurrentes.",
+          "Ausencia de mecanismos formales para garantizar la calidad, compromiso y honestidad de las cooperativas, lo que pone en riesgo el diferenciador del negocio."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el margen bruto y costo de adquisición de clientes por prenda?",
+          "¿Qué estrategia específica usarán para convertir seguidores en clientes en Instagram y otros canales?",
+          "¿Qué mecanismos formales tienen para asegurar el compromiso y honestidad de las cooperativas a largo plazo?"
+        ],
+        "siguientes_pasos": [
+          "Implementar contabilidad y métricas financieras claras para ventas, costos y márgenes lo antes posible.",
+          "Definir y ejecutar una estrategia de marketing digital con alianzas para ampliar canales y llegar al mercado objetivo.",
+          "Establecer procesos formales y contratos con cooperativas para garantizar calidad y compromiso, respaldando el diferenciador social."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 5000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburona_consumo": "salir",
+          "tiburon_mentor": "salir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 22.3,
+    "segundos_total": 20.4,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 2,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  },
+  "error": null
+}

@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el margen bruto de cada prenda si el precio promedio es $1,400 y no mencionas costos ni gastos mensuales?",
+      "texto": "No me dices el margen bruto ni el costo de adquisición de clientes. ¿Cuánto te cuesta adquirir una clienta que compra una prenda de $1,400 y cuál es tu margen bruto real en esa venta?",
       "estado": "Preguntando"
     },
     {
@@ -81,7 +81,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "No me dices qué canales de venta en línea usan ni cuántas prendas han vendido; ¿cómo sabes que hay demanda real para justificar la valuación de 5 millones y la inversión de 400,000 pesos?",
+      "texto": "¿Cómo planean construir y posicionar la marca ModaRaíz para que el cliente valore auténticamente la historia y la conexión con las artesanas, y así decida comprar directo en su canal en línea en lugar de otras marcas similares?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "¿Cómo garantizan el compromiso y la honestidad de las cooperativas para evitar problemas con la calidad y entrega, considerando que son pieza clave de su modelo? No veo datos sobre acuerdos o controles en el pitch.",
+      "texto": "No me dices cómo es el compromiso de tu equipo para superar dificultades, ni cómo han manejado diferencias o retos hasta ahora. ¿Qué experiencia tienen juntas enfrentando problemas y manteniendo la honestidad en su proyecto?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_financiero",
-      "texto": "Estoy de acuerdo con tu pregunta sobre el margen bruto, porque sin conocer costos y ventas claras, es difícil evaluar la viabilidad. Que estimen 150 prendas vendidas sin contabilidad separada muestra falta de control, lo que me preocupa sobre el compromiso y honestidad para manejar el negocio.",
+      "texto": "Coincido contigo, Tiburón financiero. Sin margen bruto ni costo de adquisición, no podemos evaluar la rentabilidad ni la sostenibilidad del negocio. El emprendedor no nos da esos datos clave, lo que me preocupa para tomar una decisión firme.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "No me dices cómo planean ampliar los canales de venta más allá de Instagram y pop-ups, ni si han probado otros para validar mayor demanda real de su ropa con bordados indígenas.",
+      "texto": "¿Cómo es el empaque y la presentación de la ropa para que el cliente sienta valor y conexión cultural desde el unboxing hasta el uso? No me dices nada del empaque.",
       "estado": "Preguntando"
     },
     {
@@ -145,7 +145,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "No me dices qué tipo de acuerdos formales o contratos tienen con las cooperativas para asegurar compromiso y honestidad en calidad y entrega, clave para su modelo.",
+      "texto": "No me dices cómo han manejado juntas hasta ahora los problemas o desacuerdos serios que hayan tenido en el proyecto, ni cómo se aseguran de mantener la honestidad y compromiso cuando hay presión. ¿Puedes contarme una experiencia concreta?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices el costo de adquisición de clientes ni cómo planean mantenerlo bajo para un ticket promedio de $1,400; ¿cómo esperan que esto impacte su margen y valuación de 5 millones?",
+      "texto": "No me dices el margen bruto ni el costo de adquisición de clientes, pero pides $400,000 por el 8 % con una valuación implícita de $5,000,000. ¿Podrías mostrarme un flujo de caja proyectado que justifique esa valuación y el retorno esperado para mi inversión?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Concuerdo con tu preocupación sobre ampliar canales y validar demanda. El emprendedor solo mencionó Instagram y pop-ups, sin datos claros de repetición o expansión. Sin un costo de adquisición ni ventas sólidas, la valuación y la inversión no se justifican desde el punto financiero.",
+      "texto": "Coincido contigo en que el empaque es clave para transmitir valor y conectar con el cliente, pero el emprendedor no dijo nada sobre el empaque ni costos asociados. Sin esa información, no puedo evaluar si el gasto en presentación impacta márgenes o adquisición, datos que son vitales para mi inversión.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "No veo contratos formales con las cooperativas para garantizar su compromiso y honestidad, clave para tu modelo. ¿Cómo piensan formalizar esa relación para evitar problemas de calidad y entrega?",
+      "texto": "¿Cómo garantizan la honestidad y compromiso del equipo cuando enfrentan presiones financieras o tentaciones de desviar recursos, considerando que aún no tienen experiencia financiera clara ni contabilidad separada?",
       "estado": "Preguntando"
     },
     {
@@ -209,7 +209,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices que no tienes margen bruto ni costo de adquisición calculados, y vendiste unas 150 prendas sin contabilidad clara; ¿cómo justificas la valuación de 5 millones y el 8% por 400,000 pesos sin números sólidos que respalden rentabilidad o escalabilidad?",
+      "texto": "No me indicas cómo manejas el flujo de caja ni gastos fijos mensuales, pero pides $400,000 por el 8 % con valuación de $5,000,000. ¿Puedes mostrarme un flujo proyectado con gastos, ingresos y ganancias para justificar esa valuación y el retorno esperado?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "¿Qué planes específicos tienen para abrir nuevos canales de venta más allá de Instagram y pop-ups, y cómo medirán la demanda real para validar la escalabilidad del negocio, considerando que aún no tienen datos formales de ventas ni porcentaje de clientes que repiten compra?",
+      "texto": "No me dices cómo es el empaque ni cómo transmiten la conexión cultural y autenticidad en el unboxing para que el cliente regrese. ¿Cómo garantizan que el cliente valore y recompre ModaRaíz en su canal en línea, considerando que venden directo y en pop-ups?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_mentor",
-      "texto": "Concuerdo con tu preocupación sobre la falta de contratos formales con las cooperativas. Sin acuerdos claros, es difícil garantizar calidad y entrega, lo que afecta la experiencia del cliente y la reputación de la marca, clave para la demanda y crecimiento en canales de venta.",
+      "texto": "Coincido con Tiburón mentor en que falta claridad sobre cómo mantienen la honestidad y compromiso, clave para la confianza del cliente y la marca. Sin experiencia financiera ni controles claros, es difícil asegurar que la marca se sostenga y que el cliente vuelva a comprar. Esto impacta directamente la percepción y demanda.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices margen bruto ni costo de adquisición; sin ventas claras ni control contable, la valuación de 5 M y la inversión de 400,000 no se justifican. Falta orden financiero y datos sólidos para evaluar rentabilidad o escalabilidad.",
+      "texto": "No me das margen bruto, costo de adquisición ni flujo proyectado para validar la valuación de $5,000,000 por 8%. Sin esos datos clave, no puedo evaluar rentabilidad ni retorno. Sin cifras exactas, no invierto.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "No hay datos claros de canales de venta más allá de Instagram y pop-ups, ni cifras formales de ventas o demanda real para justificar la valuación de 5 millones y la inversión de 400,000 pesos.",
+      "texto": "La marca y canal son claros pero no me dices margen bruto, empaque ni datos formales de demanda ni recompra. Sin esos datos clave para entender si el cliente valora y vuelve a comprar, no puedo invertir en esta valuación de 5,000,000 por $400,000 y 8%.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "No demuestran control financiero ni contratos formales con cooperativas, lo que pone en duda su compromiso y honestidad. Además, no hay datos claros de ventas ni margen bruto para justificar la valuación de 5 millones.",
+      "texto": "No me dices margen bruto ni compromiso claro del equipo ante problemas, además no hay experiencia financiera ni contabilidad separada; pides $400,000 por 8 % con valuación de $5,000,000 sin justificarla ni mostrar ventas precisas.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -314,50 +314,52 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: El negocio tiene un propósito social claro y auténtico al apoyar a las cooperativas artesanales.; Las fundadoras cuentan con experiencia relevante en diseño de moda y trabajo con cooperativas.; El producto es diferenciado al incluir la historia y el origen de cada prenda, generando valor emocional para el cliente.. Alertas: No hay control contable ni datos formales de ventas o costos, lo que impide evaluar la rentabilidad.; Falta formalizar acuerdos con las cooperativas, poniendo en riesgo la calidad y cumplimiento del modelo.; No se ha validado de forma sólida la demanda ni se tiene estrategia clara para ampliar canales de venta.. Siguientes pasos: Ordenar las finanzas y establecer contabilidad clara para conocer ventas, costos y márgenes.; Formalizar contratos con las cooperativas para asegurar compromiso, calidad y entrega.; Validar demanda con datos formales y diseñar una estrategia para ampliar canales de venta más allá de Instagram y pop-ups..",
+      "texto": "Fortalezas: El proyecto tiene un propósito social claro y valioso al pagar justo a las artesanas.; Las fundadoras están dedicadas de tiempo completo y tienen experiencia relacionada con el producto y las cooperativas.; La marca ya tiene presencia inicial en línea y en pop-ups, con indicios de demanda en algunas piezas agotadas.. Alertas: Falta información financiera clave como margen bruto, costos, ventas concretas y flujo proyectado para justificar valuación.; No hay datos formales de demanda, recompra ni detalles sobre empaque y experiencia de cliente que aseguren fidelidad.; El equipo carece de experiencia financiera y no tiene contabilidad separada ni control claro, lo que genera dudas de sostenibilidad.. Siguientes pasos: Implementar contabilidad separada y orden financiera para conocer gastos, ventas y márgenes con precisión.; Desarrollar un flujo de caja proyectado y justificación financiera clara para la valuación solicitada.; Recabar y analizar datos formales sobre demanda, recompra, costo de adquisición y mejorar el empaque para fortalecer la experiencia del cliente y la fidelidad..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 1,
-            "frase_clave": "No me dices margen bruto ni costo de adquisición; sin ventas claras ni control contable, la valuación de 5 M y la inversión de 400,000 no se justifican.",
-            "necesitaria": "Ver estados financieros claros con margen bruto, costos, ventas y un plan financiero sólido que sustente la valuación y la inversión."
+            "frase_clave": "No me das margen bruto, costo de adquisición ni flujo proyectado para validar la valuación de $5,000,000 por 8%. Sin esos datos clave, no puedo evaluar rentabilidad ni retorno.",
+            "necesitaria": "Necesito ver margen bruto claro, costo de adquisición por cliente, flujo de caja proyectado y justificación financiera de la valuación."
           },
           {
             "tiburon_id": "tiburona_consumo",
             "calificacion": 1,
-            "frase_clave": "No hay datos claros de canales de venta más allá de Instagram y pop-ups, ni cifras formales de ventas o demanda real para justificar la valuación de 5 millones y la inversión de 400,000 pesos.",
-            "necesitaria": "Presentar datos formales de ventas, validación clara de demanda y una estrategia concreta para ampliar canales de venta."
+            "frase_clave": "Sin esos datos clave para entender si el cliente valora y vuelve a comprar, no puedo invertir en esta valuación de 5,000,000 por $400,000 y 8%.",
+            "necesitaria": "Quisiera conocer datos formales sobre demanda, recompra, empaque y cómo transmiten la conexión cultural para asegurar fidelidad y valor percibido."
           },
           {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 1,
-            "frase_clave": "No demuestran control financiero ni contratos formales con cooperativas, lo que pone en duda su compromiso y honestidad.",
-            "necesitaria": "Mostrar contratos formales con cooperativas, control financiero claro y evidencia de procesos que garanticen calidad y entrega."
+            "frase_clave": "No me dices margen bruto ni compromiso claro del equipo ante problemas, además no hay experiencia financiera ni contabilidad separada; pides $400,000 por 8 % con valuación de $5,000,000 sin justificarla ni mostrar ventas precisas.",
+            "necesitaria": "Necesitaría ver compromiso probado del equipo ante retos, experiencia o asesoría financiera clara, y control contable para confiar en la operación y crecimiento."
           }
         ],
         "fortalezas": [
-          "El negocio tiene un propósito social claro y auténtico al apoyar a las cooperativas artesanales.",
-          "Las fundadoras cuentan con experiencia relevante en diseño de moda y trabajo con cooperativas.",
-          "El producto es diferenciado al incluir la historia y el origen de cada prenda, generando valor emocional para el cliente."
+          "El proyecto tiene un propósito social claro y valioso al pagar justo a las artesanas.",
+          "Las fundadoras están dedicadas de tiempo completo y tienen experiencia relacionada con el producto y las cooperativas.",
+          "La marca ya tiene presencia inicial en línea y en pop-ups, con indicios de demanda en algunas piezas agotadas."
         ],
         "alertas": [
-          "No hay control contable ni datos formales de ventas o costos, lo que impide evaluar la rentabilidad.",
-          "Falta formalizar acuerdos con las cooperativas, poniendo en riesgo la calidad y cumplimiento del modelo.",
-          "No se ha validado de forma sólida la demanda ni se tiene estrategia clara para ampliar canales de venta."
+          "Falta información financiera clave como margen bruto, costos, ventas concretas y flujo proyectado para justificar valuación.",
+          "No hay datos formales de demanda, recompra ni detalles sobre empaque y experiencia de cliente que aseguren fidelidad.",
+          "El equipo carece de experiencia financiera y no tiene contabilidad separada ni control claro, lo que genera dudas de sostenibilidad."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el margen bruto real por prenda?",
-          "¿Cuál es el costo de adquisición de clientes y cómo piensan mantenerlo eficiente?",
-          "¿Qué acuerdos formales tienen con las cooperativas para garantizar calidad y entrega?",
-          "¿Qué porcentaje de clientes repite compra?",
-          "¿Cómo planean abrir nuevos canales de venta y medir su impacto?"
+          "¿Cuál es el margen bruto real por prenda vendida?",
+          "¿Cuánto cuesta adquirir una nueva clienta y cuál es el costo de producción exacto?",
+          "¿Cómo manejan juntas los problemas serios y garantizan honestidad y compromiso bajo presión financiera?",
+          "¿Qué porcentaje de clientes repite compra y cómo se asegura la fidelidad?",
+          "¿Cómo es el empaque y la presentación para conectar culturalmente y aportar valor en el unboxing?",
+          "¿Puedes mostrar un flujo de caja proyectado que justifique la valuación y retorno esperado?",
+          "¿Cuál es el gasto mensual y cómo manejan el flujo de caja?"
         ],
         "siguientes_pasos": [
-          "Ordenar las finanzas y establecer contabilidad clara para conocer ventas, costos y márgenes.",
-          "Formalizar contratos con las cooperativas para asegurar compromiso, calidad y entrega.",
-          "Validar demanda con datos formales y diseñar una estrategia para ampliar canales de venta más allá de Instagram y pop-ups."
+          "Implementar contabilidad separada y orden financiera para conocer gastos, ventas y márgenes con precisión.",
+          "Desarrollar un flujo de caja proyectado y justificación financiera clara para la valuación solicitada.",
+          "Recabar y analizar datos formales sobre demanda, recompra, costo de adquisición y mejorar el empaque para fortalecer la experiencia del cliente y la fidelidad."
         ],
         "resultado": "SIN_TRATO",
         "condiciones": null,
@@ -390,8 +392,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 20.5,
-    "segundos_total": 18.3,
+    "segundos_modelo": 26.3,
+    "segundos_total": 23.2,
     "rondas_preguntas": 3,
     "n_eventos": 28,
     "eventos_en_orden": true,

@@ -15,6 +15,14 @@ namespace NeuralHub
         public ReproductorSesion reproductor;
         public Estudio estudio;
         public CamaraEstudio camara;
+        public Sonidos sonidos;
+        public PantallasDatos datos;
+        bool vivoAuto;
+        readonly List<string> latencias = new List<string>();
+
+        public void Clic() { if (sonidos) sonidos.Efecto("clic", 0.35f); }
+
+        static bool Arg(string a) { return Array.IndexOf(Environment.GetCommandLineArgs(), a) >= 0; }
 
         public Vista vista = Vista.Inicio;
         public bool mostrarHistorial;
@@ -42,13 +50,14 @@ namespace NeuralHub
         {
             cliente.alError = m => mensaje = m;
             foreach (var a in Environment.GetCommandLineArgs())
-                if (a == "-nh-mock" || a == "-nh-capturar" || a == "-nh-video") cliente.usarMock = true;
+                if (a == "-nh-mock" || a == "-nh-capturar" || (a == "-nh-video" && !Arg("-nh-vivo"))) cliente.usarMock = true;
             for (int i = 0; i < Environment.GetCommandLineArgs().Length - 1; i++)
                 if (Environment.GetCommandLineArgs()[i] == "-nh-url") cliente.urlBase = Environment.GetCommandLineArgs()[i + 1];
             ProbarConexion();
             CargarCatalogos();
             foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-capturar") { cliente.usarMock = true; StartCoroutine(Capturas()); }
-            foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-video") { cliente.usarMock = true; StartCoroutine(Video()); }
+            if (Arg("-nh-vivo")) { vivoAuto = true; StartCoroutine(RespondedorAutomatico()); }
+            if (Arg("-nh-video")) StartCoroutine(Video());
         }
 
         // ---------- navegación ----------
@@ -88,7 +97,7 @@ namespace NeuralHub
             StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), ok =>
             {
                 if (!ok) return;
-                reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); Ir(Vista.Sesion);
+                reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); estudio.Preparar(); Ir(Vista.Sesion);
             }));
         }
 
@@ -99,7 +108,7 @@ namespace NeuralHub
 
         public void RepetirSesion(string id)
         {
-            StartCoroutine(cliente.CargarSesionPasada(id, ok => { if (ok) { reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); Ir(Vista.Sesion); } }));
+            StartCoroutine(cliente.CargarSesionPasada(id, ok => { if (ok) { reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); estudio.Preparar(); Ir(Vista.Sesion); } }));
         }
 
         void Update()
@@ -154,6 +163,59 @@ namespace NeuralHub
         }
 
 
+
+        // ---------- usuario automático (pruebas en vivo con el servicio real) ----------
+        static readonly string[][] RespuestasDemo =
+        {
+            new[] { "Hoy tenemos 50 clientes que pagan y crecemos 15 % al mes; el costo de adquirir un cliente todavía lo estamos midiendo, estimamos unos 3,000 pesos.",
+                    "Competimos con Power BI y con consultores; nuestra ventaja es que no requiere configuración y entrega el análisis en lenguaje natural.",
+                    "Usamos modelos de lenguaje con conectores propios para hojas de cálculo; no tenemos patente, sí marca registrada." },
+            new[] { "Nuestro ingreso recurrente es de unos 22,500 pesos al mes y el margen bruto es de 72 %; con la inversión esperamos duplicar clientes en 9 meses.",
+                    "El mercado son PyMEs de comercio y servicios con 10 a 100 empleados; empezamos en Monterrey y luego Guadalajara.",
+                    "Para proteger la tecnología acumulamos datos anonimizados de uso que mejoran las alertas; evaluaremos una patente del método." },
+            new[] { "La valuación de 3.3 millones se basa en el crecimiento de 15 % mensual; estamos abiertos a negociar el porcentaje si el socio aporta ventas.",
+                    "Somos cuatro fundadores de tiempo completo con experiencia en datos, producto, ventas y operaciones.",
+                    "El siguiente paso técnico es integrar facturación electrónica; ya tenemos un piloto con dos clientes." },
+        };
+
+        bool HayEventoDeAgente(int desde)
+        {
+            for (int i = desde; i < cliente.recibidos.Count; i++)
+                if (cliente.recibidos[i].emisor != "emprendedor") return true;
+            return false;
+        }
+
+        IEnumerator RespondedorAutomatico()
+        {
+            while (true)
+            {
+                yield return null;
+                if (vista != Vista.Sesion || !reproductor.EnEspera || cliente.pendiente == null) continue;
+                var p = cliente.pendiente;
+                float t0 = Time.realtimeSinceStartup; int antes = cliente.recibidos.Count;
+                if (p.tipo == "RESPUESTAS")
+                {
+                    var r = new Dictionary<string, string>();
+                    var lista = RespuestasDemo[Mathf.Clamp(p.ronda - 1, 0, 2)];
+                    for (int i = 0; i < p.preguntas.Length; i++) r[p.preguntas[i].tiburon_id] = lista[i % lista.Length];
+                    foreach (var kv in r) respuestas.texto[kv.Key] = kv.Value;   // se ven escritas en pantalla
+                    yield return new WaitForSecondsRealtime(2.5f);
+                    t0 = Time.realtimeSinceStartup;
+                    yield return cliente.EnviarRespuestas(r);
+                }
+                else if (p.tipo == "CONDICIONES") yield return cliente.EnviarCondicion("original");
+                else if (p.tipo == "NEGOCIACION")
+                {
+                    if (p.contraofertas != null && p.contraofertas.Length > 0)
+                        yield return cliente.EnviarNegociacion("aceptar_contraoferta", p.contraofertas[0].monto_mxn, p.contraofertas[0].porcentaje, p.contraofertas[0].tiburon_id);
+                    else yield return cliente.EnviarNegociacion("ajustar", p.oferta_actual.monto_mxn, Math.Min(100, p.oferta_actual.porcentaje + 5), null);
+                }
+                // latencia: tiempo hasta que llega la siguiente intervención de un agente
+                while (cliente.estadoSesion != "error" && !HayEventoDeAgente(antes)) yield return null;
+                latencias.Add(p.tipo + "|" + (Time.realtimeSinceStartup - t0).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture));
+            }
+        }
+
         // ---------- grabación de video (fotogramas a velocidad fija; se unen con ffmpeg) ----------
         int fotograma;
         const int FPS = 12;
@@ -171,7 +233,13 @@ namespace NeuralHub
         IEnumerator GrabarHasta(string carpeta, Func<bool> cond, float maxSeg)
         {
             int max = (int)(maxSeg * FPS), i = 0;
-            while (!cond() && i++ < max) yield return Grabar(carpeta, 1f / FPS);
+            while (!cond() && i++ < max)
+            {
+                yield return Grabar(carpeta, 1f / FPS);
+                // mientras los agentes piensan en el servicio, se graba solo un cuadro cada 0.4 s reales (el video no se alarga)
+                if (vista == Vista.Sesion && reproductor.EnEspera && cliente.pendiente == null && cliente.estadoSesion == "corriendo")
+                    yield return new WaitForSecondsRealtime(0.4f);
+            }
         }
 
         IEnumerator Video()
@@ -179,6 +247,7 @@ namespace NeuralHub
             string carpeta = ArgValor("-nh-salida", Path.Combine(Application.persistentDataPath, "video"));
             Directory.CreateDirectory(carpeta);
             Time.captureFramerate = FPS;
+            if (sonidos) { sonidos.registro = new List<string>(); sonidos.fotograma = () => fotograma; }
             yield return Grabar(carpeta, 2.5f);
             IrAFormulario();
             yield return GrabarHasta(carpeta, () => ejemplos != null, 10);
@@ -189,10 +258,13 @@ namespace NeuralHub
             yield return Grabar(carpeta, 3.5f);
             IniciarSesion(new List<string>(eleccion.elegidos));
             reproductor.factorExtra = 2.2f;
-            yield return GrabarHasta(carpeta, () => vista == Vista.Resultado, 400);
+            yield return GrabarHasta(carpeta, () => vista == Vista.Resultado, 900);
             yield return Grabar(carpeta, 6f);
             mostrarHistorial = true;
             yield return Grabar(carpeta, 3f);
+            if (sonidos && sonidos.registro != null) File.WriteAllLines(Path.Combine(carpeta, "audio_log.txt"), sonidos.registro.ToArray());
+            File.WriteAllLines(Path.Combine(carpeta, "latencias.txt"), latencias.ToArray());
+            File.WriteAllText(Path.Combine(carpeta, "sesion.txt"), cliente.sesionId ?? "");
             File.WriteAllText(Path.Combine(carpeta, "listo.txt"), fotograma.ToString());
             Application.Quit();
 #if UNITY_EDITOR

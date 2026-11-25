@@ -10,7 +10,7 @@ namespace NeuralHub.Editor
     {
         public static void Ejecutar()
         {
-            string salida = "D:/TEC/TC2008B/Reto/NeuralHub/unity/capturas";
+            string salida = "D:/TEC/TC2008B/Reto/NeuralHub/unity/capturas_inc2";
             Directory.CreateDirectory(salida);
             EditorSceneManager.OpenScene("Assets/Scenes/Estudio.unity");
             var est = Object.FindFirstObjectByType<Estudio>();
@@ -25,7 +25,15 @@ namespace NeuralHub.Editor
                 t.Asignar(ids[i], ids[i]);
                 panel.Add(t);
             }
-            est.pantalla.MostrarOferta("DataSense AI", 500000, 15, 3333333);
+            est.pantalla.MostrarOferta("DataSense AI", 500000, 15, 3333333, "tecnologia");
+            var dat = Object.FindFirstObjectByType<PantallasDatos>();
+            if (dat)
+            {
+                dat.MostrarOferta(new PitchDto { nombre = "DataSense AI", monto_mxn = 500000, porcentaje = 15, ventas_12m_mxn = 270000, margen_bruto_pct = 72, sector = "tecnologia" }, 3333333);
+                dat.FijarPanel(new[] { new PanelItem { tiburon_id = ids[0] }, new PanelItem { tiburon_id = ids[1] }, new PanelItem { tiburon_id = ids[2] } });
+                dat.Voto(ids[0], "salir"); dat.Voto(ids[1], "contraoferta"); dat.Voto(ids[2], "invertir");
+                dat.Inmediato();
+            }
             est.letreroResultado.text = "";
             var reflector = est.reflector; reflector.luz.enabled = true;
             reflector.transform.position = panel[1].transform.position + new Vector3(0, 6.5f, -1.2f);
