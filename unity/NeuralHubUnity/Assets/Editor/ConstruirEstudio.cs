@@ -103,6 +103,7 @@ namespace NeuralHub.Editor
             var resp = Prim(PrimitiveType.Sphere, "RespaldoConcha", raiz.transform, new Vector3(0, 1.25f, -0.55f), new Vector3(1.9f, 1.9f, 0.28f), concha);
             Prim(PrimitiveType.Cube, "Escritorio", raiz.transform, new Vector3(0, 0.4f, 1.42f), new Vector3(2.3f, 0.8f, 0.7f), madera);
             Prim(PrimitiveType.Cube, "TopeEscritorio", raiz.transform, new Vector3(0, 0.82f, 1.42f), new Vector3(2.4f, 0.06f, 0.8f), tope);
+            ConstruirExtras.DecorarEscritorio(raiz.transform);
             var prefab = PrefabUtility.SaveAsPrefabAsset(raiz, "Assets/Prefabs/Sillon.prefab");
             Object.DestroyImmediate(raiz);
             return prefab;
@@ -277,6 +278,7 @@ namespace NeuralHub.Editor
 
             Decorar(estudioGO.transform);
             var datos = ConstruirExtras.PantallasLaterales(estudioGO.transform);
+            ConstruirExtras.PlantasEscenario(estudioGO.transform);
             ConstruirExtras.LucesDeAgua(estudioGO.transform);
 
             // Luces

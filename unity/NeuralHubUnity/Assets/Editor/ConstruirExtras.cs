@@ -26,6 +26,38 @@ namespace NeuralHub.Editor
             return m;
         }
 
+        /// <summary>Coloca un modelo de terceros (Kenney Furniture Kit, CC0) escalado a la altura indicada.</summary>
+        public static GameObject Modelo(string archivo, Transform padre, Vector3 pos, float rotY, float altura)
+        {
+            var asset = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Terceros/Kenney_FurnitureKit/" + archivo + ".fbx");
+            if (asset == null) { Debug.LogWarning("NeuralHub: falta el modelo " + archivo); return null; }
+            var g = (GameObject)PrefabUtility.InstantiatePrefab(asset);
+            g.transform.SetParent(padre, false);
+            g.transform.localRotation = Quaternion.Euler(0, rotY, 0);
+            var rs = g.GetComponentsInChildren<Renderer>();
+            if (rs.Length > 0)
+            {
+                var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);
+                if (b.size.y > 1e-4f) g.transform.localScale = Vector3.one * (altura / b.size.y);
+            }
+            g.transform.localPosition = pos;
+            return g;
+        }
+
+        public static void DecorarEscritorio(Transform sillon)
+        {
+            Modelo("laptop", sillon, new Vector3(0.78f, 0.85f, 1.3f), 0f, 0.15f);
+            Modelo("lampRoundTable", sillon, new Vector3(-0.85f, 0.85f, 1.55f), 0f, 0.5f);
+            Modelo("books", sillon, new Vector3(-0.25f, 0.85f, 1.6f), 15f, 0.16f);
+        }
+
+        public static void PlantasEscenario(Transform estudio)
+        {
+            Modelo("pottedPlant", estudio, new Vector3(-2.3f, 0, -3.2f), 0f, 1.3f);
+            Modelo("pottedPlant", estudio, new Vector3(2.3f, 0, -3.2f), 40f, 1.3f);
+            Modelo("computerScreen", estudio, new Vector3(0.0f, 1.25f, -1.45f), 180f, 0.32f);
+        }
+
         public static Renderer IconoPantalla(Transform pantalla)
         {
             var q = GameObject.CreatePrimitive(PrimitiveType.Quad);

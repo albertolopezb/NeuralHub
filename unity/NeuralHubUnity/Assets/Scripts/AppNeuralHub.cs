@@ -226,6 +226,7 @@ namespace NeuralHub
             for (int i = 0; i < total; i++)
             {
                 yield return new WaitForEndOfFrame();
+                if (Arg("-nh-sin-cuadros")) { fotograma++; continue; }
                 ScreenCapture.CaptureScreenshot(Path.Combine(carpeta, "f" + (fotograma++).ToString("D5") + ".png"));
             }
         }
@@ -251,7 +252,8 @@ namespace NeuralHub
             yield return Grabar(carpeta, 2.5f);
             IrAFormulario();
             yield return GrabarHasta(carpeta, () => ejemplos != null, 10);
-            formulario.Cargar(ejemplos[ejemplos.Length - 1].pitch);
+            int k = ejemplos.Length - 1; int.TryParse(ArgValor("-nh-ejemplo", k.ToString()), out k);
+            formulario.Cargar(ejemplos[Mathf.Clamp(k, 0, ejemplos.Length - 1)].pitch);
             yield return Grabar(carpeta, 3.5f);
             IrAEleccionPanel(formulario.Json());
             yield return GrabarHasta(carpeta, () => vista == Vista.Panel, 10);

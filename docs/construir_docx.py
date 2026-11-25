@@ -24,7 +24,7 @@ FECHA = "27 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
 VIDEO = "https://youtu.be/STD4X71H2I0"
 VIDEO2 = "https://github.com/albertolopezb/NeuralHub/blob/main/docs/video/NeuralHub_en_vivo.mp4"
-SHEET = "https://docs.google.com/spreadsheets/d/1l3FO2RC_p4CcSI41rOY3-Zu0JECe1XgxQEAlMEQZM0k/edit"
+SHEET = "https://docs.google.com/spreadsheets/d/1Lq0ONh_gI4ibv0SCWzO404WvHAJkELCffuVmeLKgAsw/edit"
 
 doc = Document()
 sec = doc.sections[0]
