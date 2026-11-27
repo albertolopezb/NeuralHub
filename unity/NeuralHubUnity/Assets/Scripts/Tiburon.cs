@@ -56,7 +56,7 @@ namespace NeuralHub
 
         public void Votar(string decision)
         {
-            aFavor = decision != "salir";
+            aFavor = decision != "salir"; decisionVoto = decision;
             colorVoto = decision == "invertir" ? Perfiles.Hex("#2F9E44") : decision == "contraoferta" ? Perfiles.Hex("#F59F00") : Perfiles.Hex("#C92A2A");
             if (paleta) { paleta.gameObject.SetActive(true); paleta.GetComponent<Renderer>().material.color = colorVoto; }
             CambiarEstado(EstadoTiburon.Votando);
@@ -69,9 +69,43 @@ namespace NeuralHub
             CambiarEstado(EstadoTiburon.Reaccionando);
         }
 
+        // ---------- personaje animado (cuerpo de traje + animaciones de Mixamo) ----------
+        public Animator animador;
+        public Transform cabezaPostiza;
+        string animActual;
+        string decisionVoto;
+
+        string AnimacionDeEstado()
+        {
+            switch (estado)
+            {
+                case EstadoTiburon.Escuchando: return "SentadoReposoManos";
+                case EstadoTiburon.Preguntando: return "SentadoHablando2";
+                case EstadoTiburon.Replicando: return "SentadoSenala";
+                case EstadoTiburon.Evaluando: return "SentadoPensando";
+                case EstadoTiburon.Votando:
+                    return decisionVoto == "invertir" ? "SentadoPulgarArriba" : decisionVoto == "salir" ? "SentadoDesaprueba" : "SentadoHablando";
+                case EstadoTiburon.Reaccionando: return aFavor ? "SentadoAplauso" : "SentadoIncredulo";
+                default: return "SentadoReposo";
+            }
+        }
+
+        void ActualizarAnimador()
+        {
+            string a = AnimacionDeEstado();
+            if (a != animActual) { animador.CrossFadeInFixedTime(a, 0.35f); animActual = a; }
+            if (mirarA)
+            {
+                Vector3 d = mirarA.position - transform.position; d.y = 0;
+                if (d.sqrMagnitude > 0.01f) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(d), 3f * Time.deltaTime);
+            }
+        }
+
         void Update()
         {
-            if (estado == EstadoTiburon.FueraDelPanel || cuerpo == null) return;
+            if (estado == EstadoTiburon.FueraDelPanel) return;
+            if (animador) { ActualizarAnimador(); return; }
+            if (cuerpo == null) return;
             tiempoEstado += Time.deltaTime;
             float t = Time.time;
             Vector3 esc = escalaCuerpo;
@@ -103,6 +137,10 @@ namespace NeuralHub
             }
         }
 
-        public Vector3 PuntoCabeza() { return cabeza ? cabeza.position : transform.position + Vector3.up * 1.6f; }
+        public Vector3 PuntoCabeza()
+        {
+            if (cabezaPostiza) return cabezaPostiza.position;
+            return cabeza ? cabeza.position : transform.position + Vector3.up * 1.6f;
+        }
     }
 }

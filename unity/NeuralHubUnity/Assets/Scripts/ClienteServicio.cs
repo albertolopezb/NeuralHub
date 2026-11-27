@@ -11,6 +11,9 @@ namespace NeuralHub
     /// <summary>
     /// Habla con el servicio de agentes por HTTP (UnityWebRequest) y guarda los eventos en una cola.
     /// Con usarMock lee StreamingAssets/mock_sesion.json y no necesita el servicio.
+    /// Modos: agente empresario (autopiloto: el agente responde) o en vivo (humano: el usuario responde, con ayuda opcional).
+    /// Sin conexión, el modo en vivo pausa la sesión grabada en cada ronda para que el usuario responda; la recomendación
+    /// es la respuesta que dio el agente empresario en esa grabación.
     /// </summary>
     public class ClienteServicio : MonoBehaviour
     {
@@ -25,6 +28,12 @@ namespace NeuralHub
         public Pendiente pendiente;
         public readonly List<Evento> recibidos = new List<Evento>();
         public Action<string> alError;
+        public bool enVivo, ayuda;
+
+        // Sesión grabada que se reproduce sin conexión en modo en vivo
+        List<Evento> guionMock;
+        int posMock;
+        readonly Dictionary<string, string> respuestasMock = new Dictionary<string, string>();
 
         Coroutine sondeo;
         int desde;
@@ -107,22 +116,26 @@ namespace NeuralHub
         }
 
         // ---------- sesión ----------
-        public IEnumerator CrearSesion(string pitchJson, string[] panel, Action<bool> listo)
+        /// <param name="modoEnVivo">true: el usuario responde (modo humano). false: responde el agente empresario (autopiloto).</param>
+        /// <param name="conAyuda">Solo en vivo: el agente empresario puede sugerir respuestas.</param>
+        public IEnumerator CrearSesion(string pitchJson, string[] panel, bool modoEnVivo, bool conAyuda, Action<bool> listo)
         {
             Reiniciar();
+            enVivo = modoEnVivo; ayuda = modoEnVivo && conAyuda;
             if (usarMock)
             {
                 var g = JsonUtility.FromJson<SesionGuardada>(LeerStreaming("mock_sesion.json"));
                 sesionId = "mock";
-                recibidos.AddRange(g.eventos);
-                estadoSesion = "terminada";
                 conectado = true;
+                if (enVivo) { guionMock = new List<Evento>(g.eventos); posMock = 0; AvanzarMock(); }
+                else { recibidos.AddRange(g.eventos); estadoSesion = "terminada"; }
                 listo(true);
                 yield break;
             }
             var ids = new List<string>();
             foreach (var p in panel) ids.Add("\"" + p + "\"");
-            string cuerpo = "{\"pitch\":" + pitchJson + ",\"panel\":[" + string.Join(",", ids.ToArray()) + "],\"modo\":\"humano\"}";
+            string cuerpo = "{\"pitch\":" + pitchJson + ",\"panel\":[" + string.Join(",", ids.ToArray()) + "],\"modo\":\"" +
+                            (enVivo ? "humano" : "autopiloto") + "\",\"ayuda\":" + (ayuda ? "true" : "false") + "}";
             string txt = null;
             yield return Post("/sesiones", cuerpo, t => txt = t);
             if (txt == null) { listo(false); yield break; }
@@ -136,6 +149,7 @@ namespace NeuralHub
         public IEnumerator CargarSesionPasada(string id, Action<bool> listo)
         {
             Reiniciar();
+            enVivo = false; ayuda = false;
             if (usarMock)
             {
                 var g = JsonUtility.FromJson<SesionGuardada>(LeerStreaming("mock_sesion.json"));
@@ -166,6 +180,7 @@ namespace NeuralHub
         {
             if (sondeo != null) StopCoroutine(sondeo);
             sondeo = null; desde = 0; recibidos.Clear(); pendiente = null; estadoSesion = ""; sesionId = null; ultimoError = null;
+            guionMock = null; posMock = 0; respuestasMock.Clear();
         }
 
         IEnumerator Sondear()
@@ -187,8 +202,62 @@ namespace NeuralHub
             }
         }
 
+        /// <summary>Sin conexión, en vivo: agrega eventos de la grabación hasta llegar a respuestas que todavía no da el usuario.</summary>
+        void AvanzarMock()
+        {
+            while (guionMock != null && posMock < guionMock.Count)
+            {
+                var e = guionMock[posMock];
+                if (e.tipo == "RESPUESTA")
+                {
+                    string k = e.ronda + "|" + e.destino;
+                    if (!respuestasMock.ContainsKey(k))
+                    {
+                        var preguntas = new List<PreguntaPendiente>();
+                        foreach (var q in guionMock)
+                            if (q.tipo == "PREGUNTA" && q.ronda == e.ronda) preguntas.Add(new PreguntaPendiente { tiburon_id = q.emisor, texto = q.texto });
+                        pendiente = new Pendiente { tipo = "RESPUESTAS", ronda = e.ronda, preguntas = preguntas.ToArray() };
+                        estadoSesion = "esperando";
+                        return;
+                    }
+                    e = JsonUtility.FromJson<Evento>(JsonUtility.ToJson(e));
+                    e.texto = respuestasMock[k];
+                }
+                recibidos.Add(e);
+                posMock++;
+            }
+            pendiente = null; estadoSesion = "terminada";
+        }
+
+        /// <summary>Modo en vivo con ayuda: el agente empresario sugiere una respuesta a la última pregunta del tiburón.</summary>
+        public IEnumerator PedirSugerencia(string tiburonId, Action<string> listo)
+        {
+            if (usarMock)
+            {
+                int ronda = 0;
+                foreach (var e in recibidos) if (e.tipo == "PREGUNTA" && e.emisor == tiburonId) ronda = e.ronda;
+                string grabada = null;
+                if (guionMock != null)
+                    foreach (var e in guionMock) if (e.tipo == "RESPUESTA" && e.destino == tiburonId && e.ronda == ronda) grabada = e.texto;
+                yield return new WaitForSeconds(0.6f);
+                listo(grabada);
+                yield break;
+            }
+            string txt = null;
+            yield return Post("/sesiones/" + sesionId + "/sugerencia", "{\"tiburon_id\":\"" + tiburonId + "\"}", t => txt = t);
+            listo(txt != null ? JsonUtility.FromJson<SugerenciaDto>(txt).texto : null);
+        }
+
         public IEnumerator EnviarRespuestas(Dictionary<string, string> r)
         {
+            if (usarMock && guionMock != null)
+            {
+                int ronda = pendiente != null ? pendiente.ronda : 0;
+                foreach (var kv in r) respuestasMock[ronda + "|" + kv.Key] = kv.Value;
+                pendiente = null;
+                AvanzarMock();
+                yield break;
+            }
             var partes = new List<string>();
             foreach (var kv in r) partes.Add("\"" + kv.Key + "\":\"" + Esc(kv.Value) + "\"");
             pendiente = null; estadoSesion = "corriendo";

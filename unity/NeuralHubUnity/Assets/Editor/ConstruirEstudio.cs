@@ -98,9 +98,13 @@ namespace NeuralHub.Editor
             var interior = Mat("Sillon_interior", new Color(0.85f, 0.35f, 0.5f), 0.4f);
             var madera = Mat("Escritorio_madera", new Color(0.45f, 0.30f, 0.18f), 0.4f);
             var tope = Mat("Escritorio_tope", new Color(0.08f, 0.2f, 0.32f), 0.8f);
-            Prim(PrimitiveType.Cylinder, "Base", raiz.transform, new Vector3(0, 0.22f, 0), new Vector3(0.3f, 0.22f, 0.3f), tope);
-            Prim(PrimitiveType.Cube, "Asiento", raiz.transform, new Vector3(0, 0.47f, 0), new Vector3(1.25f, 0.18f, 1.05f), interior);
-            var resp = Prim(PrimitiveType.Sphere, "RespaldoConcha", raiz.transform, new Vector3(0, 1.25f, -0.55f), new Vector3(1.9f, 1.9f, 0.28f), concha);
+            var silla = ConstruirPersonajes.Instanciar(ConstruirPersonajes.Vnb + "Office/office_chair.prefab", raiz.transform, new Vector3(0, 0, -0.1f), ConstruirPersonajes.giroSilla, 1.25f);
+            if (silla == null)
+            {
+                Prim(PrimitiveType.Cylinder, "Base", raiz.transform, new Vector3(0, 0.22f, 0), new Vector3(0.3f, 0.22f, 0.3f), tope);
+                Prim(PrimitiveType.Cube, "Asiento", raiz.transform, new Vector3(0, 0.47f, 0), new Vector3(1.25f, 0.18f, 1.05f), interior);
+                Prim(PrimitiveType.Sphere, "RespaldoConcha", raiz.transform, new Vector3(0, 1.25f, -0.55f), new Vector3(1.9f, 1.9f, 0.28f), concha);
+            }
             Prim(PrimitiveType.Cube, "Escritorio", raiz.transform, new Vector3(0, 0.4f, 1.42f), new Vector3(2.3f, 0.8f, 0.7f), madera);
             Prim(PrimitiveType.Cube, "TopeEscritorio", raiz.transform, new Vector3(0, 0.82f, 1.42f), new Vector3(2.4f, 0.06f, 0.8f), tope);
             ConstruirExtras.DecorarEscritorio(raiz.transform);
@@ -148,6 +152,8 @@ namespace NeuralHub.Editor
             var rnd = new System.Random(7);
             System.Func<float, float, float> R = (a, b) => (float)(a + rnd.NextDouble() * (b - a));
             var deco = new GameObject("Decoracion").transform; deco.SetParent(padre, false);
+            bool real = ConstruirAmbiente.Disponible();
+            if (real) ConstruirAmbiente.Decorar(deco);
 
             for (int i = 0; i < 22; i++)    // piedras
                 Prim(PrimitiveType.Sphere, "Piedra", deco, new Vector3(R(-11, 11), 0.05f, R(-6, 9)), Vector3.one * R(0.15f, 0.45f), i % 3 == 0 ? roca : arena);
@@ -156,7 +162,7 @@ namespace NeuralHub.Editor
                 float x = i < 3 ? -10.5f + i * 1.4f : (i < 6 ? 8.5f + (i - 3) * 1.4f : 0);
                 Prim(PrimitiveType.Sphere, "Roca", deco, new Vector3(x, 0.4f, i == 6 ? 9.5f : R(4, 9)), new Vector3(R(1.4f, 2.4f), R(0.9f, 1.8f), R(1.2f, 2f)), roca);
             }
-            for (int i = 0; i < 12; i++)    // coral de ramas
+            if (!real) for (int i = 0; i < 12; i++)    // coral de ramas
             {
                 float x = (i % 2 == 0 ? -1 : 1) * R(7.5f, 11f), z = R(-5, 8.5f);
                 var g = new GameObject("Coral").transform; g.SetParent(deco, false); g.localPosition = new Vector3(x, 0, z);
@@ -168,7 +174,7 @@ namespace NeuralHub.Editor
                     Prim(PrimitiveType.Sphere, "Punta", rama.transform, new Vector3(0, 1f, 0), new Vector3(1.4f, 0.3f, 1.4f), m);
                 }
             }
-            for (int i = 0; i < 26; i++)    // algas que se mecen
+            if (!real) for (int i = 0; i < 26; i++)    // algas que se mecen
             {
                 float x = R(-12, 12); if (Mathf.Abs(x) < 4.5f) x += x < 0 ? -5f : 5f;
                 var g = new GameObject("Alga").transform; g.SetParent(deco, false); g.localPosition = new Vector3(x, 0, R(-4, 9.5f));
@@ -183,7 +189,7 @@ namespace NeuralHub.Editor
                 }
             }
             var colores = new[] { new Color(1f, 0.8f, 0.1f), new Color(0.2f, 0.8f, 1f), new Color(1f, 0.4f, 0.5f), new Color(0.6f, 0.9f, 0.3f), Color.white };
-            for (int i = 0; i < 14; i++)    // peces de fondo
+            if (!real) for (int i = 0; i < 14; i++)    // peces de fondo
             {
                 var pez = new GameObject("Pez").transform; pez.SetParent(deco, false);
                 var c = Mat("Pez_" + (i % 5), colores[i % 5], 0.6f);
@@ -202,7 +208,7 @@ namespace NeuralHub.Editor
                 for (int k = 0; k < 5; k++) Prim(PrimitiveType.Capsule, "Tentaculo", g, new Vector3(R(-0.2f, 0.2f), -0.5f, R(-0.2f, 0.2f)), new Vector3(0.05f, 0.35f, 0.05f), med);
                 var o = g.gameObject.AddComponent<Ondular>(); o.vertical = true; o.amplitud = 3; o.velocidad = R(0.6f, 1f);
             }
-            for (int i = 0; i < 6; i++)     // burbujas
+            if (!real) for (int i = 0; i < 6; i++)     // burbujas
             {
                 var b = new GameObject("Burbujas"); b.transform.SetParent(deco, false);
                 b.transform.localPosition = new Vector3(R(-11, 11), 0.1f, R(-3, 9));
@@ -224,9 +230,14 @@ namespace NeuralHub.Editor
             foreach (var d in new[] { "Assets/Scenes", "Assets/Prefabs", "Assets/Materiales", "Assets/StreamingAssets" })
                 if (!AssetDatabase.IsValidFolder(d)) AssetDatabase.CreateFolder("Assets", Path.GetFileName(d));
 
-            var prefabTiburon = CrearPrefabTiburon();
+            bool animados = ConstruirPersonajes.Disponibles();
+            if (animados) ConstruirPersonajes.ConfigurarImportaciones();
+            else Debug.LogWarning("NeuralHub: faltan los paquetes de terceros (unity/paquetes_terceros.md); se usan personajes de primitivas.");
+            var prefabTiburon = animados ? ConstruirPersonajes.PrefabTiburon(Mat("Blanco", Color.white, 0.6f)) : CrearPrefabTiburon();
             var prefabSillon = CrearPrefabSillon();
-            var prefabEmprendedor = CrearPrefabEmprendedor();
+            var prefabEmprendedor = animados
+                ? ConstruirPersonajes.PrefabEmprendedor(Mat("Podio", new Color(0.95f, 0.45f, 0.5f), 0.5f), Mat("Podio_tope", Estilos.Violeta, 0.6f))
+                : CrearPrefabEmprendedor();
 
             var escena = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;

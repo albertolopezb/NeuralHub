@@ -86,6 +86,29 @@ def sistema_emprendedor() -> str:
             "responde que aún no lo sabes y qué harías para averiguarlo. Máximo 70 palabras por respuesta.")
 
 
+TIPOS_CONVERSACION = ("PITCH", "PREGUNTA", "RESPUESTA", "REPLICA", "OFERTA")
+
+
+def sugerir_respuesta(llm, pitch: dict, eventos: list, tiburon_id: str) -> str:
+    """Modo en vivo con ayuda: el agente empresario propone una respuesta a la última pregunta de `tiburon_id`.
+
+    Usa los eventos públicos (no el estado del grafo) porque las preguntas de la ronda se emiten antes de que
+    el nodo «preguntar» termine. Es 1 llamada al modelo por sugerencia; el usuario decide si la usa o la edita.
+    """
+    pregunta = next((e for e in reversed(eventos) if e["tipo"] == "PREGUNTA" and e["emisor"] == tiburon_id), None)
+    if pregunta is None:
+        raise ValueError(f"{nombre(tiburon_id)} todavía no ha hecho una pregunta.")
+    p = Pitch(**pitch)
+    conversacion = "\n".join(f"[R{e['ronda']}] {nombre(e['emisor'])} ({e['tipo']}): {e['texto']}"
+                              for e in eventos if e["tipo"] in TIPOS_CONVERSACION) or "(todavía no hay conversación)"
+    salida = llm.estructurado(E.Sugerencia, sistema_emprendedor(), (
+        f"TU FICHA:\n{ficha(p)}\n\nCONVERSACIÓN:\n{conversacion}\n\n"
+        f"El {nombre(tiburon_id)} te acaba de preguntar: \"{pregunta['texto']}\"\n"
+        "Sugiere UNA respuesta breve y convincente que el emprendedor pueda decir tal cual o ajustar. "
+        "Usa solo los datos de tu ficha; si el dato no está, reconócelo y di cómo lo obtendrías."))
+    return salida.texto.strip()[:MAX_CHARS_RESPUESTA]
+
+
 def _cfg(config):
     c = config["configurable"]
     return c["sesion"], c["llm"], c.get("guion")

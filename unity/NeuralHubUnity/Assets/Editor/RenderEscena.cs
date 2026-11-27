@@ -25,6 +25,11 @@ namespace NeuralHub.Editor
                 t.Asignar(ids[i], ids[i]);
                 panel.Add(t);
             }
+            // Sin Play mode el Animator no corre: se toma un cuadro de cada animación de Mixamo
+            string[] poses = { "T_SentadoDesaprueba", "T_SentadoHablando2", "T_SentadoPulgarArriba" };
+            for (int i = 0; i < 3; i++) Posar(panel[i].animador, poses[i], 1.2f);
+            Posar(est.emprendedor.animador, "E_Hablando", 2f);
+            foreach (var c in Object.FindObjectsByType<CabezaPostiza>(FindObjectsSortMode.None)) c.Aplicar();
             est.pantalla.MostrarOferta("DataSense AI", 500000, 15, 3333333, "tecnologia");
             var dat = Object.FindFirstObjectByType<PantallasDatos>();
             if (dat)
@@ -50,10 +55,23 @@ namespace NeuralHub.Editor
                 var pos = p + hacia * 3.6f + lado * 1.1f + Vector3.up * 0.35f;
                 Toma(cam, salida, "tiburon_" + (i + 1), pos, Quaternion.LookRotation(p - pos));
             }
+            {
+                var p = panel[1].PuntoCabeza(); var lado = panel[1].transform.right;
+                Toma(cam, salida, "perfil_tiburon", p + lado * 2.2f + Vector3.up * 0.2f, Quaternion.LookRotation(-lado));
+                var fr = panel[1].transform.forward;
+                Toma(cam, salida, "frente_tiburon", p + fr * 2.0f + Vector3.up * 0.1f, Quaternion.LookRotation(-fr));
+            }
             Toma(cam, salida, "emprendedor", est.emprendedor.PuntoCabeza() + new Vector3(2.2f, 0.4f, 4.2f),
                  Quaternion.LookRotation(est.emprendedor.PuntoCabeza() - (est.emprendedor.PuntoCabeza() + new Vector3(2.2f, 0.4f, 4.2f))));
             File.WriteAllText(salida + "/listo_render.txt", "ok");
             EditorApplication.Exit(0);
+        }
+
+        static void Posar(Animator an, string clip, float t)
+        {
+            if (!an) return;
+            var c = ConstruirPersonajes.Clip(clip);
+            if (c) c.SampleAnimation(an.gameObject, Mathf.Min(t, c.length));
         }
 
         static void Toma(Camera cam, string dir, string nombre, Vector3 pos, Quaternion rot)

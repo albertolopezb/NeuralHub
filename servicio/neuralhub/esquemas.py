@@ -48,3 +48,7 @@ class Reporte(BaseModel):
     alertas: list[str] = Field(description="Exactamente 3.")
     preguntas_sin_responder: list[str]
     siguientes_pasos: list[str] = Field(description="Exactamente 3, concretos.")
+
+
+class Sugerencia(BaseModel):
+    texto: str = Field(description="Respuesta sugerida, en primera persona, que el emprendedor puede decir tal cual o ajustar.")

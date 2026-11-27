@@ -46,7 +46,7 @@ namespace NeuralHub.Editor
 
         public static void DecorarEscritorio(Transform sillon)
         {
-            Modelo("laptop", sillon, new Vector3(0.78f, 0.85f, 1.3f), 0f, 0.15f);
+            Modelo("laptop", sillon, new Vector3(1.0f, 0.85f, 1.35f), -35f, 0.15f);
             Modelo("lampRoundTable", sillon, new Vector3(-0.85f, 0.85f, 1.55f), 0f, 0.5f);
             Modelo("books", sillon, new Vector3(-0.25f, 0.85f, 1.6f), 15f, 0.16f);
         }

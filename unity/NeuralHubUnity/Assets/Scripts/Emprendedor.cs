@@ -20,8 +20,35 @@ namespace NeuralHub
         public void Escuchar() { estado = Estado.Escuchando; }
         public void RecibirResultado(bool esTrato) { trato = esTrato; estado = Estado.RecibiendoResultado; }
 
+        // ---------- personaje animado (cuerpo de traje + animaciones de Mixamo) ----------
+        public Animator animador;
+        public Transform puntoCabeza;
+        string animActual;
+        float enEstado;
+        Estado anterior;
+
+        string Animacion()
+        {
+            switch (estado)
+            {
+                case Estado.Presentando: return enEstado < 4.5f ? "Saludo" : "Hablando";
+                case Estado.Respondiendo: return "PreguntaDosManos";
+                case Estado.Negociando: return "GestoFeliz";
+                case Estado.RecibiendoResultado: return trato ? "Victoria" : "Decepcionado";
+                default: return "ReposoFeliz";
+            }
+        }
+
         void Update()
         {
+            if (animador)
+            {
+                if (estado != anterior) { anterior = estado; enEstado = 0; }
+                enEstado += Time.deltaTime;
+                string a = Animacion();
+                if (a != animActual) { animador.CrossFadeInFixedTime(a, 0.35f); animActual = a; }
+                return;
+            }
             if (!cuerpo) return;
             float t = Time.time;
             Vector3 pc = posCabeza; Vector3 esc = escala;
@@ -39,6 +66,10 @@ namespace NeuralHub
             if (cabeza) cabeza.localPosition = Vector3.Lerp(cabeza.localPosition, pc, 8f * Time.deltaTime);
         }
 
-        public Vector3 PuntoCabeza() { return cabeza ? cabeza.position : transform.position + Vector3.up * 1.6f; }
+        public Vector3 PuntoCabeza()
+        {
+            if (puntoCabeza) return puntoCabeza.position;
+            return cabeza ? cabeza.position : transform.position + Vector3.up * 1.6f;
+        }
     }
 }

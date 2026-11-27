@@ -6,6 +6,7 @@ namespace NeuralHub
     /// <summary>
     /// Reproduce los eventos de la cola de ClienteServicio de uno en uno (ControlReproduccion + reproducirSiguiente).
     /// Pausa, velocidad 1x/2x, saltar, navegar a cualquier turno (anterior, siguiente, ir a) y voz de cada personaje.
+    /// En modo en vivo se detiene en cada pregunta hasta que el usuario responde (turnoUsuario).
     /// </summary>
     public class ReproductorSesion : MonoBehaviour
     {
@@ -30,6 +31,13 @@ namespace NeuralHub
         public PitchDto pitchActual;
         public float ultimoEventoRealtime;      // para medir la latencia en vivo
 
+        // Modo en vivo: el usuario responde cada pregunta en cuanto el tiburón la hace
+        public bool enVivo;
+        public string turnoUsuario;              // tiburón al que el usuario debe responder ahora (null si no es su turno)
+        public string preguntaUsuario;
+        public int rondaRespuestas = -1, enviadaRonda = -1;
+        public readonly Dictionary<string, string> respuestasRonda = new Dictionary<string, string>();
+
         int siguiente;
         float restante;
         bool activo;
@@ -43,13 +51,23 @@ namespace NeuralHub
         {
             historial.Clear(); votos.Clear(); siguiente = 0; restante = 0; actual = null; ronda = 0; resultado = "";
             reporteListo = false; reporte = null; decisionFinal = null; activo = true; pausado = false; esperandoAudio = false;
+            turnoUsuario = null; preguntaUsuario = null; rondaRespuestas = -1; enviadaRonda = -1; respuestasRonda.Clear();
             if (sonidos) sonidos.DetenerVoz();
+        }
+
+        /// <summary>El usuario respondió la pregunta en turno (modo en vivo): se guarda y la sesión continúa.</summary>
+        public void Responder(string texto)
+        {
+            if (turnoUsuario == null) return;
+            respuestasRonda[turnoUsuario] = texto;
+            turnoUsuario = null; preguntaUsuario = null;
+            restante = Mathf.Max(restante, 0.4f);
         }
 
         public void Detener() { activo = false; if (sonidos) sonidos.DetenerVoz(); }
         public bool ColaVacia { get { return siguiente >= cliente.recibidos.Count; } }
         public bool Ocupado { get { return restante > 0f || esperandoAudio; } }
-        public bool EnEspera { get { return activo && ColaVacia && !Ocupado; } }
+        public bool EnEspera { get { return activo && ColaVacia && !Ocupado && turnoUsuario == null; } }
 
         public void SaltarAnimacion() { restante = 0f; esperandoAudio = false; if (sonidos) sonidos.DetenerVoz(); }
         public void AlternarPausa() { pausado = !pausado; if (pausado && sonidos) sonidos.DetenerVoz(); }
@@ -60,7 +78,7 @@ namespace NeuralHub
         {
             indice = Mathf.Clamp(indice, 0, Mathf.Max(0, cliente.recibidos.Count - 1));
             historial.Clear(); votos.Clear(); ronda = 0; resultado = ""; reporteListo = false; reporte = null; decisionFinal = null;
-            restante = 0; esperandoAudio = false; activo = true;
+            restante = 0; esperandoAudio = false; activo = true; turnoUsuario = null; preguntaUsuario = null;
             if (sonidos) sonidos.DetenerVoz();
             for (int i = 0; i < indice; i++) Aplicar(cliente.recibidos[i], false);
             siguiente = indice;
@@ -74,6 +92,7 @@ namespace NeuralHub
             if (!activo || pausado) return;
             float dt = Time.deltaTime;
             if (esperandoAudio) { esperaAudio += Time.unscaledDeltaTime; if (esperaAudio < 6f) return; esperandoAudio = false; }
+            if (turnoUsuario != null) return;   // en vivo: espera a que el usuario responda
             if (restante > 0f) { restante -= dt * velocidad * factorExtra; if (restante > 0f) return; }
             if (!ColaVacia) ReproducirSiguiente();
         }
@@ -84,7 +103,15 @@ namespace NeuralHub
             Aplicar(e, true);
             restante = Duracion(e);
             ultimoEventoRealtime = Time.realtimeSinceStartup;
-            if (sonidos && sonidos.vozActiva && TieneVoz(e))
+            if (enVivo && e.tipo == "PREGUNTA" && e.emisor != null && e.emisor.StartsWith("tibur"))
+            {
+                if (e.ronda != rondaRespuestas) { respuestasRonda.Clear(); rondaRespuestas = e.ronda; }
+                if (!respuestasRonda.ContainsKey(e.emisor)) { turnoUsuario = e.emisor; preguntaUsuario = e.texto; restante = 0f; }
+            }
+            // En vivo, la respuesta ya la escribió el usuario: solo se muestra un momento y sin voz
+            bool respuestaPropia = enVivo && e.tipo == "RESPUESTA";
+            if (respuestaPropia) restante = 1.6f;
+            if (sonidos && sonidos.vozActiva && TieneVoz(e) && !respuestaPropia)
             {
                 esperandoAudio = true; esperaAudio = 0;
                 var evento = e;

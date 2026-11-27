@@ -46,8 +46,12 @@ def calcular(ses) -> dict:
             list(range(min(e["n"] for e in votos if e.get("votacion") == k),
                        min(e["n"] for e in votos if e.get("votacion") == k) + len(panel_votos(votos, k))))
             for k in {e.get("votacion") for e in votos}) and
-            all(e["n"] < min(v["n"] for v in votos) for e in ev if e["tipo"] in ("PREGUNTA", "RESPUESTA", "REPLICA")),
+            all(e["n"] < min(v["n"] for v in votos) for e in ev if e["tipo"] in ("PREGUNTA", "RESPUESTA", "REPLICA"))
+            if votos else True,   # a media sesión todavía no hay votos
         "hubo_negociacion": any(e["tipo"] == "NEGOCIACION" for e in ev),
+        "modo": ses.modo,
+        "ayuda": getattr(ses, "ayuda", False),
+        "sugerencias": getattr(ses, "sugerencias", 0),
         "resultado": decision.get("resultado") if decision else None,
         "terminada": ses.estado == "terminada",
     }

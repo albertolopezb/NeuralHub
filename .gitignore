@@ -20,3 +20,17 @@ unity/video_vivo*/
 unity/capturas_inc2/
 servicio/audio_cache/
 unity/*.log
+unity/descargas/
+
+# Paquetes de la Unity Asset Store y de Mixamo: su licencia no permite publicarlos.
+# Se importan con unity/paquetes_terceros.md
+unity/NeuralHubUnity/Assets/genSuit*
+unity/NeuralHubUnity/Assets/Alstra Infinite*
+unity/NeuralHubUnity/Assets/3D Shark pack*
+unity/NeuralHubUnity/Assets/Fishes And Underwater Environment Set*
+unity/NeuralHubUnity/Assets/VNB - Office Set*
+unity/NeuralHubUnity/Assets/Vefects*
+unity/NeuralHubUnity/Assets/#NVJOB Boids*
+unity/NeuralHubUnity/Assets/Underwater Ambient.wav*
+unity/NeuralHubUnity/Assets/Sci-Fi UI*
+unity/NeuralHubUnity/Assets/Terceros/Mixamo*
