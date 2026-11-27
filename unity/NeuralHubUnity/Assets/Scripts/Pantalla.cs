@@ -1,28 +1,79 @@
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace NeuralHub
 {
-    /// <summary>Pantalla grande del fondo: negocio, monto, porcentaje, valuación e ícono del sector del pitch.</summary>
+    /// <summary>
+    /// Pantalla grande del estudio: funciona como la presentación del pitch. Cada lámina tiene una ilustración
+    /// (Resources/Laminas), un antetítulo, un título y texto del pitch, y cambia según el tema que se está hablando.
+    /// </summary>
     public class Pantalla : MonoBehaviour
     {
-        public TextMesh titulo, detalle;
-        public Renderer icono;
+        public TextMesh antetitulo, titulo, detalle;
+        public Renderer ilustracion;
 
-        public void MostrarOferta(string negocio, double monto, double pct, double valuacion, string sector = null)
+        // La lámina en curso, para repetirla como tarjeta en la interfaz cuando la cámara no ve la pantalla
+        public Texture2D Imagen { get; private set; }
+        public string Sobre { get; private set; }
+        public string Encabezado { get; private set; }
+        public string Cuerpo { get; private set; }
+
+        Vector3 escalaBase = Vector3.zero;
+        float entrada = 1f;
+        string actual;
+
+        public void MostrarLamina(string lamina, string sobre, string encabezado, string cuerpo)
         {
-            if (titulo) titulo.text = negocio;
-            if (detalle) detalle.text = "Pide " + Perfiles.Mxn(monto) + " por el " + pct.ToString("0.##") + " %\nValuación: " + Perfiles.Mxn(valuacion);
-            MostrarIcono(sector);
+            if (antetitulo) antetitulo.text = (sobre ?? "").ToUpper();
+            if (titulo) titulo.text = Ajustar(encabezado, 20, 2);
+            if (detalle) detalle.text = Ajustar(cuerpo, 36, 7);
+            var tex = Resources.Load<Texture2D>("Laminas/" + lamina);
+            Imagen = tex; Sobre = sobre; Encabezado = encabezado; Cuerpo = cuerpo;
+            if (!ilustracion) return;
+            ilustracion.enabled = tex != null;
+            if (!tex) return;
+            var b = new MaterialPropertyBlock(); b.SetTexture("_MainTex", tex); ilustracion.SetPropertyBlock(b);
+            if (lamina != actual && Application.isPlaying)
+            {
+                if (escalaBase == Vector3.zero) escalaBase = ilustracion.transform.localScale;
+                entrada = 0f;
+            }
+            actual = lamina;
         }
 
-        public void MostrarIcono(string sector)
+        public void MostrarTexto(string t, string d) { MostrarLamina("tema_votacion", "NeuralHub", t, d); }
+
+        void Update()
         {
-            if (!icono) return;
-            var tex = string.IsNullOrEmpty(sector) ? null : Resources.Load<Texture2D>("Iconos/" + sector);
-            icono.enabled = tex != null;
-            if (tex) icono.material.mainTexture = tex;
+            if (entrada >= 1f || !ilustracion) return;
+            entrada = Mathf.Min(1f, entrada + Time.deltaTime * 2.5f);
+            float k = 1f + 2.2f * Mathf.Pow(entrada - 1f, 3f) + 1.2f * Mathf.Pow(entrada - 1f, 2f);   // rebote suave
+            ilustracion.transform.localScale = escalaBase * Mathf.Max(0.05f, k);
         }
 
-        public void MostrarTexto(string t, string d) { if (titulo) titulo.text = t; if (detalle) detalle.text = d; MostrarIcono(null); }
+        /// <summary>Corta el texto en renglones de ancho máximo (TextMesh no ajusta solo).</summary>
+        public static string Ajustar(string texto, int ancho, int maxRenglones)
+        {
+            if (string.IsNullOrEmpty(texto)) return "";
+            var renglones = new List<string>();
+            foreach (var parrafo in texto.Split('\n'))
+            {
+                var linea = new StringBuilder();
+                foreach (var palabra in parrafo.Split(' '))
+                {
+                    if (linea.Length > 0 && linea.Length + 1 + palabra.Length > ancho) { renglones.Add(linea.ToString()); linea.Length = 0; }
+                    if (linea.Length > 0) linea.Append(' ');
+                    linea.Append(palabra);
+                }
+                renglones.Add(linea.ToString());
+            }
+            if (renglones.Count > maxRenglones)
+            {
+                renglones.RemoveRange(maxRenglones, renglones.Count - maxRenglones);
+                renglones[maxRenglones - 1] = renglones[maxRenglones - 1].TrimEnd('.', ',', ' ') + "…";
+            }
+            return string.Join("\n", renglones.ToArray());
+        }
     }
 }

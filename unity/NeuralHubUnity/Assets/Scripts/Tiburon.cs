@@ -1,39 +1,59 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace NeuralHub
 {
     public enum EstadoTiburon { FueraDelPanel, Esperando, Escuchando, Preguntando, Evaluando, Replicando, Votando, Reaccionando }
 
-    /// <summary>Un tiburón del panel. Su estado (máquina de estados del diagrama) decide la animación.</summary>
+    /// <summary>
+    /// Un tiburón del panel. Su estado (máquina de estados del diagrama) decide la animación del modelo:
+    /// saluda al pedir la palabra, asiente o niega al replicar y votar, y celebra o se encoge con la decisión.
+    /// </summary>
     public class Tiburon : MonoBehaviour
     {
         public string perfilId;
         public string nombre;
         public EstadoTiburon estado = EstadoTiburon.FueraDelPanel;
-        public Transform cuerpo, cabeza, aleta, paleta;
+
+        [System.Serializable]
+        public class Modelo { public GameObject raiz; public Animator animador; public Transform cabeza; }
+
+        public Modelo[] modelos;                // dos diseños de tiburón; cada perfil usa uno
+        public Transform giro;                  // solo gira el cuerpo; el letrero del podio se queda quieto
+        public Transform paleta;
         public TextMesh letrero;
-        public Renderer[] pintables;
+        public Renderer[] pintables;            // corbata y aro de luz con el color del perfil
         public Color color = Color.gray;
 
-        Vector3 escalaCuerpo, posCabeza;
-        float tiempoEstado;
-        Color colorVoto = Color.gray;
+        Modelo activo;
+        string decisionVoto, postura, animActual;
+        float tiempoEstado, habla;
         bool aFavor;
         Transform mirarA;
+        Quaternion giroBase;
 
-        void Awake()
+        void Awake() { if (paleta) paleta.gameObject.SetActive(false); }
+
+        public static int Variante(string id)
         {
-            if (cuerpo) escalaCuerpo = cuerpo.localScale;
-            if (cabeza) posCabeza = cabeza.localPosition;
-            if (paleta) paleta.gameObject.SetActive(false);
+            return id == "tiburon_estratega" || id == "tiburona_consumo" || id == "tiburon_consumo" || id == "tiburon_mentor" ? 1 : 0;
         }
 
         public void Asignar(string id, string nom)
         {
             perfilId = id; nombre = nom; color = Perfiles.Color(id);
-            if (letrero) letrero.text = Perfiles.Corto(id);
-            foreach (var r in pintables) if (r) r.material.color = color;
+            if (letrero) letrero.text = Perfiles.Corto(id).ToUpper();
+            int v = Variante(id);
+            for (int i = 0; i < modelos.Length; i++) modelos[i].raiz.SetActive(i == v);
+            activo = modelos[v];
+            foreach (var r in pintables)
+            {
+                if (!r) continue;
+                var bloque = new MaterialPropertyBlock();
+                bloque.SetColor("_Color", color);
+                bloque.SetColor("_EmissionColor", color.linear * 1.8f);
+                r.SetPropertyBlock(bloque);
+            }
+            giroBase = giro ? giro.localRotation : Quaternion.identity;
             gameObject.SetActive(true);
             CambiarEstado(EstadoTiburon.Esperando);
         }
@@ -44,103 +64,89 @@ namespace NeuralHub
 
         public void CambiarEstado(EstadoTiburon nuevo)
         {
-            estado = nuevo; tiempoEstado = 0f;
+            estado = nuevo; tiempoEstado = 0f; animActual = null;
             if (paleta && nuevo != EstadoTiburon.Votando && nuevo != EstadoTiburon.Reaccionando) paleta.gameObject.SetActive(false);
         }
 
         // Acciones del modelo de la clase (escuchar, preguntar, replicar, votar, reaccionar)
-        public void Escuchar() { CambiarEstado(EstadoTiburon.Escuchando); }
+        public void Escuchar() { if (estado != EstadoTiburon.Escuchando) CambiarEstado(EstadoTiburon.Escuchando); }
         public void Preguntar() { CambiarEstado(EstadoTiburon.Preguntando); }
-        public void Replicar() { CambiarEstado(EstadoTiburon.Replicando); }
+        public void Replicar(string postura = null) { this.postura = postura; CambiarEstado(EstadoTiburon.Replicando); }
         public void Evaluar() { CambiarEstado(EstadoTiburon.Evaluando); }
 
         public void Votar(string decision)
         {
             aFavor = decision != "salir"; decisionVoto = decision;
-            colorVoto = decision == "invertir" ? Perfiles.Hex("#2F9E44") : decision == "contraoferta" ? Perfiles.Hex("#F59F00") : Perfiles.Hex("#C92A2A");
-            if (paleta) { paleta.gameObject.SetActive(true); paleta.GetComponent<Renderer>().material.color = colorVoto; }
+            if (paleta)
+            {
+                paleta.gameObject.SetActive(true);
+                var c = Estilos.ColorVoto(decision);
+                foreach (var r in paleta.GetComponentsInChildren<Renderer>())
+                {
+                    if (r.GetComponent<TextMesh>()) continue;
+                    var b = new MaterialPropertyBlock(); b.SetColor("_Color", c); b.SetColor("_EmissionColor", c.linear * 0.8f); r.SetPropertyBlock(b);
+                }
+                var t = paleta.GetComponentInChildren<TextMesh>();
+                if (t) t.text = decision == "invertir" ? "DENTRO" : decision == "salir" ? "FUERA" : "OFERTA";
+            }
             CambiarEstado(EstadoTiburon.Votando);
         }
 
         public void Reaccionar(bool trato)
         {
-            // Celebra si hubo trato y votó a favor; se desploma si no hubo trato.
+            // Celebra si hubo trato y votó a favor; se encoge si no hubo trato.
             aFavor = trato && aFavor;
             CambiarEstado(EstadoTiburon.Reaccionando);
         }
 
-        // ---------- personaje animado (cuerpo de traje + animaciones de Mixamo) ----------
-        public Animator animador;
-        public Transform cabezaPostiza;
-        string animActual;
-        string decisionVoto;
-
-        string AnimacionDeEstado()
+        /// <summary>Animación según el estado: primero el gesto y después reposo.</summary>
+        string Animacion()
         {
             switch (estado)
             {
-                case EstadoTiburon.Escuchando: return "SentadoReposoManos";
-                case EstadoTiburon.Preguntando: return "SentadoHablando2";
-                case EstadoTiburon.Replicando: return "SentadoSenala";
-                case EstadoTiburon.Evaluando: return "SentadoPensando";
-                case EstadoTiburon.Votando:
-                    return decisionVoto == "invertir" ? "SentadoPulgarArriba" : decisionVoto == "salir" ? "SentadoDesaprueba" : "SentadoHablando";
-                case EstadoTiburon.Reaccionando: return aFavor ? "SentadoAplauso" : "SentadoIncredulo";
-                default: return "SentadoReposo";
-            }
-        }
-
-        void ActualizarAnimador()
-        {
-            string a = AnimacionDeEstado();
-            if (a != animActual) { animador.CrossFadeInFixedTime(a, 0.35f); animActual = a; }
-            if (mirarA)
-            {
-                Vector3 d = mirarA.position - transform.position; d.y = 0;
-                if (d.sqrMagnitude > 0.01f) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(d), 3f * Time.deltaTime);
+                case EstadoTiburon.Preguntando: return tiempoEstado < 1.6f ? "Wave" : "Idle";
+                case EstadoTiburon.Replicando: return tiempoEstado < 1.7f ? (postura == "desacuerdo" ? "No" : "Yes") : "Idle";
+                case EstadoTiburon.Votando: return decisionVoto == "salir" ? "No" : decisionVoto == "invertir" ? "Yes" : "Wave";
+                case EstadoTiburon.Reaccionando: return aFavor ? "Jump" : (tiempoEstado < 1.7f ? "Duck" : "Idle");
+                default: return "Idle";
             }
         }
 
         void Update()
         {
-            if (estado == EstadoTiburon.FueraDelPanel) return;
-            if (animador) { ActualizarAnimador(); return; }
-            if (cuerpo == null) return;
+            if (estado == EstadoTiburon.FueraDelPanel || activo == null) return;
             tiempoEstado += Time.deltaTime;
-            float t = Time.time;
-            Vector3 esc = escalaCuerpo;
-            Vector3 pc = posCabeza;
-            Quaternion giroCabeza = Quaternion.identity;
-            switch (estado)
+            string a = Animacion();
+            if (a != animActual && activo.animador && activo.animador.isActiveAndEnabled) { activo.animador.CrossFadeInFixedTime(a, 0.25f); animActual = a; }
+            if (giro)
             {
-                case EstadoTiburon.Esperando: esc *= 1f + 0.01f * Mathf.Sin(t * 1.5f); break;
-                case EstadoTiburon.Escuchando: giroCabeza = Quaternion.Euler(0, 0, 6f * Mathf.Sin(t * 1.2f)); break;
-                case EstadoTiburon.Preguntando: pc += new Vector3(0, 0.05f * Mathf.Abs(Mathf.Sin(t * 6f)), 0.08f); esc *= 1.04f; break;
-                case EstadoTiburon.Replicando: pc += new Vector3(0.06f * Mathf.Sin(t * 5f), 0.03f, 0.05f); giroCabeza = Quaternion.Euler(0, 15f * Mathf.Sin(t * 3f), 0); break;
-                case EstadoTiburon.Evaluando: giroCabeza = Quaternion.Euler(10f, 0, 0); break;
-                case EstadoTiburon.Votando: pc += new Vector3(0, 0.04f, 0); break;
-                case EstadoTiburon.Reaccionando:
-                    if (aFavor) pc += new Vector3(0, 0.12f * Mathf.Abs(Mathf.Sin(t * 7f)), 0);          // salta de gusto
-                    else { esc = new Vector3(escalaCuerpo.x, escalaCuerpo.y * 0.93f, escalaCuerpo.z); giroCabeza = Quaternion.Euler(25f, 0, 0); }
-                    break;
-            }
-            cuerpo.localScale = Vector3.Lerp(cuerpo.localScale, esc, 8f * Time.deltaTime);
-            if (cabeza)
-            {
-                cabeza.localPosition = Vector3.Lerp(cabeza.localPosition, pc, 8f * Time.deltaTime);
-                cabeza.localRotation = Quaternion.Slerp(cabeza.localRotation, giroCabeza, 8f * Time.deltaTime);
-            }
-            if (mirarA)
-            {
-                Vector3 d = mirarA.position - transform.position; d.y = 0;
-                if (d.sqrMagnitude > 0.01f) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(d), 4f * Time.deltaTime);
+                var objetivo = giroBase;
+                if (mirarA)
+                {
+                    Vector3 d = mirarA.position - transform.position; d.y = 0;
+                    if (d.sqrMagnitude > 0.01f)
+                    {
+                        float ang = Mathf.Clamp(Vector3.SignedAngle(transform.forward, d, Vector3.up), -55f, 55f);
+                        objetivo = Quaternion.Euler(0, ang, 0) * giroBase;
+                    }
+                }
+                giro.localRotation = Quaternion.Slerp(giro.localRotation, objetivo, 4f * Time.deltaTime);
             }
         }
 
-        public Vector3 PuntoCabeza()
+        // Cabeceo al hablar y cabeza ladeada al evaluar (se suma encima de la animación)
+        void LateUpdate()
         {
-            if (cabezaPostiza) return cabezaPostiza.position;
-            return cabeza ? cabeza.position : transform.position + Vector3.up * 1.6f;
+            if (activo == null || !activo.cabeza) return;
+            bool hablando = estado == EstadoTiburon.Preguntando || estado == EstadoTiburon.Replicando;
+            habla = Mathf.MoveTowards(habla, hablando ? 1f : 0f, 4f * Time.deltaTime);
+            float t = Time.time;
+            float cabeceo = habla * (5f * Mathf.Sin(t * 9f) + 3f * Mathf.Sin(t * 5.3f));
+            float ladeo = estado == EstadoTiburon.Evaluando ? 9f : 0f;
+            if (Mathf.Abs(cabeceo) > 0.01f || ladeo > 0f)
+                activo.cabeza.rotation = Quaternion.AngleAxis(cabeceo, transform.right) * Quaternion.AngleAxis(ladeo, transform.forward) * activo.cabeza.rotation;
         }
+
+        public Vector3 PuntoCabeza() { return transform.position + Vector3.up * 2.35f; }
     }
 }

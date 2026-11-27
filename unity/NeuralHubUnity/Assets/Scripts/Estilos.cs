@@ -17,7 +17,7 @@ namespace NeuralHub
         public static readonly Color LineaFuerte = Perfiles.Hex("#3A4A66");
         public static readonly Color Tinta = Perfiles.Hex("#E8EDF5");
         public static readonly Color Suave = Perfiles.Hex("#C9D6E8");
-        public static readonly Color Tenue = Perfiles.Hex("#9AA7BA");
+        public static readonly Color Tenue = Perfiles.Hex("#AEBDD3");
         public static readonly Color Calido = Perfiles.Hex("#F5C26B");
         public static readonly Color SobreCalido = Perfiles.Hex("#1A1206");
         public static readonly Color Dentro = Perfiles.Hex("#3DDC97");
@@ -67,6 +67,13 @@ namespace NeuralHub
             return t;
         }
 
+        /// <summary>El proyecto usa espacio de color lineal y ahí IMGUI oscurece el texto: se compensa el color.</summary>
+        public static Color Letra(Color c)
+        {
+            if (QualitySettings.activeColorSpace != ColorSpace.Linear) return c;
+            var g = c.gamma; g.a = c.a; return g;
+        }
+
         static Font Fuente(string nombre)
         {
             var f = Resources.Load<Font>("Fuentes/" + nombre);
@@ -75,7 +82,7 @@ namespace NeuralHub
 
         static GUIStyle Texto_(Font f, int tam, Color c, bool ajustar = true, TextAnchor ancla = TextAnchor.UpperLeft)
         {
-            return new GUIStyle { font = f, fontSize = tam, wordWrap = ajustar, alignment = ancla, normal = { textColor = c }, richText = false };
+            return new GUIStyle { font = f, fontSize = tam, wordWrap = ajustar, alignment = ancla, normal = { textColor = Letra(c) }, richText = false };
         }
 
         public static void Iniciar()
@@ -104,17 +111,17 @@ namespace NeuralHub
             BotonChico = Crear(new Color(10 / 255f, 15 / 255f, 25 / 255f, 0.9f), LineaFuerte, Pendiente, Suave, 17);
             BotonPrimario = Crear(Calido, Calido, Perfiles.Hex("#FFD58F"), SobreCalido, 21);
             BotonPrimario.hover.background = Redondeado(Perfiles.Hex("#FFD58F"), Perfiles.Hex("#FFD58F"), 10);
-            BotonPrimario.hover.textColor = SobreCalido;
+            BotonPrimario.hover.textColor = Letra(SobreCalido);
             Seleccion = Crear(new Color(10 / 255f, 15 / 255f, 25 / 255f, 0.9f), LineaFuerte, Pendiente, Suave, 17);
             var on = Redondeado(Calido, Calido, 10);
             Seleccion.onNormal.background = on; Seleccion.onHover.background = on; Seleccion.onActive.background = on;
-            Seleccion.onNormal.textColor = SobreCalido; Seleccion.onHover.textColor = SobreCalido; Seleccion.onActive.textColor = SobreCalido;
+            Seleccion.onNormal.textColor = Seleccion.onHover.textColor = Seleccion.onActive.textColor = Letra(SobreCalido);
 
             Campo = new GUIStyle(GUI.skin.textField) { font = Regular, fontSize = 20, padding = new RectOffset(14, 14, 8, 8), border = new RectOffset(12, 12, 12, 12) };
             Campo.normal.background = Redondeado(Perfiles.Hex("#0D1320"), Linea, 10);
             Campo.hover.background = Redondeado(Perfiles.Hex("#0D1320"), LineaFuerte, 10);
             Campo.focused.background = Redondeado(Perfiles.Hex("#0D1320"), Calido, 10, 2f);
-            Campo.normal.textColor = Tinta; Campo.hover.textColor = Tinta; Campo.focused.textColor = Tinta;
+            Campo.normal.textColor = Campo.hover.textColor = Campo.focused.textColor = Letra(Tinta);
             Area = new GUIStyle(Campo) { wordWrap = true };
 
             // Piel por defecto: cursor, selección, casillas y barras de desplazamiento con la misma paleta
@@ -122,9 +129,9 @@ namespace NeuralHub
             skin.font = Regular;
             skin.settings.cursorColor = Calido;
             skin.settings.selectionColor = new Color(Calido.r, Calido.g, Calido.b, 0.35f);
-            skin.label.normal.textColor = Tinta;
+            skin.label.normal.textColor = Letra(Tinta);
             skin.toggle.font = Regular; skin.toggle.fontSize = 18;
-            skin.toggle.normal.textColor = Suave; skin.toggle.hover.textColor = Tinta; skin.toggle.onNormal.textColor = Tinta; skin.toggle.onHover.textColor = Tinta;
+            skin.toggle.normal.textColor = Letra(Suave); skin.toggle.hover.textColor = skin.toggle.onNormal.textColor = skin.toggle.onHover.textColor = Letra(Tinta);
             skin.verticalScrollbar.normal.background = Tex(new Color(1, 1, 1, 0.04f));
             skin.verticalScrollbar.fixedWidth = 10; skin.verticalScrollbar.border = new RectOffset(0, 0, 0, 0);
             skin.verticalScrollbarThumb.normal.background = Redondeado(LineaFuerte, LineaFuerte, 4);
@@ -137,9 +144,9 @@ namespace NeuralHub
             var s = new GUIStyle
             {
                 font = Semi, fontSize = tam, alignment = TextAnchor.MiddleCenter, border = new RectOffset(12, 12, 12, 12),
-                normal = { background = Redondeado(relleno, borde, 10), textColor = texto },
+                normal = { background = Redondeado(relleno, borde, 10), textColor = Letra(texto) },
                 hover = { background = Redondeado(relleno, bordeHover, 10), textColor = Color.white },
-                active = { background = Redondeado(Calido, Calido, 10), textColor = SobreCalido },
+                active = { background = Redondeado(Calido, Calido, 10), textColor = Letra(SobreCalido) },
                 padding = new RectOffset(18, 18, 8, 8),
             };
             return s;
@@ -148,7 +155,7 @@ namespace NeuralHub
         /// <summary>Estilo de texto con otro color (para no tocar los estilos base).</summary>
         public static GUIStyle Color_(GUIStyle baseStyle, Color c)
         {
-            var s = new GUIStyle(baseStyle); s.normal.textColor = c; return s;
+            var s = new GUIStyle(baseStyle); s.normal.textColor = Letra(c); return s;
         }
 
         public static Color ColorVoto(string decision)

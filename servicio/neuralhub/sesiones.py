@@ -10,7 +10,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import Command
 
 from . import metricas
-from .grafo import construir_grafo, sugerir_respuesta
+from .grafo import NIVELES, construir_grafo, sugerir_respuesta
 from .llm import LLM
 from .pitch import Pitch, faltan_obligatorios
 
@@ -24,11 +24,12 @@ ESTADO_EMISOR = {"PITCH": "Presentando", "PREGUNTA": "Preguntando", "RESPUESTA":
 
 class Sesion:
     def __init__(self, pitch: dict, panel: list, modo: str, llm: LLM, guion: dict | None = None, id_: str | None = None,
-                 ayuda: bool = False):
+                 ayuda: bool = False, nivel: str = "medio"):
         self.id = id_ or uuid.uuid4().hex[:8]
         self.pitch, self.panel, self.modo, self.llm, self.guion = pitch, panel, modo, llm, guion
         self.ayuda = bool(ayuda) and modo == "humano"   # el agente empresario solo sugiere en el modo en vivo
         self.sugerencias = 0
+        self.nivel = nivel
         self.eventos: list[dict] = []
         self.estado = "creada"        # creada | corriendo | esperando | terminada | error
         self.pendiente: dict | None = None
@@ -121,7 +122,7 @@ class Sesion:
     def guardar(self):
         CARPETA.mkdir(exist_ok=True)
         ruta = CARPETA / f"sesion_{self.id}.json"
-        ruta.write_text(json.dumps({"id": self.id, "modo": self.modo, "ayuda": self.ayuda, "panel": self.panel, "pitch": self.pitch,
+        ruta.write_text(json.dumps({"id": self.id, "modo": self.modo, "ayuda": self.ayuda, "nivel": self.nivel, "panel": self.panel, "pitch": self.pitch,
                                     "eventos": self.eventos, "metricas": self.metricas()},
                                    ensure_ascii=False, indent=2), encoding="utf-8")
         return ruta
@@ -138,7 +139,8 @@ class Gestor:
             self._llm = LLM(mock=self.mock)
         return self._llm
 
-    def crear(self, pitch: dict, panel: list, modo: str = "humano", guion: dict | None = None, ayuda: bool = False) -> Sesion:
+    def crear(self, pitch: dict, panel: list, modo: str = "humano", guion: dict | None = None, ayuda: bool = False,
+              nivel: str = "medio") -> Sesion:
         falt = faltan_obligatorios(pitch)
         if falt:
             raise ValueError(f"Faltan campos obligatorios: {', '.join(falt)}")
@@ -148,6 +150,8 @@ class Gestor:
         # Cada sesión tiene su propio contador de llamadas
         if modo not in ("humano", "autopiloto"):
             raise ValueError("El modo debe ser «humano» (en vivo) o «autopiloto» (agente empresario).")
-        s = Sesion(pitch, panel, modo, LLM(mock=self.mock), guion, ayuda=ayuda)
+        if nivel not in NIVELES:
+            raise ValueError("El nivel debe ser «facil», «medio» o «dificil».")
+        s = Sesion(pitch, panel, modo, LLM(mock=self.mock), guion, ayuda=ayuda, nivel=nivel)
         self.sesiones[s.id] = s
         return s

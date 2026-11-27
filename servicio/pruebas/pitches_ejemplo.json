@@ -1,6 +1,7 @@
 [
   {
     "etiqueta": "EcoTrack (medidor inteligente de luz)",
+    "nivel": "medio",
     "pitch": {
       "nombre": "EcoTrack", "sector": "sustentabilidad_y_energia", "etapa": "primeras_ventas",
       "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
@@ -19,6 +20,7 @@
   },
   {
     "etiqueta": "GreenPlate (contenedores biodegradables)",
+    "nivel": "dificil",
     "pitch": {
       "nombre": "GreenPlate", "sector": "alimentos_y_bebidas", "etapa": "primeras_ventas",
       "problema": "Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más.",
@@ -37,6 +39,7 @@
   },
   {
     "etiqueta": "DataSense AI (análisis de datos para PyMEs)",
+    "nivel": "facil",
     "pitch": {
       "nombre": "DataSense AI", "sector": "tecnologia", "etapa": "crecimiento",
       "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",

@@ -28,6 +28,7 @@ class NuevaSesion(BaseModel):
     panel: list[str]
     modo: str = "humano"          # humano (en vivo: el usuario responde) | autopiloto (responde el agente empresario)
     ayuda: bool = False           # en vivo: el agente empresario puede sugerir respuestas
+    nivel: str = "medio"          # facil | medio | dificil: exigencia de los tiburones
 
 
 class Respuestas(BaseModel):
@@ -90,7 +91,7 @@ def recomendacion(pitch: dict):
 @app.post("/sesiones")
 def crear_sesion(body: NuevaSesion):
     try:
-        s = gestor.crear(body.pitch, body.panel, body.modo, ayuda=body.ayuda)
+        s = gestor.crear(body.pitch, body.panel, body.modo, ayuda=body.ayuda, nivel=body.nivel)
     except (ValueError, ValidationError) as e:
         raise HTTPException(422, str(e)) from e
     s.iniciar()
@@ -114,12 +115,12 @@ def _guardadas() -> dict:
 
 @app.get("/sesiones")
 def listar():
-    vivas = {s.id: {"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado, "modo": s.modo,
+    vivas = {s.id: {"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado, "modo": s.modo, "nivel": s.nivel,
                     "resultado": s.metricas()["resultado"], "creada": s.creada} for s in gestor.sesiones.values()}
     for id_, d in _guardadas().items():
         if id_ not in vivas:
             vivas[id_] = {"sesion_id": id_, "negocio": d.get("pitch", {}).get("nombre"), "panel": d.get("panel"),
-                          "estado": "terminada", "modo": d.get("modo"), "resultado": d.get("metricas", {}).get("resultado"),
+                          "estado": "terminada", "modo": d.get("modo"), "nivel": d.get("nivel", "medio"), "resultado": d.get("metricas", {}).get("resultado"),
                           "creada": 0}
     return sorted(vivas.values(), key=lambda x: -x["creada"])
 

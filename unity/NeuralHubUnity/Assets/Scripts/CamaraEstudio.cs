@@ -38,8 +38,8 @@ namespace NeuralHub
                     var p = punto ?? Vector3.zero;
                     Vector3 haciaCentro = (new Vector3(0, 0, -2.5f) - new Vector3(p.x, 0, p.z)).normalized;
                     Vector3 lado = Vector3.Cross(Vector3.up, haciaCentro);
-                    posObj = p + haciaCentro * 3.6f + lado * 1.1f + Vector3.up * 0.35f;
-                    rotObj = Quaternion.LookRotation(p - posObj); break;
+                    posObj = p + haciaCentro * 4.5f + lado * 1.2f + Vector3.up * 0.25f;
+                    rotObj = Quaternion.LookRotation(p + Vector3.down * 0.62f - posObj); break;
                 }
             }
             if (instantaneo) { transform.position = posObj; transform.rotation = rotObj; }

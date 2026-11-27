@@ -69,14 +69,26 @@ def rotar(orden: list, r: int) -> list:
     return orden[k:] + orden[:k]
 
 
-def sistema_tiburon(tid: str) -> str:
+# Nivel de la sesión: cambia la exigencia de los tiburones. «medio» es el comportamiento base (sin texto extra).
+NIVELES = {
+    "facil": " Nivel FÁCIL: es un emprendedor principiante. Pregunta una sola cosa sencilla y sin tecnicismos, con tono amable; "
+             "en la réplica reconoce primero lo que sí respondió bien. Al votar sé paciente: invierte si el negocio cumple lo básico "
+             "de tu criterio, aunque falten algunos datos.",
+    "medio": "",
+    "dificil": " Nivel DIFÍCIL: eres muy exigente. Pregunta por el punto más débil y pide la cifra exacta que lo respalde; "
+               "en la réplica señala lo que la respuesta no resolvió. Al votar, invertir solo si TODOS los datos de tu criterio "
+               "existen y son sólidos; ante dudas razonables, contraoferta con condiciones más duras o salir.",
+}
+
+
+def sistema_tiburon(tid: str, nivel: str = "medio") -> str:
     t = TIBURONES[tid]
     return (
         f"[id:{tid}]\nEres el {t['nombre']} de un panel de inversionistas tipo Shark Tank México. {t['perfil']} "
         f"Tu criterio principal es: {t['criterio']}. Tu estilo: {t['estilo']}\nReglas: hablas en español de México, directo y breve (máximo 60 palabras); "
         "los montos van en pesos mexicanos; solo usas datos de la ficha y de la conversación: si falta un dato, dilo "
         "(\"no me dices X\") en lugar de inventarlo; usa las cifras calculadas tal cual, no hagas cuentas propias; "
-        "si algo contradice lo dicho antes, señálalo."
+        "si algo contradice lo dicho antes, señálalo." + NIVELES.get(nivel, "")
     )
 
 
@@ -143,7 +155,7 @@ def construir_grafo(checkpointer=None):
         nuevos = []
         for tid in rotar(estado["orden"], estado["ronda"]):
             ya = "\n".join(f"- {nombre(k)}: {v}" for k, v in hechas.items()) or "(ninguna)"
-            salida = llm.estructurado(E.Pregunta, sistema_tiburon(tid), (
+            salida = llm.estructurado(E.Pregunta, sistema_tiburon(tid, ses.nivel), (
                 f"PITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto({'historial': estado['historial'] + nuevos})}\n\n"
                 f"Vas en la ronda {r} de {MAX_RONDAS}. Preguntas ya hechas en esta ronda por otros tiburones:\n{ya}\n\n"
                 "Haz UNA pregunta nueva, sobre el punto más débil de tu criterio. No repitas una pregunta que el emprendedor ya respondió. "
@@ -191,7 +203,7 @@ def construir_grafo(checkpointer=None):
         yo, a = rot[-1], rot[0]
         pitch = Pitch(**estado["pitch"])
         pregunta_a = estado["preguntas"][a]
-        salida = llm.estructurado(E.Replica, sistema_tiburon(yo), (
+        salida = llm.estructurado(E.Replica, sistema_tiburon(yo, ses.nivel), (
             f"PANEL: {', '.join(estado['panel'])}\nPITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto(estado)}\n\n"
             f"Te toca replicar. El moderador te asignó al {nombre(a)}, que preguntó en esta ronda: \"{pregunta_a}\". "
             f"Respóndele a él directamente (tú eres el {nombre(yo)}): di si estás de acuerdo o en desacuerdo con su pregunta o "
@@ -214,7 +226,7 @@ def construir_grafo(checkpointer=None):
         return v
 
     def votar(estado, config):
-        _, llm, _ = _cfg(config)
+        ses, llm, _ = _cfg(config)
         pitch = Pitch(**estado["pitch"])
         of = estado["oferta"]
         base = (f"PANEL: {', '.join(estado['panel'])}\nPITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN COMPLETA:\n{hist_texto(estado)}\n\n"
@@ -223,7 +235,7 @@ def construir_grafo(checkpointer=None):
                 " Si haces contraoferta, da monto en MXN y porcentaje. No sabes cómo votan los demás.")
 
         def uno(tid):
-            return tid, llm.estructurado(E.Voto, sistema_tiburon(tid), base).model_dump()
+            return tid, llm.estructurado(E.Voto, sistema_tiburon(tid, ses.nivel), base).model_dump()
 
         with ThreadPoolExecutor(max_workers=3) as ex:
             det = dict(ex.map(uno, estado["panel"]))
@@ -331,7 +343,7 @@ def construir_grafo(checkpointer=None):
                 "Esta es la votación final. Vota solo invertir o salir con la oferta actual. " + REGLA_JUSTIFICACION)
 
         def uno(tid):
-            return tid, llm.estructurado(E.VotoFinal, sistema_tiburon(tid), base).model_dump()
+            return tid, llm.estructurado(E.VotoFinal, sistema_tiburon(tid, ses.nivel), base).model_dump()
 
         with ThreadPoolExecutor(max_workers=3) as ex:
             det = dict(ex.map(uno, estado["panel"]))

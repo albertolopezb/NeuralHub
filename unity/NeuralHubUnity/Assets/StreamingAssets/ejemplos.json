@@ -1,6 +1,7 @@
 [
  {
   "etiqueta": "EcoTrack (medidor inteligente de luz)",
+  "nivel": "medio",
   "pitch": {
    "nombre": "EcoTrack",
    "sector": "sustentabilidad_y_energia",
@@ -27,6 +28,7 @@
  },
  {
   "etiqueta": "GreenPlate (contenedores biodegradables)",
+  "nivel": "dificil",
   "pitch": {
    "nombre": "GreenPlate",
    "sector": "alimentos_y_bebidas",
@@ -53,6 +55,7 @@
  },
  {
   "etiqueta": "DataSense AI (análisis de datos para PyMEs)",
+  "nivel": "facil",
   "pitch": {
    "nombre": "DataSense AI",
    "sector": "tecnologia",

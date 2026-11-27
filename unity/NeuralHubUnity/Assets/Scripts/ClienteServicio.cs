@@ -118,7 +118,7 @@ namespace NeuralHub
         // ---------- sesión ----------
         /// <param name="modoEnVivo">true: el usuario responde (modo humano). false: responde el agente empresario (autopiloto).</param>
         /// <param name="conAyuda">Solo en vivo: el agente empresario puede sugerir respuestas.</param>
-        public IEnumerator CrearSesion(string pitchJson, string[] panel, bool modoEnVivo, bool conAyuda, Action<bool> listo)
+        public IEnumerator CrearSesion(string pitchJson, string[] panel, bool modoEnVivo, bool conAyuda, string nivel, Action<bool> listo)
         {
             Reiniciar();
             enVivo = modoEnVivo; ayuda = modoEnVivo && conAyuda;
@@ -135,7 +135,7 @@ namespace NeuralHub
             var ids = new List<string>();
             foreach (var p in panel) ids.Add("\"" + p + "\"");
             string cuerpo = "{\"pitch\":" + pitchJson + ",\"panel\":[" + string.Join(",", ids.ToArray()) + "],\"modo\":\"" +
-                            (enVivo ? "humano" : "autopiloto") + "\",\"ayuda\":" + (ayuda ? "true" : "false") + "}";
+                            (enVivo ? "humano" : "autopiloto") + "\",\"ayuda\":" + (ayuda ? "true" : "false") + ",\"nivel\":\"" + nivel + "\"}";
             string txt = null;
             yield return Post("/sesiones", cuerpo, t => txt = t);
             if (txt == null) { listo(false); yield break; }

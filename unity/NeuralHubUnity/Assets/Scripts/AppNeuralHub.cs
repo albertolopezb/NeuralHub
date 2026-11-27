@@ -29,6 +29,8 @@ namespace NeuralHub
         public bool ocultarUI;
         public string mensaje = "";
         public EjemploItem[] ejemplos;
+        public string nivel = "medio";     // facil | medio | dificil
+        public readonly BarraRondas barra = new BarraRondas();
         public TiburonInfo[] catalogo;
         public Recomendacion recomendacion;
 
@@ -105,6 +107,15 @@ namespace NeuralHub
         }
 
         /// <summary>Después de elegir el panel: pantalla para elegir el modo de simulación.</summary>
+        /// <summary>Desde el inicio: practica con el emprendedor de ejemplo del nivel elegido.</summary>
+        public void ElegirNivel(string n)
+        {
+            nivel = n;
+            var e = Niveles.Ejemplo(ejemplos, n);
+            if (e != null) formulario.Cargar(e.pitch);
+            IrAFormulario();
+        }
+
         public void IrAModo(List<string> ids) { panelElegido = new List<string>(ids); mensaje = ""; Ir(Vista.Modo); }
 
         public void IniciarSesionElegida() { if (panelElegido != null) IniciarSesion(panelElegido); }
@@ -116,10 +127,11 @@ namespace NeuralHub
             // Mismo orden del catálogo para que el panel quede estable
             var panel = new List<string>();
             foreach (var f in recomendacion.ranking) if (ids.Contains(f.tiburon_id)) panel.Add(f.tiburon_id);
-            StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), enVivo, ayuda, ok =>
+            StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), enVivo, ayuda, nivel, ok =>
             {
                 if (!ok) return;
                 sugerenciasPedidas = 0;
+                barra.Reiniciar();
                 // Los 3 tiburones elegidos ya se sientan (en penumbra) mientras el emprendedor presenta su pitch
                 var nombres = new List<string>();
                 foreach (var id in panel) { var info = Catalogo(id); nombres.Add(info != null ? info.nombre : id); }
@@ -190,6 +202,7 @@ namespace NeuralHub
                 case Vista.Sesiones: listaSesiones.Dibujar(this, W, H); break;
                 case Vista.Sesion:
                     interfaz.Dibujar(this, W, H);
+                    barra.Dibujar(reproductor, W);
                     controles.Dibujar(this, W, H);
                     if (reproductor.turnoUsuario != null) burbuja.Dibujar(this, W, H);
                     else if (reproductor.EnEspera)
@@ -325,7 +338,7 @@ namespace NeuralHub
             IrAFormulario();
             yield return GrabarHasta(carpeta, () => ejemplos != null, 10);
             int k = ejemplos.Length - 1; int.TryParse(ArgValor("-nh-ejemplo", k.ToString()), out k);
-            formulario.Cargar(ejemplos[Mathf.Clamp(k, 0, ejemplos.Length - 1)].pitch);
+            var ek = ejemplos[Mathf.Clamp(k, 0, ejemplos.Length - 1)]; formulario.Cargar(ek.pitch); nivel = ek.nivel;
             yield return Grabar(carpeta, 3.5f);
             IrAEleccionPanel(formulario.Json());
             yield return GrabarHasta(carpeta, () => vista == Vista.Panel, 10);
@@ -375,7 +388,7 @@ namespace NeuralHub
             yield return Cap(carpeta, "01_inicio");
             IrAFormulario();
             yield return Hasta(() => ejemplos != null);
-            formulario.Cargar(ejemplos[ejemplos.Length - 1].pitch);
+            formulario.Cargar(ejemplos[ejemplos.Length - 1].pitch); nivel = ejemplos[ejemplos.Length - 1].nivel;
             yield return new WaitForSeconds(0.5f);
             yield return Cap(carpeta, "02_formulario");
             IrAEleccionPanel(formulario.Json());

@@ -116,7 +116,7 @@ namespace NeuralHub
     public class CrearRespuesta { public string sesion_id; }
 
     [Serializable]
-    public class EjemploItem { public string etiqueta; public PitchDto pitch; }
+    public class EjemploItem { public string etiqueta; public string nivel; public PitchDto pitch; }
 
     [Serializable]
     public class EjemplosLista { public EjemploItem[] items; }

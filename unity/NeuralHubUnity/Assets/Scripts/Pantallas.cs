@@ -10,15 +10,23 @@ namespace NeuralHub
     {
         public void Dibujar(AppNeuralHub app, float W, float H)
         {
-            GUILayout.BeginArea(new Rect(W / 2 - 440, 150, 880, 770), Estilos.Caja);
+            GUILayout.BeginArea(new Rect(W / 2 - 580, 50, 1160, H - 90), Estilos.Caja);
             GUILayout.Space(10);
             GUILayout.Label("NeuralHub", Estilos.Titulo);
             GUILayout.Label("Simulador de panel de inversionistas con agentes de IA", new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleCenter });
             GUILayout.Space(26);
             GUILayout.Label("Practica tu pitch ante 3 tiburones elegidos de un catálogo de 6. Responde sus preguntas por escrito, mira cómo debaten entre ellos y recibe una decisión justificada con retroalimentación.", Estilos.Texto);
             GUILayout.Space(28);
-            if (GUILayout.Button("Nueva sesión", Estilos.BotonPrimario, GUILayout.Height(64))) app.IrAFormulario();
-            GUILayout.Space(12);
+            GUILayout.Label("ELIGE UN EMPRENDEDOR PARA PRACTICAR", new GUIStyle(Estilos.Quien) { alignment = TextAnchor.MiddleCenter });
+            GUILayout.Space(10);
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            foreach (var n in Niveles.Ids) { TarjetaNivel(app, n); if (n != "dificil") GUILayout.Space(14); }
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+            GUILayout.Space(14);
+            if (GUILayout.Button("Escribir mi propio pitch", Estilos.BotonPrimario, GUILayout.Height(54))) app.IrAFormulario();
+            GUILayout.Space(10);
             if (GUILayout.Button("Historial de sesiones", Estilos.Boton, GUILayout.Height(56))) app.AbrirSesiones();
             GUILayout.Space(24);
             bool mock = GUILayout.Toggle(app.cliente.usarMock, "  Usar sesión de ejemplo (sin conexión)", GUILayout.Height(30));
@@ -41,6 +49,21 @@ namespace NeuralHub
             GUILayout.FlexibleSpace();
             GUILayout.Label("Simulación educativa; no es asesoría financiera.", new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleCenter });
             GUILayout.EndArea();
+        }
+
+        void TarjetaNivel(AppNeuralHub app, string n)
+        {
+            var ej = Niveles.Ejemplo(app.ejemplos, n);
+            var r = GUILayoutUtility.GetRect(345, 206, GUILayout.Width(345), GUILayout.Height(206));
+            bool encima = r.Contains(Event.current.mousePosition);
+            GUI.Box(r, GUIContent.none, encima ? Estilos.CajaCalida : Estilos.CajaClara);
+            Estilos.Rect(new Rect(r.x + 18, r.y + 14, r.width - 36, 6), Niveles.ColorDe(n));
+            GUI.Label(new Rect(r.x + 18, r.y + 30, r.width - 36, 36), Niveles.Nombre(n), Estilos.Color_(new GUIStyle(Estilos.Subtitulo) { fontSize = 30 }, Niveles.ColorDe(n)));
+            GUI.Label(new Rect(r.x + 18, r.y + 70, r.width - 36, 28), ej != null ? ej.pitch.nombre : "…", new GUIStyle(Estilos.Texto) { font = Estilos.Semi });
+            GUI.Label(new Rect(r.x + 18, r.y + 102, r.width - 36, 96), Niveles.Descripcion(n), new GUIStyle(Estilos.TextoChico) { fontSize = 17 });
+            GUI.enabled = ej != null;
+            if (GUI.Button(r, GUIContent.none, GUIStyle.none)) { app.Clic(); app.ElegirNivel(n); }
+            GUI.enabled = true;
         }
     }
 
@@ -132,6 +155,17 @@ namespace NeuralHub
                 foreach (var e in app.ejemplos)
                     if (GUILayout.Button(e.etiqueta, Estilos.BotonChico, GUILayout.Height(40))) { Cargar(e.pitch); menuEjemplos = false; }
             }
+            GUILayout.Space(10);
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Exigencia de los tiburones", Estilos.Etiqueta, GUILayout.Height(40));
+            GUILayout.Space(12);
+            foreach (var n in Niveles.Ids)
+            {
+                if (GUILayout.Toggle(app.nivel == n, Niveles.Nombre(n), Estilos.Seleccion, GUILayout.Width(130), GUILayout.Height(40))) app.nivel = n;
+                GUILayout.Space(6);
+            }
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
             scroll = GUILayout.BeginScrollView(scroll);
             p.nombre = Texto("Nombre del negocio *", p.nombre);
             p.sector = Elegir("Sector *", p.sector, Sectores);
@@ -403,6 +437,7 @@ namespace NeuralHub
             float total = 0; foreach (var a in anchos) total += a + sep; total -= sep;
             float x = W / 2 - total / 2, y = H - alto - 34;
             var sonidos = app.sonidos;
+            GUI.Box(new Rect(W / 2 - total / 2 - 18, y - 10, total + 36, H - y + 6), GUIContent.none, Estilos.CajaClara);
             for (int i = 0; i < botones.Length; i++)
             {
                 var rect = new Rect(x, y, anchos[i], alto);
@@ -430,7 +465,7 @@ namespace NeuralHub
                 }
                 x += anchos[i] + sep;
             }
-            GUI.Label(new Rect(0, H - 30, W, 24), "Simulación educativa; no es asesoría financiera.", new GUIStyle(Estilos.TextoChico) { fontSize = 16, alignment = TextAnchor.MiddleCenter });
+            GUI.Label(new Rect(0, H - 30, W, 24), "Simulación educativa; no es asesoría financiera.", Estilos.Color_(new GUIStyle(Estilos.TextoChico) { fontSize = 16, alignment = TextAnchor.MiddleCenter }, Estilos.Suave));
         }
     }
 
@@ -465,7 +500,7 @@ namespace NeuralHub
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Ir", Estilos.BotonChico, GUILayout.Width(56), GUILayout.Height(30))) { app.Clic(); app.reproductor.IrA(i); }
                 GUILayout.EndHorizontal();
-                if (visto) GUILayout.Label(e.texto, new GUIStyle(Estilos.TextoChico) { normal = { textColor = Estilos.Suave } });
+                if (visto) GUILayout.Label(e.texto, new GUIStyle(Estilos.TextoChico) { normal = { textColor = Estilos.Letra(Estilos.Suave) } });
                 GUILayout.Space(10);
             }
             GUILayout.EndScrollView();
@@ -500,7 +535,7 @@ namespace NeuralHub
             {
                 s = new GUIStyle(Estilos.Insignia) { border = new RectOffset(14, 14, 14, 14) };
                 s.normal.background = Estilos.Redondeado(Color.Lerp(Estilos.Fondo, c, 0.16f), c, 12, 3f);
-                s.normal.textColor = Color.Lerp(c, Color.white, 0.6f);
+                s.normal.textColor = Estilos.Letra(Color.Lerp(c, Color.white, 0.6f));
                 insignias[k] = s;
             }
             return s;
@@ -517,7 +552,7 @@ namespace NeuralHub
         static void Titulos(ReproductorSesion r, out string titulo, out string sub)
         {
             var e = r.actual;
-            string ronda = "Ronda " + Mathf.Clamp(r.ronda, 1, 3) + " de 3";
+            string ronda = "Preguntas · ronda " + Mathf.Clamp(r.ronda, 1, 3);
             titulo = "Preparando sesión"; sub = "";
             if (e == null) return;
             switch (e.tipo)
@@ -540,8 +575,9 @@ namespace NeuralHub
 
             // Título y ronda (arriba a la izquierda)
             string titulo, sub; Titulos(r, out titulo, out sub);
-            GUI.Label(new Rect(40, 30, 900, 44), titulo, Estilos.Encabezado);
-            if (!string.IsNullOrEmpty(sub)) GUI.Label(new Rect(42, 78, 900, 28), sub, Estilos.TextoChico);
+            GUI.Label(new Rect(42, 24, 360, 28), "NIVEL " + Niveles.Nombre(app.nivel).ToUpper(), Estilos.Color_(Estilos.Quien, Niveles.ColorDe(app.nivel)));
+            GUI.Label(new Rect(40, 82, 900, 44), titulo, Estilos.Encabezado);
+            if (!string.IsNullOrEmpty(sub)) GUI.Label(new Rect(42, 128, 900, 28), sub, Estilos.TextoChico);
 
             // Chips de votos (arriba a la derecha): punto + nombre · estado
             float x = W - 40;
@@ -553,17 +589,30 @@ namespace NeuralHub
                 var c = Estilos.ColorVoto(v);
                 string txt = Perfiles.Corto(id) + " · " + Estilos.TextoVoto(v);
                 float ancho = Estilos.Chip.CalcSize(new GUIContent(txt)).x + 62;
-                var rect = new Rect(x - ancho, 30, ancho, 46);
+                var rect = new Rect(x - ancho, 82, ancho, 46);
                 GUI.Box(rect, GUIContent.none, EstiloChip(v == null ? (ahora ? Estilos.Calido : Estilos.Linea) : c, ahora));
                 Estilos.Punto(new Rect(rect.x + 20, rect.y + 17, 12, 12), c);
                 GUI.Label(new Rect(rect.x + 42, rect.y, ancho - 50, rect.height), txt, Estilos.Color_(Estilos.Chip, v == null ? Estilos.Tenue : Color.Lerp(c, Color.white, 0.55f)));
                 x -= ancho + 10;
             }
 
+            // Tarjeta del tema: la misma lámina de la pantalla grande, siempre visible aunque la cámara esté en un tiburón
+            var pant = app.estudio ? app.estudio.pantalla : null;
+            bool enCerca = app.camara && app.camara.planoActual != Plano.General && app.camara.planoActual != Plano.Pantalla;
+            if (!mostrarPanel && !app.mostrarHistorial && enCerca && pant && pant.Imagen && r.actual != null)
+            {
+                var caja = new Rect(W - 470, 146, 430, 150);
+                GUI.Box(caja, GUIContent.none, Estilos.CajaClara);
+                GUI.DrawTexture(new Rect(caja.x + 14, caja.y + 17, 116, 116), pant.Imagen, ScaleMode.ScaleToFit);
+                GUI.Label(new Rect(caja.x + 146, caja.y + 16, 270, 24), (pant.Sobre ?? "").ToUpper(), new GUIStyle(Estilos.Quien) { fontSize = 14 });
+                GUI.Label(new Rect(caja.x + 146, caja.y + 40, 270, 34), pant.Encabezado, new GUIStyle(Estilos.Subtitulo) { fontSize = 23, wordWrap = false, clipping = TextClipping.Clip });
+                GUI.Label(new Rect(caja.x + 146, caja.y + 74, 270, 62), Pantalla.Ajustar(pant.Cuerpo, 33, 3), new GUIStyle(Estilos.TextoChico) { fontSize = 15 });
+            }
+
             // Tu panel (se abre con el botón «Tu panel»)
             if (mostrarPanel && r.panelInfo.Length > 0)
             {
-                GUILayout.BeginArea(new Rect(40, 126, 480, 440), Estilos.CajaClara);
+                GUILayout.BeginArea(new Rect(40, 176, 480, 440), Estilos.CajaClara);
                 GUILayout.Label("TU PANEL", Estilos.Quien);
                 foreach (var p in r.panelInfo)
                 {
@@ -753,6 +802,7 @@ namespace NeuralHub
             bool trato = r.resultado == "TRATO";
             GUILayout.BeginArea(new Rect(W / 2 - 660, 24, 1320, H - 48), Estilos.Caja);
             GUILayout.Label(trato ? "TRATO" : "SIN TRATO", Estilos.Color_(new GUIStyle(Estilos.Grande) { fontSize = 64 }, trato ? Estilos.Dentro : Estilos.Fuera));
+            GUILayout.Label("Nivel " + Niveles.Nombre(app.nivel), Estilos.Color_(new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleCenter }, Niveles.ColorDe(app.nivel)));
             string modo = !r.enVivo ? "Modo agente empresario: tu agente respondió por ti." :
                           !app.cliente.ayuda ? "Modo en vivo: respondiste tú, sin ayuda." :
                           "Modo en vivo con ayuda: pediste " + app.sugerenciasPedidas + (app.sugerenciasPedidas == 1 ? " recomendación" : " recomendaciones") + " al agente empresario.";

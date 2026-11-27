@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -7,258 +8,217 @@ using UnityEngine;
 namespace NeuralHub.Editor
 {
     /// <summary>
-    /// Personajes con assets gratuitos: cuerpo humanoide de traje (Suit Character Pack, BlocBros), cabeza de tiburón
-    /// (Fish - PolyPack, Alstra Infinite) y animaciones de Mixamo. Si los paquetes no están importados, el estudio usa
-    /// los personajes de primitivas (ver unity/paquetes_terceros.md).
+    /// Personajes y animales de Quaternius (CC0): tiburones inversionistas (Sharky y Mako, con corbata del color de su perfil),
+    /// el emprendedor (Ultimate Modular Men) y los peces animados que nadan detrás del ventanal.
     /// </summary>
     public static class ConstruirPersonajes
     {
-        public const string Traje = "Assets/genSuit/genSuit.fbx";
-        public const string CabezaTiburon = "Assets/Alstra Infinite/Fish - PolyPack/Models/SharkV1.fbx";
-        public const string CarpetaMixamo = "Assets/Terceros/Mixamo";
-        const string RutaControlTiburon = "Assets/Animaciones/Tiburon.controller";
-        const string RutaControlEmprendedor = "Assets/Animaciones/Emprendedor.controller";
+        public const string Q = "Assets/Terceros/Quaternius/";
+        public const string ModeloEmprendedor = "Emprendedor_Traje.fbx";
+        static readonly string[] Ciclicas = { "Idle", "Idle_Neutral", "Yes", "No", "Wave", "Jump", "Interact", "Swim", "Swim.001", "Walk" };
 
-        public static bool Disponibles()
-        {
-            return File.Exists(Traje) && File.Exists(CabezaTiburon) && Directory.Exists(CarpetaMixamo);
-        }
+        static string NombreCorto(string clip) { int i = clip.LastIndexOf('|'); return i >= 0 ? clip.Substring(i + 1) : clip; }
 
-        static readonly string[] Ciclicas = { "Reposo", "Hablando", "Pensando", "ReposoFeliz", "PreguntaDosManos", "Aplauso" };
-
-        /// <summary>Humanoide para el traje y para cada FBX de Mixamo; las animaciones de reposo y de hablar se repiten.</summary>
+        /// <summary>Nombra los clips sin el prefijo del esqueleto y marca los que se repiten.</summary>
         public static void ConfigurarImportaciones()
         {
-            var rutas = new List<string> { Traje };
-            foreach (var f in Directory.GetFiles(CarpetaMixamo, "*.fbx")) rutas.Add(f.Replace('\\', '/'));
-            foreach (var ruta in rutas)
+            foreach (var f in Directory.GetFiles(Q, "*.fbx", SearchOption.AllDirectories))
             {
+                var ruta = f.Replace((char)92, '/');
                 var imp = AssetImporter.GetAtPath(ruta) as ModelImporter;
                 if (imp == null) continue;
-                bool cambio = false;
-                if (imp.animationType != ModelImporterAnimationType.Human) { imp.animationType = ModelImporterAnimationType.Human; imp.avatarSetup = ModelImporterAvatarSetup.CreateFromThisModel; cambio = true; }
-                if (ruta.StartsWith(CarpetaMixamo))
-                {
-                    var nombre = Path.GetFileNameWithoutExtension(ruta);
-                    bool ciclo = false; foreach (var c in Ciclicas) if (nombre.Contains(c)) ciclo = true;
-                    var clips = imp.defaultClipAnimations;
-                    if (clips.Length > 0)
-                    {
-                        foreach (var c in clips)
-                        {
-                            c.name = nombre; c.loopTime = ciclo; c.lockRootRotation = true; c.lockRootHeightY = true; c.lockRootPositionXZ = true;
-                            c.keepOriginalOrientation = true; c.keepOriginalPositionY = true; c.keepOriginalPositionXZ = true;
-                        }
-                        imp.clipAnimations = clips; cambio = true;
-                    }
-                }
-                if (cambio) imp.SaveAndReimport();
+                var clips = imp.defaultClipAnimations;
+                if (clips.Length == 0) continue;
+                foreach (var c in clips) { c.name = NombreCorto(c.takeName); c.loopTime = Ciclicas.Contains(c.name); }
+                var actuales = imp.clipAnimations;
+                bool igual = actuales.Length == clips.Length && actuales.Zip(clips, (a, b) => a.name == b.name && a.loopTime == b.loopTime).All(x => x);
+                if (!igual) { imp.clipAnimations = clips; imp.SaveAndReimport(); }
             }
+            var atlas = AssetImporter.GetAtPath(Q + "Atlas_Tiburon.png") as TextureImporter;
+            if (atlas != null && (atlas.filterMode != FilterMode.Point || atlas.mipmapEnabled))
+            { atlas.filterMode = FilterMode.Point; atlas.mipmapEnabled = false; atlas.textureCompression = TextureImporterCompression.Uncompressed; atlas.SaveAndReimport(); }
         }
 
-        public static AnimationClip Clip(string nombre)
+        public static List<AnimationClip> Clips(string archivo)
         {
-            foreach (var o in AssetDatabase.LoadAllAssetsAtPath(CarpetaMixamo + "/" + nombre + ".fbx"))
-                if (o is AnimationClip c && !c.name.StartsWith("__preview__")) return c;
-            Debug.LogWarning("NeuralHub: falta la animación " + nombre);
-            return null;
+            return AssetDatabase.LoadAllAssetsAtPath(Q + archivo).OfType<AnimationClip>().Where(c => !c.name.StartsWith("__")).ToList();
         }
 
-        /// <summary>Controlador con un estado por animación; los scripts Tiburon/Emprendedor cambian de estado con CrossFade.</summary>
-        static RuntimeAnimatorController Controlador(string ruta, string prefijo, string inicial)
+        public static AnimationClip Clip(string archivo, string nombre) { return Clips(archivo).FirstOrDefault(c => c.name == nombre); }
+
+        /// <summary>Controlador con un estado por animación; «inicial» es el estado por defecto.</summary>
+        public static RuntimeAnimatorController Controlador(string nombre, string archivo, string inicial)
         {
             if (!AssetDatabase.IsValidFolder("Assets/Animaciones")) AssetDatabase.CreateFolder("Assets", "Animaciones");
+            string ruta = "Assets/Animaciones/" + nombre + ".controller";
+            var existente = AssetDatabase.LoadAssetAtPath<AnimatorController>(ruta);
+            if (existente != null && hechos.Contains(ruta)) return existente;
             AssetDatabase.DeleteAsset(ruta);
             var ctl = AnimatorController.CreateAnimatorControllerAtPath(ruta);
             var sm = ctl.layers[0].stateMachine;
-            foreach (var f in Directory.GetFiles(CarpetaMixamo, prefijo + "*.fbx"))
+            foreach (var clip in Clips(archivo))
             {
-                var nombre = Path.GetFileNameWithoutExtension(f);
-                var clip = Clip(nombre); if (clip == null) continue;
-                var st = sm.AddState(nombre.Substring(prefijo.Length));
+                var st = sm.AddState(clip.name.Replace('.', '_'));
                 st.motion = clip;
-                if (nombre == prefijo + inicial) sm.defaultState = st;
+                if (clip.name == inicial) sm.defaultState = st;
             }
-            AssetDatabase.SaveAssets();
+            hechos.Add(ruta);
             return ctl;
         }
+        static readonly HashSet<string> hechos = new HashSet<string>();
 
-        public static RuntimeAnimatorController ControlTiburon() { return Controlador(RutaControlTiburon, "T_", "SentadoReposo"); }
-        public static RuntimeAnimatorController ControlEmprendedor() { return Controlador(RutaControlEmprendedor, "E_", "ReposoFeliz"); }
+        public static void Reiniciar() { hechos.Clear(); }
 
-        /// <summary>Instancia el humano de traje con la textura indicada (Blue, Black, Beige, Dark Blue, Striped).</summary>
-        public static GameObject CuerpoDeTraje(Transform padre, string color, RuntimeAnimatorController ctl)
+        /// <summary>
+        /// Los colores de estos FBX vienen en espacio lineal: se copian a materiales propios convertidos a sRGB.
+        /// Las piezas con «Atlas» usan la textura de paleta (con el pantalón teñido de traje).
+        /// </summary>
+        static void Colorear(GameObject g, string prefijo)
         {
-            var asset = AssetDatabase.LoadAssetAtPath<GameObject>(Traje);
-            var g = (GameObject)PrefabUtility.InstantiatePrefab(asset);
-            g.name = "CuerpoTraje"; g.transform.SetParent(padre, false);
-            var an = g.GetComponent<Animator>(); if (an == null) an = g.AddComponent<Animator>();
-            an.runtimeAnimatorController = ctl; an.applyRootMotion = false; an.cullingMode = AnimatorCullingMode.AlwaysAnimate;
-            var mat = MaterialTraje(color);
-            if (mat) foreach (var r in g.GetComponentsInChildren<Renderer>()) { var ms = r.sharedMaterials; for (int i = 0; i < ms.Length; i++) ms[i] = mat; r.sharedMaterials = ms; }
+            foreach (var r in g.GetComponentsInChildren<Renderer>(true))
+            {
+                var ms = r.sharedMaterials;
+                for (int i = 0; i < ms.Length; i++)
+                {
+                    if (ms[i] == null) continue;
+                    if (ms[i].name == "Atlas")
+                    {
+                        var a = ConstruirEstudio.Mat("Q_Atlas", Color.white, 0.2f);
+                        a.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(Q + "Atlas_Tiburon.png");
+                        ms[i] = a;
+                    }
+                    else if (!ms[i].name.StartsWith("Q_"))
+                    {
+                        var c = ms[i].color.gamma; c.a = 1;
+                        ms[i] = ConstruirEstudio.Mat("Q_" + prefijo + "_" + ms[i].name, c, 0.2f);
+                    }
+                }
+                r.sharedMaterials = ms;
+            }
+        }
+
+        static GameObject Instanciar(string archivo, Transform padre, string nombre)
+        {
+            var g = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Q + archivo));
+            PrefabUtility.UnpackPrefabInstance(g, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+            g.name = nombre; g.transform.SetParent(padre, false);
             return g;
         }
 
-        static Material MaterialTraje(string color)
+        static Animator Animar(GameObject g, RuntimeAnimatorController ctl)
         {
-            string carpeta = "Assets/genSuit/Textures/" + color;
-            if (!Directory.Exists(carpeta)) return null;
-            string ruta = "Assets/Materiales/Traje_" + color.Replace(" ", "") + ".mat";
-            var m = AssetDatabase.LoadAssetAtPath<Material>(ruta);
-            if (m == null) { m = new Material(Shader.Find("Standard")); AssetDatabase.CreateAsset(m, ruta); }
-            foreach (var f in Directory.GetFiles(carpeta))
+            var an = g.GetComponent<Animator>(); if (an == null) an = g.AddComponent<Animator>();
+            an.runtimeAnimatorController = ctl; an.applyRootMotion = false; an.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            return an;
+        }
+
+        static Transform Buscar(GameObject g, string nombre) { return g.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == nombre); }
+
+        /// <summary>Cuello y corbata sobre el pecho: se ajusta a la superficie del modelo y sigue al hueso del torso.</summary>
+        static Renderer Corbata(GameObject modelo, string sufijo)
+        {
+            var cuello = Buscar(modelo, "Neck"); var torso = Buscar(modelo, "Torso");
+            var piel = modelo.GetComponentsInChildren<SkinnedMeshRenderer>(true).OrderByDescending(r => r.sharedMesh.vertexCount).First();
+            var horneada = new Mesh(); piel.BakeMesh(horneada, true);
+            var pts = horneada.vertices.Select(p => piel.transform.TransformPoint(p)).ToArray();
+            float y0 = cuello.position.y - 0.02f;
+            System.Func<float, float> frente = y =>
             {
-                var p = f.Replace('\\', '/'); var n = Path.GetFileName(p).ToLower();
-                if (p.EndsWith(".meta")) continue;
-                var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(p); if (tex == null) continue;
-                if (n.EndsWith("_nm.tif"))
-                {
-                    var ti = (TextureImporter)AssetImporter.GetAtPath(p);
-                    if (ti.textureType != TextureImporterType.NormalMap) { ti.textureType = TextureImporterType.NormalMap; ti.SaveAndReimport(); }
-                    m.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>(p)); m.EnableKeyword("_NORMALMAP");
-                }
-                else if (n.EndsWith("_d.tif")) m.mainTexture = tex;
+                var cerca = pts.Where(p => Mathf.Abs(p.x - cuello.position.x) < 0.1f && Mathf.Abs(p.y - y) < 0.07f).ToList();
+                return cerca.Count > 0 ? cerca.Max(p => p.z) : cuello.position.z + 0.18f;
+            };
+            float[] bajada = { 0.00f, 0.07f, 0.11f, 0.2f, 0.3f, 0.39f, 0.46f };
+            float[] anchoCorbata = { 0.11f, 0.07f, 0.062f, 0.11f, 0.14f, 0.14f, 0.005f };
+            var centro = bajada.Select(d => new Vector3(cuello.position.x, y0 - d, frente(y0 - d) + 0.03f)).ToArray();
+            var corbata = new GameObject("Corbata", typeof(MeshFilter), typeof(MeshRenderer));
+            corbata.GetComponent<MeshFilter>().sharedMesh = Mallas.Guardar(Mallas.Cinta(centro, anchoCorbata, Vector3.right, Vector3.forward), "corbata_" + sufijo);
+            var rc = corbata.GetComponent<Renderer>(); rc.sharedMaterial = ConstruirEstudio.Mat("Corbata", Color.white, 0.5f);
+            var blanco = ConstruirEstudio.Mat("Camisa", new Color(0.97f, 0.97f, 1f), 0.25f);
+            foreach (int lado in new[] { -1, 1 })
+            {
+                var solapa = new GameObject("Solapa", typeof(MeshFilter), typeof(MeshRenderer));
+                var a = centro[0] + new Vector3(0.015f * lado, 0.035f, 0.012f);
+                var puntos = new[] { a + new Vector3(0.07f * lado, 0.03f, -0.03f), a + new Vector3(0.085f * lado, -0.085f, 0f) };
+                solapa.GetComponent<MeshFilter>().sharedMesh = Mallas.Guardar(Mallas.Cinta(puntos, new[] { 0.11f, 0.008f }, Vector3.right, Vector3.forward), "solapa_" + sufijo + (lado < 0 ? "_i" : "_d"));
+                solapa.GetComponent<Renderer>().sharedMaterial = blanco;
+                solapa.transform.SetParent(torso, true);
             }
-            m.SetFloat("_Glossiness", 0.25f);
-            EditorUtility.SetDirty(m);
-            return m;
+            corbata.transform.SetParent(torso, true);
+            return rc;
         }
 
-        // Ajustes de la cabeza de tiburón (espacio del personaje: z al frente, y arriba)
-        public static float largoCabeza = 1.05f;
-        public static Vector3 posCabeza = new Vector3(0f, 0.1f, -0.24f);
-        public static Vector3 giroCabeza = new Vector3(0f, 90f, -8f);
-        public static Vector3 offsetSentado = new Vector3(0f, 0f, 0.12f);
-
-        static Transform Hueso(GameObject g, HumanBodyBones b) { var an = g.GetComponent<Animator>(); return an ? an.GetBoneTransform(b) : null; }
-
-        /// <summary>Contenedor con el modelo centrado en su origen y escalado al largo pedido.</summary>
-        static GameObject ModeloCentrado(string ruta, string nombre, float largo)
+        public static Tiburon PrefabTiburon()
         {
-            var cont = new GameObject(nombre);
-            var m = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(ruta));
-            m.transform.SetParent(cont.transform, false);
-            var rs = m.GetComponentsInChildren<Renderer>();
-            var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);
-            float s = largo / Mathf.Max(b.size.x, b.size.z);
-            m.transform.localScale = Vector3.one * s;
-            m.transform.localPosition = -b.center * s;
-            foreach (var r in rs) r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-            return cont;
-        }
-
-        public static Tiburon PrefabTiburon(Material blanco)
-        {
-            var ctl = ControlTiburon();
             var raiz = new GameObject("Tiburon");
-            var cuerpo = CuerpoDeTraje(raiz.transform, "Dark Blue", ctl);
-            cuerpo.transform.localPosition = offsetSentado;
-            var head = Hueso(cuerpo, HumanBodyBones.Head);
+            var giro = new GameObject("Giro").transform; giro.SetParent(raiz.transform, false);
+            var modelos = new List<Tiburon.Modelo>();
+            var pintables = new List<Renderer>();
+            foreach (var (archivo, nombre, escala) in new[] { ("Characters_Sharky.fbx", "Sharky", 1.42f), ("Characters_Mako.fbx", "Mako", 1.36f) })
+            {
+                var g = Instanciar(archivo, giro, nombre);
+                foreach (var r in g.GetComponentsInChildren<Renderer>(true)) if (r.name.StartsWith("Weapon")) Object.DestroyImmediate(r.gameObject);
+                var an = Animar(g, Controlador("Tiburon_" + nombre, archivo, "Idle"));
+                var idle = Clip(archivo, "Idle"); if (idle) idle.SampleAnimation(g, 0f);
+                Colorear(g, "Tiburon");
+                pintables.Add(Corbata(g, nombre));
+                g.transform.localScale = Vector3.one * escala;
+                g.transform.localPosition = new Vector3(0, 0.46f, -0.02f);
+                modelos.Add(new Tiburon.Modelo { raiz = g, animador = an, cabeza = Buscar(g, "Head") });
+            }
+            modelos[1].raiz.SetActive(false);
 
-            var cab = ModeloCentrado(CabezaTiburon, "CabezaTiburon", largoCabeza);
-            cab.transform.SetParent(raiz.transform, false);
-            // En la pose T se coloca la cabeza de tiburón y se cuelga del cuello: sigue cualquier animación
-            cab.transform.position = head.position + raiz.transform.rotation * posCabeza;
-            cab.transform.rotation = raiz.transform.rotation * Quaternion.Euler(giroCabeza);
-            cab.transform.SetParent(Hueso(cuerpo, HumanBodyBones.Neck), true);
-            var post = cuerpo.AddComponent<CabezaPostiza>();
-            post.hueso = head; post.soloOcultar = true;
-
-            // Insignia con el color del perfil en el pecho y paleta de voto en la mano derecha
-            var pecho = Hueso(cuerpo, HumanBodyBones.UpperChest) ?? Hueso(cuerpo, HumanBodyBones.Chest);
-            var insignia = ConstruirEstudio.Prim(PrimitiveType.Cube, "Insignia", pecho, Vector3.zero, Vector3.one, ConstruirEstudio.Mat("Tiburon_corbata", Color.white, 0.5f));
-            insignia.transform.position = pecho.position + raiz.transform.forward * 0.16f + raiz.transform.right * 0.11f + Vector3.up * 0.05f;
-            insignia.transform.rotation = raiz.transform.rotation;
-            SetEscalaMundo(insignia.transform, new Vector3(0.09f, 0.06f, 0.02f));
-            var mano = Hueso(cuerpo, HumanBodyBones.RightHand);
-            var paleta = ConstruirEstudio.Prim(PrimitiveType.Cube, "PaletaVoto", mano, Vector3.zero, Vector3.one, blanco);
-            paleta.transform.position = mano.position + Vector3.up * 0.22f;
-            paleta.transform.rotation = raiz.transform.rotation;
-            SetEscalaMundo(paleta.transform, new Vector3(0.4f, 0.3f, 0.03f));
-
-            var letrero = ConstruirEstudio.Texto("Letrero", raiz.transform, new Vector3(0, 0.5f, 1.84f), "", 90, 0.022f, Color.white);
+            // Aro de luz del podio y letrero con el perfil
+            var aro = ConstruirEstudio.Malla("AroPerfil", raiz.transform, Mallas.Guardar(Mallas.Aro(0.6f, 0.69f), "aro_perfil"), new Vector3(0, 1.157f, 0.98f), ConstruirEstudio.Emisivo("Aro_perfil", Color.white, 1.6f), false);
+            pintables.Add(aro.GetComponent<Renderer>());
+            var letrero = ConstruirEstudio.Texto("Letrero", raiz.transform, new Vector3(0, 0.68f, 1.668f), "", 90, 0.017f, Color.white);
             letrero.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
+            // Paleta de voto: placa redondeada con la decisión
+            var paleta = new GameObject("PaletaVoto").transform; paleta.SetParent(raiz.transform, false); paleta.localPosition = new Vector3(0, 3.22f, 0.3f); paleta.localScale = Vector3.one * 0.68f;
+            ConstruirEstudio.Malla("Placa", paleta, Mallas.Guardar(Mallas.Panel(1.15f, 0.46f, 0.07f, 0.2f), "paleta"), Vector3.zero, ConstruirEstudio.Emisivo("Paleta", Color.white, 0.3f), false);
+            var tp = ConstruirEstudio.Texto("Voto", paleta, new Vector3(0, 0, 0.05f), "", 90, 0.022f, new Color(0.03f, 0.06f, 0.12f));
+            tp.transform.localRotation = Quaternion.Euler(0, 180, 0);
+
             var t = raiz.AddComponent<Tiburon>();
-            t.animador = cuerpo.GetComponent<Animator>(); t.cabezaPostiza = cab.transform;
-            t.paleta = paleta.transform; t.letrero = letrero;
-            t.pintables = new[] { insignia.GetComponent<Renderer>() };
+            t.modelos = modelos.ToArray(); t.giro = giro; t.paleta = paleta; t.letrero = letrero; t.pintables = pintables.ToArray();
             var prefab = PrefabUtility.SaveAsPrefabAsset(raiz, "Assets/Prefabs/Tiburon.prefab");
             Object.DestroyImmediate(raiz);
             return prefab.GetComponent<Tiburon>();
         }
 
-        /// <summary>Instancia un prefab de terceros con altura dada y base en y = pos.y; null si no está importado.</summary>
-        public static GameObject Instanciar(string ruta, Transform padre, Vector3 pos, float rotY, float altura)
+        public static GameObject PrefabEmprendedor()
         {
-            var asset = AssetDatabase.LoadAssetAtPath<GameObject>(ruta);
-            if (asset == null) return null;
-            var g = (GameObject)PrefabUtility.InstantiatePrefab(asset);
-            g.transform.SetParent(padre, false);
-            g.transform.localRotation = Quaternion.Euler(0, rotY, 0);
-            g.transform.localPosition = Vector3.zero;
-            var rs = g.GetComponentsInChildren<Renderer>();
-            if (rs.Length > 0)
-            {
-                var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);
-                if (altura > 0 && b.size.y > 1e-4f) { g.transform.localScale *= altura / b.size.y; b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds); }
-                var piso = padre ? padre.InverseTransformPoint(new Vector3(b.center.x, b.min.y, b.center.z)) : new Vector3(b.center.x, b.min.y, b.center.z);
-                g.transform.localPosition = pos - new Vector3(piso.x, piso.y, piso.z);
-            }
-            foreach (var c in g.GetComponentsInChildren<Collider>()) Object.DestroyImmediate(c);
-            return g;
-        }
-
-        public static float giroSilla = 0f;
-        public const string Vnb = "Assets/VNB - Office Set/Prefabs/";
-
-        static void SetEscalaMundo(Transform t, Vector3 mundo)
-        {
-            var p = t.parent ? t.parent.lossyScale : Vector3.one;
-            t.localScale = new Vector3(mundo.x / p.x, mundo.y / p.y, mundo.z / p.z);
-        }
-
-        /// <summary>Emprendedor humano de traje beige, de pie junto al podio.</summary>
-        public static GameObject PrefabEmprendedor(Material podio, Material topePodio)
-        {
-            var ctl = ControlEmprendedor();
             var raiz = new GameObject("Emprendedor");
-            var cuerpo = CuerpoDeTraje(raiz.transform, "Beige", ctl);
-            cuerpo.transform.localScale = Vector3.one * 0.92f;
-            var head = Hueso(cuerpo, HumanBodyBones.Head);
-            var punto = new GameObject("PuntoCabeza").transform; punto.SetParent(head, false);
-            ConstruirEstudio.Prim(PrimitiveType.Cube, "Podio", raiz.transform, new Vector3(0, 0.55f, 0.95f), new Vector3(0.9f, 1.1f, 0.5f), podio);
-            ConstruirEstudio.Prim(PrimitiveType.Cube, "TopePodio", raiz.transform, new Vector3(0, 1.12f, 0.95f), new Vector3(1.05f, 0.06f, 0.62f), topePodio);
+            var g = Instanciar(ModeloEmprendedor, raiz.transform, "Modelo");
+            // El FBX trae accesorios de otros juegos (armas): se quitan
+            foreach (var r in g.GetComponentsInChildren<Renderer>(true))
+                if (new[] { "Gun", "Sword", "Pistol", "Rifle", "Weapon" }.Any(x => r.name.Contains(x))) Object.DestroyImmediate(r.gameObject);
+            var an = Animar(g, Controlador("Emprendedor", ModeloEmprendedor, "Idle"));
+            Colorear(g, "Emprendedor");
             var e = raiz.AddComponent<Emprendedor>();
-            e.animador = cuerpo.GetComponent<Animator>(); e.puntoCabeza = punto;
+            e.animador = an;
             var prefab = PrefabUtility.SaveAsPrefabAsset(raiz, "Assets/Prefabs/Emprendedor.prefab");
             Object.DestroyImmediate(raiz);
             return prefab;
         }
 
-        [MenuItem("NeuralHub/Sondear personajes")]
-        public static void Sondear()
+        /// <summary>Pez animado centrado, con el largo pedido y mirando a +Z (lo mueve Nadador).</summary>
+        public static GameObject Pez(string archivo, Transform padre, float largo)
         {
-            ConfigurarImportaciones();
-            var traje = AssetDatabase.LoadAssetAtPath<GameObject>(Traje);
-            var g = Object.Instantiate(traje);
-            var an = g.GetComponent<Animator>();
-            Debug.Log("NH_SONDEO traje animator=" + (an != null) + " humano=" + (an && an.avatar ? an.avatar.isHuman.ToString() : "sin avatar"));
-            foreach (var r in g.GetComponentsInChildren<Renderer>()) Debug.Log("NH_SONDEO render " + r.name + " " + r.bounds + " mats=" + r.sharedMaterials.Length);
-            if (an && an.avatar && an.avatar.isHuman)
-                foreach (var b in new[] { HumanBodyBones.Hips, HumanBodyBones.Head, HumanBodyBones.Neck })
-                { var t = an.GetBoneTransform(b); Debug.Log("NH_SONDEO hueso " + b + " " + (t ? t.name + " " + t.position : "null")); }
-            Object.DestroyImmediate(g);
-            foreach (var d in Directory.GetDirectories("Assets/genSuit/Textures")) Debug.Log("NH_SONDEO tex " + d + ": " + string.Join(",", Directory.GetFiles(d)));
-            var cab = Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(CabezaTiburon));
-            foreach (var r in cab.GetComponentsInChildren<Renderer>()) Debug.Log("NH_SONDEO tiburon " + r.name + " " + r.bounds + " rot=" + r.transform.rotation.eulerAngles);
-            Object.DestroyImmediate(cab);
-            foreach (var f in Directory.GetFiles(CarpetaMixamo, "*.fbx"))
-            {
-                var c = Clip(Path.GetFileNameWithoutExtension(f));
-                Debug.Log("NH_SONDEO clip " + Path.GetFileName(f) + " -> " + (c ? c.name + " " + c.length.ToString("0.0") + "s humano=" + c.humanMotion : "null"));
-            }
-            if (Application.isBatchMode) EditorApplication.Exit(0);
+            var cont = new GameObject("Pez"); cont.transform.SetParent(padre, false);
+            var g = Instanciar(archivo, cont.transform, "Modelo");
+            var clave = "Pez_" + Path.GetFileNameWithoutExtension(archivo).Replace(' ', '_');
+            var clips = Clips(archivo);
+            if (clips.Count > 0) Animar(g, Controlador(clave, archivo, clips[0].name));
+            Colorear(g, clave);
+            var rs = g.GetComponentsInChildren<Renderer>();
+            var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);
+            float s = largo / Mathf.Max(b.size.x, b.size.y, b.size.z);
+            var centro = cont.transform.InverseTransformPoint(b.center);
+            g.transform.localScale *= s;
+            g.transform.localPosition = -centro * s;
+            foreach (var r in rs) r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            return cont;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace NeuralHub
                 textoOferta.text = "Pide: " + Perfiles.Mxn(p.monto_mxn) + "\nPor: " + p.porcentaje.ToString("0.##") + " %" +
                                    "\nValuación: " + Perfiles.Mxn(valuacion) + "\nVentas 12 m: " + Cifra(p.ventas_12m_mxn) +
                                    "\nMargen: " + (p.margen_bruto_pct > 0 ? p.margen_bruto_pct.ToString("0.#") + " %" : "Aún no lo sabe") +
-                                   "\nSector: " + (p.sector ?? "").Replace('_', ' ');
+                                   "\nSector: " + (p.sector ?? "").Replace('_', ' ').Replace("tecnologia", "tecnología").Replace("educacion", "educación").Replace("energia", "energía");
             if (icono)
             {
                 var tex = Resources.Load<Texture2D>("Iconos/" + p.sector);
@@ -58,7 +58,7 @@ namespace NeuralHub
         {
             int i = ids.IndexOf(id);
             if (i < 0) return;
-            if (estados[i]) estados[i].text = decision;
+            if (estados[i]) estados[i].text = Estilos.TextoVoto(decision);
             if (barrasRend[i]) barrasRend[i].material.color = Estilos.ColorVoto(decision);
             objetivo[id] = decision == "salir" ? 0.25f : 1f;
         }
