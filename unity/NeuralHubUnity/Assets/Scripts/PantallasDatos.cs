@@ -59,7 +59,7 @@ namespace NeuralHub
             int i = ids.IndexOf(id);
             if (i < 0) return;
             if (estados[i]) estados[i].text = decision;
-            if (barrasRend[i]) barrasRend[i].material.color = decision == "invertir" ? Perfiles.Hex("#2F9E44") : decision == "contraoferta" ? Perfiles.Hex("#F59F00") : Perfiles.Hex("#C92A2A");
+            if (barrasRend[i]) barrasRend[i].material.color = Estilos.ColorVoto(decision);
             objetivo[id] = decision == "salir" ? 0.25f : 1f;
         }
 

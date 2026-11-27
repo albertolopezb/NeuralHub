@@ -26,7 +26,8 @@ gestor = Gestor(mock=os.getenv("NEURALHUB_MOCK") == "1")
 class NuevaSesion(BaseModel):
     pitch: dict
     panel: list[str]
-    modo: str = "humano"          # humano | autopiloto
+    modo: str = "humano"          # humano (en vivo: el usuario responde) | autopiloto (responde el agente empresario)
+    ayuda: bool = False           # en vivo: el agente empresario puede sugerir respuestas
 
 
 class Respuestas(BaseModel):
@@ -38,6 +39,10 @@ class Negociacion(BaseModel):
     monto_mxn: Optional[float] = None
     porcentaje: Optional[float] = None
     tiburon_id: Optional[str] = None
+
+
+class PedirSugerencia(BaseModel):
+    tiburon_id: str               # tiburón cuya última pregunta se quiere responder
 
 
 class Condicion(BaseModel):
@@ -85,7 +90,7 @@ def recomendacion(pitch: dict):
 @app.post("/sesiones")
 def crear_sesion(body: NuevaSesion):
     try:
-        s = gestor.crear(body.pitch, body.panel, body.modo)
+        s = gestor.crear(body.pitch, body.panel, body.modo, ayuda=body.ayuda)
     except (ValueError, ValidationError) as e:
         raise HTTPException(422, str(e)) from e
     s.iniciar()
@@ -109,12 +114,13 @@ def _guardadas() -> dict:
 
 @app.get("/sesiones")
 def listar():
-    vivas = {s.id: {"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado,
+    vivas = {s.id: {"sesion_id": s.id, "negocio": s.pitch.get("nombre"), "panel": s.panel, "estado": s.estado, "modo": s.modo,
                     "resultado": s.metricas()["resultado"], "creada": s.creada} for s in gestor.sesiones.values()}
     for id_, d in _guardadas().items():
         if id_ not in vivas:
             vivas[id_] = {"sesion_id": id_, "negocio": d.get("pitch", {}).get("nombre"), "panel": d.get("panel"),
-                          "estado": "terminada", "resultado": d.get("metricas", {}).get("resultado"), "creada": 0}
+                          "estado": "terminada", "modo": d.get("modo"), "resultado": d.get("metricas", {}).get("resultado"),
+                          "creada": 0}
     return sorted(vivas.values(), key=lambda x: -x["creada"])
 
 
@@ -176,6 +182,19 @@ def responder(id_: str, body: Respuestas):
         raise HTTPException(422, "Faltan respuestas para: " + ", ".join(esperadas - set(body.respuestas)))
     s.reanudar(body.respuestas)
     return {"ok": True}
+
+
+@app.post("/sesiones/{id_}/sugerencia")
+def sugerencia(id_: str, body: PedirSugerencia):
+    """Modo en vivo con ayuda: el agente empresario sugiere una respuesta que el usuario puede editar (1 llamada al modelo)."""
+    s = _ses(id_)
+    try:
+        texto = s.sugerir(body.tiburon_id)
+    except PermissionError as e:
+        raise HTTPException(403, str(e)) from e
+    except ValueError as e:
+        raise HTTPException(409, str(e)) from e
+    return {"tiburon_id": body.tiburon_id, "texto": texto}
 
 
 @app.post("/sesiones/{id_}/negociacion")

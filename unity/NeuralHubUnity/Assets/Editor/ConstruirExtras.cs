@@ -3,7 +3,10 @@ using UnityEngine;
 
 namespace NeuralHub.Editor
 {
-    /// <summary>Mejoras del incremento 2: pantallas laterales con datos, ícono del sector, luz de cáusticas, rayos de luz y audio.</summary>
+    /// <summary>
+    /// Mejoras del incremento 2 adaptadas al estudio oscuro: pantallas laterales con datos y el ícono del sector en la pantalla grande.
+    /// Las funciones de muebles Kenney y luz de cáusticas se conservan, pero el estudio oscuro no las usa.
+    /// </summary>
     public static class ConstruirExtras
     {
         static Material Unlit(string nombre, Color c, bool transparente)
@@ -12,7 +15,18 @@ namespace NeuralHub.Editor
             var m = AssetDatabase.LoadAssetAtPath<Material>(ruta);
             var sh = Shader.Find(transparente ? "Unlit/Transparent" : "Unlit/Color");
             if (m == null) { m = new Material(sh); AssetDatabase.CreateAsset(m, ruta); }
-            m.shader = sh; m.color = c; EditorUtility.SetDirty(m);
+            m.shader = sh; if (!transparente) m.color = c; EditorUtility.SetDirty(m);
+            return m;
+        }
+
+        /// <summary>Material transparente sin luz y con tinte (_Color), para íconos que se atenúan.</summary>
+        static Material Icono(string nombre)
+        {
+            string ruta = "Assets/Materiales/" + nombre + ".mat";
+            var m = AssetDatabase.LoadAssetAtPath<Material>(ruta);
+            var sh = Shader.Find("Sprites/Default");
+            if (m == null) { m = new Material(sh); AssetDatabase.CreateAsset(m, ruta); }
+            m.shader = sh; m.color = Color.white; EditorUtility.SetDirty(m);
             return m;
         }
 
@@ -25,6 +39,73 @@ namespace NeuralHub.Editor
             m.shader = sh; m.SetColor("_TintColor", c); EditorUtility.SetDirty(m);
             return m;
         }
+
+        static Renderer Cuadro(string nombre, Transform padre, Vector3 pos, float escala, Material m)
+        {
+            var q = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            q.name = nombre; q.transform.SetParent(padre, false);
+            q.transform.localPosition = pos; q.transform.localScale = Vector3.one * escala;
+            Object.DestroyImmediate(q.GetComponent<Collider>());
+            var r = q.GetComponent<Renderer>(); r.sharedMaterial = m; r.enabled = false;
+            r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off; r.receiveShadows = false;
+            return r;
+        }
+
+        /// <summary>Ícono del sector del pitch en la esquina de la pantalla grande (Resources/Iconos).</summary>
+        public static Renderer IconoPantalla(Transform pantalla, Vector3 pos, float escala)
+        {
+            return Cuadro("IconoSector", pantalla, pos, escala, Icono("Icono_sector"));
+        }
+
+        static Transform Pantallita(Transform padre, string nombre, Vector3 pos, float rotY)
+        {
+            // Se construye a la escala del diseño original (4.3 × 3.5) y se reduce con el padre para que quepa junto a la pantalla grande
+            var g = new GameObject(nombre); g.transform.SetParent(padre, false);
+            g.transform.localPosition = pos; g.transform.localRotation = Quaternion.Euler(0, rotY, 0);
+            g.transform.localScale = Vector3.one * 0.42f;
+            var t = g.transform;
+            ConstruirEstudio.Prim(PrimitiveType.Cube, "Marco", t, new Vector3(0, 0, 0.08f), new Vector3(4.46f, 3.66f, 0.04f),
+                ConstruirEstudio.Mat("Marco_pantalla", new Color(0.17f, 0.27f, 0.4f), 0.2f, 0, new Color(0.06f, 0.1f, 0.16f)), false);
+            ConstruirEstudio.Prim(PrimitiveType.Cube, "Fondo", t, new Vector3(0, 0, 0.04f), new Vector3(4.3f, 3.5f, 0.04f),
+                Unlit("Pantallita_fondo", new Color(0.035f, 0.07f, 0.13f), false), false);
+            ConstruirEstudio.Prim(PrimitiveType.Cube, "Franja", t, new Vector3(0, 1.0f, 0.01f), new Vector3(3.7f, 0.025f, 0.02f),
+                Unlit("Pantallita_franja", Estilos.Calido * 0.8f, false), false);
+            return t;
+        }
+
+        /// <summary>Pantallas a los lados de la pantalla grande: oferta (izquierda) y marcador de votos del panel (derecha).</summary>
+        public static PantallasDatos PantallasLaterales(Transform estudio, Font titulo, Font texto)
+        {
+            var regular = ConstruirEstudio.Fuente("Inter-Regular.ttf");
+            var raiz = new GameObject("PantallasDatos"); raiz.transform.SetParent(estudio, false);
+            var d = raiz.AddComponent<PantallasDatos>();
+
+            var izq = Pantallita(raiz.transform, "PantallaOferta", new Vector3(-3.75f, 2.45f, 3.05f), -18f);
+            d.tituloOferta = ConstruirEstudio.Texto("Titulo", izq, new Vector3(0, 1.38f, -0.02f), "Oferta", 0.36f, Estilos.Tinta, titulo, 120);
+            d.textoOferta = ConstruirEstudio.Texto("Datos", izq, new Vector3(-0.25f, -0.3f, -0.02f), "", 0.23f, Estilos.Suave, regular, 90);
+            d.textoOferta.anchor = TextAnchor.MiddleCenter; d.textoOferta.lineSpacing = 1.1f;
+            d.icono = Cuadro("Icono", izq, new Vector3(1.6f, 0.55f, -0.02f), 0.7f, Icono("Icono_lateral"));
+
+            var der = Pantallita(raiz.transform, "PantallaPanel", new Vector3(3.75f, 2.45f, 3.05f), 18f);
+            d.tituloPanel = ConstruirEstudio.Texto("Titulo", der, new Vector3(0, 1.38f, -0.02f), "Votos del panel", 0.36f, Estilos.Tinta, titulo, 120);
+            var riel = Unlit("Pantallita_riel", Estilos.Linea, false);
+            for (int i = 0; i < 3; i++)
+            {
+                float y = 0.45f - i * 0.85f;
+                d.nombres[i] = ConstruirEstudio.Texto("Nombre" + i, der, new Vector3(-1.6f, y + 0.22f, -0.02f), "", 0.25f, Estilos.Tinta, texto, 90);
+                d.nombres[i].anchor = TextAnchor.MiddleLeft;
+                d.estados[i] = ConstruirEstudio.Texto("Estado" + i, der, new Vector3(1.6f, y + 0.22f, -0.02f), "", 0.22f, Estilos.Tenue, regular, 80);
+                d.estados[i].anchor = TextAnchor.MiddleRight;
+                ConstruirEstudio.Prim(PrimitiveType.Cube, "Riel" + i, der, new Vector3(0, y - 0.15f, 0.0f), new Vector3(3.2f, 0.14f, 0.01f), riel, false);
+                var b = ConstruirEstudio.Prim(PrimitiveType.Cube, "Barra" + i, der, new Vector3(-1.6f, y - 0.15f, -0.01f), new Vector3(0.05f, 0.14f, 0.02f), null, false);
+                var mb = new Material(Shader.Find("Unlit/Color")); mb.color = Estilos.Pendiente;
+                b.GetComponent<Renderer>().sharedMaterial = mb;
+                d.barras[i] = b.transform; d.barrasRend[i] = b.GetComponent<Renderer>();
+            }
+            return d;
+        }
+
+        // ---------- del estudio submarino (incremento 2); el estudio oscuro no las llama ----------
 
         /// <summary>Coloca un modelo de terceros (Kenney Furniture Kit, CC0) escalado a la altura indicada.</summary>
         public static GameObject Modelo(string archivo, Transform padre, Vector3 pos, float rotY, float altura)
@@ -58,57 +139,6 @@ namespace NeuralHub.Editor
             Modelo("computerScreen", estudio, new Vector3(0.0f, 1.25f, -1.45f), 180f, 0.32f);
         }
 
-        public static Renderer IconoPantalla(Transform pantalla)
-        {
-            var q = GameObject.CreatePrimitive(PrimitiveType.Quad);
-            q.name = "IconoSector"; q.transform.SetParent(pantalla, false);
-            q.transform.localPosition = new Vector3(-3.9f, 5.95f, 10.42f); q.transform.localScale = Vector3.one * 1.3f;
-            Object.DestroyImmediate(q.GetComponent<Collider>());
-            var r = q.GetComponent<Renderer>(); r.sharedMaterial = Unlit("Icono_sector", Color.white, true); r.enabled = false;
-            return r;
-        }
-
-        static GameObject Pantallita(Transform padre, string nombre, Vector3 pos, float rotY, out Transform cuerpo)
-        {
-            var g = new GameObject(nombre); g.transform.SetParent(padre, false);
-            g.transform.localPosition = pos; g.transform.localRotation = Quaternion.Euler(0, rotY, 0);
-            ConstruirEstudio.Prim(PrimitiveType.Cube, "Marco", g.transform, new Vector3(0, 0, 0.08f), new Vector3(4.6f, 3.8f, 0.15f), ConstruirEstudio.Mat("Marco_pantalla", Color.black, 0.4f));
-            ConstruirEstudio.Prim(PrimitiveType.Cube, "Fondo", g.transform, new Vector3(0, 0, -0.01f), new Vector3(4.3f, 3.5f, 0.04f), Unlit("Pantallita_fondo", new Color(0.02f, 0.09f, 0.3f), false));
-            ConstruirEstudio.Prim(PrimitiveType.Cube, "Franja", g.transform, new Vector3(0, 1.55f, -0.04f), new Vector3(4.3f, 0.06f, 0.02f), Unlit("Pantallita_franja", Estilos.Cian, false));
-            cuerpo = g.transform;
-            return g;
-        }
-
-        public static PantallasDatos PantallasLaterales(Transform estudio)
-        {
-            var raiz = new GameObject("PantallasDatos"); raiz.transform.SetParent(estudio, false);
-            var d = raiz.AddComponent<PantallasDatos>();
-            Transform izq, der;
-            Pantallita(raiz.transform, "PantallaOferta", new Vector3(-8.0f, 4.4f, 9.4f), -22f, out izq);
-            d.tituloOferta = ConstruirEstudio.Texto("Titulo", izq, new Vector3(0, 1.3f, -0.06f), "Oferta", 90, 0.045f, Color.white);
-            d.textoOferta = ConstruirEstudio.Texto("Datos", izq, new Vector3(-0.35f, -0.15f, -0.06f), "", 70, 0.036f, Estilos.Cian);
-            d.textoOferta.anchor = TextAnchor.MiddleCenter;
-            var ic = GameObject.CreatePrimitive(PrimitiveType.Quad); ic.name = "Icono"; ic.transform.SetParent(izq, false);
-            ic.transform.localPosition = new Vector3(1.55f, 0.75f, -0.06f); ic.transform.localScale = Vector3.one * 0.8f;
-            Object.DestroyImmediate(ic.GetComponent<Collider>());
-            d.icono = ic.GetComponent<Renderer>(); d.icono.sharedMaterial = Unlit("Icono_lateral", Color.white, true); d.icono.enabled = false;
-
-            Pantallita(raiz.transform, "PantallaPanel", new Vector3(8.0f, 4.4f, 9.4f), 22f, out der);
-            d.tituloPanel = ConstruirEstudio.Texto("Titulo", der, new Vector3(0, 1.3f, -0.06f), "Votos del panel", 90, 0.045f, Color.white);
-            for (int i = 0; i < 3; i++)
-            {
-                float y = 0.55f - i * 0.85f;
-                d.nombres[i] = ConstruirEstudio.Texto("Nombre" + i, der, new Vector3(-1.95f, y + 0.22f, -0.06f), "", 70, 0.036f, Color.white, TextAnchor.MiddleLeft);
-                d.estados[i] = ConstruirEstudio.Texto("Estado" + i, der, new Vector3(1.95f, y + 0.22f, -0.06f), "", 60, 0.032f, Estilos.Cian, TextAnchor.MiddleRight);
-                ConstruirEstudio.Prim(PrimitiveType.Cube, "Riel" + i, der, new Vector3(0, y - 0.15f, -0.045f), new Vector3(3.2f, 0.22f, 0.01f), Unlit("Pantallita_riel", new Color(1, 1, 1, 1) * 0.18f, false));
-                var b = ConstruirEstudio.Prim(PrimitiveType.Cube, "Barra" + i, der, new Vector3(-1.6f, y - 0.15f, -0.06f), new Vector3(0.05f, 0.22f, 0.02f), null);
-                var mb = new Material(Shader.Find("Unlit/Color")); mb.color = Color.gray;
-                b.GetComponent<Renderer>().sharedMaterial = mb;
-                d.barras[i] = b.transform; d.barrasRend[i] = b.GetComponent<Renderer>();
-            }
-            return d;
-        }
-
         public static void LucesDeAgua(Transform estudio)
         {
             const string rutaC = "Assets/Resources/causticas.png";
@@ -132,10 +162,6 @@ namespace NeuralHub.Editor
                 r.transform.localRotation = Quaternion.Euler(0, 0, (i - 1.5f) * 6f);
                 r.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             }
-            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = new Color(0.25f, 0.5f, 0.65f);
-            RenderSettings.ambientEquatorColor = new Color(0.12f, 0.3f, 0.45f);
-            RenderSettings.ambientGroundColor = new Color(0.1f, 0.15f, 0.2f);
         }
     }
 }

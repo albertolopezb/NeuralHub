@@ -5,23 +5,27 @@ using UnityEngine;
 
 namespace NeuralHub.Editor
 {
-    /// <summary>Renderiza tomas del estudio 3D a PNG (sin Play mode) con 3 tiburones colocados.</summary>
+    /// <summary>Renderiza tomas del estudio 3D a PNG (sin Play mode) con 3 tiburones colocados. Las guarda en unity/capturas.</summary>
     public static class RenderEscena
     {
-        public static void Ejecutar()
+        [MenuItem("NeuralHub/Renderizar tomas del estudio")]
+        public static void Menu() { Renderizar(false); }
+
+        public static void Ejecutar() { Renderizar(true); }
+
+        static void Renderizar(bool salir)
         {
-            string salida = "D:/TEC/TC2008B/Reto/NeuralHub/unity/capturas_inc2";
+            string salida = Path.GetFullPath(Path.Combine(Application.dataPath, "../../capturas"));
             Directory.CreateDirectory(salida);
             EditorSceneManager.OpenScene("Assets/Scenes/Estudio.unity");
             var est = Object.FindFirstObjectByType<Estudio>();
-            var ids = new[] { "tiburon_financiero", "tiburon_estratega", "tiburon_tecnologico" };
+            var ids = new[] { "tiburon_financiero", "tiburon_mentor", "tiburon_estratega" };
             var panel = new System.Collections.Generic.List<Tiburon>();
             for (int i = 0; i < 3; i++)
             {
                 var t = (Tiburon)PrefabUtility.InstantiatePrefab(est.prefabTiburon, est.transform);
-                t.transform.position = est.sillones[i].position - est.sillones[i].forward * 0.05f;
-                var d = est.emprendedor.transform.position - t.transform.position; d.y = 0;
-                t.transform.rotation = Quaternion.LookRotation(d);
+                t.transform.position = est.sillones[i].position; t.transform.rotation = est.sillones[i].rotation;
+                t.pose = i;
                 t.Asignar(ids[i], ids[i]);
                 panel.Add(t);
             }
@@ -35,30 +39,35 @@ namespace NeuralHub.Editor
                 dat.Inmediato();
             }
             est.letreroResultado.text = "";
-            var reflector = est.reflector; reflector.luz.enabled = true;
-            reflector.transform.position = panel[1].transform.position + new Vector3(0, 6.5f, -1.2f);
-            reflector.transform.rotation = Quaternion.LookRotation(panel[1].transform.position - reflector.transform.position);
             var cam = est.camara.GetComponent<Camera>();
-            var cc = est.camara;
-            Toma(cam, salida, "estudio_general", cc.posGeneral, Quaternion.LookRotation(cc.miraGeneral - cc.posGeneral));
-            Toma(cam, salida, "vista_arriba", new Vector3(0, 17, 1), Quaternion.Euler(90, 0, 0));
+            Vector3 pos; Quaternion rot; float fov;
+
+            est.camara.Calcular(Plano.General, null, out pos, out rot, out fov);
+            Toma(cam, salida, "estudio_general", pos, rot, fov);
+            est.camara.Calcular(Plano.Arriba, null, out pos, out rot, out fov);
+            Toma(cam, salida, "vista_arriba", pos, rot, fov);
+
+            // Spotlight encendido a mano (sin Play mode el Reflector no corre su Update)
+            var luz = est.reflector.luz;
+            luz.enabled = true; luz.intensity = est.reflector.intensidad;
             for (int i = 0; i < 3; i++)
             {
-                var p = panel[i].PuntoCabeza();
-                var hacia = (new Vector3(0, 0, -2.5f) - new Vector3(p.x, 0, p.z)).normalized;
-                var lado = Vector3.Cross(Vector3.up, hacia);
-                var pos = p + hacia * 3.6f + lado * 1.1f + Vector3.up * 0.35f;
-                Toma(cam, salida, "tiburon_" + (i + 1), pos, Quaternion.LookRotation(p - pos));
+                var tp = panel[i].transform.position;
+                luz.transform.position = new Vector3(tp.x, est.reflector.alturaLuz, tp.z - 0.2f);
+                luz.transform.rotation = Quaternion.LookRotation(new Vector3(tp.x, 0.6f, tp.z) - luz.transform.position);
+                est.camara.Calcular(Plano.Tiburon, panel[i].PuntoCabeza(), out pos, out rot, out fov);
+                Toma(cam, salida, "tiburon_" + (i + 1), pos, rot, fov);
             }
-            Toma(cam, salida, "emprendedor", est.emprendedor.PuntoCabeza() + new Vector3(2.2f, 0.4f, 4.2f),
-                 Quaternion.LookRotation(est.emprendedor.PuntoCabeza() - (est.emprendedor.PuntoCabeza() + new Vector3(2.2f, 0.4f, 4.2f))));
+            luz.enabled = false;
+            foreach (var t in panel) Object.DestroyImmediate(t.gameObject);
             File.WriteAllText(salida + "/listo_render.txt", "ok");
-            EditorApplication.Exit(0);
+            Debug.Log("NeuralHub: tomas guardadas en " + salida);
+            if (salir) EditorApplication.Exit(0);
         }
 
-        static void Toma(Camera cam, string dir, string nombre, Vector3 pos, Quaternion rot)
+        static void Toma(Camera cam, string dir, string nombre, Vector3 pos, Quaternion rot, float fov)
         {
-            cam.transform.position = pos; cam.transform.rotation = rot;
+            cam.transform.position = pos; cam.transform.rotation = rot; cam.fieldOfView = fov;
             var rt = new RenderTexture(1920, 1080, 24, RenderTextureFormat.ARGB32);
             cam.targetTexture = rt; cam.Render();
             RenderTexture.active = rt;

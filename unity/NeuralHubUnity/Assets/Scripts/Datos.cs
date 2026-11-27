@@ -68,6 +68,10 @@ namespace NeuralHub
     [Serializable]
     public class PreguntaPendiente { public string tiburon_id; public string texto; }
 
+    /// <summary>Respuesta sugerida por el agente empresario (modo en vivo con ayuda).</summary>
+    [Serializable]
+    public class SugerenciaDto { public string tiburon_id; public string texto; }
+
     [Serializable]
     public class OfertaDto { public double monto_mxn; public double porcentaje; }
 

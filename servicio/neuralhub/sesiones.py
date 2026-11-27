@@ -10,7 +10,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import Command
 
 from . import metricas
-from .grafo import construir_grafo
+from .grafo import construir_grafo, sugerir_respuesta
 from .llm import LLM
 from .pitch import Pitch, faltan_obligatorios
 
@@ -23,9 +23,12 @@ ESTADO_EMISOR = {"PITCH": "Presentando", "PREGUNTA": "Preguntando", "RESPUESTA":
 
 
 class Sesion:
-    def __init__(self, pitch: dict, panel: list, modo: str, llm: LLM, guion: dict | None = None, id_: str | None = None):
+    def __init__(self, pitch: dict, panel: list, modo: str, llm: LLM, guion: dict | None = None, id_: str | None = None,
+                 ayuda: bool = False):
         self.id = id_ or uuid.uuid4().hex[:8]
         self.pitch, self.panel, self.modo, self.llm, self.guion = pitch, panel, modo, llm, guion
+        self.ayuda = bool(ayuda) and modo == "humano"   # el agente empresario solo sugiere en el modo en vivo
+        self.sugerencias = 0
         self.eventos: list[dict] = []
         self.estado = "creada"        # creada | corriendo | esperando | terminada | error
         self.pendiente: dict | None = None
@@ -86,6 +89,19 @@ class Sesion:
         if self._hilo:
             self._hilo.join(timeout)
 
+    # --- ayuda del agente empresario (modo en vivo) ---
+    def sugerir(self, tiburon_id: str) -> str:
+        if not self.ayuda:
+            raise PermissionError("La ayuda del agente empresario no está activa en esta sesión.")
+        if tiburon_id not in self.panel:
+            raise ValueError("Ese tiburón no está en el panel de esta sesión.")
+        with self._lock:
+            eventos = list(self.eventos)
+        texto = sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id)
+        with self._lock:
+            self.sugerencias += 1
+        return texto
+
     # --- salida ---
     def estado_publico(self, desde: int = 0) -> dict:
         with self._lock:
@@ -105,7 +121,7 @@ class Sesion:
     def guardar(self):
         CARPETA.mkdir(exist_ok=True)
         ruta = CARPETA / f"sesion_{self.id}.json"
-        ruta.write_text(json.dumps({"id": self.id, "modo": self.modo, "panel": self.panel, "pitch": self.pitch,
+        ruta.write_text(json.dumps({"id": self.id, "modo": self.modo, "ayuda": self.ayuda, "panel": self.panel, "pitch": self.pitch,
                                     "eventos": self.eventos, "metricas": self.metricas()},
                                    ensure_ascii=False, indent=2), encoding="utf-8")
         return ruta
@@ -122,7 +138,7 @@ class Gestor:
             self._llm = LLM(mock=self.mock)
         return self._llm
 
-    def crear(self, pitch: dict, panel: list, modo: str = "humano", guion: dict | None = None) -> Sesion:
+    def crear(self, pitch: dict, panel: list, modo: str = "humano", guion: dict | None = None, ayuda: bool = False) -> Sesion:
         falt = faltan_obligatorios(pitch)
         if falt:
             raise ValueError(f"Faltan campos obligatorios: {', '.join(falt)}")
@@ -130,6 +146,8 @@ class Gestor:
         if len(panel) != 3 or len(set(panel)) != 3:
             raise ValueError("El panel debe tener exactamente 3 tiburones distintos.")
         # Cada sesión tiene su propio contador de llamadas
-        s = Sesion(pitch, panel, modo, LLM(mock=self.mock), guion)
+        if modo not in ("humano", "autopiloto"):
+            raise ValueError("El modo debe ser «humano» (en vivo) o «autopiloto» (agente empresario).")
+        s = Sesion(pitch, panel, modo, LLM(mock=self.mock), guion, ayuda=ayuda)
         self.sesiones[s.id] = s
         return s

@@ -1,0 +1,4 @@
+Fuentes de la interfaz y de los textos 3D (licencia SIL Open Font License 1.1):
+- Inter (Rasmus Andersson): Inter-Regular.ttf, Inter-SemiBold.ttf
+- Space Grotesk (Florian Karsten): SpaceGrotesk-Bold.ttf
+Se cargan con Resources.Load("Fuentes/<nombre>") desde Estilos.cs.

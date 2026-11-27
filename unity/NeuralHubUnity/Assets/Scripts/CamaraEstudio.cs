@@ -5,50 +5,68 @@ namespace NeuralHub
 {
     public enum Plano { General, Emprendedor, Tiburon, Pantalla, Arriba }
 
-    /// <summary>Cámara principal que cambia de plano para enfocar a quien habla.</summary>
+    /// <summary>
+    /// Cámara en primera persona desde el podio del emprendedor. Cuando un tiburón habla, se acerca un poco a él
+    /// (y cierra el campo de visión); cuando habla el emprendedor, vuelve a la vista del podio.
+    /// </summary>
     public class CamaraEstudio : MonoBehaviour
     {
         public Transform centro;
-        Vector3 posObj; Quaternion rotObj;
-        public Vector3 posGeneral = new Vector3(0, 3.6f, -10.5f);
-        public Vector3 miraGeneral = new Vector3(0, 1.8f, 3f);
+        public Vector3 posGeneral = new Vector3(0, 1.62f, -4.35f);   // ojos del emprendedor
+        public Vector3 miraGeneral = new Vector3(0, 0.95f, 0.3f);
+        public float fovGeneral = 50f, fovTiburon = 40f;
+        public float distanciaTiburon = 3.1f;
         public Plano planoActual = Plano.General;
         public bool instantaneo;
 
-        void Start() { Cambiar(Plano.General, null); transform.position = posObj; transform.rotation = rotObj; }
+        Vector3 posObj; Quaternion rotObj; float fovObj = 50f;
+        Camera cam;
+
+        void Awake() { cam = GetComponent<Camera>(); }
+        void Start() { Cambiar(Plano.General, null); Aplicar(); }
+
+        /// <summary>Posición, rotación y campo de visión de un plano (también lo usa RenderEscena).</summary>
+        public void Calcular(Plano plano, Vector3? punto, out Vector3 pos, out Quaternion rot, out float fov)
+        {
+            fov = fovGeneral;
+            switch (plano)
+            {
+                case Plano.Arriba:
+                    pos = new Vector3(0, 9f, 0.1f); rot = Quaternion.Euler(90, 0, 0); fov = 55f; break;
+                case Plano.Pantalla:
+                    pos = new Vector3(0, 1.9f, -1.2f); rot = Quaternion.LookRotation(new Vector3(0, 2.45f, 3.36f) - pos); fov = 45f; break;
+                case Plano.Tiburon:
+                {
+                    var p = punto ?? new Vector3(0, 1.3f, 0.75f);
+                    var mira = p + Vector3.down * 0.42f;
+                    var hacia = posGeneral - mira; hacia.y = 0;
+                    pos = mira + hacia.normalized * distanciaTiburon; pos.y = 1.42f;
+                    rot = Quaternion.LookRotation(mira - pos); fov = fovTiburon; break;
+                }
+                default: // General y Emprendedor: primera persona desde el podio
+                    pos = posGeneral; rot = Quaternion.LookRotation(miraGeneral - posGeneral); break;
+            }
+        }
 
         public void Cambiar(Plano plano, Vector3? punto)
         {
             planoActual = plano;
-            switch (plano)
-            {
-                case Plano.General:
-                    posObj = posGeneral; rotObj = Quaternion.LookRotation(miraGeneral - posGeneral); break;
-                case Plano.Arriba:
-                    posObj = new Vector3(0, 17f, 1f); rotObj = Quaternion.Euler(90, 0, 0); break;
-                case Plano.Pantalla:
-                    posObj = new Vector3(0, 3.8f, -3f); rotObj = Quaternion.LookRotation(new Vector3(0, 4f, 9.5f) - posObj); break;
-                case Plano.Emprendedor:
-                {
-                    var p = punto ?? new Vector3(0, 1.7f, -2.5f);
-                    posObj = p + new Vector3(2.2f, 0.4f, 4.2f); rotObj = Quaternion.LookRotation(p - posObj); break;
-                }
-                case Plano.Tiburon:
-                {
-                    var p = punto ?? Vector3.zero;
-                    Vector3 haciaCentro = (new Vector3(0, 0, -2.5f) - new Vector3(p.x, 0, p.z)).normalized;
-                    Vector3 lado = Vector3.Cross(Vector3.up, haciaCentro);
-                    posObj = p + haciaCentro * 3.6f + lado * 1.1f + Vector3.up * 0.35f;
-                    rotObj = Quaternion.LookRotation(p - posObj); break;
-                }
-            }
-            if (instantaneo) { transform.position = posObj; transform.rotation = rotObj; }
+            Calcular(plano, punto, out posObj, out rotObj, out fovObj);
+            if (instantaneo) Aplicar();
+        }
+
+        void Aplicar()
+        {
+            transform.position = posObj; transform.rotation = rotObj;
+            if (cam) cam.fieldOfView = fovObj;
         }
 
         void LateUpdate()
         {
-            transform.position = Vector3.Lerp(transform.position, posObj, 3.2f * Time.deltaTime);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotObj, 3.2f * Time.deltaTime);
+            float k = 1f - Mathf.Exp(-2.6f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, posObj, k);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotObj, k);
+            if (cam) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fovObj, k);
         }
     }
 }

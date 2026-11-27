@@ -91,6 +91,8 @@ class MockLLM:
             ids = re.findall(r"^\[(\w+)\]", user, flags=re.M)
             return E.Respuestas(respuestas=[E.RespuestaItem(tiburon_id=i, texto="Respondo con los datos de mi ficha.")
                                             for i in ids])
+        if esquema is E.Sugerencia:
+            return E.Sugerencia(texto="Según mi ficha, ese dato todavía no lo tengo medido; lo sacaría de mis ventas del último mes.")
         if esquema is E.Replica:
             return E.Replica(postura="desacuerdo" if self.n % 2 else "acuerdo",
                              texto=f"Sobre su pregunta: {'no coincido' if self.n % 2 else 'coincido'} con su duda.")

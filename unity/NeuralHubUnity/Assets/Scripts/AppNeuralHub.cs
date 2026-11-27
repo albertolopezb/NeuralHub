@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace NeuralHub
 {
-    public enum Vista { Inicio, Formulario, Panel, Sesion, Resultado, Sesiones }
+    public enum Vista { Inicio, Formulario, Panel, Modo, Sesion, Resultado, Sesiones }
 
     /// <summary>Controlador de la aplicación: navega entre pantallas y conecta el servicio, el reproductor y el estudio.</summary>
     public class AppNeuralHub : MonoBehaviour
@@ -32,6 +32,12 @@ namespace NeuralHub
         public TiburonInfo[] catalogo;
         public Recomendacion recomendacion;
 
+        // Modo de simulación: agente empresario (autopiloto) o en vivo (el usuario responde, con ayuda opcional)
+        public bool modoEnVivo;
+        public bool ayudaActiva = true;
+        public int sugerenciasPedidas;
+        List<string> panelElegido;
+
         public readonly MenuInicio menu = new MenuInicio();
         public readonly FormularioPitch formulario = new FormularioPitch();
         public readonly EleccionPanel eleccion = new EleccionPanel();
@@ -42,6 +48,8 @@ namespace NeuralHub
         public readonly PanelNegociacion negociacion = new PanelNegociacion();
         public readonly PantallaResultado resultado = new PantallaResultado();
         public readonly ListaSesiones listaSesiones = new ListaSesiones();
+        public readonly SeleccionModo seleccionModo = new SeleccionModo();
+        public readonly BurbujaRespuesta burbuja = new BurbujaRespuesta();
 
         string pitchJson;
         float esperaResultado;
@@ -56,12 +64,20 @@ namespace NeuralHub
             ProbarConexion();
             CargarCatalogos();
             foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-capturar") { cliente.usarMock = true; StartCoroutine(Capturas()); }
-            if (Arg("-nh-vivo")) { vivoAuto = true; StartCoroutine(RespondedorAutomatico()); }
+            if (Arg("-nh-vivo")) { vivoAuto = true; modoEnVivo = true; ayudaActiva = false; StartCoroutine(RespondedorAutomatico()); }
             if (Arg("-nh-video")) StartCoroutine(Video());
         }
 
         // ---------- navegación ----------
-        public void Ir(Vista v) { vista = v; mostrarHistorial = false; if (v != Vista.Sesion && v != Vista.Resultado) { reproductor.Detener(); camara.Cambiar(Plano.General, null); } }
+        public void Ir(Vista v)
+        {
+            vista = v; mostrarHistorial = false;
+            if (v != Vista.Sesion && v != Vista.Resultado)
+            {
+                reproductor.Detener(); camara.Cambiar(Plano.General, null);
+                if (estudio && estudio.letreroResultado) estudio.letreroResultado.text = "";
+            }
+        }
 
         public void FijarMock(bool mock) { cliente.usarMock = mock; mensaje = ""; ProbarConexion(); CargarCatalogos(); }
 
@@ -88,17 +104,35 @@ namespace NeuralHub
             StartCoroutine(cliente.Recomendar(json, r => { recomendacion = r; eleccion.PrecargarRecomendados(r); Ir(Vista.Panel); }));
         }
 
+        /// <summary>Después de elegir el panel: pantalla para elegir el modo de simulación.</summary>
+        public void IrAModo(List<string> ids) { panelElegido = new List<string>(ids); mensaje = ""; Ir(Vista.Modo); }
+
+        public void IniciarSesionElegida() { if (panelElegido != null) IniciarSesion(panelElegido); }
+
         public void IniciarSesion(List<string> ids)
         {
             mensaje = "";
+            bool enVivo = modoEnVivo, ayuda = modoEnVivo && ayudaActiva;
             // Mismo orden del catálogo para que el panel quede estable
             var panel = new List<string>();
             foreach (var f in recomendacion.ranking) if (ids.Contains(f.tiburon_id)) panel.Add(f.tiburon_id);
-            StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), ok =>
+            StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), enVivo, ayuda, ok =>
             {
                 if (!ok) return;
-                reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); estudio.Preparar(); Ir(Vista.Sesion);
+                sugerenciasPedidas = 0;
+                // Los 3 tiburones elegidos ya se sientan (en penumbra) mientras el emprendedor presenta su pitch
+                var nombres = new List<string>();
+                foreach (var id in panel) { var info = Catalogo(id); nombres.Add(info != null ? info.nombre : id); }
+                reproductor.Iniciar(); reproductor.enVivo = enVivo;
+                estudio.IniciarSesion(panel.ToArray(), nombres.ToArray()); Ir(Vista.Sesion);
             }));
+        }
+
+        /// <summary>Modo en vivo con ayuda: pide al agente empresario una respuesta sugerida para el tiburón en turno.</summary>
+        public void PedirSugerencia(string tiburonId, Action<string> listo)
+        {
+            sugerenciasPedidas++;
+            StartCoroutine(cliente.PedirSugerencia(tiburonId, listo));
         }
 
         public void AbrirSesiones()
@@ -108,11 +142,25 @@ namespace NeuralHub
 
         public void RepetirSesion(string id)
         {
-            StartCoroutine(cliente.CargarSesionPasada(id, ok => { if (ok) { reproductor.Iniciar(); estudio.IniciarSesion(new string[0], null); estudio.Preparar(); Ir(Vista.Sesion); } }));
+            StartCoroutine(cliente.CargarSesionPasada(id, ok => { if (ok) { reproductor.Iniciar(); reproductor.enVivo = false; estudio.IniciarSesion(new string[0], null); estudio.Preparar(); Ir(Vista.Sesion); } }));
         }
 
         void Update()
         {
+            // En vivo: cuando el usuario ya respondió las preguntas que el servicio espera, se envían juntas
+            var p = cliente.pendiente;
+            if (vista == Vista.Sesion && reproductor.enVivo && p != null && p.tipo == "RESPUESTAS" && p.preguntas != null &&
+                p.ronda != reproductor.enviadaRonda && reproductor.rondaRespuestas == p.ronda)
+            {
+                bool todas = true;
+                foreach (var q in p.preguntas) if (!reproductor.respuestasRonda.ContainsKey(q.tiburon_id)) todas = false;
+                if (todas)
+                {
+                    reproductor.enviadaRonda = p.ronda;
+                    StartCoroutine(cliente.EnviarRespuestas(new Dictionary<string, string>(reproductor.respuestasRonda)));
+                }
+            }
+
             if (vista == Vista.Sesion && reproductor.reporteListo && reproductor.EnEspera)
             {
                 esperaResultado += Time.deltaTime;
@@ -130,30 +178,32 @@ namespace NeuralHub
             float W = Screen.width / s, H = 1080f;
             if (ocultarUI) return;
 
-            if (vista == Vista.Inicio || vista == Vista.Formulario || vista == Vista.Panel || vista == Vista.Sesiones)
-                Estilos.Rect(new Rect(0, 0, W, H), new Color(Estilos.Navy.r, Estilos.Navy.g, Estilos.Navy.b, 0.62f));
+            if (vista == Vista.Inicio || vista == Vista.Formulario || vista == Vista.Panel || vista == Vista.Modo || vista == Vista.Sesiones)
+                Estilos.Rect(new Rect(0, 0, W, H), new Color(Estilos.Fondo.r, Estilos.Fondo.g, Estilos.Fondo.b, 0.55f));
 
             switch (vista)
             {
                 case Vista.Inicio: menu.Dibujar(this, W, H); break;
                 case Vista.Formulario: formulario.Dibujar(this, W, H); break;
                 case Vista.Panel: eleccion.Dibujar(this, W, H); break;
+                case Vista.Modo: seleccionModo.Dibujar(this, W, H); break;
                 case Vista.Sesiones: listaSesiones.Dibujar(this, W, H); break;
                 case Vista.Sesion:
                     interfaz.Dibujar(this, W, H);
-                    controles.Dibujar(this, W);
-                    if (reproductor.EnEspera)
+                    controles.Dibujar(this, W, H);
+                    if (reproductor.turnoUsuario != null) burbuja.Dibujar(this, W, H);
+                    else if (reproductor.EnEspera)
                     {
                         var p = cliente.pendiente;
-                        if (p != null && p.tipo == "RESPUESTAS") respuestas.Dibujar(this, p, W, H);
+                        if (p != null && p.tipo == "RESPUESTAS" && !reproductor.enVivo) respuestas.Dibujar(this, p, W, H);
                         else if (p != null && (p.tipo == "NEGOCIACION" || p.tipo == "CONDICIONES")) negociacion.Dibujar(this, p, W, H);
                         else if (cliente.estadoSesion == "corriendo" || cliente.estadoSesion == "esperando")
                         {
-                            GUILayout.BeginArea(new Rect(W / 2 - 300, H / 2 - 40, 600, 80), Estilos.Caja);
-                            GUILayout.Label("Los tiburones están pensando…", Estilos.Subtitulo);
+                            GUILayout.BeginArea(new Rect(W / 2 - 320, 130, 640, 84), Estilos.Caja);
+                            GUILayout.Label("Los tiburones están pensando…", new GUIStyle(Estilos.Subtitulo) { alignment = TextAnchor.MiddleCenter });
                             GUILayout.EndArea();
                         }
-                        if (cliente.estadoSesion == "error") { GUI.Label(new Rect(W / 2 - 400, H / 2, 800, 80), mensaje, Estilos.Texto); }
+                        if (cliente.estadoSesion == "error") { GUI.Label(new Rect(W / 2 - 400, H / 2, 800, 80), mensaje, Estilos.Color_(Estilos.Texto, Estilos.Fuera)); }
                     }
                     break;
                 case Vista.Resultado: resultado.Dibujar(this, W, H); break;
@@ -190,10 +240,26 @@ namespace NeuralHub
             while (true)
             {
                 yield return null;
-                if (vista != Vista.Sesion || !reproductor.EnEspera || cliente.pendiente == null) continue;
+                if (vista != Vista.Sesion) continue;
+                // Modo en vivo: responde en la burbuja cada pregunta en cuanto el tiburón la hace
+                if (reproductor.turnoUsuario != null)
+                {
+                    string turno = reproductor.turnoUsuario;
+                    var lista = RespuestasDemo[Mathf.Clamp(reproductor.rondaRespuestas - 1, 0, 2)];
+                    string txt = lista[reproductor.respuestasRonda.Count % lista.Length];
+                    burbuja.Escribir(turno, txt);                                 // se ve escrita en pantalla
+                    yield return new WaitForSecondsRealtime(2.5f);
+                    if (reproductor.turnoUsuario != turno) continue;
+                    reproductor.Responder(txt);
+                    var pr = cliente.pendiente;
+                    if (pr != null && pr.tipo == "RESPUESTAS" && pr.preguntas != null && reproductor.respuestasRonda.Count >= pr.preguntas.Length)
+                        yield return MedirLatencia("RESPUESTAS", Time.realtimeSinceStartup, cliente.recibidos.Count);
+                    continue;
+                }
+                if (!reproductor.EnEspera || cliente.pendiente == null) continue;
                 var p = cliente.pendiente;
                 float t0 = Time.realtimeSinceStartup; int antes = cliente.recibidos.Count;
-                if (p.tipo == "RESPUESTAS")
+                if (p.tipo == "RESPUESTAS" && !reproductor.enVivo)
                 {
                     var r = new Dictionary<string, string>();
                     var lista = RespuestasDemo[Mathf.Clamp(p.ronda - 1, 0, 2)];
@@ -210,10 +276,16 @@ namespace NeuralHub
                         yield return cliente.EnviarNegociacion("aceptar_contraoferta", p.contraofertas[0].monto_mxn, p.contraofertas[0].porcentaje, p.contraofertas[0].tiburon_id);
                     else yield return cliente.EnviarNegociacion("ajustar", p.oferta_actual.monto_mxn, Math.Min(100, p.oferta_actual.porcentaje + 5), null);
                 }
-                // latencia: tiempo hasta que llega la siguiente intervención de un agente
-                while (cliente.estadoSesion != "error" && !HayEventoDeAgente(antes)) yield return null;
-                latencias.Add(p.tipo + "|" + (Time.realtimeSinceStartup - t0).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture));
+                else continue;
+                yield return MedirLatencia(p.tipo, t0, antes);
             }
+        }
+
+        // latencia: tiempo hasta que llega la siguiente intervención de un agente
+        IEnumerator MedirLatencia(string tipo, float t0, int antes)
+        {
+            while (cliente.estadoSesion != "error" && !HayEventoDeAgente(antes)) yield return null;
+            latencias.Add(tipo + "|" + (Time.realtimeSinceStartup - t0).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture));
         }
 
         // ---------- grabación de video (fotogramas a velocidad fija; se unen con ffmpeg) ----------
