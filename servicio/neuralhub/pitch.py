@@ -55,6 +55,8 @@ class Pitch(BaseModel):
     ventas_12m_mxn: Optional[float] = None
     margen_bruto_pct: Optional[float] = None
     gasto_mensual_mxn: Optional[float] = None
+    # cómo lo cuenta en voz alta (opcional; si falta se arma con los campos de arriba)
+    discurso: Optional[str] = None
 
 
 OBLIGATORIOS = ["nombre", "sector", "etapa", "problema", "solucion", "mercado_objetivo",
@@ -87,6 +89,28 @@ def valuacion_mxn(pitch: Pitch) -> float:
 
 def mxn(x: float) -> str:
     return f"${x:,.0f} MXN"
+
+
+def _frase(texto: str) -> str:
+    t = (texto or "").strip()
+    return t if not t or t[-1] in ".!?" else t + "."
+
+
+def discurso(pitch: Pitch) -> str:
+    """El pitch contado como en un programa de inversionistas: saludo, problema, solución, a quién le vende,
+    cómo gana dinero, avance y, al final, la petición. Sin modelo: solo usa lo que escribió el emprendedor."""
+    if pitch.discurso and pitch.discurso.strip():
+        return pitch.discurso.strip()
+    partes = [f"¡Hola, tiburones! Hoy les quiero presentar {pitch.nombre}.",
+              "Todo empezó con un problema.", _frase(pitch.problema),
+              "Por eso creamos nuestra solución.", _frase(pitch.solucion),
+              "Está pensada para este mercado:", _frase(pitch.mercado_objetivo),
+              "Así ganamos dinero:", _frase(pitch.modelo_ingresos)]
+    if pitch.validacion and not es_hueco(pitch, "validacion"):
+        partes += ["Y no es solo una idea:", _frase(pitch.validacion)]
+    partes += [f"Por eso hoy venimos a pedirles {mxn(pitch.monto_mxn)} a cambio del {pitch.porcentaje:g} % de nuestra empresa, "
+               "para lo siguiente:", _frase(pitch.uso_fondos), "¿Quién quiere nadar con nosotros?"]
+    return " ".join(partes)
 
 
 def ficha(pitch: Pitch) -> str:

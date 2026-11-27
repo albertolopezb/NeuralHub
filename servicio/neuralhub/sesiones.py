@@ -39,7 +39,7 @@ class Sesion:
         self._lock = threading.Lock()
         self._hilo: threading.Thread | None = None
         self.grafo = construir_grafo(MemorySaver())
-        self.config = {"configurable": {"thread_id": self.id, "sesion": self, "llm": llm, "guion": guion}}
+        self.config = {"recursion_limit": 80, "configurable": {"thread_id": self.id, "sesion": self, "llm": llm, "guion": guion}}
 
     # --- eventos ---
     def emit(self, tipo, emisor, destino, texto, ronda, **extra):

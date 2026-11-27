@@ -214,8 +214,8 @@ namespace NeuralHub
                     if (!respuestasMock.ContainsKey(k))
                     {
                         var preguntas = new List<PreguntaPendiente>();
-                        foreach (var q in guionMock)
-                            if (q.tipo == "PREGUNTA" && q.ronda == e.ronda) preguntas.Add(new PreguntaPendiente { tiburon_id = q.emisor, texto = q.texto });
+                        foreach (var q in guionMock)    // una pregunta a la vez: la que esta respuesta contesta
+                            if (q.tipo == "PREGUNTA" && q.ronda == e.ronda && q.emisor == e.destino) preguntas.Add(new PreguntaPendiente { tiburon_id = q.emisor, texto = q.texto });
                         pendiente = new Pendiente { tipo = "RESPUESTAS", ronda = e.ronda, preguntas = preguntas.ToArray() };
                         estadoSesion = "esperando";
                         return;

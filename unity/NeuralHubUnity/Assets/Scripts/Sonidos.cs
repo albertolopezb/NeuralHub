@@ -7,7 +7,8 @@ namespace NeuralHub
     /// <summary>Audio de la escena: ambiente submarino, efectos (clic, turno, voto, trato) y la voz de cada personaje.</summary>
     public class Sonidos : MonoBehaviour
     {
-        AudioSource ambiente, efectos, voz;
+        AudioSource ambiente, efectos, voz, musica;
+        public bool musicaActiva = true;
         public bool vozActiva = true;
         public bool silencio;
 
@@ -18,10 +19,30 @@ namespace NeuralHub
         void Awake()
         {
             ambiente = gameObject.AddComponent<AudioSource>();
-            ambiente.loop = true; ambiente.volume = 0.32f; ambiente.clip = Resources.Load<AudioClip>("Sonidos/ambiente");
+            ambiente.loop = true; ambiente.volume = 0.16f; ambiente.clip = Resources.Load<AudioClip>("Sonidos/ambiente");
             if (ambiente.clip) ambiente.Play();
             efectos = gameObject.AddComponent<AudioSource>();
             voz = gameObject.AddComponent<AudioSource>(); voz.volume = 1f;
+            musica = gameObject.AddComponent<AudioSource>(); musica.loop = true; musica.volume = 0f;
+            musica.clip = Resources.Load<AudioClip>("Sonidos/musica");
+            if (musica.clip) musica.Play();
+        }
+
+        float enCortinilla;
+
+        /// <summary>Cortinilla de entrada del programa; la música de fondo baja mientras suena.</summary>
+        public void Cortinilla()
+        {
+            Efecto("cortinilla", 0.8f); enCortinilla = 7.2f;
+        }
+
+        void Update()
+        {
+            if (!musica) return;
+            enCortinilla -= Time.unscaledDeltaTime;
+            // Con voz la música queda muy abajo (más aún mientras alguien habla); sin voz sube para que no se sienta vacío
+            float objetivo = !musicaActiva || enCortinilla > 0f ? 0f : voz.isPlaying ? 0.05f : vozActiva ? 0.16f : 0.34f;
+            musica.volume = Mathf.MoveTowards(musica.volume, objetivo, Time.unscaledDeltaTime * 0.5f);
         }
 
         void Anotar(string tipo, string dato)

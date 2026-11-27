@@ -1,0 +1,218 @@
+[
+  {
+    "negocio": "EcoTrack",
+    "nivel": "facil",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "invertir"
+      ],
+      [
+        "estratega",
+        "invertir"
+      ],
+      [
+        "tecnologico",
+        "invertir"
+      ]
+    ],
+    "palabras_por_pregunta": 18.2,
+    "preguntas_con_tecnicismos": 0,
+    "preguntas": [
+      "¿Qué historia o experiencia los motivó a crear EcoTrack y cómo ha sido la respuesta de los usuarios hasta ahora?",
+      "¿Qué historias de usuarios han cambiado gracias a EcoTrack y cómo planean defender su mercado a largo plazo?",
+      "¿Cómo funciona el algoritmo de IA y qué hace único a tu medidor frente a otros en el mercado?",
+      "¿Qué historia personal o experiencia te inspiró a crear EcoTrack y ayudar a tus usuarios a ahorrar energía?",
+      "¿Qué historia personal te motivó a desarrollar este medidor con IA para hogares y pequeños negocios?",
+      "¿Qué historias de usuarios satisfechos puedes compartir que muestren el impacto de EcoTrack en sus hogares o negocios?",
+      "¿Qué historia de usuario te ha inspirado más para seguir mejorando tu medidor con IA?",
+      "¿Qué te motivó personalmente a crear EcoTrack y cómo ha impactado en la vida de tus usuarios hasta hoy?",
+      "¿Qué historia personal te llevó a crear EcoTrack y cómo imaginas que cambiará la vida de tus usuarios en 5 años?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "facil",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "salir"
+      ],
+      [
+        "estratega",
+        "invertir"
+      ],
+      [
+        "tecnologico",
+        "invertir"
+      ]
+    ],
+    "palabras_por_pregunta": 17.8,
+    "preguntas_con_tecnicismos": 1,
+    "preguntas": [
+      "¿Qué te motivó a crear EcoTrack y cómo ha sido la experiencia con los usuarios beta hasta ahora?",
+      "¿Qué historias de usuarios te han motivado a seguir desarrollando EcoTrack y cómo les ha cambiado su consumo?",
+      "¿Cómo funciona el algoritmo de IA para detectar el consumo excesivo sin necesidad de instalación profesional?",
+      "¿Qué te inspiró a crear EcoTrack y cómo ha cambiado la vida de tus primeros usuarios?",
+      "¿Qué te motivó a desarrollar EcoTrack y cómo ha sido la experiencia de tus usuarios con el medidor y la IA?",
+      "¿Qué historia personal o experiencia concreta te motivó a desarrollar EcoTrack y cómo ha ayudado a tus primeros usuarios?",
+      "Cuéntame qué historia te motivó a crear EcoTrack y cómo ha sido ayudar a tus primeros usuarios.",
+      "¿Qué te motivó personalmente a desarrollar EcoTrack y cómo quieres que impacte en la vida de tus usuarios?",
+      "¿Qué historia personal te inspiró a crear EcoTrack y cómo ha cambiado la vida de tus usuarios?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "medio",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "contraoferta"
+      ],
+      [
+        "estratega",
+        "contraoferta"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ]
+    ],
+    "palabras_por_pregunta": 20.1,
+    "preguntas_con_tecnicismos": 0,
+    "preguntas": [
+      "¿Cuánto te cuesta producir y entregar cada medidor, y cuánto gastas en promedio para adquirir un cliente que paga la suscripción mensual?",
+      "¿Qué barreras tienes para que otro medidor con IA copie tu idea y te quite clientes en Nuevo León?",
+      "¿Tu prototipo de medidor con IA ya está listo para producción masiva o aún necesitas desarrollos técnicos clave antes de escalar ventas?",
+      "¿Cómo planean defender su ventaja de IA personalizada para que no la copien antes de que consoliden su marca en Nuevo León?",
+      "¿Puedes detallar qué algoritmo o tecnología de IA usan para detectar el consumo excesivo y cómo planean protegerlo con patente?",
+      "¿Cuántos clientes con suscripción tienes activos y cuánto gastas mensualmente en marketing para adquirirlos?",
+      "¿Qué mejoras específicas planeas hacer en el prototipo con la inversión para reducir el costo de producción y mejorar la experiencia del usuario?",
+      "¿Cuántos clientes con suscripción mensual tienes activos ahora y qué porcentaje de tus ventas totales representan?",
+      "¿Qué canales de venta usas para llegar a hogares y negocios, y cuál ha sido el más efectivo para convertir interesados en compradores?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "medio",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "contraoferta"
+      ],
+      [
+        "estratega",
+        "contraoferta"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ]
+    ],
+    "palabras_por_pregunta": 19.2,
+    "preguntas_con_tecnicismos": 2,
+    "preguntas": [
+      "¿Cuánto te cuesta fabricar cada medidor y cuánto gastas en promedio para conseguir un cliente que compra y se suscribe?",
+      "¿Quién exactamente compra el medidor: el hogar o el negocio, y cómo logran convencerlos de pagar la suscripción mensual?",
+      "¿Tienen un prototipo funcional y qué algoritmo de IA utilizan para detectar consumos excesivos sin instalación profesional?",
+      "¿Cómo planean defender la ventaja de la IA personalizada frente a medidores genéricos y apps gratuitas de compañías eléctricas?",
+      "¿El algoritmo y prototipo están protegidos por alguna patente o están en proceso de registrarla?",
+      "¿Cuál es tu margen neto mensual después de descontar costos de producción y gastos de operación de los $25,000 que gastas?",
+      "¿Cómo planean usar esos 300 mil pesos para mejorar el prototipo y que la IA sea más precisa y eficiente sin subir costos?",
+      "¿Cuántos medidores han vendido y cuántos usuarios pagan actualmente la suscripción mensual de 99 pesos?",
+      "¿Cómo convencen a los hogares y negocios de Nuevo León a comprar y mantener la suscripción mensual, qué estrategia usan para escalar esa venta?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "dificil",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "SIN_TRATO",
+    "votos": [
+      [
+        "financiero",
+        "salir"
+      ],
+      [
+        "estratega",
+        "salir"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ],
+      [
+        "financiero",
+        "salir"
+      ],
+      [
+        "estratega",
+        "salir"
+      ],
+      [
+        "tecnologico",
+        "salir"
+      ]
+    ],
+    "palabras_por_pregunta": 38.3,
+    "preguntas_con_tecnicismos": 6,
+    "preguntas": [
+      "¿Cuál es el costo de adquisición por cliente y cómo justifica que con un margen bruto de 38% cubren los gastos mensuales de 25,000 pesos y generan flujo positivo?",
+      "¿Cuál es el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500 MXN y cuántos de esos clientes pueden pagar la suscripción mensual? Necesito cifras concretas para evaluar escalabilidad y defensa frente a competidores.",
+      "¿Cuál es el algoritmo específico que usa la IA para detectar consumos y cómo protegen esa tecnología con patente o propiedad intelectual? Solo mencionan marca registrada, no veo protección para su innovación.",
+      "No me dices cuántos hogares y negocios en Nuevo León tienen recibos mayores a $2,500 ni cuántos pueden pagar la suscripción. Sin esa cifra exacta no veo mercado para escalar ni defender. ¿Cuánto es el mercado objetivo real y pagante, en números?",
+      "¿Cuál es el algoritmo específico de IA que usan, y por qué no han iniciado ya el trámite de patente para proteger esa innovación clave que dice diferenciarlos, si eso es vital para su ventaja tecnológica?",
+      "No me dices el costo de adquisición por cliente exacto ni cómo con 38% de margen y $180,000 en ventas cubren $25,000 mensuales de gastos y generan flujo positivo; dame números claros y actuales.",
+      "No me dices el nombre ni detalles del algoritmo específico de IA usado, ni el estatus de cualquier trámite de patente o secreto industrial para protegerlo; ¿cuándo concretarán esa protección tecnológica clave para asegurar su ventaja competitiva?",
+      "No me das el costo de adquisición por cliente exacto, ni cifras claras de flujo positivo mensual; sin esos números, no veo cómo 38% de margen y $180,000 en ventas cubren $25,000 de gastos. ¿Cuál es el CAC real y el flujo neto mensual actual en pesos?",
+      "No me dices el tamaño exacto del mercado objetivo real que puede pagar la suscripción en Nuevo León, ni el costo de adquisición por cliente; sin esos datos clave no puedo evaluar escalabilidad ni defender ventaja competitiva. ¿Cuántos clientes pagarán y cuánto cuesta adquirir cada uno, con cifras concretas y actuales?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "dificil",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "contraoferta"
+      ],
+      [
+        "estratega",
+        "contraoferta"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ]
+    ],
+    "palabras_por_pregunta": 33.7,
+    "preguntas_con_tecnicismos": 8,
+    "preguntas": [
+      "¿Cuál es el costo exacto de adquisición de cada cliente y cómo se refleja en el flujo considerando que sus ventas totales son 180,000 y tienen 500 usuarios beta? No me dices ese dato.",
+      "¿Cuál es el tamaño del mercado en Nuevo León con recibos mayores a $2,500 y cómo planean defenderlo de medidores genéricos y apps sin barreras claras para escalar en 5 años?",
+      "¿Tienen prototipo funcional con IA validado y registrado con patente o sólo tienen marca registrada? No me dices nada sobre propiedad intelectual ni algoritmo propio.",
+      "¿Cuál es el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500, y qué barreras específicas tienen para impedir que competidores genéricos o apps gratuitas entren y escalen en ese mercado en los próximos 5 años?",
+      "¿Cuál es el algoritmo específico que usan para detectar consumos excesivos y cómo planean protegerlo legalmente si no tienen patente ni registro de propiedad intelectual?",
+      "¿Cuánto gastan exactamente en marketing y ventas para adquirir esos 500 usuarios beta y cómo afecta eso su flujo de caja mensual considerando que su gasto mensual es de 25,000 pesos? No me dices el CAC exacto.",
+      "¿Cuál es el costo exacto de desarrollo del algoritmo IA y qué porcentaje del gasto mensual representa? Sin esa cifra no puedo evaluar la innovación ni la inversión necesaria para proteger la propiedad intelectual.",
+      "¿Cuál es el margen neto real después de gastos y cuál es el flujo de caja mensual exacto considerando ventas de 180,000, margen bruto del 38% y gastos mensuales de 25,000? No me dices el flujo neto exacto.",
+      "No me das el tamaño exacto del mercado objetivo ni cifras concretas de cuántos hogares y negocios cumplen con el criterio en Nuevo León. Sin ese dato, ¿cómo piensan escalar y defender su participación frente a competidores sin barreras claras?"
+    ]
+  }
+]

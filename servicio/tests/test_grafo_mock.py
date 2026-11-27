@@ -38,6 +38,21 @@ def test_trato_directo_16_llamadas():
     assert s.reporte()["criterios_no_evaluados"]
 
 
+def test_las_preguntas_van_una_por_una_y_el_pitch_pide_al_final():
+    s = correr(["tiburon_financiero", "tiburon_estratega", "tiburon_mentor"])
+    conversacion = [t for t in tipos(s) if t in ("PREGUNTA", "RESPUESTA")]
+    assert conversacion == ["PREGUNTA", "RESPUESTA"] * 9
+    pitch = next(e for e in s.eventos if e["tipo"] == "PITCH")["texto"]
+    assert pitch.startswith("¡") and max(pitch.find("pedirles"), pitch.find("pidiendo"), pitch.find("Venimos")) > len(pitch) // 2
+
+
+def test_pitch_propio_sin_discurso_termina_con_la_peticion():
+    from neuralhub.pitch import Pitch, discurso
+    sin = {k: v for k, v in PITCH.items() if k != "discurso"}
+    texto = discurso(Pitch(**sin))
+    assert texto.startswith("¡Hola, tiburones!") and texto.index("venimos a pedirles") > len(texto) // 2
+
+
 def test_hay_replica_de_tiburon_a_tiburon_en_cada_ronda():
     s = correr(["tiburon_financiero", "tiburon_estratega", "tiburon_mentor"])
     reps = [e for e in s.eventos if e["tipo"] == "REPLICA"]
@@ -67,9 +82,9 @@ def test_negociacion_fallida_sin_trato():
     assert s.metricas()["resultado"] == "SIN_TRATO" and s.metricas()["llamadas_modelo"] == 19
 
 
-def test_autopiloto_suma_una_llamada_por_ronda():
+def test_autopiloto_suma_una_llamada_por_pregunta():
     s = correr(["tiburon_financiero", "tiburon_estratega", "tiburon_mentor"], modo="autopiloto")
-    assert s.metricas()["llamadas_modelo"] == 19 and s.estado == "terminada"
+    assert s.metricas()["llamadas_modelo"] == 25 and s.estado == "terminada"
 
 
 def test_contraofertas_en_trato_las_elige_el_autopiloto():
@@ -82,9 +97,10 @@ def test_modo_humano_pausa_y_reanuda():
     panel = ["tiburon_financiero", "tiburon_estratega", "tiburon_mentor"]
     s = Sesion(PITCH, panel, "humano", LLM(mock=True))
     s.iniciar(esperar=True)
-    for r in (1, 2, 3):
+    for k in range(9):        # una pregunta a la vez: 3 por ronda
+        r = k // 3 + 1
         assert s.estado == "esperando" and s.pendiente["tipo"] == "RESPUESTAS" and s.pendiente["ronda"] == r
-        assert len(s.pendiente["preguntas"]) == 3
+        assert len(s.pendiente["preguntas"]) == 1
         s.reanudar({p["tiburon_id"]: f"mi respuesta {r}" for p in s.pendiente["preguntas"]}, esperar=True)
     # Votos 3 a favor con contraofertas -> pide elegir condiciones
     assert s.estado == "esperando" and s.pendiente["tipo"] == "CONDICIONES"
@@ -102,7 +118,7 @@ def test_modo_humano_negociacion():
     s = Sesion(PITCH, panel, "humano", LLM(mock=True, mock_votos={"tiburon_estratega": "salir", "tiburon_mentor": "salir", "tiburon_tecnologico": "invertir"},
                                           mock_votos2={"tiburon_estratega": "invertir"}))
     s.iniciar(esperar=True)
-    for _ in range(3):
+    for _ in range(9):
         s.reanudar({p["tiburon_id"]: "ok" for p in s.pendiente["preguntas"]}, esperar=True)
     assert s.pendiente["tipo"] == "NEGOCIACION"
     s.reanudar({"accion": "ajustar", "monto_mxn": 300000, "porcentaje": 14}, esperar=True)
@@ -130,7 +146,7 @@ def test_api_flujo_completo():
     panel = [f["tiburon_id"] for f in rec["ranking"] if f["recomendado"]]
     assert len(panel) == 3
     sid = c.post("/sesiones", json={"pitch": PITCH, "panel": panel, "modo": "humano"}).json()["sesion_id"]
-    for _ in range(3):
+    for _ in range(9):
         for _ in range(100):
             est = c.get(f"/sesiones/{sid}/eventos").json()
             if est["estado"] == "esperando":

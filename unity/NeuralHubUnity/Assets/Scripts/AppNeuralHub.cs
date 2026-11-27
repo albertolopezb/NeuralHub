@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace NeuralHub
 {
-    public enum Vista { Inicio, Formulario, Panel, Modo, Sesion, Resultado, Sesiones }
+    public enum Vista { Inicio, Formulario, Panel, Modo, Sesion, Resultado, Sesiones, Conocer }
 
     /// <summary>Controlador de la aplicación: navega entre pantallas y conecta el servicio, el reproductor y el estudio.</summary>
     public class AppNeuralHub : MonoBehaviour
@@ -31,6 +31,8 @@ namespace NeuralHub
         public EjemploItem[] ejemplos;
         public string nivel = "medio";     // facil | medio | dificil
         public readonly BarraRondas barra = new BarraRondas();
+        public readonly IntroPrograma intro = new IntroPrograma();
+        public readonly ConocerTiburones conocer = new ConocerTiburones();
         public TiburonInfo[] catalogo;
         public Recomendacion recomendacion;
 
@@ -71,8 +73,23 @@ namespace NeuralHub
         }
 
         // ---------- navegación ----------
+        /// <summary>Voz de la presentación de un tiburón (audios incluidos en la aplicación).</summary>
+        public void EscucharPresentacion(string id) { StartCoroutine(ReproducirArchivo("presentaciones/" + id + ".wav")); }
+
+        IEnumerator ReproducirArchivo(string relativo)
+        {
+            var uri = new Uri(System.IO.Path.Combine(Application.streamingAssetsPath, "audio/" + relativo)).AbsoluteUri;
+            using (var req = UnityEngine.Networking.UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.WAV))
+            {
+                yield return req.SendWebRequest();
+                if (req.result == UnityEngine.Networking.UnityWebRequest.Result.Success && sonidos)
+                    sonidos.Voz(UnityEngine.Networking.DownloadHandlerAudioClip.GetContent(req), 1f, 0);
+            }
+        }
+
         public void Ir(Vista v)
         {
+            if (v != Vista.Sesion) intro.activa = false;
             vista = v; mostrarHistorial = false;
             if (v != Vista.Sesion && v != Vista.Resultado)
             {
@@ -132,11 +149,13 @@ namespace NeuralHub
                 if (!ok) return;
                 sugerenciasPedidas = 0;
                 barra.Reiniciar();
+                var datosPitch = formulario.p;
                 // Los 3 tiburones elegidos ya se sientan (en penumbra) mientras el emprendedor presenta su pitch
                 var nombres = new List<string>();
                 foreach (var id in panel) { var info = Catalogo(id); nombres.Add(info != null ? info.nombre : id); }
                 reproductor.Iniciar(); reproductor.enVivo = enVivo;
                 estudio.IniciarSesion(panel.ToArray(), nombres.ToArray()); Ir(Vista.Sesion);
+                intro.Iniciar(this, datosPitch.nombre, datosPitch.sector, datosPitch.problema, panel.ToArray());
             }));
         }
 
@@ -159,17 +178,23 @@ namespace NeuralHub
 
         void Update()
         {
+            intro.Actualizar(this);
             // En vivo: cuando el usuario ya respondió las preguntas que el servicio espera, se envían juntas
             var p = cliente.pendiente;
             if (vista == Vista.Sesion && reproductor.enVivo && p != null && p.tipo == "RESPUESTAS" && p.preguntas != null &&
-                p.ronda != reproductor.enviadaRonda && reproductor.rondaRespuestas == p.ronda)
+                reproductor.rondaRespuestas == p.ronda)
             {
-                bool todas = true;
-                foreach (var q in p.preguntas) if (!reproductor.respuestasRonda.ContainsKey(q.tiburon_id)) todas = false;
-                if (todas)
+                var envio = new Dictionary<string, string>();
+                string clave = p.ronda + "|";
+                foreach (var q in p.preguntas)
                 {
-                    reproductor.enviadaRonda = p.ronda;
-                    StartCoroutine(cliente.EnviarRespuestas(new Dictionary<string, string>(reproductor.respuestasRonda)));
+                    clave += q.tiburon_id + ",";
+                    string txt; if (reproductor.respuestasRonda.TryGetValue(q.tiburon_id, out txt)) envio[q.tiburon_id] = txt;
+                }
+                if (envio.Count == p.preguntas.Length && clave != reproductor.enviada)
+                {
+                    reproductor.enviada = clave;
+                    StartCoroutine(cliente.EnviarRespuestas(envio));
                 }
             }
 
@@ -200,7 +225,9 @@ namespace NeuralHub
                 case Vista.Panel: eleccion.Dibujar(this, W, H); break;
                 case Vista.Modo: seleccionModo.Dibujar(this, W, H); break;
                 case Vista.Sesiones: listaSesiones.Dibujar(this, W, H); break;
+                case Vista.Conocer: conocer.Dibujar(this, W, H); break;
                 case Vista.Sesion:
+                    if (intro.activa) { intro.Dibujar(this, W, H); break; }
                     interfaz.Dibujar(this, W, H);
                     barra.Dibujar(reproductor, W);
                     controles.Dibujar(this, W, H);
@@ -265,7 +292,7 @@ namespace NeuralHub
                     if (reproductor.turnoUsuario != turno) continue;
                     reproductor.Responder(txt);
                     var pr = cliente.pendiente;
-                    if (pr != null && pr.tipo == "RESPUESTAS" && pr.preguntas != null && reproductor.respuestasRonda.Count >= pr.preguntas.Length)
+                    if (pr != null && pr.tipo == "RESPUESTAS")
                         yield return MedirLatencia("RESPUESTAS", Time.realtimeSinceStartup, cliente.recibidos.Count);
                     continue;
                 }
@@ -395,8 +422,20 @@ namespace NeuralHub
             yield return Hasta(() => vista == Vista.Panel);
             yield return new WaitForSeconds(0.5f);
             yield return Cap(carpeta, "03_eleccion_panel");
+            conocer.Abrir(this, Vista.Panel);
+            conocer.Mostrar(this, 2); yield return new WaitForSeconds(1.2f);
+            yield return Cap(carpeta, "12_conocer");
+            conocer.Cerrar(this); yield return new WaitForSeconds(0.4f);
             IniciarSesion(new List<string>(eleccion.elegidos));
             reproductor.factorExtra = 2.2f;
+            yield return Hasta(() => intro.activa);
+            yield return new WaitForSeconds(3.0f);
+            yield return Cap(carpeta, "13_intro_portada");
+            yield return new WaitForSeconds(5.0f);
+            yield return Cap(carpeta, "14_intro_episodio");
+            yield return Hasta(() => reproductor.actual != null && reproductor.actual.tipo == "PITCH");
+            yield return new WaitForSeconds(1.6f);
+            yield return Cap(carpeta, "15_pitch");
             yield return Hasta(() => reproductor.actual != null && reproductor.actual.tipo == "PANEL");
             yield return new WaitForSeconds(2.2f);
             ocultarUI = true; yield return new WaitForSeconds(0.3f);

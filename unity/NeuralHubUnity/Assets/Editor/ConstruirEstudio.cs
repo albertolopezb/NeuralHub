@@ -34,7 +34,7 @@ namespace NeuralHub.Editor
             return m;
         }
 
-        static Material Material_(string nombre, string shader)
+        internal static Material Material_(string nombre, string shader)
         {
             if (!AssetDatabase.IsValidFolder("Assets/Materiales")) AssetDatabase.CreateFolder("Assets", "Materiales");
             string ruta = "Assets/Materiales/" + nombre + ".mat";
@@ -329,6 +329,7 @@ namespace NeuralHub.Editor
             var prefabTiburon = ConstruirPersonajes.PrefabTiburon();
             var prefabEstacion = PrefabEstacion();
             var prefabEmprendedor = ConstruirPersonajes.PrefabEmprendedor();
+            ConstruirCaracter.Retratos(prefabTiburon);
 
             var estudioGO = new GameObject("Estudio");
             Piso(estudioGO.transform);
@@ -337,6 +338,7 @@ namespace NeuralHub.Editor
             var pantalla = PantallaPrincipal(estudioGO.transform);
             var datos = PantallasLaterales(estudioGO.transform);
             Iluminacion();
+            var setEmprendedor = ConstruirCaracter.FondoEmprendedor(estudioGO.transform);
 
             var letrero = Texto("LetreroResultado", estudioGO.transform, new Vector3(0, 8.2f, 9.5f), "", 150, 0.05f, Color.white, TextAnchor.MiddleCenter, "SpaceGrotesk-Bold");
 
@@ -382,7 +384,7 @@ namespace NeuralHub.Editor
 
             var estudio = estudioGO.AddComponent<Estudio>();
             estudio.prefabTiburon = prefabTiburon; estudio.sillones = sillones; estudio.emprendedor = emp.GetComponent<Emprendedor>();
-            estudio.camara = camara; estudio.reflector = reflector; estudio.pantalla = pantalla; estudio.letreroResultado = letrero;
+            estudio.setEmprendedor = setEmprendedor; estudio.camara = camara; estudio.reflector = reflector; estudio.pantalla = pantalla; estudio.letreroResultado = letrero;
 
             var app = new GameObject("NeuralHub");
             var cliente = app.AddComponent<ClienteServicio>();
@@ -402,8 +404,8 @@ namespace NeuralHub.Editor
         static void ImportarTexturas()
         {
             AssetDatabase.Refresh();
-            foreach (var carpeta in new[] { "Assets/Resources/Laminas", "Assets/Resources/Escenario" })
-                foreach (var f in Directory.GetFiles(carpeta, "*.png"))
+            foreach (var carpeta in new[] { "Assets/Resources/Laminas", "Assets/Resources/Escenario", "Assets/Resources/Retratos" })
+                foreach (var f in Directory.Exists(carpeta) ? Directory.GetFiles(carpeta, "*.png") : new string[0])
                 {
                     var imp = AssetImporter.GetAtPath(f.Replace((char)92, '/')) as TextureImporter;
                     if (imp == null || imp.wrapMode == TextureWrapMode.Clamp) continue;

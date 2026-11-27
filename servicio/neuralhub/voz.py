@@ -11,19 +11,45 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent.parent
 CACHE = BASE / "audio_cache"
 
-# Cada personaje con su velocidad (-10..10) y tono (-10..10) para distinguirlos con la misma voz.
+# Voz de cada personaje: (voz de Windows es-MX, velocidad -10..10, tono -10..10). Se usan las dos voces en español de
+# México que trae Windows (Raúl y Sabina) con cambios suaves: los tonos extremos sonaban artificiales.
 PERFIL_VOZ = {
-    "tiburon_financiero": (0, -6),
-    "tiburon_estratega": (-1, -3),
-    "tiburon_tecnologico": (2, 2),
-    "tiburona_consumo": (1, 6),
-    "tiburon_mentor": (-2, -1),
-    "tiburon_negociador": (1, -8),
-    "emprendedor": (1, 4),
-    "moderador": (0, 0),
-    "nodo_votacion": (0, 0),
-    "servicio": (0, 0),
+    "tiburon_financiero": ("Raul", 0, -2),
+    "tiburon_estratega": ("Sabina", 0, -1),
+    "tiburon_tecnologico": ("Raul", 2, 2),
+    "tiburona_consumo": ("Sabina", 2, 1),
+    "tiburon_consumo": ("Sabina", 2, 1),
+    "tiburon_mentor": ("Raul", -1, 0),
+    "tiburon_negociador": ("Raul", 1, -3),
+    "emprendedor": ("Sabina", 1, 1),
+    "moderador": ("Sabina", 0, 0),
+    "nodo_votacion": ("Sabina", 0, 0),
+    "servicio": ("Sabina", 0, 0),
 }
+# Las voces «OneCore» de Windows (entre ellas Raúl) están en una categoría aparte de las clásicas de SAPI
+CATEGORIAS = (r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices",
+              r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices")
+
+
+def _elegir_voz(comtypes_client, nombre: str):
+    """Busca la voz pedida; si no está instalada, cualquier voz en español de México."""
+    respaldo = None
+    for ruta in CATEGORIAS:
+        try:
+            categoria = comtypes_client.CreateObject("SAPI.SpObjectTokenCategory")
+            categoria.SetId(ruta, False)
+            fichas = categoria.EnumerateTokens()
+            for i in range(fichas.Count):
+                v = fichas.Item(i)
+                descripcion = v.GetDescription()
+                if nombre in descripcion:
+                    return v
+                if respaldo is None and ("Sabina" in descripcion or "Mexico" in descripcion or "México" in descripcion):
+                    respaldo = v
+        except OSError:
+            continue
+    return respaldo
+
 
 _lock_tts = threading.Lock()
 _lock_stt = threading.Lock()
@@ -38,8 +64,8 @@ def _limpiar(texto: str) -> str:
 def sintetizar(texto: str, emisor: str) -> Path:
     """Genera (o reutiliza) un WAV con la línea del personaje."""
     CACHE.mkdir(exist_ok=True)
-    rate, pitch = PERFIL_VOZ.get(emisor, (0, 0))
-    clave = hashlib.sha1(f"{emisor}|{rate}|{pitch}|{texto}".encode("utf8")).hexdigest()[:20]
+    nombre, rate, pitch = PERFIL_VOZ.get(emisor, ("Sabina", 0, 0))
+    clave = hashlib.sha1(f"{emisor}|{nombre}|{rate}|{pitch}|{texto}".encode("utf8")).hexdigest()[:20]
     ruta = CACHE / f"{clave}.wav"
     if ruta.exists():
         return ruta
@@ -49,10 +75,9 @@ def sintetizar(texto: str, emisor: str) -> Path:
         comtypes.CoInitialize()
         try:
             voz = comtypes.client.CreateObject("SAPI.SpVoice")
-            for v in voz.GetVoices():
-                if "es-MX" in v.GetAttribute("Language") or "080A" in v.GetAttribute("Language") or "Sabina" in v.GetDescription():
-                    voz.Voice = v
-                    break
+            elegida = _elegir_voz(comtypes.client, nombre)
+            if elegida is not None:
+                voz.Voice = elegida
             stream = comtypes.client.CreateObject("SAPI.SpFileStream")
             fmt = comtypes.client.CreateObject("SAPI.SpAudioFormat")
             fmt.Type = 22  # SAFT22kHz16BitMono

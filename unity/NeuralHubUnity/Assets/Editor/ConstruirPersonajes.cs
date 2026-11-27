@@ -115,13 +115,13 @@ namespace NeuralHub.Editor
         static Transform Buscar(GameObject g, string nombre) { return g.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == nombre); }
 
         /// <summary>Cuello y corbata sobre el pecho: se ajusta a la superficie del modelo y sigue al hueso del torso.</summary>
-        static Renderer Corbata(GameObject modelo, string sufijo)
+        static Renderer Corbata(GameObject modelo, string sufijo, float bajar, float largo)
         {
             var cuello = Buscar(modelo, "Neck"); var torso = Buscar(modelo, "Torso");
             var piel = modelo.GetComponentsInChildren<SkinnedMeshRenderer>(true).OrderByDescending(r => r.sharedMesh.vertexCount).First();
             var horneada = new Mesh(); piel.BakeMesh(horneada, true);
             var pts = horneada.vertices.Select(p => piel.transform.TransformPoint(p)).ToArray();
-            float y0 = cuello.position.y - 0.02f;
+            float y0 = cuello.position.y - 0.02f - bajar;
             System.Func<float, float> frente = y =>
             {
                 var cerca = pts.Where(p => Mathf.Abs(p.x - cuello.position.x) < 0.1f && Mathf.Abs(p.y - y) < 0.07f).ToList();
@@ -129,7 +129,7 @@ namespace NeuralHub.Editor
             };
             float[] bajada = { 0.00f, 0.07f, 0.11f, 0.2f, 0.3f, 0.39f, 0.46f };
             float[] anchoCorbata = { 0.11f, 0.07f, 0.062f, 0.11f, 0.14f, 0.14f, 0.005f };
-            var centro = bajada.Select(d => new Vector3(cuello.position.x, y0 - d, frente(y0 - d) + 0.03f)).ToArray();
+            var centro = bajada.Select(d => new Vector3(cuello.position.x, y0 - d * largo, frente(y0 - d * largo) + 0.03f)).ToArray();
             var corbata = new GameObject("Corbata", typeof(MeshFilter), typeof(MeshRenderer));
             corbata.GetComponent<MeshFilter>().sharedMesh = Mallas.Guardar(Mallas.Cinta(centro, anchoCorbata, Vector3.right, Vector3.forward), "corbata_" + sufijo);
             var rc = corbata.GetComponent<Renderer>(); rc.sharedMaterial = ConstruirEstudio.Mat("Corbata", Color.white, 0.5f);
@@ -160,7 +160,7 @@ namespace NeuralHub.Editor
                 var an = Animar(g, Controlador("Tiburon_" + nombre, archivo, "Idle"));
                 var idle = Clip(archivo, "Idle"); if (idle) idle.SampleAnimation(g, 0f);
                 Colorear(g, "Tiburon");
-                pintables.Add(Corbata(g, nombre));
+                pintables.Add(Corbata(g, nombre, nombre == "Sharky" ? 0.17f : 0.02f, nombre == "Sharky" ? 0.66f : 1f));
                 g.transform.localScale = Vector3.one * escala;
                 g.transform.localPosition = new Vector3(0, 0.46f, -0.02f);
                 modelos.Add(new Tiburon.Modelo { raiz = g, animador = an, cabeza = Buscar(g, "Head") });
@@ -179,7 +179,9 @@ namespace NeuralHub.Editor
             var tp = ConstruirEstudio.Texto("Voto", paleta, new Vector3(0, 0, 0.05f), "", 90, 0.022f, new Color(0.03f, 0.06f, 0.12f));
             tp.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
+            var juegos = ConstruirCaracter.Juegos(raiz.transform, modelos);
             var t = raiz.AddComponent<Tiburon>();
+            t.juegos = juegos;
             t.modelos = modelos.ToArray(); t.giro = giro; t.paleta = paleta; t.letrero = letrero; t.pintables = pintables.ToArray();
             var prefab = PrefabUtility.SaveAsPrefabAsset(raiz, "Assets/Prefabs/Tiburon.prefab");
             Object.DestroyImmediate(raiz);

@@ -13,6 +13,7 @@ namespace NeuralHub
         public Reflector reflector;
         public Pantalla pantalla;
         public TextMesh letreroResultado;
+        public SetEmprendedor setEmprendedor;     // escenografía detrás del emprendedor
         public Transform podio;
 
         public readonly List<Tiburon> panel = new List<Tiburon>();
@@ -40,6 +41,12 @@ namespace NeuralHub
             reflector.Apagar();
         }
 
+        public void RetirarPanel()
+        {
+            foreach (var t in panel) if (t) Destroy(t.gameObject);
+            panel.Clear();
+        }
+
         public Tiburon Buscar(string id)
         {
             foreach (var t in panel) if (t && t.perfilId == id) return t;
@@ -57,7 +64,7 @@ namespace NeuralHub
             switch (e.tipo)
             {
                 case "PITCH":
-                    if (e.pitch != null) { pitch = e.pitch; valuacion = e.valuacion_mxn; TemasPitch.Mostrar(pantalla, pitch, valuacion, "portada", "Tu pitch"); }
+                    if (e.pitch != null) { pitch = e.pitch; valuacion = e.valuacion_mxn; TemasPitch.Mostrar(pantalla, pitch, valuacion, "portada", "Tu pitch"); if (setEmprendedor) setEmprendedor.Vestir(pitch.nombre, pitch.sector); }
                     emprendedor.Presentar();
                     foreach (var t in panel) t.Escuchar();
                     camara.Cambiar(Plano.Emprendedor, emprendedor.PuntoCabeza());

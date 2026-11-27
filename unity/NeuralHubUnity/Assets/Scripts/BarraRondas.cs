@@ -42,10 +42,10 @@ namespace NeuralHub
         void Preparar()
         {
             if (pastilla != null) return;
-            pastilla = Estilo(new Color(0.03f, 0.07f, 0.13f, 0.8f), Estilos.Linea, Estilos.Tenue);
+            pastilla = Estilo(new Color(0f, 0.05f, 0.2f, 0.94f), Estilos.Linea, Estilos.Tenue);
             pastillaHecha = Estilo(new Color(0.05f, 0.2f, 0.2f, 0.88f), new Color(0.24f, 0.86f, 0.59f, 0.75f), Estilos.Suave);
             pastillaActual = Estilo(Estilos.Calido, Estilos.Calido, Estilos.SobreCalido);
-            banda = new GUIStyle { normal = { background = Estilos.Redondeado(new Color(0.02f, 0.09f, 0.18f, 0.92f), Estilos.Calido, 28, 3f) }, border = new RectOffset(30, 30, 30, 30) };
+            banda = new GUIStyle { normal = { background = Estilos.Redondeado(new Color(0f, 0.07f, 0.28f, 0.97f), Estilos.Calido, 28, 3f) }, border = new RectOffset(30, 30, 30, 30) };
         }
 
         static GUIStyle Estilo(Color fondo, Color borde, Color texto)

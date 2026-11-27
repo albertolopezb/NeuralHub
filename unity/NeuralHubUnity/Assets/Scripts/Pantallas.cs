@@ -12,8 +12,9 @@ namespace NeuralHub
         {
             GUILayout.BeginArea(new Rect(W / 2 - 580, 50, 1160, H - 90), Estilos.Caja);
             GUILayout.Space(10);
-            GUILayout.Label("NeuralHub", Estilos.Titulo);
-            GUILayout.Label("Simulador de panel de inversionistas con agentes de IA", new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleCenter });
+            GUILayout.Label("NEURALHUB PRESENTA", new GUIStyle(Estilos.Quien) { alignment = TextAnchor.MiddleCenter });
+            GUILayout.Label(Personas.Programa, new GUIStyle(Estilos.Titulo) { fontSize = 66 });
+            GUILayout.Label(Personas.Lema + "  ·  Panel de inversionistas con agentes de IA", new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleCenter });
             GUILayout.Space(26);
             GUILayout.Label("Practica tu pitch ante 3 tiburones elegidos de un catálogo de 6. Responde sus preguntas por escrito, mira cómo debaten entre ellos y recibe una decisión justificada con retroalimentación.", Estilos.Texto);
             GUILayout.Space(28);
@@ -27,7 +28,11 @@ namespace NeuralHub
             GUILayout.Space(14);
             if (GUILayout.Button("Escribir mi propio pitch", Estilos.BotonPrimario, GUILayout.Height(54))) app.IrAFormulario();
             GUILayout.Space(10);
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Conoce a los tiburones", Estilos.Boton, GUILayout.Height(56))) { app.Clic(); app.conocer.Abrir(app, Vista.Inicio); }
+            GUILayout.Space(12);
             if (GUILayout.Button("Historial de sesiones", Estilos.Boton, GUILayout.Height(56))) app.AbrirSesiones();
+            GUILayout.EndHorizontal();
             GUILayout.Space(24);
             bool mock = GUILayout.Toggle(app.cliente.usarMock, "  Usar sesión de ejemplo (sin conexión)", GUILayout.Height(30));
             if (mock != app.cliente.usarMock) app.FijarMock(mock);
@@ -60,7 +65,7 @@ namespace NeuralHub
             Estilos.Rect(new Rect(r.x + 18, r.y + 14, r.width - 36, 6), Niveles.ColorDe(n));
             GUI.Label(new Rect(r.x + 18, r.y + 30, r.width - 36, 36), Niveles.Nombre(n), Estilos.Color_(new GUIStyle(Estilos.Subtitulo) { fontSize = 30 }, Niveles.ColorDe(n)));
             GUI.Label(new Rect(r.x + 18, r.y + 70, r.width - 36, 28), ej != null ? ej.pitch.nombre : "…", new GUIStyle(Estilos.Texto) { font = Estilos.Semi });
-            GUI.Label(new Rect(r.x + 18, r.y + 102, r.width - 36, 96), Niveles.Descripcion(n), new GUIStyle(Estilos.TextoChico) { fontSize = 17 });
+            GUI.Label(new Rect(r.x + 18, r.y + 102, r.width - 36, 96), Niveles.Descripcion(n), new GUIStyle(Estilos.TextoChico) { fontSize = 19 });
             GUI.enabled = ej != null;
             if (GUI.Button(r, GUIContent.none, GUIStyle.none)) { app.Clic(); app.ElegirNivel(n); }
             GUI.enabled = true;
@@ -236,15 +241,23 @@ namespace NeuralHub
             {
                 var info = app.Catalogo(f.tiburon_id);
                 bool sel = elegidos.Contains(f.tiburon_id);
-                GUILayout.BeginVertical(sel ? Estilos.CajaCalida : Estilos.CajaClara, GUILayout.Width(450), GUILayout.Height(310));
-                if (f.recomendado) GUILayout.Label("RECOMENDADO", Estilos.Quien);
-                else GUILayout.Label(" ", Estilos.Quien);
-                GUILayout.Label(info != null ? info.nombre : f.tiburon_id, new GUIStyle(Estilos.Subtitulo) { fontSize = 25 });
-                GUILayout.Space(4);
+                GUILayout.BeginVertical(sel ? Estilos.CajaCalida : Estilos.CajaClara, GUILayout.Width(450), GUILayout.Height(344));
+                var persona = Personas.De(f.tiburon_id);
+                GUILayout.BeginHorizontal();
+                var hueco = GUILayoutUtility.GetRect(108, 108, GUILayout.Width(108), GUILayout.Height(108));
+                var foto = Retratos.De(f.tiburon_id);
+                if (foto) GUI.DrawTexture(hueco, foto);
+                GUILayout.Space(14);
+                GUILayout.BeginVertical();
+                GUILayout.Label(f.recomendado ? "RECOMENDADO" : " ", Estilos.Quien);
+                GUILayout.Label(persona != null ? persona.nombre : f.tiburon_id, new GUIStyle(Estilos.Subtitulo) { fontSize = 25 });
+                GUILayout.Label(info != null ? info.nombre : "", Estilos.TextoChico);
+                GUILayout.EndVertical();
+                GUILayout.EndHorizontal();
+                GUILayout.Space(6);
                 if (info != null)
                 {
-                    GUILayout.Label(info.perfil, new GUIStyle(Estilos.Texto) { fontSize = 19 });
-                    GUILayout.Label("Criterio: " + info.criterio, Estilos.TextoChico);
+                    GUILayout.Label(info.perfil + " Se fija en " + info.criterio + ".", new GUIStyle(Estilos.Texto) { fontSize = 19 });
                 }
                 GUILayout.Label("Por qué: " + f.motivo, Estilos.TextoChico);
                 GUILayout.FlexibleSpace();
@@ -260,6 +273,8 @@ namespace NeuralHub
             GUILayout.FlexibleSpace();
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Volver", Estilos.Boton, GUILayout.Width(180), GUILayout.Height(54))) app.Ir(Vista.Formulario);
+            GUILayout.Space(12);
+            if (GUILayout.Button("Conocer a los tiburones", Estilos.Boton, GUILayout.Width(320), GUILayout.Height(54))) { app.Clic(); app.conocer.Abrir(app, Vista.Panel); }
             GUILayout.FlexibleSpace();
             GUILayout.Label(elegidos.Count + " de 3 elegidos", Estilos.Color_(Estilos.Texto, elegidos.Count == 3 ? Estilos.Tinta : Estilos.Tenue), GUILayout.Width(220), GUILayout.Height(54));
             GUI.enabled = elegidos.Count == 3;
@@ -569,6 +584,41 @@ namespace NeuralHub
             }
         }
 
+        static string textoPaginado;
+        static int anchoPaginado;
+        static List<string> paginasCache;
+
+        /// <summary>Parte un texto largo en páginas de pocas líneas, cortando en frases cuando se puede.</summary>
+        static List<string> Paginas(string texto, int maximo)
+        {
+            if (texto == textoPaginado && maximo == anchoPaginado) return paginasCache;
+            var paginas = new List<string>();
+            var actual = "";
+            foreach (var frase in System.Text.RegularExpressions.Regex.Split(texto.Trim(), @"(?<=[\.\?\!:;])\s+"))
+            {
+                if (actual.Length > 0 && actual.Length + 1 + frase.Length > maximo) { paginas.Add(actual); actual = ""; }
+                actual = actual.Length == 0 ? frase : actual + " " + frase;
+                while (actual.Length > maximo)
+                {
+                    int corte = actual.LastIndexOf(' ', maximo);
+                    if (corte < 40) break;
+                    paginas.Add(actual.Substring(0, corte)); actual = actual.Substring(corte + 1);
+                }
+            }
+            if (actual.Length > 0) paginas.Add(actual);
+            if (paginas.Count == 0) paginas.Add(texto);
+            textoPaginado = texto; anchoPaginado = maximo; paginasCache = paginas;
+            return paginas;
+        }
+
+        static int PaginaActual(List<string> paginas, float avance)
+        {
+            int total = 0; foreach (var p in paginas) total += p.Length;
+            float visto = avance * total; int suma = 0;
+            for (int i = 0; i < paginas.Count; i++) { suma += paginas[i].Length; if (visto < suma) return i; }
+            return paginas.Count - 1;
+        }
+
         public void Dibujar(AppNeuralHub app, float W, float H)
         {
             var r = app.reproductor;
@@ -601,12 +651,12 @@ namespace NeuralHub
             bool enCerca = app.camara && app.camara.planoActual != Plano.General && app.camara.planoActual != Plano.Pantalla;
             if (!mostrarPanel && !app.mostrarHistorial && enCerca && pant && pant.Imagen && r.actual != null)
             {
-                var caja = new Rect(W - 470, 146, 430, 150);
+                var caja = new Rect(W - 560, 146, 520, 176);
                 GUI.Box(caja, GUIContent.none, Estilos.CajaClara);
-                GUI.DrawTexture(new Rect(caja.x + 14, caja.y + 17, 116, 116), pant.Imagen, ScaleMode.ScaleToFit);
-                GUI.Label(new Rect(caja.x + 146, caja.y + 16, 270, 24), (pant.Sobre ?? "").ToUpper(), new GUIStyle(Estilos.Quien) { fontSize = 14 });
-                GUI.Label(new Rect(caja.x + 146, caja.y + 40, 270, 34), pant.Encabezado, new GUIStyle(Estilos.Subtitulo) { fontSize = 23, wordWrap = false, clipping = TextClipping.Clip });
-                GUI.Label(new Rect(caja.x + 146, caja.y + 74, 270, 62), Pantalla.Ajustar(pant.Cuerpo, 33, 3), new GUIStyle(Estilos.TextoChico) { fontSize = 15 });
+                GUI.DrawTexture(new Rect(caja.x + 14, caja.y + 18, 140, 140), pant.Imagen, ScaleMode.ScaleToFit);
+                GUI.Label(new Rect(caja.x + 172, caja.y + 16, 330, 24), (pant.Sobre ?? "").ToUpper(), new GUIStyle(Estilos.Quien) { fontSize = 17 });
+                GUI.Label(new Rect(caja.x + 172, caja.y + 42, 330, 36), pant.Encabezado, new GUIStyle(Estilos.Subtitulo) { fontSize = 27, wordWrap = false, clipping = TextClipping.Clip });
+                GUI.Label(new Rect(caja.x + 172, caja.y + 82, 334, 90), Pantalla.Ajustar(pant.Cuerpo, 34, 3), new GUIStyle(Estilos.TextoChico) { fontSize = 18 });
             }
 
             // Tu panel (se abre con el botón «Tu panel»)
@@ -630,21 +680,28 @@ namespace NeuralHub
                 GUI.Label(new Rect(0, 170, W, 110), trato ? "TRATO" : "SIN TRATO", Estilos.Color_(Estilos.Grande, trato ? Estilos.Dentro : Estilos.Fuera));
             }
 
-            // Subtítulo de quien habla (abajo), oculto mientras el usuario responde
+            // Subtítulo de quien habla (abajo), oculto mientras el usuario responde. Los textos largos avanzan por frases
+            // al ritmo de la voz para que siempre se lean completos y con letra grande.
             bool modal = r.EnEspera && app.cliente.pendiente != null;
             if (r.actual != null && r.actual.tipo != "REPORTE" && !modal && !string.IsNullOrEmpty(r.actual.texto))
             {
                 var e = r.actual;
                 bool habla = e.emisor != null && e.emisor.StartsWith("tibur");
                 bool insignia = e.tipo == "VOTO" && !string.IsNullOrEmpty(e.decision);
-                float ancho = Mathf.Min(1360, W - 80), xCaja = W / 2 - ancho / 2;
-                var cuerpo = new GUIStyle(Estilos.Texto) { fontSize = 25 };
+                float ancho = Mathf.Min(1440, W - 80), xCaja = W / 2 - ancho / 2;
+                var cuerpo = new GUIStyle(Estilos.Texto) { fontSize = 29 };
                 float anchoTexto = ancho - 56 - (insignia ? 280 : 0);
-                float altoTexto = cuerpo.CalcHeight(new GUIContent("«" + e.texto + "»"), anchoTexto);
-                float alto = Mathf.Max(insignia ? 120 : 0, 22 + 28 + 8 + altoTexto + 22);
+                var paginas = Paginas(e.texto, insignia ? 150 : 190);
+                int pagina = PaginaActual(paginas, r.Progreso);
+                string visible = paginas[pagina];
+                float altoTexto = Mathf.Max(80, cuerpo.CalcHeight(new GUIContent(visible), anchoTexto));
+                float alto = Mathf.Max(insignia ? 130 : 0, 22 + 28 + 10 + altoTexto + 22);
                 float fondo = H - 120 - (r.turnoUsuario != null ? BurbujaRespuesta.Alto + 16 : 0);
                 var caja = new Rect(xCaja, fondo - alto, ancho, alto);
                 GUI.Box(caja, GUIContent.none, habla ? Estilos.CajaCalida : Estilos.Caja);
+                if (paginas.Count > 1)
+                    for (int i = 0; i < paginas.Count; i++)
+                        Estilos.Punto(new Rect(caja.xMax - 30 - (paginas.Count - i) * 18, caja.yMax - 20, 10, 10), i == pagina ? Estilos.Calido : new Color(1, 1, 1, 0.28f));
                 string quien = NombreLargo(app, e.emisor).ToUpper();
                 string extra = e.tipo == "PREGUNTA" ? "  ·  pregunta" : e.tipo == "REPLICA" ? "  ·  réplica" + (!string.IsNullOrEmpty(e.postura) ? " (" + e.postura + ")" : "") :
                                e.tipo == "VOTO" ? "  ·  voto" : e.tipo == "RESPUESTA" ? "  ·  respuesta" : "";
@@ -652,7 +709,7 @@ namespace NeuralHub
                 float anchoQuien = estQuien.CalcSize(new GUIContent(quien)).x;
                 GUI.Label(new Rect(caja.x + 28, caja.y + 22, anchoQuien, 28), quien, estQuien);
                 GUI.Label(new Rect(caja.x + 28 + anchoQuien, caja.y + 22, 400, 28), extra, Estilos.Etiqueta);
-                GUI.Label(new Rect(caja.x + 28, caja.y + 22 + 28 + 8, anchoTexto, altoTexto), habla ? "«" + e.texto + "»" : e.texto, cuerpo);
+                GUI.Label(new Rect(caja.x + 28, caja.y + 22 + 28 + 10, anchoTexto, altoTexto), visible, cuerpo);
                 if (insignia)
                 {
                     var c = Estilos.ColorVoto(e.decision);

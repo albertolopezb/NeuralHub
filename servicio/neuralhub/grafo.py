@@ -18,7 +18,7 @@ from langgraph.types import interrupt
 from . import esquemas as E
 from . import panel as P
 from . import regla
-from .pitch import Pitch, ficha, mxn, valuacion_mxn
+from .pitch import Pitch, ficha, mxn, valuacion_mxn, discurso
 from .tiburones import TIBURONES
 
 MAX_RONDAS = 3
@@ -31,6 +31,7 @@ REGLA_JUSTIFICACION = (
 
 
 class Estado(TypedDict, total=False):
+    turno: int                  # índice del tiburón que pregunta dentro de la ronda
     pitch: dict
     panel: list
     modo: str                       # humano | autopiloto | guion
@@ -69,15 +70,40 @@ def rotar(orden: list, r: int) -> list:
     return orden[k:] + orden[:k]
 
 
-# Nivel de la sesión: cambia la exigencia de los tiburones. «medio» es el comportamiento base (sin texto extra).
+# Nivel de la sesión: cambia cómo preguntan, replican y votan los tiburones.
+#   tono: se agrega al rol · pregunta: qué se le pide al preguntar · voto: cómo calibra su decisión
 NIVELES = {
-    "facil": " Nivel FÁCIL: es un emprendedor principiante. Pregunta una sola cosa sencilla y sin tecnicismos, con tono amable; "
-             "en la réplica reconoce primero lo que sí respondió bien. Al votar sé paciente: invierte si el negocio cumple lo básico "
-             "de tu criterio, aunque falten algunos datos.",
-    "medio": "",
-    "dificil": " Nivel DIFÍCIL: eres muy exigente. Pregunta por el punto más débil y pide la cifra exacta que lo respalde; "
-               "en la réplica señala lo que la respuesta no resolvió. Al votar, invertir solo si TODOS los datos de tu criterio "
-               "existen y son sólidos; ante dudas razonables, contraoferta con condiciones más duras o salir.",
+    "facil": {
+        "tono": " Estás en el nivel FÁCIL: quien presenta es principiante. Eres cálido y paciente, hablas como en una "
+                "plática, sin tecnicismos, y animas al emprendedor.",
+        "pregunta": "Haz UNA sola pregunta corta (máximo 20 palabras), amable y abierta, que se pueda contestar contando "
+                    "su historia: qué lo motivó, quién lo usa, cómo funciona o para qué quiere el dinero. PROHIBIDO pedir "
+                    "cifras, porcentajes o métricas y PROHIBIDO usar términos como CAC, TAM, margen, valuación, churn, "
+                    "escalabilidad o propiedad intelectual. No hagas preguntas de dos partes.",
+        "voto": "Calibra tu voto con generosidad: invierte si el negocio resuelve un problema real y el emprendedor "
+                "contestó con claridad, aunque falten datos o la oferta sea algo cara. Usa contraoferta (cercana a lo que "
+                "pide) solo si las condiciones son claramente desproporcionadas, y salir solo si no hay un negocio.",
+    },
+    "medio": {
+        "tono": " Estás en el nivel MEDIO: eres un inversionista razonable, como en televisión. Hablas claro, en lenguaje "
+                "cotidiano, una idea a la vez; reconoces lo que está bien antes de señalar un pendiente.",
+        "pregunta": "Haz UNA sola pregunta práctica (máximo 25 palabras), en lenguaje cotidiano, sobre algo de tu criterio que "
+                    "un emprendedor que conoce su negocio puede contestar sin estudios especializados: cómo vende, cuánto le "
+                    "cuesta producir, quién le compra, qué lo hace distinto o en qué usará el dinero. PROHIBIDO pedir "
+                    "proyecciones a varios años, tamaño total del mercado, porcentaje de captura o usar siglas como CAC, TAM o "
+                    "churn. No hagas preguntas de dos partes ni repitas lo ya contestado.",
+        "voto": "Calibra tu voto con equilibrio: si el negocio ya muestra avance (ventas, preventas o pruebas con usuarios) y "
+                "las respuestas fueron razonables, vota invertir o contraoferta; es normal que falten detalles en esta etapa. "
+                "Usa contraoferta si la valuación te parece alta, y salir solo si falta casi todo lo de tu criterio.",
+    },
+    "dificil": {
+        "tono": " Estás en el nivel DIFÍCIL: eres un inversionista duro e impaciente. Presionas, no regalas elogios y "
+                "señalas cualquier contradicción.",
+        "pregunta": "Haz UNA pregunta incisiva sobre el punto MÁS débil de tu criterio. Exige la cifra exacta que lo "
+                    "respalde, o señala que ese dato falta o no cuadra con lo dicho antes. No repitas lo ya contestado.",
+        "voto": "Calibra tu voto con dureza: invertir solo si TODOS los datos de tu criterio existen y son sólidos; ante "
+                "cualquier duda razonable, contraoferta con condiciones claramente más duras (más porcentaje) o salir.",
+    },
 }
 
 
@@ -88,7 +114,7 @@ def sistema_tiburon(tid: str, nivel: str = "medio") -> str:
         f"Tu criterio principal es: {t['criterio']}. Tu estilo: {t['estilo']}\nReglas: hablas en español de México, directo y breve (máximo 60 palabras); "
         "los montos van en pesos mexicanos; solo usas datos de la ficha y de la conversación: si falta un dato, dilo "
         "(\"no me dices X\") en lugar de inventarlo; usa las cifras calculadas tal cual, no hagas cuentas propias; "
-        "si algo contradice lo dicho antes, señálalo." + NIVELES.get(nivel, "")
+        "si algo contradice lo dicho antes, señálalo." + NIVELES.get(nivel, NIVELES["medio"])["tono"]
     )
 
 
@@ -134,8 +160,7 @@ def construir_grafo(checkpointer=None):
         ses, _, _ = _cfg(config)
         pitch = Pitch(**estado["pitch"])
         val = valuacion_mxn(pitch)
-        resumen = (f"{pitch.nombre}: pide {mxn(pitch.monto_mxn)} por el {pitch.porcentaje:g} % "
-                   f"(valuación implícita {mxn(val)}). Problema: {pitch.problema} Solución: {pitch.solucion}")
+        resumen = discurso(pitch)
         evs = [h(0, "PITCH", "emprendedor", resumen)]
         ses.emit("PITCH", "emprendedor", "tiburones", resumen, 0, pitch=estado["pitch"], valuacion_mxn=val)
         motivos = {f["tiburon_id"]: f["motivo"] for f in P.evaluar(pitch)}
@@ -146,53 +171,48 @@ def construir_grafo(checkpointer=None):
         return {"orden": P.orden_de_turnos(pitch, panel), "ronda": 0, "oferta": {"monto_mxn": pitch.monto_mxn, "porcentaje": pitch.porcentaje},
                 "historial": evs}
 
-    # 2. Cada tiburón del panel hace una pregunta (3 llamadas)
+    # 2. El siguiente tiburón de la ronda hace su pregunta (1 llamada); se pregunta uno por uno, como en el programa
     def preguntar(estado, config):
         ses, llm, _ = _cfg(config)
         r = estado["ronda"] + 1
         pitch = Pitch(**estado["pitch"])
-        hechas = {}
-        nuevos = []
-        for tid in rotar(estado["orden"], estado["ronda"]):
-            ya = "\n".join(f"- {nombre(k)}: {v}" for k, v in hechas.items()) or "(ninguna)"
-            salida = llm.estructurado(E.Pregunta, sistema_tiburon(tid, ses.nivel), (
-                f"PITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto({'historial': estado['historial'] + nuevos})}\n\n"
-                f"Vas en la ronda {r} de {MAX_RONDAS}. Preguntas ya hechas en esta ronda por otros tiburones:\n{ya}\n\n"
-                "Haz UNA pregunta nueva, sobre el punto más débil de tu criterio. No repitas una pregunta que el emprendedor ya respondió. "
-                "Cita un dato del pitch o señala que ese dato falta."))
-            hechas[tid] = salida.pregunta.strip()
-            ses.emit("PREGUNTA", tid, "emprendedor", hechas[tid], r)
-            nuevos.append(h(r, "PREGUNTA", tid, hechas[tid]))
-        return {"preguntas": hechas, "historial": nuevos}
+        turno = estado.get("turno", 0)
+        tid = rotar(estado["orden"], estado["ronda"])[turno]
+        salida = llm.estructurado(E.Pregunta, sistema_tiburon(tid, ses.nivel), (
+            f"PITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto(estado)}\n\n"
+            f"Vas en la ronda {r} de {MAX_RONDAS}. {NIVELES[ses.nivel]['pregunta']}"))
+        texto = salida.pregunta.strip()
+        ses.emit("PREGUNTA", tid, "emprendedor", texto, r)
+        previas = estado["preguntas"] if turno else {}
+        return {"preguntas": {**previas, tid: texto}, "historial": [h(r, "PREGUNTA", tid, texto)]}
 
-    # 3. El emprendedor responde las 3 preguntas de la ronda (usuario: interrupt; autopiloto: 1 llamada; guion: 0)
+    # 3. El emprendedor responde esa pregunta (usuario: interrupt; autopiloto: 1 llamada; guion: 0)
     def responder(estado, config):
         ses, llm, guion = _cfg(config)
         r = estado["ronda"] + 1
-        preguntas = estado["preguntas"]
+        turno = estado.get("turno", 0)
+        t = rotar(estado["orden"], estado["ronda"])[turno]
+        pregunta = estado["preguntas"][t]
         modo = estado["modo"]
         if modo == "humano":
-            recibidas = interrupt({"tipo": "RESPUESTAS", "ronda": r,
-                                   "preguntas": [{"tiburon_id": t, "texto": q} for t, q in preguntas.items()]})
+            recibidas = interrupt({"tipo": "RESPUESTAS", "ronda": r, "preguntas": [{"tiburon_id": t, "texto": pregunta}]})
         elif modo == "guion":
             recibidas = guion["respuestas"][str(r)]
         else:
             pitch = Pitch(**estado["pitch"])
-            listado = "\n".join(f"[{t}] {q}" for t, q in preguntas.items())
             salida = llm.estructurado(E.Respuestas, sistema_emprendedor(), (
                 f"TU FICHA:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto(estado)}\n\n"
-                f"Responde cada pregunta con una respuesta propia En tiburon_id copia EXACTAMENTE el id que está entre corchetes:\n{listado}"))
+                f"Responde SOLO esta pregunta. En tiburon_id copia EXACTAMENTE el id que está entre corchetes:\n[{t}] {pregunta}"))
             por_id = {x.tiburon_id: x.texto for x in salida.respuestas}
-            # Respaldo: si el modelo cambió los ids, se asignan por posición.
-            if set(por_id) != set(preguntas) and len(salida.respuestas) == len(preguntas):
-                por_id = {t: x.texto for t, x in zip(preguntas, salida.respuestas)}
+            if t not in por_id and salida.respuestas:      # respaldo si el modelo cambió el id
+                por_id = {t: salida.respuestas[0].texto}
             recibidas = por_id
-        nuevos = []
-        for t in preguntas:
-            txt = str(recibidas.get(t) or "(sin respuesta)").strip()[:MAX_CHARS_RESPUESTA]
-            ses.emit("RESPUESTA", "emprendedor", t, txt, r)
-            nuevos.append(h(r, "RESPUESTA", "emprendedor", f"(a {nombre(t)}) {txt}"))
-        return {"historial": nuevos}
+        txt = str(recibidas.get(t) or "(sin respuesta)").strip()[:MAX_CHARS_RESPUESTA]
+        ses.emit("RESPUESTA", "emprendedor", t, txt, r)
+        return {"turno": turno + 1, "historial": [h(r, "RESPUESTA", "emprendedor", f"(a {nombre(t)}) {txt}")]}
+
+    def tras_respuesta(estado):
+        return "preguntar" if estado["turno"] < len(estado["orden"]) else "replicar"
 
     # 4. Un tiburón replica a otro (1 llamada). El moderador (nodo determinista) asigna quién replica y a quién:
     #    replica el último que preguntó en la ronda y el destino es el primero (el orden rota cada ronda).
@@ -209,7 +229,7 @@ def construir_grafo(checkpointer=None):
             f"Respóndele a él directamente (tú eres el {nombre(yo)}): di si estás de acuerdo o en desacuerdo con su pregunta o "
             "su preocupación, a la luz de la respuesta del emprendedor, y explica por qué desde tu criterio."))
         ses.emit("REPLICA", yo, a, salida.texto.strip(), r, postura=salida.postura)
-        return {"ronda": r, "historial": [h(r, "REPLICA", yo, f"(a {nombre(a)}, {salida.postura}) {salida.texto.strip()}")]}
+        return {"ronda": r, "turno": 0, "historial": [h(r, "REPLICA", yo, f"(a {nombre(a)}, {salida.postura}) {salida.texto.strip()}")]}
 
     def tras_replica(estado):
         return "votar" if estado["ronda"] >= MAX_RONDAS else "preguntar"
@@ -231,7 +251,7 @@ def construir_grafo(checkpointer=None):
         of = estado["oferta"]
         base = (f"PANEL: {', '.join(estado['panel'])}\nPITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN COMPLETA:\n{hist_texto(estado)}\n\n"
                 f"OFERTA ACTUAL: monto={of['monto_mxn']} porcentaje={of['porcentaje']}\n\n"
-                "Emite tu voto en secreto: invertir, contraoferta o salir. Calibra tu voto: invertir si los datos cumplen tu criterio; contraoferta si el negocio te interesa pero las condiciones o algún dato no te convencen; salir solo si tu criterio falla claramente o faltan los datos clave. " + REGLA_JUSTIFICACION +
+                "Emite tu voto en secreto: invertir, contraoferta o salir. " + NIVELES[ses.nivel]["voto"] + " " + REGLA_JUSTIFICACION +
                 " Si haces contraoferta, da monto en MXN y porcentaje. No sabes cómo votan los demás.")
 
         def uno(tid):
@@ -397,7 +417,7 @@ def construir_grafo(checkpointer=None):
     g.add_edge(START, "presentar")
     g.add_edge("presentar", "preguntar")
     g.add_edge("preguntar", "responder")
-    g.add_edge("responder", "replicar")
+    g.add_conditional_edges("responder", tras_respuesta, ["preguntar", "replicar"])
     g.add_conditional_edges("replicar", tras_replica, ["preguntar", "votar"])
     g.add_edge("votar", "decidir")
     g.add_conditional_edges("decidir", tras_decidir, ["condiciones", "negociar", "reporte"])

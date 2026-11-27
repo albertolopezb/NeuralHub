@@ -17,7 +17,11 @@ namespace NeuralHub
         [System.Serializable]
         public class Modelo { public GameObject raiz; public Animator animador; public Transform cabeza; }
 
+        [System.Serializable]
+        public class Juego { public string id; public GameObject[] piezas; }
+
         public Modelo[] modelos;                // dos diseños de tiburón; cada perfil usa uno
+        public Juego[] juegos;                  // accesorio, objeto del podio y emblema de cada perfil
         public Transform giro;                  // solo gira el cuerpo; el letrero del podio se queda quieto
         public Transform paleta;
         public TextMesh letrero;
@@ -45,6 +49,9 @@ namespace NeuralHub
             int v = Variante(id);
             for (int i = 0; i < modelos.Length; i++) modelos[i].raiz.SetActive(i == v);
             activo = modelos[v];
+            if (juegos != null)
+                foreach (var j in juegos)
+                    foreach (var pieza in j.piezas) if (pieza) pieza.SetActive(j.id == id);
             foreach (var r in pintables)
             {
                 if (!r) continue;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NeuralHub
 {
-    public enum Plano { General, Emprendedor, Tiburon, Pantalla, Arriba }
+    public enum Plano { General, Emprendedor, Tiburon, Pantalla, Arriba, Conocer, Vuelo }
 
     /// <summary>Cámara principal que cambia de plano para enfocar a quien habla.</summary>
     public class CamaraEstudio : MonoBehaviour
@@ -19,6 +19,7 @@ namespace NeuralHub
 
         public void Cambiar(Plano plano, Vector3? punto)
         {
+            bool corte = plano == Plano.Emprendedor || planoActual == Plano.Emprendedor;   // corte de cámara, como en televisión
             planoActual = plano;
             switch (plano)
             {
@@ -28,6 +29,11 @@ namespace NeuralHub
                     posObj = new Vector3(0, 17f, 1f); rotObj = Quaternion.Euler(90, 0, 0); break;
                 case Plano.Pantalla:
                     posObj = new Vector3(0, 3.8f, -3f); rotObj = Quaternion.LookRotation(new Vector3(0, 4f, 9.5f) - posObj); break;
+                case Plano.Conocer:
+                {
+                    var p = punto ?? new Vector3(0, 2.3f, 5f);
+                    posObj = p + new Vector3(0.5f, 0.15f, -5.2f); rotObj = Quaternion.LookRotation(p + new Vector3(0.12f, -0.45f, 0) - posObj); corte = true; break;
+                }
                 case Plano.Emprendedor:
                 {
                     var p = punto ?? new Vector3(0, 1.7f, -2.5f);
@@ -42,7 +48,18 @@ namespace NeuralHub
                     rotObj = Quaternion.LookRotation(p + Vector3.down * 0.62f - posObj); break;
                 }
             }
-            if (instantaneo) { transform.position = posObj; transform.rotation = rotObj; }
+            if (instantaneo || corte) { transform.position = posObj; transform.rotation = rotObj; }
+        }
+
+        /// <summary>Recorrido de la intro: entra desde un costado y termina en el plano general.</summary>
+        public void Vuelo(float avance, bool cortar)
+        {
+            planoActual = Plano.Vuelo;
+            float k = avance * avance * (3f - 2f * avance);
+            posObj = Vector3.Lerp(new Vector3(-8.5f, 5.6f, -4.5f), posGeneral, k);
+            var mira = Vector3.Lerp(new Vector3(2.5f, 2.2f, 7f), miraGeneral, k);
+            rotObj = Quaternion.LookRotation(mira - posObj);
+            if (cortar) { transform.position = posObj; transform.rotation = rotObj; }
         }
 
         void LateUpdate()

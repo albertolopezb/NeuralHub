@@ -35,7 +35,11 @@ namespace NeuralHub
         public bool enVivo;
         public string turnoUsuario;              // tiburón al que el usuario debe responder ahora (null si no es su turno)
         public string preguntaUsuario;
-        public int rondaRespuestas = -1, enviadaRonda = -1;
+        public int rondaRespuestas = -1;
+        public string enviada;                   // clave de las preguntas ya enviadas al servicio (ronda|tiburón)
+        public float Duracion_ { get; private set; }
+        /// <summary>Avance (0 a 1) del turno en curso: la interfaz lo usa para pasar los subtítulos largos por frases.</summary>
+        public float Progreso { get { return Duracion_ > 0.01f ? Mathf.Clamp01(1f - restante / Duracion_) : 1f; } }
         public readonly Dictionary<string, string> respuestasRonda = new Dictionary<string, string>();
 
         int siguiente;
@@ -51,7 +55,7 @@ namespace NeuralHub
         {
             historial.Clear(); votos.Clear(); siguiente = 0; restante = 0; actual = null; ronda = 0; resultado = "";
             reporteListo = false; reporte = null; decisionFinal = null; activo = true; pausado = false; esperandoAudio = false;
-            turnoUsuario = null; preguntaUsuario = null; rondaRespuestas = -1; enviadaRonda = -1; respuestasRonda.Clear();
+            turnoUsuario = null; preguntaUsuario = null; rondaRespuestas = -1; enviada = null; respuestasRonda.Clear();
             if (sonidos) sonidos.DetenerVoz();
         }
 
@@ -102,6 +106,7 @@ namespace NeuralHub
             var e = cliente.recibidos[siguiente++];
             Aplicar(e, true);
             restante = Duracion(e);
+            Duracion_ = restante;
             ultimoEventoRealtime = Time.realtimeSinceStartup;
             if (enVivo && e.tipo == "PREGUNTA" && e.emisor != null && e.emisor.StartsWith("tibur"))
             {
@@ -121,7 +126,8 @@ namespace NeuralHub
                     if (clip == null || actual != evento) return;
                     float tono = Mathf.Clamp(velocidad * factorExtra, 1f, 1.5f);
                     sonidos.Voz(clip, tono, evento.n);
-                    restante = Mathf.Max(restante, clip.length / tono + 0.35f) ;
+                    restante = clip.length / tono + 0.35f;
+                    Duracion_ = restante;
                 }));
             }
         }
@@ -181,8 +187,9 @@ namespace NeuralHub
                 case "PANEL": return 3.5f;
                 case "DECISION": return 5f;
                 case "REPORTE": return 1.5f;
-                case "VOTO": return Mathf.Clamp(largo * 0.03f, 2.5f, 7f);
-                default: return Mathf.Clamp(largo * 0.035f, 2.5f, 8f);
+                case "VOTO": return Mathf.Clamp(largo * 0.055f, 3f, 14f);
+                case "PITCH": return Mathf.Clamp(largo * 0.058f, 6f, 45f);
+                default: return Mathf.Clamp(largo * 0.055f, 3f, 14f);
             }
         }
 

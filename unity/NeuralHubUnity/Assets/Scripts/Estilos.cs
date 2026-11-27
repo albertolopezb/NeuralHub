@@ -3,31 +3,31 @@ using UnityEngine;
 namespace NeuralHub
 {
     /// <summary>
-    /// Estilos de la interfaz (IMGUI) con el look del estudio oscuro: paneles casi negros con borde fino,
-    /// un solo acento cálido (#F5C26B, el color del spotlight) y verde/rojo solo para los veredictos.
+    /// Estilos de la interfaz (IMGUI) con los colores del equipo: paneles azul marino, bordes azules, acento cian
+    /// (#13B8F0), botones principales violeta (#4F1FD0) y verde/rojo solo para los veredictos.
     /// Fuentes: Inter (texto) y Space Grotesk (títulos), en Assets/Resources/Fuentes.
     /// </summary>
     public static class Estilos
     {
         // Paleta del concepto
-        public static readonly Color Fondo = Perfiles.Hex("#05070B");
-        public static readonly Color Panel = new Color(8 / 255f, 12 / 255f, 20 / 255f, 0.88f);
-        public static readonly Color PanelClaro = new Color(15 / 255f, 23 / 255f, 38 / 255f, 0.84f);
-        public static readonly Color Linea = Perfiles.Hex("#24344F");
-        public static readonly Color LineaFuerte = Perfiles.Hex("#3A4A66");
-        public static readonly Color Tinta = Perfiles.Hex("#E8EDF5");
-        public static readonly Color Suave = Perfiles.Hex("#C9D6E8");
-        public static readonly Color Tenue = Perfiles.Hex("#AEBDD3");
-        public static readonly Color Calido = Perfiles.Hex("#F5C26B");
-        public static readonly Color SobreCalido = Perfiles.Hex("#1A1206");
+        public static readonly Color Fondo = Perfiles.Hex("#030A2A");
+        public static readonly Color Panel = new Color(3 / 255f, 14 / 255f, 56 / 255f, 0.96f);
+        public static readonly Color PanelClaro = new Color(8 / 255f, 30 / 255f, 94 / 255f, 0.95f);
+        public static readonly Color Linea = Perfiles.Hex("#1060D0");
+        public static readonly Color LineaFuerte = Perfiles.Hex("#2E7BE6");
+        public static readonly Color Tinta = Perfiles.Hex("#FFFFFF");
+        public static readonly Color Suave = Perfiles.Hex("#E4EDFF");
+        public static readonly Color Tenue = Perfiles.Hex("#C3D4F7");
+        public static readonly Color Calido = Perfiles.Hex("#13B8F0");
+        public static readonly Color SobreCalido = Perfiles.Hex("#00102E");
         public static readonly Color Dentro = Perfiles.Hex("#3DDC97");
         public static readonly Color Fuera = Perfiles.Hex("#FF7A6B");
-        public static readonly Color Pendiente = Perfiles.Hex("#5B6B84");
+        public static readonly Color Pendiente = Perfiles.Hex("#7F95C9");
 
         // Nombres anteriores (se conservan para no romper otros scripts)
-        public static readonly Color Navy = Perfiles.Hex("#0A0E16");
-        public static readonly Color Violeta = Calido;
-        public static readonly Color Azul = Perfiles.Hex("#1A2436");
+        public static readonly Color Navy = Perfiles.Hex("#00165C");
+        public static readonly Color Violeta = Perfiles.Hex("#4F1FD0");
+        public static readonly Color Azul = Perfiles.Hex("#1060D0");
         public static readonly Color Cian = Calido;
         public static readonly Color Blanco = Color.white;
         public static readonly Color Verde = Dentro;
@@ -98,21 +98,22 @@ namespace NeuralHub
             Titulo = Texto_(Display, 52, Tinta, false, TextAnchor.MiddleCenter);
             Grande = Texto_(Display, 80, Tinta, false, TextAnchor.MiddleCenter);
             Encabezado = Texto_(Display, 33, Tinta, false);
-            Subtitulo = Texto_(Display, 27, Tinta);
-            Texto = Texto_(Regular, 22, Tinta);
-            TextoChico = Texto_(Regular, 19, Tenue);
-            Etiqueta = Texto_(Semi, 18, Tenue, false);
-            Quien = Texto_(Semi, 18, Calido, false);
-            Chip = Texto_(Semi, 19, Suave, false, TextAnchor.MiddleLeft);
+            Subtitulo = Texto_(Display, 29, Tinta);
+            Texto = Texto_(Regular, 24, Tinta);
+            TextoChico = Texto_(Regular, 21, Tenue);
+            Etiqueta = Texto_(Semi, 19, Tenue, false);
+            Quien = Texto_(Semi, 20, Calido, false);
+            Chip = Texto_(Semi, 20, Suave, false, TextAnchor.MiddleLeft);
             Insignia = Texto_(Display, 25, Tinta, false, TextAnchor.MiddleCenter);
             Insignia.padding = new RectOffset(20, 20, 10, 10);
 
-            Boton = Crear(new Color(10 / 255f, 15 / 255f, 25 / 255f, 0.9f), LineaFuerte, Pendiente, Suave, 20);
-            BotonChico = Crear(new Color(10 / 255f, 15 / 255f, 25 / 255f, 0.9f), LineaFuerte, Pendiente, Suave, 17);
-            BotonPrimario = Crear(Calido, Calido, Perfiles.Hex("#FFD58F"), SobreCalido, 21);
-            BotonPrimario.hover.background = Redondeado(Perfiles.Hex("#FFD58F"), Perfiles.Hex("#FFD58F"), 10);
-            BotonPrimario.hover.textColor = Letra(SobreCalido);
-            Seleccion = Crear(new Color(10 / 255f, 15 / 255f, 25 / 255f, 0.9f), LineaFuerte, Pendiente, Suave, 17);
+            Boton = Crear(new Color(6 / 255f, 22 / 255f, 74 / 255f, 0.97f), LineaFuerte, Pendiente, Suave, 22);
+            BotonChico = Crear(new Color(6 / 255f, 22 / 255f, 74 / 255f, 0.97f), LineaFuerte, Pendiente, Suave, 19);
+            BotonPrimario = Crear(Violeta, Calido, Color.white, Color.white, 23);
+            BotonPrimario.hover.background = Redondeado(Perfiles.Hex("#6A3BF0"), Color.white, 10);
+            BotonPrimario.hover.textColor = Letra(Color.white);
+            BotonPrimario.active.textColor = Letra(SobreCalido);
+            Seleccion = Crear(new Color(6 / 255f, 22 / 255f, 74 / 255f, 0.97f), LineaFuerte, Pendiente, Suave, 19);
             var on = Redondeado(Calido, Calido, 10);
             Seleccion.onNormal.background = on; Seleccion.onHover.background = on; Seleccion.onActive.background = on;
             Seleccion.onNormal.textColor = Seleccion.onHover.textColor = Seleccion.onActive.textColor = Letra(SobreCalido);
