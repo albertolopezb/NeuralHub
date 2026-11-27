@@ -84,6 +84,77 @@ namespace NeuralHub
         static readonly string[] Sectores = { "tecnologia", "alimentos_y_bebidas", "consumo_y_moda", "salud", "educacion", "sustentabilidad_y_energia", "servicios_profesionales" };
         static readonly string[] Etapas = { "idea", "prototipo", "primeras_ventas", "crecimiento" };
         const int Max = 300;
+        const float AnchoCampo = 1096f;
+
+        // Autocompletar con un documento o con texto pegado
+        bool menuAuto, extrayendo;
+        string pegado = "", avisoAuto = "";
+        Vector2 scrollPegado;
+
+        void Extraer(AppNeuralHub app, byte[] datos, string nombreArchivo)
+        {
+            extrayendo = true; avisoAuto = "Leyendo " + (nombreArchivo == "pegado.txt" ? "tu texto" : nombreArchivo) + "…";
+            app.StartCoroutine(app.cliente.ExtraerPitch(datos, nombreArchivo, (json, error) =>
+            {
+                extrayendo = false;
+                if (json == null) { avisoAuto = "No se pudo autocompletar: " + error; return; }
+                var r = JsonUtility.FromJson<ExtraccionDto>(json);
+                var d = r.pitch;
+                if (string.IsNullOrEmpty(d.sector)) d.sector = p.sector;
+                if (string.IsNullOrEmpty(d.etapa)) d.etapa = p.etapa;
+                if (string.IsNullOrEmpty(d.equipo_dedicacion)) d.equipo_dedicacion = p.equipo_dedicacion;
+                if (string.IsNullOrEmpty(d.propiedad_intelectual)) d.propiedad_intelectual = "ninguna";
+                Cargar(d);
+                if (d.equipo_fundadores <= 0) sFund = "";
+                if (d.monto_mxn <= 0) sMonto = "";
+                if (d.porcentaje <= 0) sPct = "";
+                discursoEjemplo = ""; huellaEjemplo = null;
+                menuAuto = false; pegado = ""; scroll = Vector2.zero;
+                avisoAuto = "Formulario llenado. REVÍSALO: puede que no todo se haya pasado bien." +
+                    (r.faltan != null && r.faltan.Length > 0 ? "\nFALTA (obligatorio): " + string.Join(", ", r.faltan) + "." : "") +
+                    (r.recomendados != null && r.recomendados.Length > 0 ? "\nNo venía y conviene llenarlo: " + string.Join(", ", r.recomendados) + "." : "");
+            }));
+        }
+
+        // solo para la prueba de pantallas (-nh-ui)
+        public bool Extrayendo { get { return extrayendo; } }
+        public void PruebaDesplazar(float y) { scroll = new Vector2(0, y); }
+        public void PruebaMenuAuto() { menuAuto = true; }
+        public void PruebaExtraer(AppNeuralHub app, string ruta) { Extraer(app, System.IO.File.ReadAllBytes(ruta), System.IO.Path.GetFileName(ruta)); }
+
+        void DibujarAutocompletar(AppNeuralHub app)
+        {
+            GUILayout.BeginVertical(Estilos.CajaClara);
+            GUILayout.Label("Un agente copia a los campos lo que diga tu documento. Puede que no todo se pase bien: revisa cada campo antes de continuar.",
+                            Estilos.Color_(new GUIStyle(Estilos.TextoChico) { wordWrap = true }, Estilos.Calido));
+            GUILayout.Space(6);
+            GUI.enabled = !extrayendo && !app.cliente.usarMock;
+            if (GUILayout.Button("Subir documento (.docx, .pdf, .txt)", Estilos.BotonChico, GUILayout.Height(44)))
+            {
+                var ruta = DialogoArchivo.Elegir();
+                if (!string.IsNullOrEmpty(ruta))
+                {
+                    try
+                    {
+                        if (new System.IO.FileInfo(ruta).Length > 5000000) avisoAuto = "El archivo pesa más de 5 MB.";
+                        else Extraer(app, System.IO.File.ReadAllBytes(ruta), System.IO.Path.GetFileName(ruta));
+                    }
+                    catch (System.Exception ex) { avisoAuto = "No se pudo abrir el archivo (¿está abierto en otro programa?): " + ex.Message; }
+                }
+                GUIUtility.ExitGUI();
+            }
+            GUILayout.Space(6);
+            GUILayout.Label("…o pega aquí tu pitch como texto:", Estilos.TextoChico);
+            scrollPegado = GUILayout.BeginScrollView(scrollPegado, false, false, GUILayout.Height(130));
+            pegado = GUILayout.TextArea(pegado, 20000, Estilos.Area, GUILayout.Width(AnchoCampo - 40), GUILayout.MinHeight(118));
+            GUILayout.EndScrollView();
+            GUI.enabled = !extrayendo && !app.cliente.usarMock && pegado.Trim().Length >= 80;
+            if (GUILayout.Button(extrayendo ? "Leyendo…" : "Llenar el formulario con este texto", Estilos.BotonPrimario, GUILayout.Height(44)))
+                Extraer(app, System.Text.Encoding.UTF8.GetBytes(pegado), "pegado.txt");
+            GUI.enabled = true;
+            if (app.cliente.usarMock) GUILayout.Label("Necesita el servicio conectado (no funciona con la sesión de ejemplo).", Estilos.TextoChico);
+            GUILayout.EndVertical();
+        }
 
         static double Num(string s, double def = -1)
         {
@@ -95,7 +166,11 @@ namespace NeuralHub
             GUILayout.Space(10);
             GUILayout.Label(etiqueta, Estilos.Etiqueta);
             GUILayout.Space(4);
-            string nuevo = area ? GUILayout.TextArea(valor ?? "", Estilos.Area, GUILayout.Height(alto + 30)) : GUILayout.TextField(valor ?? "", Estilos.Campo, GUILayout.Height(alto));
+            // ancho fijo y ajuste de línea: el texto largo baja de renglón en vez de estirar la pantalla
+            // la altura se calcula con el ancho real del campo (la automática de IMGUI no crecía)
+            float necesaria = Estilos.Area.CalcHeight(new GUIContent((valor ?? "") + " "), AnchoCampo - 12f) + 4f;
+            string nuevo = GUILayout.TextArea(valor ?? "", Estilos.Area, GUILayout.Width(AnchoCampo), GUILayout.Height(Mathf.Max(area ? alto + 30 : alto, necesaria)));
+            nuevo = nuevo.Replace("\r", "").Replace('\n', ' ');
             return nuevo.Length > Max ? nuevo.Substring(0, Max) : nuevo;
         }
 
@@ -157,12 +232,20 @@ namespace NeuralHub
             GUILayout.Label("Los campos con * son obligatorios. Los tiburones preguntarán por lo que falte.", Estilos.TextoChico);
             GUILayout.EndVertical();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button(menuEjemplos ? "Cerrar ejemplos" : "Cargar ejemplo", Estilos.BotonChico, GUILayout.Width(220), GUILayout.Height(44))) menuEjemplos = !menuEjemplos;
+            if (GUILayout.Button(menuAuto ? "Cerrar" : "Autocompletar", Estilos.BotonPrimario, GUILayout.Width(220), GUILayout.Height(44))) { menuAuto = !menuAuto; menuEjemplos = false; }
+            GUILayout.Space(8);
+            if (GUILayout.Button(menuEjemplos ? "Cerrar ejemplos" : "Cargar ejemplo", Estilos.BotonChico, GUILayout.Width(220), GUILayout.Height(44))) { menuEjemplos = !menuEjemplos; menuAuto = false; }
             GUILayout.EndHorizontal();
             if (menuEjemplos && app.ejemplos != null)
             {
                 foreach (var e in app.ejemplos)
                     if (GUILayout.Button(e.etiqueta, Estilos.BotonChico, GUILayout.Height(40))) { Cargar(e.pitch); menuEjemplos = false; }
+            }
+            if (menuAuto) DibujarAutocompletar(app);
+            if (!string.IsNullOrEmpty(avisoAuto))
+            {
+                GUILayout.Space(6);
+                GUILayout.Label(avisoAuto, Estilos.Color_(new GUIStyle(Estilos.TextoChico) { wordWrap = true }, Estilos.Calido), GUILayout.Width(1140));
             }
             GUILayout.Space(10);
             GUILayout.BeginHorizontal();
@@ -175,7 +258,7 @@ namespace NeuralHub
             }
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
-            scroll = GUILayout.BeginScrollView(scroll);
+            scroll = GUILayout.BeginScrollView(scroll, false, true, GUIStyle.none, GUI.skin.verticalScrollbar);
             p.nombre = Texto("Nombre del negocio *", p.nombre);
             p.sector = Elegir("Sector *", p.sector, Sectores);
             p.etapa = Elegir("Etapa *", p.etapa, Etapas);
@@ -245,7 +328,7 @@ namespace NeuralHub
             {
                 var info = app.Catalogo(f.tiburon_id);
                 bool sel = elegidos.Contains(f.tiburon_id);
-                GUILayout.BeginVertical(sel ? Estilos.CajaCalida : Estilos.CajaClara, GUILayout.Width(450), GUILayout.Height(344));
+                GUILayout.BeginVertical(sel ? Estilos.CajaCalida : Estilos.CajaClara, GUILayout.Width(450), GUILayout.Height(372));
                 var persona = Personas.De(f.tiburon_id);
                 GUILayout.BeginHorizontal();
                 var hueco = GUILayoutUtility.GetRect(108, 108, GUILayout.Width(108), GUILayout.Height(108));
@@ -332,13 +415,13 @@ namespace NeuralHub
             float ay = ty + th + 24;
             if (app.modoEnVivo)
             {
-                var caja = new Rect(x + tw + 24, ay, tw, 150);
+                var caja = new Rect(x + tw + 24, ay, tw, 196);
                 GUI.Box(caja, GUIContent.none, Estilos.CajaClara);
                 bool nueva = GUI.Toggle(new Rect(caja.x + 24, caja.y + 22, 260, 46), app.ayudaActiva,
                                         app.ayudaActiva ? "Ayuda activada" : "Ayuda desactivada", Estilos.Seleccion);
                 if (nueva != app.ayudaActiva) app.ayudaActiva = nueva;
-                GUI.Label(new Rect(caja.x + 24, caja.y + 80, caja.width - 48, 60),
-                          app.ayudaActiva ? "Junto a tu respuesta aparecerá el botón «Recomendación del agente empresario». Úsala tal cual o ajústala."
+                GUI.Label(new Rect(caja.x + 24, caja.y + 80, caja.width - 48, 106),
+                          app.ayudaActiva ? "Junto a tu respuesta podrás pedir una recomendación o, si ya escribiste algo, que el agente lo mejore."
                                           : "Las respuestas las escribes tú y nadie más.", Estilos.TextoChico);
             }
             if (app.cliente.usarMock)
@@ -357,6 +440,7 @@ namespace NeuralHub
         public const float Alto = 270f;
         string turno, texto = "";
         bool cargando, sugerida, enfocar, grabando, transcribiendo;
+        string avisoVoz = "";
 
         /// <summary>Escribe una respuesta en la burbuja (la usa la prueba automática -nh-vivo).</summary>
         public void Escribir(string turnoActual, string t) { turno = turnoActual; texto = t ?? ""; cargando = false; sugerida = false; enfocar = false; }
@@ -367,7 +451,7 @@ namespace NeuralHub
             if (r.turnoUsuario != turno)
             {
                 if (grabando) { GrabadorVoz.Detener(); grabando = false; }
-                turno = r.turnoUsuario; texto = ""; cargando = false; sugerida = false; transcribiendo = false; enfocar = true;
+                turno = r.turnoUsuario; texto = ""; cargando = false; sugerida = false; transcribiendo = false; enfocar = true; avisoVoz = "";
             }
             bool ayuda = app.cliente.ayuda;
             float ancho = Mathf.Min(1360, W - 80), x = W / 2 - ancho / 2, y = H - 120 - Alto;
@@ -397,45 +481,55 @@ namespace NeuralHub
             {
                 GUI.enabled = !cargando;
                 var estBoton = new GUIStyle(Estilos.Boton) { wordWrap = true, fontSize = 18 };
-                if (GUI.Button(new Rect(bx, y + 56, derecha, 70), cargando ? "El agente empresario está pensando…" : "Recomendación del agente empresario", estBoton))
+                bool hayBorrador = !string.IsNullOrWhiteSpace(texto) && !sugerida;
+                if (GUI.Button(new Rect(bx, y + 56, derecha, 70), cargando ? "El agente empresario está pensando…" : hayBorrador ? "Mejorar lo que escribí (agente empresario)" : "Recomendación del agente empresario", estBoton))
                 {
                     cargando = true;
                     string pedido = turno;
-                    app.PedirSugerencia(turno, s =>
+                    app.PedirSugerencia(turno, hayBorrador ? texto.Trim() : "", s =>
                     {
                         if (pedido != turno) return;   // ya cambió el turno
                         cargando = false;
                         if (!string.IsNullOrEmpty(s)) { texto = s.Length > 600 ? s.Substring(0, 600) : s; sugerida = true; }
-                        else app.mensaje = "El agente empresario no pudo sugerir una respuesta. Escríbela tú.";
+                        else avisoVoz = "El agente no pudo ayudar (hay una ayuda por pregunta). Edita tu respuesta y envíala.";
                     });
                 }
                 GUI.enabled = true;
             }
             // Dictado por voz (se transcribe con Whisper en el servicio y se agrega al texto)
-            var rVoz = new Rect(bx, ayuda ? y + 136 : y + 56, derecha, 40);
-            if (transcribiendo) GUI.Label(rVoz, "Transcribiendo tu voz…", new GUIStyle(Estilos.Etiqueta) { alignment = TextAnchor.MiddleCenter });
+            var rVoz = new Rect(bx, ayuda ? y + 132 : y + 56, derecha, 40);
+            bool detener = false;
+            if (transcribiendo) GUI.Label(rVoz, "Transcribiendo… no cierres esta ventana", new GUIStyle(Estilos.Etiqueta) { alignment = TextAnchor.MiddleCenter, fontSize = 17 });
             else if (!GrabadorVoz.HayMicrofono) GUI.Label(rVoz, "Sin micrófono para dictar", new GUIStyle(Estilos.TextoChico) { fontSize = 16, alignment = TextAnchor.MiddleCenter });
-            else if (GUI.Button(rVoz, grabando ? "■ Detener (" + (Time.realtimeSinceStartup - GrabadorVoz.inicio).ToString("0") + " s)" : "● Dictar con voz",
+            else if (GUI.Button(rVoz, grabando ? "■ Detener  " + GrabadorVoz.Segundos.ToString("0") + " / " + GrabadorVoz.MaxSegundos + " s" : "● Dictar con voz",
                                 grabando ? Estilos.BotonPrimario : Estilos.BotonChico))
             {
                 app.Clic();
-                if (grabando)
-                {
-                    grabando = false;
-                    var wav = GrabadorVoz.Detener();
-                    if (wav != null)
-                    {
-                        transcribiendo = true; string pedido = turno;
-                        app.StartCoroutine(app.cliente.Transcribir(wav, t =>
-                        {
-                            if (pedido != turno) return;
-                            transcribiendo = false;
-                            if (!string.IsNullOrEmpty(t)) { texto = (texto + " " + t).Trim(); if (texto.Length > 600) texto = texto.Substring(0, 600); }
-                        }));
-                    }
-                }
-                else grabando = GrabadorVoz.Iniciar();
+                if (grabando) detener = true;
+                else { grabando = GrabadorVoz.Iniciar(); avisoVoz = ""; }
             }
+            if (grabando && ev.type == EventType.Repaint && GrabadorVoz.LlegoAlLimite) detener = true;
+            if (detener)
+            {
+                grabando = false;
+                var wav = GrabadorVoz.Detener();
+                if (wav == null) avisoVoz = "No se grabó audio. Revisa el micrófono.";
+                else if (GrabadorVoz.UltimoPico < 0.01f) avisoVoz = "Casi no se oyó: acércate al micrófono o revisa cuál está activo.";
+                else
+                {
+                    transcribiendo = true; string pedido = turno;
+                    app.StartCoroutine(app.cliente.Transcribir(wav, t =>
+                    {
+                        if (pedido != turno) return;
+                        transcribiendo = false;
+                        if (!string.IsNullOrEmpty(t)) { texto = (texto + " " + t).Trim(); sugerida = false; if (texto.Length > 600) { texto = texto.Substring(0, 600); avisoVoz = "Se recortó a 600 caracteres."; } else avisoVoz = "Revisa el texto antes de enviarlo."; }
+                        else avisoVoz = "No se entendió el audio. Habla más cerca, en voz normal o alta, e inténtalo de nuevo.";
+                    }));
+                }
+            }
+            if (GrabadorVoz.HayMicrofono)
+                GUI.Label(new Rect(bx, rVoz.yMax + 2, derecha, ayuda ? 44 : 70), !string.IsNullOrEmpty(avisoVoz) ? avisoVoz : "Hasta 2 min. Habla claro, cerca del micrófono y sin ruido.",
+                          new GUIStyle(Estilos.TextoChico) { fontSize = 15, wordWrap = true, alignment = TextAnchor.UpperCenter });
 
             GUI.enabled = !string.IsNullOrWhiteSpace(texto) && !grabando;
             if (GUI.Button(new Rect(bx, caja.yMax - 22 - 60, derecha, 60), "Responder", Estilos.BotonPrimario)) { app.Clic(); enviar = true; }
@@ -563,6 +657,8 @@ namespace NeuralHub
         static string NombreLargo(AppNeuralHub app, string id)
         {
             if (id == "emprendedor") return "Tú";
+            var persona = Personas.De(id);
+            if (persona != null) return persona.nombre + "  ·  " + (id == "tiburona_consumo" ? "Tiburona de " : "Tiburón ") + Perfiles.Corto(id).ToLower();
             foreach (var p in app.reproductor.panelInfo) if (p.tiburon_id == id && !string.IsNullOrEmpty(p.nombre)) return p.nombre;
             var info = app.Catalogo(id);
             return info != null ? info.nombre : Perfiles.Corto(id);
@@ -932,6 +1028,8 @@ namespace NeuralHub
             if (GUILayout.Button("Repetir con este pitch", Estilos.Boton, GUILayout.Height(54))) app.Ir(Vista.Formulario);
             GUILayout.Space(10);
             if (GUILayout.Button("Nueva sesión", Estilos.BotonPrimario, GUILayout.Height(54))) app.IrAFormulario();
+            GUILayout.Space(10);
+            if (GUILayout.Button("Menú principal", Estilos.Boton, GUILayout.Height(54))) app.Ir(Vista.Inicio);
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
         }

@@ -148,13 +148,37 @@ def _leer_wav_16k(ruta):
     return x
 
 
-def transcribir(ruta_wav: Path) -> dict:
-    """Voz a texto en español con Whisper (modelo 'base', CPU)."""
+def cargar_modelo():
+    """Carga Whisper una sola vez (al arrancar el servicio, para que el primer dictado no tarde de más)."""
     global _modelo
     with _lock_stt:
         if _modelo is None:
             from faster_whisper import WhisperModel
             _modelo = WhisperModel("base", device="cpu", compute_type="int8")
-        segmentos, info = _modelo.transcribe(_leer_wav_16k(ruta_wav), language="es", vad_filter=True)
-        texto = " ".join(s.text.strip() for s in segmentos).strip()
+    return _modelo
+
+
+def _normalizar(x):
+    """Sube el volumen de una grabación baja: sin esto, hablar suave hacía que se descartara como silencio."""
+    import numpy as np
+    if len(x) == 0:
+        return x
+    pico = float(np.percentile(np.abs(x), 99.5))
+    return x if pico < 0.002 else np.clip(x * (0.7 / pico), -1.0, 1.0).astype(np.float32)
+
+
+def transcribir(ruta_wav: Path) -> dict:
+    """Voz a texto en español con Whisper (modelo 'base', CPU)."""
+    modelo = cargar_modelo()
+    audio = _normalizar(_leer_wav_16k(ruta_wav))
+    with _lock_stt:
+        def pasada(vad):
+            segmentos, info = modelo.transcribe(audio, language="es", beam_size=2, condition_on_previous_text=False,
+                                                temperature=[0.0, 0.4],   # pocos reintentos: un audio difícil no debe tardar minutos
+                                                vad_filter=vad, vad_parameters={"threshold": 0.25, "min_silence_duration_ms": 900} if vad else None)
+            return " ".join(s.text.strip() for s in segmentos).strip(), info
+
+        texto, info = pasada(True)
+        if not texto:            # el detector de voz descartó todo: se intenta sin él
+            texto, info = pasada(False)
     return {"texto": texto, "duracion_s": round(info.duration, 1)}

@@ -10,6 +10,10 @@ namespace NeuralHub
         static AudioClip clip;
         static string dispositivo;
         public static float inicio;
+        public const int MaxSegundos = 120;
+        public static float UltimoPico;         // volumen de la última grabación (0 a 1)
+        public static float Segundos { get { return Time.realtimeSinceStartup - inicio; } }
+        public static bool LlegoAlLimite { get { return clip != null && Segundos >= MaxSegundos - 1; } }
 
         public static bool HayMicrofono { get { return Microphone.devices.Length > 0; } }
         public static bool Grabando { get { return clip != null && Microphone.IsRecording(dispositivo); } }
@@ -18,7 +22,7 @@ namespace NeuralHub
         {
             if (!HayMicrofono) return false;
             dispositivo = Microphone.devices[0];
-            clip = Microphone.Start(dispositivo, false, 30, 16000);
+            clip = Microphone.Start(dispositivo, false, MaxSegundos, 16000);
             inicio = Time.realtimeSinceStartup;
             return clip != null;
         }
@@ -26,13 +30,16 @@ namespace NeuralHub
         public static byte[] Detener()
         {
             if (clip == null) return null;
-            int pos = Microphone.GetPosition(dispositivo);
+            // si el micrófono ya se detuvo solo, GetPosition vale 0: se usa lo que duró la grabación para no perderla
+            int pos = Microphone.IsRecording(dispositivo) ? Microphone.GetPosition(dispositivo) : 0;
+            if (pos <= 0) pos = Mathf.Min(clip.samples, (int)(Segundos * clip.frequency));
             Microphone.End(dispositivo);
             if (pos <= 0) { clip = null; return null; }
             var datos = new float[pos * clip.channels];
             clip.GetData(datos, 0);
             int canales = clip.channels, frecuencia = clip.frequency;
             clip = null;
+            UltimoPico = 0f; foreach (var m in datos) UltimoPico = Mathf.Max(UltimoPico, Mathf.Abs(m));
             return Wav(datos, frecuencia, canales);
         }
 

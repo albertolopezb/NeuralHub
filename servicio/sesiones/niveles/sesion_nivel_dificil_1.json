@@ -73,7 +73,7 @@
       "tipo": "PANEL",
       "emisor": "moderador",
       "destino": "todos",
-      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Estela Marín (Tiburón estratega), Teo Navarro (Tiburón tecnológico).",
       "estado": "",
       "panel": [
         {
@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me das el costo exacto de adquisición de cliente y margen neto actual? Dices margen bruto 38% y ventas 180,000, ¿cuánto gasto total para lograr esas ventas? No me dices CAC ni flujo neto, sin eso no cuadran tus números.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices 500 usuarios beta y 50 mil pesos en preventas, pero no me dices el costo de adquisición por cliente. ¿Cuánto gastaron exactamente para conseguir esos 500 usuarios y cómo calculas que el CAC no va a devorar tu margen bruto del 38%?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente no tenemos calculado el costo exacto de adquisición de cliente ni el margen neto. Nuestro gasto mensual es de $25,000 MXN, y el margen bruto es del 38% sobre $180,000 MXN en ventas anuales. Para obtener esos indicadores, planeamos analizar detalladamente nuestros costos de marketing y ventas en la siguiente fase de crecimiento.",
+      "texto": "Aún no sabemos el costo exacto de adquisición por cliente, pero para determinarlo analizaremos nuestros gastos de marketing y ventas relacionados con la captación de usuarios beta. Planeamos optimizar estrategias digitales para mantener un CAC eficiente que no afecte nuestro margen bruto del 38%.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500 bimestrales, y cómo planean defenderse de competidores con apps gratuitas y medidores genéricos para escalar a 5 años?",
+      "texto": "Soy Estela Marín, tiburón estratega. ¿Cuál es el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500 bimestrales y cómo piensan escalar para defenderse ante medidores genéricos y apps eléctricas que ya tienen presencia ahí?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Actualmente no contamos con la cifra exacta del tamaño del mercado en Nuevo León con recibos mayores a $2,500 bimestrales. Para obtenerla, analizaremos datos públicos y de la Comisión Federal de Electricidad. Nuestra defensa frente a competidores es el uso de IA para recomendaciones personalizadas sin necesidad de instalación profesional, lo que mejora la experiencia y fideliza al cliente para escalar en 5 años.",
+      "texto": "Aún no contamos con el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500 bimestrales. Para obtenerlo, analizaremos datos oficiales de consumo eléctrico regional y segmentaremos hogares y negocios. Para escalar, destacaremos nuestra IA para recomendaciones personalizadas y la facilidad de uso sin instalación profesional, diferenciándonos de medidores genéricos y apps eléctricas.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Tienen un prototipo funcional con algoritmo de IA validado que ya detecte consumo con precisión? ¿Han iniciado trámite de patente para proteger esa tecnología clave o solo tienen marca registrada? No me dices nada sobre propiedad intelectual que respalde la innovación.",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. Me dices que usas IA para detectar consumo excesivo y dar recomendaciones personalizadas, pero no mencionas si tienen algún algoritmo patentado o en proceso. ¿Tienen protección de propiedad intelectual sobre su software o su prototipo para evitar que un competidor copie su innovación?",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Contamos con un prototipo funcional que integra un algoritmo de IA para detectar consumo y sugerir ahorros, validado con 500 usuarios beta. Actualmente, solo tenemos la marca registrada; no hemos iniciado trámite de patente. Planeamos evaluar la protección de la tecnología conforme escalemos para asegurar nuestra innovación.",
+      "texto": "Contamos con la marca registrada de EcoTrack, pero aún no tenemos patente sobre el algoritmo de IA ni sobre el prototipo. Estamos evaluando proteger nuestra innovación mediante patentes para asegurar una ventaja competitiva y evitar imitaciones.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Estoy de acuerdo contigo, financiero. Sin un cálculo claro del CAC y margen neto, no podemos evaluar la viabilidad del negocio ni si el prototipo con IA es escalable. La tecnología es valiosa, pero sin números precisos, el riesgo crece y la innovación no se traduce en negocio rentable.",
+      "texto": "Ramiro, estoy contigo: sin datos claros de CAC no hay algoritmo que aguante ese margen bruto. Si no optiman la adquisición, eso en producción truena y la IA queda solo de adorno. El CAC es clave para validar la escalabilidad tecnológica y financiera.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "No me dices el tamaño exacto del mercado objetivo en Nuevo León para validar que el negocio puede escalar y defenderse de competidores. ¿Cuántos hogares y negocios tienen recibos mayores a 2,500 bimestrales y cómo eso justifica tu valuación y estrategia a 5 años?",
+      "texto": "Si un competidor con mayor presupuesto lanza gratis un medidor con IA similar, ¿cómo planean defender su cuota de mercado y escalar sin una patente ni barreras claras? Dame cifras o escenarios concretos para los próximos 3 a 5 años que respalden esa estrategia.",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Actualmente no contamos con la cifra exacta de hogares y negocios en Nuevo León con recibos mayores a $2,500 bimestrales. Para validar y justificar nuestra valuación y estrategia a 5 años, planeamos analizar datos públicos y de la Comisión Federal de Electricidad para dimensionar ese mercado y así enfocar nuestro crecimiento y defensa competitiva.",
+      "texto": "Aún no contamos con escenarios concretos ni cifras detalladas para los próximos 3 a 5 años frente a un competidor con medidor gratuito. Para responder, planeamos hacer análisis de mercado y proyecciones financieras que nos permitan diseñar estrategias de defensa y escalamiento basadas en valor agregado, fidelización y mejora continua de nuestra IA y servicio.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "No me dices qué precisión tiene el algoritmo de IA en detección de consumo excesivo ni métricas de validación técnica con el prototipo. Sin esos datos, ¿cómo aseguran que su tecnología es realmente innovadora y escalable? ¿Por qué no han iniciado patente si ese algoritmo es clave?",
+      "texto": "¿Qué pasa si un hacker o competidor logra replicar su algoritmo de IA y lo integra a un medidor genérico? ¿Tienen un prototipo con seguridad integrada o algún mecanismo tecnológico para proteger su software y evitar esa brecha? Dame datos claros de inversión en ciberseguridad o desarrollo para blindar su IP.",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro prototipo con IA ha sido validado con 500 usuarios beta, mostrando una detección efectiva de consumo excesivo. Sin embargo, aún no contamos con métricas de precisión exactas, las cuales planeamos obtener mediante pruebas técnicas formales. No hemos iniciado trámite de patente porque primero queremos consolidar la tecnología y evaluar su protección conforme escalamos, para asegurar su innovación y escalabilidad.",
+      "texto": "Actualmente no contamos con un prototipo con seguridad integrada ni mecanismos específicos para proteger nuestro software contra replicaciones. Tampoco hemos realizado una inversión clara en ciberseguridad para blindar nuestra propiedad intelectual. Planeamos evaluar estas necesidades y destinar recursos para fortalecer la seguridad de nuestro algoritmo y proteger nuestra innovación.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices CAC exacto ni flujo neto anual. Con $180,000 ventas y $25,000 gastos mensuales, tu margen neto es negativo: 180,000 - 300,000 = -120,000. ¿Cómo justificas valuación de $3M sin números positivos ni CAC calculado? Dame cifras exactas para cuadrar.",
+      "texto": "Si un cliente promedio paga 1,200 MXN por el medidor y 99 MXN mensuales, ¿qué margen neto proyectan por cliente al año considerando CAC, churn y gastos fijos? No me dices esos cálculos clave para validar valuación y flujo.",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Entiendo la preocupación. Actualmente, no tenemos calculado el CAC exacto ni flujo neto positivo, ya que estamos en etapa de primeras ventas y enfocándonos en validar producto y mercado. Nuestra valuación se basa en el potencial del mercado objetivo y la innovación tecnológica. Planeamos optimizar costos y calcular CAC para mejorar la rentabilidad a medida que escalamos.",
+      "texto": "Aún no contamos con un cálculo exacto del margen neto por cliente al año considerando CAC, churn y gastos fijos. Para obtenerlo, analizaremos datos de adquisición, retención y costos operativos, y así validar nuestra valuación y flujo proyectado.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estoy de acuerdo contigo, estratega. El emprendedor no me dice el tamaño exacto del mercado en Nuevo León con recibos > $2,500 bimestrales, clave para validar escalabilidad y justificar la valuación de $3M. Sin eso, su estrategia y proyección a 5 años carecen de sustento numérico sólido.",
+      "texto": "Estela, coincido contigo: sin escenarios ni cifras, solo palabras bonitas. Que no tengan ni patente ni barreras y menos proyecciones para enfrentar competencia con medidor gratis es un riesgo grave. Eso no cabe en mi hoja de cálculo; la valuación se me hace humo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Cuál es la precisión exacta del algoritmo de IA en porcentaje, con métricas técnicas validadas en el prototipo? Sin esa cifra, su innovación no está respaldada y no puedo evaluar si la tecnología es realmente disruptiva ni escalable.",
+      "texto": "Me dices que están evaluando patentar y blindar su algoritmo, pero sin un prototipo robusto y sin inversión clara en ciberseguridad, ¿qué avances tecnológicos concretos tienen hoy para proteger su IP? Dame cifras exactas de inversión en desarrollo seguro y etapas del prototipo que garanticen que no les van a clonar el algoritmo mañana.",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Actualmente no contamos con una métrica exacta de precisión en porcentaje para nuestro algoritmo de IA. Estamos en proceso de realizar pruebas técnicas formales para obtener estos datos y así validar plenamente la efectividad y escalabilidad de nuestra tecnología.",
+      "texto": "Actualmente no tenemos avances tecnológicos concretos ni inversión específica en desarrollo seguro para proteger nuestra propiedad intelectual. No contamos con un prototipo robusto que garantice evitar la clonación del algoritmo. Planeamos priorizar esta área para fortalecer la seguridad y proteger nuestra innovación conforme avancemos.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices margen bruto 38% sobre 180,000 ventas, gastos 25,000 mensuales igual a 300,000 anuales; eso da pérdida neta de 120,000. ¿Cuál es el CAC exacto por cliente y flujo neto anual ajustado? Sin esos números claros no puedo valorar $3M, no cuadran.",
+      "texto": "Me dices $180,000 en ventas y $25,000 mensuales en gastos, ¿cuánto flujo neto operativo generan anualmente? Sin ese dato y el CAC exacto, esa valuación de $3 millones no tiene soporte. ¿Puedes darme ese flujo neto y el CAC preciso para justificar la valuación?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente no tenemos calculado el CAC exacto ni el flujo neto anual ajustado. Estamos en etapa de primeras ventas y enfocándonos en validar producto y mercado. Planeamos analizar y optimizar estos indicadores conforme escalamos para mejorar la rentabilidad y justificar nuestra valuación de manera sólida.",
+      "texto": "Con ventas anuales de $180,000 MXN y gastos mensuales de $25,000 MXN, el flujo neto operativo anual es negativo, ya que los gastos suman $300,000 MXN al año. Aún no contamos con el costo de adquisición de clientes preciso. Para justificar la valuación, analizaremos estos indicadores para mostrar la rentabilidad esperada.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "No me diste el tamaño exacto del mercado ni el número de clientes con recibos > $2,500 bimestrales en Nuevo León, base para justificar valuación y estrategia a 5 años. Sin ese dato, no puedes demostrar que tu negocio puede escalar y defenderse de competidores. ¿Cuánto es ese mercado objetivo exacto?",
+      "texto": "Me dices que escalarán destacando su IA sin patente ni barreras; ¿qué proyección numérica tienen sobre cuota de mercado y crecimiento en 5 años que justifique defenderse ante competidores con más recursos y medidores gratis? No me digas planes, dame cifras y escenarios concretos.",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Actualmente no contamos con el tamaño exacto del mercado objetivo en Nuevo León con recibos mayores a $2,500 bimestrales. Para obtenerlo, planeamos analizar datos públicos y de la Comisión Federal de Electricidad, lo que nos permitirá justificar nuestra valuación y estrategia de crecimiento a 5 años con bases sólidas.",
+      "texto": "Aún no contamos con proyecciones numéricas concretas sobre cuota de mercado y crecimiento a 5 años para justificar defensa ante competidores con medidores gratis. Para responder con cifras, realizaremos análisis de mercado y escenarios financieros detallados que nos permitan sustentar estrategias efectivas de competitividad y escalamiento.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Estoy de acuerdo contigo, tecnológico. Sin métricas claras de precisión del algoritmo, no hay forma de defender la innovación ni asegurar su escalabilidad. La falta de datos técnicos concretos es una barrera para evaluar el potencial real del producto en un mercado competitivo y justificar la inversión a largo plazo.",
+      "texto": "Teo, coincido contigo: sin avances tecnológicos ni inversión en seguridad, la empresa no tiene barreras para defender su innovación. Pensemos tres jugadas adelante, sin proteger el algoritmo hoy, el océano competitivo no perdona y la ventaja se pierde rápido.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,7 +291,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dan CAC ni flujo neto; margen bruto 38% con gastos 25,000 mensuales da pérdida neta de 120,000. Valuación de 3,000,000 no se justifica sin números claros. Sin mercado ni métricas técnicas, negocio no cuadra ni escala seguro.",
+      "texto": "No me dices CAC ni flujo neto operativo positivo; ventas de $180,000 contra gastos de $300,000 anuales dan pérdida. Margen bruto 38% no basta sin costos claros. Que no tengan patente ni proyecciones financieras me cierra el libro. Eso no cabe en mi hoja de cálculo.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -304,12 +304,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "Falta tamaño de mercado exacto y métricas claras de IA, además CAC y flujo neto son desconocidos; con ventas de $180,000 y margen bruto 38%, la valuación de $3M no se sostiene para escalar ni defender mercado a 5 años.",
+      "texto": "No me dices tamaño exacto del mercado ni CAC, y no hay patente ni protección tecnológica; el flujo neto es negativo con $180,000 ventas y $300,000 gastos anuales. Pido $300,000 por 25% para compensar riesgo y cubrir inversión en barreras. Contraoferta: $300,000 MXN por el 25 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_porcentaje": 25.0
     },
     {
       "n": 26,
@@ -317,12 +317,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Falta patente para proteger algoritmo IA clave y métricas técnicas concretas de precisión; sin propiedad intelectual sólida, la innovación no está respaldada. Además, no me dicen CAC ni flujo neto, con ventas $180,000 y margen bruto 38%. Ofrezco $300,000 por 25%. Contraoferta: $300,000 MXN por el 25 %.",
+      "texto": "No hay patente ni protección tecnológica robusta del algoritmo IA, ni inversión en ciberseguridad. Tampoco datos claros de CAC ni proyecciones concretas para validar la valuación de 3,000,000 MXN y margen bruto de 38%. Eso en producción truena.",
       "estado": "Votando",
-      "decision": "contraoferta",
+      "decision": "salir",
       "votacion": 1,
-      "contraoferta_monto_mxn": 300000.0,
-      "contraoferta_porcentaje": 25.0
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
     },
     {
       "n": 27,
@@ -339,7 +339,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $300,000 MXN por el 25 %.",
+      "texto": "Acepto la contraoferta de Tiburón estratega. Nueva oferta: $300,000 MXN por el 25 %.",
       "estado": "Negociando",
       "oferta": {
         "monto_mxn": 300000.0,
@@ -352,7 +352,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dan CAC exacto ni flujo neto positivo; margen bruto 38 % y gastos $25,000 mensuales dan pérdida neta de $120,000 anuales. La valuación implícita de $3,000,000 no cuadra con las cifras y no justifican invertir con oferta del 25 % por $300,000.",
+      "texto": "Sin CAC exacto ni flujo neto positivo (ventas $180,000 vs gastos $300,000), margen bruto 38% no basta para justificar la valuación. La falta de protección tecnológica y proyecciones claras hace esta inversión muy riesgosa. Eso no cabe en mi hoja de cálculo.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 2
@@ -363,7 +363,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "No me dicen el tamaño exacto del mercado ni métricas técnicas para defender la innovación; la valuación implícita de $3,000,000 MXN no se sostiene con ventas de $180,000 MXN y margen bruto 38%. Sin barreras claras ni CAC, no puedo ver escalabilidad a 5 años.",
+      "texto": "No me dices tamaño exacto del mercado ni CAC y carecen de patente o barreras tecnológicas; con ventas de $180,000 y margen bruto 38% no hay defensa clara ante competidores. Querido, el océano no perdona la falta de ventaja defendible y proyecciones sólidas.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 2
@@ -374,7 +374,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Falta patente para proteger el algoritmo clave de IA, no me dicen precisión del prototipo ni CAC. Con $180,000 MXN en ventas y margen bruto 38%, sin propiedad intelectual ni métricas técnicas, la innovación no está respaldada ni escalable.",
+      "texto": "Sin patente ni protección tecnológica clara y sin datos de CAC, la innovación no está blindada; margen bruto de 38% con flujo neto negativo de -$120,000 anual hace que la valuación de $3,000,000 MXN no se sostenga. Eso en producción truena.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 2
@@ -396,56 +396,58 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Cuentan con un prototipo funcional con IA validado por 500 usuarios beta.; El equipo fundador tiene experiencia en ingeniería y energía.; Modelo de negocio claro con venta de dispositivo y suscripción mensual.. Alertas: No tienen calculado ni el CAC ni el flujo neto, presentan pérdidas actuales.; No conocen ni presentan datos concretos del tamaño del mercado objetivo.; Falta protección de propiedad intelectual sobre el algoritmo clave, sólo tienen marca registrada.. Siguientes pasos: Calcular y presentar los indicadores financieros clave: CAC, margen neto y flujo de caja.; Investigar y documentar el tamaño exacto del mercado objetivo para validar la estrategia y valuación.; Evaluar y comenzar el trámite para proteger la propiedad intelectual del algoritmo mediante patente o similar..",
+      "texto": "Fortalezas: El producto aborda un problema real y cotidiano: el alto consumo eléctrico sin claridad de gasto.; Cuenta con una base inicial de usuarios beta (500) y preventas ($50,000 MXN) que validan interés.; Equipo fundador con experiencia en ingeniería y energía, todos dedicados a tiempo completo.. Alertas: No hay datos claros ni cálculo del costo de adquisición de clientes (CAC), clave para validar el modelo de negocio.; No existen patentes ni protección tecnológica para el algoritmo de IA, lo que pone en riesgo la innovación.; Proyecciones financieras y de mercado insuficientes o inexistentes para justificar la valuación y enfrentar competencia potencial.. Siguientes pasos: Realizar un análisis detallado del CAC y optimizar estrategias de adquisición para asegurar rentabilidad.; Desarrollar y patentar el algoritmo de IA, además de invertir en ciberseguridad para proteger la propiedad intelectual.; Elaborar proyecciones financieras y de mercado claras, con escenarios concretos para los próximos 3 a 5 años que justifiquen la valuación y estrategia competitiva..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 2,
-            "frase_clave": "No me dan CAC ni flujo neto; margen bruto 38% con gastos 25,000 mensuales da pérdida neta de 120,000. Valuación de 3,000,000 no se justifica sin números claros.",
-            "necesitaria": "Necesito un cálculo exacto del CAC, margen neto y flujo de caja positivo que justifique la valuación y muestre viabilidad financiera."
+            "frase_clave": "Sin CAC exacto ni flujo neto positivo (ventas $180,000 vs gastos $300,000), margen bruto 38% no basta para justificar la valuación. La falta de protección tecnológica y proyecciones claras hace esta inversión muy riesgosa.",
+            "necesitaria": "Datos claros y precisos del CAC, flujo neto operativo positivo y proyecciones financieras sólidas que respalden la valuación y la rentabilidad del negocio."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 2,
-            "frase_clave": "Falta tamaño de mercado exacto y métricas claras de IA, además CAC y flujo neto son desconocidos; con ventas de $180,000 y margen bruto 38%, la valuación de $3M no se sostiene para escalar ni defender mercado a 5 años.",
-            "necesitaria": "Requiero datos precisos del tamaño del mercado objetivo y métricas técnicas que respalden la escalabilidad y defensa frente a competidores."
+            "frase_clave": "No me dices tamaño exacto del mercado ni CAC y carecen de patente o barreras tecnológicas; con ventas de $180,000 y margen bruto 38% no hay defensa clara ante competidores.",
+            "necesitaria": "Análisis detallado del tamaño del mercado objetivo, proyecciones numéricas de crecimiento y cuota de mercado a 3-5 años, así como una estrategia clara para defender la cuota frente a competencia con barreras tecnológicas o patentes."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 2,
-            "frase_clave": "Falta patente para proteger algoritmo IA clave y métricas técnicas concretas de precisión; sin propiedad intelectual sólida, la innovación no está respaldada.",
-            "necesitaria": "Me haría falta una patente o protección clara de la tecnología, junto con métricas técnicas de precisión y evidencia de escalabilidad."
+            "calificacion": 1,
+            "frase_clave": "Sin patente ni protección tecnológica clara y sin datos de CAC, la innovación no está blindada; margen bruto de 38% con flujo neto negativo de -$120,000 anual hace que la valuación de $3,000,000 MXN no se sostenga.",
+            "necesitaria": "Desarrollo y protección concreta del algoritmo de IA, inversión en ciberseguridad, prototipo robusto con seguridad integrada y evidencia de barreras tecnológicas para evitar la clonación."
           }
         ],
         "fortalezas": [
-          "Cuentan con un prototipo funcional con IA validado por 500 usuarios beta.",
-          "El equipo fundador tiene experiencia en ingeniería y energía.",
-          "Modelo de negocio claro con venta de dispositivo y suscripción mensual."
+          "El producto aborda un problema real y cotidiano: el alto consumo eléctrico sin claridad de gasto.",
+          "Cuenta con una base inicial de usuarios beta (500) y preventas ($50,000 MXN) que validan interés.",
+          "Equipo fundador con experiencia en ingeniería y energía, todos dedicados a tiempo completo."
         ],
         "alertas": [
-          "No tienen calculado ni el CAC ni el flujo neto, presentan pérdidas actuales.",
-          "No conocen ni presentan datos concretos del tamaño del mercado objetivo.",
-          "Falta protección de propiedad intelectual sobre el algoritmo clave, sólo tienen marca registrada."
+          "No hay datos claros ni cálculo del costo de adquisición de clientes (CAC), clave para validar el modelo de negocio.",
+          "No existen patentes ni protección tecnológica para el algoritmo de IA, lo que pone en riesgo la innovación.",
+          "Proyecciones financieras y de mercado insuficientes o inexistentes para justificar la valuación y enfrentar competencia potencial."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el costo exacto de adquisición de cliente (CAC)?",
-          "¿Cuál es el tamaño exacto del mercado objetivo en Nuevo León con recibos mayores a $2,500?",
-          "¿Cuál es la precisión exacta y métricas técnicas del algoritmo de IA?"
+          "¿Cuál es el costo exacto de adquisición por cliente y cómo afectará al margen bruto?",
+          "¿Cuál es el tamaño del mercado objetivo en Nuevo León con recibos mayores a $2,500 bimestrales?",
+          "¿Qué proyecciones concretas tienen para cuota de mercado y crecimiento a 3-5 años?",
+          "¿Qué avances tecnológicos y de seguridad tienen para proteger el algoritmo de IA?",
+          "¿Cuál es el flujo neto operativo anual considerando ventas, gastos y CAC?"
         ],
         "siguientes_pasos": [
-          "Calcular y presentar los indicadores financieros clave: CAC, margen neto y flujo de caja.",
-          "Investigar y documentar el tamaño exacto del mercado objetivo para validar la estrategia y valuación.",
-          "Evaluar y comenzar el trámite para proteger la propiedad intelectual del algoritmo mediante patente o similar."
+          "Realizar un análisis detallado del CAC y optimizar estrategias de adquisición para asegurar rentabilidad.",
+          "Desarrollar y patentar el algoritmo de IA, además de invertir en ciberseguridad para proteger la propiedad intelectual.",
+          "Elaborar proyecciones financieras y de mercado claras, con escenarios concretos para los próximos 3 a 5 años que justifiquen la valuación y estrategia competitiva."
         ],
         "resultado": "SIN_TRATO",
         "condiciones": null,
         "valuacion_mxn": 3000000.0,
         "votos_primera_votacion": {
           "tiburon_financiero": "salir",
-          "tiburon_estratega": "salir",
-          "tiburon_tecnologico": "contraoferta"
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "salir"
         },
         "criterios_no_evaluados": [
           {
@@ -470,7 +472,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 28,
-    "segundos_modelo": 36.3,
+    "segundos_modelo": 34.2,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 33,
@@ -480,7 +482,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 8,
+    "preguntas_citan_dato": 7,
     "votos": 6,
     "justificaciones_mencionan_criterio": 6,
     "justificaciones_con_dato": 6,

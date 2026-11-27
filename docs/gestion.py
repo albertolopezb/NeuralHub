@@ -26,6 +26,7 @@ HISTORIAS = [
     ("HU-11", "Como espectador, quiero escuchar a cada tiburón con su propia voz y ver en las pantallas del estudio los datos de la oferta y los votos, para seguir la sesión sin leer todo.", "Espectador", "Media", 5, "Sprint 2", "Hecha"),
     ("HU-12", "Como emprendedor, quiero elegir un nivel de dificultad, para practicar de menos a más exigente.", "Emprendedor", "Media", 3, "Sprint 2", "Hecha"),
     ("HU-13", "Como emprendedor, quiero conocer a cada tiburón y, si respondo yo, pedir una sugerencia al agente empresario, para elegir bien mi panel y aprender a contestar.", "Emprendedor", "Media", 5, "Sprint 2", "Hecha"),
+    ("HU-14", "Como emprendedor, quiero llenar el formulario subiendo un documento o pegando mi pitch como texto, para no capturar todo a mano.", "Emprendedor", "Media", 5, "Sprint 2", "Hecha"),
     ("HU-09", "Como evaluador (profesor o socio formador), quiero ver las métricas de una sesión (llamadas al modelo, rondas, duración, votos), para juzgar su costo y su coherencia.", "Evaluador", "Media", 3, "Sprint 3", "Pendiente"),
 ]
 
@@ -38,10 +39,11 @@ CRITERIOS = {
     "HU-06": ["Con 2 o 3 votos a favor se eligen condiciones: la oferta original solo si 2 o más votaron «invertir»; si no, una contraoferta o rechazarlas (sin trato).", "Con 1 voto a favor se abre una negociación y los 3 votan una sola vez más.", "Con 0 votos a favor la decisión es «Sin trato»."],
     "HU-07": ["El reporte muestra voto, calificación de 1 a 5, frase clave y qué necesitaría cada tiburón.", "Incluye 3 fortalezas, 3 alertas, preguntas sin responder y 3 siguientes pasos.", "Lista los criterios de los tiburones que no estuvieron en el panel y el aviso de simulación educativa."],
     "HU-08": ["Los botones Anterior, Pausa/Reanudar, Siguiente y 1x/2x actúan sobre la reproducción y se muestra «Turno k/N».", "El panel «Conversación» lista todos los turnos y el botón «Ir» reconstruye la escena desde ese turno.", "El interruptor «Usar sesión de ejemplo (sin conexión)» reproduce una sesión real guardada, y el historial lista también las sesiones guardadas en disco."],
-    "HU-10": ["Cada pregunta tiene un botón «Dictar con voz» que graba con el micrófono y muestra los segundos.", "Al detener, el texto transcrito (Whisper local, español) se agrega al campo y el usuario puede corregirlo antes de enviar.", "Si no hay micrófono, se muestra «Sin micrófono para dictar» y se puede seguir escribiendo."],
-    "HU-11": ["El pitch, las preguntas, las réplicas y los votos se escuchan con la voz del personaje (timbre, ritmo y graves propios) y el siguiente turno espera a que terminen; en vivo, la respuesta que escribió el usuario no se narra.", "La pantalla izquierda muestra monto, porcentaje, valuación, ventas, margen y el ícono del sector; la derecha, el voto y la calificación de cada tiburón.", "Los botones «Voz» y «Silencio» apagan la voz o todo el audio."],
+    "HU-10": ["Cada pregunta tiene un botón «Dictar con voz» que graba con el micrófono y muestra los segundos.", "La grabación admite hasta 2 minutos y avisa si casi no se oyó o no se entendió. Al detener, el texto transcrito (Whisper local, español) se agrega al campo y el usuario puede corregirlo antes de enviar.", "Si no hay micrófono, se muestra «Sin micrófono para dictar» y se puede seguir escribiendo."],
+    "HU-11": ["El pitch, las preguntas, las réplicas y los votos se escuchan con la voz del personaje (timbre, ritmo y graves propios) y el siguiente turno espera a que terminen; en vivo, la respuesta del usuario también se narra con la voz del emprendedor. El texto aparece cuando su audio está listo.", "La pantalla izquierda muestra monto, porcentaje, valuación, ventas, margen y el ícono del sector; la derecha, el voto y la calificación de cada tiburón.", "Los botones «Voz» y «Silencio» apagan la voz o todo el audio."],
     "HU-12": ["El inicio muestra las tarjetas Fácil, Medio y Difícil con su emprendedor.", "El nivel se puede cambiar en el formulario y se ve durante la sesión y en el resultado.", "En Fácil las preguntas no piden cifras; en Difícil exigen la cifra exacta."],
-    "HU-13": ["«Conoce a los tiburones» muestra a cada uno en el estudio, con su presentación hablada y cuándo elegirlo.", "Las tarjetas del panel muestran la foto de cada tiburón.", "En vivo con ayuda, el botón de recomendación propone una respuesta que se puede editar (una por pregunta)."],
+    "HU-13": ["«Conoce a los tiburones» muestra a cada uno en el estudio, con su presentación hablada y cuándo elegirlo.", "Las tarjetas del panel muestran la foto de cada tiburón.", "En vivo con ayuda, el agente propone una respuesta o mejora la que el usuario ya escribió; se puede editar (una ayuda por pregunta)."],
+    "HU-14": ["Acepta .docx, .pdf, .txt, .md o texto pegado.", "Avisa que puede que no todo se transfiera bien y lista los datos obligatorios que faltan y los recomendados que no venían.", "No inventa datos: lo que el documento no dice queda vacío para que el usuario lo revise."],
     "HU-09": ["Se muestran llamadas al modelo, rondas, segundos y resultado de la sesión.", "Las métricas coinciden con las que calcula el servicio."],
 }
 
@@ -77,6 +79,7 @@ TAREAS = [
     ("T28", "Pantalla de métricas de la sesión (HU-09)", U, "Gerardo Islas", "30 nov", "2 dic", "Pendiente", "HU-08, HU-09"),
     ("T29", "Flujo completo con usuario humano y dictado en Unity, documentado como evidencia", U, "Alberto López", "24 nov", "3 dic", "En curso", "HU-04, HU-06, HU-07"),
     ("T33", "Voz: texto a voz (Windows SAPI, es-MX) y voz a texto (Whisper local) en el servicio", B, "Gilberto Olavarrieta", "25 nov", "25 nov", "Hecha", "HU-10, HU-11"),
+    ("T51", "Mejoras tras la prueba del 27 nov: autocompletar el pitch, mejorar respuestas, dictado largo, voz sincronizada, preguntas por ángulos, personalidades y apariencia", B, "Alberto López", "27 nov", "27 nov", "Hecha", "HU-10, HU-13, HU-14"),
     ("T34", "Dictado por micrófono y reproducción de voces en Unity", U, "Franco Salazar", "25 nov", "26 nov", "Hecha", "HU-10, HU-11"),
     ("T35", "Navegación por la conversación (anterior, siguiente, ir a un turno)", U, "Franco Salazar", "25 nov", "26 nov", "Hecha", "HU-08"),
     ("T36", "Iluminación submarina (cáusticas, rayos de luz) y pantallas laterales con datos e íconos", U, "Juan Esteban Jaramillo", "25 nov", "26 nov", "Hecha", "HU-11"),
@@ -131,6 +134,7 @@ BITACORA_E3 = [
     ("Escenario caricatura con modelos CC0 y personalidad de cada tiburón", "Juan Esteban Jaramillo", "26 nov 2026"),
     ("Intro, barra de rondas, finales, voces y música", "Franco Salazar", "26 nov 2026"),
     ("«Conoce a los tiburones» y niveles en el menú", "Gilberto Olavarrieta", "26 nov 2026"),
+    ("Mejoras tras la prueba del juego (autocompletar, dictado, voz, preguntas, personalidades y apariencia)", "Alberto López", "27 nov 2026"),
     ("Documento, video y gestión del proyecto", "Alberto López", "23–27 nov 2026"),
 ]
 

@@ -141,7 +141,7 @@ namespace NeuralHub.Editor
                 var puntos = new[] { a + new Vector3(0.07f * lado, 0.03f, -0.03f), a + new Vector3(0.085f * lado, -0.085f, 0f) };
                 solapa.GetComponent<MeshFilter>().sharedMesh = Mallas.Guardar(Mallas.Cinta(puntos, new[] { 0.11f, 0.008f }, Vector3.right, Vector3.forward), "solapa_" + sufijo + (lado < 0 ? "_i" : "_d"));
                 solapa.GetComponent<Renderer>().sharedMaterial = blanco;
-                solapa.transform.SetParent(torso, true);
+                solapa.transform.SetParent(corbata.transform, true);
             }
             corbata.transform.SetParent(torso, true);
             return rc;
@@ -182,6 +182,7 @@ namespace NeuralHub.Editor
             var juegos = ConstruirCaracter.Juegos(raiz.transform, modelos);
             var t = raiz.AddComponent<Tiburon>();
             t.juegos = juegos;
+            t.corbatas = pintables.Take(2).Select(r => r.gameObject).ToArray();
             t.modelos = modelos.ToArray(); t.giro = giro; t.paleta = paleta; t.letrero = letrero; t.pintables = pintables.ToArray();
             var prefab = PrefabUtility.SaveAsPrefabAsset(raiz, "Assets/Prefabs/Tiburon.prefab");
             Object.DestroyImmediate(raiz);

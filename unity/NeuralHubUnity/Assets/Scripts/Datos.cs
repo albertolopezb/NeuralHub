@@ -86,6 +86,9 @@ namespace NeuralHub
     public class ContraofertaDto { public string tiburon_id; public double monto_mxn; public double porcentaje; }
 
     [Serializable]
+    public class ExtraccionDto { public PitchDto pitch; public string[] faltan; public string[] recomendados; }
+
+    [Serializable]
     public class Pendiente
     {
         public string tipo;      // RESPUESTAS | NEGOCIACION | CONDICIONES

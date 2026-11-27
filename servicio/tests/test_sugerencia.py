@@ -50,6 +50,15 @@ def test_no_hay_sugerencia_para_quien_aun_no_pregunta():
     assert s.llm.llamadas == antes
 
 
+def test_mejorar_el_borrador_cuenta_como_la_ayuda_de_esa_pregunta():
+    s = en_vivo(True)
+    turno = s.pendiente["preguntas"][0]["tiburon_id"]
+    assert s.sugerir(turno, "mi borrador de respuesta")
+    assert s.sugerencias == 1
+    with pytest.raises(ValueError):
+        s.sugerir(turno, "otro borrador distinto")
+
+
 def test_sin_ayuda_no_hay_sugerencia():
     s = en_vivo(False)
     with pytest.raises(PermissionError):

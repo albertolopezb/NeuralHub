@@ -73,6 +73,7 @@ namespace NeuralHub
             if (Arg("-nh-vivo")) { vivoAuto = true; modoEnVivo = true; ayudaActiva = true; StartCoroutine(RespondedorAutomatico()); }
             if (Arg("-nh-video")) StartCoroutine(Video());
             if (Arg("-nh-final")) { cliente.usarMock = true; StartCoroutine(PruebaFinal()); }
+            if (Arg("-nh-ui")) StartCoroutine(PruebaPantallas());
         }
 
         // ---------- navegación ----------
@@ -169,10 +170,10 @@ namespace NeuralHub
         }
 
         /// <summary>Modo en vivo con ayuda: pide al agente empresario una respuesta sugerida para el tiburón en turno.</summary>
-        public void PedirSugerencia(string tiburonId, Action<string> listo)
+        public void PedirSugerencia(string tiburonId, string borrador, Action<string> listo)
         {
             sugerenciasPedidas++;
-            StartCoroutine(cliente.PedirSugerencia(tiburonId, listo));
+            StartCoroutine(cliente.PedirSugerencia(tiburonId, borrador, listo));
         }
 
         public void AbrirSesiones()
@@ -319,7 +320,7 @@ namespace NeuralHub
                     string turno = reproductor.turnoUsuario;
                     // contesta lo que se le preguntó: pide la respuesta al agente empresario de esta misma sesión
                     string txt = null; bool llego = false;
-                    PedirSugerencia(turno, sugerida => { txt = sugerida; llego = true; });
+                    PedirSugerencia(turno, "", sugerida => { txt = sugerida; llego = true; });
                     float limite = Time.realtimeSinceStartup + 30f;
                     while (!llego && Time.realtimeSinceStartup < limite) yield return null;
                     if (reproductor.turnoUsuario != turno) continue;
@@ -454,6 +455,38 @@ namespace NeuralHub
             final_.Resultado(this, false, "GreenPlate", "");
             yield return new WaitForSeconds(5f);
             yield return Cap(carpeta, "17_sin_trato");
+            Application.Quit();
+        }
+
+        /// <summary>Prueba corta (-nh-ui): formulario con textos largos, autocompletado y pantalla de modo.</summary>
+        IEnumerator PruebaPantallas()
+        {
+            string carpeta = ArgValor("-nh-salida", Path.Combine(Application.persistentDataPath, "capturas"));
+            Directory.CreateDirectory(carpeta);
+            yield return new WaitForSeconds(2f);
+            IrAFormulario();
+            yield return Hasta(() => ejemplos != null);
+            formulario.Cargar(ejemplos[0].pitch);
+            formulario.p.diferenciador = "Nosotros nos hacemos cargo de los autos porque nuestro sistema de monitoreo es bastante avanzado y no gastamos en sensores por cajón, además de que la plaza no tiene que cambiar nada de lo que ya tiene instalado y el conductor no descarga ninguna aplicación.";
+            yield return new WaitForSeconds(0.5f);
+            formulario.PruebaDesplazar(420f);
+            yield return new WaitForSeconds(0.5f);
+            yield return Cap(carpeta, "ui_campo_largo");
+            formulario.PruebaDesplazar(0f);
+            var documento = ArgValor("-nh-doc", "");
+            if (documento != "") { formulario.PruebaExtraer(this, documento); yield return new WaitForSeconds(0.2f); yield return Hasta(() => !formulario.Extrayendo, 40f); }
+            yield return new WaitForSeconds(0.6f);
+            yield return Cap(carpeta, "ui_autocompletado");
+            formulario.PruebaMenuAuto();
+            yield return new WaitForSeconds(0.5f);
+            yield return Cap(carpeta, "ui_menu_auto");
+            IrAEleccionPanel(formulario.Json());
+            yield return Hasta(() => vista == Vista.Panel, 15f);
+            yield return new WaitForSeconds(0.5f);
+            yield return Cap(carpeta, "ui_panel");
+            modoEnVivo = true; ayudaActiva = true; Ir(Vista.Modo);
+            yield return new WaitForSeconds(0.5f);
+            yield return Cap(carpeta, "ui_modo");
             Application.Quit();
         }
 

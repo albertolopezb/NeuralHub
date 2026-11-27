@@ -46,7 +46,7 @@
       "tipo": "PANEL",
       "emisor": "moderador",
       "destino": "todos",
-      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Estela Marín (Tiburón estratega), Teo Navarro (Tiburón tecnológico).",
       "estado": "",
       "panel": [
         {
@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices 140 clientes y 4 % cancelación mensual. ¿Cuánto gastas en promedio para conseguir uno nuevo, considerando esos números y tus gastos de $140,000 al mes? No me dices CAC.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Con 140 clientes pagando y $1,100,000 en ventas anuales, ¿cuánto les cuesta adquirir cada cliente nuevo? No me dices ese dato y es clave para valorar si $1,200,000 por 10% compensa.",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 140 clientes y 4 % cancelación mensual, ¿qué ventaja defendible tienen para que un competidor grande o gratis no copie rápido su solución y los saque antes de que escalen?",
+      "texto": "Soy Estela Marín, tiburón estratega. Me dices que hay 90,000 consultorios y 140 clientes actuales; ¿cómo planean escalar ventas y defenderse contra el software caro y genérico para capturar más de ese mercado en 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "En tu pitch no mencionas ninguna patente ni propiedad intelectual: ¿qué innovación tecnológica o algoritmo exclusivo tienes para evitar que un competidor copie rápido tu software en la nube y agenda médica?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. El pitch no menciona patente ni propiedad intelectual. ¿Qué innovación tecnológica o algoritmo exclusivo tienen para mantener esa ventaja y que no copie la competencia el sistema de recordatorios y confirmaciones automáticas?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Tiburón financiero, coincido contigo en que el CAC es clave para validar la escalabilidad. El emprendedor dice que es $2,100 por consultorio y se recupera en 3 meses, eso suena bien, pero me gustaría ver más detalle del algoritmo que usan para retención y predicción, para saber si esa eficiencia es sostenible en su tecnología.",
+      "texto": "Ramiro, claro que es clave el CAC para validar la valuación; con $2,100 MXN por cliente y recuperación en 3 meses, la matemática tiene sentido, pero sin patente ni algoritmo patentado, esa ventaja se puede replicar rápido. ¡A ver, ábreme el capó tecnológico!.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 140 clientes y solo 0.15 % del mercado, ¿qué barreras concretas tienen para defenderse de competidores grandes y gratuitos que pueden copiar rápido su software y quitarles terreno antes de escalar?",
+      "texto": "Con 140 clientes y 4 % de cancelación mensual, ¿qué harían si un competidor grande y barato lanza una función similar para reducir ausencias? ¿Cómo defenderán y escalarán su mercado ante ese jaque real?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "En R1 dices que tu software usa un modelo que predice ausencias; ¿puedes explicar qué algoritmo o prototipo usan y si tienen alguna patente o plan para proteger esa innovación tecnológica?",
+      "texto": "El pitch no menciona respaldo tecnológico para caídas o ataques; ¿qué protocolos, backups o pruebas de estrés tiene su prototipo para evitar que un fallo técnico deje sin servicio a las clínicas y les cause pérdidas?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices en R0 que el margen bruto es 78 % y que el gasto mensual es 140,000. ¿Cuál es el flujo neto mensual promedio actual después de restar esos gastos del margen bruto aplicado a ventas mensuales?",
+      "texto": "Si alguno de sus clientes grandes (varios médicos) decide bajar la suscripción a $890 o cancelar, ¿cómo impacta eso en sus márgenes y flujo? No veo ese análisis en sus números.",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estoy de acuerdo con tu preocupación. Tienen 0.15 % del mercado y sin patente ni barreras tecnológicas claras, solo integraciones y base de datos, que cualquier competidor grande puede replicar rápido. Eso pone en riesgo la escalabilidad y la valuación que piden. Necesito ver barreras más sólidas para invertir.",
+      "texto": "Estela, coincido contigo: sin un plan claro para defenderse de competidores grandes y baratos, la ventaja de integrar WhatsApp y facturación no basta. Los números deben mostrar cómo esa base y datos evitarán la fuga masiva de clientes ante un jaque así.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Sobre el algoritmo predictivo que mencionas en R1 y R2, ¿qué prototipo específico usan para identificar ausencias y tienen plan para patentarlo o proteger esa innovación tecnológica?",
+      "texto": "Me dices que el algoritmo predice ausencias y usan datos de citas, pero sin patente ni protección, ¿qué planes tienen para proteger ese algoritmo y datos únicos, o se arriesgan a que otro los copie rápido?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con $125,000 ingreso mensual y margen 78%, ¿cuánto queda neto mensual después de $140,000 gastos? Explícame números exactos, porque si gastas más que ganas, no cuadra.",
+      "texto": "Me dices gasto mensual de $140,000 y margen bruto de 78 %, pero no veo cuánto representa eso en flujo neto mensual real. ¿Cuál es su flujo neto mensual exacto y cómo afecta la valuación que proponen?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 140 clientes y sin patente ni barreras fuertes claras, ¿qué plan concreto tienen para defenderse y evitar que competidores grandes copien rápido su modelo y les impidan escalar en este mercado?",
+      "texto": "Me dices que tienen 140 clientes y 4 % de cancelación mensual, pero no veo datos sobre retención a largo plazo; ¿qué tasa anual de clientes activos proyectan para defender su mercado y evitar fuga masiva?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Tiburón tecnológico, coincido contigo. Sin patente ni protección clara del algoritmo, su ventaja tecnológica es débil. Para defender mercado a largo plazo necesitan una barrera sólida, no solo un prototipo o código privado, que puede copiarse rápido y frenar su escalabilidad.",
+      "texto": "Teo, coincido contigo, sin patente ni barreras claras, ese algoritmo y datos se vuelven vulnerables a la copia rápida. Querido, el océano no perdona; sin defensa tecnológica sólida, difícil escalar y defender este mercado en 5 años. Pensemos tres jugadas adelante.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "Margen bruto 78% y CAC $2,100 con recuperación en 3 meses están bien, pero ingreso mensual $125,000 con gasto $140,000 da flujo negativo. La valuación $12M parece alta para 140 clientes y sin barreras tecnológicas claras. Contraoferta: $800,000 MXN por el 15 %.",
+      "texto": "Los números no cierran para $12,000,000 de valuación con CAC de $2,100 y 140 clientes; margen 78% y gasto $140,000. El flujo neto no me lo dices y la defensa tecnológica es débil. Pido $800,000 por 15% para equilibrar riesgo y crecimiento. Contraoferta: $800,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -277,11 +277,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado es grande con 90,000 consultorios, pero solo tienen 0.15 % y sin patente ni barreras fuertes. Valuación de $12 M y 140 clientes parece alta para defender a largo plazo. Necesitan fortalecer ventajas para escalar y defender el mercado. Contraoferta: $700,000 MXN por el 15 %.",
+      "texto": "El mercado es amplio con 90,000 consultorios, pero solo 140 clientes y sin barreras tecnológicas claras; la valuación de $12,000,000 MXN parece alta para 4% cancelación mensual y competencia fuerte. Pensemos tres jugadas adelante para defender y escalar. Contraoferta: $800,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 700000.0,
+      "contraoferta_monto_mxn": 800000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -290,11 +290,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "No tienen patente ni barreras tecnológicas claras para proteger el algoritmo predictivo y el software, que es un punto clave para mí. Su margen es bueno (78 %) y tienen 140 clientes, pero la valuación de $12,000,000 MXN me parece alta sin protección intelectual. Contraoferta: $700,000 MXN por el 15 %.",
+      "texto": "Sin patente ni protección clara del algoritmo predictivo, la innovación tecnológica está expuesta. Con 140 clientes y $1,100,000 MXN en ventas, la valuación de $12,000,000 MXN es alta para riesgo de copia rápida. Contraoferta: $800,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 700000.0,
+      "contraoferta_monto_mxn": 800000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -327,48 +327,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Modelo de ingresos con suscripción clara y recuperación de CAC en 3 meses.; Margen bruto alto del 78 % que indica buen manejo de costos variables.; Clientes actuales con baja tasa de cancelación (4 % mensual) y crecimiento mensual del 9 %.. Alertas: Falta de protección tecnológica o patente para el algoritmo predictivo, riesgo de copia rápida.; Flujo neto mensual negativo debido a gastos fijos mayores que ingresos actuales.; Baja participación de mercado (0.15 %) y ausencia de barreras sólidas para defender la posición frente a competidores grandes.. Siguientes pasos: Fortalecer y formalizar protección intelectual, considerar patentes o secretos industriales para el algoritmo.; Optimizar gastos y aumentar ingresos para lograr flujo neto positivo y sostenible.; Desarrollar un plan estratégico para escalar mercado y crear barreras competitivas, incluyendo diversificación hacia clínicas dentales y alianzas con laboratorios..",
+      "texto": "Fortalezas: Solución práctica y específica para un problema real en clínicas pequeñas con alta tasa de ausencias.; Modelo de ingresos claro con suscripción mensual y validación inicial con 140 clientes activos y bajo churn (4%).; Equipo con experiencia en software de salud y ventas B2B, trabajando tiempo completo.. Alertas: Ausencia de propiedad intelectual o patente que proteja el algoritmo predictivo y la ventaja competitiva.; Valuación alta sin respaldo claro en flujo neto y sin plan contundente para defenderse de competencia grande y barata.; Falta de un plan claro para escalar y retener clientes a largo plazo ante competencia y riesgo de fuga masiva.. Siguientes pasos: Documentar y presentar un flujo de caja neto detallado con impacto de diferentes escenarios en clientes y márgenes.; Desarrollar una estrategia clara y defensible para escalar, incluyendo barreras competitivas y métricas de retención a largo plazo.; Implementar medidas de protección tecnológica y seguridad técnica, además de explorar opciones para proteger el algoritmo y los datos únicos..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
-            "calificacion": 4,
-            "frase_clave": "Margen bruto 78% y CAC $2,100 con recuperación en 3 meses están bien, pero ingreso mensual $125,000 con gasto $140,000 da flujo negativo.",
-            "necesitaria": "Ver estados financieros claros que muestren flujo positivo y un plan para mantener CAC y crecimiento sostenibles."
+            "calificacion": 3,
+            "frase_clave": "Los números no cierran para $12,000,000 de valuación con CAC de $2,100 y 140 clientes; margen 78% y gasto $140,000. El flujo neto no me lo dices y la defensa tecnológica es débil.",
+            "necesitaria": "Ver un flujo de caja neto claro y detallado, además de un análisis de sensibilidad sobre el impacto en márgenes si clientes grandes bajan su tarifa o cancelan."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 3,
-            "frase_clave": "Necesitan fortalecer ventajas para escalar y defender el mercado. Valuación de $12 M y 140 clientes parece alta para defender a largo plazo.",
-            "necesitaria": "Demostrar barreras sólidas que protejan el negocio ante competidores grandes y un plan claro para escalar y diversificar clientes."
+            "frase_clave": "El mercado es amplio con 90,000 consultorios, pero solo 140 clientes y sin barreras tecnológicas claras; la valuación de $12,000,000 MXN parece alta para 4% cancelación mensual y competencia fuerte.",
+            "necesitaria": "Un plan estratégico robusto para defender y escalar el mercado, incluyendo barreras competitivas claras y métricas de retención a largo plazo."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 2,
-            "frase_clave": "No tienen patente ni barreras tecnológicas claras para proteger el algoritmo predictivo y el software, que es un punto clave para mí.",
-            "necesitaria": "Mostrar evidencia de innovación tecnológica protegida, planes de patente o desarrollos únicos que impidan la copia rápida del producto."
+            "frase_clave": "Sin patente ni protección clara del algoritmo predictivo, la innovación tecnológica está expuesta. Con 140 clientes y $1,100,000 MXN en ventas, la valuación es alta para riesgo de copia rápida.",
+            "necesitaria": "Ver protección tecnológica clara, como patente o propiedad intelectual, o una ventaja competitiva difícil de replicar, además de respaldo técnico contra fallos y ataques."
           }
         ],
         "fortalezas": [
-          "Modelo de ingresos con suscripción clara y recuperación de CAC en 3 meses.",
-          "Margen bruto alto del 78 % que indica buen manejo de costos variables.",
-          "Clientes actuales con baja tasa de cancelación (4 % mensual) y crecimiento mensual del 9 %."
+          "Solución práctica y específica para un problema real en clínicas pequeñas con alta tasa de ausencias.",
+          "Modelo de ingresos claro con suscripción mensual y validación inicial con 140 clientes activos y bajo churn (4%).",
+          "Equipo con experiencia en software de salud y ventas B2B, trabajando tiempo completo."
         ],
         "alertas": [
-          "Falta de protección tecnológica o patente para el algoritmo predictivo, riesgo de copia rápida.",
-          "Flujo neto mensual negativo debido a gastos fijos mayores que ingresos actuales.",
-          "Baja participación de mercado (0.15 %) y ausencia de barreras sólidas para defender la posición frente a competidores grandes."
+          "Ausencia de propiedad intelectual o patente que proteja el algoritmo predictivo y la ventaja competitiva.",
+          "Valuación alta sin respaldo claro en flujo neto y sin plan contundente para defenderse de competencia grande y barata.",
+          "Falta de un plan claro para escalar y retener clientes a largo plazo ante competencia y riesgo de fuga masiva."
         ],
         "preguntas_sin_responder": [
-          "Detalles técnicos y protección del algoritmo predictivo usado para reducir ausencias.",
-          "Plan específico para crear barreras defensivas frente a competidores grandes y gratuitos.",
-          "Demostración clara del flujo neto mensual y sostenibilidad financiera actual."
+          "¿Cuál es el flujo neto mensual exacto considerando gastos y cómo afecta la valuación propuesta?",
+          "¿Qué tasa anual de retención proyectan para evitar fuga masiva de clientes?",
+          "¿Qué protocolos técnicos tienen para evitar caídas o ataques que afecten el servicio?"
         ],
         "siguientes_pasos": [
-          "Fortalecer y formalizar protección intelectual, considerar patentes o secretos industriales para el algoritmo.",
-          "Optimizar gastos y aumentar ingresos para lograr flujo neto positivo y sostenible.",
-          "Desarrollar un plan estratégico para escalar mercado y crear barreras competitivas, incluyendo diversificación hacia clínicas dentales y alianzas con laboratorios."
+          "Documentar y presentar un flujo de caja neto detallado con impacto de diferentes escenarios en clientes y márgenes.",
+          "Desarrollar una estrategia clara y defensible para escalar, incluyendo barreras competitivas y métricas de retención a largo plazo.",
+          "Implementar medidas de protección tecnológica y seguridad técnica, además de explorar opciones para proteger el algoritmo y los datos únicos."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -405,8 +405,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 17.4,
-    "segundos_total": 15.3,
+    "segundos_modelo": 22.3,
+    "segundos_total": 19.1,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,
@@ -415,7 +415,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 9,
+    "preguntas_citan_dato": 6,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

@@ -22,6 +22,7 @@ namespace NeuralHub
 
         public Modelo[] modelos;                // dos diseños de tiburón; cada perfil usa uno
         public Juego[] juegos;                  // accesorio, objeto del podio y emblema de cada perfil
+        public GameObject[] corbatas;           // la de cada modelo
         public Transform giro;                  // solo gira el cuerpo; el letrero del podio se queda quieto
         public Transform paleta;
         public TextMesh letrero;
@@ -39,7 +40,7 @@ namespace NeuralHub
 
         public static int Variante(string id)
         {
-            return id == "tiburon_estratega" || id == "tiburona_consumo" || id == "tiburon_consumo" || id == "tiburon_mentor" ? 1 : 0;
+            return id == "tiburona_consumo" || id == "tiburon_consumo" || id == "tiburon_mentor" ? 1 : 0;
         }
 
         public void Asignar(string id, string nom)
@@ -49,6 +50,8 @@ namespace NeuralHub
             int v = Variante(id);
             for (int i = 0; i < modelos.Length; i++) modelos[i].raiz.SetActive(i == v);
             activo = modelos[v];
+            // Estela va sin corbata: su atuendo son las perlas
+            if (corbatas != null) for (int i = 0; i < corbatas.Length; i++) if (corbatas[i]) corbatas[i].SetActive(id != "tiburon_estratega");
             if (juegos != null)
                 foreach (var j in juegos)
                     foreach (var pieza in j.piezas) if (pieza) pieza.SetActive(j.id == id);

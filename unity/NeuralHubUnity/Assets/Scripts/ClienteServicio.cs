@@ -232,7 +232,7 @@ namespace NeuralHub
         }
 
         /// <summary>Modo en vivo con ayuda: el agente empresario sugiere una respuesta a la última pregunta del tiburón.</summary>
-        public IEnumerator PedirSugerencia(string tiburonId, Action<string> listo)
+        public IEnumerator PedirSugerencia(string tiburonId, string borrador, Action<string> listo)
         {
             if (usarMock)
             {
@@ -246,7 +246,8 @@ namespace NeuralHub
                 yield break;
             }
             string txt = null;
-            yield return Post("/sesiones/" + sesionId + "/sugerencia", "{\"tiburon_id\":\"" + tiburonId + "\"}", t => txt = t);
+            var pedido = JsonUtility.ToJson(new PedidoAyuda { tiburon_id = tiburonId, borrador = borrador ?? "" });
+            yield return Post("/sesiones/" + sesionId + "/sugerencia", pedido, t => txt = t);
             listo(txt != null ? JsonUtility.FromJson<SugerenciaDto>(txt).texto : null);
         }
 
@@ -295,7 +296,28 @@ namespace NeuralHub
             }
         }
 
+        [Serializable] class PedidoAyuda { public string tiburon_id; public string borrador; }
         [Serializable] class Transcripcion { public string texto; }
+
+        /// <summary>Llena el formulario a partir de un documento o de texto pegado. Devuelve el JSON o el motivo del error.</summary>
+        public IEnumerator ExtraerPitch(byte[] datos, string nombreArchivo, Action<string, string> listo)
+        {
+            using (var req = new UnityWebRequest(urlBase + "/pitch/extraer?nombre=" + UnityWebRequest.EscapeURL(nombreArchivo), "POST"))
+            {
+                req.uploadHandler = new UploadHandlerRaw(datos);
+                req.downloadHandler = new DownloadHandlerBuffer();
+                req.SetRequestHeader("Content-Type", "application/octet-stream");
+                req.timeout = 90;
+                yield return req.SendWebRequest();
+                if (req.result == UnityWebRequest.Result.Success) listo(req.downloadHandler.text, null);
+                else
+                {
+                    string motivo = req.result == UnityWebRequest.Result.ConnectionError ? "No hay conexión con el servicio." : req.downloadHandler.text;
+                    var m = System.Text.RegularExpressions.Regex.Match(motivo ?? "", "\"detail\"\\s*:\\s*\"([^\"]+)\"");
+                    listo(null, m.Success ? m.Groups[1].Value : motivo);
+                }
+            }
+        }
 
         /// <summary>Envía la voz grabada (WAV) al servicio, que la transcribe con Whisper.</summary>
         public IEnumerator Transcribir(byte[] wav, Action<string> listo)
@@ -305,7 +327,7 @@ namespace NeuralHub
                 req.uploadHandler = new UploadHandlerRaw(wav);
                 req.downloadHandler = new DownloadHandlerBuffer();
                 req.SetRequestHeader("Content-Type", "audio/wav");
-                req.timeout = 60;
+                req.timeout = 240;
                 yield return req.SendWebRequest();
                 if (req.result == UnityWebRequest.Result.Success) listo(JsonUtility.FromJson<Transcripcion>(req.downloadHandler.text).texto);
                 else { Error("No se pudo transcribir la voz: " + req.error); listo(null); }

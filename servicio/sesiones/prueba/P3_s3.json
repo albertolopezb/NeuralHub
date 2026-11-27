@@ -46,7 +46,7 @@
       "tipo": "PANEL",
       "emisor": "moderador",
       "destino": "todos",
-      "texto": "Panel de esta sesión: Tiburón financiero, Tiburona de consumo, Tiburón mentor.",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Coral Medina (Tiburona de consumo), Aurelio Paredes (Tiburón mentor).",
       "estado": "",
       "panel": [
         {
@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "No me dices el margen bruto ni el gasto mensual. ¿Cuánto te cuesta hacer cada prenda y cuánto ganas neto por cada venta de $1,400?",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. En el pitch no me dices margen bruto ni costo por cliente, ¿cuánto te cuesta hacer y vender cada prenda de $1,400 y cuánto gastas en promedio para captar a una clienta en línea?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que vendes en línea y pop-ups, ¿cómo ha reaccionado el cliente a la marca y el empaque? ¿Tienes reseñas o datos que muestren si el cliente volvería a comprar?",
+      "texto": "Soy Coral Medina, tiburona de consumo. Me dices que venden en línea y pop-ups pero no me dices si el cliente vuelve a comprar o si dejaron reseñas; ¿cómo sabe la marca que la gente quiere realmente esa ropa y no es solo un gusto pasajero?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "En tu pitch dices que tú y tu socia se dedican tiempo completo; ¿cómo se organizaron para enfrentar juntos los retos hasta ahora y qué los mantiene comprometidos para seguir?",
+      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que son dos fundadoras, una con experiencia en cooperativas y otra en diseño, pero no me dices cómo se complementan en la operación diaria ni quién toma las decisiones clave; ¿cómo se reparten las responsabilidades y compromisos tú y tu socia en ModaRaíz?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_financiero",
-      "texto": "Tiburón financiero, coincido contigo: sin saber el margen bruto ni el gasto, es difícil ver la salud real del negocio. El compromiso y la honestidad de las fundadoras es claro, pero falta esa claridad financiera para confiar en el crecimiento.",
+      "texto": "Ramiro, te voy a ser franco, como a mis muchachos: sin margen ni costo de adquisición, andamos a ciegas. El equipo debe medir eso desde ya; yo ya me tropecé con que sin esos números, no se sabe si el negocio aguanta o es solo ilusión.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que vendes en línea y pop-ups, pero no me dices nada del empaque ni las reseñas; ¿qué feedback te ha dado el cliente sobre el empaque y si volvería a comprar la marca?",
+      "texto": "A ver, me pongo en los zapatos del cliente que compra en línea: si la prenda tarda en llegar o el empaque no refleja la historia y valor de las artesanas, ¿qué pasa con la percepción de la marca y la posibilidad de que vuelva a comprar? ¿Qué tienen ya planeado para eso?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que tú y tu socia trabajan tiempo completo, pero no me cuentas: ¿qué momento difícil han enfrentado juntos y cómo eso fortaleció su compromiso con ModaRaíz?",
+      "texto": "Me dices que parte del precio va directo a las cooperativas; si una de ellas no cumple con calidad o tiempos, ¿cómo tú y tu socia enfrentan esa falla? ¿Quién toma la decisión difícil y cómo mantienen el compromiso del equipo?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que el precio promedio es $1,400 pero no me dices el costo por prenda ni margen bruto. ¿Cuánto te cuesta fabricar una prenda y cuánto te queda antes de gastos?",
+      "texto": "Si un cliente devuelve una prenda en buen estado y hay que reembolsar $1,400 sin margen claro ni costo por adquisición definido, ¿cómo afecta eso a tu flujo y qué porcentaje de devoluciones toleras para no perder dinero?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Tiburona de consumo, coincido en que sin datos de reseñas o recompra no sabemos si el cliente valora el empaque o vuelve a comprar. El emprendedor no tiene métricas claras, y sin eso no puedo evaluar el costo de adquisición ni la retención, que son clave para el margen y flujo.",
+      "texto": "Coral, coincido contigo. Si no tienen control sobre la experiencia del cliente, más vale que midan costos y devoluciones. Sin esos números, ni el empaque bonito salva la pérdida en flujo. Esto no cabe en mi hoja de cálculo, la verdad.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que tú y tu socia trabajan tiempo completo, pero no me dices cómo se apoyan mutuamente para superar la falta de experiencia financiera que mencionaste, ¿qué hacen juntos para crecer como equipo?",
+      "texto": "Me dices que son dos fundadoras dedicadas a tiempo completo y se conocen de la universidad, pero no me dices cómo manejan juntas la presión cuando algo falla en la producción o ventas; ¿cómo enfrentan esas pruebas difíciles para no romper el compromiso y la confianza entre ustedes?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "En el pitch dices precio promedio $1,400, pero no me dices costo por prenda ni margen bruto. ¿Cuánto te cuesta hacer una prenda y cuánto queda nada más antes de gastos?",
+      "texto": "Me dices que vendieron unas 150 prendas pero no el ingreso ni gastos; si el inventario y publicidad suman $400,000, ¿qué margen y flujo esperas para que esa inversión dé retorno en el corto plazo?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que vendes en línea y pop-ups, pero no me dices cómo es el empaque ni qué dicen las reseñas; ¿qué me puedes contar del feedback real del cliente y si vuelve a comprar la marca?",
+      "texto": "Me dices que algunas piezas se agotan, pero no tienes datos formales de demanda ni repeticiones; ¿cómo sabes que el canal en línea y pop-ups es el que realmente construye marca y genera clientes leales, no solo compras impulsivas?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_mentor",
-      "texto": "Tiburón mentor, coincido contigo en que es clave cómo se apoyan para crecer juntos, sobre todo sin experiencia financiera. La respuesta del emprendedor muestra voluntad para recibir asesoría y formar consejo, pero aún falta que me digan cómo eso se traduce en mejores decisiones para el cliente y la marca. Es vital para la confianza del cliente final.",
+      "texto": "Aurelio, me parece clave tu pregunta; sin un plan claro para manejar crisis entre fundadoras, la marca corre riesgo. Dicen que aceptarían consejo, pero aún no hay muestra de cómo enfrentan la presión juntas. Eso al cliente le choca si afecta continuidad.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices margen bruto, costo por prenda ni gasto mensual. Sin esos números clave no puedo evaluar el margen ni la valuación de 5,000,000 por 8 % y 400,000 pesos. Sin datos financieros, no invierto.",
+      "texto": "Los números no cuadran: no hay margen ni costo de adquisición y ni flujo claro; piden 400,000 por 8 % con valuación implícita de 5,000,000 sin ventas ni datos exactos, eso no cabe en mi hoja de cálculo.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "El canal principal es tienda en línea y pop-ups, con 150 prendas vendidas pero sin datos formales de reseñas ni recompra, y sin saber si el cliente valora el empaque. La marca tiene potencial, pero falta validación clara del cliente para justificar $5,000,000 de valuación. Contraoferta: $200,000 MXN por el 10 %.",
+      "texto": "A ver, me pongo en sus zapatos: sin datos claros de demanda y sin saber si el cliente repite o deja reseñas, la marca no está lista para $5,000,000 de valuación. Me piden $400,000 por 8% pero falta control de canales y fidelidad. Contraoferta: $200,000 MXN por el 10 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -290,11 +290,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "Valoro el compromiso de dos fundadoras y su honestidad, pero falta claridad financiera esencial para crecer. No me dices margen bruto ni ventas exactas, y la valuación de $5,000,000 MXN no se justifica aún. Contraoferta: $200,000 MXN por el 10 %.",
+      "texto": "El equipo tiene compromiso y experiencia, pero no me dices ventas ni margen, y la valuación de $5,000,000 no se sustenta sin números claros. Piden $400,000 por 8 %, sin datos de ventas ni flujo. Quiero menos riesgo con mi inversión. Contraoferta: $250,000 MXN por el 10 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_monto_mxn": 250000.0,
       "contraoferta_porcentaje": 10.0
     },
     {
@@ -303,7 +303,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburona de consumo. $200,000 MXN por el 10 %.",
+      "texto": "Elijo la condición de Tiburón mentor. $250,000 MXN por el 10 %.",
       "estado": "Negociando"
     },
     {
@@ -312,13 +312,13 @@
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
       "destino": "todos",
-      "texto": "TRATO: $200,000 MXN por el 10 % de la empresa.",
+      "texto": "TRATO: $250,000 MXN por el 10 % de la empresa.",
       "estado": "Reaccionando",
       "resultado": "TRATO",
       "condiciones": {
-        "monto_mxn": 200000.0,
+        "monto_mxn": 250000.0,
         "porcentaje": 10.0,
-        "origen": "tiburona_consumo"
+        "origen": "tiburon_mentor"
       }
     },
     {
@@ -327,55 +327,57 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Compromiso claro y dedicación de tiempo completo de las dos fundadoras.; Producto con propósito social, apoyando directamente a cooperativas artesanales.; Modelo de negocio con diferenciador claro: parte del precio va directo a las cooperativas y cada prenda tiene su historia.. Alertas: Falta total de datos financieros clave: margen bruto, costo por prenda, gastos y ventas formales.; Ausencia de métricas de validación con clientes, como reseñas, recompra o feedback del empaque.; Valuación implícita no sustentada por información financiera ni operativa clara.. Siguientes pasos: Calcular y llevar control estricto del costo por prenda, margen bruto, gastos y ventas mensuales.; Recolectar y analizar feedback formal de clientes, incluyendo reseñas y tasa de recompra.; Conformar un consejo asesor o administración que apoye en finanzas y operaciones para profesionalizar la empresa..",
+      "texto": "Fortalezas: El negocio tiene un propósito social claro: pagar justamente a las cooperativas artesanales.; Las fundadoras tienen experiencia relevante y complementaria en diseño de moda y trabajo con cooperativas.; La propuesta incluye transparencia en la historia y origen de cada prenda, lo cual es un diferenciador valioso.. Alertas: No hay datos claros de ventas, margen bruto ni costo de adquisición de clientes.; Falta información sobre la fidelidad del cliente y repetición de compra.; No hay evidencia de un manejo formal de finanzas ni plan para enfrentar crisis operativas o de equipo.. Siguientes pasos: Implementar un sistema contable para medir ventas, margen bruto y costos de adquisición.; Recolectar y analizar datos de demanda, repetición de compra y satisfacción del cliente.; Establecer un consejo de administración para asesorar finanzas y operación, y crear un plan para manejo de crisis en el equipo..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 2,
-            "frase_clave": "No me dices el margen bruto ni el gasto mensual. Sin esos números clave no puedo evaluar el margen ni la valuación de 5,000,000 por 8 % y 400,000 pesos.",
-            "necesitaria": "Necesito conocer el costo por prenda, margen bruto, gastos mensuales y ventas exactas para evaluar la salud financiera y la valuación del negocio."
+            "frase_clave": "Los números no cuadran: no hay margen ni costo de adquisición y ni flujo claro; piden 400,000 por 8 % con valuación implícita de 5,000,000 sin ventas ni datos exactos, eso no cabe en mi hoja de cálculo.",
+            "necesitaria": "Necesito ver margen bruto claro, costo de adquisición de clientes, ventas mensuales y flujo de caja para evaluar la rentabilidad y sostenibilidad del negocio."
           },
           {
             "tiburon_id": "tiburona_consumo",
             "calificacion": 3,
-            "frase_clave": "No me dices nada del empaque ni reseñas; no sé si los clientes vuelven a comprar ni si valoran la marca.",
-            "necesitaria": "Requiero datos formales de feedback, porcentaje de recompra y evaluación del empaque para validar que el cliente valora y volverá a comprar."
+            "frase_clave": "Me pongo en sus zapatos: sin datos claros de demanda y sin saber si el cliente repite o deja reseñas, la marca no está lista para 5,000,000 de valuación.",
+            "necesitaria": "Requiero datos formales de demanda, tasa de recompra, satisfacción del cliente y evidencia de que el canal en línea y pop-ups generan clientes leales."
           },
           {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 3,
-            "frase_clave": "El compromiso y la honestidad de las fundadoras es claro, pero falta claridad financiera para confiar en el crecimiento.",
-            "necesitaria": "Quiero ver un plan para ordenar finanzas, operar con asesoría y un consejo que fortalezca el equipo y la toma de decisiones."
+            "frase_clave": "Sin margen ni costo de adquisición, andamos a ciegas. El equipo debe medir eso desde ya; yo ya me tropecé con que sin esos números, no se sabe si el negocio aguanta o es solo ilusión.",
+            "necesitaria": "Quiero ver un control financiero ordenado, un plan claro para manejo de crisis en el equipo y evidencia de que pueden mantener la operación y compromiso bajo presión."
           }
         ],
         "fortalezas": [
-          "Compromiso claro y dedicación de tiempo completo de las dos fundadoras.",
-          "Producto con propósito social, apoyando directamente a cooperativas artesanales.",
-          "Modelo de negocio con diferenciador claro: parte del precio va directo a las cooperativas y cada prenda tiene su historia."
+          "El negocio tiene un propósito social claro: pagar justamente a las cooperativas artesanales.",
+          "Las fundadoras tienen experiencia relevante y complementaria en diseño de moda y trabajo con cooperativas.",
+          "La propuesta incluye transparencia en la historia y origen de cada prenda, lo cual es un diferenciador valioso."
         ],
         "alertas": [
-          "Falta total de datos financieros clave: margen bruto, costo por prenda, gastos y ventas formales.",
-          "Ausencia de métricas de validación con clientes, como reseñas, recompra o feedback del empaque.",
-          "Valuación implícita no sustentada por información financiera ni operativa clara."
+          "No hay datos claros de ventas, margen bruto ni costo de adquisición de clientes.",
+          "Falta información sobre la fidelidad del cliente y repetición de compra.",
+          "No hay evidencia de un manejo formal de finanzas ni plan para enfrentar crisis operativas o de equipo."
         ],
         "preguntas_sin_responder": [
-          "¿Cuánto cuesta fabricar cada prenda y cuál es el margen bruto?",
-          "¿Cuál es el gasto mensual actual y las ventas exactas en los últimos 12 meses?",
-          "¿Qué porcentaje de clientes vuelve a comprar y qué retroalimentación concreta tienen sobre el empaque?",
-          "¿Cómo planean estructurar la operación para mejorar la experiencia del cliente y finanzas?"
+          "¿Cuál es el margen bruto exacto por prenda?",
+          "¿Cuánto cuesta adquirir un cliente promedio en línea?",
+          "¿Qué porcentaje de clientes repite compra o deja reseñas?",
+          "¿Cómo manejan devoluciones y su impacto en flujo?",
+          "¿Cómo enfrentan juntas las crisis en producción o ventas?",
+          "¿Qué margen y flujo esperan tras invertir $400,000 MXN?"
         ],
         "siguientes_pasos": [
-          "Calcular y llevar control estricto del costo por prenda, margen bruto, gastos y ventas mensuales.",
-          "Recolectar y analizar feedback formal de clientes, incluyendo reseñas y tasa de recompra.",
-          "Conformar un consejo asesor o administración que apoye en finanzas y operaciones para profesionalizar la empresa."
+          "Implementar un sistema contable para medir ventas, margen bruto y costos de adquisición.",
+          "Recolectar y analizar datos de demanda, repetición de compra y satisfacción del cliente.",
+          "Establecer un consejo de administración para asesorar finanzas y operación, y crear un plan para manejo de crisis en el equipo."
         ],
         "resultado": "TRATO",
         "condiciones": {
-          "monto_mxn": 200000.0,
+          "monto_mxn": 250000.0,
           "porcentaje": 10.0,
-          "origen": "tiburona_consumo"
+          "origen": "tiburon_mentor"
         },
         "valuacion_mxn": 5000000.0,
         "votos_primera_votacion": {
@@ -406,8 +408,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 17.0,
-    "segundos_total": 14.8,
+    "segundos_modelo": 22.5,
+    "segundos_total": 19.7,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,
@@ -415,7 +417,7 @@
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
-    "preguntas_mencionan_criterio": 8,
+    "preguntas_mencionan_criterio": 9,
     "preguntas_citan_dato": 6,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,

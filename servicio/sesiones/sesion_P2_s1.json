@@ -71,7 +71,7 @@
       "tipo": "PANEL",
       "emisor": "moderador",
       "destino": "todos",
-      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Estela Marín (Tiburón estratega), Teo Navarro (Tiburón tecnológico).",
       "estado": "",
       "panel": [
         {
@@ -97,7 +97,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices ventas $1,100,000 y gastos mensuales $140,000. ¿Cuál es el costo exacto de adquisición de un cliente considerando que tienes 140 clientes y 4 % de cancelación mensual?",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Con 140 clientes y $1,100,000 de ventas anuales, ¿cuánto les cuesta en promedio adquirir un cliente? No me dices ese dato y es clave para ver si el gasto mensual de $140,000 está bien justificado.",
       "estado": "Preguntando"
     },
     {
@@ -115,7 +115,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 140 clientes y competencia grande y barata, ¿qué barreras de entrada tienen para defender su mercado y evitar que otros escalen rápido con soluciones similares?",
+      "texto": "Soy Estela Marín, tiburón estratega. Con 140 clientes y competencia grande y genérica, ¿qué barreras tiene ClinicaFácil para defender su cuota ante jugadores con más recursos y evitar que te copien rápido?",
       "estado": "Preguntando"
     },
     {
@@ -133,7 +133,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Me dices que tu software reduce ausencias del 30 % al 12 % (pitch R0). ¿Qué algoritmo o tecnología patentada usan para confirmar citas y cómo validaron el prototipo en ese mercado mexicano?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. ¿Me puedes explicar qué algoritmo usa tu software para reducir ausencias de 30 % a 12 % y si tienen algún prototipo o patente que proteja esa innovación tecnológica?",
       "estado": "Preguntando"
     },
     {
@@ -151,7 +151,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Entiendo tu preocupación sobre el costo de adquisición de clientes, me parece clave para escalar con tecnología. El dato de $2,100 MXN y recuperación en 3 meses suena razonable para un software en la nube. Pero me gustaría ver más sobre el algoritmo que usan para retener clientes y optimizar ese CAC.",
+      "texto": "Ramiro, claro que tu pregunta es clave; un CAC de $2,100 recuperado en 3 meses suena sólido para escalar, pero necesito saber si ese algoritmo que predice ausencias es propio o es solo un modelo estándar, porque sin patente la innovación se diluye rápido.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -161,7 +161,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 140 clientes y competencia fuerte (pitch R0 y R1), ¿qué ventaja defendible tienen para escalar rápido y evitar que otros entren copiando su software sin patente?",
+      "texto": "Si un competidor grande baja su precio o lanza un producto similar para este mercado de 90,000 consultorios, ¿qué estrategia concreta tiene ClinicaFácil para defender su cuota y no perder terreno al escalar?",
       "estado": "Preguntando"
     },
     {
@@ -179,7 +179,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que tu software reduce ausencias del 30 % a 12 %. ¿Puedes detallar el algoritmo que predice faltas y si planean protegerlo con patente para defender esa ventaja tecnológica?",
+      "texto": "Si se cae el servidor o WhatsApp tiene falla, ¿qué plan de contingencia tecnológico tiene tu software para que las clínicas no pierdan citas y su agenda no se trunque? Eso es crítico para clínicas pequeñas que dependen del sistema en producción.",
       "estado": "Preguntando"
     },
     {
@@ -197,7 +197,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con gastos mensuales $140,000 y 140 clientes, ¿cuánto gastan en promedio en ventas y marketing por cliente y mes para validar ese costo de adquisición de $2,100? No me dices eso.",
+      "texto": "Con gasto mensual de $140,000 y clientes que pagan $890 o $2,400, ¿qué pasa si la cancelación del 4 % mensual sube a 10 %? ¿Cómo afecta eso a tus márgenes y flujo? Dame números claros, que eso no cabe en mi hoja de cálculo.",
       "estado": "Preguntando"
     },
     {
@@ -215,7 +215,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Le doy la razón a Tiburón estratega. Sin patente ni barreras claras, la ventaja que mencionan (WhatsApp y facturación) es débil para defender mercado. Además, no muestran costos de ventas por cliente para validar el CAC. Así no veo cómo escalen rápido sin que competidores baratos los copien.",
+      "texto": "Estela, coincido contigo: si la defensa es solo integración con WhatsApp y facturación, eso no es barrera fuerte. Sin patente ni diferenciador claro, perder cuota ante un competidor grande que baje precio es cuestión de tiempo. Eso no cabe en mi hoja de cálculo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -225,7 +225,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "En el pitch mencionas prototipo que reduce ausencias; ¿puedes explicar cómo funciona el algoritmo predictivo y si planean registrar patente o mantener código cerrado para proteger esa innovación?",
+      "texto": "Me dices que el algoritmo predice ausencias, pero no tienen patente ni prototipo único; ¿cómo evitan que un competidor copie ese modelo y sus datos sin protección tecnológica clara?",
       "estado": "Preguntando"
     },
     {
@@ -243,7 +243,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "En el pitch me dices $140,000 de gastos mensuales, pero no me dices cuánto de eso es solo para ventas y marketing. ¿Cuánto gastan en ventas y marketing por cliente y mes? Necesito ese dato para validar el costo de adquisición de $2,100.",
+      "texto": "En tu pitch dices que el ingreso mensual es $125,000 y gasto $140,000; ¿cómo sostienes flujo negativo sin fondo? Si 140 clientes generan $125,000, ¿cuántos más necesitas para cubrir $140,000 y a qué costo de adquisición exacto?",
       "estado": "Preguntando"
     },
     {
@@ -261,7 +261,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Dado que no tienen patente ni barreras fuertes y la competencia puede copiar rápido, ¿qué estrategia concreta usarán para defender y escalar su mercado en 5 años ante rivales similares?",
+      "texto": "Pides $1,200,000 por 10 % y dices valuación de $12 millones, pero no me dices qué porcentaje del mercado quieres defender en 5 años ni cómo vas a escalar de 140 a miles sin que te den jaque con sus recursos; ¿cuál es tu plan real para defender y escalar tu cuota?",
       "estado": "Preguntando"
     },
     {
@@ -279,7 +279,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Concuerdo con el Tiburón tecnológico: sin patente ni barreras fuertes en el algoritmo, la ventaja es débil para defender el mercado. Mantener código cerrado es bueno, pero en 5 años competidores pueden replicar rápido. Para escalar y defender, necesitan una barrera tecnológica más sólida o estrategia clara de protección y diferenciación.",
+      "texto": "Teo, coincido en que sin patente ni barreras tecnológicas claras, el riesgo de copia es alto. La defensa debe ser más que datos y repositorio privado; pensemos tres jugadas adelante para construir barreras sólidas que permitan escalar y defender mercado en 5 años.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -289,7 +289,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "Me falta desglose claro de gasto en ventas y marketing para validar el CAC de $2,100 y la valuación de $12,000,000 parece alta para 140 clientes y $1,100,000 ventas anuales. Margen 78% bueno, pero sin barreras fuertes ni patente. Propongo $800,000 por 15%. Contraoferta: $800,000 MXN por el 15 %.",
+      "texto": "El margen bruto del 78% es atractivo, pero el CAC de $2,100 y la valuación de $12,000,000 a 11 veces ventas no cuadran con el flujo negativo actual y riesgo de alta cancelación. No me dices el CAC para clientes múltiples. Contraoferta: $800,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -302,11 +302,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado de 90,000 consultorios es grande pero la ventaja defendible es débil sin patente ni barreras fuertes, y la valuación de 12 millones parece alta para 140 clientes y 1.1 M ventas. Necesito mejor protección o estrategia para defender mercado y escalar. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "El mercado es grande con 90,000 consultorios, pero la defensa es débil sin patente ni barreras sólidas, y la valuación de $12,000,000 con 140 clientes me parece alta. Pensemos tres jugadas adelante para escalar y defender mejor cuota. Contraoferta: $900,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_monto_mxn": 900000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -315,12 +315,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Me interesa la innovación del algoritmo que reduce ausencias del 30% a 12%, pero no tienen patente ni datos claros de protección tecnológica. La valuación de 12 millones y la falta de barreras para escalar me hace ofrecer menos por 15% de la empresa. Contraoferta: $900,000 MXN por el 15 %.",
+      "texto": "El algoritmo que reduce ausencias es clave y tiene prototipo, pero no hay patente ni protección tecnológica clara; eso en producción truena rápido. Valoro los $1,100,000 MXN en ventas y 78 % de margen, pero la valuación de $12,000,000 MXN me parece alta sin IP sólida. Contraoferta: $600,000 MXN por el 10 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 900000.0,
-      "contraoferta_porcentaje": 15.0
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 10.0
     },
     {
       "n": 27,
@@ -328,7 +328,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburón tecnológico. $900,000 MXN por el 15 %.",
+      "texto": "Elijo la condición de Tiburón estratega. $900,000 MXN por el 15 %.",
       "estado": "Negociando"
     },
     {
@@ -343,7 +343,7 @@
       "condiciones": {
         "monto_mxn": 900000.0,
         "porcentaje": 15.0,
-        "origen": "tiburon_tecnologico"
+        "origen": "tiburon_estratega"
       }
     },
     {
@@ -352,54 +352,54 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Solución práctica y específica para un problema real en clínicas pequeñas de México.; Modelo de negocio con ingresos recurrentes y margen bruto alto (78%).; Equipo con experiencia en software de salud y ventas B2B, dedicado tiempo completo.. Alertas: Falta de patente o protección clara para el algoritmo y ventaja tecnológica.; Barreras de entrada débiles que pueden facilitar la copia por competidores grandes o baratos.; Datos financieros incompletos para validar el costo de adquisición de clientes y escalabilidad.. Siguientes pasos: Presentar un desglose claro y detallado de gastos en ventas y marketing para validar CAC y plan de escalabilidad.; Desarrollar o adquirir protección tecnológica o patentes para el algoritmo predictivo y otras innovaciones.; Definir y comunicar una estrategia sólida para diferenciarse y defender el mercado ante competencia replicadora..",
+      "texto": "Fortalezas: Modelo de negocio probado con 140 clientes y baja cancelación del 4% mensual.; Margen bruto alto del 78% que indica buen control de costos.; Solución adaptada al mercado mexicano, con integración a WhatsApp y facturación local.. Alertas: Falta de patente o protección tecnológica clara para el algoritmo clave.; Defensas débiles contra competidores grandes con más recursos.; Flujo de caja negativo con gasto mensual alto y riesgo de aumento en cancelación.. Siguientes pasos: Desarrollar y registrar patentes o protección tecnológica para el algoritmo predictivo.; Definir y ejecutar una estrategia clara de escalamiento y defensa del mercado a mediano plazo.; Mejorar métricas financieras con foco en reducción de CAC y control del flujo de caja..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "No me dices costos de ventas por cliente para validar el CAC. Así no veo cómo escalen rápido sin que competidores baratos los copien.",
-            "necesitaria": "Desglose claro de gastos en ventas y marketing por cliente para validar el CAC y entender la escalabilidad financiera."
+            "frase_clave": "El CAC de $2,100 recuperado en 3 meses suena sólido para escalar, pero necesito saber si ese algoritmo que predice ausencias es propio o es solo un modelo estándar, porque sin patente la innovación se diluye rápido.",
+            "necesitaria": "Necesito datos claros del CAC por tipo de cliente, planes para mejorar flujo y una estrategia para reducir riesgos de alta cancelación."
           },
           {
             "tiburon_id": "tiburon_estratega",
-            "calificacion": 2,
-            "frase_clave": "Sin patente ni barreras fuertes, la ventaja que mencionan (WhatsApp y facturación) es débil para defender mercado.",
-            "necesitaria": "Una estrategia clara y barreras sólidas (patentes, diferenciadores) para proteger y escalar el mercado ante competencia rápida."
+            "calificacion": 3,
+            "frase_clave": "Si la defensa es solo integración con WhatsApp y facturación, eso no es barrera fuerte. Sin patente ni diferenciador claro, perder cuota ante un competidor grande que baje precio es cuestión de tiempo.",
+            "necesitaria": "Necesito un plan concreto para construir barreras sólidas, estrategias claras de escalamiento y defensa del mercado a 5 años."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 3,
-            "frase_clave": "Me gustaría ver más sobre el algoritmo que usan para retener clientes y optimizar ese CAC. No tienen patente ni datos claros de protección tecnológica.",
-            "necesitaria": "Mayor detalle técnico del algoritmo, evidencia de protección tecnológica (patentes o secretos) y plan para defender la innovación."
+            "calificacion": 2,
+            "frase_clave": "No hay patente ni protección tecnológica clara; eso en producción truena rápido.",
+            "necesitaria": "Quiero ver una protección tecnológica real, patentes o prototipos sólidos y un plan para mantener ventaja competitiva en tecnología."
           }
         ],
         "fortalezas": [
-          "Solución práctica y específica para un problema real en clínicas pequeñas de México.",
-          "Modelo de negocio con ingresos recurrentes y margen bruto alto (78%).",
-          "Equipo con experiencia en software de salud y ventas B2B, dedicado tiempo completo."
+          "Modelo de negocio probado con 140 clientes y baja cancelación del 4% mensual.",
+          "Margen bruto alto del 78% que indica buen control de costos.",
+          "Solución adaptada al mercado mexicano, con integración a WhatsApp y facturación local."
         ],
         "alertas": [
-          "Falta de patente o protección clara para el algoritmo y ventaja tecnológica.",
-          "Barreras de entrada débiles que pueden facilitar la copia por competidores grandes o baratos.",
-          "Datos financieros incompletos para validar el costo de adquisición de clientes y escalabilidad."
+          "Falta de patente o protección tecnológica clara para el algoritmo clave.",
+          "Defensas débiles contra competidores grandes con más recursos.",
+          "Flujo de caja negativo con gasto mensual alto y riesgo de aumento en cancelación."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el desglose exacto del gasto en ventas y marketing por cliente y mes?",
-          "¿Qué estrategias concretas tienen para defender el mercado ante competencia sin patente?",
-          "¿Cómo funciona en detalle el algoritmo predictivo y qué protección tiene?"
+          "¿Cuál es el CAC exacto para clientes múltiples?",
+          "¿Qué porcentaje del mercado se quiere defender en 5 años y cómo?",
+          "¿Qué plan de contingencia hay para fallas tecnológicas críticas como caídas de servidor o WhatsApp?"
         ],
         "siguientes_pasos": [
-          "Presentar un desglose claro y detallado de gastos en ventas y marketing para validar CAC y plan de escalabilidad.",
-          "Desarrollar o adquirir protección tecnológica o patentes para el algoritmo predictivo y otras innovaciones.",
-          "Definir y comunicar una estrategia sólida para diferenciarse y defender el mercado ante competencia replicadora."
+          "Desarrollar y registrar patentes o protección tecnológica para el algoritmo predictivo.",
+          "Definir y ejecutar una estrategia clara de escalamiento y defensa del mercado a mediano plazo.",
+          "Mejorar métricas financieras con foco en reducción de CAC y control del flujo de caja."
         ],
         "resultado": "TRATO",
         "condiciones": {
           "monto_mxn": 900000.0,
           "porcentaje": 15.0,
-          "origen": "tiburon_tecnologico"
+          "origen": "tiburon_estratega"
         },
         "valuacion_mxn": 12000000.0,
         "votos_primera_votacion": {
@@ -430,7 +430,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 19.5,
+    "segundos_modelo": 20.5,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,
@@ -440,7 +440,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 8,
+    "preguntas_citan_dato": 7,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

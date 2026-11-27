@@ -7,12 +7,14 @@ from typing import Optional
 
 import tempfile
 
+from fastapi.concurrency import run_in_threadpool
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, ValidationError
 
 from . import panel as P
+from .llm import LLM
 from .pitch import ETAPAS, SECTORES, Pitch
 from .sesiones import Gestor
 from .tiburones import TIBURONES
@@ -44,6 +46,7 @@ class Negociacion(BaseModel):
 
 class PedirSugerencia(BaseModel):
     tiburon_id: str               # tiburón cuya última pregunta se quiere responder
+    borrador: str = ""            # si viene, el agente mejora lo que el usuario ya escribió
 
 
 class Condicion(BaseModel):
@@ -55,6 +58,27 @@ def _ses(id_):
     if not s:
         raise HTTPException(404, "Sesión no encontrada")
     return s
+
+
+@app.post("/pitch/extraer")
+async def extraer_pitch(request: Request, nombre: str = "pegado.txt"):
+    """Llena el formulario a partir de un documento (.docx, .pdf, .txt, .md) o de texto pegado (1 llamada, fuera de la sesión)."""
+    from . import extraer
+    datos = await request.body()
+    try:
+        texto = extraer.texto_de_archivo(datos, nombre)
+        return await run_in_threadpool(extraer.extraer, LLM(mock=gestor.mock), texto)
+    except ValueError as e:
+        raise HTTPException(422, str(e)) from e
+
+
+@app.on_event("startup")
+def precargar_voz():
+    """Carga Whisper al arrancar para que el primer dictado no tarde de más."""
+    if not gestor.mock:
+        import threading
+        from .voz import cargar_modelo
+        threading.Thread(target=cargar_modelo, daemon=True).start()
 
 
 @app.get("/salud")
@@ -166,7 +190,7 @@ async def transcribir_voz(request: Request):
         f.write(datos)
         ruta = Path(f.name)
     try:
-        return transcribir(ruta)
+        return await run_in_threadpool(transcribir, ruta)
     except ValueError as e:
         raise HTTPException(422, str(e)) from e
     finally:
@@ -190,7 +214,7 @@ def sugerencia(id_: str, body: PedirSugerencia):
     """Modo en vivo con ayuda: el agente empresario sugiere una respuesta que el usuario puede editar (1 llamada al modelo)."""
     s = _ses(id_)
     try:
-        texto = s.sugerir(body.tiburon_id)
+        texto = s.sugerir(body.tiburon_id, body.borrador)
     except PermissionError as e:
         raise HTTPException(403, str(e)) from e
     except ValueError as e:

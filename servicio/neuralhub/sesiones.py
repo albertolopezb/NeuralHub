@@ -1,6 +1,7 @@
 """Sesiones: ejecutan el grafo en un hilo, guardan los eventos y esperan al usuario en los interrupt."""
 
 import json
+import queue
 import re
 import threading
 import time
@@ -27,6 +28,22 @@ _ETIQUETA = r"(?:R\d+|PITCH|pitch)"
 ETIQUETAS = re.compile(rf"\s*[\(\[]\s*{_ETIQUETA}(?:\s*(?:,|/|y)\s*{_ETIQUETA})*\s*[\)\]]")
 
 
+_cola_voz: "queue.Queue" = queue.Queue()
+
+
+def _preparar_voces():
+    from .voz import sintetizar
+    while True:
+        texto, emisor = _cola_voz.get()
+        try:
+            sintetizar(texto, emisor)
+        except Exception:  # noqa: BLE001  (si falla, se vuelve a intentar cuando Unity pida el audio)
+            pass
+
+
+threading.Thread(target=_preparar_voces, daemon=True).start()
+
+
 def sin_etiquetas(texto: str) -> str:
     return ETIQUETAS.sub("", texto).strip()
 
@@ -38,6 +55,7 @@ class Sesion:
         self.pitch, self.panel, self.modo, self.llm, self.guion = pitch, panel, modo, llm, guion
         self.ayuda = bool(ayuda) and modo == "humano"   # el agente empresario solo sugiere en el modo en vivo
         self.sugerencias = 0
+        self.preparar_voz = False
         self._sugeridas: dict[int, str] = {}   # una por pregunta: repetir el botón no gasta otra llamada
         self.nivel = nivel
         self.eventos: list[dict] = []
@@ -59,7 +77,9 @@ class Sesion:
                  "texto": texto, "estado": ESTADO_EMISOR.get(tipo, "")}
             e.update(extra)
             self.eventos.append(e)
-            return e
+        if self.preparar_voz and tipo not in ("REPORTE", "PANEL"):
+            _cola_voz.put((texto, emisor))      # se sintetiza ya, para que suene a la vez que aparece el texto
+        return e
 
     # --- ejecución ---
     def _avanzar(self, entrada):
@@ -102,7 +122,7 @@ class Sesion:
             self._hilo.join(timeout)
 
     # --- ayuda del agente empresario (modo en vivo) ---
-    def sugerir(self, tiburon_id: str) -> str:
+    def sugerir(self, tiburon_id: str, borrador: str = "") -> str:
         if not self.ayuda:
             raise PermissionError("La ayuda del agente empresario no está activa en esta sesión.")
         if tiburon_id not in self.panel:
@@ -114,9 +134,12 @@ class Sesion:
         if not ultima or ultima["tipo"] != "PREGUNTA" or ultima["emisor"] != tiburon_id:
             raise ValueError("Ese tiburón no tiene una pregunta esperando respuesta.")
         n = ultima["n"]
+        borrador = (borrador or "").strip()
         if n in self._sugeridas:
+            if borrador and borrador != self._sugeridas[n]:
+                raise ValueError("Ya usaste la ayuda del agente en esta pregunta.")
             return self._sugeridas[n]
-        texto = sin_etiquetas(sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id))
+        texto = sin_etiquetas(sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id, borrador))
         with self._lock:
             self.sugerencias += 1
             self._sugeridas[n] = texto
@@ -172,5 +195,6 @@ class Gestor:
         if nivel not in NIVELES:
             raise ValueError("El nivel debe ser «facil», «medio» o «dificil».")
         s = Sesion(pitch, panel, modo, LLM(mock=self.mock), guion, ayuda=ayuda, nivel=nivel)
+        s.preparar_voz = not self.mock
         self.sesiones[s.id] = s
         return s

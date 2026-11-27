@@ -55,6 +55,36 @@ namespace NeuralHub
         bool esperandoAudio;
         float esperaAudio;
 
+        // La voz de los siguientes turnos se pide por adelantado: el texto aparece cuando su audio ya está listo
+        readonly Dictionary<int, AudioClip> voces = new Dictionary<int, AudioClip>();
+        readonly Dictionary<int, float> pedidas = new Dictionary<int, float>();
+        int tanda;
+        const float EsperaMaximaVoz = 9f;
+
+        bool LlevaVoz(Evento e) { return sonidos && sonidos.vozActiva && TieneVoz(e); }
+
+        void PedirVoz(Evento e)
+        {
+            if (pedidas.ContainsKey(e.n)) return;
+            pedidas[e.n] = Time.realtimeSinceStartup;
+            int n = e.n, mia = tanda;
+            StartCoroutine(cliente.ObtenerAudio(n, clip => { if (mia == tanda) voces[n] = clip; }));
+        }
+
+        void Adelantar()
+        {
+            if (!sonidos || !sonidos.vozActiva) return;
+            for (int i = siguiente; i < Mathf.Min(cliente.recibidos.Count, siguiente + 3); i++)
+                if (LlevaVoz(cliente.recibidos[i])) PedirVoz(cliente.recibidos[i]);
+        }
+
+        bool VozLista(Evento e)
+        {
+            if (!LlevaVoz(e)) return true;
+            PedirVoz(e);
+            return voces.ContainsKey(e.n) || Time.realtimeSinceStartup - pedidas[e.n] > EsperaMaximaVoz;
+        }
+
         public int Indice { get { return siguiente; } }
         public int Total { get { return cliente.recibidos.Count; } }
 
@@ -63,6 +93,7 @@ namespace NeuralHub
             historial.Clear(); votos.Clear(); siguiente = 0; restante = 0; actual = null; ronda = 0; resultado = "";
             reporteListo = false; reporte = null; decisionFinal = null; activo = true; pausado = false; esperandoAudio = false;
             turnoUsuario = null; preguntaUsuario = null; rondaRespuestas = -1; enviada = null; respuestasRonda.Clear();
+            tanda++; voces.Clear(); pedidas.Clear();
             if (sonidos) sonidos.DetenerVoz();
         }
 
@@ -101,13 +132,14 @@ namespace NeuralHub
         void Update()
         {
             if (!activo || pausado) return;
+            Adelantar();
             float dt = Time.deltaTime;
             if (esperandoAudio) { esperaAudio += Time.unscaledDeltaTime; if (esperaAudio < 25f) return; esperandoAudio = false; }
             if (restante > 0f) restante -= dt * velocidad * factorExtra;   // corre aunque sea el turno del usuario
             if (turnoUsuario != null) return;   // en vivo: espera a que el usuario responda
             if (restante > 0f) return;
             if (sonidos && sonidos.Hablando) return;      // nadie interrumpe: el siguiente turno espera a que acabe la voz
-            if (!ColaVacia) ReproducirSiguiente();
+            if (!ColaVacia && VozLista(cliente.recibidos[siguiente])) ReproducirSiguiente();
         }
 
         public void ReproducirSiguiente()
@@ -122,23 +154,27 @@ namespace NeuralHub
                 if (e.ronda != rondaRespuestas) { respuestasRonda.Clear(); rondaRespuestas = e.ronda; }
                 if (!respuestasRonda.ContainsKey(e.emisor)) { turnoUsuario = e.emisor; preguntaUsuario = e.texto; restante = 0f; }
             }
-            // En vivo, la respuesta ya la escribió el usuario: solo se muestra un momento y sin voz
-            bool respuestaPropia = enVivo && e.tipo == "RESPUESTA";
-            if (respuestaPropia) restante = 1.6f;
-            if (sonidos && sonidos.vozActiva && TieneVoz(e) && !respuestaPropia)
+            if (LlevaVoz(e))
             {
-                esperandoAudio = true; esperaAudio = 0;
-                var evento = e;
-                StartCoroutine(cliente.ObtenerAudio(e.n, clip =>
+                AudioClip listo;
+                if (voces.TryGetValue(e.n, out listo)) Sonar(e, listo);
+                else
                 {
-                    esperandoAudio = false;
-                    if (clip == null || actual != evento) return;
-                    float tono = Mathf.Clamp(velocidad * factorExtra, 1f, 1.5f);
-                    sonidos.Voz(clip, tono, evento.n);
-                    restante = clip.length / tono + 0.35f;
-                    Duracion_ = restante;
-                }));
+                    // saltó a un turno sin adelantar (o tardó demasiado): se espera aquí
+                    esperandoAudio = true; esperaAudio = 0;
+                    var evento = e;
+                    StartCoroutine(cliente.ObtenerAudio(e.n, clip => { esperandoAudio = false; if (actual == evento) Sonar(evento, clip); }));
+                }
             }
+        }
+
+        void Sonar(Evento e, AudioClip clip)
+        {
+            if (clip == null) return;
+            float tono = Mathf.Clamp(velocidad * factorExtra, 1f, 1.5f);
+            sonidos.Voz(clip, tono, e.n);
+            restante = clip.length / tono + 0.35f;
+            Duracion_ = restante;
         }
 
         static bool TieneVoz(Evento e) { return e.tipo != "REPORTE" && e.tipo != "PANEL" && !string.IsNullOrEmpty(e.texto); }

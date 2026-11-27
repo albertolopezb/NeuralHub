@@ -46,7 +46,7 @@
       "tipo": "PANEL",
       "emisor": "moderador",
       "destino": "todos",
-      "texto": "Panel de esta sesión: Tiburona de consumo, Tiburón financiero, Tiburón negociador.",
+      "texto": "Panel de esta sesión: Coral Medina (Tiburona de consumo), Ramiro Cifuentes (Tiburón financiero), Bruno Garza (Tiburón negociador).",
       "estado": "",
       "panel": [
         {
@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices ventas anuales $1,450,000 y margen bruto 46%. ¿Cuánto gastan exactamente en adquisición de cada cliente de esos 420 recurrentes? No me dices ese costo.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices 420 clientes recurrentes y 38% repite al mes, pero no me dices cuánto gastaron en marketing para conseguirlos. ¿Cuál fue el costo total de adquisición de esos 420 clientes?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que tienes 420 clientes recurrentes y 38% repite en el mes. ¿Cómo manejas la marca y el empaque para que el cliente quiera repetir y recomendar en tu canal de suscripción o pedido?",
+      "texto": "Soy Coral Medina, tiburona de consumo. Me dices que la marca Tamales Express ya tiene 420 clientes recurrentes, pero no me cuentas qué canales usan para vender: ¿cómo llega el pedido al cliente y qué tan fácil es repetir la compra por esos canales?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "En el pitch pides 600,000 pesos por 12 %. ¿Qué porcentaje estás dispuesto a ceder si te ofrezco 600,000 pesos con condiciones para controlar la expansión y entrega en 12 meses?",
+      "texto": "Soy Bruno Garza, tiburón negociador. Me dices que pides $600,000 por 12 %, pero no me dices qué porcentaje máximo estás dispuesto a ceder. ¿Cuál es tu límite para ceder control y cerrar trato rápido?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_negociador",
       "destino": "tiburon_financiero",
-      "texto": "Coincido con tu pregunta sobre el costo de adquisición por cliente, porque sin saber eso no puedo valorar bien la eficiencia del gasto. El emprendedor respondió que es $120 MXN por cliente, eso ayuda a entender mejor la valuación y a definir mis condiciones para la oferta.",
+      "texto": "Ramiro, al grano: el costo de adquisición $120 por cliente es clave para valorar, sin eso es un salto al vacío. Estoy de acuerdo en que es vital conocerlo para saber si la inversión en marketing realmente impulsa la base de clientes. Así no hay trato.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que el pedido llega en 40 minutos y con bolsa térmica. ¿Qué opinión te han dejado los clientes sobre el empaque y la temperatura a la entrega para que quieran volver a comprar?",
+      "texto": "A ver, me pongo en los zapatos del cliente: si un pedido llega frío o tarde, ¿cómo afecta eso la percepción de la marca y qué plan tienen para que el canal de entrega nunca los deje mal y el cliente quiera volver a comprar?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "En el pitch me dices que usas el dinero para segunda cocina, dos vehículos y campaña. ¿En cuánto tiempo garantizas que esa inversión aumente la venta para recuperar mi inversión y asegurar control en la expansión?",
+      "texto": "Si un socio clave se va tras recibir tu inversión y eso afecta la operación, ¿qué porcentaje estás dispuesto a ceder para mantener control y asegurar que yo cierre trato rápido sin perder valor?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "En el pitch me dices gasto mensual $85,000 y ventas anuales $1,450,000. ¿Cuánto neto queda cada mes después de gastos y costos, y cómo cubren ese flujo con 420 clientes? No me dices flujo operativo neto.",
+      "texto": "Si un vehículo de reparto falla y hay retraso, ¿qué impacto tiene ese gasto extra y pérdida de clientes en su margen del 46 % y costos de adquisición de $120? ¿Lo tienen cuantificado?",
       "estado": "Preguntando"
     },
     {
@@ -190,9 +190,9 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Tiburona, me dices que el 38 % repite y que usan bolsa térmica, pero no me dan cifras concretas sobre la satisfacción o impacto en ventas por empaque y temperatura. Sin datos claros, no puedo valorar si realmente eso influye en la recompra; solo veo números de repetición, no razones.",
+      "texto": "Coral, coincido en que la entrega es clave. Pero que la marca se reconozca en tres colonias no dice cuánto afecta un retraso o frío al margen ni al costo por cliente. Eso no cabe en mi hoja de cálculo sin esos datos.",
       "estado": "Replicando",
-      "postura": "desacuerdo"
+      "postura": "acuerdo"
     },
     {
       "n": 17,
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "En el pitch pides $600,000 por 12 %. ¿Qué plazo máximo me das para que con esas condiciones recupere mi dinero y tenga control efectivo en la expansión?",
+      "texto": "Me dices que el 61 % de las ventas son de clientes que repiten vía app y WhatsApp, pero no me dices qué porcentaje de esos clientes ya están comprometidos con suscripciones que no se pueden cancelar rápido. ¿Qué porcentaje del capital estás dispuesto a ceder para que yo tenga control y asegure que esa suscripción se mantenga a largo plazo sin perder valor?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con ventas anuales $1,450,000 y gasto mensual $85,000, ¿cuánto neto mensual les queda después de costo y gasto, y cuántos clientes pagan eso para que el flujo sea positivo?",
+      "texto": "En el pitch dices $85,000 MXN de gasto mensual fijo, pero no aclaras qué porcentaje de ese gasto es marketing para sostener el CAC de $120. ¿Cuánto invierten en marketing mensual y cómo afecta eso el flujo operativo?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Con 420 clientes recurrentes y 38 % que repite, ¿qué comentarios o reseñas específicas tienes sobre el empaque y la entrega para que el cliente quiera volver y recomendar tu marca en tu canal de suscripción?",
+      "texto": "Me dices que la marca ya se reconoce en tres colonias y que 38% repite por suscripción, pero no me dices si el empaque y la bolsa térmica convencen al cliente de que el tamal llega caliente y listo para comer. ¿Cómo sabes que el cliente no se choca con eso y vuelve a pedir?",
       "estado": "Preguntando"
     },
     {
@@ -254,9 +254,9 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_negociador",
-      "texto": "No me dices plazo claro para recuperar la inversión. Sin saber cuándo la expansión y ventas crecerán tras la inversión, no puedo valorar si el control y plazo que buscas son reales. La marca y canal tienen potencial, pero falta dato clave para confiar en el retorno y el control de la expansión.",
+      "texto": "Bruno, coincido en que saber qué tan comprometidos están los clientes con sus suscripciones es clave para asegurar ingresos estables. Sin esa claridad, la marca y el canal se ven inseguros, y eso sí le choca al cliente final, que busca confianza y facilidad.",
       "estado": "Replicando",
-      "postura": "desacuerdo"
+      "postura": "acuerdo"
     },
     {
       "n": 24,
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "La marca está reconocida y el canal propio tiene 61% de recompra, pero falta información clara sobre la satisfacción del cliente con el empaque y la entrega, clave para la demanda. La valuación de 5,000,000 MXN me parece alta para 420 clientes y 38% de repetición. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "A ver, me pongo en sus zapatos: me faltan datos claros del canal y la fidelidad de la suscripción que es clave para el cliente final. La marca tiene 420 clientes, pero no me dices qué tan firme es la suscripción para $480 semanal. Valuación de $5,000,000 me parece alta sin eso. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "El margen bruto 46% y gasto mensual $85,000 dan flujo positivo pero no me dices flujo operativo neto exacto ni tiempo para recuperar inversión. Valuación $5,000,000 con ventas $1,450,000 me parece alta para etapa crecimiento. Pido más porcentaje por $600,000. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Los números no cierran sin saber cuánto del gasto mensual de $85,000 es marketing para sostener el CAC de $120. La valuación de $5,000,000 parece alta sin ese dato. Pido 600,000 por 15% para compensar el riesgo de falta de claridad en costo de adquisición. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_negociador",
       "destino": "nodo_votacion",
-      "texto": "El porcentaje ofrecido y valuación me parecen altos para controlar la expansión sin plazo claro de recuperación; piden $600,000 por 12 % pero no me dicen cuándo recupero inversión ni condiciones específicas. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "Piden $600,000 por 12 %, valuación $5,000,000; piden ceder máximo 15% pero no aclaran bien control ni suscripciones firmes. Mi oferta mejora porcentaje para asegurar control y valor. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -327,48 +327,50 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto con demanda estable y 420 clientes recurrentes con 38% de repetición mensual.; Modelo de negocio con venta por pedido y suscripción, con margen bruto del 46%.; Equipo con experiencia relevante en cocina, logística y ventas, dedicación a tiempo completo y roles bien definidos.. Alertas: Falta información clara y cuantificada sobre satisfacción de clientes con empaque y entrega, que impacta la recompra.; Valuación implícita alta (5,000,000 MXN) en etapa de crecimiento, con ventas anuales de 1,450,000 MXN.; Ausencia de datos precisos sobre flujo operativo neto y tiempo para recuperación de inversión para inversionistas.. Siguientes pasos: Recolectar y presentar datos concretos de satisfacción del cliente sobre empaque y entrega para fortalecer la propuesta de valor.; Elaborar un plan financiero detallado que incluya flujo operativo neto mensual y proyecciones claras de recuperación de inversión.; Definir un cronograma de expansión con hitos y métricas para asegurar control y demostrar viabilidad a inversionistas..",
+      "texto": "Fortalezas: Tienen una base inicial de 420 clientes recurrentes con 38% de repetición mensual, lo cual valida la demanda.; El producto se entrega caliente y en tiempo estimado, con una diferenciación clara en frescura y entrega rápida.; El equipo fundador tiene experiencia relevante en cocina, logística y ventas, dedicados a tiempo completo al proyecto.. Alertas: Falta claridad en el desglose del gasto mensual y cuánto se destina a marketing para sostener el CAC informado.; No se definió con precisión qué tan firme y comprometida está la suscripción semanal para garantizar ingresos recurrentes.; Incertidumbre sobre el control accionarial y límites de cedencia que pueden afectar la operación futura y la negociación con inversionistas.. Siguientes pasos: Presentar un desglose detallado del gasto mensual, especialmente marketing, para validar el CAC y la rentabilidad.; Obtener y mostrar métricas claras sobre la tasa de cancelación y compromiso real de las suscripciones para demostrar estabilidad de ingresos.; Definir y comunicar claramente los límites de cedencia accionaria y mecanismos para mantener control operativo y estratégico..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburona_consumo",
-            "calificacion": 4,
-            "frase_clave": "La marca está reconocida y el canal propio tiene 61% de recompra, pero falta información clara sobre la satisfacción del cliente con el empaque y la entrega, clave para la demanda.",
-            "necesitaria": "Datos específicos y cuantificables sobre la satisfacción de clientes respecto al empaque y temperatura de entrega para valorar el impacto en la recompra y recomendación."
+            "calificacion": 3,
+            "frase_clave": "Me faltan datos claros del canal y la fidelidad de la suscripción que es clave para el cliente final. La marca tiene 420 clientes, pero no me dices qué tan firme es la suscripción para $480 semanal. Valuación de $5,000,000 me parece alta sin eso.",
+            "necesitaria": "Claridad sobre el compromiso real de los clientes con la suscripción y evidencia del buen desempeño del canal para asegurar repetición y satisfacción."
           },
           {
             "tiburon_id": "tiburon_financiero",
-            "calificacion": 3,
-            "frase_clave": "El margen bruto 46% y gasto mensual $85,000 dan flujo positivo pero no me dices flujo operativo neto exacto ni tiempo para recuperar inversión.",
-            "necesitaria": "Información detallada del flujo operativo neto mensual, costos exactos y un plan claro de tiempo para recuperar la inversión."
+            "calificacion": 2,
+            "frase_clave": "Los números no cierran sin saber cuánto del gasto mensual de $85,000 es marketing para sostener el CAC de $120. La valuación de $5,000,000 parece alta sin ese dato.",
+            "necesitaria": "Desglose claro del gasto mensual, especialmente cuánto se invierte en marketing para validar el costo de adquisición y la sostenibilidad financiera."
           },
           {
             "tiburon_id": "tiburon_negociador",
             "calificacion": 3,
-            "frase_clave": "El porcentaje ofrecido y valuación me parecen altos para controlar la expansión sin plazo claro de recuperación; piden $600,000 por 12 % pero no me dicen cuándo recupero inversión ni condiciones específicas.",
-            "necesitaria": "Un plan de expansión con plazos y condiciones claras para recuperar la inversión y garantizar control en operaciones."
+            "frase_clave": "Piden $600,000 por 12 %, valuación $5,000,000; piden ceder máximo 15% pero no aclaran bien control ni suscripciones firmes.",
+            "necesitaria": "Mayor definición sobre el control accionario, compromiso firme de suscripciones a largo plazo y claridad para negociar porcentaje y condiciones."
           }
         ],
         "fortalezas": [
-          "Producto con demanda estable y 420 clientes recurrentes con 38% de repetición mensual.",
-          "Modelo de negocio con venta por pedido y suscripción, con margen bruto del 46%.",
-          "Equipo con experiencia relevante en cocina, logística y ventas, dedicación a tiempo completo y roles bien definidos."
+          "Tienen una base inicial de 420 clientes recurrentes con 38% de repetición mensual, lo cual valida la demanda.",
+          "El producto se entrega caliente y en tiempo estimado, con una diferenciación clara en frescura y entrega rápida.",
+          "El equipo fundador tiene experiencia relevante en cocina, logística y ventas, dedicados a tiempo completo al proyecto."
         ],
         "alertas": [
-          "Falta información clara y cuantificada sobre satisfacción de clientes con empaque y entrega, que impacta la recompra.",
-          "Valuación implícita alta (5,000,000 MXN) en etapa de crecimiento, con ventas anuales de 1,450,000 MXN.",
-          "Ausencia de datos precisos sobre flujo operativo neto y tiempo para recuperación de inversión para inversionistas."
+          "Falta claridad en el desglose del gasto mensual y cuánto se destina a marketing para sostener el CAC informado.",
+          "No se definió con precisión qué tan firme y comprometida está la suscripción semanal para garantizar ingresos recurrentes.",
+          "Incertidumbre sobre el control accionarial y límites de cedencia que pueden afectar la operación futura y la negociación con inversionistas."
         ],
         "preguntas_sin_responder": [
-          "¿Cuánto neto queda cada mes después de gastos y costos, y cómo cubren ese flujo con 420 clientes?",
-          "¿Qué comentarios o reseñas específicas tienen los clientes sobre el empaque y la entrega que motivan la recompra?",
-          "¿En cuánto tiempo garantizan que la inversión en segunda cocina y vehículos aumentará las ventas para recuperar la inversión?"
+          "¿Cuál es el costo total de adquisición de clientes incluyendo inversión en marketing?",
+          "¿Qué porcentaje del gasto mensual de $85,000 MXN es destinado a marketing?",
+          "¿Qué tan comprometidos están los clientes con las suscripciones semanales y cuál es la tasa real de cancelación?",
+          "¿Cómo miden el impacto de retrasos o entregas frías en la percepción del cliente y finanzas?",
+          "¿Cuál es el porcentaje máximo que están dispuestos a ceder para mantener control y atraer inversión?"
         ],
         "siguientes_pasos": [
-          "Recolectar y presentar datos concretos de satisfacción del cliente sobre empaque y entrega para fortalecer la propuesta de valor.",
-          "Elaborar un plan financiero detallado que incluya flujo operativo neto mensual y proyecciones claras de recuperación de inversión.",
-          "Definir un cronograma de expansión con hitos y métricas para asegurar control y demostrar viabilidad a inversionistas."
+          "Presentar un desglose detallado del gasto mensual, especialmente marketing, para validar el CAC y la rentabilidad.",
+          "Obtener y mostrar métricas claras sobre la tasa de cancelación y compromiso real de las suscripciones para demostrar estabilidad de ingresos.",
+          "Definir y comunicar claramente los límites de cedencia accionaria y mecanismos para mantener control operativo y estratégico."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -405,8 +407,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 16.9,
-    "segundos_total": 14.8,
+    "segundos_modelo": 21.8,
+    "segundos_total": 19.5,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,
@@ -415,7 +417,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 8,
-    "preguntas_citan_dato": 8,
+    "preguntas_citan_dato": 7,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,
