@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices $50,000 en preventas con 500 usuarios beta, ¿cuánto te cuesta adquirir cada cliente y cuánto gastas en marketing mensual dentro del gasto de $25,000? Los números no salen sin ese dato.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Con $25,000 mensuales y venta de $180,000 anuales, ¿cuánto les cuesta adquirir cada cliente activo que paga 99 pesos de suscripción mensual? A ver, saquemos la cuenta.",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no sabemos el costo exacto de adquisición ni el gasto específico en marketing dentro del gasto mensual de $25,000 MXN. Para obtener esos datos, analizaremos nuestros gastos detallados y campañas para determinar el costo por cliente y la inversión en marketing.",
+      "texto": "Aún no sabemos el costo de adquisición de clientes activo que paga suscripción, pues no tenemos datos específicos sobre cuántos clientes activos hay o el gasto en marketing para adquirirlos. Para calcularlo, analizaríamos los gastos en adquisición de clientes y el número de suscriptores activos, que podemos obtener midiendo conversiones y campañas de marketing.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. Me dices que vendes el medidor a $1,200 y tienes 500 usuarios beta, pero no veo cómo planeas defender tu ventaja contra medidores genéricos y apps eléctricas para escalar en Nuevo León, ¿qué barreras tienes para proteger tu mercado?",
+      "texto": "Soy Estela Marín, tiburón estratega. Me dices que tu mercado objetivo son hogares y pequeños negocios de Nuevo León con recibos mayores a $2,500 bimestrales, pero no me dices cuántos clientes potenciales hay; ¿cuántos usuarios a ese perfil puedes escalar en 5 años para defender tu mercado?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra barrera clave es la recomendación personalizada con IA, que no requiere instalación profesional, diferenciándonos de medidores genéricos y apps eléctricas. Además, contamos con marca registrada para proteger nuestra identidad y planeamos mejorar constantemente el producto para mantener la preferencia del cliente.",
+      "texto": "Aún no sabemos el número exacto de clientes potenciales ni la escalabilidad en 5 años. Para estimarlo, realizaríamos un estudio de mercado en Nuevo León, analizando la cantidad de hogares y pequeños negocios con recibos mayores a $2,500 bimestrales y proyectaríamos la adopción del producto según tendencias y capacidad operativa.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. Me dices que tu medidor usa IA para recomendaciones personalizadas (P0), ¿qué tipo de algoritmo usan y tienen ya un prototipo validado que garantice precisión y valor diferencial frente a medidores genéricos?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. Me dices que usas IA para detectar consumo excesivo, pero no mencionaste si tienen patente o protección intelectual del algoritmo. ¿Cómo protegen esa innovación para evitar que la copien?",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Usamos algoritmos de inteligencia artificial que analizan patrones de consumo para detectar excesos y recomendar ahorros personalizados. Tenemos un prototipo validado con 500 usuarios beta que confirma la precisión y valor diferencial frente a medidores genéricos, gracias a la personalización sin necesidad de instalación profesional.",
+      "texto": "Actualmente contamos con la marca registrada, pero no tenemos patente del algoritmo de IA. Para proteger nuestra innovación, planeamos evaluar la viabilidad de una patente y fortalecer la seguridad del software para evitar copias, además de mantener actualizaciones constantes que nos mantengan competitivos.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, claro que tienes razón; sin saber el costo de adquisición ni cuánto invierten en marketing, no podemos evaluar la viabilidad del algoritmo ni la escalabilidad del prototipo. Eso en producción truena si no sabes cuánto cuesta traer clientes con IA.",
+      "texto": "Ramiro, claro que es clave saber el CAC para validar la escalabilidad del algoritmo y la suscripción. Sin ese dato, la propuesta truena en producción; hay que medirlo para saber si la tecnología sostiene el modelo financiero y la innovación realmente paga.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Si un competidor genérico lanza un medidor con IA similar y más barato, ¿cómo defenderás tu mercado y evitarás que erosionen tu ventaja y escala en Nuevo León, considerando que tu barrera actual es solo la personalización sin instalación?",
+      "texto": "Con 500 usuarios beta y $50,000 en preventas, ¿qué harías si un competidor grande lanza un medidor con IA similar a menor precio? ¿Cómo defenderías tu mercado y tu ventaja en Nuevo León para escalar a 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra defensa será mejorar continuamente la inteligencia artificial para ofrecer recomendaciones más precisas y personalizadas que un competidor genérico no pueda replicar fácilmente. Además, fortaleceremos la marca registrada y la relación con el cliente mediante un servicio al cliente excepcional y actualizaciones constantes, creando lealtad que proteja nuestra escala en Nuevo León.",
+      "texto": "Ante un competidor con menor precio, reforzaríamos nuestra ventaja con recomendaciones personalizadas y sin instalación profesional. Además, mejoraríamos el producto con los fondos solicitados, potenciaríamos el marketing para fortalecer la marca y fidelizar a nuestros usuarios actuales, y exploraríamos alianzas locales para ampliar nuestra presencia en Nuevo León y escalar con base en servicio y tecnología.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Si un usuario manipula el medidor o el flujo eléctrico para engañar al algoritmo de IA (P0), ¿qué mecanismos tecnológicos tienen para detectar y corregir esa trampa sin que se pierda precisión o valor diferencial?",
+      "texto": "Si el medidor con IA detecta un consumo excesivo erróneo por fallas en sensores o algoritmo, ¿cómo protege y actualiza el prototipo para evitar que esos falsos positivos dañen la experiencia y confianza del cliente?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro sistema de IA incluye monitoreo continuo para detectar patrones anómalos en el consumo que podrían indicar manipulación. En caso de detectar irregularidades, se activa un protocolo de validación para corregir datos y mantener la precisión sin perder el valor diferencial. Esto nos permite asegurar recomendaciones confiables y proteger la integridad del servicio.",
+      "texto": "Para evitar falsos positivos, implementamos un sistema de monitoreo continuo y actualizaciones periódicas del algoritmo basadas en retroalimentación real de usuarios. Además, usamos sensores calibrados y pruebas rigurosas. Si detectamos errores, los corregimos rápidamente con parches y comunicamos transparentemente para mantener la confianza del cliente.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con venta del medidor a $1,200 y margen 38 %, si un lote de medidores sale defectuoso y hay que reponerlos sin costo, ¿cuánto te costaría esa reposición y cómo impacta eso tu margen y flujo actual sin decirme ese costo exacto?",
+      "texto": "Con margen bruto al 38 % y gasto mensual fijo de 25,000 pesos, ¿qué pasa con tu flujo si el costo de adquisición de clientes sube un 20 %? ¿Puedes sostener márgenes y seguir cubriendo gastos sin perder dinero?",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no sabemos el costo exacto de reposición de medidores defectuosos ni su impacto preciso en margen y flujo. Para estimarlo, analizaríamos costos de producción y márgenes actuales, y modelaríamos escenarios de reposición para medir impacto financiero y ajustar estrategias de mitigación.",
+      "texto": "No sabemos aún el costo de adquisición actual ni cómo un aumento del 20 % impactaría nuestro flujo. Para evaluarlo, mediríamos el CAC real y proyectaríamos escenarios financieros. Así decidiríamos si ajustar precios, reducir costos o buscar eficiencia para mantener márgenes y cubrir gastos sin pérdidas.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estela, coincido contigo. Mejorar IA y servicio suena bien, pero sin datos claros de costos y márgenes para sostener esa mejora, eso no cabe en mi hoja de cálculo. La defensa sin números sólidos es solo buena intención, no estrategia financiera.",
+      "texto": "Estela, coincido contigo. Sin un plan claro para defender el margen frente a competencia de menor precio, y sin saber el CAC exacto, eso no cabe en mi hoja de cálculo. La respuesta del emprendedor es vaga; hay que atajar ese riesgo antes de invertir.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Me dices que tienes marca registrada, pero no mencionas patente sobre el medidor ni el algoritmo de IA (P0). ¿Tienen protección exclusiva para evitar que un competidor copie su tecnología disruptiva?",
+      "texto": "Me dices que el medidor no requiere instalación profesional, pero ¿cómo aseguran la correcta calibración y precisión del prototipo en distintos hogares y negocios sin intervención técnica? Eso en producción truena.",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Actualmente, no contamos con patente sobre el medidor ni el algoritmo de IA. Solo tenemos la marca registrada que protege nuestra identidad. Para proteger la tecnología, planeamos evaluar la posibilidad de patentar innovaciones clave y fortalecer así nuestra exclusividad frente a competidores.",
+      "texto": "Para asegurar calibración y precisión sin instalación profesional, diseñamos el medidor con sensores autocalibrables y un sistema de autoajuste basado en IA que adapta la medición a cada entorno. Además, ofrecemos soporte remoto para resolver cualquier duda y actualizamos continuamente el software para mantener la precisión en distintos hogares y negocios.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "El pitch dice venta de medidores y suscripción, pero solo informas ventas totales y margen bruto global, ¿cuál es el margen bruto específico de la suscripción mensual? Sin ese dato, no veo cómo sacar la cuenta real de flujo.",
+      "texto": "Con $50,000 en preventas y 500 usuarios beta, ¿cuál es el margen neto que dejan esas ventas? Porque con 38% de margen bruto y $25,000 mensuales de gasto, no me dices si ese ingreso cubre costos y deja flujo positivo.",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no sabemos el margen bruto específico de la suscripción mensual. Para obtenerlo, analizaremos los costos directos asociados a la prestación del servicio premium y desglosaremos los ingresos y gastos para estimar el margen preciso de esta línea.",
+      "texto": "Con $50,000 en preventas y un margen bruto del 38%, el margen neto no es suficiente para cubrir los gastos mensuales de $25,000, por lo que no hay flujo positivo aún. Seguimos trabajando en optimizar costos y aumentar ventas para alcanzar rentabilidad.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Me dices que tu mercado objetivo son hogares y pequeños negocios en Nuevo León con recibos mayores a $2,500 (P0), pero no veo cómo planean escalar más allá de esos clientes dados los costos y competencia, ¿qué estrategia concreta tienen para ampliar y defender ese mercado restringido a largo plazo?",
+      "texto": "Me dices que la venta del medidor es clave, pero no mencionas el costo de producción ni barreras para que copien tu hardware; ¿cómo defiendes tu ventaja en el medidor frente a competidores que podrían replicarlo barato?",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Para escalar más allá del mercado inicial, planeamos expandirnos geográficamente a otros estados con características similares y diversificar hacia negocios medianos. También buscaremos alianzas estratégicas con proveedores de energía y servicios para integrar nuestra solución, aumentando valor y defensas frente a competencia, y realizaremos mejoras constantes en IA para mantener ventaja competitiva y fidelizar clientes.",
+      "texto": "Actualmente no hemos detallado el costo de producción ni barreras específicas para copiar el hardware. Para defender nuestra ventaja, planeamos fortalecer la marca registrada, innovar continuamente en el diseño y software, y buscar alianzas estratégicas que dificulten la replicación barata. Además, el medidor sin instalación profesional y con IA personalizada es un diferenciador que queremos proteger con actualizaciones y servicio.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo. Sin patente que defienda la tecnología del medidor y la IA, la marca registrada no es barrera suficiente para escalar y proteger el mercado. Pensémoslo como un jaque: sin esa defensa, el océano competitivo te come vivo.",
+      "texto": "Teo, coincido. La autocalibración suena bien, pero sin un plan claro para validar precisión en muchos entornos, eso es un riesgo serio. Querido, el océano no perdona errores técnicos que dañan confianza y frenan la escalabilidad. Hay que defender esa precisión desde ya.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,11 +291,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "Sin costo de adquisición ni margen de suscripción claro, los números no cierran para valuación de 3 millones. Ventas de 180,000 y margen 38% son buenos pero falta detalle clave para flujo real. Contraoferta: $200,000 MXN por el 15 %.",
+      "texto": "Sin costo de adquisición claro ni plan para mantener margen frente a competencia, la valuación de 3,000,000 y margen 38% no me cuadran con $25,000 de gasto mensual. Necesito más números exactos antes de invertir 300,000 por 10%. Contraoferta: $150,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_monto_mxn": 150000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -304,7 +304,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "Pensemos tres jugadas adelante: sin patente que defienda la IA y con margen bruto solo del 38 %, el mercado puede ser erosionado fácilmente. Valuación de $3,000,000 MXN parece alta para primeras ventas de $180,000 MXN. Contraoferta: $200,000 MXN por el 15 %.",
+      "texto": "Pensemos tres jugadas adelante: falta dato clave de costo de adquisición para defender margen y mercado, además sin barreras claras para hardware. Valoro los $180,000 en ventas y $300,000 pedidos, pero $3,000,000 valuación sin CAC es riesgo para escalar. Contraoferta: $200,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -317,12 +317,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Me prende la idea disruptiva con IA, pero sin patente y sin datos del margen de suscripción ni costo de adquisición, la protección y escalabilidad son riesgos que no puedo ignorar. Valuación de $3,000,000 MXN parece alta para etapa primeras ventas y $180,000 MXN en ventas. Contraoferta: $150,000 MXN por el 15 %.",
+      "texto": "La innovación con IA sin instalación profesional me prende, pero sin patente del algoritmo y sin costo de adquisición de clientes claro, eso en producción truena. Valoro $300,000 por 10%, pero falta blindaje tecnológico. Propongo $300,000 por 20%. Contraoferta: $300,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 150000.0,
-      "contraoferta_porcentaje": 15.0
+      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 27,
@@ -330,7 +330,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburón financiero. $200,000 MXN por el 15 %.",
+      "texto": "Elijo la condición de Tiburón tecnológico. $300,000 MXN por el 20 %.",
       "estado": "Negociando"
     },
     {
@@ -339,13 +339,13 @@
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
       "destino": "todos",
-      "texto": "TRATO: $200,000 MXN por el 15 % de la empresa.",
+      "texto": "TRATO: $300,000 MXN por el 20 % de la empresa.",
       "estado": "Reaccionando",
       "resultado": "TRATO",
       "condiciones": {
-        "monto_mxn": 200000.0,
-        "porcentaje": 15.0,
-        "origen": "tiburon_financiero"
+        "monto_mxn": 300000.0,
+        "porcentaje": 20.0,
+        "origen": "tiburon_tecnologico"
       }
     },
     {
@@ -354,54 +354,54 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: El producto ofrece recomendaciones personalizadas con IA sin necesidad de instalación profesional, lo que es un diferenciador claro frente a medidores genéricos.; Ya cuentan con 500 usuarios beta y $50,000 MXN en preventas, lo que valida interés inicial y aceptación de mercado.; El equipo está conformado por tres fundadores con roles claros y experiencia relevante en energía y ventas, dedicados a tiempo completo.. Alertas: Falta información clave sobre costos de adquisición de clientes y margen bruto específico de la suscripción, lo que dificulta evaluar el flujo y la rentabilidad real.; No cuentan con patente para proteger la tecnología del medidor ni el algoritmo de IA, lo que deja vulnerable la ventaja competitiva frente a imitadores.; La estrategia para defender y escalar el mercado es vaga, especialmente frente a competidores que podrían lanzar productos similares a menor costo.. Siguientes pasos: Analizar y detallar los costos de adquisición de clientes y desglose del gasto en marketing para establecer métricas financieras sólidas.; Evaluar la posibilidad de patentar innovaciones clave del medidor y del algoritmo de IA para proteger la tecnología y fortalecer barreras de entrada.; Definir y comunicar una estrategia clara para escalar y defender el mercado, incluyendo expansión geográfica, alianzas estratégicas y mejoras continuas en IA..",
+      "texto": "Fortalezas: Tienen un producto innovador con IA que no requiere instalación profesional, lo cual es atractivo para usuarios finales.; Ya validaron la idea con 500 usuarios beta y $50,000 en preventas, mostrando interés real del mercado.; El equipo fundador tiene experiencia técnica y comercial relevante y trabaja a tiempo completo, lo que demuestra compromiso.. Alertas: No tienen datos claros sobre el costo de adquisición de clientes ni el impacto en el flujo de caja.; No cuentan con patente o protección intelectual para el algoritmo de IA, lo que deja la innovación vulnerable a la competencia.; No hay un plan detallado ni evidencias para defender la precisión y calibración del medidor en distintos entornos sin instalación profesional.. Siguientes pasos: Realizar un estudio exhaustivo para calcular el CAC y evaluar su impacto en la rentabilidad y flujo de caja.; Desarrollar un plan para proteger la propiedad intelectual del algoritmo y fortalecer la seguridad tecnológica.; Validar en campo la precisión y autocalibración del medidor en diversos entornos y documentar resultados para generar confianza..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "Aún no sabemos el costo exacto de adquisición ni el gasto específico en marketing dentro del gasto mensual de $25,000 MXN.",
-            "necesitaria": "Necesitaría ver datos claros del costo de adquisición de clientes y el margen bruto específico de la suscripción para evaluar la viabilidad financiera y flujo real."
+            "frase_clave": "Sin costo de adquisición claro ni plan para mantener margen frente a competencia, la valuación de 3,000,000 y margen 38% no me cuadran con $25,000 de gasto mensual.",
+            "necesitaria": "Necesitaría conocer el costo de adquisición de clientes (CAC) exacto y un plan financiero claro que muestre cómo mantendrán márgenes y cubrirán gastos frente a competencia."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 3,
-            "frase_clave": "Sin patente que defienda la tecnología del medidor y la IA, la marca registrada no es barrera suficiente para escalar y proteger el mercado.",
-            "necesitaria": "Necesitaría una estrategia clara de barreras competitivas, incluyendo protección tecnológica y planes concretos para defender y escalar el mercado."
+            "frase_clave": "Falta dato clave de costo de adquisición para defender margen y mercado, además sin barreras claras para hardware.",
+            "necesitaria": "Necesitaría un estudio de mercado detallado con número de clientes potenciales, un plan claro para escalar en 5 años y barreras claras para proteger el hardware."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 3,
-            "frase_clave": "Sin patente y sin datos del margen de suscripción ni costo de adquisición, la protección y escalabilidad son riesgos que no puedo ignorar.",
-            "necesitaria": "Necesitaría ver protección tecnológica (patentes) y datos técnicos y financieros que demuestren la precisión, exclusividad y escalabilidad del producto y modelo."
+            "frase_clave": "Sin patente del algoritmo y sin costo de adquisición de clientes claro, eso en producción truena.",
+            "necesitaria": "Necesitaría protección intelectual clara para el algoritmo, validación técnica robusta de la autocalibración y datos claros del CAC para asegurar la escalabilidad tecnológica."
           }
         ],
         "fortalezas": [
-          "El producto ofrece recomendaciones personalizadas con IA sin necesidad de instalación profesional, lo que es un diferenciador claro frente a medidores genéricos.",
-          "Ya cuentan con 500 usuarios beta y $50,000 MXN en preventas, lo que valida interés inicial y aceptación de mercado.",
-          "El equipo está conformado por tres fundadores con roles claros y experiencia relevante en energía y ventas, dedicados a tiempo completo."
+          "Tienen un producto innovador con IA que no requiere instalación profesional, lo cual es atractivo para usuarios finales.",
+          "Ya validaron la idea con 500 usuarios beta y $50,000 en preventas, mostrando interés real del mercado.",
+          "El equipo fundador tiene experiencia técnica y comercial relevante y trabaja a tiempo completo, lo que demuestra compromiso."
         ],
         "alertas": [
-          "Falta información clave sobre costos de adquisición de clientes y margen bruto específico de la suscripción, lo que dificulta evaluar el flujo y la rentabilidad real.",
-          "No cuentan con patente para proteger la tecnología del medidor ni el algoritmo de IA, lo que deja vulnerable la ventaja competitiva frente a imitadores.",
-          "La estrategia para defender y escalar el mercado es vaga, especialmente frente a competidores que podrían lanzar productos similares a menor costo."
+          "No tienen datos claros sobre el costo de adquisición de clientes ni el impacto en el flujo de caja.",
+          "No cuentan con patente o protección intelectual para el algoritmo de IA, lo que deja la innovación vulnerable a la competencia.",
+          "No hay un plan detallado ni evidencias para defender la precisión y calibración del medidor en distintos entornos sin instalación profesional."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el costo exacto de adquisición de clientes y cuánto se invierte específicamente en marketing?",
-          "¿Cuál es el margen bruto específico de la suscripción mensual?",
-          "¿Cuál sería el costo y el impacto en margen y flujo si hay que reponer medidores defectuosos?"
+          "¿Cuál es el costo de adquisición de clientes activos que pagan la suscripción?",
+          "¿Cuántos clientes potenciales hay en Nuevo León y cómo escalarán en 5 años?",
+          "¿Cuál es el costo de producción del medidor y qué barreras tienen para evitar que los competidores lo copien?"
         ],
         "siguientes_pasos": [
-          "Analizar y detallar los costos de adquisición de clientes y desglose del gasto en marketing para establecer métricas financieras sólidas.",
-          "Evaluar la posibilidad de patentar innovaciones clave del medidor y del algoritmo de IA para proteger la tecnología y fortalecer barreras de entrada.",
-          "Definir y comunicar una estrategia clara para escalar y defender el mercado, incluyendo expansión geográfica, alianzas estratégicas y mejoras continuas en IA."
+          "Realizar un estudio exhaustivo para calcular el CAC y evaluar su impacto en la rentabilidad y flujo de caja.",
+          "Desarrollar un plan para proteger la propiedad intelectual del algoritmo y fortalecer la seguridad tecnológica.",
+          "Validar en campo la precisión y autocalibración del medidor en diversos entornos y documentar resultados para generar confianza."
         ],
         "resultado": "TRATO",
         "condiciones": {
-          "monto_mxn": 200000.0,
-          "porcentaje": 15.0,
-          "origen": "tiburon_financiero"
+          "monto_mxn": 300000.0,
+          "porcentaje": 20.0,
+          "origen": "tiburon_tecnologico"
         },
         "valuacion_mxn": 3000000.0,
         "votos_primera_votacion": {
@@ -432,7 +432,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 25,
-    "segundos_modelo": 29.6,
+    "segundos_modelo": 30.1,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,
@@ -442,7 +442,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 8,
-    "preguntas_citan_dato": 8,
+    "preguntas_citan_dato": 7,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

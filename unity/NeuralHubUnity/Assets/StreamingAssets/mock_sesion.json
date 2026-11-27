@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. ¿Qué historia tienen los primeros clientes que confiaron en su plataforma y cómo la usan en su día a día?",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo logran que el costo por cliente sea menor que el ingreso promedio para mantener esos márgenes del 72 %?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Los primeros 50 clientes que confiaron en DataSense AI son PyMEs mexicanas que manejan sus ventas e inventarios en hojas de cálculo. Usan nuestra plataforma para recibir análisis claros y alertas en lenguaje natural, facilitando su toma de decisiones sin necesidad de científicos de datos. Esto les ha permitido optimizar sus operaciones diarias y crecer, como lo refleja nuestro 15% de crecimiento mensual.",
+      "texto": "Nuestro margen bruto del 72 % refleja principalmente costos directos bajos gracias a la automatización de nuestro SaaS y el uso eficiente de infraestructura en la nube. Esto nos permite que el costo por cliente sea menor que el ingreso promedio, aunque aún no tenemos el costo exacto por cliente. Para medirlo, analizamos gastos operativos y soporte técnico relacionados por cliente.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. ¿Qué te inspiró a crear DataSense AI para las PyMEs y cómo visualizas que impacte su crecimiento en cinco años?",
+      "texto": "Soy Estela Marín, tiburón estratega. ¿Qué ventaja única defiende DataSense AI para escalar frente a competidores generales como Power BI en 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Me inspiró la dificultad que enfrentan las PyMEs para aprovechar sus datos sin expertos técnicos. DataSense AI democratiza el análisis con IA en lenguaje natural, facilitando decisiones ágiles. En cinco años, visualizo PyMEs más competitivas, con mejor control operativo y crecimiento sostenible gracias al uso efectivo de sus datos, impulsando la digitalización en el sector.",
+      "texto": "Nuestra ventaja única es la simplicidad y accesibilidad para PyMEs sin conocimientos técnicos: nuestro SaaS conecta sus datos y entrega análisis en lenguaje natural, sin configuración. Esto nos posiciona para escalar en 5 años porque somos la solución especializada y fácil de usar para las PyMEs mexicanas, a diferencia de herramientas generales como Power BI que requieren expertos.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿cómo funciona el algoritmo que convierte datos en análisis claros sin que el usuario toque nada técnico?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. ¿Cómo diseñaron el algoritmo para que entregue análisis en lenguaje natural sin que el usuario tenga que configurar nada?",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro algoritmo de IA procesa y conecta automáticamente las hojas de cálculo y sistemas de la PyME, aplicando modelos de análisis de datos para extraer insights relevantes. Luego, traduce esos resultados técnicos a lenguaje natural comprensible, generando alertas y reportes sin que el usuario tenga que configurar nada. Así democratizamos el acceso al análisis avanzado con facilidad y precisión.",
+      "texto": "Nuestro algoritmo se diseñó para interpretar datos directamente de las hojas de cálculo y sistemas conectados, usando modelos de IA entrenados en lenguaje natural para generar análisis y alertas automáticas. Se basa en reglas y aprendizaje automático para entender patrones sin configuración técnica. Esto permite entregar insights claros y accionables sin que el usuario tenga que intervenir en el proceso.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, me late que preguntas lo justo: conocer la experiencia real de usuarios es clave para validar la tecnología. Ese 15% de crecimiento mensual con 50 clientes es un buen prototipo de tracción; me prende ver que usan IA sin líos técnicos.",
+      "texto": "Ramiro, sí, me late tu preocupación. El margen del 72 % suena bien, pero sin costo exacto por cliente, eso en producción truena. Quiero ver cómo automatizan la IA y el algoritmo para que ese costo se mantenga bajo al escalar. ¡Órale, esto me prende!",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Si un competidor grande copia su idea y baja precios, ¿cómo defenderán su espacio y seguirán escalando en cinco años?",
+      "texto": "¿Cómo imaginas que una PyME decide cambiar de una solución general a DataSense AI para defender su mercado en 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Defenderemos nuestro espacio con la simplicidad y usabilidad que ofrecemos, sin configuración técnica, y con atención personalizada a PyMEs. Además, invertiremos en mejorar continuamente nuestra IA y expandir nuestro equipo para innovar y mantener ventaja competitiva. Nuestro enfoque en el mercado mexicano y la adaptación a sus necesidades específicas nos permitirá escalar y fidelizar clientes frente a competidores grandes que solo bajen precios.",
+      "texto": "Una PyME cambiará a DataSense AI al reconocer que nuestra plataforma les ofrece análisis específicos y fáciles de entender sin necesidad de expertos, mejorando su toma de decisiones rápidamente. Al ver que otras PyMEs en su sector usan nuestra solución para optimizar ventas e inventarios, valorarán la simplicidad y especialización que no obtienen con herramientas generales, protegiendo así su competitividad a largo plazo.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Si un cliente sube datos erróneos o maliciosos, ¿cómo detecta y maneja tu algoritmo ese problema sin que truene todo el análisis?",
+      "texto": "Cuéntame cómo un usuario sin experiencia técnica interactúa con el prototipo para recibir su primer análisis automatizado.",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro algoritmo incluye validaciones automáticas que detectan inconsistencias o datos fuera de rango, alertando al usuario para corregirlos. Además, aplicamos filtros y modelos robustos que minimizan el impacto de datos erróneos o maliciosos, asegurando que el análisis continúe sin interrupciones y con precisión. Así mantenemos la confiabilidad del sistema ante entradas problemáticas.",
+      "texto": "El usuario conecta sus hojas de cálculo y sistemas a la plataforma sin necesidad de configuraciones técnicas. Nuestro prototipo automáticamente procesa los datos y, mediante IA, genera un análisis en lenguaje natural que se presenta en un panel amigable. Así, el usuario recibe su primer análisis y alertas sin intervención, facilitando la comprensión y la toma de decisiones inmediatas.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Qué hacen cuando un cliente molesto llega porque la plataforma marcó una alerta errónea y afectó sus decisiones de negocio?",
+      "texto": "Cuéntame cómo un cliente promedio descubre y decide pagar su primera suscripción con ustedes.",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Cuando un cliente nos reporta una alerta errónea, revisamos con prioridad su caso para identificar la causa. Ajustamos y mejoramos el algoritmo si es necesario, y ofrecemos soporte personalizado para aclarar dudas y minimizar impactos. Nuestro objetivo es mantener la confianza y mejorar continuamente la precisión del sistema para evitar que estos errores afecten decisiones futuras.",
+      "texto": "Un cliente promedio descubre DataSense AI al buscar soluciones sencillas para analizar sus datos sin expertos. Probamos con 50 clientes que pagan, quienes valoraron la facilidad y el análisis en lenguaje natural. La decisión de pago se da tras probar la plataforma que conecta sus datos y entrega insights claros, demostrando valor inmediato para mejorar sus ventas e inventarios.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estela, tienes razón en preocuparte por la competencia y precios. Me gusta que busquen simplicidad y atención personalizada, pero no me dices el CAC ni la retención. Sin esos números, eso no cabe en mi hoja de cálculo para asegurar escalabilidad.",
+      "texto": "Estela, coincido contigo en que captar PyMEs que ya usan soluciones generales es clave. Pero me falta ver cifras claras del costo de adquisición y retención; sin eso, difícil medir si realmente cambiarán y si el crecimiento es sostenible. Los números no tienen sentimientos.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué te hizo elegir el lenguaje natural para los análisis y cómo ha cambiado eso la experiencia del usuario hasta ahora?",
+      "texto": "¿Qué innovaciones tecnológicas planean implementar en el prototipo con esta inversión para hacer único su algoritmo y producto?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Elegimos el lenguaje natural porque las PyMEs no cuentan con personal técnico y necesitan entender sus datos sin complicaciones. Esto ha mejorado enormemente la experiencia del usuario, pues reciben análisis claros y accionables sin configurar nada, facilitando decisiones rápidas y precisas que antes no podían tomar por falta de expertos.",
+      "texto": "Con la inversión, planeamos crecer el equipo de ingeniería para mejorar nuestro algoritmo de IA, enfocándonos en análisis más precisos y alertas más personalizadas para las PyMEs. También implementaremos mejoras en la integración automática de datos y en la generación de análisis en lenguaje natural, haciendo nuestro producto aún más único y fácil de usar para clientes sin experiencia técnica.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Quiénes dentro de la PyME suelen decidir usar DataSense AI y qué los convenció a dejar sus métodos tradicionales?",
+      "texto": "¿Qué cambio clave esperas ver en tus márgenes y costo por cliente cuando uses la inversión para crecer?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Dentro de la PyME, suelen decidir usar DataSense AI los dueños o gerentes generales, quienes buscan optimizar operaciones sin depender de expertos técnicos. Los convenció la facilidad de uso, el análisis en lenguaje natural y la posibilidad de tomar decisiones informadas sin complicaciones, lo que supera sus métodos tradicionales basados en intuición o análisis manuales complejos.",
+      "texto": "Con la inversión, esperamos mejorar la eficiencia operativa al automatizar más procesos y optimizar nuestra infraestructura. Esto debería mantener o incluso aumentar nuestro margen bruto del 72 % y reducir el costo por cliente al escalar, aunque aún no tenemos cifras exactas. Para confirmarlo, mediremos estos indicadores conforme crezca nuestro número de clientes y ajustaremos la operación según los resultados.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Qué te hace confiar en que las PyMEs seguirán valorando la simplicidad y no buscarán soluciones más técnicas con el tiempo?",
+      "texto": "Querido, ¿cómo visualizas que esta inversión te ayudará a defender tu mercado y crear barreras que permitan escalar en 5 años?",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Confío en que las PyMEs seguirán valorando la simplicidad porque su principal necesidad es tomar decisiones rápidas sin expertos técnicos. Nuestra plataforma evoluciona para mantener esa facilidad, adaptándonos a sus capacidades y recursos. Además, la simplicidad impulsa adopción y retención, mientras que soluciones técnicas complejas pueden ser una barrera para su crecimiento y uso continuo.",
+      "texto": "Esta inversión nos permitirá fortalecer nuestro equipo de ingeniería para mejorar la IA y la experiencia del usuario, consolidando nuestra ventaja de simplicidad y especialización para PyMEs. Con mejores análisis y alertas personalizadas, crearemos una barrera tecnológica difícil de replicar y aumentaremos nuestra base de clientes, lo que nos posicionará como líder y facilitará la escalabilidad en los próximos 5 años.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo: usar lenguaje natural es clave para democratizar el análisis en PyMEs sin expertos. Eso realmente baja la barrera de entrada y ayuda a escalar rápido, especialmente en un mercado que valora la simplicidad para defenderse del océano competitivo.",
+      "texto": "Teo, coincido contigo en que mejorar la IA es clave para defender la ventaja y escalar. Sin embargo, me falta ver cómo esa innovación crea barreras claras frente a Power BI y consultores. Pensemos tres jugadas adelante para no quedarnos cortos en la estrategia.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,12 +291,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "Me late el margen bruto del 72% y el crecimiento mensual del 15% con 50 clientes. Falta CAC, pero la valuación de $3,333,333 y ventas de $270,000 cuadran para un negocio SaaS en crecimiento. Los números no tienen sentimientos, pero aquí sí me sumo.",
+      "texto": "El margen bruto del 72 % es sólido, pero no me dices el costo exacto por cliente, clave para validar la sostenibilidad. La valuación implícita de $3,333,333 no cuadra con falta de datos claros. Propongo $350,000 por 15 % para ajustar riesgo y potencial. Contraoferta: $350,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "invertir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 350000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 25,
@@ -304,7 +304,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "Pensemos tres jugadas adelante: el mercado PyME es amplio y la ventaja de lenguaje natural baja barreras, con 50 clientes y 15% crecimiento mensual, margen 72%. Falta CAC, pero la estrategia es clara para defender y escalar en 5 años.",
+      "texto": "El mercado de PyMEs mexicanas es grande y la ventaja de simplicidad es clara para defenderse frente a Power BI. Con 50 clientes y 15% de crecimiento mensual, el margen del 72% invita a escalar bien. Pensemos tres jugadas adelante para crecer con $500,000 por 15%.",
       "estado": "Votando",
       "decision": "invertir",
       "votacion": 1,
@@ -317,7 +317,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "¡Órale, esto me prende! La innovación está en el algoritmo que traduce datos a lenguaje natural sin configuración técnica, y tienen 50 clientes con 15 % crecimiento mensual. Eso es un prototipo funcionando y margen bruto del 72 %, muy sólido para SaaS.",
+      "texto": "Me late la innovación del algoritmo que genera análisis en lenguaje natural sin configuración, ideal para PyMEs. Ya tienen 50 clientes y 270,000 MXN en ventas con margen del 72%, lo que muestra buen potencial tecnológico y de mercado.",
       "estado": "Votando",
       "decision": "invertir",
       "votacion": 1,
@@ -326,6 +326,15 @@
     },
     {
       "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $500,000 MXN por el 15 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
       "ronda": 3,
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
@@ -340,53 +349,53 @@
       }
     },
     {
-      "n": 28,
+      "n": 29,
       "ronda": 3,
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Modelo SaaS con margen bruto alto (72%) y tracción real con 50 clientes y crecimiento mensual del 15%.; Innovación tecnológica con algoritmo que traduce datos a lenguaje natural sin configuración técnica, facilitando el uso para PyMEs sin expertos.; Equipo multidisciplinario dedicado tiempo completo con experiencia relevante en tecnología y ventas.. Alertas: Falta información clave sobre CAC (Costo de Adquisición de Clientes) y tasa de retención para evaluar escalabilidad y sostenibilidad.; Competencia fuerte con herramientas de BI consolidadas; aunque hay diferenciador, el riesgo de imitación y guerra de precios es latente.; No se detalló cómo se manejará el crecimiento del equipo y la mejora continua del algoritmo con los fondos solicitados.. Siguientes pasos: Definir y presentar métricas claras de CAC y retención para fortalecer la propuesta financiera.; Desarrollar un plan de defensa competitivo que incluya diferenciación continua y estrategia de atención personalizada.; Implementar métricas y procesos para monitorear y mejorar el algoritmo, así como la experiencia del cliente, asegurando escalabilidad..",
+      "texto": "Fortalezas: Plataforma SaaS sencilla y accesible para PyMEs sin conocimientos técnicos.; Modelo de negocio con margen bruto sólido (72 %) y crecimiento mensual del 15 %.; Innovación tecnológica con análisis en lenguaje natural sin necesidad de configuración técnica.. Alertas: Falta claridad en el costo exacto por cliente y costo de adquisición, clave para validar sostenibilidad.; Necesidad de un plan estratégico más detallado para crear barreras claras frente a competidores grandes y consultores.; Riesgo en mantener el margen al escalar sin datos precisos sobre automatización y costos operativos.. Siguientes pasos: Definir y medir con precisión el costo por cliente y costo de adquisición para validar la sostenibilidad financiera.; Elaborar un plan estratégico claro que detalle barreras tecnológicas y de mercado para defender la ventaja competitiva a 5 años.; Invertir en el equipo de ingeniería para mejorar el algoritmo y automatización, asegurando costos bajos y escalabilidad efectiva..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 4,
-            "frase_clave": "Me late el margen bruto del 72% y el crecimiento mensual del 15% con 50 clientes. Falta CAC, pero la valuación de $3,333,333 y ventas de $270,000 cuadran para un negocio SaaS en crecimiento.",
-            "necesitaria": "Necesitaría conocer el CAC y la retención de clientes para evaluar la escalabilidad financiera del negocio."
+            "frase_clave": "El margen bruto del 72 % es sólido, pero no me dices el costo exacto por cliente, clave para validar la sostenibilidad.",
+            "necesitaria": "Necesito ver cifras claras del costo de adquisición y retención por cliente para validar que el margen y crecimiento son sostenibles."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 4,
-            "frase_clave": "Pensemos tres jugadas adelante: el mercado PyME es amplio y la ventaja de lenguaje natural baja barreras, con 50 clientes y 15% crecimiento mensual, margen 72%. Falta CAC, pero la estrategia es clara para defender y escalar en 5 años.",
-            "necesitaria": "Necesitaría ver un plan detallado de crecimiento y métricas de adquisición para asegurar la defensa y escalabilidad frente a la competencia."
+            "frase_clave": "El mercado de PyMEs mexicanas es grande y la ventaja de simplicidad es clara para defenderse frente a Power BI.",
+            "necesitaria": "Me gustaría conocer un plan estratégico detallado con barreras de entrada claras y cómo mantener la ventaja competitiva frente a competidores generales y consultores."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 5,
-            "frase_clave": "La innovación está en el algoritmo que traduce datos a lenguaje natural sin configuración técnica, y tienen 50 clientes con 15 % crecimiento mensual. Eso es un prototipo funcionando y margen bruto del 72 %, muy sólido para SaaS.",
-            "necesitaria": "Necesitaría validar la robustez del algoritmo y su capacidad para manejar datos erróneos y escalar sin perder precisión."
+            "frase_clave": "Me late la innovación del algoritmo que genera análisis en lenguaje natural sin configuración, ideal para PyMEs.",
+            "necesitaria": "Quiero ver cómo la automatización del algoritmo y la IA mantendrán bajos los costos al escalar y qué innovaciones específicas planean implementar para diferenciarse aún más."
           }
         ],
         "fortalezas": [
-          "Modelo SaaS con margen bruto alto (72%) y tracción real con 50 clientes y crecimiento mensual del 15%.",
-          "Innovación tecnológica con algoritmo que traduce datos a lenguaje natural sin configuración técnica, facilitando el uso para PyMEs sin expertos.",
-          "Equipo multidisciplinario dedicado tiempo completo con experiencia relevante en tecnología y ventas."
+          "Plataforma SaaS sencilla y accesible para PyMEs sin conocimientos técnicos.",
+          "Modelo de negocio con margen bruto sólido (72 %) y crecimiento mensual del 15 %.",
+          "Innovación tecnológica con análisis en lenguaje natural sin necesidad de configuración técnica."
         ],
         "alertas": [
-          "Falta información clave sobre CAC (Costo de Adquisición de Clientes) y tasa de retención para evaluar escalabilidad y sostenibilidad.",
-          "Competencia fuerte con herramientas de BI consolidadas; aunque hay diferenciador, el riesgo de imitación y guerra de precios es latente.",
-          "No se detalló cómo se manejará el crecimiento del equipo y la mejora continua del algoritmo con los fondos solicitados."
+          "Falta claridad en el costo exacto por cliente y costo de adquisición, clave para validar sostenibilidad.",
+          "Necesidad de un plan estratégico más detallado para crear barreras claras frente a competidores grandes y consultores.",
+          "Riesgo en mantener el margen al escalar sin datos precisos sobre automatización y costos operativos."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el CAC y la tasa de retención de clientes?",
-          "¿Cómo planean concretamente defender su mercado ante competidores grandes que bajen precios?",
-          "¿Qué métricas específicas usarán para evaluar la mejora continua del algoritmo y la satisfacción del cliente?"
+          "¿Cuál es el costo exacto por cliente para mantener la rentabilidad al escalar?",
+          "¿Cómo crearán barreras claras y sostenibles frente a Power BI y consultores independientes?",
+          "¿Qué cifras concretas tienen del costo de adquisición y retención de clientes?"
         ],
         "siguientes_pasos": [
-          "Definir y presentar métricas claras de CAC y retención para fortalecer la propuesta financiera.",
-          "Desarrollar un plan de defensa competitivo que incluya diferenciación continua y estrategia de atención personalizada.",
-          "Implementar métricas y procesos para monitorear y mejorar el algoritmo, así como la experiencia del cliente, asegurando escalabilidad."
+          "Definir y medir con precisión el costo por cliente y costo de adquisición para validar la sostenibilidad financiera.",
+          "Elaborar un plan estratégico claro que detalle barreras tecnológicas y de mercado para defender la ventaja competitiva a 5 años.",
+          "Invertir en el equipo de ingeniería para mejorar el algoritmo y automatización, asegurando costos bajos y escalabilidad efectiva."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -396,7 +405,7 @@
         },
         "valuacion_mxn": 3333333.33,
         "votos_primera_votacion": {
-          "tiburon_financiero": "invertir",
+          "tiburon_financiero": "contraoferta",
           "tiburon_estratega": "invertir",
           "tiburon_tecnologico": "invertir"
         },
@@ -423,17 +432,17 @@
   ],
   "metricas": {
     "llamadas_modelo": 25,
-    "segundos_modelo": 30.5,
-    "segundos_total": 27.9,
+    "segundos_modelo": 28.2,
+    "segundos_total": 25.5,
     "rondas_preguntas": 3,
-    "n_eventos": 28,
+    "n_eventos": 29,
     "eventos_en_orden": true,
     "preguntas": 9,
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
-    "preguntas_mencionan_criterio": 2,
-    "preguntas_citan_dato": 0,
+    "preguntas_mencionan_criterio": 5,
+    "preguntas_citan_dato": 4,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

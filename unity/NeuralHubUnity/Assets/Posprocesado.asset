@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7454422261862857868
+--- !u!114 &-1997308137464716653
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1311,7 +1311,7 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
---- !u!114 &-1298227909746759562
+--- !u!114 &-1407905193209267079
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1376,11 +1376,11 @@ MonoBehaviour:
   m_Name: Posprocesado
   m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessProfile
   settings:
-  - {fileID: 5712736403546038183}
-  - {fileID: -7454422261862857868}
-  - {fileID: 6643778847191747390}
-  - {fileID: -1298227909746759562}
---- !u!114 &5712736403546038183
+  - {fileID: 1206389640028438859}
+  - {fileID: -1997308137464716653}
+  - {fileID: 4496115567689990163}
+  - {fileID: -1407905193209267079}
+--- !u!114 &1206389640028438859
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 0
---- !u!114 &6643778847191747390
+--- !u!114 &4496115567689990163
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}

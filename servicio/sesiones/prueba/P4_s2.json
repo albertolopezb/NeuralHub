@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que eres un fundador solo, sin equipo ni experiencia mencionada. ¿Quién eres tú y cuál es la historia que te tiene tan comprometido con ayudar a estos estudiantes con matemáticas?",
+      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que eres un solo fundador, pero no me dices tu experiencia ni dedicación. ¿Cómo vas a manejar tú solo el desarrollo, pruebas y todo lo que pides con $350,000? ¿Tienes equipo o compromiso para sostener esto?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. Me dices un piloto con 30 estudiantes y 22 usuarios recurrentes, pero no me dices cómo piensas escalar a miles de estudiantes; ¿qué estrategia tienes para defender tu mercado frente a apps consolidadas como Khan Academy?",
+      "texto": "Soy Estela Marín, tiburón estratega. En tu pitch dices que la competencia son videos y apps como Khan Academy, pero no me dices qué barreras tienes para defender a TutorBot y evitar que te copien fácilmente en un mercado tan competido.",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. ¿Me puedes explicar qué algoritmo usa TutorBot para personalizar las explicaciones y ejercicios según el temario SEP, y por qué crees que es un prototipo que puede escalar sin que eso en producción truene?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿qué algoritmo de IA usas en el prototipo para adaptar las explicaciones al nivel del estudiante y cómo planeas proteger esa innovación para que no truene en producción?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_mentor",
-      "texto": "Aurelio, me late tu punto: un solo fundador y sin experiencia ni equipo es un riesgo para un proyecto tech que necesita prototipos robustos y escalables. Sin embargo, si el fundador es ingeniero y entiende el algoritmo, puede armar algo decente. ¡Pero falta más info!",
+      "texto": "Aurelio, claro que coincide tu preocupación; un solo fundador con tiempo parcial y sin equipo para escalar un prototipo de IA es un riesgo alto. Sin compromiso firme, ese desarrollo y pruebas con $350,000 pueden quedar a medias. ¡Eso en producción truena! Necesitan reforzar su base técnica.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con tu piloto de 30 estudiantes y sin marca registrada, ¿cómo defenderás TutorBot si un competidor grande lanza una versión similar en WhatsApp y baja el precio para escalar rápido en el mercado de 6 millones de estudiantes? ¿Cuál es tu movimiento estratégico?",
+      "texto": "En el pitch dices que compites con videos y tutores, pero no me dices qué harías si una app grande como Khan Academy decide lanzar un chatbot en WhatsApp adaptado al temario SEP. ¿Cómo defenderías tu mercado para escalar y no perder usuarios?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Si un estudiante hace trampa con el asistente o usa respuestas automáticas para pasar ejercicios, ¿tu algoritmo detecta eso o cómo evitas que el prototipo se convierta en un truco y pierda valor educativo?",
+      "texto": "Si un estudiante o escuela reporta que el algoritmo de IA en tu prototipo da respuestas erróneas o confusas, ¿cómo planeas detectar, corregir y actualizar rápido ese error en producción para que no falle la experiencia?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Tú vas solo y tiempo parcial, dices; si un día se te complica la escuela o el trabajo, ¿quién en tu equipo o red asume el proyecto para que no se quede tirado? ¿Cómo muestras ese compromiso real con TutorBot?",
+      "texto": "En tu piloto con 30 estudiantes donde 22 usaron TutorBot más de 5 veces, ¿qué hiciste tú para motivar y retener a esos usuarios? ¿Cómo vas a sostener ese compromiso cuando tengas que escalar y no seas solo tú atendiendo?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_estratega",
-      "texto": "Estela, coincido contigo. Sin marca ni barreras fuertes, crecer rápido es clave, pero un solo fundador a tiempo parcial me deja pensando en el compromiso real. Yo ya me tropecé con eso y sin equipo fuerte, la defensa se vuelve difícil.",
+      "texto": "Estela, tienes razón en preocuparte por eso. El chavo dice que su ventaja es WhatsApp y el temario SEP, pero crecer rápido solo con escuelas sin equipo o patente es más cuento que realidad. Yo ya me tropecé con eso, no es fácil.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Me dices que el prototipo ya resuelve álgebra y geometría básica, pero no mencionas si tienes un roadmap tecnológico para integrar más temas SEP; ¿cómo planeas escalar el algoritmo sin que en producción truene?",
+      "texto": "En tu pitch no mencionas métricas de precisión o error del algoritmo de IA en el prototipo; ¿cómo mides la calidad de las respuestas para evitar que tu asistente dé información errónea a estudiantes?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que trabajas tiempo parcial y no tienes equipo ni socios; ¿qué harás si tu compromiso con TutorBot se ve afectado por la escuela o trabajo? ¿Tienes un plan honesto para no dejar el proyecto tirado?",
+      "texto": "Me dices que aún trabajas solo y a tiempo parcial, pero en el pitch pides $350,000 para crecer rápido; ¿cómo vas a comprometerte tú y formar un equipo para que esto no se quede en solo buenas intenciones?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Me dices que la suscripción es para familias y licencias para escuelas, pero no proporcionas datos de ventas ni márgenes; ¿cómo planeas escalar y defender TutorBot sin evidencia clara de ingresos o adopción real en un mercado tan competitivo?",
+      "texto": "En tu pitch dices que el mercado son estudiantes y familias, pero no mencionas cómo planeas defender la suscripción mensual de $99 contra la competencia gratuita y sin barreras. ¿Qué harás para escalar y mantener clientes pagando?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo. Sin un roadmap claro para integrar más temas SEP, el riesgo de que el algoritmo truene en producción es real. Pensemos tres jugadas adelante: sin esa escalabilidad técnica definida, defender el mercado será casi imposible.",
+      "texto": "Teo, coincido contigo; sin métricas claras de precisión, el asistente es un riesgo. El océano no perdona errores en educación. Sin datos que defiendan la calidad, no hay barrera para la competencia y no lograrán escalar ni defender mercado a largo plazo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,12 +264,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "Tú trabajas solo y a tiempo parcial, sin equipo ni ventas ni márgenes claros, y eso me preocupa tu compromiso. El piloto con 22 usuarios es bueno, pero la valuación de 3.5 millones por 10% está alta para esta etapa. Contraoferta: $200,000 MXN por el 15 %.",
+      "texto": "Tu compromiso es parcial y vas solo, sin experiencia ni equipo; eso me preocupa para usar $350,000 y crecer rápido. El piloto con 22 usuarios activos es bueno, pero falta compromiso y equipo sólido para escalar. La valuación a $3.5 millones está alta para eso. Contraoferta: $200,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
       "contraoferta_monto_mxn": 200000.0,
-      "contraoferta_porcentaje": 15.0
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 25,
@@ -277,11 +277,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "Querido, el océano no perdona la falta de defensas claras: sin marca ni barreras, y solo 30 estudiantes en piloto, el riesgo es alto. Valoro el mercado de 6 millones, pero no me dices ventas ni margen, y la defensa frente a Khan Academy es débil. Pido valuación más realista. Contraoferta: $175,000 MXN por el 15 %.",
+      "texto": "Pensemos tres jugadas adelante: sin métricas claras ni equipo, la ventaja de estar en WhatsApp no es defendible. El mercado de 6 millones es grande, pero la valuación de $3,500,000 y 22 usuarios activos en piloto no justifican $350,000 por 10%. Contraoferta: $200,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 175000.0,
+      "contraoferta_monto_mxn": 200000.0,
       "contraoferta_porcentaje": 15.0
     },
     {
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "El prototipo usa un modelo de lenguaje con temario SEP, pero no hay patente ni roadmap tecnológico claro para escalar sin que truene. La valuación de $3,500,000 MXN me parece alta para un fundador solo y un piloto pequeño de 30 estudiantes. Contraoferta: $200,000 MXN por el 15 %.",
+      "texto": "Me prende la idea del asistente IA en WhatsApp, pero falta patente y métricas de precisión claras. El prototipo tiene 22 usuarios activos en piloto, pero sin equipo ni protección, 3.5 millones de valuación está alta para esta etapa. Contraoferta: $200,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -303,7 +303,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburón mentor. $200,000 MXN por el 15 %.",
+      "texto": "Elijo la condición de Tiburón estratega. $200,000 MXN por el 15 %.",
       "estado": "Negociando"
     },
     {
@@ -318,7 +318,7 @@
       "condiciones": {
         "monto_mxn": 200000.0,
         "porcentaje": 15.0,
-        "origen": "tiburon_mentor"
+        "origen": "tiburon_estratega"
       }
     },
     {
@@ -327,56 +327,54 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Identificaste un problema real y relevante para estudiantes de secundaria.; Ya tienes un prototipo funcional que ha sido probado en un piloto con usuarios recurrentes.; Usas WhatsApp, una plataforma conocida y accesible para tu mercado objetivo.. Alertas: Eres un fundador individual con dedicación parcial, lo que genera dudas sobre compromiso y continuidad.; No cuentas con patente ni marca registrada que proteja tu producto.; Falta evidencia clara de ventas, margen bruto y una estrategia de escalabilidad sólida, tanto de mercado como tecnológica.. Siguientes pasos: Formar un equipo mínimo con roles claros para fortalecer compromiso y ejecución.; Desarrollar un roadmap tecnológico detallado que garantice escalabilidad y estabilidad del producto.; Implementar una estrategia comercial para validar ventas y márgenes, priorizando alianzas con escuelas para crecer rápido..",
+      "texto": "Fortalezas: Identificaste un problema real y relevante para estudiantes de secundaria en México.; El prototipo ya fue probado con un piloto de 30 estudiantes, con buena tasa de uso (22 usuarios activos).; La solución se integra en una plataforma de uso común (WhatsApp) y sigue el temario oficial SEP, lo que puede facilitar adopción.. Alertas: El fundador trabaja solo y a tiempo parcial, sin equipo ni experiencia previa en empresa o escalamiento.; No existen métricas claras de precisión del asistente ni evidencia de mejora en calificaciones de estudiantes.; No hay protección intelectual ni barreras defensivas claras ante competidores grandes y gratuitos.. Siguientes pasos: Formar un equipo técnico y operativo para avanzar en desarrollo, pruebas y escalabilidad.; Definir y medir métricas clave de desempeño del asistente, como precisión y mejora en calificaciones.; Diseñar una estrategia de protección intelectual o diferenciadores difíciles de copiar y un plan claro para captar y retener clientes pagando..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_mentor",
-            "calificacion": 3,
-            "frase_clave": "Tú trabajas solo y a tiempo parcial, sin equipo ni ventas ni márgenes claros, y eso me preocupa tu compromiso.",
-            "necesitaria": "Un equipo comprometido o plan claro para asegurar continuidad, además de ventas y márgenes claros."
+            "calificacion": 2,
+            "frase_clave": "Tu compromiso es parcial y vas solo, sin experiencia ni equipo; eso me preocupa para usar $350,000 y crecer rápido.",
+            "necesitaria": "Un equipo sólido y compromiso pleno del fundador para asegurar la ejecución y escalamiento del proyecto."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 2,
-            "frase_clave": "El océano no perdona la falta de defensas claras: sin marca ni barreras, y solo 30 estudiantes en piloto, el riesgo es alto.",
-            "necesitaria": "Estrategias claras para diferenciar y defender el mercado ante competidores grandes, con validación de ingresos y adopción."
+            "frase_clave": "Sin métricas claras ni equipo, la ventaja de estar en WhatsApp no es defendible... la valuación de $3,500,000 y 22 usuarios activos en piloto no justifican $350,000 por 10%.",
+            "necesitaria": "Métricas claras de validación de mercado, barreras competitivas definidas y un plan sólido para escalar y retener clientes pagando."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 2,
-            "frase_clave": "No hay patente ni roadmap tecnológico claro para escalar sin que truene.",
-            "necesitaria": "Un roadmap tecnológico definido y pruebas que aseguren escalabilidad sin fallas en producción."
+            "frase_clave": "Falta patente y métricas de precisión claras... sin equipo ni protección, 3.5 millones de valuación está alta para esta etapa.",
+            "necesitaria": "Innovación tecnológica protegida, métricas de precisión del asistente y un equipo técnico comprometido para operar y mejorar el producto."
           }
         ],
         "fortalezas": [
-          "Identificaste un problema real y relevante para estudiantes de secundaria.",
-          "Ya tienes un prototipo funcional que ha sido probado en un piloto con usuarios recurrentes.",
-          "Usas WhatsApp, una plataforma conocida y accesible para tu mercado objetivo."
+          "Identificaste un problema real y relevante para estudiantes de secundaria en México.",
+          "El prototipo ya fue probado con un piloto de 30 estudiantes, con buena tasa de uso (22 usuarios activos).",
+          "La solución se integra en una plataforma de uso común (WhatsApp) y sigue el temario oficial SEP, lo que puede facilitar adopción."
         ],
         "alertas": [
-          "Eres un fundador individual con dedicación parcial, lo que genera dudas sobre compromiso y continuidad.",
-          "No cuentas con patente ni marca registrada que proteja tu producto.",
-          "Falta evidencia clara de ventas, margen bruto y una estrategia de escalabilidad sólida, tanto de mercado como tecnológica."
+          "El fundador trabaja solo y a tiempo parcial, sin equipo ni experiencia previa en empresa o escalamiento.",
+          "No existen métricas claras de precisión del asistente ni evidencia de mejora en calificaciones de estudiantes.",
+          "No hay protección intelectual ni barreras defensivas claras ante competidores grandes y gratuitos."
         ],
         "preguntas_sin_responder": [
-          "¿Cómo escalarás el producto para llegar a miles de estudiantes y defenderlo frente a competidores consolidados?",
-          "¿Cómo evitarás que los estudiantes hagan trampa usando el asistente?",
-          "¿Tienes un plan para cuando tu compromiso personal o tiempos se vean afectados?",
-          "¿Qué roadmap tecnológico tienes para integrar más temas y evitar fallas en producción?",
-          "¿Cómo piensas generar ventas y mostrar márgenes en este mercado competitivo?"
+          "¿Cómo medirás y garantizarás la calidad y precisión de las respuestas del asistente?",
+          "¿Qué estrategias concretas usarás para retener y motivar a los usuarios al escalar?",
+          "¿Cómo planeas formar un equipo comprometido para desarrollar y escalar el producto?"
         ],
         "siguientes_pasos": [
-          "Formar un equipo mínimo con roles claros para fortalecer compromiso y ejecución.",
-          "Desarrollar un roadmap tecnológico detallado que garantice escalabilidad y estabilidad del producto.",
-          "Implementar una estrategia comercial para validar ventas y márgenes, priorizando alianzas con escuelas para crecer rápido."
+          "Formar un equipo técnico y operativo para avanzar en desarrollo, pruebas y escalabilidad.",
+          "Definir y medir métricas clave de desempeño del asistente, como precisión y mejora en calificaciones.",
+          "Diseñar una estrategia de protección intelectual o diferenciadores difíciles de copiar y un plan claro para captar y retener clientes pagando."
         ],
         "resultado": "TRATO",
         "condiciones": {
           "monto_mxn": 200000.0,
           "porcentaje": 15.0,
-          "origen": "tiburon_mentor"
+          "origen": "tiburon_estratega"
         },
         "valuacion_mxn": 3500000.0,
         "votos_primera_votacion": {
@@ -407,7 +405,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 19.8,
+    "segundos_modelo": 20.1,
     "segundos_total": 17.5,
     "rondas_preguntas": 3,
     "n_eventos": 29,
@@ -417,7 +415,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 3,
+    "preguntas_citan_dato": 7,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

@@ -97,7 +97,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices ventas de $1,450,000 al año y 420 clientes recurrentes. ¿Cuál es el costo promedio que te lleva adquirir cada cliente nuevo? Eso no cabe en mi hoja de cálculo sin saberlo.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices que tienes 420 clientes recurrentes y ventas de $1,450,000 en 12 meses, ¿cuánto te costó adquirir cada cliente exactamente? Sin ese dato, no puedo sacar si tu inversión en marketing vale la pena.",
       "estado": "Preguntando"
     },
     {
@@ -115,7 +115,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Soy Coral Medina, tiburona de consumo. La marca ya está registrada, pero no me dices qué dicen las reseñas o comentarios del cliente sobre el empaque y la entrega en bolsa térmica, ¿la gente vuelve a comprar por eso o solo por el sabor?",
+      "texto": "Soy Coral Medina, tiburona de consumo. Me dices que la marca ya tiene 420 clientes recurrentes con 38 % que repite al mes, pero no me dices en qué canales venden. ¿Cómo compra el cliente? ¿App, WhatsApp, call center? ¿Cuál canal es el que más ventas y mejor reseña tiene?",
       "estado": "Preguntando"
     },
     {
@@ -133,7 +133,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "Soy Bruno Garza, tiburón negociador. Me dices valuación implícita de 5 millones por el 12 % que piden. ¿Qué porcentaje de capital estarían dispuestos a ceder si les ofrezco 600,000 pesos, pero con condiciones claras de control y plazos? Al grano.",
+      "texto": "Soy Bruno Garza, tiburón negociador. Me dices que pides $600,000 por el 12 %, ¿estás dispuesto a ceder más porcentaje si pongo condiciones claras de control y plazos para asegurar el crecimiento y recuperar rápido mi inversión?",
       "estado": "Preguntando"
     },
     {
@@ -151,7 +151,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_negociador",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, buen punto. El costo de adquisición de $120 por cliente es clave para entender su rentabilidad. Sin ese dato, no hay trato serio. Me gusta que ya lo aclararon, ahora podemos hablar de porcentajes y condiciones. Al grano, ¿qué ofrecen en control?",
+      "texto": "Ramiro, al grano: si no sabes en qué canales y cuánto te cuesta captar cliente, no cierras trato. El costo de adquisición es clave para valorar tu inversión en marketing. Bien que lo aclararon; ahora sí se puede negociar con bases claras.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -161,7 +161,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "El producto se entrega en 40 minutos con bolsa térmica, pero si un día fallan en la entrega caliente o llega tarde, ¿qué reacción tiene el cliente y cómo protege la marca ese canal para que no se les caiga la demanda?",
+      "texto": "El cliente pidió su tamal por la app y llega frío o la entrega tarda más de 40 minutos, según el pitch. ¿Cómo afecta eso a la experiencia del cliente y qué acciones tiene la marca en el canal para evitar que deje de pedir?",
       "estado": "Preguntando"
     },
     {
@@ -179,7 +179,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "Si un socio clave del equipo (como el de logística con 5 años) decide salirse después de mi inversión, ¿qué porcentaje de capital estarían dispuestos a ceder para mantener el control y asegurar continuidad? Al grano, sin rodeos.",
+      "texto": "Si un socio clave se va y pierde experiencia en cocina o logística, ¿qué porcentaje adicional del capital estás dispuesto a ceder para que yo entre con control y condiciones que aseguren continuidad y crecimiento rápido?",
       "estado": "Preguntando"
     },
     {
@@ -197,7 +197,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Si un vehículo de reparto se descompone y deben alquilar otro urgente, ¿cuánto sube el gasto mensual y cómo afecta eso al margen bruto del 46 % que mencionan en el pitch?",
+      "texto": "Si un vehículo de reparto se descompone y genera un gasto extra mensual de $8,000 MXN, ¿cómo afecta eso al margen del 46 % y al flujo de $85,000 MXN mensuales que me dijiste?",
       "estado": "Preguntando"
     },
     {
@@ -215,7 +215,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Coral, tienes razón en insistir en la entrega caliente y puntual. Me dicen que el 38 % repite, pero no se aclara qué pasa si fallan. Sin saber cómo afecta esa falla a la demanda, no puedo confiar en esos márgenes ni en el flujo.",
+      "texto": "Coral, tu preocupación es válida; si la entrega tarda o el tamal llega frío, el cliente no repite. Pero el emprendedor dice que el 38 % que repite viene de suscripciones, lo que indica que la experiencia se mantiene bien. Aun así, falta detalle sobre acciones específicas.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -225,7 +225,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_negociador",
       "destino": "emprendedor",
-      "texto": "Con 420 clientes recurrentes y solo 38 % repite, ¿qué porcentaje de capital estarían dispuestos a ceder para mejorar retención y control sin perder la valuación que proponen? Al grano, sin rodeos.",
+      "texto": "En el pitch dices que la valuación es de 5 millones, pero solo ofreces hasta 15 % cediendo control. ¿Qué porcentaje máximo estás dispuesto a ceder para que yo tenga condiciones claras y plazos y así cerrar trato rápido?",
       "estado": "Preguntando"
     },
     {
@@ -243,7 +243,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices gastos fijos de $85,000 mensuales y que el punto de equilibrio está en $185,000 mensuales, pero no aclaras cuánto aumentan esos gastos si la segunda cocina y dos vehículos de reparto funcionan. ¿Cuánto suben los gastos fijos y cómo baja el margen bruto con esa expansión?",
+      "texto": "En el pitch y respuestas no veo claro el costo exacto de adquisición por cliente ni cómo impacta en el flujo mensual actual; ¿cuánto gastan en marketing cada mes y qué margen neto queda después de ese gasto?",
       "estado": "Preguntando"
     },
     {
@@ -261,7 +261,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Me dices que el 38 % repite y que 420 son clientes recurrentes, pero no me dices si alguno de ellos ha dejado de comprar por problemas con la entrega o el empaque. ¿Qué dice la marca de esos clientes que no volvieron? ¿Se perdió demanda o solo es suposición?",
+      "texto": "En el pitch falta qué tipo de empaque usan para entregar calientes los tamales; ¿qué empaque usan y cómo asegura la marca que la experiencia de sabor y temperatura sea igual que en casa para que el cliente vuelva a comprar?",
       "estado": "Preguntando"
     },
     {
@@ -279,7 +279,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_negociador",
-      "texto": "Bruno, coincido contigo, mejorar retención es vital y no veo claridad en su disposición a ceder capital para eso. Prefieren más dinero por igual porcentaje, ¡pero a ver, me pongo en sus zapatos! Sin flexibilidad en control, la marca puede estancarse.",
+      "texto": "Bruno, coincido contigo en que si solo ofrecen hasta 15 % y prefieren más dinero por el mismo porcentaje, eso puede frenar un acuerdo con condiciones claras. El control es importante, pero para crecer rápido, un poco más de capital y ceder algo más puede ser clave.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -289,7 +289,7 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "La marca tiene 420 clientes recurrentes y un margen bruto decente del 46 %, pero me choca la falta de claridad sobre la reacción del cliente ante fallas en la entrega caliente, vital para la demanda y retención. Valuación de $5,000,000 MXN me parece alta sin control claro. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "El cliente compra 61% por app y WhatsApp, el canal es clave; pero no me dices el empaque ni acciones claras para evitar que el tamal llegue frío. Valuación de $5,000,000 me parece alta para $1,450,000 en ventas. Ofrezco $600,000 por 15% para mayor control. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -302,7 +302,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "El costo de adquisición de $120 por cliente es alto para un margen bruto de 46 % y gastos fijos de $85,000 mensuales, sin datos claros de impacto en margen con la expansión. La valuación de $5,000,000 parece optimista para ventas de $1,450,000. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "El costo de adquisición es alto, $120 por cliente, y el margen bruto del 46% es ajustado para crecer con $600,000 a valuación de $5,000,000. Falta margen neto exacto tras gastos. Propongo $600,000 por 15% para compensar riesgo y acelerar retorno. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -315,7 +315,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_negociador",
       "destino": "nodo_votacion",
-      "texto": "La valuación de 5 millones por 12 % está alta para el riesgo de retención y control. Ofrezco 600,000 pesos por 15 % para ganar más control y proteger la inversión ante posibles cambios en equipo clave. Contraoferta: $600,000 MXN por el 15 %.",
+      "texto": "El porcentaje ofrecido es bajo para el control que exigen; piden $600,000 por 12 % con valuación de 5 millones, pero solo ceden hasta 15 %. Quiero más porcentaje para poner condiciones claras y asegurar rápido crecimiento. Contraoferta: $600,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -352,48 +352,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto con demanda estable y 420 clientes recurrentes que generan ventas consistentes.; Margen bruto saludable del 46 % y punto de equilibrio cubierto desde hace 5 meses.; Equipo con experiencia relevante en cocina, logística y ventas, dedicación a tiempo completo y marca registrada.. Alertas: Falta de claridad en el manejo y consecuencias de fallas en la entrega caliente y puntualidad.; Costo de adquisición por cliente relativamente alto en relación con márgenes y gastos fijos actuales.; Resistencia a ceder mayor porcentaje de capital para mejorar control y retención, lo que puede limitar crecimiento y estabilidad.. Siguientes pasos: Elaborar un plan detallado de contingencia para fallas en la entrega, incluyendo políticas de reembolso o compensación para mantener la confianza del cliente.; Actualizar proyecciones financieras con costos y márgenes esperados tras la expansión para mostrar sostenibilidad y rentabilidad mejorada.; Negociar y definir claramente el porcentaje de capital y condiciones de control que permitan flexibilidad para atraer inversiones sin perder el foco en la retención y crecimiento..",
+      "texto": "Fortalezas: Modelo de suscripción que genera ingresos recurrentes y fidelidad con 38% de repetición mensual.; Equipo con experiencia relevante en cocina, logística y ventas, dedicado tiempo completo.; Validación con 420 clientes recurrentes y convenios con oficinas que muestran demanda real y estable.. Alertas: Falta de claridad sobre el empaque y acciones para garantizar que el producto llegue caliente y mantenga calidad.; Costo de adquisición de clientes relativamente alto en relación con el margen bruto y ventas actuales.; Renuencia a ceder mayor porcentaje de participación que limite el control, lo que podría dificultar atraer inversionistas estratégicos.. Siguientes pasos: Definir y comunicar claramente el tipo de empaque térmico usado y los protocolos para mantener la calidad del producto en la entrega.; Optimizar y detallar el costo de adquisición de clientes, así como mostrar un plan para mejorar el margen neto mediante control de gastos y marketing eficiente.; Negociar con inversionistas mayor flexibilidad en porcentaje de participación a cambio de control y condiciones que impulsen crecimiento acelerado y recuperación de inversión..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburona_consumo",
-            "calificacion": 3,
-            "frase_clave": "La marca tiene 420 clientes recurrentes y un margen bruto decente del 46 %, pero me choca la falta de claridad sobre la reacción del cliente ante fallas en la entrega caliente, vital para la demanda y retención.",
-            "necesitaria": "Necesito evidencia clara de cómo manejan fallas en la entrega caliente y cómo esto afecta la retención y satisfacción del cliente para confiar en la estabilidad de la demanda y la marca."
+            "calificacion": 4,
+            "frase_clave": "El cliente compra 61% por app y WhatsApp, el canal es clave; pero no me dices el empaque ni acciones claras para evitar que el tamal llegue frío.",
+            "necesitaria": "Ver detalles claros del empaque y estrategias específicas para asegurar la entrega caliente que mantenga la experiencia del cliente y fomente la recompra."
           },
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "El costo de adquisición de $120 por cliente es alto para un margen bruto de 46 % y gastos fijos de $85,000 mensuales, sin datos claros de impacto en margen con la expansión.",
-            "necesitaria": "Requiero un desglose detallado de cómo impactarán los gastos fijos y el margen bruto con la expansión, además de estrategias para reducir el costo de adquisición y asegurar rentabilidad."
+            "frase_clave": "El costo de adquisición es alto, $120 por cliente, y el margen bruto del 46% es ajustado para crecer con $600,000 a valuación de $5,000,000.",
+            "necesitaria": "Un desglose claro y actualizado del margen neto después de gastos, y un análisis detallado del costo de adquisición y retorno sobre inversión en marketing."
           },
           {
             "tiburon_id": "tiburon_negociador",
             "calificacion": 3,
-            "frase_clave": "La valuación de 5 millones por 12 % está alta para el riesgo de retención y control. Ofrezco 600,000 pesos por 15 % para ganar más control y proteger la inversión ante posibles cambios en equipo clave.",
-            "necesitaria": "Necesito claridad sobre la disposición a ceder control para manejar riesgos de retención y asegurar continuidad, así como planes concretos para mitigar la salida de socios clave."
+            "frase_clave": "El porcentaje ofrecido es bajo para el control que exigen; piden $600,000 por 12 % con valuación de 5 millones, pero solo ceden hasta 15 %.",
+            "necesitaria": "Mayor flexibilidad en porcentaje de participación para poder establecer condiciones claras de control y plazos que aseguren crecimiento y recuperación de inversión."
           }
         ],
         "fortalezas": [
-          "Producto con demanda estable y 420 clientes recurrentes que generan ventas consistentes.",
-          "Margen bruto saludable del 46 % y punto de equilibrio cubierto desde hace 5 meses.",
-          "Equipo con experiencia relevante en cocina, logística y ventas, dedicación a tiempo completo y marca registrada."
+          "Modelo de suscripción que genera ingresos recurrentes y fidelidad con 38% de repetición mensual.",
+          "Equipo con experiencia relevante en cocina, logística y ventas, dedicado tiempo completo.",
+          "Validación con 420 clientes recurrentes y convenios con oficinas que muestran demanda real y estable."
         ],
         "alertas": [
-          "Falta de claridad en el manejo y consecuencias de fallas en la entrega caliente y puntualidad.",
-          "Costo de adquisición por cliente relativamente alto en relación con márgenes y gastos fijos actuales.",
-          "Resistencia a ceder mayor porcentaje de capital para mejorar control y retención, lo que puede limitar crecimiento y estabilidad."
+          "Falta de claridad sobre el empaque y acciones para garantizar que el producto llegue caliente y mantenga calidad.",
+          "Costo de adquisición de clientes relativamente alto en relación con el margen bruto y ventas actuales.",
+          "Renuencia a ceder mayor porcentaje de participación que limite el control, lo que podría dificultar atraer inversionistas estratégicos."
         ],
         "preguntas_sin_responder": [
-          "¿Cómo afecta exactamente una falla en la entrega caliente a la satisfacción y retención del cliente?",
-          "¿Cuánto aumentarán los gastos fijos y cómo impactará el margen bruto con la apertura de la segunda cocina y vehículos adicionales?",
-          "¿Qué porcentaje de clientes ha dejado de comprar por problemas relacionados con la entrega o empaque y qué acciones se han tomado?"
+          "¿Qué tipo de empaque usan para mantener la temperatura y calidad del tamal durante la entrega?",
+          "¿Qué acciones específicas implementan para evitar que el tamal llegue frío o tarde y así mantener la satisfacción del cliente?",
+          "¿Cuál es el margen neto exacto después de considerar gastos fijos y variables, incluyendo marketing y posibles gastos extras como mantenimiento de vehículos?"
         ],
         "siguientes_pasos": [
-          "Elaborar un plan detallado de contingencia para fallas en la entrega, incluyendo políticas de reembolso o compensación para mantener la confianza del cliente.",
-          "Actualizar proyecciones financieras con costos y márgenes esperados tras la expansión para mostrar sostenibilidad y rentabilidad mejorada.",
-          "Negociar y definir claramente el porcentaje de capital y condiciones de control que permitan flexibilidad para atraer inversiones sin perder el foco en la retención y crecimiento."
+          "Definir y comunicar claramente el tipo de empaque térmico usado y los protocolos para mantener la calidad del producto en la entrega.",
+          "Optimizar y detallar el costo de adquisición de clientes, así como mostrar un plan para mejorar el margen neto mediante control de gastos y marketing eficiente.",
+          "Negociar con inversionistas mayor flexibilidad en porcentaje de participación a cambio de control y condiciones que impulsen crecimiento acelerado y recuperación de inversión."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -430,7 +430,7 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 21.2,
+    "segundos_modelo": 23.3,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
     "n_eventos": 29,
@@ -440,7 +440,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 9,
+    "preguntas_citan_dato": 7,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

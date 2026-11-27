@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Soy Aurelio Paredes, tiburón mentor. Oye, me dices que eres un solo fundador, pero no me dices tu experiencia ni cómo vas a manejar todo el desarrollo y pruebas. ¿Quién más está contigo en esto y cómo te comprometes tú para sacarlo adelante?",
+      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que sólo eres un fundador y no das experiencia ni dedicación, ¿qué tanto compromiso personal tienes para sacar adelante TutorBot y cómo piensas armar tu equipo para no tropezar?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. Me dices que la suscripción es 99 pesos, pero no me dices cuántos estudiantes o familias en México usan WhatsApp para estudiar y podrían pagar eso; ¿cómo vas a escalar ese mercado y defenderlo de competidores más grandes?",
+      "texto": "Soy Estela Marín, tiburón estratega. No me dices cuántos estudiantes de secundaria en México usan WhatsApp regularmente y estarían dispuestos a pagar $99 al mes; ¿cómo piensas defender y escalar tu mercado si la mayoría no paga o prefiere alternativas gratuitas?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. Me dices que es un asistente de IA por WhatsApp, pero no me dices qué algoritmo usas ni si tienes un prototipo funcional que ya prueba esas respuestas paso a paso. ¿Cómo está ese desarrollo tecnológico?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. ¿Qué algoritmo o tecnología de IA usas en tu prototipo para adaptar las explicaciones al temario SEP y nivel del estudiante? No mencionas patente ni innovación tecnológica propia.",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_mentor",
-      "texto": "Aurelio, eso que dices es clave. Un solo fundador a tiempo parcial sin equipo es un riesgo brutal para un prototipo de IA que necesita iteración constante y pruebas. Sin un plan para aumentar el equipo o dedicación, eso en producción truena seguro.",
+      "texto": "Aurelio, eso de ir solo y a tiempo parcial me prende alerta. Sin un equipo sólido y dedicación full, el prototipo y el algoritmo que adapta el temario SEP pueden quedarse en beta eterna. ¡Eso en producción truena si no hay soporte humano fuerte!",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con ese piloto de 30 estudiantes, ¿qué harás si una app más grande lanza gratis una función igual por WhatsApp? ¿Cómo vas a defender tu mercado y escalar con competencia así?",
+      "texto": "Con todo respeto, si un competidor con más recursos lanza una versión gratuita que también se adapta al temario SEP en WhatsApp, ¿cómo planeas defender tu cuota de mercado y escalar sin barreras tecnológicas o legales claras?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Si un estudiante envía ejercicios fuera del temario SEP o con errores intencionales para hacer trampa, ¿cómo tu prototipo de IA detecta y maneja esas situaciones para mantener la calidad y confiabilidad del algoritmo?",
+      "texto": "Si un estudiante usa el prototipo para hacer trampa copiando respuestas sin entender, ¿qué algoritmo o tecnología tienes para detectar y evitar ese abuso en TutorBot, considerando que buscas crecer rápido con escuelas?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que eres un solo fundador y que le dedicas tiempo parcial. Si se pone difícil el desarrollo o las pruebas, ¿cómo vas a mantener el compromiso y la honestidad contigo mismo para no abandonar y sacar esto adelante?",
+      "texto": "Con tu equipo de uno y trabajando a tiempo parcial, si el piloto crece rápido y llegan muchas quejas o dudas de familias y escuelas, ¿cómo vas a responder tú solo sin dejar que se te venga el barco encima?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_estratega",
-      "texto": "Estela, coincido contigo en que competir con apps grandes que ofrecen gratis es un dolor de cabeza. El fundador no tiene aún un plan claro para defender ese mercado; crecer rápido con escuelas suena bonito, pero sin equipo ni experiencia, eso es puro deseo.",
+      "texto": "Estela, coincido contigo. Del dicho al hecho hay mucho trecho; crecer rápido con escuelas sin barreras legales o tecnológicas claras es un riesgo. El joven debe armar equipo fuerte y estrategia sólida para que no lo barran con más recursos o versiones gratuitas.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Tu prototipo resuelve álgebra y geometría básica, pero sin patente ni protección. ¿Qué innovación tecnológica o diferencial en tu algoritmo te hace único para evitar que competidores copien tu asistente fácilmente?",
+      "texto": "El pitch dice que usas un modelo de lenguaje con instrucciones y ejemplos del temario SEP, pero sin patente ni innovación propia. ¿Qué plan tienes para diferenciar tu algoritmo y proteger tu propiedad intelectual y así no quedar solo como un clon más?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que eres un solo fundador y que aún estudias ingeniería y le dedicas tiempo parcial. ¿Cuál es el compromiso real que le estás poniendo a TutorBot para que no quede en un proyecto más y sí logres sacarlo adelante, aunque se ponga difícil?",
+      "texto": "Me dices que eres fundador único y sólo trabajas a tiempo parcial, pero quieres crecer rápido con más escuelas. ¿Cuál es tu plan real para armar equipo y estar 100 % comprometido si esto empieza a crecer de verdad?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Me dices que 22 de 30 usaron el piloto más de 5 veces, pero no muestras evidencia de que mejoren sus calificaciones; ¿cómo vas a defender y escalar un mercado que solo pagará si ves resultados claros y medibles?",
+      "texto": "Me dices que la suscripción familiar es de $99 pero no dices cómo vas a convencer a familias que prefieren opciones gratuitas; ¿qué barreras de entrada o defensas concretas tienes para que paguen y así escalar y defender tu mercado?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo. Sin patente ni un diferencial tecnológico claro, el proyecto no tiene barreras para que competidores más grandes entren y copien rápido. Querido, el océano no perdona a quien no sabe defender su territorio con ventaja clara.",
+      "texto": "Teo, coincido contigo. Sin patente ni innovación clara, el proyecto queda sin defensa tecnológica. La ventaja adaptativa no basta para escalar y defender mercado, especialmente con competencia gratuita y con más recursos. Pensemos tres jugadas adelante, el océano no perdona la falta de barreras.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,12 +264,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "Te voy a ser franco, como a mis muchachos: un solo fundador a tiempo parcial y sin experiencia me preocupa mucho. No me dices ventas ni margen, y pides $350,000 por el 10%, valuación sin sustento claro. Del dicho al hecho hay mucho trecho, y aquí falta compromiso y equipo.",
+      "texto": "Tu compromiso es a tiempo parcial y eres fundador único, eso me prende alerta. Para $350,000 por 10 %, la valuación de $3,500,000 es alta sin equipo ni ventas claras. Propongo $200,000 por 20 % para apoyar tu dedicación y formación de equipo. Contraoferta: $200,000 MXN por el 20 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 25,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado es amplio con 6 millones de estudiantes, pero sin evidencia de mejora en calificaciones y sin equipo ni patente, la defensa es débil. La valuación de $3,500,000 MXN es alta para un prototipo con solo 30 estudiantes en piloto. Contraoferta: $200,000 MXN por el 20 %.",
+      "texto": "El mercado es grande con 6 millones de estudiantes, pero sin barreras claras ni equipo sólido, la valuación de $3,500,000 y la falta de ventas o margen son riesgos. Pensemos tres jugadas adelante para defender y escalar. Contraoferta: $200,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -290,12 +290,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "El prototipo funciona y tiene 22 usuarios activos, pero falta patente o innovación clara para proteger la IP; además, el fundador es tiempo parcial y sin equipo. Pido valuación más razonable que $3,500,000 para el riesgo tecnológico y operativo. Contraoferta: $200,000 MXN por el 15 %.",
+      "texto": "Me prende el prototipo con IA adaptativa, pero sin patente ni innovación propia, y sin equipo full time, esto en producción truena. El piloto tiene 22 estudiantes activos, pero la valuación de $3,500,000 MXN es alta para un proyecto sin IP ni ventas. Contraoferta: $175,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 200000.0,
-      "contraoferta_porcentaje": 15.0
+      "contraoferta_monto_mxn": 175000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 27,
@@ -303,7 +303,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburón tecnológico. $200,000 MXN por el 15 %.",
+      "texto": "Elijo la condición de Tiburón mentor. $200,000 MXN por el 20 %.",
       "estado": "Negociando"
     },
     {
@@ -312,13 +312,13 @@
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
       "destino": "todos",
-      "texto": "TRATO: $200,000 MXN por el 15 % de la empresa.",
+      "texto": "TRATO: $200,000 MXN por el 20 % de la empresa.",
       "estado": "Reaccionando",
       "resultado": "TRATO",
       "condiciones": {
         "monto_mxn": 200000.0,
-        "porcentaje": 15.0,
-        "origen": "tiburon_tecnologico"
+        "porcentaje": 20.0,
+        "origen": "tiburon_mentor"
       }
     },
     {
@@ -327,65 +327,58 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Identificaste un problema real y claro en la educación secundaria en México.; Desarrollaste un prototipo funcional que ya ha sido probado con estudiantes reales.; El producto usa una plataforma muy popular (WhatsApp), lo que facilita la adopción por los usuarios.; Modelo de ingresos claro con suscripción y venta a escuelas.; Visión de escalar primero con escuelas y luego con familias.. Alertas: Sólo hay un fundador que trabaja a tiempo parcial, sin equipo ni experiencia previa en emprendimiento.; No hay evidencia de mejora en el aprendizaje o calificaciones de los estudiantes.; No existe protección intelectual ni diferenciadores tecnológicos claros para defenderse de competidores grandes.; Valuación inicial parece alta sin métricas financieras o comerciales sólidas.; Riesgo alto de abandono por falta de compromiso total y estructura sólida.. Siguientes pasos: Formalizar un compromiso de dedicación tiempo completo al proyecto para aumentar confianza en inversores.; Buscar y reclutar un equipo con experiencia para desarrollo y pruebas más sólidas.; Realizar estudios piloto que midan y demuestren mejora en calificaciones y aprendizaje para validar el modelo de negocio..",
+      "texto": "Fortalezas: El producto se integra en WhatsApp, una plataforma que los estudiantes ya usan, facilitando la adopción.; El prototipo ya fue probado con éxito inicial, con 22 de 30 estudiantes usando el servicio más de 5 veces.; El enfoque en el temario oficial de la SEP y la adaptación al nivel del estudiante es un diferenciador relevante.. Alertas: Fundador único y trabajando a tiempo parcial, lo que limita la capacidad para escalar y dar soporte.; No existe protección de propiedad intelectual ni innovación tecnológica clara para defender el producto.; Falta de estrategia clara para convencer a familias de pagar frente a alternativas gratuitas y sin ventas o métricas de crecimiento.. Siguientes pasos: Formar un equipo comprometido que permita dedicar tiempo completo y soporte al proyecto.; Desarrollar métricas y estudios para validar la mejora en el desempeño académico de los usuarios.; Diseñar una estrategia clara para acercarse a escuelas y familias, incluyendo barreras de entrada y generación de ingresos sostenibles..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_mentor",
-            "calificacion": 2,
-            "frase_clave": "un solo fundador a tiempo parcial y sin experiencia me preocupa mucho. No me dices ventas ni margen, y pides $350,000 por el 10%, valuación sin sustento claro.",
-            "necesitaria": "Un equipo comprometido y con experiencia, evidencia de ventas o tracción real, y un plan claro de dedicación y ejecución."
+            "calificacion": 3,
+            "frase_clave": "Tu compromiso es a tiempo parcial y eres fundador único, eso me prende alerta.",
+            "necesitaria": "Que armaras un equipo sólido y mostrara dedicación completa para manejar el crecimiento y soporte de TutorBot."
           },
           {
             "tiburon_id": "tiburon_estratega",
-            "calificacion": 2,
-            "frase_clave": "sin evidencia de mejora en calificaciones y sin equipo ni patente, la defensa es débil. La valuación de $3,500,000 MXN es alta para un prototipo con solo 30 estudiantes en piloto.",
-            "necesitaria": "Demostrar resultados medibles que justifiquen la suscripción, un plan de escalamiento sólido y barreras competitivas claras."
+            "calificacion": 3,
+            "frase_clave": "Sin barreras claras ni equipo sólido, la valuación de $3,500,000 y la falta de ventas o margen son riesgos.",
+            "necesitaria": "Planes claros para crear barreras de entrada, estrategia para monetizar frente a competencia gratuita y un equipo fuerte."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 2,
-            "frase_clave": "falta patente o innovación clara para proteger la IP; además, el fundador es tiempo parcial y sin equipo. Pido valuación más razonable que $3,500,000 para el riesgo tecnológico y operativo.",
-            "necesitaria": "Un prototipo más robusto con innovación tecnológica demostrable, protección de propiedad intelectual o ventaja competitiva clara, y un equipo dedicado."
+            "frase_clave": "Sin patente ni innovación propia, y sin equipo full time, esto en producción truena.",
+            "necesitaria": "Propiedad intelectual clara o innovación tecnológica propia, además de un equipo dedicado full time para asegurar desarrollo y soporte."
           }
         ],
         "fortalezas": [
-          "Identificaste un problema real y claro en la educación secundaria en México.",
-          "Desarrollaste un prototipo funcional que ya ha sido probado con estudiantes reales.",
-          "El producto usa una plataforma muy popular (WhatsApp), lo que facilita la adopción por los usuarios.",
-          "Modelo de ingresos claro con suscripción y venta a escuelas.",
-          "Visión de escalar primero con escuelas y luego con familias."
+          "El producto se integra en WhatsApp, una plataforma que los estudiantes ya usan, facilitando la adopción.",
+          "El prototipo ya fue probado con éxito inicial, con 22 de 30 estudiantes usando el servicio más de 5 veces.",
+          "El enfoque en el temario oficial de la SEP y la adaptación al nivel del estudiante es un diferenciador relevante."
         ],
         "alertas": [
-          "Sólo hay un fundador que trabaja a tiempo parcial, sin equipo ni experiencia previa en emprendimiento.",
-          "No hay evidencia de mejora en el aprendizaje o calificaciones de los estudiantes.",
-          "No existe protección intelectual ni diferenciadores tecnológicos claros para defenderse de competidores grandes.",
-          "Valuación inicial parece alta sin métricas financieras o comerciales sólidas.",
-          "Riesgo alto de abandono por falta de compromiso total y estructura sólida."
+          "Fundador único y trabajando a tiempo parcial, lo que limita la capacidad para escalar y dar soporte.",
+          "No existe protección de propiedad intelectual ni innovación tecnológica clara para defender el producto.",
+          "Falta de estrategia clara para convencer a familias de pagar frente a alternativas gratuitas y sin ventas o métricas de crecimiento."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el compromiso real y plan para dedicarte tiempo completo y armar equipo?",
-          "¿Cómo vas a defender el mercado ante apps grandes que podrían copiar la idea gratis?",
-          "¿Tienes evidencia de que el uso de TutorBot mejora las calificaciones de los estudiantes?",
-          "¿Cómo manejarás ejercicios fuera del temario o intentos de trampa para mantener la calidad?",
-          "¿Qué innovación tecnológica tiene tu IA para evitar ser fácilmente copiada?",
-          "¿Cuáles son tus ventas y margen bruto actuales?"
+          "¿Cómo planeas armar un equipo sólido y aumentar tu dedicación para el rápido crecimiento?",
+          "¿Qué barreras de entrada concretas tienes para defender el mercado frente a competencia gratuita?",
+          "¿Qué evidencia tienes o cómo medirás si los estudiantes mejoran sus calificaciones usando TutorBot?"
         ],
         "siguientes_pasos": [
-          "Formalizar un compromiso de dedicación tiempo completo al proyecto para aumentar confianza en inversores.",
-          "Buscar y reclutar un equipo con experiencia para desarrollo y pruebas más sólidas.",
-          "Realizar estudios piloto que midan y demuestren mejora en calificaciones y aprendizaje para validar el modelo de negocio."
+          "Formar un equipo comprometido que permita dedicar tiempo completo y soporte al proyecto.",
+          "Desarrollar métricas y estudios para validar la mejora en el desempeño académico de los usuarios.",
+          "Diseñar una estrategia clara para acercarse a escuelas y familias, incluyendo barreras de entrada y generación de ingresos sostenibles."
         ],
         "resultado": "TRATO",
         "condiciones": {
           "monto_mxn": 200000.0,
-          "porcentaje": 15.0,
-          "origen": "tiburon_tecnologico"
+          "porcentaje": 20.0,
+          "origen": "tiburon_mentor"
         },
         "valuacion_mxn": 3500000.0,
         "votos_primera_votacion": {
-          "tiburon_mentor": "salir",
+          "tiburon_mentor": "contraoferta",
           "tiburon_estratega": "contraoferta",
           "tiburon_tecnologico": "contraoferta"
         },
@@ -412,8 +405,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 21.3,
-    "segundos_total": 18.8,
+    "segundos_modelo": 17.7,
+    "segundos_total": 15.4,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,

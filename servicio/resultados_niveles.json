@@ -8,7 +8,7 @@
     "votos": [
       [
         "financiero",
-        "salir"
+        "contraoferta"
       ],
       [
         "estratega",
@@ -19,18 +19,18 @@
         "invertir"
       ]
     ],
-    "palabras_por_pregunta": 22.3,
-    "preguntas_con_tecnicismos": 2,
+    "palabras_por_pregunta": 21.9,
+    "preguntas_con_tecnicismos": 3,
     "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. ¿Cuánto les cuesta traer un cliente que pague el medidor y la suscripción mensual?",
-      "Soy Estela Marín, tiburón estratega. ¿Qué barreras naturales o tecnológicas tienen para defenderse de competidores que quieran copiar su medidor con IA?",
-      "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿cómo funciona el algoritmo de IA para detectar consumo excesivo y qué tan único es ese prototipo?",
-      "¿Qué harían si un competidor grande lanza un medidor similar con mejor distribución para defender y escalar su posición en Nuevo León?",
-      "¿Qué harían si un usuario manipula el medidor o el algoritmo para falsear el consumo y evadir pagos o recomendaciones?",
-      "¿Qué harían si el margen bruto baja a 25% por aumento en costos y cómo ajustarían el flujo para que no les truene la operación?",
-      "¿Qué innovaciones tecnológicas planean para que su prototipo siga único y no lo repliquen fácil con IA abierta o hardware genérico?",
-      "¿Qué evidencia tienen de que los usuarios realmente pagarán la suscripción después de comprar el medidor, sin afectar su margen esperado?",
-      "¿Qué historias reales tienen de usuarios que hayan cambiado su consumo y así validar que EcoTrack puede escalar en Nuevo León a largo plazo?"
+      "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo ha sido la experiencia de recuperar la inversión inicial en clientes y qué costos directos han identificado para mantener esos márgenes?",
+      "Soy Estela Marín, tiburón estratega. ¿Cómo planean defender su ventaja con IA ante competidores grandes que pueden escalar rápido en Nuevo León y más allá?",
+      "Soy Teo Navarro, tiburón tecnológico. A ver, cuéntame cómo nació el prototipo con IA y qué parte del algoritmo crees que es tu mayor innovación.",
+      "Cuéntame cómo un cliente tipo usa EcoTrack el primer mes para entender y defender su ahorro frente al mercado energético local.",
+      "¿Cómo mejorará el prototipo actual el algoritmo para que los usuarios sientan el impacto tecnológico en su ahorro diario?",
+      "Cuéntame, ¿cómo logra un cliente promedio justificar el gasto del medidor y la suscripción con el ahorro que percibe cada mes?",
+      "¿Qué mejoras tecnológicas específicas buscas desarrollar con esta inversión para acelerar la evolución del prototipo y su algoritmo?",
+      "¿Qué impacto esperas que tenga esta inversión en el flujo de caja y en la reducción del costo para adquirir cada cliente?",
+      "¿Qué visión tienes para escalar EcoTrack en otros mercados y cómo piensas defender la ventaja frente a competidores grandes?"
     ]
   },
   {
@@ -42,7 +42,7 @@
     "votos": [
       [
         "financiero",
-        "salir"
+        "contraoferta"
       ],
       [
         "estratega",
@@ -53,18 +53,52 @@
         "invertir"
       ]
     ],
-    "palabras_por_pregunta": 23.1,
+    "palabras_por_pregunta": 22.1,
+    "preguntas_con_tecnicismos": 1,
+    "preguntas": [
+      "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo calculan el costo para adquirir cada cliente y cuánto tiempo tarda en recuperar esa inversión?",
+      "Soy Estela Marín, tiburón estratega. ¿Cómo planean defender su ventaja frente a medidores genéricos y apps eléctricas para escalar en Nuevo León y otros mercados?",
+      "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿cómo funciona el algoritmo de IA en tu prototipo para detectar y recomendar ahorros sin instalación profesional?",
+      "¿Qué experiencia vive un cliente la primera vez que recibe una recomendación de ahorro personalizada para defender tu ventaja en el mercado?",
+      "¿Qué feedback técnico te han dado los usuarios sobre el prototipo y cómo planeas iterar el algoritmo para mejorar la experiencia?",
+      "¿Qué experiencia tiene un cliente típico al decidir comprar el medidor y cuánto tiempo tarda en dar su primer pago que cubra ese costo?",
+      "¿Qué innovación tecnológica o mejora en el prototipo te emociona más desarrollar con esta inversión y por qué?",
+      "¿Qué mejora concreta en márgenes o flujo buscas con esta inversión para que la valuación propuesta tenga sentido real?",
+      "Querido, ¿cómo imaginas que esta inversión te ayudará a fortalecer la marca y crear barreras para defender tu mercado en 5 años?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "medio",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "contraoferta"
+      ],
+      [
+        "estratega",
+        "contraoferta"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ]
+    ],
+    "palabras_por_pregunta": 40.7,
     "preguntas_con_tecnicismos": 3,
     "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo justifican la valuación de 3 millones si solo tienen 50 mil en preventas y ventas de 180 mil al año?",
-      "Soy Estela Marín, tiburón estratega. ¿Cómo planean defender su tecnología frente a medidores genéricos y apps de las compañías en un mercado tan competido?",
-      "Soy Teo Navarro, tiburón tecnológico. Cuéntame, ¿cómo desarrollaron el algoritmo de IA que detecta consumo excesivo sin instalación profesional en su prototipo?",
-      "Si un competidor grande lanza un medidor con IA similar y bajo precio, ¿cómo defenderán su espacio en el mercado local a 5 años?",
-      "Si un usuario intenta manipular el medidor o el algoritmo para falsear datos y pagar menos, ¿cómo protege su prototipo y software esa integridad?",
-      "Si un cliente deja de pagar la suscripción mensual, ¿cómo impacta eso en sus márgenes y flujo para mantener el negocio rentable?",
-      "¿Qué innovación o patente planean para el algoritmo que les dé ventaja duradera frente a clones o mejoras de la competencia?",
-      "¿Qué experiencia tuvieron para saber si el costo de adquisición de cada cliente justifica la inversión que piden?",
-      "Me dices que la relación cercana y la marca serán clave para defender el mercado, pero ¿qué barreras concretas crees que impedirán que grandes competidores escalen aquí?"
+      "Soy Ramiro Cifuentes, tiburón financiero. Dices que tienes 500 usuarios beta y $50,000 en preventas, ¿cuánto te costó atraer cada uno? Necesito ese costo de adquisición para ver si el negocio aguanta los $1,200 de venta y los $99 mensuales con tu margen del 38%.",
+      "Soy Estela Marín, tiburón estratega. Me dices que tu mercado objetivo es Nuevo León con recibos mayores a $2,500 bimestrales, pero no me dices cuántos hogares y negocios cumplen ese criterio para entender si puedes escalar y defender mercado.",
+      "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: me dices que usan IA para detectar consumo excesivo, ¿tienen ya un prototipo funcional con algoritmo propio o están usando alguna solución de terceros? ¿Hay patente o plan para proteger esa innovación?",
+      "Parto de que tu mercado es hogares y negocios en Nuevo León con recibos mayores a $2,500 MXN bimestrales. ¿Qué haces si una competencia grande lanza un medidor con IA y opciones gratis? ¿Cómo defiendes y escalas tu mercado frente a eso?",
+      "Si un usuario reporta que el medidor conectado falla y no detecta bien el consumo, ¿qué protocolo técnico tienen para actualizar el algoritmo o corregir errores sin afectar a toda la base? ¿Ya probaron esa resiliencia en el prototipo?",
+      "Con margen bruto del 38 % y gasto mensual de 25,000 MXN, ¿qué pasa si las ventas bajan 30 % un trimestre? ¿Cómo cubren gastos y mantienen flujo sin que se les coma la valuación de 3 millones?",
+      "Partiendo del prototipo funcional con algoritmo propio, ¿qué tan avanzado está el desarrollo para que el medidor pueda escalar en tiempo real a miles de usuarios sin que el algoritmo pierda precisión o se vuelva lento?",
+      "Dices que las preventas son $50,000 con 500 usuarios beta, pero no me dices el margen neto después de gastos directos por unidad vendida; ¿qué margen neto exacto tienes por medidor y suscripción para que no te coma el flujo?",
+      "Me dices que usas IA para personalizar sin instalación profesional, pero no me dices cómo piensan crear barreras de entrada tecnológicas o legales para defender esa ventaja de competidores grandes que podrían copiarla rápido. ¿Qué estrategia concreta tienen para proteger ese diferenciador y escalar mercado?"
     ]
   },
   {
@@ -87,52 +121,52 @@
         "contraoferta"
       ]
     ],
-    "palabras_por_pregunta": 35.3,
-    "preguntas_con_tecnicismos": 4,
-    "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. Dices $180,000 en ventas anuales con margen de 38%, ¿cuánto te cuesta captar cada cliente si tienes 500 usuarios beta? Los números no tienen sentimientos, pero aquí falta ese dato.",
-      "Soy Estela Marín, tiburón estratega. Con 500 usuarios beta y $180,000 en ventas, ¿qué barreras tienes para defender tu medidor con IA frente a medidores genéricos y apps eléctricas y así escalar en Nuevo León sin perder mercado?",
-      "Soy Teo Navarro, tiburón tecnológico. En tu pitch mencionas IA para recomendaciones personalizadas, ¿ya tienes un prototipo del algoritmo y cómo planeas proteger la innovación para evitar que la competencia clone tu tecnología?",
-      "Pensemos tres jugadas adelante: si una app de una compañía eléctrica mejora su IA y ofrece recomendaciones gratis, ¿cómo defenderás y escalarás EcoTrack en Nuevo León sin perder mercado ni bajar precios, considerando tus $180,000 en ventas?",
-      "Si un cliente reporta que el medidor desconecta o falla en detectar picos de consumo en hogares con aparatos altamente variables, ¿qué plan tienen para ajustar rápido el algoritmo y evitar perder confianza en el prototipo?",
-      "Si uno de tus clientes con recibo mayor a $2,500 MXN cancela la suscripción mensual de $99 MXN pero sigue usando el medidor, ¿cómo impacta eso en tus márgenes y flujo? No me dices ese dato.",
-      "En tu pitch y respuestas, dices que la marca está registrada pero solo están evaluando patentar el software; ¿cómo vas a blindar el algoritmo para evitar que competidores con IA similar lo repliquen fácilmente, si no hay patente aún?",
-      "Dices $25,000 MXN de gasto mensual, pero ¿qué parte exacta de eso es gasto variable ligado a clientes activos? Sin ese dato no veo si el margen 38% aguanta la expansión.",
-      "Me dices $180,000 en ventas y 500 usuarios beta, pero ¿qué evidencia tienes de que esos usuarios pagarán la suscripción premium a largo plazo para defender tu margen y escalar sin perder mercado?"
-    ]
-  },
-  {
-    "negocio": "EcoTrack",
-    "nivel": "medio",
-    "estado": "terminada",
-    "error": null,
-    "resultado": "TRATO",
-    "votos": [
-      [
-        "financiero",
-        "contraoferta"
-      ],
-      [
-        "estratega",
-        "contraoferta"
-      ],
-      [
-        "tecnologico",
-        "contraoferta"
-      ]
-    ],
-    "palabras_por_pregunta": 39.4,
+    "palabras_por_pregunta": 37.0,
     "preguntas_con_tecnicismos": 2,
     "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. Me dices $50,000 en preventas con 500 usuarios beta, ¿cuánto te cuesta adquirir cada cliente y cuánto gastas en marketing mensual dentro del gasto de $25,000? Los números no salen sin ese dato.",
-      "Soy Estela Marín, tiburón estratega. Me dices que vendes el medidor a $1,200 y tienes 500 usuarios beta, pero no veo cómo planeas defender tu ventaja contra medidores genéricos y apps eléctricas para escalar en Nuevo León, ¿qué barreras tienes para proteger tu mercado?",
-      "Soy Teo Navarro, tiburón tecnológico. Me dices que tu medidor usa IA para recomendaciones personalizadas (P0), ¿qué tipo de algoritmo usan y tienen ya un prototipo validado que garantice precisión y valor diferencial frente a medidores genéricos?",
-      "Si un competidor genérico lanza un medidor con IA similar y más barato, ¿cómo defenderás tu mercado y evitarás que erosionen tu ventaja y escala en Nuevo León, considerando que tu barrera actual es solo la personalización sin instalación?",
-      "Si un usuario manipula el medidor o el flujo eléctrico para engañar al algoritmo de IA (P0), ¿qué mecanismos tecnológicos tienen para detectar y corregir esa trampa sin que se pierda precisión o valor diferencial?",
-      "Con venta del medidor a $1,200 y margen 38 %, si un lote de medidores sale defectuoso y hay que reponerlos sin costo, ¿cuánto te costaría esa reposición y cómo impacta eso tu margen y flujo actual sin decirme ese costo exacto?",
-      "Me dices que tienes marca registrada, pero no mencionas patente sobre el medidor ni el algoritmo de IA (P0). ¿Tienen protección exclusiva para evitar que un competidor copie su tecnología disruptiva?",
-      "El pitch dice venta de medidores y suscripción, pero solo informas ventas totales y margen bruto global, ¿cuál es el margen bruto específico de la suscripción mensual? Sin ese dato, no veo cómo sacar la cuenta real de flujo.",
-      "Me dices que tu mercado objetivo son hogares y pequeños negocios en Nuevo León con recibos mayores a $2,500 (P0), pero no veo cómo planean escalar más allá de esos clientes dados los costos y competencia, ¿qué estrategia concreta tienen para ampliar y defender ese mercado restringido a largo plazo?"
+      "Soy Ramiro Cifuentes, tiburón financiero. Con $25,000 mensuales y venta de $180,000 anuales, ¿cuánto les cuesta adquirir cada cliente activo que paga 99 pesos de suscripción mensual? A ver, saquemos la cuenta.",
+      "Soy Estela Marín, tiburón estratega. Me dices que tu mercado objetivo son hogares y pequeños negocios de Nuevo León con recibos mayores a $2,500 bimestrales, pero no me dices cuántos clientes potenciales hay; ¿cuántos usuarios a ese perfil puedes escalar en 5 años para defender tu mercado?",
+      "Soy Teo Navarro, tiburón tecnológico. Me dices que usas IA para detectar consumo excesivo, pero no mencionaste si tienen patente o protección intelectual del algoritmo. ¿Cómo protegen esa innovación para evitar que la copien?",
+      "Con 500 usuarios beta y $50,000 en preventas, ¿qué harías si un competidor grande lanza un medidor con IA similar a menor precio? ¿Cómo defenderías tu mercado y tu ventaja en Nuevo León para escalar a 5 años?",
+      "Si el medidor con IA detecta un consumo excesivo erróneo por fallas en sensores o algoritmo, ¿cómo protege y actualiza el prototipo para evitar que esos falsos positivos dañen la experiencia y confianza del cliente?",
+      "Con margen bruto al 38 % y gasto mensual fijo de 25,000 pesos, ¿qué pasa con tu flujo si el costo de adquisición de clientes sube un 20 %? ¿Puedes sostener márgenes y seguir cubriendo gastos sin perder dinero?",
+      "Me dices que el medidor no requiere instalación profesional, pero ¿cómo aseguran la correcta calibración y precisión del prototipo en distintos hogares y negocios sin intervención técnica? Eso en producción truena.",
+      "Con $50,000 en preventas y 500 usuarios beta, ¿cuál es el margen neto que dejan esas ventas? Porque con 38% de margen bruto y $25,000 mensuales de gasto, no me dices si ese ingreso cubre costos y deja flujo positivo.",
+      "Me dices que la venta del medidor es clave, pero no mencionas el costo de producción ni barreras para que copien tu hardware; ¿cómo defiendes tu ventaja en el medidor frente a competidores que podrían replicarlo barato?"
+    ]
+  },
+  {
+    "negocio": "EcoTrack",
+    "nivel": "dificil",
+    "estado": "terminada",
+    "error": null,
+    "resultado": "TRATO",
+    "votos": [
+      [
+        "financiero",
+        "salir"
+      ],
+      [
+        "estratega",
+        "contraoferta"
+      ],
+      [
+        "tecnologico",
+        "contraoferta"
+      ]
+    ],
+    "palabras_por_pregunta": 40.7,
+    "preguntas_con_tecnicismos": 7,
+    "preguntas": [
+      "Soy Ramiro Cifuentes, tiburón financiero. ¿Cuál es el costo exacto de adquisición de clientes para llegar a estos 500 usuarios beta y cómo se compara con el margen bruto del 38% que reportan?",
+      "Soy Estela Marín, tiburón estratega. ¿Cuál es el tamaño exacto del mercado objetivo en Nuevo León y cómo planean defender su ventaja frente a apps gratuitas de compañías eléctricas para escalar a otros estados en 5 años?",
+      "Soy Teo Navarro, tiburón tecnológico. ¿Me puedes explicar con detalle el algoritmo que usa la IA para detectar consumo excesivo, si tienen prototipo funcional y si han protegido esa innovación con patente o algún otro mecanismo de propiedad intelectual?",
+      "Si una app gratuita de compañías eléctricas mejora sus recomendaciones personalizadas y elimina la ventaja de no requerir instalación profesional, ¿cómo piensan defender la ventaja competitiva para escalar y no perder mercado en 5 años? Dame cifras exactas de barreras de entrada o contratos que aseguren esa defensa.",
+      "Si un competidor copia el algoritmo de IA sin patente y lanza un medidor similar, ¿qué mecanismos técnicos o legales tienen para proteger su ventaja? Dame cifras de inversión en protección o desarrollo para blindar su propiedad intelectual.",
+      "Si un cliente cancela la suscripción premium después de comprar el medidor, ¿cuál es el margen real que queda para ese usuario? Dame la cifra exacta del flujo neto mensual considerando ese escenario.",
+      "Me dices que el prototipo funciona con IA, pero sin patente ni protección del código, ¿cómo vas a evitar que un competidor clone tu algoritmo y tire tu ventaja tecnológica? Dame cifras exactas de inversión en desarrollo seguro o mecanismos técnicos para blindar la innovación.",
+      "Me dices 500 usuarios beta y $50,000 MXN en preventas, pero ventas en 12 meses por $180,000 MXN. ¿Cuál es el flujo neto mensual promedio real descontando gastos y costos para esos usuarios? No me dices ese dato clave para validar valuación y escalabilidad.",
+      "Me dices que planean escalar a otros estados con un modelo similar sin contratos ni barreras claras; ¿puedes darme la cifra exacta del tamaño de mercado total en México que pueden capturar y cómo planean defender esa cuota frente a competidores gratuitos que mejoren su oferta en 5 años?"
     ]
   },
   {
@@ -148,11 +182,11 @@
       ],
       [
         "estratega",
-        "contraoferta"
+        "salir"
       ],
       [
         "tecnologico",
-        "salir"
+        "contraoferta"
       ],
       [
         "financiero",
@@ -167,64 +201,18 @@
         "salir"
       ]
     ],
-    "palabras_por_pregunta": 47.4,
-    "preguntas_con_tecnicismos": 8,
+    "palabras_por_pregunta": 45.3,
+    "preguntas_con_tecnicismos": 3,
     "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. Me dices ventas anuales de 180 mil y 500 usuarios beta; ¿cuál es el costo de adquisición por cliente exacto y cómo impacta el margen bruto del 38 % en el flujo operativo con tus gastos mensuales de 25 mil? Los números no tienen sentimientos, quiero verlos claros.",
-      "Soy Estela Marín, tiburón estratega. ¿Cuál es el tamaño exacto y segmentado del mercado de hogares y pequeños negocios en Nuevo León con recibos de luz mayores a 2,500 MXN, y cómo planean escalar sin que la competencia genérica ni las apps oficiales les den jaque en ese mercado?",
-      "Soy Teo Navarro, tiburón tecnológico. ¿Me puedes mostrar el algoritmo o prototipo de IA que usan y explicarme si tienen alguna patente o propiedad intelectual que proteja esta innovación frente a la competencia genérica y apps oficiales? No me dices nada concreto sobre eso.",
-      "Si un competidor grande lanza un medidor con IA gratis o a menor precio, ¿cómo defenderán su ventaja y escalarán sin perder mercado? Dame cifras claras de inversión en marketing y desarrollo para mantener su posición en 5 años.",
-      "Si un competidor hackea su medidor o clona su algoritmo de IA, ¿qué medidas técnicas y legales tienen ya implementadas para proteger su prototipo y evitar fugas de propiedad intelectual? Dame la cifra exacta que han invertido en seguridad y defensa legal hasta ahora.",
-      "Si uno de sus medidores falla y deben reemplazarlo sin costo, ¿cuánto les costaría ese reemplazo y cómo impactaría eso su margen bruto del 38 % y flujo con gastos fijos de 25,000 mensuales? No me dices ese costo y sin eso eso no cabe en mi hoja de cálculo.",
-      "¿Qué evidencia concreta tienen del rendimiento real del algoritmo de IA en campo con los 500 usuarios beta? ¿Me pueden mostrar métricas técnicas de detección de consumo excesivo, precisión y mejoras sobre medidores genéricos? Sin datos duros, su prototipo es solo teoría, eso en producción truena.",
-      "Me dices ventas de 180,000 MXN y gasto fijo mensual de 25,000 MXN, pero no me das flujo neto ni EBITDA. ¿Cuál es el flujo operativo anual exacto considerando margen bruto del 38 % y gastos fijos? Sin ese flujo, no veo cómo justificas la valuación de 3 millones.",
-      "Me dices que planean escalar con IA personalizada y sin instalación, pero no tienes datos claros del tamaño exacto del mercado ni inversión definida para defenderlo. ¿Cómo planean construir barreras de entrada sostenibles en 5 años sin esos números, cuando la competencia genérica y apps oficiales pueden entrar con fuerza? Necesito cifras concretas."
-    ]
-  },
-  {
-    "negocio": "EcoTrack",
-    "nivel": "dificil",
-    "estado": "terminada",
-    "error": null,
-    "resultado": "SIN_TRATO",
-    "votos": [
-      [
-        "financiero",
-        "salir"
-      ],
-      [
-        "estratega",
-        "contraoferta"
-      ],
-      [
-        "tecnologico",
-        "salir"
-      ],
-      [
-        "financiero",
-        "salir"
-      ],
-      [
-        "estratega",
-        "salir"
-      ],
-      [
-        "tecnologico",
-        "salir"
-      ]
-    ],
-    "palabras_por_pregunta": 45.7,
-    "preguntas_con_tecnicismos": 5,
-    "preguntas": [
-      "Soy Ramiro Cifuentes, tiburón financiero. Me dices 500 usuarios beta y 50 mil pesos en preventas, pero no me dices el costo de adquisición por cliente. ¿Cuánto gastaron exactamente para conseguir esos 500 usuarios y cómo calculas que el CAC no va a devorar tu margen bruto del 38%?",
-      "Soy Estela Marín, tiburón estratega. ¿Cuál es el tamaño exacto del mercado en Nuevo León con recibos mayores a $2,500 bimestrales y cómo piensan escalar para defenderse ante medidores genéricos y apps eléctricas que ya tienen presencia ahí?",
-      "Soy Teo Navarro, tiburón tecnológico. Me dices que usas IA para detectar consumo excesivo y dar recomendaciones personalizadas, pero no mencionas si tienen algún algoritmo patentado o en proceso. ¿Tienen protección de propiedad intelectual sobre su software o su prototipo para evitar que un competidor copie su innovación?",
-      "Si un competidor con mayor presupuesto lanza gratis un medidor con IA similar, ¿cómo planean defender su cuota de mercado y escalar sin una patente ni barreras claras? Dame cifras o escenarios concretos para los próximos 3 a 5 años que respalden esa estrategia.",
-      "¿Qué pasa si un hacker o competidor logra replicar su algoritmo de IA y lo integra a un medidor genérico? ¿Tienen un prototipo con seguridad integrada o algún mecanismo tecnológico para proteger su software y evitar esa brecha? Dame datos claros de inversión en ciberseguridad o desarrollo para blindar su IP.",
-      "Si un cliente promedio paga 1,200 MXN por el medidor y 99 MXN mensuales, ¿qué margen neto proyectan por cliente al año considerando CAC, churn y gastos fijos? No me dices esos cálculos clave para validar valuación y flujo.",
-      "Me dices que están evaluando patentar y blindar su algoritmo, pero sin un prototipo robusto y sin inversión clara en ciberseguridad, ¿qué avances tecnológicos concretos tienen hoy para proteger su IP? Dame cifras exactas de inversión en desarrollo seguro y etapas del prototipo que garanticen que no les van a clonar el algoritmo mañana.",
-      "Me dices $180,000 en ventas y $25,000 mensuales en gastos, ¿cuánto flujo neto operativo generan anualmente? Sin ese dato y el CAC exacto, esa valuación de $3 millones no tiene soporte. ¿Puedes darme ese flujo neto y el CAC preciso para justificar la valuación?",
-      "Me dices que escalarán destacando su IA sin patente ni barreras; ¿qué proyección numérica tienen sobre cuota de mercado y crecimiento en 5 años que justifique defenderse ante competidores con más recursos y medidores gratis? No me digas planes, dame cifras y escenarios concretos."
+      "Soy Ramiro Cifuentes, tiburón financiero. Me dices que tienes 500 usuarios beta y $50,000 en preventas, pero ¿cuánto te costó adquirir cada usuario? Necesito el costo de adquisición por cliente exacto para ver si el margen del 38% aguanta esa inversión.",
+      "Soy Estela Marín, tiburón estratega. Me dices que tu mercado objetivo son hogares y pequeños negocios con recibos mayores a $2,500 bimestrales en Nuevo León, pero ¿cuántos clientes potenciales exactos hay en ese segmento y cómo planeas escalar más allá de ese nicho limitado para defender tu crecimiento a 5 años?",
+      "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿qué algoritmo de IA usan para detectar consumo excesivo y cómo están protegiendo esa innovación? ¿Tienen algún prototipo validado técnicamente o patente en trámite para evitar que un medidor genérico copie su diferencial tecnológico?",
+      "Si un competidor grande con marca fuerte lanza un medidor con IA y distribución masiva dentro de 2 años, ¿cómo planean defender su mercado y qué barreras de entrada específicas han construido para escalar y proteger su ventaja a largo plazo? Dame cifras o datos concretos que respalden esa estrategia.",
+      "Si un usuario manipula el medidor para falsear datos y engañar al algoritmo de IA, ¿qué mecanismos tecnológicos tienen para detectar y corregir esa trampa? Dame cifras de pruebas o validaciones que respalden la robustez de su prototipo ante estas vulnerabilidades.",
+      "Si un cliente cancela la suscripción mensual después de comprar el medidor, ¿cómo afecta eso a tu flujo y margen? Dame cifras exactas de cuántos clientes han cancelado y cómo impacta eso en tu valuación implícita de 3 millones.",
+      "Me dices que planean patentar la tecnología para proteger su diferencial, pero no tienen ni patente en trámite ni datos de prototipos robustos contra manipulación. ¿Cuándo y cómo exacto piensan levantar esa patente y con qué evidencia técnica real respaldan la innovación para que no los aplaste un medidor genérico con IA?",
+      "Dices ventas por 180,000 en 12 meses y margen 38%, eso da utilidad bruta de 68,400. ¿Cuánto gasto llevas en adquisición de clientes en ese periodo? Sin ese dato, no me cuadran el margen y la valuación implícita de 3 millones.",
+      "Me dices que planean escalar a otros estados y segmentos, pero sin un número exacto de clientes potenciales ni barreras claras para defenderse, ¿qué proyecciones concretas de crecimiento y participación de mercado tienen para los próximos 5 años y cómo planean defender esa expansión ante competidores con más recursos?"
     ]
   }
 ]

@@ -83,6 +83,15 @@ ANGULOS = {
 }
 
 
+# En Fácil también cambia el ángulo en cada ronda, pero sin poner a prueba ni discrepar: es para principiantes.
+ANGULOS_FACIL = {
+    1: "ÁNGULO DE ESTA RONDA: algo de la historia o de cómo funciona ESTE negocio que te dé curiosidad desde tu especialidad.",
+    2: "ÁNGULO DE ESTA RONDA: una situación sencilla y cotidiana de ESTE negocio, preguntada con amabilidad, para que lo "
+       "imagine (por ejemplo, cómo vive un cliente su primer día). Sin trampas ni catástrofes.",
+    3: "ÁNGULO DE ESTA RONDA: lo que le gustaría lograr o mejorar con ESTE negocio y cómo le ayudaría la inversión.",
+}
+
+
 def preguntas_hechas(estado) -> str:
     return "\n".join(f"- {nombre(x['emisor'])}: {x['texto']}" for x in estado.get("historial", []) if x["tipo"] == "PREGUNTA") or "(ninguna)"
 
@@ -99,7 +108,8 @@ NIVELES = {
                     "escalabilidad o propiedad intelectual. No hagas preguntas de dos partes.",
         "voto": "Calibra tu voto con generosidad: invierte si el negocio resuelve un problema real y el emprendedor "
                 "contestó con claridad, aunque falten datos o la oferta sea algo cara. Usa contraoferta (cercana a lo que "
-                "pide) solo si las condiciones son claramente desproporcionadas, y salir solo si no hay un negocio.",
+                "pide) solo si las condiciones son claramente desproporcionadas, y salir solo si no hay un negocio. Que falte un detalle o "
+                "que no tenga resuelta una situación hipotética NUNCA es motivo para salir en este nivel: ahí invierte o contraoferta.",
     },
     "medio": {
         "tono": " Estás en el nivel MEDIO: eres un inversionista razonable. Que se te reconozca por TU forma de ser: usa "
@@ -212,8 +222,8 @@ def construir_grafo(checkpointer=None):
             "PROHIBIDO volver a un tema que ya se preguntó, aunque lo reformules o lo haya preguntado otro tiburón (si ya se habló "
             "del algoritmo, de las patentes, de los márgenes o de cualquier otro tema, elige uno distinto). Nada de preguntas "
             "genéricas que servirían para cualquier empresa: menciona algo específico de este producto, su cliente o su lugar.\n\n"
-            f"Vas en la ronda {r} de {MAX_RONDAS}. {ANGULOS[r]} {NIVELES[ses.nivel]['pregunta']} "
-            f"La situación o la duda tiene que ser de TU especialidad ({TIBURONES[tid]['criterio']}) y la pregunta debe usar el "
+            f"Vas en la ronda {r} de {MAX_RONDAS}. {(ANGULOS_FACIL if ses.nivel == 'facil' else ANGULOS)[r]} {NIVELES[ses.nivel]['pregunta']} "
+            f"El tema tiene que ser de TU especialidad ({TIBURONES[tid]['criterio']}) y la pregunta debe usar el "
             "vocabulario de tu especialidad, de modo que cualquiera sepa quién la hizo sin ver tu nombre. Otro tiburón con otro criterio "
             "no debería poder hacer esta misma pregunta. "
             f"Que se note que eres tú y no otro tiburón. {TIBURONES[tid]['estilo']} No te presentes: de eso se encarga el programa."))

@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. ¿Cuánto les cuesta traer un cliente que pague el medidor y la suscripción mensual?",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo ha sido la experiencia de recuperar la inversión inicial en clientes y qué costos directos han identificado para mantener esos márgenes?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no sabemos el costo exacto de adquisición por cliente. Para calcularlo, analizaremos nuestros gastos en marketing y ventas respecto a los usuarios adquiridos en futuros reportes, así como la tasa de conversión de prospectos a clientes pagos.",
+      "texto": "Gracias por la pregunta, Ramiro. Actualmente, hemos vendido medidores por $180,000 MXN en 12 meses, con un margen bruto del 38%. Esto indica que estamos recuperando parte de la inversión en producto. Los costos directos principales son fabricación y soporte del medidor. Para mejorar márgenes, planeamos optimizar producción y ampliar suscripciones premium.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. ¿Qué barreras naturales o tecnológicas tienen para defenderse de competidores que quieran copiar su medidor con IA?",
+      "texto": "Soy Estela Marín, tiburón estratega. ¿Cómo planean defender su ventaja con IA ante competidores grandes que pueden escalar rápido en Nuevo León y más allá?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra principal barrera es la marca registrada, que protege nuestra identidad comercial. Además, el diferencial está en nuestras recomendaciones personalizadas con IA y la facilidad de uso sin instalación profesional, lo que crea una experiencia única y difícil de replicar fácilmente por competidores genéricos.",
+      "texto": "Nuestra ventaja radica en la personalización con IA sin necesidad de instalación profesional, algo que competidores genéricos no ofrecen. Además, nuestro enfoque en hogares y pequeños negocios con recibos altos nos permite ajustar recomendaciones específicas. Para defenderla, invertiremos en mejorar continuamente nuestro algoritmo y experiencia de usuario, manteniendo la marca y la relación cercana con clientes.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿cómo funciona el algoritmo de IA para detectar consumo excesivo y qué tan único es ese prototipo?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. A ver, cuéntame cómo nació el prototipo con IA y qué parte del algoritmo crees que es tu mayor innovación.",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro algoritmo de IA analiza patrones históricos de consumo para identificar picos y anomalías que indican gasto excesivo. Se adapta a cada usuario para brindar recomendaciones personalizadas. El prototipo es único por su integración directa sin necesidad de instalación profesional, lo que facilita su uso y lo diferencia de medidores genéricos y apps convencionales.",
+      "texto": "Nuestro prototipo con IA nació para dar soluciones reales a hogares y negocios que no entienden sus altos recibos de luz. La mayor innovación de nuestro algoritmo es su capacidad para identificar patrones de consumo específicos sin instalación profesional, permitiendo recomendaciones personalizadas y en tiempo real para ahorrar energía y costos.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, claro que es clave saber el CAC para validar el modelo. Sin ese dato, la escalabilidad y rentabilidad están en el aire. Eso en producción truena si no ajustan rápido. ¡Órale, esto me prende para que lo definan ya y sigamos!",
+      "texto": "Ramiro, me late que preguntas justo por la viabilidad financiera, clave para que un startup sobreviva. El margen 38% está bien para un primer año, pero ojo: optimizar producción es vital, porque si no, eso en producción truena rápido. ¡Órale, a darle duro al prototipo!",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Qué harían si un competidor grande lanza un medidor similar con mejor distribución para defender y escalar su posición en Nuevo León?",
+      "texto": "Cuéntame cómo un cliente tipo usa EcoTrack el primer mes para entender y defender su ahorro frente al mercado energético local.",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nos enfocaríamos en fortalecer nuestra propuesta de valor única: recomendaciones personalizadas con IA y la facilidad sin instalación profesional. Además, invertiríamos en marketing para consolidar nuestra marca en Nuevo León y mejorar la experiencia del cliente. También exploraríamos alianzas estratégicas locales para ampliar distribución y fidelizar usuarios, manteniendo nuestra ventaja competitiva frente a grandes competidores.",
+      "texto": "Un cliente tipo instala fácilmente el medidor sin necesidad de profesional. Durante el primer mes, EcoTrack usa IA para analizar su consumo y envía recomendaciones personalizadas para reducir gastos excesivos. Así, puede entender en qué gasta más y defender su ahorro frente a su recibo elevado, ajustando hábitos y optimizando su consumo energético local.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué harían si un usuario manipula el medidor o el algoritmo para falsear el consumo y evadir pagos o recomendaciones?",
+      "texto": "¿Cómo mejorará el prototipo actual el algoritmo para que los usuarios sientan el impacto tecnológico en su ahorro diario?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Implementaríamos mecanismos de seguridad en el medidor para detectar manipulaciones físicas y digitales. Además, el algoritmo cuenta con validaciones cruzadas para identificar patrones de consumo anómalos que sugieran fraude. Si detectamos irregularidades, podemos alertar al usuario o restringir funciones hasta verificar el caso, protegiendo la integridad del sistema y la confianza en EcoTrack.",
+      "texto": "Estamos mejorando el algoritmo para que identifique de forma más precisa y rápida patrones de consumo específicos en cada hogar o negocio, ofreciendo recomendaciones personalizadas en tiempo real. Esto permitirá a los usuarios ver ahorros concretos día a día, aumentando la confianza en la tecnología y el valor de EcoTrack.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Qué harían si el margen bruto baja a 25% por aumento en costos y cómo ajustarían el flujo para que no les truene la operación?",
+      "texto": "Cuéntame, ¿cómo logra un cliente promedio justificar el gasto del medidor y la suscripción con el ahorro que percibe cada mes?",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Reduciríamos costos operativos y optimizaríamos la producción para mantener viabilidad. Ajustaríamos precios o promociones para compensar el margen menor, y priorizaríamos el control estricto del gasto mensual. Además, reforzaríamos el enfoque en la suscripción mensual para generar ingresos recurrentes que estabilicen el flujo de caja y eviten problemas operativos.",
+      "texto": "Un cliente promedio justifica el gasto del medidor y la suscripción al recibir recomendaciones personalizadas que le permiten reducir su consumo excesivo de energía. Aunque aún no tenemos datos precisos de ahorro mensual, nuestro enfoque es que el ahorro en el recibo de luz sea mayor que el costo mensual de la suscripción, recuperando así la inversión inicial en poco tiempo. Estamos trabajando en medir estos ahorros concretos.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estela, coincido contigo en que la competencia fuerte puede apretar. El emprendedor habla bien de diferenciación y alianzas, pero sin cifras de CAC ni flujo para sostener marketing agresivo, eso no cabe en mi hoja de cálculo. Hay que ver números claros para creer en defensa.",
+      "texto": "Estela, me parece crucial que el cliente entienda el ahorro desde el primer mes, porque sin eso no justifican ni medidor ni suscripción. El emprendedor explicó bien el proceso, pero insisto: necesito ver números claros de ahorro para que eso no quede solo en promesa.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué innovaciones tecnológicas planean para que su prototipo siga único y no lo repliquen fácil con IA abierta o hardware genérico?",
+      "texto": "¿Qué mejoras tecnológicas específicas buscas desarrollar con esta inversión para acelerar la evolución del prototipo y su algoritmo?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Planeamos desarrollar algoritmos de IA propios y continuamente optimizados que se adapten mejor al consumo individual. También innovaremos en la integración del hardware con software para mantener la facilidad sin instalación profesional, y fortaleceremos la seguridad del dispositivo para evitar manipulaciones. Esto mantendrá a EcoTrack único frente a soluciones basadas en IA abierta o hardware genérico.",
+      "texto": "Con esta inversión, mejoraremos la precisión y rapidez del algoritmo para detectar patrones de consumo específicos en tiempo real, y desarrollaremos funcionalidades para brindar recomendaciones más personalizadas y efectivas. Además, optimizaremos la conectividad del medidor para facilitar su uso sin instalación profesional, impulsando así la experiencia tecnológica y el ahorro tangible para nuestros usuarios.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Qué evidencia tienen de que los usuarios realmente pagarán la suscripción después de comprar el medidor, sin afectar su margen esperado?",
+      "texto": "¿Qué impacto esperas que tenga esta inversión en el flujo de caja y en la reducción del costo para adquirir cada cliente?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente, tenemos 500 usuarios beta y $50,000 MXN en preventas que incluyen la suscripción mensual. Esto valida que un porcentaje de usuarios está dispuesto a pagar la suscripción después de adquirir el medidor. Seguiremos monitoreando la tasa de conversión y retención para asegurar que la suscripción contribuya positivamente al margen esperado.",
+      "texto": "Aún no contamos con datos específicos sobre el impacto en flujo de caja ni en costo de adquisición por cliente. Para obtenerlos, planeamos implementar métricas de seguimiento y análisis financiero conforme escalamos ventas y marketing, lo que nos permitirá optimizar gastos y mejorar la eficiencia en la captación de clientes.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Qué historias reales tienen de usuarios que hayan cambiado su consumo y así validar que EcoTrack puede escalar en Nuevo León a largo plazo?",
+      "texto": "¿Qué visión tienes para escalar EcoTrack en otros mercados y cómo piensas defender la ventaja frente a competidores grandes?",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Contamos con 500 usuarios beta que nos han dado retroalimentación positiva sobre sus hábitos de consumo y ahorros gracias a nuestras recomendaciones personalizadas. Estas historias de éxito validan que EcoTrack puede influir en el cambio de comportamiento y escalar en Nuevo León, adaptándose a las necesidades reales de hogares y pequeños negocios con altos recibos de luz.",
+      "texto": "Nuestra visión es expandir EcoTrack a mercados con problemas similares de altos recibos de luz, adaptando el algoritmo a condiciones locales. Defenderemos la ventaja con IA personalizada sin instalación profesional y manteniendo una relación cercana con clientes, mejorando continuamente el producto y la experiencia para diferenciarse de competidores grandes que escalan rápido pero con soluciones genéricas.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo: innovar en IA propia y seguridad puede ser clave para defender el mercado. Sin embargo, la marca registrada y la experiencia sin instalación son barreras iniciales que deben consolidar rápido para escalar y blindar su ventaja en 5 años. Pensemos tres jugadas adelante.",
+      "texto": "Teo, coincido contigo. Mejorar la precisión y rapidez del algoritmo es clave para escalar y defender el mercado en 5 años. Sin una tecnología robusta que ofrezca valor real, querido, el océano no perdona y competidores grandes se comen rápido la oportunidad.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,12 +291,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices el costo de adquisición de clientes, y sin ese dato no puedo evaluar la rentabilidad. Con $180,000 de ventas y 38% de margen, la valuación de $3,000,000 parece alta sin flujo ni CAC claros. Los números no tienen sentimientos, pero aquí no cuadran.",
+      "texto": "Los números no tienen sentimientos, pero un margen bruto del 38% con ventas de 180,000 y sin datos claros de ahorro real es arriesgado. El costo de adquisición no está definido, 300,000 por 10% me parece valuación alta para primeras ventas. Contraoferta: $200,000 MXN por el 12 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 12.0
     },
     {
       "n": 25,
@@ -304,7 +304,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado de hogares y pequeños negocios con recibos altos es grande y el producto tiene ventaja diferenciada con IA y sin instalación, defendible con marca y mejoras. Tienen 500 usuarios beta y ventas de $180,000 con margen 38%, claras señales para escalar a 5 años.",
+      "texto": "El mercado de hogares y pequeños negocios en NL con recibos altos es grande y la ventaja de IA sin instalación es defendible. Con 500 usuarios y $180,000 ventas, hay base para escalar. El margen 38% permite mejorar para competir a largo plazo.",
       "estado": "Votando",
       "decision": "invertir",
       "votacion": 1,
@@ -317,7 +317,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Me prende la innovación del algoritmo IA propio y la integración sin instalación profesional, clave para la diferenciación tecnológica. Además, tienen 500 usuarios beta y $180,000 MXN en ventas con margen 38%, lo que demuestra validación inicial y potencial de escalabilidad.",
+      "texto": "Me late la innovación en IA para personalizar ahorros sin instalación, clave para diferenciarse. Tienen 500 usuarios beta y $180,000 MXN en ventas con 38% de margen, base sólida para escalar y mejorar prototipo. ¡Órale, esto me prende!",
       "estado": "Votando",
       "decision": "invertir",
       "votacion": 1,
@@ -326,6 +326,15 @@
     },
     {
       "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $300,000 MXN por el 10 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
       "ronda": 3,
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
@@ -340,53 +349,60 @@
       }
     },
     {
-      "n": 28,
+      "n": 29,
       "ronda": 3,
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Producto innovador que usa IA para recomendaciones personalizadas, lo que agrega valor claro al usuario.; Modelo de negocio validado con 500 usuarios beta y ventas iniciales de $180,000 MXN con margen bruto del 38%.; Equipo con experiencia técnica y comercial dedicados tiempo completo, con roles claros y experiencia en sector energía.. Alertas: Falta de datos claros sobre el costo de adquisición de clientes (CAC), clave para evaluar escalabilidad y rentabilidad.; Valuación de $3,000,000 MXN parece alta dada la incertidumbre en flujo de caja y métricas financieras.; Competencia potencial de grandes jugadores con mejor distribución podría amenazar la posición si no se fortalecen barreras y marca.. Siguientes pasos: Definir y medir con precisión el CAC y tasa de retención para validar la rentabilidad del modelo.; Fortalecer la marca registrada y diseñar alianzas estratégicas para aumentar distribución y fidelizar usuarios en Nuevo León.; Continuar desarrollando y optimizando el algoritmo propio de IA y mejorar la seguridad del hardware para mantener la ventaja tecnológica y evitar fraudes..",
+      "texto": "Fortalezas: Modelo de negocio con producto tangible y suscripción recurrente.; Innovación tecnológica con IA que no requiere instalación profesional.; Validación inicial con 500 usuarios beta y ventas de $180,000 MXN.; Equipo con experiencia en energía y roles bien definidos.; Enfoque claro en mercado objetivo con recibos altos para segmentar oferta.. Alertas: Margen bruto actual del 38% es bajo y requiere optimización urgente.; Falta de datos precisos y medibles sobre ahorro real para usuarios.; Ausencia de métricas claras sobre costo de adquisición y flujo de caja.; Riesgo alto por competencia de grandes empresas con capacidad de escalar rápido.; Valuación de $3,000,000 MXN parece alta para etapa de primeras ventas.. Siguientes pasos: Medir y documentar ahorros concretos y mensuales de los usuarios para validar propuesta de valor.; Implementar métricas financieras para conocer y optimizar el costo de adquisición y flujo de caja.; Priorizar mejoras en producción para aumentar margen bruto y optimizar el producto.; Desarrollar roadmap tecnológico con hitos claros para mejorar algoritmo y experiencia usuario.; Elaborar plan de escalamiento con defensas competitivas ante grandes jugadores.; Comunicar mejor los resultados y métricas en futuras presentaciones a inversionistas..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
-            "calificacion": 2,
-            "frase_clave": "No me dices el costo de adquisición de clientes, y sin ese dato no puedo evaluar la rentabilidad.",
-            "necesitaria": "Necesito datos claros del costo de adquisición de clientes (CAC) y flujo de caja proyectado para evaluar la rentabilidad y sostenibilidad financiera."
+            "calificacion": 3,
+            "frase_clave": "El margen 38% está bien para un primer año, pero ojo: optimizar producción es vital, porque si no, eso en producción truena rápido.",
+            "necesitaria": "Datos claros y medibles sobre el ahorro mensual que justifiquen la inversión del cliente en medidor y suscripción, además de métricas de costo de adquisición y flujo de caja."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 4,
-            "frase_clave": "El mercado de hogares y pequeños negocios con recibos altos es grande y el producto tiene ventaja diferenciada con IA y sin instalación, defendible con marca y mejoras.",
-            "necesitaria": "Quisiera ver un plan claro de consolidación de marca y estrategias para defender la ventaja competitiva frente a grandes jugadores, con métricas de clientes y retención."
+            "frase_clave": "El mercado de hogares y pequeños negocios en NL con recibos altos es grande y la ventaja de IA sin instalación es defendible.",
+            "necesitaria": "Demostrar cómo la ventaja competitiva con IA se mantendrá frente a grandes competidores a largo plazo y un plan claro de escalamiento a otros mercados."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
             "calificacion": 4,
-            "frase_clave": "Me prende la innovación del algoritmo IA propio y la integración sin instalación profesional, clave para la diferenciación tecnológica.",
-            "necesitaria": "Me gustaría ver avances concretos en desarrollo tecnológico propio, seguridad robusta contra manipulaciones y roadmap de innovación continua en IA y hardware."
+            "frase_clave": "Me late la innovación en IA para personalizar ahorros sin instalación, clave para diferenciarse.",
+            "necesitaria": "Mostrar avances concretos en la mejora tecnológica del algoritmo y prototipo para evidenciar impacto real en ahorro diario del usuario."
           }
         ],
         "fortalezas": [
-          "Producto innovador que usa IA para recomendaciones personalizadas, lo que agrega valor claro al usuario.",
-          "Modelo de negocio validado con 500 usuarios beta y ventas iniciales de $180,000 MXN con margen bruto del 38%.",
-          "Equipo con experiencia técnica y comercial dedicados tiempo completo, con roles claros y experiencia en sector energía."
+          "Modelo de negocio con producto tangible y suscripción recurrente.",
+          "Innovación tecnológica con IA que no requiere instalación profesional.",
+          "Validación inicial con 500 usuarios beta y ventas de $180,000 MXN.",
+          "Equipo con experiencia en energía y roles bien definidos.",
+          "Enfoque claro en mercado objetivo con recibos altos para segmentar oferta."
         ],
         "alertas": [
-          "Falta de datos claros sobre el costo de adquisición de clientes (CAC), clave para evaluar escalabilidad y rentabilidad.",
-          "Valuación de $3,000,000 MXN parece alta dada la incertidumbre en flujo de caja y métricas financieras.",
-          "Competencia potencial de grandes jugadores con mejor distribución podría amenazar la posición si no se fortalecen barreras y marca."
+          "Margen bruto actual del 38% es bajo y requiere optimización urgente.",
+          "Falta de datos precisos y medibles sobre ahorro real para usuarios.",
+          "Ausencia de métricas claras sobre costo de adquisición y flujo de caja.",
+          "Riesgo alto por competencia de grandes empresas con capacidad de escalar rápido.",
+          "Valuación de $3,000,000 MXN parece alta para etapa de primeras ventas."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el costo exacto de adquisición de clientes que pagan el medidor y la suscripción?",
-          "¿Cómo ajustarían el flujo y operación si el margen bruto baja a 25%?",
-          "¿Qué evidencia clara tienen de que la suscripción mensual será sostenible y no afectará el margen esperado?"
+          "¿Cuánto es el ahorro mensual promedio que un cliente logra con EcoTrack?",
+          "¿Cuál es el costo de adquisición por cliente y cómo piensan reducirlo?",
+          "¿Qué impacto tendrá la inversión en flujo de caja a mediano plazo?"
         ],
         "siguientes_pasos": [
-          "Definir y medir con precisión el CAC y tasa de retención para validar la rentabilidad del modelo.",
-          "Fortalecer la marca registrada y diseñar alianzas estratégicas para aumentar distribución y fidelizar usuarios en Nuevo León.",
-          "Continuar desarrollando y optimizando el algoritmo propio de IA y mejorar la seguridad del hardware para mantener la ventaja tecnológica y evitar fraudes."
+          "Medir y documentar ahorros concretos y mensuales de los usuarios para validar propuesta de valor.",
+          "Implementar métricas financieras para conocer y optimizar el costo de adquisición y flujo de caja.",
+          "Priorizar mejoras en producción para aumentar margen bruto y optimizar el producto.",
+          "Desarrollar roadmap tecnológico con hitos claros para mejorar algoritmo y experiencia usuario.",
+          "Elaborar plan de escalamiento con defensas competitivas ante grandes jugadores.",
+          "Comunicar mejor los resultados y métricas en futuras presentaciones a inversionistas."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -396,7 +412,7 @@
         },
         "valuacion_mxn": 3000000.0,
         "votos_primera_votacion": {
-          "tiburon_financiero": "salir",
+          "tiburon_financiero": "contraoferta",
           "tiburon_estratega": "invertir",
           "tiburon_tecnologico": "invertir"
         },
@@ -423,17 +439,17 @@
   ],
   "metricas": {
     "llamadas_modelo": 25,
-    "segundos_modelo": 27.2,
+    "segundos_modelo": 26.7,
     "segundos_total": 0.0,
     "rondas_preguntas": 3,
-    "n_eventos": 28,
+    "n_eventos": 29,
     "eventos_en_orden": true,
     "preguntas": 9,
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
-    "preguntas_mencionan_criterio": 7,
-    "preguntas_citan_dato": 1,
+    "preguntas_mencionan_criterio": 8,
+    "preguntas_citan_dato": 0,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

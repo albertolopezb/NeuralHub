@@ -72,7 +72,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices precio promedio $1,400 y pedís $400,000 por 8 %. ¿Cuánto cuesta adquirir un cliente y qué margen bruto tienen? Los números no tienen sentimientos, pero falta esa cuenta para ver si cierra.",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices precio promedio de $1,400 por prenda, pero no me dices margen bruto ni costo de adquisición de cliente. ¿Cuál es el margen bruto y cuánto les cuesta traer un cliente efectivo para que me cuadren esos $400,000 por 8 %?",
       "estado": "Preguntando"
     },
     {
@@ -90,7 +90,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "Soy Coral Medina, tiburona de consumo. Me dices que vendes en línea y pop-ups, pero no me dices si el cliente vuelve a comprar o si hay reseñas que digan por qué eligen su marca y no otra. ¿Qué te ha dicho el cliente sobre comprar otra vez o recomendar la prenda?",
+      "texto": "Soy Coral Medina, tiburona de consumo. Me dices que vendes por tienda en línea y pop-ups, pero no me dices qué canal vende más ni cuál le gusta más al cliente. ¿Dónde vuelve a comprar la gente y cómo cuidas que la marca se vea auténtica y cercana?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que tú y tu socia están a tiempo completo y cada una tiene experiencia valiosa. ¿Qué sacrificios han hecho para mantener vivo ModaRaíz y cómo han enfrentado juntos los tropiezos hasta hoy?",
+      "texto": "Soy Aurelio Paredes, tiburón mentor. Me dices que son dos fundadoras con experiencia en diseño y cooperativas, pero no me dices cómo se reparten el trabajo y el compromiso diario en un negocio que apenas arranca. ¿Quién hace qué en el día a día y cómo se apoyan mutuamente?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, te voy a ser franco, como a mis muchachos: sin saber cuánto cuesta adquirir cliente ni margen bruto, no podemos afinar si la valuación tiene sentido. Yo ya me tropecé con eso; sin números claros, del dicho al hecho hay mucho trecho.",
+      "texto": "Ramiro, te voy a ser franco, como a mis muchachos: sin margen ni costo de cliente claros, el riesgo crece. Yo ya me tropecé con eso; hay que pedir números firmes para evitar que del dicho al hecho haya mucho trecho.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,7 +136,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "A ver, me pongo en los zapatos del cliente que compra en línea: si la prenda tarda en llegar o la foto no refleja bien el bordado artesanal, ¿cómo manejarán esa queja para que el cliente no se vaya con mala impresión de la marca y vuelva a comprar?",
+      "texto": "A ver, si una clienta compra en línea y recibe una prenda bordada que no le gusta o que no le queda, ¿cómo manejan esa queja para que la marca no pierda credibilidad ni la clienta vuelva a dudar de comprar por el canal online?",
       "estado": "Preguntando"
     },
     {
@@ -154,7 +154,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que tú y tu socia se conocen desde la universidad y están a tiempo completo. ¿Qué han hecho para mantener la confianza y compromiso entre ustedes cuando han tenido diferencias o cuando algo no salió como esperaban?",
+      "texto": "Me dices que una fundadora diseña y la otra atiende cooperativas, ¿qué hacen cuando alguna se enferma o tiene un problema personal? ¿Tu equipo tiene un plan para no frenar el negocio en esos casos?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Si un competidor grande baja precio y tú tienes precio promedio $1,400 (P0), ¿cuánto margen puedes ajustar sin afectar flujo y cómo cubrirías un aumento inesperado en costo de bordado sin datos de margen claros?",
+      "texto": "Si un cliente regresa la prenda porque no le gustó o no le quedó, ¿qué impacto tiene en tu margen y flujo? No me dices margen bruto ni cómo cubres devoluciones, ¿cómo cuadran esos costos?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburona_consumo",
-      "texto": "Coral, justo esa pregunta apunta al costo de adquisición y retención, clave para la valuación. Sin saber cómo manejan quejas ni si el cliente repite, no hay forma de calcular flujos futuros ni margen. Eso no cabe en mi hoja de cálculo.",
+      "texto": "Coral, coincido contigo. Si no tienen claro cómo manejan devoluciones y su impacto en margen y flujo, eso no cabe en mi hoja de cálculo. Sin esos números, no sé si su margen resiste errores o rechazos.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,7 +200,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "Me dices que la fundadora que trabaja con las cooperativas tiene experiencia, pero no me dices cómo han construido la confianza con las artesanas para que sigan comprometidas si los pagos o tiempos se atrasan, ¿cómo lo han manejado tú y tu equipo?",
+      "texto": "Me dices que una fundadora diseña y la otra atiende cooperativas, pero no me dices qué hacen juntas para resolver conflictos internos o diferencias creativas, ¿cómo se aseguran que su equipo no se fracture cuando surjan problemas?",
       "estado": "Preguntando"
     },
     {
@@ -218,7 +218,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "En el pitch no diste tu margen bruto ni costo de adquisición, pero pides $400,000 por 8 %. ¿Con qué margen bruto y flujo mensual planeas sostener esa valuación de $5,000,000 sin ventas ni datos claros?",
+      "texto": "Me dices que vendieron unas 150 prendas y piden $400,000 por 8 % sin margen ni costo de adquisición. ¿Cómo justifican esa valuación de 5 millones sin números claros de flujo y rentabilidad?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburona_consumo",
       "destino": "emprendedor",
-      "texto": "En el pitch dices que vendes en línea y pop-ups, pero no me dices si el cliente entiende bien la historia y valor del bordado ni cómo eso influye en que recomiende la marca o regrese a comprar; ¿cómo sabes que la historia y el empaque realmente conectan con el cliente final?",
+      "texto": "Me dices que algunas piezas se agotan, pero no tienes datos formales. ¿Cómo sabes que el cliente realmente volvería a comprar en tu tienda en línea sin reseñas, datos de repetición o feedback claro que confirme que la marca conecta y gusta?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburona_consumo",
       "destino": "tiburon_mentor",
-      "texto": "Aurelio, me parece clave que aún no tengan claro cómo manejan la confianza con las artesanas en retrasos. A ver, me pongo en sus zapatos: para el cliente y la marca, eso debe estar bien amarrado para que la historia y la ética sean creíbles y vendan.",
+      "texto": "Aurelio, me pongo en sus zapatos: sin un plan claro para resolver diferencias, el equipo puede fracturarse y el cliente lo siente en la marca. La respuesta del emprendedor fue muy vaga, y eso me choca porque la marca necesita solidez interna para crecer.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices margen bruto ni costo de adquisición de clientes, y la valuación implícita de 5,000,000 MXN sin ventas claras ni datos financieros no cabe en mi hoja de cálculo.",
+      "texto": "No me dices margen bruto ni costo de adquisición, y la valuación implícita de 5,000,000 sin ventas claras ni flujo no cabe en mi hoja de cálculo. Pides 400,000 por 8 % sin datos que respalden números ni rentabilidad.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -277,12 +277,12 @@
       "tipo": "VOTO",
       "emisor": "tiburona_consumo",
       "destino": "nodo_votacion",
-      "texto": "El canal son tienda en línea y pop-ups, pero no me dices si el cliente repite compra o hay reseñas; eso es clave para la marca y demanda. La valuación de $5,000,000 sin datos de ventas ni margen me choca. Pido mejor trato para arriesgar. Contraoferta: $300,000 MXN por el 12 %.",
+      "texto": "El cliente no tiene datos claros de repetición ni margen; solo vendieron unas 150 prendas y piden $400,000 por 8 % con valuación de 5 millones sin números firmes. Me choca que no haya métricas de canal ni validación formal. Contraoferta: $200,000 MXN por el 10 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 300000.0,
-      "contraoferta_porcentaje": 12.0
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 10.0
     },
     {
       "n": 26,
@@ -290,11 +290,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "Tu equipo está comprometido y honesto, pero falta claridad en ventas, margen y retención; sin esos datos, $400,000 por 8% en valuación de $5,000,000 es arriesgado. Necesito ver números claros para confiar. Contraoferta: $300,000 MXN por el 10 %.",
+      "texto": "Tu equipo es pequeño pero comprometido, y la honestidad está ahí, pero no me dices margen ni ventas concretas, solo estimas 150 prendas. Pido $400,000 por 8% con valuación de 5,000,000 sin números claros. Quiero menos riesgo y más orden financiero. Contraoferta: $250,000 MXN por el 10 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_monto_mxn": 250000.0,
       "contraoferta_porcentaje": 10.0
     },
     {
@@ -303,7 +303,7 @@
       "tipo": "OFERTA",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "Elijo la condición de Tiburón mentor. $300,000 MXN por el 10 %.",
+      "texto": "Elijo la condición de Tiburón mentor. $250,000 MXN por el 10 %.",
       "estado": "Negociando"
     },
     {
@@ -312,11 +312,11 @@
       "tipo": "DECISION",
       "emisor": "nodo_votacion",
       "destino": "todos",
-      "texto": "TRATO: $300,000 MXN por el 10 % de la empresa.",
+      "texto": "TRATO: $250,000 MXN por el 10 % de la empresa.",
       "estado": "Reaccionando",
       "resultado": "TRATO",
       "condiciones": {
-        "monto_mxn": 300000.0,
+        "monto_mxn": 250000.0,
         "porcentaje": 10.0,
         "origen": "tiburon_mentor"
       }
@@ -327,53 +327,52 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: El equipo fundador está dedicado a tiempo completo y cuenta con experiencia relevante en diseño y relación con cooperativas.; El producto tiene un diferenciador claro: bordados hechos por cooperativas con parte del precio directo a ellas, lo que apela a la ética y autenticidad.; La marca busca conectar emocionalmente con el cliente al contar la historia de cada pieza y apoyar a las artesanas.; El equipo tiene compromiso y una relación de confianza desde la universidad, lo que fortalece la colaboración.. Alertas: Falta información financiera clave: margen bruto, costo de adquisición de clientes, ventas concretas y gastos mensuales.; No hay datos formales de validación con clientes, como retención, recomendaciones o manejo de quejas.; La valuación solicitada ($5,000,000 MXN) no está sustentada con números claros, lo que genera desconfianza en inversionistas.. Siguientes pasos: Realizar un ordenamiento financiero: llevar contabilidad separada, calcular margen bruto, costo de adquisición de clientes y gastos mensuales.; Recolectar y analizar datos de clientes: retención, reseñas, manejo de quejas y validación del valor agregado de la historia y el empaque.; Establecer un consejo de administración pequeño que asesore en finanzas y operaciones para fortalecer la estructura del negocio..",
+      "texto": "Fortalezas: El negocio aborda un problema social real y relevante al apoyar a comunidades artesanas.; El equipo fundador tiene experiencia directa en diseño de moda y trabajo con cooperativas.; La propuesta de valor incluye transparencia y apoyo directo a las cooperativas con cada prenda.. Alertas: Falta información clara y concreta sobre ventas, márgenes y costos operativos clave.; No hay datos formales de validación de clientes, repetición de compra ni manejo de devoluciones.; El equipo no tiene definido un plan para resolver conflictos internos o contingencias personales.. Siguientes pasos: Ordenar y separar la contabilidad para definir márgenes, costos y ventas reales.; Implementar un sistema formal de seguimiento de clientes, devoluciones y repetición de compra.; Establecer un plan operativo para manejo de conflictos internos y contingencias del equipo..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 2,
-            "frase_clave": "No me dices margen bruto ni costo de adquisición de clientes, y la valuación implícita de 5,000,000 MXN sin ventas claras ni datos financieros no cabe en mi hoja de cálculo.",
-            "necesitaria": "Necesito ver datos claros de margen bruto, costo de adquisición de clientes y ventas reales para evaluar la valuación y flujo."
+            "frase_clave": "No me dices margen bruto ni costo de adquisición, y la valuación implícita de 5,000,000 sin ventas claras ni flujo no cabe en mi hoja de cálculo.",
+            "necesitaria": "Necesito ver margen bruto claro, costo de adquisición de cliente, ventas concretas y flujo para evaluar rentabilidad."
           },
           {
             "tiburon_id": "tiburona_consumo",
-            "calificacion": 3,
-            "frase_clave": "No me dices si el cliente repite compra o hay reseñas; eso es clave para la marca y demanda.",
-            "necesitaria": "Quiero ver datos de retención de clientes, reseñas y evidencia de que la historia y empaque conectan con el cliente final."
+            "calificacion": 2,
+            "frase_clave": "Me choca que no haya métricas de canal ni validación formal.",
+            "necesitaria": "Necesitaría datos claros de canales de venta, repetición de clientes y validación formal de mercado."
           },
           {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 3,
-            "frase_clave": "Falta claridad en ventas, margen y retención; sin esos datos, $400,000 por 8% en valuación de $5,000,000 es arriesgado.",
-            "necesitaria": "Requiero números claros de ventas, margen y retención, además de un consejo de administración para ordenar finanzas y operaciones."
+            "frase_clave": "Sin margen ni costo de cliente claros, el riesgo crece. Hay que pedir números firmes para evitar que del dicho al hecho haya mucho trecho.",
+            "necesitaria": "Quiero ver orden financiero, plan claro para resolución de conflictos y compromiso operativo definido."
           }
         ],
         "fortalezas": [
-          "El equipo fundador está dedicado a tiempo completo y cuenta con experiencia relevante en diseño y relación con cooperativas.",
-          "El producto tiene un diferenciador claro: bordados hechos por cooperativas con parte del precio directo a ellas, lo que apela a la ética y autenticidad.",
-          "La marca busca conectar emocionalmente con el cliente al contar la historia de cada pieza y apoyar a las artesanas.",
-          "El equipo tiene compromiso y una relación de confianza desde la universidad, lo que fortalece la colaboración."
+          "El negocio aborda un problema social real y relevante al apoyar a comunidades artesanas.",
+          "El equipo fundador tiene experiencia directa en diseño de moda y trabajo con cooperativas.",
+          "La propuesta de valor incluye transparencia y apoyo directo a las cooperativas con cada prenda."
         ],
         "alertas": [
-          "Falta información financiera clave: margen bruto, costo de adquisición de clientes, ventas concretas y gastos mensuales.",
-          "No hay datos formales de validación con clientes, como retención, recomendaciones o manejo de quejas.",
-          "La valuación solicitada ($5,000,000 MXN) no está sustentada con números claros, lo que genera desconfianza en inversionistas."
+          "Falta información clara y concreta sobre ventas, márgenes y costos operativos clave.",
+          "No hay datos formales de validación de clientes, repetición de compra ni manejo de devoluciones.",
+          "El equipo no tiene definido un plan para resolver conflictos internos o contingencias personales."
         ],
         "preguntas_sin_responder": [
-          "¿Cuánto cuesta adquirir un cliente y cuál es el margen bruto por prenda?",
-          "¿Qué porcentaje de clientes repite compra y qué reseñas han recibido?",
-          "¿Cómo manejan quejas o retrasos para no perder la confianza del cliente y de las cooperativas?"
+          "¿Cuál es el margen bruto exacto por prenda y el costo de adquisición de clientes?",
+          "¿Cómo manejan devoluciones y qué impacto tienen en su flujo y margen?",
+          "¿Qué datos tienen sobre la repetición de compra y satisfacción del cliente?"
         ],
         "siguientes_pasos": [
-          "Realizar un ordenamiento financiero: llevar contabilidad separada, calcular margen bruto, costo de adquisición de clientes y gastos mensuales.",
-          "Recolectar y analizar datos de clientes: retención, reseñas, manejo de quejas y validación del valor agregado de la historia y el empaque.",
-          "Establecer un consejo de administración pequeño que asesore en finanzas y operaciones para fortalecer la estructura del negocio."
+          "Ordenar y separar la contabilidad para definir márgenes, costos y ventas reales.",
+          "Implementar un sistema formal de seguimiento de clientes, devoluciones y repetición de compra.",
+          "Establecer un plan operativo para manejo de conflictos internos y contingencias del equipo."
         ],
         "resultado": "TRATO",
         "condiciones": {
-          "monto_mxn": 300000.0,
+          "monto_mxn": 250000.0,
           "porcentaje": 10.0,
           "origen": "tiburon_mentor"
         },
@@ -406,8 +405,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 20.4,
-    "segundos_total": 18.0,
+    "segundos_modelo": 20.2,
+    "segundos_total": 17.7,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,

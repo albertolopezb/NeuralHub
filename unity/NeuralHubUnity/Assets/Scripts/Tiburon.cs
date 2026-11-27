@@ -40,7 +40,7 @@ namespace NeuralHub
 
         public static int Variante(string id)
         {
-            return id == "tiburona_consumo" || id == "tiburon_consumo" || id == "tiburon_mentor" ? 1 : 0;
+            return id == "tiburon_financiero" || id == "tiburona_consumo" || id == "tiburon_consumo" || id == "tiburon_mentor" ? 1 : 0;
         }
 
         public void Asignar(string id, string nom)
@@ -50,8 +50,8 @@ namespace NeuralHub
             int v = Variante(id);
             for (int i = 0; i < modelos.Length; i++) modelos[i].raiz.SetActive(i == v);
             activo = modelos[v];
-            // Estela va sin corbata: su atuendo son las perlas
-            if (corbatas != null) for (int i = 0; i < corbatas.Length; i++) if (corbatas[i]) corbatas[i].SetActive(id != "tiburon_estratega");
+            // Estela y Coral van sin corbata: que se vea su collar
+            if (corbatas != null) for (int i = 0; i < corbatas.Length; i++) if (corbatas[i]) corbatas[i].SetActive(id != "tiburon_estratega" && id != "tiburona_consumo" && id != "tiburon_consumo");
             if (juegos != null)
                 foreach (var j in juegos)
                     foreach (var pieza in j.piezas) if (pieza) pieza.SetActive(j.id == id);

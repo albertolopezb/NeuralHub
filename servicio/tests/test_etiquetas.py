@@ -1,4 +1,10 @@
-from neuralhub.sesiones import sin_etiquetas
+from neuralhub.sesiones import a_su_manera, sin_etiquetas
+
+
+def test_teo_dice_startup_y_los_demas_no_cambian():
+    texto = "Empresa joven: ¿qué porcentaje de la empresa ofreces a estas empresas? Es empresarial."
+    assert a_su_manera(texto, "tiburon_tecnologico") == "Startup joven: ¿qué porcentaje de la startup ofreces a estas startups? Es empresarial."
+    assert a_su_manera(texto, "tiburon_financiero") == texto
 
 
 def test_quita_marcas_internas():

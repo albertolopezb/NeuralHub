@@ -430,7 +430,21 @@ namespace NeuralHub
                     : "Sin conexión: se reproduce una sesión real guardada.", Estilos.Color_(Estilos.TextoChico, Estilos.Calido));
 
             if (GUI.Button(new Rect(x, area.yMax - 84, 180, 54), "Volver", Estilos.Boton)) app.Ir(Vista.Panel);
-            if (GUI.Button(new Rect(area.xMax - 40 - 260, area.yMax - 84, 260, 54), "Iniciar sesión", Estilos.BotonPrimario)) app.IniciarSesionElegida();
+            var rInicio = new Rect(area.xMax - 40 - 260, area.yMax - 84, 260, 54);
+            if (app.iniciando)
+            {
+                // puntos animados para que se note que sigue trabajando
+                GUI.Box(rInicio, "Iniciando" + new string('.', 1 + (int)(Time.unscaledTime * 3f) % 3), Estilos.BotonPrimario);
+                GUI.Label(new Rect(rInicio.x - 560, rInicio.y, 540, 54), "Preparando el estudio y a tus tiburones; tarda unos segundos.",
+                          new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleRight });
+            }
+            else
+            {
+                if (GUI.Button(rInicio, "Iniciar sesión", Estilos.BotonPrimario)) { app.Clic(); app.IniciarSesionElegida(); }
+                if (!string.IsNullOrEmpty(app.mensaje))
+                    GUI.Label(new Rect(rInicio.x - 800, rInicio.y, 780, 54), app.mensaje,
+                              Estilos.Color_(new GUIStyle(Estilos.TextoChico) { alignment = TextAnchor.MiddleRight, wordWrap = true }, Estilos.Calido));
+            }
         }
     }
 
@@ -443,6 +457,7 @@ namespace NeuralHub
         string avisoVoz = "";
 
         /// <summary>Escribe una respuesta en la burbuja (la usa la prueba automática -nh-vivo).</summary>
+        public void Avisar(string a) { avisoVoz = a; }
         public void Escribir(string turnoActual, string t) { turno = turnoActual; texto = t ?? ""; cargando = false; sugerida = false; enfocar = false; }
 
         public void Dibujar(AppNeuralHub app, float W, float H)
@@ -480,9 +495,9 @@ namespace NeuralHub
             if (ayuda)
             {
                 GUI.enabled = !cargando;
-                var estBoton = new GUIStyle(Estilos.Boton) { wordWrap = true, fontSize = 18 };
+                var estBoton = new GUIStyle(Estilos.Boton) { wordWrap = true, fontSize = 17 };
                 bool hayBorrador = !string.IsNullOrWhiteSpace(texto) && !sugerida;
-                if (GUI.Button(new Rect(bx, y + 56, derecha, 70), cargando ? "El agente empresario está pensando…" : hayBorrador ? "Mejorar lo que escribí (agente empresario)" : "Recomendación del agente empresario", estBoton))
+                if (GUI.Button(new Rect(bx, y + 50, derecha, 60), cargando ? "El agente empresario está pensando…" : hayBorrador ? "Mejorar lo que escribí (agente empresario)" : "Recomendación del agente empresario", estBoton))
                 {
                     cargando = true;
                     string pedido = turno;
@@ -497,7 +512,7 @@ namespace NeuralHub
                 GUI.enabled = true;
             }
             // Dictado por voz (se transcribe con Whisper en el servicio y se agrega al texto)
-            var rVoz = new Rect(bx, ayuda ? y + 132 : y + 56, derecha, 40);
+            var rVoz = new Rect(bx, ayuda ? y + 116 : y + 56, derecha, 38);
             bool detener = false;
             if (transcribiendo) GUI.Label(rVoz, "Transcribiendo… no cierres esta ventana", new GUIStyle(Estilos.Etiqueta) { alignment = TextAnchor.MiddleCenter, fontSize = 17 });
             else if (!GrabadorVoz.HayMicrofono) GUI.Label(rVoz, "Sin micrófono para dictar", new GUIStyle(Estilos.TextoChico) { fontSize = 16, alignment = TextAnchor.MiddleCenter });
@@ -528,11 +543,11 @@ namespace NeuralHub
                 }
             }
             if (GrabadorVoz.HayMicrofono)
-                GUI.Label(new Rect(bx, rVoz.yMax + 2, derecha, ayuda ? 44 : 70), !string.IsNullOrEmpty(avisoVoz) ? avisoVoz : "Hasta 2 min. Habla claro, cerca del micrófono y sin ruido.",
+                GUI.Label(new Rect(bx, rVoz.yMax + 2, derecha, ayuda ? 46 : 74), !string.IsNullOrEmpty(avisoVoz) ? avisoVoz : "Hasta 2 min. Habla claro, cerca del micrófono y sin ruido.",
                           new GUIStyle(Estilos.TextoChico) { fontSize = 15, wordWrap = true, alignment = TextAnchor.UpperCenter });
 
             GUI.enabled = !string.IsNullOrWhiteSpace(texto) && !grabando;
-            if (GUI.Button(new Rect(bx, caja.yMax - 22 - 60, derecha, 60), "Responder", Estilos.BotonPrimario)) { app.Clic(); enviar = true; }
+            if (GUI.Button(new Rect(bx, caja.yMax - 12 - 50, derecha, 50), "Responder", Estilos.BotonPrimario)) { app.Clic(); enviar = true; }
             GUI.enabled = true;
             if (enviar && !string.IsNullOrWhiteSpace(texto)) { r.Responder(texto.Trim()); GUI.FocusControl(null); }
         }

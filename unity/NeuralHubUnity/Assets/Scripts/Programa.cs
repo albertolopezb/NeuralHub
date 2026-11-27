@@ -7,6 +7,10 @@ namespace NeuralHub
     public static class Retratos
     {
         static readonly Dictionary<string, Texture2D> cache = new Dictionary<string, Texture2D>();
+        public static string Especialidad(string id)
+        {
+            return id == "tiburona_consumo" || id == "tiburon_consumo" ? "Tiburona de consumo" : "Tiburón " + Perfiles.Corto(id).ToLower();
+        }
         public static Texture2D De(string id)
         {
             Texture2D t;
@@ -114,7 +118,7 @@ namespace NeuralHub
                         var foto = Retratos.De(panel[i]);
                         if (foto) GUI.DrawTexture(new Rect(px + 30, y, 100, 100), foto);
                         GUI.Label(new Rect(px + 150, y + 14, 400, 40), persona != null ? persona.nombre : panel[i], Estilos.Subtitulo);
-                        GUI.Label(new Rect(px + 150, y + 56, 400, 30), "Tiburón " + Perfiles.Corto(panel[i]).ToLower(), Estilos.TextoChico);
+                        GUI.Label(new Rect(px + 150, y + 56, 400, 30), Retratos.Especialidad(panel[i]), Estilos.TextoChico);
                     }
                 }
                 GUI.color = antes;
@@ -177,7 +181,7 @@ namespace NeuralHub
                 var foto = Retratos.De(p.id);
                 if (foto) GUI.DrawTexture(new Rect(r.x + 12, r.y + 12, 98, 98), foto);
                 GUI.Label(new Rect(r.x + 126, r.y + 30, 250, 34), p.nombre, new GUIStyle(Estilos.Texto) { font = Estilos.Semi, wordWrap = false });
-                GUI.Label(new Rect(r.x + 126, r.y + 66, 250, 30), "Tiburón " + Perfiles.Corto(p.id).ToLower(), Estilos.TextoChico);
+                GUI.Label(new Rect(r.x + 126, r.y + 66, 250, 30), Retratos.Especialidad(p.id), Estilos.TextoChico);
                 if (GUI.Button(r, GUIContent.none, GUIStyle.none)) { app.Clic(); Mostrar(app, i); }
             }
 
@@ -187,7 +191,7 @@ namespace NeuralHub
             GUILayout.BeginArea(caja, Estilos.Caja);
             GUILayout.Label(sel.apodo.ToUpper(), Estilos.Quien);
             GUILayout.Label(sel.nombre, new GUIStyle(Estilos.Encabezado) { fontSize = 40 });
-            GUILayout.Label("Tiburón " + Perfiles.Corto(sel.id).ToLower(), Estilos.TextoChico);
+            GUILayout.Label(Retratos.Especialidad(sel.id), Estilos.TextoChico);
             GUILayout.Space(18);
             GUILayout.Label("«" + sel.presentacion + "»", new GUIStyle(Estilos.Texto) { fontSize = 26 });
             GUILayout.Space(14);

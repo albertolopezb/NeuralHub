@@ -1,5 +1,5 @@
 {
-  "id": "02baa64a",
+  "id": "6479bc43",
   "modo": "autopiloto",
   "ayuda": false,
   "nivel": "medio",
@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Me dices 50 clientes y ventas de 270,000 pesos en 12 meses, pero no me dices cuánto te costó atraer cada cliente. ¿Cuál es tu gasto promedio para adquirir un cliente nuevo?",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Con ventas de $270,000 en 12 meses y 50 clientes pagos, ¿cuánto te cuesta atraer a cada uno? O sea, el gasto en marketing dividido entre 50, dame esa cifra exacta.",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no sabemos el costo promedio de adquisición de cliente. Estamos analizando nuestros gastos de marketing y ventas para calcularlo con precisión y entender mejor nuestro retorno de inversión en adquisición.",
+      "texto": "Aún no sabemos el costo exacto de adquisición por cliente, ya que no tenemos separado el gasto específico en marketing. Para averiguarlo, analizaríamos nuestros gastos detallados y campañas para identificar la inversión directa en adquisición de clientes.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Soy Estela Marín, tiburón estratega. Me dices que hay competencia con Power BI y consultores, pero no me dices cómo planean defender su ventaja de no requerir configuración técnica para escalar en un mercado tan competido.",
+      "texto": "Soy Estela Marín, tiburón estratega. Con 50 clientes y competencia como Power BI, ¿qué barreras de entrada tienen para defender su ventaja y escalar en el mercado PyME mexicano sin que un gigante los opaque?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra ventaja clave es la simplicidad y accesibilidad: no requieren científicos de datos ni configuración técnica. Esto nos permite capturar el mercado de PyMEs que buscan soluciones inmediatas y fáciles de usar. Además, invertiremos en mejorar la IA para que el análisis sea cada vez más preciso y útil, fortaleciendo nuestra propuesta y diferenciación frente a herramientas complejas y consultores costosos.",
+      "texto": "Nuestra barrera clave es que nuestra plataforma no requiere configuración técnica y entrega análisis en lenguaje natural, lo que Power BI no ofrece. Esto facilita la adopción por PyMEs sin expertos. Además, nuestro enfoque especializado en PyMEs mexicanas nos permite adaptar mejor el producto y servicio. Para escalar, invertiremos en mejorar la IA y el equipo de ingeniería para mantener ventaja y diferenciación clara.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Soy Teo Navarro, tiburón tecnológico. Me dices que la plataforma no requiere configuración técnica y mejora la IA, pero no me dices si tienen algún algoritmo patentado o prototipo único que proteja esa ventaja tecnológica. ¿Qué propiedad intelectual tienen para evitar que copien esto?",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. Con $270,000 MXN en ventas y 50 clientes, ¿qué algoritmo específico usa su IA para interpretar datos sin configuración técnica? ¿Es un prototipo o ya tienen propiedad intelectual protegida para esa innovación?",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Contamos con una marca registrada que protege nuestra identidad en el mercado. Sin embargo, no tenemos algoritmos patentados aún. Para fortalecer nuestra propiedad intelectual, planeamos documentar y proteger desarrollos clave de IA conforme evolucionemos la plataforma, asegurando así una ventaja tecnológica difícil de replicar.",
+      "texto": "Nuestra IA utiliza algoritmos avanzados de procesamiento de lenguaje natural y aprendizaje automático para analizar y generar reportes en lenguaje natural sin configuración técnica. Actualmente, la plataforma está en etapa comercial, no solo prototipo, y tenemos registrada la marca, aunque no contamos aún con patente para el algoritmo. Evaluamos proteger la propiedad intelectual conforme crezca la tecnología.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Ramiro, ¡órale, tienes razón! Sin saber el costo de adquisición, no podemos validar la escalabilidad ni el retorno. La tecnología puede ser genial, pero si el CAC se va por las nubes, eso en producción truena. Necesitan ese dato para convencerme.",
+      "texto": "Ramiro, claro que entiendo que saber el CAC exacto es vital para escalar una startup. Sin ese dato, no puedes optimizar ni validar si el algoritmo realmente atrae clientes eficientemente. O sea, ¡aquí necesitamos ese número para no meter código que truene en producción!",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "Con 50 clientes y 15 % de crecimiento mensual, si un competidor grande lanza una versión sin configuración técnica a menor precio, ¿cómo defenderán su mercado para no perder clientes y seguir escalando?",
+      "texto": "Con 50 clientes y 15 % de crecimiento mensual, si un competidor como Power BI lanza una función en lenguaje natural sin barreras técnicas, ¿cómo defenderán su mercado y mantendrán la ventaja para escalar sin perder clientes?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nos enfocaremos en la especialización para PyMEs mexicanas, ofreciendo un servicio personalizado y atención cercana que un competidor grande no puede igualar. También invertiremos en mejorar continuamente nuestra IA para mantener análisis más precisos y alertas valiosas, diferenciándonos en valor y usabilidad, no solo en precio. Así fidelizaremos a nuestros clientes y mantendremos el crecimiento.",
+      "texto": "Si Power BI lanza esa función, defenderemos nuestro mercado con atención personalizada y adaptaciones específicas para PyMEs mexicanas que ellos no cubren. Además, invertiremos en mejorar continuamente nuestra IA y en fortalecer relaciones con clientes para mantener la confianza y diferenciación. Nuestra agilidad y especialización serán clave para escalar y retener clientes frente a competidores grandes.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Si un cliente detecta que el análisis generado por la IA no es confiable o tiene errores graves, ¿cómo manejan ese bug en producción y qué prototipo o proceso tienen para corregirlo rápido y proteger su reputación?",
+      "texto": "Con 15 % de crecimiento mensual y sin patente para su algoritmo, ¿qué harían si un competidor clona su IA y lanza un prototipo similar? ¿Cómo protegerían su innovación tecnológica y su ventaja competitiva?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Contamos con un equipo dedicado que monitorea continuamente la calidad del análisis generado. Si un cliente reporta un error, activamos un proceso ágil de revisión y corrección prioritaria, comunicando transparencia y soluciones rápidas para proteger nuestra reputación y mantener la confianza en nuestra IA.",
+      "texto": "Si un competidor clona nuestra IA, responderíamos acelerando nuestras mejoras y diferenciación tecnológica, enfocándonos en la experiencia de usuario y adaptaciones específicas para PyMEs mexicanas. También aceleraríamos el proceso de protección intelectual y confidencialidad, y fortaleceríamos la relación con nuestros clientes para mantener la ventaja competitiva mediante innovación continua y servicio personalizado.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Con 270,000 pesos en ventas y 60,000 pesos mensuales en gastos, si un cliente grande cancela súbitamente, ¿cómo afectaría eso tu flujo y margen? ¿Tienes reservas o planes para mitigar ese impacto financiero?",
+      "texto": "Si un cliente furioso con margen bruto del 72% pide reembolso o baja y no te paga el mes, ¿cómo afecta eso tus flujos y qué margen neto te queda para cubrir gastos mensuales de $60,000 MXN?",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Si un cliente grande cancela, nuestro flujo se afectaría pues dependemos de ingresos recurrentes. Actualmente no contamos con reservas significativas, pero planeamos diversificar nuestra base de clientes y aumentar la retención para mitigar riesgos. También optimizaremos gastos y buscaremos financiamiento para mantener estabilidad financiera ante imprevistos.",
+      "texto": "Si un cliente no paga, nuestro flujo se ve afectado proporcionalmente a su aporte. Con margen bruto del 72%, la pérdida impacta directamente en ingresos netos. Sin embargo, aún no calculamos el margen neto exacto para cubrir gastos de $60,000 MXN mensuales. Para saberlo, analizaríamos ingresos netos menos gastos fijos y variables para evaluar la resistencia financiera.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estela, coincido contigo. La especialización y atención cercana suena bien, pero sin números exactos del costo de adquisición y retención, eso es un barco sin timón. Sin datos claros, no sé si esa defensa aguanta un golpe de competencia feroz.",
+      "texto": "Estela, coincido en que la amenaza de Power BI es real, pero sin datos claros del costo de adquisición y márgenes netos, defender mercado solo con atención personalizada suena frágil. Eso no cabe en mi hoja de cálculo; falta la cifra clave para evaluar si escalan sin perder billete.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "Me dices que mejorarán la IA para precisión y usabilidad, pero sin patente ni algoritmo propio, ¿qué prototipo o innovación tecnológica concreta desarrollarán primero para que nadie copie su ventaja?",
+      "texto": "Con 50 clientes y $270,000 MXN en ventas, ¿qué tan escalable es su algoritmo sin perder precisión en análisis ni aumentar la carga computacional? ¿Han probado prototipos con mayor volumen de datos?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Desarrollaremos un prototipo de IA que automatice la interpretación de datos en lenguaje natural adaptado específicamente a las necesidades de las PyMEs mexicanas. Este enfoque único busca ofrecer análisis contextualizados sin configuración técnica, creando una barrera de entrada basada en el conocimiento del mercado y la experiencia acumulada. Paralelamente, comenzaremos a documentar y proteger este desarrollo para fortalecer nuestra propiedad intelectual.",
+      "texto": "Nuestro algoritmo está diseñado para escalar con eficiencia, manteniendo precisión y optimizando la carga computacional mediante técnicas avanzadas de procesamiento. Actualmente, hemos probado prototipos con volúmenes mayores de datos para validar su rendimiento y asegurarnos que la plataforma soporte crecimiento sin perder calidad en los análisis.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices 15 % de crecimiento mensual, pero no me diste ni ventas mensuales ni flujo mensual para validar si ese crecimiento es rentable. ¿Cuál es su ingreso y gasto exacto mes a mes para ver si ese ritmo es sostenible?",
+      "texto": "En el pitch dices $270,000 en ventas y $60,000 de gasto mensual, ¿cuánto tiempo puedes sostener el flujo con esos gastos sin aumentar ventas o inversión? Dame meses exactos.",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Aún no contamos con un desglose mensual detallado de ingresos y gastos para validar la rentabilidad del crecimiento del 15 % mensual. Estamos trabajando en implementar un sistema de seguimiento financiero mensual para obtener esos datos y así evaluar y asegurar la sostenibilidad del ritmo actual.",
+      "texto": "Con ventas anuales de $270,000 MXN y gastos mensuales de $60,000 MXN, actualmente no hemos calculado el tiempo exacto que podemos sostener el flujo sin aumentar ventas o inversión. Para determinarlo, analizaríamos nuestro saldo de caja y reservas financieras para calcular cuántos meses podemos operar con gastos fijos actuales.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Qué evidencia concreta tienen de que las PyMEs mexicanas con 10 a 100 empleados realmente prefieren pagar más por facilidad y atención personalizada en lugar de usar herramientas generales como Power BI, para defender su escalabilidad y ventaja en este mercado?",
+      "texto": "En tu pitch dices que tu mercado son PyMEs mexicanas con 10 a 100 empleados, pero no me dices cuántas realmente usan hojas de cálculo para ventas e inventario. ¿Cómo sabes que ese mercado es lo suficientemente grande y listo para escalar sin que otro gigante te opaque?",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra validación con 50 clientes que ya pagan y crecen al 15 % mensual demuestra que las PyMEs mexicanas valoran nuestra facilidad y atención personalizada frente a herramientas generales. Esta adopción temprana y crecimiento sostenido es evidencia concreta de que prefieren nuestra solución especializada y sin configuración técnica, lo que fortalece nuestra escalabilidad y ventaja competitiva.",
+      "texto": "Sabemos que muchas PyMEs mexicanas con 10 a 100 empleados usan hojas de cálculo para ventas e inventario por investigaciones de mercado y validación con clientes actuales. Para asegurarnos del tamaño y disposición del mercado, planeamos realizar estudios más profundos y encuestas, además de monitorear tendencias y competencia para validar que el mercado sigue listo para escalar y mantener nuestra ventaja.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Teo, coincido contigo. Sin patente ni innovación clara, esa barrera es frágil. Documentar y adaptar IA a PyMEs es buen inicio, pero necesitamos ver cómo escalan esa ventaja defendible para que no les den jaque rápido en este mar tan competido.",
+      "texto": "Teo, coincido en que la escalabilidad del algoritmo es clave para defender y escalar en este mercado. La respuesta del emprendedor es un buen inicio, pero sin datos concretos sobre pruebas con mayor volumen, el riesgo de no sostener precisión o costos crece. Pensemos tres jugadas adelante.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,7 +291,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices CAC, clave para validar rentabilidad y escalabilidad, y con $60,000 de gasto mensual frente a $270,000 ventas anuales no veo claro flujo positivo. Valuación de $3,333,333 para 15% es alta sin datos financieros claros. Contraoferta: $300,000 MXN por el 15 %.",
+      "texto": "Me falta el costo de adquisición del cliente y margen neto para validar escalabilidad y flujo. Con $270,000 en ventas y $60,000 de gasto mensual, la valuación de $3,333,333 parece alta sin esos datos clave. Contraoferta: $300,000 MXN por el 15 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
@@ -304,11 +304,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El tamaño de mercado es prometedor con 50 clientes y 15% de crecimiento mensual, pero falta dato clave: costo de adquisición de clientes. La valuación de 3.3 millones parece alta sin esta métrica para defender la escalabilidad. Contraoferta: $400,000 MXN por el 20 %.",
+      "texto": "El mercado PyME mexicano es grande pero falta dato clave: costo de adquisición. Con 50 clientes y $270,000 ventas, $60,000 gastos mensuales, la valuación de $3,333,333 parece alta sin claridad en escalabilidad y defensa ante Power BI. Pensemos tres jugadas adelante. Contraoferta: $350,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_monto_mxn": 350000.0,
       "contraoferta_porcentaje": 20.0
     },
     {
@@ -317,11 +317,11 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "La innovación tecnológica está en desarrollo pero sin patente ni algoritmo propio, y me falta el costo de adquisición de clientes para validar escalabilidad. Tienen 50 clientes y $270,000 MXN en ventas, pero eso en producción truena sin esos datos. Pido más control. Contraoferta: $400,000 MXN por el 20 %.",
+      "texto": "La innovación está en la IA sin configuración técnica pero falta patente para proteger el algoritmo clave. Las ventas de $270,000 MXN y 50 clientes muestran avance, pero sin propiedad intelectual fuerte y CAC desconocido, la valuación de $3,333,333 MXN me parece alta. Contraoferta: $350,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_monto_mxn": 350000.0,
       "contraoferta_porcentaje": 20.0
     },
     {
@@ -354,49 +354,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Modelo de negocio SaaS con margen bruto alto (72%).; Validación inicial con 50 clientes que pagan y crecimiento mensual del 15%.; Equipo fundador con experiencia en tecnología y dedicación a tiempo completo.. Alertas: Falta claridad sobre el costo de adquisición de clientes, clave para la escalabilidad.; Sin propiedad intelectual sólida (patentes o algoritmos) que proteja la ventaja tecnológica.; Dependencia financiera alta con gastos mensuales elevados y reservas bajas ante cancelaciones.. Siguientes pasos: Calcular y monitorear el costo de adquisición de clientes para validar la rentabilidad y ajustar estrategias de marketing.; Desarrollar y proteger propiedad intelectual relevante, como patentes o prototipos tecnológicos únicos.; Implementar un sistema financiero mensual detallado para controlar ingresos, gastos y flujo de caja.; .",
+      "texto": "Fortalezas: Solución clara y específica para un problema real de PyMEs mexicanas que usan hojas de cálculo sin conocimientos técnicos.; Modelo de negocio SaaS con margen bruto alto (72 %) y validación inicial con 50 clientes pagando y crecimiento mensual del 15 %.; Equipo dedicado con experiencia en tecnología y roles distribuidos para ingeniería, producto, ventas y operaciones.. Alertas: Falta claridad en datos financieros críticos como costo de adquisición de clientes (CAC) y margen neto para evaluar sostenibilidad y escalabilidad.; No hay patente ni protección formal de propiedad intelectual para el algoritmo de IA, lo que puede poner en riesgo la ventaja competitiva.; La valuación implícita parece alta dado el nivel actual de ventas y gastos, además la empresa no tiene claro cuánto tiempo puede operar sin inversión adicional.. Siguientes pasos: Realizar un análisis financiero detallado para calcular el CAC, margen neto y tiempo de operación posible sin nueva inversión.; Implementar protección formal o planes claros para registrar propiedad intelectual y patentes sobre el algoritmo de IA.; Profundizar investigaciones de mercado para validar el tamaño y disposición del mercado objetivo, así como definir estrategias concretas para diferenciarse de competidores grandes como Power BI..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 3,
-            "frase_clave": "Aún no sabemos el costo promedio de adquisición de cliente. Estamos analizando nuestros gastos de marketing y ventas para calcularlo con precisión y entender mejor nuestro retorno de inversión en adquisición.",
-            "necesitaria": "Necesito ver datos claros y precisos sobre el costo de adquisición de clientes y el flujo mensual para validar la rentabilidad y escalabilidad del negocio."
+            "frase_clave": "Me falta el costo de adquisición del cliente y margen neto para validar escalabilidad y flujo.",
+            "necesitaria": "Necesito conocer el costo de adquisición por cliente (CAC) y el margen neto claro para validar la escalabilidad y la sostenibilidad financiera del negocio."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 3,
-            "frase_clave": "Nuestra validación con 50 clientes que ya pagan y crecen al 15 % mensual demuestra que las PyMEs mexicanas valoran nuestra facilidad y atención personalizada frente a herramientas generales.",
-            "necesitaria": "Me gustaría ver evidencia más sólida y detallada sobre por qué las PyMEs prefieren pagar más por facilidad y atención personalizada y cómo se defenderán ante competidores grandes."
+            "frase_clave": "Falta dato clave: costo de adquisición. Con 50 clientes y $270,000 ventas, $60,000 gastos mensuales, la valuación parece alta sin claridad en escalabilidad y defensa ante Power BI.",
+            "necesitaria": "Quisiera ver un análisis detallado del mercado, el CAC y una estrategia robusta para defender la posición frente a competidores grandes como Power BI."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 2,
-            "frase_clave": "Contamos con una marca registrada que protege nuestra identidad en el mercado. Sin embargo, no tenemos algoritmos patentados aún.",
-            "necesitaria": "Quisiera ver propiedad intelectual más sólida, como patentes o prototipos tecnológicos únicos que protejan la ventaja competitiva y eviten copias."
+            "calificacion": 3,
+            "frase_clave": "Falta patente para proteger el algoritmo clave y desconocemos el CAC, la valuación de $3,333,333 me parece alta.",
+            "necesitaria": "Requeriría evidencia de protección de propiedad intelectual o planes claros para obtenerla, además de datos de CAC y pruebas de escalabilidad tecnológica."
           }
         ],
         "fortalezas": [
-          "Modelo de negocio SaaS con margen bruto alto (72%).",
-          "Validación inicial con 50 clientes que pagan y crecimiento mensual del 15%.",
-          "Equipo fundador con experiencia en tecnología y dedicación a tiempo completo."
+          "Solución clara y específica para un problema real de PyMEs mexicanas que usan hojas de cálculo sin conocimientos técnicos.",
+          "Modelo de negocio SaaS con margen bruto alto (72 %) y validación inicial con 50 clientes pagando y crecimiento mensual del 15 %.",
+          "Equipo dedicado con experiencia en tecnología y roles distribuidos para ingeniería, producto, ventas y operaciones."
         ],
         "alertas": [
-          "Falta claridad sobre el costo de adquisición de clientes, clave para la escalabilidad.",
-          "Sin propiedad intelectual sólida (patentes o algoritmos) que proteja la ventaja tecnológica.",
-          "Dependencia financiera alta con gastos mensuales elevados y reservas bajas ante cancelaciones."
+          "Falta claridad en datos financieros críticos como costo de adquisición de clientes (CAC) y margen neto para evaluar sostenibilidad y escalabilidad.",
+          "No hay patente ni protección formal de propiedad intelectual para el algoritmo de IA, lo que puede poner en riesgo la ventaja competitiva.",
+          "La valuación implícita parece alta dado el nivel actual de ventas y gastos, además la empresa no tiene claro cuánto tiempo puede operar sin inversión adicional."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el costo promedio para adquirir un cliente nuevo?",
-          "¿Cuál es el ingreso y gasto mensual exacto para validar la rentabilidad del crecimiento?",
-          "¿Qué evidencia concreta tienen de que las PyMEs prefieren pagar más por facilidad y atención personalizada frente a herramientas generales?"
+          "¿Cuál es el costo exacto de adquisición por cliente?",
+          "¿Cuál es el margen neto y cuánto tiempo pueden sostener el flujo de efectivo sin aumentar ventas o inversión?",
+          "¿Cuántas PyMEs mexicanas realmente usan hojas de cálculo para ventas e inventario y qué tan grande es el mercado objetivo?"
         ],
         "siguientes_pasos": [
-          "Calcular y monitorear el costo de adquisición de clientes para validar la rentabilidad y ajustar estrategias de marketing.",
-          "Desarrollar y proteger propiedad intelectual relevante, como patentes o prototipos tecnológicos únicos.",
-          "Implementar un sistema financiero mensual detallado para controlar ingresos, gastos y flujo de caja.",
-          ""
+          "Realizar un análisis financiero detallado para calcular el CAC, margen neto y tiempo de operación posible sin nueva inversión.",
+          "Implementar protección formal o planes claros para registrar propiedad intelectual y patentes sobre el algoritmo de IA.",
+          "Profundizar investigaciones de mercado para validar el tamaño y disposición del mercado objetivo, así como definir estrategias concretas para diferenciarse de competidores grandes como Power BI."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -433,8 +432,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 25,
-    "segundos_modelo": 29.4,
-    "segundos_total": 26.8,
+    "segundos_modelo": 32.9,
+    "segundos_total": 30.2,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,
@@ -443,7 +442,7 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
-    "preguntas_citan_dato": 7,
+    "preguntas_citan_dato": 9,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

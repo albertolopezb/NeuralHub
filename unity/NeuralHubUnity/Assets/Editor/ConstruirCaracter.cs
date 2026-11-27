@@ -125,9 +125,9 @@ namespace NeuralHub.Editor
             return o;
         }
 
-        static void Bolita(Transform g, Vector3 mundo, Vector3 escala, Material m, Quaternion? giro = null)
+        static void Bolita(Transform g, Vector3 mundo, Vector3 escala, Material m, Quaternion? giro = null, string nombre = "Detalle")
         {
-            var s = Esfera("Detalle", g.parent, Vector3.zero, 1f, m);
+            var s = Esfera(nombre, g.parent, Vector3.zero, 1f, m);
             s.transform.position = mundo; s.transform.localScale = escala;
             if (giro.HasValue) s.transform.rotation = giro.Value;
             s.transform.SetParent(g, true);
@@ -180,15 +180,36 @@ namespace NeuralHub.Editor
                     }
                     Bolita(g, cima + new Vector3(0.2f, 0.02f, 0.07f), Vector3.one * 0.055f, violeta);
                     Collar(g, cuello, frenteCuello, 19, 0.058f, perla, 0.17f); break;
-                case "tiburon_tecnologico":     // lentes rectangulares con luz y gorra hacia atrás
+                case "tiburon_tecnologico":     // lentes rectangulares con luz y audífonos de diadema con micrófono
                     Lentes(g, cara, E("Lentes_teo", "#13B8F0", 1.1f), 0.22f, 0.15f, 0.018f, false);
-                    var gorra = M("Gorra_teo", "#10183C", 0.3f);
-                    var copaG = new GameObject("Gorra").transform; copaG.SetParent(g, false); copaG.localPosition = new Vector3(0, -0.135f, -0.045f); copaG.localRotation = Quaternion.Euler(-16, 0, 4);
-                    Disco("Copa", copaG, Vector3.zero, 0.27f, 0.2f, gorra, 0.085f);
-                    Disco("Franja", copaG, new Vector3(0, 0.012f, 0), 0.274f, 0.05f, E("Gorra_franja", "#13B8F0", 0.7f), 0.004f);
-                    var viseraT = Caja("Visera", copaG, new Vector3(0, 0.014f, -0.31f), 0.3f, 0.2f, 0.028f, gorra, 0.075f);    // la visera va atrás
-                    viseraT.transform.localRotation = Quaternion.Euler(80, 0, 0);
-                    Esfera("Boton", copaG, new Vector3(0, 0.208f, 0), 0.06f, E("Gorra_franja", "#13B8F0", 0.7f));
+                    var negro = M("Audifono", "#141B2E", 0.55f, 0.15f);
+                    var acolchado = M("Audifono_almohada", "#0A0E1A", 0.15f);
+                    var luz = E("Audifono_luz", "#13B8F0", 1.3f);
+                    // las copas van justo detrás de los ojos, medidas sobre el modelo
+                    float x = Mathf.Abs(cara.ojoDer.x - cima.x) + 0.085f;
+                    float yCopa = cara.ojoDer.y - cima.y - 0.06f, zCopa = cara.ojoDer.z - cima.z - 0.19f;
+                    var diadema = new[] { new Vector3(-x, yCopa + 0.08f, zCopa), new Vector3(-x * 0.9f, -0.07f, zCopa), new Vector3(-x * 0.52f, 0.06f, zCopa),
+                                          new Vector3(0, 0.1f, zCopa), new Vector3(x * 0.52f, 0.06f, zCopa), new Vector3(x * 0.9f, -0.07f, zCopa), new Vector3(x, yCopa + 0.08f, zCopa) };
+                    ConstruirEstudio.Malla("Diadema", g, Mallas.Guardar(Mallas.Tubo(diadema, 0.036f), "diadema"), Vector3.zero, negro);
+                    var forro = new[] { new Vector3(-x * 0.62f, 0.0f, zCopa), new Vector3(-x * 0.3f, 0.056f, zCopa), new Vector3(0, 0.067f, zCopa),
+                                        new Vector3(x * 0.3f, 0.056f, zCopa), new Vector3(x * 0.62f, 0.0f, zCopa) };
+                    ConstruirEstudio.Malla("Forro", g, Mallas.Guardar(Mallas.Tubo(forro, 0.043f, 28), "forro"), Vector3.zero, acolchado);
+                    foreach (int lado in new[] { -1, 1 })
+                    {
+                        var eje = Quaternion.Euler(0, 0, -90 * lado);       // el disco apunta hacia afuera
+                        var almohada = Disco("Almohada", g, new Vector3((x - 0.065f) * lado, yCopa, zCopa), 0.125f, 0.055f, acolchado, 0.025f);
+                        almohada.transform.localRotation = eje;
+                        var copa = Disco("Copa", g, new Vector3((x - 0.015f) * lado, yCopa, zCopa), 0.115f, 0.07f, negro, 0.032f);
+                        copa.transform.localRotation = eje;
+                        var aro = ConstruirEstudio.Malla("Aro", g, Mallas.Guardar(Mallas.Aro(0.056f, 0.07f, 40), "aro_audifono"), new Vector3((x + 0.058f) * lado, yCopa, zCopa), luz, false);
+                        aro.transform.localRotation = eje;
+                    }
+                    var brazo = new[] { new Vector3(-x - 0.03f, yCopa - 0.06f, zCopa + 0.05f), new Vector3(-x - 0.03f, yCopa - 0.17f, zCopa + 0.2f),
+                                        new Vector3(-x + 0.06f, yCopa - 0.2f, zCopa + 0.38f), new Vector3(-x + 0.16f, yCopa - 0.19f, zCopa + 0.46f) };
+                    ConstruirEstudio.Malla("Brazo", g, Mallas.Guardar(Mallas.Tubo(brazo, 0.013f, 32, 8), "brazo_micro"), Vector3.zero, negro);
+                    var espuma = Esfera("Micro", g, brazo[3], 0.075f, acolchado);
+                    espuma.transform.localScale = new Vector3(0.1f, 0.065f, 0.065f);
+                    Esfera("LuzMicro", g, brazo[3] + new Vector3(0.048f, 0, 0.012f), 0.022f, luz);
                     break;
                 case "tiburona_consumo":        // flor grande y collar de perlas
                     var petalo = M("Flor", "#FF6FA5", 0.4f);
@@ -200,7 +221,9 @@ namespace NeuralHub.Editor
                         s.transform.localScale = new Vector3(0.16f, 0.07f, 0.16f);
                     }
                     Esfera("Centro", flor, new Vector3(0, 0.03f, 0), 0.12f, M("Oro", "#E9B949", 0.75f, 0.7f));
-                    Collar(g, cuello, frenteCuello, 15, 0.065f, M("Perla", "#FFF3EC", 0.85f, 0.15f), 0.13f); break;
+                    var perlaC = M("Perla", "#FFF3EC", 0.85f, 0.15f);
+                    CollarSobrePecho(g, cara, cuello + Vector3.up * 0.14f, 25, 0.064f, perlaC, 0.16f, 0.27f);
+                    CollarSobrePecho(g, cara, cuello + Vector3.up * 0.14f, 1, 0.125f, M("Dije_coral", "#FF7A45", 0.8f, 0.3f), 0.215f, 0f); break;
                 case "tiburon_mentor":          // birrete de maestro
                     var tela = M("Birrete", "#15331F", 0.25f);
                     Disco("Casquete", g, new Vector3(0, -0.06f, 0), 0.21f, 0.12f, tela, 0.05f);
@@ -218,6 +241,18 @@ namespace NeuralHub.Editor
                     Collar(g, cuello, frenteCuello, 21, 0.045f, M("Oro", "#E9B949", 0.75f, 0.7f), 0.27f); break;
             }
             return g;
+        }
+
+        /// <summary>Collar que sigue la forma del pecho (el cuerpo musculoso sobresale y escondía las cuentas).</summary>
+        static void CollarSobrePecho(Transform g, Cara cara, Vector3 cuello, int cuentas, float d, Material m, float caida, float medioAncho)
+        {
+            for (int k = 0; k < cuentas; k++)
+            {
+                float u = cuentas == 1 ? 0f : k / (cuentas - 1f) * 2f - 1f;
+                float x = cuello.x + u * medioAncho, y = cuello.y - 0.08f - caida * (1 - u * u);
+                float z = cara.Frente(x, y);
+                Bolita(g, new Vector3(x, y, z + d * 0.38f), Vector3.one * d, m, null, "Cuenta");
+            }
         }
 
         static void Collar(Transform g, Vector3 cuello, float frente, int cuentas, float d, Material m, float caida)

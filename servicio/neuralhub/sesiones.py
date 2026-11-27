@@ -44,6 +44,13 @@ def _preparar_voces():
 threading.Thread(target=_preparar_voces, daemon=True).start()
 
 
+def a_su_manera(texto: str, emisor: str) -> str:
+    """Teo dice «startup» donde otros dirían «empresa» (ambas son femeninas, así que la frase sigue concordando)."""
+    if emisor != "tiburon_tecnologico":
+        return texto
+    return re.sub(r"\b([Ee])mpresa(s?)\b", lambda m: ("S" if m.group(1) == "E" else "s") + "tartup" + m.group(2), texto)
+
+
 def sin_etiquetas(texto: str) -> str:
     return ETIQUETAS.sub("", texto).strip()
 
@@ -71,7 +78,7 @@ class Sesion:
 
     # --- eventos ---
     def emit(self, tipo, emisor, destino, texto, ronda, **extra):
-        texto = sin_etiquetas(texto)
+        texto = a_su_manera(sin_etiquetas(texto), emisor)
         with self._lock:
             e = {"n": len(self.eventos) + 1, "ronda": ronda, "tipo": tipo, "emisor": emisor, "destino": destino,
                  "texto": texto, "estado": ESTADO_EMISOR.get(tipo, "")}

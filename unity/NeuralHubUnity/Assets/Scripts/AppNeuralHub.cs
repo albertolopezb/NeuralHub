@@ -146,8 +146,12 @@ namespace NeuralHub
 
         public void IniciarSesionElegida() { if (panelElegido != null) IniciarSesion(panelElegido); }
 
+        public bool iniciando;      // se pidió la sesión y el servicio aún no contesta
+
         public void IniciarSesion(List<string> ids)
         {
+            if (iniciando) return;
+            iniciando = true;
             mensaje = "";
             bool enVivo = modoEnVivo, ayuda = modoEnVivo && ayudaActiva;
             // Mismo orden del catálogo para que el panel quede estable
@@ -155,6 +159,7 @@ namespace NeuralHub
             foreach (var f in recomendacion.ranking) if (ids.Contains(f.tiburon_id)) panel.Add(f.tiburon_id);
             StartCoroutine(cliente.CrearSesion(pitchJson, panel.ToArray(), enVivo, ayuda, nivel, ok =>
             {
+                iniciando = false;
                 if (!ok) return;
                 sugerenciasPedidas = 0;
                 barra.Reiniciar();
@@ -487,6 +492,16 @@ namespace NeuralHub
             modoEnVivo = true; ayudaActiva = true; Ir(Vista.Modo);
             yield return new WaitForSeconds(0.5f);
             yield return Cap(carpeta, "ui_modo");
+            iniciando = true;
+            yield return new WaitForSeconds(0.4f);
+            yield return Cap(carpeta, "ui_iniciando");
+            iniciando = false;
+            Ir(Vista.Sesion); cliente.ayuda = true;
+            reproductor.turnoUsuario = "tiburon_tecnologico";
+            burbuja.Escribir("tiburon_tecnologico", "Tenemos un demo funcionando que lee las placas con las cámaras de la plaza.");
+            burbuja.Avisar("Revisa el texto antes de enviarlo.");
+            yield return new WaitForSeconds(0.6f);
+            yield return Cap(carpeta, "ui_respuesta");
             Application.Quit();
         }
 
