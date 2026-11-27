@@ -2,7 +2,7 @@
   "id": "mock",
   "modo": "autopiloto",
   "ayuda": false,
-  "nivel": "medio",
+  "nivel": "facil",
   "panel": [
     "tiburon_financiero",
     "tiburon_estratega",
@@ -99,7 +99,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuánto te cuesta adquirir un cliente nuevo y cuánto pagó cada uno en promedio el año pasado?",
+      "texto": "¿Qué tipo de PyMEs usan más su plataforma y qué problemas específicos les ayuda a resolver?",
       "estado": "Preguntando"
     },
     {
@@ -108,7 +108,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente, no tengo el dato exacto del costo de adquisición de cliente. En promedio, con 50 clientes y ventas totales de $270,000 MXN, cada cliente pagó alrededor de $5,400 MXN el año pasado. Para definir el costo de adquisición, analizaría nuestros gastos en marketing y ventas relacionados con la captación de clientes.",
+      "texto": "La mayoría de nuestros clientes son PyMEs mexicanas de comercio y servicios con entre 10 y 100 empleados. Nuestra plataforma les ayuda a aprovechar sus datos de ventas e inventario sin necesidad de científicos de datos, generando análisis y alertas comprensibles en lenguaje natural para mejorar sus decisiones y evitar pérdidas o falta de stock.",
       "estado": "Respondiendo"
     },
     {
@@ -117,7 +117,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Qué ventaja tiene tu plataforma para que un cliente no prefiera Power BI, y cómo piensas defenderla ante competidores grandes?",
+      "texto": "¿Qué experiencia o motivación los llevó a crear DataSense AI para las PyMEs mexicanas?",
       "estado": "Preguntando"
     },
     {
@@ -126,7 +126,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Nuestra ventaja clave es que DataSense AI no requiere configuración técnica; el análisis se entrega en lenguaje natural, facilitando su uso para PyMEs sin científicos de datos. Para defendernos, seguiremos mejorando la inteligencia artificial y enfocándonos en la experiencia del usuario, además de crecer nuestro equipo de ingeniería y ventas para mantenernos ágiles y muy cercanos a las necesidades del mercado.",
+      "texto": "Somos un equipo con tres años promedio en empresas de tecnología, con experiencia en ingeniería de datos, producto, ventas y operaciones. Vimos que las PyMEs mexicanas tienen datos valiosos pero carecen de expertos para usarlos. Motivados por facilitarles el acceso a análisis inteligentes sin complejidad técnica, creamos DataSense AI para empoderar su toma de decisiones.",
       "estado": "Respondiendo"
     },
     {
@@ -135,7 +135,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué algoritmo o tecnología de IA usas para analizar datos y generar alertas sin configuración técnica, y cómo planeas proteger esa innovación?",
+      "texto": "¿Cómo funciona el algoritmo que convierte datos en análisis en lenguaje natural para las PyMEs?",
       "estado": "Preguntando"
     },
     {
@@ -144,7 +144,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Actualmente usamos técnicas avanzadas de aprendizaje automático para análisis y generación de alertas en lenguaje natural, pero no hemos patentado algoritmos específicos aún. Para proteger nuestra innovación, planeamos registrar propiedad intelectual y fortalecer nuestra marca, además de continuar mejorando el producto para mantener ventaja competitiva.",
+      "texto": "Aún no lo sé con detalle. Para responder, consultaría a nuestro equipo de ingeniería para describir el proceso técnico del algoritmo, cómo integra IA para interpretar datos y generar análisis en lenguaje natural. Podría preparar una explicación clara y técnica para ustedes tras esa revisión.",
       "estado": "Respondiendo"
     },
     {
@@ -153,7 +153,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_financiero",
-      "texto": "Estoy de acuerdo con la pregunta del Tiburón financiero sobre el costo de adquisición, es clave para evaluar la escalabilidad. Aunque el emprendedor no tiene ese dato exacto, el promedio de pago por cliente y el margen bruto del 72% son buenos indicadores iniciales. Sin entender bien el CAC, es difícil proyectar la rentabilidad futura del prototipo.",
+      "texto": "Me gusta que preguntes por el tipo de PyMEs y sus problemas específicos, es clave para validar el prototipo y el algoritmo. Entender bien al usuario ayuda a mejorar la IA y adaptar el análisis en lenguaje natural para que sea realmente útil. Eso sí, falta detalle técnico sobre cómo funciona la plataforma.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -163,7 +163,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Cómo planean escalar ventas para que esos 50 clientes pasen a cientos sin perder la cercanía y ventaja en servicio y experiencia?",
+      "texto": "Cuéntame, ¿qué te motivó a enfocar DataSense AI en las PyMEs mexicanas y sus datos?",
       "estado": "Preguntando"
     },
     {
@@ -172,7 +172,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Para escalar ventas sin perder cercanía, planeamos crecer nuestro equipo de ventas y operaciones para mantener atención personalizada. Además, mejoraremos nuestra plataforma con IA para ofrecer alertas y análisis automáticos que refuercen la experiencia del usuario, asegurando que el servicio siga siendo ágil y cercano incluso al aumentar la base de clientes.",
+      "texto": "Nos motivó ver que muchas PyMEs mexicanas cuentan con datos valiosos de ventas e inventario pero no tienen acceso a científicos de datos para aprovecharlos. Queremos facilitarles análisis inteligentes sin complejidad técnica para que tomen mejores decisiones y crezcan.",
       "estado": "Respondiendo"
     },
     {
@@ -181,7 +181,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Puedes explicar cómo funciona el prototipo para conectar datos y generar análisis sin configuración técnica, y qué tecnología planeas mejorar con el dinero solicitado?",
+      "texto": "¿Cómo planean mejorar la inteligencia artificial con la inversión para hacerla más útil y fácil para las PyMEs?",
       "estado": "Preguntando"
     },
     {
@@ -190,7 +190,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Nuestro prototipo conecta hojas de cálculo y sistemas automáticamente, usando técnicas de aprendizaje automático para analizar datos y generar alertas en lenguaje natural, sin que el usuario configure nada. Con el dinero solicitado, mejoraremos la inteligencia artificial para hacer los análisis más precisos y automáticos, y creceremos nuestro equipo de ingeniería para acelerar el desarrollo tecnológico.",
+      "texto": "Con la inversión planeamos crecer nuestro equipo de ingeniería para optimizar los algoritmos de IA, enfocándonos en mejorar la precisión del análisis y la generación de alertas en lenguaje natural. Buscamos hacer la plataforma aún más intuitiva y adaptada a las necesidades específicas de las PyMEs, facilitando su uso sin requerir configuración técnica.",
       "estado": "Respondiendo"
     },
     {
@@ -199,7 +199,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuánto gastan exactamente en ventas y marketing mensual para captar clientes y qué porcentaje de esos gastos es efectivo para cerrar ventas?",
+      "texto": "¿Qué historias de clientes pueden contar que muestren cómo DataSense AI ha cambiado su forma de trabajar?",
       "estado": "Preguntando"
     },
     {
@@ -208,7 +208,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente, gastamos aproximadamente $60,000 MXN mensuales en total, que incluye operaciones y ventas, pero no tenemos el desglose exacto solo para ventas y marketing. Tampoco contamos con un porcentaje preciso de efectividad. Para obtener esos datos, analizaría nuestros reportes financieros y métricas de ventas para medir la inversión y el retorno específico en captación de clientes.",
+      "texto": "Aún no contamos con historias específicas documentadas de clientes sobre cambios en su forma de trabajar. Para obtenerlas, realizaríamos entrevistas y recopilaríamos testimonios detallados para mostrar el impacto práctico de DataSense AI en sus operaciones y decisiones.",
       "estado": "Respondiendo"
     },
     {
@@ -217,7 +217,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_estratega",
-      "texto": "Estoy de acuerdo con el Tiburón estratega en que escalar sin perder cercanía es crucial. El crecimiento del equipo de ventas y la mejora en IA son pasos necesarios, pero me falta saber el costo de adquirir y mantener clientes al crecer; sin ese dato, no puedo evaluar si el plan es viable financieramente.",
+      "texto": "Estoy de acuerdo con tu pregunta sobre la motivación para enfocarse en PyMEs mexicanas. La respuesta confirma que el mercado tiene datos valiosos y falta ciencia de datos accesible, lo cual tiene sentido. Ahora necesito saber el costo de adquisición por cliente y el flujo para ver si el enfoque es rentable.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -227,7 +227,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Qué mejoras específicas en la inteligencia artificial planean implementar para hacer más precisos los análisis y alertas con el dinero que piden?",
+      "texto": "¿Qué historia de algún cliente te ha inspirado a seguir mejorando la plataforma con inteligencia artificial?",
       "estado": "Preguntando"
     },
     {
@@ -236,7 +236,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
-      "texto": "Planeamos mejorar nuestros modelos de aprendizaje automático para aumentar la precisión en el análisis de datos y la generación de alertas en lenguaje natural. Esto incluye optimizar algoritmos para interpretar mejor distintos tipos de datos y contextos en PyMEs, logrando análisis más útiles y oportunos, sin requerir configuración técnica del usuario.",
+      "texto": "Aún no tenemos una historia específica documentada de clientes que me haya inspirado. Para cambiar eso, planeamos recopilar testimonios y realizar entrevistas con nuestros clientes actuales para entender mejor cómo DataSense AI impacta su trabajo y así seguir mejorando nuestra inteligencia artificial con base en sus experiencias reales.",
       "estado": "Respondiendo"
     },
     {
@@ -245,7 +245,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el gasto mensual exacto en ventas y marketing para captar clientes y cuántos clientes nuevos atraes con eso cada mes?",
+      "texto": "¿Qué te motivó personalmente a crear DataSense AI y cómo ha sido la experiencia con tus primeros clientes?",
       "estado": "Preguntando"
     },
     {
@@ -254,7 +254,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
-      "texto": "Actualmente, gastamos alrededor de $60,000 MXN mensuales en total, incluyendo operaciones y ventas, pero no tenemos el desglose exacto solo para ventas y marketing ni el número específico de clientes nuevos que atraemos cada mes. Para obtener esos datos, analizaría nuestros reportes financieros y métricas de ventas para medir la inversión y el retorno en captación de clientes.",
+      "texto": "Personalmente, me motivó ver cómo muchas PyMEs mexicanas tienen datos valiosos sin poder aprovecharlos por falta de expertos. Queremos facilitarles el acceso a análisis inteligentes sin complicaciones técnicas. La experiencia con los primeros 50 clientes ha sido positiva, con un crecimiento mensual del 15 %, lo que valida que nuestra solución es útil y tiene demanda real.",
       "estado": "Respondiendo"
     },
     {
@@ -263,7 +263,7 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Cómo consiguen que los clientes actuales recomienden la plataforma y qué incentivos usan para que sigan activos y pagando la suscripción?",
+      "texto": "¿Qué historia de un cliente te ha motivado a seguir mejorando DataSense AI para las PyMEs?",
       "estado": "Preguntando"
     },
     {
@@ -272,7 +272,7 @@
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
-      "texto": "Aún no cuento con datos específicos sobre cómo incentivamos recomendaciones o retención activa. Para averiguarlo, revisaría nuestras estrategias actuales de atención al cliente y programas de fidelización, y consideraría implementar incentivos como descuentos por referidos o mejoras continuas en la plataforma para mantener a los clientes satisfechos y suscritos.",
+      "texto": "Aún no tenemos una historia específica documentada de clientes que me haya motivado. Para cambiar eso, planeamos recopilar testimonios y realizar entrevistas con nuestros clientes actuales para entender mejor el impacto de DataSense AI y así seguir mejorando nuestra plataforma para las PyMEs.",
       "estado": "Respondiendo"
     },
     {
@@ -281,7 +281,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Estoy de acuerdo con tu pregunta sobre las mejoras específicas en IA. El emprendedor menciona optimizar modelos para precisión y contexto, clave para escalar y defender ventaja en un mercado competido. Sin esas mejoras y claridad en inversión tecnológica, difícil mantener ventaja frente a grandes competidores con recursos para replicar la solución.",
+      "texto": "Concuerdo contigo en que falta una historia clara de impacto de clientes para validar el valor real y la mejora con IA. Sin evidencia concreta, es difícil defender la ventaja competitiva y escalar en un mercado tan amplio y competitivo como el de PyMEs mexicanas.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -291,12 +291,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "Me falta el costo de adquisición de cliente, clave para validar escalabilidad. Con margen bruto del 72% y ventas anuales de $270,000, la valuación de $3,333,333 me parece alta. Ofrezco $300,000 por 20% para equilibrar riesgo y potencial. Contraoferta: $300,000 MXN por el 20 %.",
+      "texto": "El margen bruto del 72% y el crecimiento mensual del 15% con 50 clientes indican un modelo SaaS viable. Aunque falta el costo por adquisición, las ventas de 270,000 MXN y la valuación de 3,333,333 MXN cuadran para considerar inversión. Vamos a nadar juntos.",
       "estado": "Votando",
-      "decision": "contraoferta",
+      "decision": "invertir",
       "votacion": 1,
-      "contraoferta_monto_mxn": 300000.0,
-      "contraoferta_porcentaje": 20.0
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
     },
     {
       "n": 25,
@@ -304,12 +304,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado PyME es grande pero falta claridad en costo de adquisición y barreras fuertes. El margen del 72% y $270,000 MXN en ventas son buenos, pero la valuación de $3,333,333 MXN me parece alta sin datos clave para defender ventaja a largo plazo. Contraoferta: $350,000 MXN por el 15 %.",
+      "texto": "El mercado PyME en México es grande, pero falta evidencia clara de ventaja competitiva defendible y barreras de entrada. Con 50 clientes y 15% crecimiento mensual, la valuación de $3,333,333 es alta para la etapa. Propongo $350,000 por 20% para defender y escalar mejor. Contraoferta: $350,000 MXN por el 20 %.",
       "estado": "Votando",
       "decision": "contraoferta",
       "votacion": 1,
       "contraoferta_monto_mxn": 350000.0,
-      "contraoferta_porcentaje": 15.0
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 26,
@@ -317,12 +317,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "La innovación en IA sin configuración técnica es atractiva, pero falta patente y el CAC no está claro, lo que limita la defensa tecnológica. Por $300,000 MXN por 20% puedo apoyar el desarrollo del prototipo y mejora del algoritmo con foco en propiedad intelectual. Contraoferta: $300,000 MXN por el 20 %.",
+      "texto": "Me gusta la innovación de su plataforma SaaS que usa IA para generar análisis en lenguaje natural sin configuración técnica, ideal para PyMEs. Aunque falta detalle técnico del algoritmo, tienen 50 clientes y 15% de crecimiento mensual, lo que valida su prototipo y mercado.",
       "estado": "Votando",
-      "decision": "contraoferta",
+      "decision": "invertir",
       "votacion": 1,
-      "contraoferta_monto_mxn": 300000.0,
-      "contraoferta_porcentaje": 20.0
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
     },
     {
       "n": 27,
@@ -354,48 +354,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Modelo SaaS con margen bruto alto (72%) que muestra eficiencia operativa.; Producto enfocado en PyMEs con una solución de inteligencia artificial accesible que no requiere configuración técnica.; Validación inicial con 50 clientes pagando y crecimiento mensual del 15%, lo que indica aceptación de mercado.. Alertas: Falta información crítica sobre costo de adquisición de clientes y desglose de gastos en ventas y marketing.; Ausencia de patente o protección clara de la tecnología que podría ser replicada por competidores grandes.; No se comunicaron estrategias claras para retención, referidos ni para mantener ventaja competitiva a largo plazo.. Siguientes pasos: Realizar un análisis detallado del costo de adquisición de clientes y desglose de gastos en ventas y marketing para evaluar rentabilidad y escalabilidad.; Desarrollar y registrar propiedad intelectual para proteger la tecnología y fortalecer la marca.; Implementar estrategias concretas de retención y referidos para asegurar crecimiento sostenible y mantener cercanía con clientes..",
+      "texto": "Fortalezas: Modelo SaaS con margen bruto alto (72%) y crecimiento mensual consistente (15%).; Solución clara y enfocada en un problema real de PyMEs mexicanas sin científicos de datos.; Equipo multidisciplinario con experiencia relevante en tecnología y dedicación full time.. Alertas: Falta de detalle técnico sobre cómo funciona el algoritmo de IA y su ventaja competitiva.; Ausencia de historias documentadas de clientes que evidencien impacto tangible y motivación para mejorar.; Evaluación de valuación alta para la etapa y falta de datos sobre costo de adquisición y flujo financiero.. Siguientes pasos: Documentar y recopilar testimonios y casos de éxito de clientes para evidenciar impacto.; Preparar un informe técnico detallado del algoritmo y mejoras planeadas en IA.; Analizar y presentar métricas financieras clave como costo de adquisición y flujo de caja para inversores..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_financiero",
-            "calificacion": 3,
-            "frase_clave": "Me falta el costo de adquisición de cliente, clave para validar escalabilidad.",
-            "necesitaria": "Necesitaría ver un desglose claro del costo de adquisición de clientes (CAC) y un análisis financiero que demuestre la rentabilidad y escalabilidad del modelo."
+            "calificacion": 4,
+            "frase_clave": "El margen bruto del 72% y el crecimiento mensual del 15% con 50 clientes indican un modelo SaaS viable.",
+            "necesitaria": "Conocer el costo de adquisición por cliente y flujo de caja para evaluar rentabilidad a mediano plazo."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 3,
-            "frase_clave": "Falta claridad en costo de adquisición y barreras fuertes.",
-            "necesitaria": "Necesitaría conocer estrategias claras para escalar ventas sin perder cercanía y defensas competitivas sólidas que justifiquen la valuación y el crecimiento a largo plazo."
+            "frase_clave": "Falta evidencia clara de ventaja competitiva defendible y barreras de entrada, y la valuación es alta para la etapa.",
+            "necesitaria": "Demostrar historias de éxito documentadas y barreras competitivas claras para justificar la valuación y escalabilidad."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 3,
-            "frase_clave": "Falta patente y el CAC no está claro, lo que limita la defensa tecnológica.",
-            "necesitaria": "Necesitaría ver protección de propiedad intelectual concreta, avances específicos en IA y evidencia de que la tecnología es difícil de replicar por competidores."
+            "calificacion": 4,
+            "frase_clave": "Me gusta la innovación de su plataforma SaaS que usa IA para generar análisis en lenguaje natural sin configuración técnica, ideal para PyMEs. Aunque falta detalle técnico del algoritmo.",
+            "necesitaria": "Explicación detallada del funcionamiento técnico del algoritmo y evidencias de mejora continua en IA para confiar en la innovación."
           }
         ],
         "fortalezas": [
-          "Modelo SaaS con margen bruto alto (72%) que muestra eficiencia operativa.",
-          "Producto enfocado en PyMEs con una solución de inteligencia artificial accesible que no requiere configuración técnica.",
-          "Validación inicial con 50 clientes pagando y crecimiento mensual del 15%, lo que indica aceptación de mercado."
+          "Modelo SaaS con margen bruto alto (72%) y crecimiento mensual consistente (15%).",
+          "Solución clara y enfocada en un problema real de PyMEs mexicanas sin científicos de datos.",
+          "Equipo multidisciplinario con experiencia relevante en tecnología y dedicación full time."
         ],
         "alertas": [
-          "Falta información crítica sobre costo de adquisición de clientes y desglose de gastos en ventas y marketing.",
-          "Ausencia de patente o protección clara de la tecnología que podría ser replicada por competidores grandes.",
-          "No se comunicaron estrategias claras para retención, referidos ni para mantener ventaja competitiva a largo plazo."
+          "Falta de detalle técnico sobre cómo funciona el algoritmo de IA y su ventaja competitiva.",
+          "Ausencia de historias documentadas de clientes que evidencien impacto tangible y motivación para mejorar.",
+          "Evaluación de valuación alta para la etapa y falta de datos sobre costo de adquisición y flujo financiero."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el costo exacto de adquisición de clientes (CAC)?",
-          "¿Cuánto gastan específicamente en ventas y marketing y cuál es la efectividad de esos gastos?",
-          "¿Qué incentivos usan para que los clientes recomienden la plataforma y se mantengan activos?"
+          "¿Cómo funciona el algoritmo que convierte datos en análisis en lenguaje natural?",
+          "¿Qué historias específicas de clientes muestran cómo DataSense AI ha cambiado su forma de trabajar?",
+          "¿Cuál es el costo de adquisición por cliente y el flujo financiero para validar rentabilidad?"
         ],
         "siguientes_pasos": [
-          "Realizar un análisis detallado del costo de adquisición de clientes y desglose de gastos en ventas y marketing para evaluar rentabilidad y escalabilidad.",
-          "Desarrollar y registrar propiedad intelectual para proteger la tecnología y fortalecer la marca.",
-          "Implementar estrategias concretas de retención y referidos para asegurar crecimiento sostenible y mantener cercanía con clientes."
+          "Documentar y recopilar testimonios y casos de éxito de clientes para evidenciar impacto.",
+          "Preparar un informe técnico detallado del algoritmo y mejoras planeadas en IA.",
+          "Analizar y presentar métricas financieras clave como costo de adquisición y flujo de caja para inversores."
         ],
         "resultado": "TRATO",
         "condiciones": {
@@ -405,9 +405,9 @@
         },
         "valuacion_mxn": 3333333.33,
         "votos_primera_votacion": {
-          "tiburon_financiero": "contraoferta",
+          "tiburon_financiero": "invertir",
           "tiburon_estratega": "contraoferta",
-          "tiburon_tecnologico": "contraoferta"
+          "tiburon_tecnologico": "invertir"
         },
         "criterios_no_evaluados": [
           {
@@ -432,8 +432,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 25,
-    "segundos_modelo": 31.4,
-    "segundos_total": 29.3,
+    "segundos_modelo": 26.0,
+    "segundos_total": 23.2,
     "rondas_preguntas": 3,
     "n_eventos": 29,
     "eventos_en_orden": true,
@@ -441,7 +441,7 @@
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
-    "preguntas_mencionan_criterio": 6,
+    "preguntas_mencionan_criterio": 0,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,

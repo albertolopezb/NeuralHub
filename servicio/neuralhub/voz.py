@@ -4,6 +4,7 @@ Ambos corren en la computadora del servicio, sin costo y sin enviar audio a terc
 """
 
 import hashlib
+import math
 import re
 import threading
 from pathlib import Path
@@ -11,21 +12,24 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent.parent
 CACHE = BASE / "audio_cache"
 
-# Voz de cada personaje: (voz de Windows es-MX, velocidad -10..10, tono -10..10). Se usan las dos voces en español de
-# México que trae Windows (Raúl y Sabina) con cambios suaves: los tonos extremos sonaban artificiales.
+# Voz de cada personaje: (voz de Windows es-MX, velocidad -10..10, timbre, graves, eco).
+# «timbre» cambia a la vez tono y formantes (como un tamaño distinto de personaje): < 1 más grande y grave, > 1 más
+# joven y agudo; la velocidad se compensa para que nadie hable más rápido o lento por eso. «graves» refuerza los
+# bajos y «eco» agrega una reverberación corta. Se usan las dos voces en español de México que trae Windows.
 PERFIL_VOZ = {
-    "tiburon_financiero": ("Raul", 0, -2),
-    "tiburon_estratega": ("Sabina", 0, -1),
-    "tiburon_tecnologico": ("Raul", 2, 2),
-    "tiburona_consumo": ("Sabina", 2, 1),
-    "tiburon_consumo": ("Sabina", 2, 1),
-    "tiburon_mentor": ("Raul", -1, 0),
-    "tiburon_negociador": ("Raul", 1, -3),
-    "emprendedor": ("Sabina", 1, 1),
-    "moderador": ("Sabina", 0, 0),
-    "nodo_votacion": ("Sabina", 0, 0),
-    "servicio": ("Sabina", 0, 0),
+    "tiburon_financiero": ("Raul", 0, 0.93, 0.25, 0.00),     # sobrio y seco
+    "tiburon_estratega": ("Sabina", -1, 0.92, 0.20, 0.05),   # serena, más grave
+    "tiburon_tecnologico": ("Raul", 2, 1.13, 0.00, 0.00),    # joven y acelerado
+    "tiburona_consumo": ("Sabina", 1, 1.09, 0.00, 0.00),     # alegre y ágil
+    "tiburon_consumo": ("Sabina", 1, 1.09, 0.00, 0.00),
+    "tiburon_mentor": ("Raul", -2, 0.86, 0.45, 0.12),        # mayor, pausado y cálido
+    "tiburon_negociador": ("Raul", 0, 0.81, 0.60, 0.07),     # grave e imponente
+    "emprendedor": ("Raul", 1, 1.05, 0.00, 0.00),
+    "moderador": ("Sabina", 0, 1.00, 0.10, 0.10),
+    "nodo_votacion": ("Sabina", 0, 1.00, 0.10, 0.10),
+    "servicio": ("Sabina", 0, 1.00, 0.00, 0.00),
 }
+MAX_CHARS_VOZ = 3000
 # Las voces «OneCore» de Windows (entre ellas Raúl) están en una categoría aparte de las clásicas de SAPI
 CATEGORIAS = (r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices",
               r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices")
@@ -58,14 +62,16 @@ _modelo = None
 
 def _limpiar(texto: str) -> str:
     t = re.sub(r"[<>&]", " ", texto)
-    return t[:900]
+    return t[:MAX_CHARS_VOZ]
 
 
 def sintetizar(texto: str, emisor: str) -> Path:
     """Genera (o reutiliza) un WAV con la línea del personaje."""
     CACHE.mkdir(exist_ok=True)
-    nombre, rate, pitch = PERFIL_VOZ.get(emisor, ("Sabina", 0, 0))
-    clave = hashlib.sha1(f"{emisor}|{nombre}|{rate}|{pitch}|{texto}".encode("utf8")).hexdigest()[:20]
+    nombre, rate, timbre, graves, eco = PERFIL_VOZ.get(emisor, ("Sabina", 0, 1.0, 0.0, 0.0))
+    # en SAPI, +10 de velocidad es hablar 3 veces más rápido: se compensa lo que el timbre acelera o frena
+    rate_sapi = max(-10, min(10, round(rate - 10 * math.log(timbre) / math.log(3))))
+    clave = hashlib.sha1(f"{emisor}|{nombre}|{rate}|{timbre}|{graves}|{eco}|{texto}".encode("utf8")).hexdigest()[:20]
     ruta = CACHE / f"{clave}.wav"
     if ruta.exists():
         return ruta
@@ -84,12 +90,43 @@ def sintetizar(texto: str, emisor: str) -> Path:
             stream.Format = fmt
             stream.Open(str(ruta), 3)  # SSFMCreateForWrite
             voz.AudioOutputStream = stream
-            voz.Rate = rate
-            voz.Speak(f'<pitch absmiddle="{pitch}">{_limpiar(texto)}</pitch>', 8)  # SVSFIsXML
+            voz.Rate = rate_sapi
+            voz.Speak(_limpiar(texto), 0)
             stream.Close()
         finally:
             comtypes.CoUninitialize()
+        _personalizar(ruta, timbre, graves, eco)
     return ruta
+
+
+def _personalizar(ruta: Path, timbre: float, graves: float, eco: float):
+    """Aplica el timbre, los graves y el eco del personaje al WAV generado."""
+    import wave
+
+    import numpy as np
+    with wave.open(str(ruta), "rb") as w:
+        sr = w.getframerate()
+        x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
+    if len(x) < 2:
+        return
+    if timbre != 1.0:
+        x = np.interp(np.arange(0, len(x) - 1, timbre), np.arange(len(x)), x).astype(np.float32)
+    if graves > 0:
+        ancho = int(sr / 320)                       # pasa-bajas sencillo (media móvil)
+        bajos = np.convolve(x, np.ones(ancho) / ancho, mode="same")
+        x = x + graves * bajos
+    if eco > 0:
+        salida = np.concatenate([x, np.zeros(int(sr * 0.25), dtype=np.float32)])
+        for retardo, fuerza in ((0.047, 1.0), (0.083, 0.6), (0.131, 0.35)):
+            d = int(sr * retardo)
+            salida[d:d + len(x)] += eco * fuerza * x
+        x = salida
+    x = x * min(1.0, 31000.0 / (np.max(np.abs(x)) + 1e-9))
+    with wave.open(str(ruta), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(x.astype(np.int16).tobytes())
 
 
 def _leer_wav_16k(ruta):

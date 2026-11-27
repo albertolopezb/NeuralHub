@@ -20,6 +20,7 @@ namespace NeuralHub
         public string Cuerpo { get; private set; }
 
         Vector3 escalaBase = Vector3.zero;
+        float tamBase;
         float entrada = 1f;
         string actual;
 
@@ -27,7 +28,16 @@ namespace NeuralHub
         {
             if (antetitulo) antetitulo.text = (sobre ?? "").ToUpper();
             if (titulo) titulo.text = Ajustar(encabezado, 20, 2);
-            if (detalle) detalle.text = Ajustar(cuerpo, 36, 7);
+            if (detalle)
+            {
+                // El texto completo siempre cabe: si es largo, se reduce la letra en lugar de cortarlo
+                if (tamBase <= 0f) tamBase = detalle.characterSize;
+                int[] anchos = { 36, 42, 49, 57, 66 }; int[] renglones = { 7, 8, 10, 12, 14 }; float[] escalas = { 1f, 0.86f, 0.74f, 0.63f, 0.54f };
+                int k = 0;
+                while (k < anchos.Length - 1 && Ajustar(cuerpo, anchos[k], 99).Split('\n').Length > renglones[k]) k++;
+                detalle.characterSize = tamBase * escalas[k];
+                detalle.text = Ajustar(cuerpo, anchos[k], renglones[k]);
+            }
             var tex = Resources.Load<Texture2D>("Laminas/" + lamina);
             Imagen = tex; Sobre = sobre; Encabezado = encabezado; Cuerpo = cuerpo;
             if (!ilustracion) return;

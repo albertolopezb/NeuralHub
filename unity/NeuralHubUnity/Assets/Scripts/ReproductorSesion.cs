@@ -39,7 +39,14 @@ namespace NeuralHub
         public string enviada;                   // clave de las preguntas ya enviadas al servicio (ronda|tiburón)
         public float Duracion_ { get; private set; }
         /// <summary>Avance (0 a 1) del turno en curso: la interfaz lo usa para pasar los subtítulos largos por frases.</summary>
-        public float Progreso { get { return Duracion_ > 0.01f ? Mathf.Clamp01(1f - restante / Duracion_) : 1f; } }
+        public float Progreso
+        {
+            get
+            {
+                if (sonidos && sonidos.Hablando) return sonidos.AvanceVoz;
+                return Duracion_ > 0.01f ? Mathf.Clamp01(1f - restante / Duracion_) : 1f;
+            }
+        }
         public readonly Dictionary<string, string> respuestasRonda = new Dictionary<string, string>();
 
         int siguiente;
@@ -70,11 +77,11 @@ namespace NeuralHub
 
         public void Detener() { activo = false; if (sonidos) sonidos.DetenerVoz(); }
         public bool ColaVacia { get { return siguiente >= cliente.recibidos.Count; } }
-        public bool Ocupado { get { return restante > 0f || esperandoAudio; } }
+        public bool Ocupado { get { return restante > 0f || esperandoAudio || (sonidos && sonidos.Hablando); } }
         public bool EnEspera { get { return activo && ColaVacia && !Ocupado && turnoUsuario == null; } }
 
         public void SaltarAnimacion() { restante = 0f; esperandoAudio = false; if (sonidos) sonidos.DetenerVoz(); }
-        public void AlternarPausa() { pausado = !pausado; if (pausado && sonidos) sonidos.DetenerVoz(); }
+        public void AlternarPausa() { pausado = !pausado; if (sonidos) sonidos.PausarVoz(pausado); }
         public void FijarVelocidad(float v) { velocidad = v; }
 
         /// <summary>Vuelve a un turno anterior o salta a uno posterior ya recibido: reconstruye la escena hasta ese punto y sigue desde ahí.</summary>
@@ -95,9 +102,10 @@ namespace NeuralHub
         {
             if (!activo || pausado) return;
             float dt = Time.deltaTime;
-            if (esperandoAudio) { esperaAudio += Time.unscaledDeltaTime; if (esperaAudio < 6f) return; esperandoAudio = false; }
+            if (esperandoAudio) { esperaAudio += Time.unscaledDeltaTime; if (esperaAudio < 25f) return; esperandoAudio = false; }
             if (turnoUsuario != null) return;   // en vivo: espera a que el usuario responda
             if (restante > 0f) { restante -= dt * velocidad * factorExtra; if (restante > 0f) return; }
+            if (sonidos && sonidos.Hablando) return;      // nadie interrumpe: el siguiente turno espera a que acabe la voz
             if (!ColaVacia) ReproducirSiguiente();
         }
 
@@ -168,7 +176,7 @@ namespace NeuralHub
                 case "NEGOCIACION": votos.Clear(); break;
                 case "DECISION":
                     resultado = e.resultado; decisionFinal = e;
-                    if (conEfectos && sonidos) sonidos.Efecto(e.resultado == "TRATO" ? "trato" : "sin_trato", 0.7f);
+                    // la fanfarria o el hundimiento los pone FinalPrograma
                     break;
                 case "REPORTE":
                     reporte = e; reporteListo = true;
@@ -185,7 +193,7 @@ namespace NeuralHub
             switch (e.tipo)
             {
                 case "PANEL": return 3.5f;
-                case "DECISION": return 5f;
+                case "DECISION": return 7.5f;
                 case "REPORTE": return 1.5f;
                 case "VOTO": return Mathf.Clamp(largo * 0.055f, 3f, 14f);
                 case "PITCH": return Mathf.Clamp(largo * 0.058f, 6f, 45f);

@@ -134,6 +134,48 @@ namespace NeuralHub.Editor
             return m.Fin("panel", false);
         }
 
+        /// <summary>Tubo liso que sigue una curva suave por los puntos de control (diadema y brazo del micrófono).</summary>
+        public static Mesh Tubo(Vector3[] control, float radio, int tramos = 48, int lados = 12)
+        {
+            System.Func<float, Vector3> curva = u =>        // Catmull-Rom
+            {
+                float f = u * (control.Length - 1); int i = Mathf.Min((int)f, control.Length - 2); float t = f - i;
+                Vector3 p0 = control[Mathf.Max(i - 1, 0)], p1 = control[i], p2 = control[i + 1], p3 = control[Mathf.Min(i + 2, control.Length - 1)];
+                return 0.5f * (2 * p1 + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t + (-p0 + 3 * p1 - 3 * p2 + p3) * t * t * t);
+            };
+            var anillos = new Vector3[tramos + 1, lados]; var centros = new Vector3[tramos + 1];
+            Vector3 normal = Vector3.forward;
+            for (int k = 0; k <= tramos; k++)
+            {
+                float u = k / (float)tramos;
+                centros[k] = curva(u);
+                var tangente = (curva(Mathf.Min(1, u + 0.01f)) - curva(Mathf.Max(0, u - 0.01f))).normalized;
+                normal = Vector3.ProjectOnPlane(normal, tangente).normalized;
+                if (normal.sqrMagnitude < 0.5f) normal = Vector3.Cross(tangente, Vector3.up).normalized;
+                var otra = Vector3.Cross(tangente, normal);
+                for (int j = 0; j < lados; j++)
+                {
+                    float a = j * 2 * Mathf.PI / lados;
+                    anillos[k, j] = centros[k] + (normal * Mathf.Cos(a) + otra * Mathf.Sin(a)) * radio;
+                }
+            }
+            var m = new M();
+            for (int k = 0; k < tramos; k++)
+                for (int j = 0; j < lados; j++)
+                {
+                    int l = (j + 1) % lados;
+                    var fuera = (anillos[k, j] + anillos[k, l]) / 2 - centros[k];
+                    m.Quad(anillos[k, j], anillos[k, l], anillos[k + 1, l], anillos[k + 1, j], fuera);
+                }
+            for (int j = 0; j < lados; j++)
+            {
+                int l = (j + 1) % lados;
+                m.Tri(centros[0], anillos[0, j], anillos[0, l], centros[0] - centros[1]);
+                m.Tri(centros[tramos], anillos[tramos, j], anillos[tramos, l], centros[tramos] - centros[tramos - 1]);
+            }
+            return m.Fin("tubo", true);
+        }
+
         /// <summary>Roca low poly: esfera facetada con deformación aleatoria.</summary>
         public static Mesh Roca(int semilla)
         {

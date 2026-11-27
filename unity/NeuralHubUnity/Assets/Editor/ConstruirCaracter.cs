@@ -53,23 +53,34 @@ namespace NeuralHub.Editor
                     visera.transform.localRotation = Quaternion.Euler(102, 0, 0);
                     Esfera("Insignia", g, new Vector3(0, 0.03f, 0.255f), 0.08f, M("Oro", "#E9B949", 0.75f, 0.7f));
                     g.localRotation = Quaternion.Euler(-4, 0, 6); break;
-                case "tiburon_tecnologico":     // audífonos con micrófono
-                    var negro = M("Audifono", "#101626", 0.5f);
-                    var luz = E("Audifono_luz", "#13B8F0", 2.2f);
-                    for (int k = -8; k <= 8; k++)
-                    {
-                        float a = k / 8f * 82f * Mathf.Deg2Rad;
-                        Esfera("Diadema", g, new Vector3(Mathf.Sin(a) * 0.37f, Mathf.Cos(a) * 0.3f - 0.26f, -0.02f), 0.085f, negro);
-                    }
+                case "tiburon_tecnologico":     // audífonos de diadema con micrófono
+                    var negro = M("Audifono", "#141B2E", 0.55f, 0.15f);
+                    var acolchado = M("Audifono_almohada", "#0A0E1A", 0.15f);
+                    var luz = E("Audifono_luz", "#13B8F0", 1.3f);
+                    const float x = 0.35f, yCopa = -0.34f, zCopa = -0.2f;    // atrás de los ojos
+                    var diadema = new[] { new Vector3(-x, yCopa + 0.08f, zCopa), new Vector3(-x * 0.88f, -0.07f, zCopa), new Vector3(-x * 0.5f, 0.06f, zCopa),
+                                          new Vector3(0, 0.1f, zCopa), new Vector3(x * 0.5f, 0.06f, zCopa), new Vector3(x * 0.88f, -0.07f, zCopa), new Vector3(x, yCopa + 0.08f, zCopa) };
+                    ConstruirEstudio.Malla("Diadema", g, Mallas.Guardar(Mallas.Tubo(diadema, 0.036f), "diadema"), Vector3.zero, negro);
+                    var forro = new[] { new Vector3(-x * 0.62f, 0.0f, zCopa), new Vector3(-x * 0.3f, 0.055f, zCopa), new Vector3(0, 0.065f, zCopa),
+                                        new Vector3(x * 0.3f, 0.055f, zCopa), new Vector3(x * 0.62f, 0.0f, zCopa) };
+                    ConstruirEstudio.Malla("Forro", g, Mallas.Guardar(Mallas.Tubo(forro, 0.043f, 28), "forro"), Vector3.zero, acolchado);
                     foreach (int lado in new[] { -1, 1 })
                     {
-                        var copa = Disco("Copa", g, new Vector3(0.37f * lado, -0.28f, -0.02f), 0.14f, 0.09f, negro, 0.03f);
-                        copa.transform.localRotation = Quaternion.Euler(0, 0, -90 * lado);
-                        var aro = Disco("Luz", g, new Vector3(0.455f * lado, -0.28f, -0.02f), 0.07f, 0.02f, luz, 0.008f);
-                        aro.transform.localRotation = Quaternion.Euler(0, 0, -90 * lado);
+                        var eje = Quaternion.Euler(0, 0, -90 * lado);       // el disco apunta hacia afuera
+                        var almohada = Disco("Almohada", g, new Vector3((x - 0.065f) * lado, yCopa, zCopa), 0.125f, 0.055f, acolchado, 0.025f);
+                        almohada.transform.localRotation = eje;
+                        var copa = Disco("Copa", g, new Vector3((x - 0.015f) * lado, yCopa, zCopa), 0.115f, 0.07f, negro, 0.032f);
+                        copa.transform.localRotation = eje;
+                        var aro = ConstruirEstudio.Malla("Aro", g, Mallas.Guardar(Mallas.Aro(0.056f, 0.07f, 40), "aro_audifono"), new Vector3((x + 0.058f) * lado, yCopa, zCopa), luz, false);
+                        aro.transform.localRotation = eje;
                     }
-                    for (int k = 0; k <= 6; k++) Esfera("Brazo", g, new Vector3(0.39f - k * 0.04f, -0.34f - k * 0.025f, 0.05f + k * 0.055f), 0.035f, negro);
-                    Esfera("Micro", g, new Vector3(0.13f, -0.5f, 0.4f), 0.09f, luz); break;
+                    var brazo = new[] { new Vector3(-x - 0.03f, yCopa - 0.06f, zCopa + 0.05f), new Vector3(-x - 0.03f, yCopa - 0.17f, zCopa + 0.2f),
+                                        new Vector3(-x + 0.06f, yCopa - 0.2f, zCopa + 0.38f), new Vector3(-x + 0.16f, yCopa - 0.19f, zCopa + 0.46f) };
+                    ConstruirEstudio.Malla("Brazo", g, Mallas.Guardar(Mallas.Tubo(brazo, 0.013f, 32, 8), "brazo_micro"), Vector3.zero, negro);
+                    var espuma = Esfera("Micro", g, brazo[3], 0.075f, acolchado);
+                    espuma.transform.localScale = new Vector3(0.1f, 0.065f, 0.065f);
+                    Esfera("LuzMicro", g, brazo[3] + new Vector3(0.048f, 0, 0.012f), 0.022f, luz);
+                    break;
                 case "tiburona_consumo":        // flor grande y collar de perlas
                     var petalo = M("Flor", "#FF6FA5", 0.4f);
                     var flor = new GameObject("Flor").transform; flor.SetParent(g, false); flor.localPosition = new Vector3(0.2f, -0.03f, 0.08f); flor.localRotation = Quaternion.Euler(30, 25, -25);

@@ -20,6 +20,21 @@ python evaluar.py             # 15 sesiones reales
 uvicorn neuralhub.api:app --port 8000   # NEURALHUB_MOCK=1 para no usar el modelo
 ```
 
+## El programa «Aguas Profundas»
+- **Intro de episodio**, pitch hablado como en un programa de inversionistas (la petición va al final), 3 rondas de
+  preguntas **una por una**, veredicto, negociación, celebración o hundimiento y cierre.
+- **Niveles** Fácil, Medio y Difícil: cambian cómo preguntan y cómo votan los tiburones.
+  `python servicio/comparar_niveles.py` los compara con el mismo pitch usando el modelo real.
+- **Conoce a los tiburones**: cada uno se presenta y explica cuándo conviene elegirlo.
+- La pantalla del estudio muestra una lámina del tema de cada pregunta con los datos del pitch.
+
+Regrabar la sesión de ejemplo (modo sin conexión) y los audios, desde `servicio/`:
+```bash
+python generar_mock.py 2 facil        # llama al modelo
+python generar_mock.py --solo-audio   # solo voces
+python generar_presentaciones.py
+```
+
 ## Modos de simulación
 - **Agente empresario** (`modo: "autopiloto"`): el agente empresario responde las preguntas con los datos del pitch.
 - **En vivo** (`modo: "humano"`): el usuario responde cada pregunta en cuanto el tiburón la hace. Con `ayuda: true`, el botón

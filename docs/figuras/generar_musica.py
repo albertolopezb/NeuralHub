@@ -103,8 +103,50 @@ def cortinilla():
     guardar("cortinilla", pista[: int(dur * SR)] * np.minimum(1, (dur - np.arange(int(dur * SR)) / SR) / 0.6), 0.85)
 
 
+METAL = ((1, 1.0), (2, 0.55), (3, 0.36), (4, 0.22), (5, 0.12))
+
+
+def _pieza(nombre, dur, notas, golpes=(), platillos=(), armonicos=METAL, caida=1.2, pico=0.85):
+    pista = np.zeros(int((dur + 2) * SR))
+    for t0, acorde, largo, vol in notas:
+        for n in acorde:
+            poner(pista, t0, tono(hz(n), largo, 0.02, caida, armonicos), vol)
+    for t0 in golpes:
+        poner(pista, t0, golpe(0.4), 0.45)
+    for t0 in platillos:
+        t = np.arange(int(1.5 * SR)) / SR
+        poner(pista, t0, np.diff(rng.standard_normal(len(t)), prepend=0) * np.exp(-2.6 * t), 0.08)
+    x = pista[: int(dur * SR)]
+    guardar(nombre, x * np.minimum(1, (dur - np.arange(len(x)) / SR) / 0.5), pico)
+
+
+def fanfarria():
+    notas = [(0.05, [67], 0.2, 0.2), (0.22, [67], 0.2, 0.2), (0.39, [67], 0.2, 0.2), (0.56, [60, 64, 67, 72], 0.8, 0.14),
+             (1.35, [65, 69, 72, 77], 0.45, 0.13), (1.8, [67, 71, 74, 79], 0.45, 0.13), (2.25, [60, 67, 72, 76, 84], 2.6, 0.12)]
+    notas += [(2.4 + k * 0.11, [84 + [0, 4, 7, 12][k % 4]], 0.35, 0.05) for k in range(18)]
+    _pieza("fanfarria", 5.2, notas, golpes=(0.56, 1.35, 1.8, 2.25), platillos=(0.56, 2.25))
+
+
+def hundimiento():
+    notas = [(0.1, [58, 61], 0.7, 0.16), (0.85, [55, 58], 0.7, 0.16), (1.6, [53, 56], 0.7, 0.16), (2.35, [48, 51, 55], 2.6, 0.16)]
+    notas += [(3.3 + k * 0.28, [72 - 3 * k], 0.5, 0.035) for k in range(7)]
+    _pieza("hundimiento", 5.6, notas, golpes=(2.35,), armonicos=((1, 1.0), (2, 0.3), (3, 0.18)), caida=1.0, pico=0.75)
+
+
+def cierre():
+    notas = []
+    for k, ac in enumerate([[60, 64, 67], [57, 60, 64], [53, 57, 60], [55, 59, 62]]):
+        notas.append((0.3 + k * 0.8, ac, 0.85, 0.12))
+        notas += [(0.3 + k * 0.8 + j * 0.2, [ac[j % 3] + 12], 0.3, 0.09) for j in range(4)]
+    notas.append((3.5, [48, 60, 64, 67, 72, 76], 2.4, 0.11))
+    _pieza("cierre", 6.0, notas, golpes=(0.3, 1.9, 3.5), platillos=(3.5,), caida=1.3)
+
+
 if __name__ == "__main__":
     SALIDA.mkdir(parents=True, exist_ok=True)
     tema()
     cortinilla()
+    fanfarria()
+    hundimiento()
+    cierre()
     print("ok")

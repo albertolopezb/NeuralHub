@@ -651,12 +651,14 @@ namespace NeuralHub
             bool enCerca = app.camara && app.camara.planoActual != Plano.General && app.camara.planoActual != Plano.Pantalla;
             if (!mostrarPanel && !app.mostrarHistorial && enCerca && pant && pant.Imagen && r.actual != null)
             {
-                var caja = new Rect(W - 560, 146, 520, 176);
+                var estCuerpo = new GUIStyle(Estilos.TextoChico) { fontSize = 18, wordWrap = true };
+                float altoCuerpo = estCuerpo.CalcHeight(new GUIContent(pant.Cuerpo ?? ""), 334);
+                var caja = new Rect(W - 560, 146, 520, Mathf.Max(176, 92 + altoCuerpo));
                 GUI.Box(caja, GUIContent.none, Estilos.CajaClara);
                 GUI.DrawTexture(new Rect(caja.x + 14, caja.y + 18, 140, 140), pant.Imagen, ScaleMode.ScaleToFit);
                 GUI.Label(new Rect(caja.x + 172, caja.y + 16, 330, 24), (pant.Sobre ?? "").ToUpper(), new GUIStyle(Estilos.Quien) { fontSize = 17 });
                 GUI.Label(new Rect(caja.x + 172, caja.y + 42, 330, 36), pant.Encabezado, new GUIStyle(Estilos.Subtitulo) { fontSize = 27, wordWrap = false, clipping = TextClipping.Clip });
-                GUI.Label(new Rect(caja.x + 172, caja.y + 82, 334, 90), Pantalla.Ajustar(pant.Cuerpo, 34, 3), new GUIStyle(Estilos.TextoChico) { fontSize = 18 });
+                GUI.Label(new Rect(caja.x + 172, caja.y + 80, 334, altoCuerpo + 6), pant.Cuerpo ?? "", estCuerpo);
             }
 
             // Tu panel (se abre con el botón «Tu panel»)

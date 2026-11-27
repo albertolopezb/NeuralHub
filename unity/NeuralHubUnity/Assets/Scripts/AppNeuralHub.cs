@@ -32,6 +32,8 @@ namespace NeuralHub
         public string nivel = "medio";     // facil | medio | dificil
         public readonly BarraRondas barra = new BarraRondas();
         public readonly IntroPrograma intro = new IntroPrograma();
+        public readonly FinalPrograma final_ = new FinalPrograma();
+        Evento decisionVista;
         public readonly ConocerTiburones conocer = new ConocerTiburones();
         public TiburonInfo[] catalogo;
         public Recomendacion recomendacion;
@@ -70,6 +72,7 @@ namespace NeuralHub
             foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-capturar") { cliente.usarMock = true; StartCoroutine(Capturas()); }
             if (Arg("-nh-vivo")) { vivoAuto = true; modoEnVivo = true; ayudaActiva = false; StartCoroutine(RespondedorAutomatico()); }
             if (Arg("-nh-video")) StartCoroutine(Video());
+            if (Arg("-nh-final")) { cliente.usarMock = true; StartCoroutine(PruebaFinal()); }
         }
 
         // ---------- navegación ----------
@@ -87,9 +90,14 @@ namespace NeuralHub
             }
         }
 
+        public string NombreEmpresa()
+        {
+            return reproductor.pitchActual != null && !string.IsNullOrEmpty(reproductor.pitchActual.nombre) ? reproductor.pitchActual.nombre : "tu empresa";
+        }
+
         public void Ir(Vista v)
         {
-            if (v != Vista.Sesion) intro.activa = false;
+            if (v != Vista.Sesion) { intro.activa = false; final_.Saltar(); }
             vista = v; mostrarHistorial = false;
             if (v != Vista.Sesion && v != Vista.Resultado)
             {
@@ -149,6 +157,7 @@ namespace NeuralHub
                 if (!ok) return;
                 sugerenciasPedidas = 0;
                 barra.Reiniciar();
+                final_.Reiniciar();
                 var datosPitch = formulario.p;
                 // Los 3 tiburones elegidos ya se sientan (en penumbra) mientras el emprendedor presenta su pitch
                 var nombres = new List<string>();
@@ -179,6 +188,17 @@ namespace NeuralHub
         void Update()
         {
             intro.Actualizar(this);
+            final_.Actualizar();
+            // Al llegar la decisión: celebración o hundimiento
+            var actual = reproductor.actual;
+            if (vista == Vista.Sesion && actual != null && actual.tipo == "DECISION" && actual != decisionVista)
+            {
+                decisionVista = actual;
+                bool trato = actual.resultado == "TRATO";
+                string cond = trato && actual.condiciones != null
+                    ? Perfiles.Mxn(actual.condiciones.monto_mxn) + " por el " + actual.condiciones.porcentaje.ToString("0.##") + " % de la empresa" : "";
+                final_.Resultado(this, trato, NombreEmpresa(), cond);
+            }
             // En vivo: cuando el usuario ya respondió las preguntas que el servicio espera, se envían juntas
             var p = cliente.pendiente;
             if (vista == Vista.Sesion && reproductor.enVivo && p != null && p.tipo == "RESPUESTAS" && p.preguntas != null &&
@@ -198,7 +218,9 @@ namespace NeuralHub
                 }
             }
 
-            if (vista == Vista.Sesion && reproductor.reporteListo && reproductor.EnEspera)
+            if (vista == Vista.Sesion && reproductor.reporteListo && reproductor.EnEspera && !final_.cierreVisto && !final_.Activo)
+                final_.Cerrar(this, NombreEmpresa());
+            if (vista == Vista.Sesion && reproductor.reporteListo && reproductor.EnEspera && !final_.Activo)
             {
                 esperaResultado += Time.deltaTime;
                 if (esperaResultado > 1.2f) { esperaResultado = 0; Ir(Vista.Resultado); }
@@ -228,6 +250,7 @@ namespace NeuralHub
                 case Vista.Conocer: conocer.Dibujar(this, W, H); break;
                 case Vista.Sesion:
                     if (intro.activa) { intro.Dibujar(this, W, H); break; }
+                    if (final_.Activo) { final_.Dibujar(this, W, H); break; }
                     interfaz.Dibujar(this, W, H);
                     barra.Dibujar(reproductor, W);
                     controles.Dibujar(this, W, H);
@@ -407,6 +430,19 @@ namespace NeuralHub
             while (!cond() && t < max) { t += Time.deltaTime; yield return null; }
         }
 
+        /// <summary>Prueba corta (-nh-final): captura la animación de «sin trato» sin reproducir toda una sesión.</summary>
+        IEnumerator PruebaFinal()
+        {
+            string carpeta = ArgValor("-nh-salida", Path.Combine(Application.persistentDataPath, "capturas"));
+            Directory.CreateDirectory(carpeta);
+            yield return new WaitForSeconds(2f);
+            ocultarUI = false; vista = Vista.Sesion;
+            final_.Resultado(this, false, "GreenPlate", "");
+            yield return new WaitForSeconds(5f);
+            yield return Cap(carpeta, "17_sin_trato");
+            Application.Quit();
+        }
+
         IEnumerator Capturas()
         {
             string carpeta = ArgValor("-nh-salida", Path.Combine(Application.persistentDataPath, "capturas"));
@@ -456,8 +492,11 @@ namespace NeuralHub
             yield return new WaitForSeconds(1.5f);
             yield return Cap(carpeta, "08_votos");
             yield return Hasta(() => reproductor.actual != null && reproductor.actual.tipo == "DECISION");
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(3.4f);
             yield return Cap(carpeta, "09_decision");
+            yield return Hasta(() => final_.EnCierre);
+            yield return new WaitForSeconds(4.2f);
+            yield return Cap(carpeta, "16_cierre");
             yield return Hasta(() => vista == Vista.Resultado);
             yield return new WaitForSeconds(0.6f);
             yield return Cap(carpeta, "10_resultado");
@@ -467,6 +506,13 @@ namespace NeuralHub
             yield return new WaitForSeconds(0.8f);
             yield return Cap(carpeta, "11_vista_arriba");
             estudio.camara.instantaneo = false;
+            // el otro final, para revisarlo sin otra sesión
+            ocultarUI = false; estudio.camara.Cambiar(Plano.General, null);
+            yield return new WaitForSeconds(1.2f);
+            final_.Resultado(this, false, NombreEmpresa(), "");
+            yield return new WaitForSeconds(4.8f);
+            yield return Cap(carpeta, "17_sin_trato");
+            final_.Saltar();
             File.WriteAllText(Path.Combine(carpeta, "listo.txt"), "ok");
             Application.Quit();
 #if UNITY_EDITOR

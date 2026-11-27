@@ -30,6 +30,9 @@ namespace NeuralHub
 
         float enCortinilla;
 
+        /// <summary>Pieza musical del programa (fanfarria, hundimiento o cierre): la música de fondo calla mientras suena.</summary>
+        public void Musical(string nombre, float dura) { Efecto(nombre, 0.8f); enCortinilla = dura; }
+
         /// <summary>Cortinilla de entrada del programa; la música de fondo baja mientras suena.</summary>
         public void Cortinilla()
         {
@@ -61,12 +64,25 @@ namespace NeuralHub
         public void Voz(AudioClip clip, float tono, int n)
         {
             Anotar("voz", n.ToString());
-            voz.Stop();
+            voz.Stop(); vozEnPausa = false;
             if (silencio || clip == null) return;
             voz.clip = clip; voz.pitch = tono; voz.Play();
         }
 
-        public void DetenerVoz() { if (voz) voz.Stop(); }
+        bool vozEnPausa;
+        /// <summary>Hay una línea sonando (o en pausa): la sesión no avanza hasta que termine.</summary>
+        public bool Hablando { get { return voz && voz.clip && (voz.isPlaying || vozEnPausa); } }
+        /// <summary>Avance real (0 a 1) del audio en curso, para sincronizar los subtítulos.</summary>
+        public float AvanceVoz { get { return voz && voz.clip && voz.clip.length > 0 ? Mathf.Clamp01(voz.time / voz.clip.length) : 0f; } }
+
+        public void PausarVoz(bool pausa)
+        {
+            if (!voz) return;
+            if (pausa && voz.isPlaying) { voz.Pause(); vozEnPausa = true; }
+            else if (!pausa && vozEnPausa) { voz.UnPause(); vozEnPausa = false; }
+        }
+
+        public void DetenerVoz() { vozEnPausa = false; if (voz) voz.Stop(); }
 
         public void FijarSilencio(bool s) { silencio = s; AudioListener.volume = s ? 0f : 1f; }
     }
