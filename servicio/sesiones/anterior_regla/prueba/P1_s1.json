@@ -1,0 +1,431 @@
+{
+  "id": "P1_s1",
+  "pitch_id": "P1",
+  "panel": [
+    "tiburona_consumo",
+    "tiburon_financiero",
+    "tiburon_negociador"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar Tamales Express. Todo empezó con un problema. Comer tamales caseros de calidad entre semana es difícil: los puestos cierran temprano y los congelados saben distinto. Por eso creamos nuestra solución. Tamales hechos a diario con recetas regionales, entregados calientes en 40 minutos por suscripción semanal o por pedido. Está pensada para este mercado: Oficinistas y familias del área metropolitana de Monterrey que piden comida a domicilio al menos dos veces por semana. Así ganamos dinero: Venta por pedido (promedio $210 MXN) y suscripción semanal de $480 MXN con envío incluido. Y no es solo una idea: 420 clientes recurrentes, 38 % repite en el mes y 3 convenios con oficinas. Por eso hoy venimos a pedirles $600,000 MXN a cambio del 12 % de nuestra empresa, para lo siguiente: Segunda cocina, dos vehículos de reparto y campaña de suscripciones. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "Tamales Express",
+        "sector": "alimentos_y_bebidas",
+        "etapa": "crecimiento",
+        "problema": "Comer tamales caseros de calidad entre semana es difícil: los puestos cierran temprano y los congelados saben distinto.",
+        "solucion": "Tamales hechos a diario con recetas regionales, entregados calientes en 40 minutos por suscripción semanal o por pedido.",
+        "mercado_objetivo": "Oficinistas y familias del área metropolitana de Monterrey que piden comida a domicilio al menos dos veces por semana.",
+        "modelo_ingresos": "Venta por pedido (promedio $210 MXN) y suscripción semanal de $480 MXN con envío incluido.",
+        "competencia": "Puestos de calle, restaurantes con servicio a domicilio y marcas de tamales congelados.",
+        "diferenciador": "Producción diaria sin conservadores, rastreo del pedido y entrega en 40 minutos con bolsa térmica.",
+        "validacion": "420 clientes recurrentes, 38 % repite en el mes y 3 convenios con oficinas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Cocina y calidad, operaciones y logística, ventas y marketing",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Una fundadora con 8 años en restaurantes y un fundador con 5 años en logística de reparto.",
+        "monto_mxn": 600000,
+        "porcentaje": 12,
+        "uso_fondos": "Segunda cocina, dos vehículos de reparto y campaña de suscripciones.",
+        "ventas_12m_mxn": 1450000,
+        "margen_bruto_pct": 46,
+        "gasto_mensual_mxn": 85000
+      },
+      "valuacion_mxn": 5000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburona de consumo, Tiburón financiero, Tiburón negociador.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_negociador",
+          "nombre": "Tiburón negociador",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices margen bruto del 46% y ventas anuales de $1,450,000 (R0). ¿Cuál es el costo exacto de adquisición de un cliente y cuánto gastan en promedio para que justifique esos $85,000 mensuales de gasto?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Ventas de los últimos 12 meses: $1,450,000 MXN con margen bruto de 46 % y un gasto mensual de $85,000 MXN. El costo de adquisición por cliente ronda los $120 MXN.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "En el pitch (R0) dices que tienen 420 clientes recurrentes y 38 % repite ese mismo mes. ¿Cómo venden la marca y qué canales usan para que el cliente vuelva a elegir su tamal y no otro? ¿El empaque o reseñas ayudan a fidelizar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Nuestro canal principal es la app de pedidos propia y WhatsApp; 61 % de las ventas son recompra de los mismos 420 clientes. El producto tiene una demanda estable entre semana.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "En el pitch (R0) me dices pides $600,000 por 12%, pero no me dices qué porcentaje están dispuestos a ceder si yo pongo los vehículos y la cocina. ¿Qué condiciones y control quieren mantener en ese trato?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Pedimos $600,000 MXN por el 12 %, que da una valuación de $5,000,000 MXN. Podemos negociar entre 12 % y 15 % si el inversionista aporta distribución.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_negociador",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido en que necesitamos claridad del costo de adquisición y gasto promedio para validar esos $85,000 mensuales. El emprendedor dijo $120 por cliente, pero no sabemos cuánto gasta cada cliente más allá de la compra inicial. Sin eso, no puedo afinar mi oferta ni control en el trato.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "Con 61 % de ventas de recompra y 420 clientes recurrentes (R1), ¿cómo ayuda la marca, el empaque o las reseñas en sus canales propios para que el cliente decida volver a comprar sus tamales?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "La marca ya se reconoce en tres colonias de Monterrey; el 38 % que repite cada mes viene sobre todo de las suscripciones.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "En el pitch (R0) pides $600,000 por 12 % y en R1 dices ceden hasta 15 % si aporto cocina y vehículos. ¿Qué condiciones de control y plazos exigen para mantener la operación y decisiones clave en ese trato?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "No aceptaríamos más de 18 % porque necesitamos conservar el control para decidir sobre la cocina y las recetas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con $1,450,000 de ventas anuales (R0) y 420 clientes recurrentes, ¿cuánto gasta en promedio cada cliente al mes para justificar el gasto mensual de $85,000? Necesito esa cifra exacta.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Con el margen bruto actual y un gasto fijo de $85,000 MXN mensuales, el punto de equilibrio mensual son unos $185,000 MXN de ventas, y vamos arriba de eso desde hace 5 meses.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Tiburona de consumo, coincido en que es clave entender cómo fidelizan, pero no me dicen números concretos de impacto del empaque o reseñas en la recompra. Sin datos claros de costo por cliente y gasto recurrente, la fidelización es un concepto sin sustancia para mí.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "En el pitch (R0) piden $600,000 por 12%, y en R1 dicen 15% si pongo cocina y vehículos. ¿Qué condiciones claras de control y plazos exigen para dar su trato y no perder la operación clave?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Si hay contraoferta, preferimos más dinero por el mismo porcentaje antes que el mismo dinero por más porcentaje.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con ventas anuales de $1,450,000 y 420 clientes recurrentes (R0), ¿cuánto gasta en promedio cada cliente al mes para que justifique el gasto fijo mensual de $85,000 y mantengan el negocio rentable?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "La valuación de $5,000,000 MXN equivale a 3.4 veces las ventas anuales, y el dinero se usa en capacidad de producción que ya está saturada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "El pitch (R0) dice receta regional y sin conservadores, ¿cómo la marca y el empaque cuentan esta historia para que el cliente valore calidad y regrese a pedir por tu canal directo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Queremos sumar tiendas de conveniencia como segundo canal, sin perder la entrega en 40 minutos que es lo que valoran los clientes.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_negociador",
+      "texto": "Tiburón negociador, coincido en que es vital tener claridad en condiciones y control para no perder la esencia de la marca y calidad que el cliente busca. La respuesta del emprendedor deja claro que quieren mantener control, pero faltan detalles sobre plazos y cómo se garantiza la calidad y experiencia en la operación, clave para la fidelidad del cliente.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "Me gusta que el canal principal sea propio (app y WhatsApp) y que el 61 % de las ventas son de recompra, pero falta detalle claro sobre cómo la marca y el empaque impulsan esta fidelidad. La valuación de $5,000,000 MXN me parece alta para $1,450,000 en ventas anuales. Contraoferta: $600,000 MXN por el 18 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 18.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Margen bruto de 46% es bueno, pero gasto mensual $85,000 con adquisición $120 por cliente y 420 clientes no queda claro si se sostiene. Valuación $5,000,000 (3.4 veces ventas) parece alta sin datos exactos de gasto promedio por cliente. Pido 400,000 MXN por 15% para ajustar riesgo. Contraoferta: $400,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_negociador",
+      "destino": "nodo_votacion",
+      "texto": "Piden $600,000 por 12% con valuación de $5,000,000. Ofrezco $600,000 por 15% cediendo más capital si pongo cocina y vehículos, pero exijo control claro sobre operación y decisiones en 12 meses. Falta detalle sobre condiciones y plazos para cerrar trato. Contraoferta: $600,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 600000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $600,000 MXN por el 12 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $600,000 MXN por el 12 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 600000.0,
+        "porcentaje": 12.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Tienen un modelo de negocio validado con 420 clientes recurrentes y una tasa de recompra del 38%.; Ofrecen un producto diferenciado con tamales caseros hechos a diario entregados calientes en 40 minutos, lo que responde a una necesidad real del mercado.; Equipo con experiencia relevante en cocina, operaciones y logística, y ventas, todos dedicados a tiempo completo.. Alertas: Falta claridad y datos concretos sobre el gasto promedio real de los clientes y cómo se sostiene el gasto fijo mensual.; La estrategia de fidelización basada en marca y empaque no está suficientemente demostrada con evidencia o métricas.; Condiciones y control en negociaciones con inversionistas no están completamente definidas, lo que genera incertidumbre.. Siguientes pasos: Definir y presentar métricas claras del gasto promedio por cliente y su relación con los costos fijos para mostrar sostenibilidad.; Documentar y comunicar con datos el impacto del branding, empaque y experiencia en la fidelización para fortalecer la propuesta de valor.; Establecer y formalizar términos claros de control, participación y plazos con los inversionistas para proteger la operación y calidad del negocio..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 3,
+            "frase_clave": "Me gusta que el canal principal sea propio (app y WhatsApp) y que el 61 % de las ventas son de recompra, pero falta detalle claro sobre cómo la marca y el empaque impulsan esta fidelidad.",
+            "necesitaria": "Datos concretos sobre el impacto del empaque, marca y reseñas en la fidelización y recompra de clientes."
+          },
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "Margen bruto de 46% es bueno, pero gasto mensual $85,000 con adquisición $120 por cliente y 420 clientes no queda claro si se sostiene.",
+            "necesitaria": "Claridad exacta en el gasto promedio por cliente y cómo se justifica el gasto mensual para validar la valuación y sostenibilidad financiera."
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "calificacion": 3,
+            "frase_clave": "Ofrezco $600,000 por 15% cediendo más capital si pongo cocina y vehículos, pero exijo control claro sobre operación y decisiones en 12 meses. Falta detalle sobre condiciones y plazos para cerrar trato.",
+            "necesitaria": "Condiciones claras de control, plazos y participación en decisiones clave para asegurar que la operación y calidad se mantengan."
+          }
+        ],
+        "fortalezas": [
+          "Tienen un modelo de negocio validado con 420 clientes recurrentes y una tasa de recompra del 38%.",
+          "Ofrecen un producto diferenciado con tamales caseros hechos a diario entregados calientes en 40 minutos, lo que responde a una necesidad real del mercado.",
+          "Equipo con experiencia relevante en cocina, operaciones y logística, y ventas, todos dedicados a tiempo completo."
+        ],
+        "alertas": [
+          "Falta claridad y datos concretos sobre el gasto promedio real de los clientes y cómo se sostiene el gasto fijo mensual.",
+          "La estrategia de fidelización basada en marca y empaque no está suficientemente demostrada con evidencia o métricas.",
+          "Condiciones y control en negociaciones con inversionistas no están completamente definidas, lo que genera incertidumbre."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el gasto promedio mensual exacto de cada cliente para justificar el gasto mensual de $85,000?",
+          "¿Cómo exactamente la marca, empaque y reseñas contribuyen a la fidelización y recompra?",
+          "¿Qué condiciones y plazos específicos exigirán para mantener el control operativo al aceptar inversión?"
+        ],
+        "siguientes_pasos": [
+          "Definir y presentar métricas claras del gasto promedio por cliente y su relación con los costos fijos para mostrar sostenibilidad.",
+          "Documentar y comunicar con datos el impacto del branding, empaque y experiencia en la fidelización para fortalecer la propuesta de valor.",
+          "Establecer y formalizar términos claros de control, participación y plazos con los inversionistas para proteger la operación y calidad del negocio."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 600000.0,
+          "porcentaje": 12.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 5000000.0,
+        "votos_primera_votacion": {
+          "tiburona_consumo": "contraoferta",
+          "tiburon_financiero": "contraoferta",
+          "tiburon_negociador": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 19.5,
+    "segundos_total": 17.0,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "guion",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  "error": null
+}

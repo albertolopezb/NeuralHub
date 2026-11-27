@@ -61,6 +61,13 @@ namespace NeuralHub
         public string nombre, sector, etapa, problema, solucion, mercado_objetivo, modelo_ingresos;
         public string competencia, diferenciador, validacion, propiedad_intelectual;
         public string equipo_roles, equipo_dedicacion, equipo_experiencia, uso_fondos;
+        public string discurso;      // cómo lo cuenta en voz alta (solo en los ejemplos)
+
+        /// <summary>Datos que el discurso menciona: si cambian, el discurso del ejemplo ya no corresponde.</summary>
+        public string Huella()
+        {
+            return nombre + "|" + problema + "|" + solucion + "|" + modelo_ingresos + "|" + validacion + "|" + monto_mxn + "|" + porcentaje + "|" + ventas_12m_mxn + "|" + margen_bruto_pct;
+        }
         public int equipo_fundadores;
         public double monto_mxn, porcentaje, ventas_12m_mxn, margen_bruto_pct, gasto_mensual_mxn;
     }
@@ -86,6 +93,7 @@ namespace NeuralHub
         public PreguntaPendiente[] preguntas;
         public OfertaDto oferta_actual;
         public OfertaDto original;
+        public bool puede_original;   // solo si 2 o más votaron «invertir»
         public ContraofertaDto[] contraofertas;
     }
 

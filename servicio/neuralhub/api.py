@@ -47,7 +47,7 @@ class PedirSugerencia(BaseModel):
 
 
 class Condicion(BaseModel):
-    opcion: str = "original"      # "original" o el id de un tiburón con contraoferta
+    opcion: str = "original"      # "original", "rechazar" o el id de un tiburón con contraoferta
 
 
 def _ses(id_):
@@ -212,13 +212,21 @@ def condiciones(id_: str, body: Condicion):
     s = _ses(id_)
     if not s.pendiente or s.pendiente.get("tipo") != "CONDICIONES":
         raise HTTPException(409, "No se espera elegir condiciones ahora")
+    puede = s.pendiente.get("puede_original", True)
+    validas = [c["tiburon_id"] for c in s.pendiente["contraofertas"]] + (["original"] if puede else ["rechazar"])
+    if body.opcion not in validas:
+        raise HTTPException(422, "Opción no disponible. Elige una de: " + ", ".join(validas))
     s.reanudar(body.model_dump())
     return {"ok": True}
 
 
 @app.get("/sesiones/{id_}/reporte")
 def reporte(id_: str):
-    r = _ses(id_).reporte()
+    if id_ not in gestor.sesiones:                 # sesión guardada en disco
+        d = _guardadas().get(id_)
+        r = next((e.get("reporte") for e in (d or {}).get("eventos", []) if e["tipo"] == "REPORTE"), None)
+    else:
+        r = _ses(id_).reporte()
     if r is None:
         raise HTTPException(404, "El reporte aún no está listo")
     return r
@@ -226,4 +234,6 @@ def reporte(id_: str):
 
 @app.get("/sesiones/{id_}/metricas")
 def metricas(id_: str):
+    if id_ not in gestor.sesiones and id_ in _guardadas():
+        return _guardadas()[id_].get("metricas", {})
     return _ses(id_).metricas()

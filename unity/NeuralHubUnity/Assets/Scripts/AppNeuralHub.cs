@@ -70,7 +70,7 @@ namespace NeuralHub
             ProbarConexion();
             CargarCatalogos();
             foreach (var a in Environment.GetCommandLineArgs()) if (a == "-nh-capturar") { cliente.usarMock = true; StartCoroutine(Capturas()); }
-            if (Arg("-nh-vivo")) { vivoAuto = true; modoEnVivo = true; ayudaActiva = false; StartCoroutine(RespondedorAutomatico()); }
+            if (Arg("-nh-vivo")) { vivoAuto = true; modoEnVivo = true; ayudaActiva = true; StartCoroutine(RespondedorAutomatico()); }
             if (Arg("-nh-video")) StartCoroutine(Video());
             if (Arg("-nh-final")) { cliente.usarMock = true; StartCoroutine(PruebaFinal()); }
         }
@@ -252,7 +252,7 @@ namespace NeuralHub
                     if (intro.activa) { intro.Dibujar(this, W, H); break; }
                     if (final_.Activo) { final_.Dibujar(this, W, H); break; }
                     interfaz.Dibujar(this, W, H);
-                    barra.Dibujar(reproductor, W);
+                    barra.Dibujar(reproductor, W, !mostrarHistorial);
                     controles.Dibujar(this, W, H);
                     if (reproductor.turnoUsuario != null) burbuja.Dibujar(this, W, H);
                     else if (reproductor.EnEspera)
@@ -298,6 +298,15 @@ namespace NeuralHub
             return false;
         }
 
+        /// <summary>Prueba automática: mantiene su oferta si puede; si no, toma la contraoferta que menos le cuesta.</summary>
+        static string MejorCondicion(Pendiente p)
+        {
+            if (p.puede_original || p.contraofertas == null || p.contraofertas.Length == 0) return "original";
+            var mejor = p.contraofertas[0];
+            foreach (var c in p.contraofertas) if (c.monto_mxn / c.porcentaje > mejor.monto_mxn / mejor.porcentaje) mejor = c;
+            return mejor.tiburon_id;
+        }
+
         IEnumerator RespondedorAutomatico()
         {
             while (true)
@@ -308,8 +317,13 @@ namespace NeuralHub
                 if (reproductor.turnoUsuario != null)
                 {
                     string turno = reproductor.turnoUsuario;
-                    var lista = RespuestasDemo[Mathf.Clamp(reproductor.rondaRespuestas - 1, 0, 2)];
-                    string txt = lista[reproductor.respuestasRonda.Count % lista.Length];
+                    // contesta lo que se le preguntó: pide la respuesta al agente empresario de esta misma sesión
+                    string txt = null; bool llego = false;
+                    PedirSugerencia(turno, sugerida => { txt = sugerida; llego = true; });
+                    float limite = Time.realtimeSinceStartup + 30f;
+                    while (!llego && Time.realtimeSinceStartup < limite) yield return null;
+                    if (reproductor.turnoUsuario != turno) continue;
+                    if (string.IsNullOrEmpty(txt)) txt = "Ese dato todavía no lo tengo medido; puedo enviarlo después de esta sesión.";
                     burbuja.Escribir(turno, txt);                                 // se ve escrita en pantalla
                     yield return new WaitForSecondsRealtime(2.5f);
                     if (reproductor.turnoUsuario != turno) continue;
@@ -332,7 +346,7 @@ namespace NeuralHub
                     t0 = Time.realtimeSinceStartup;
                     yield return cliente.EnviarRespuestas(r);
                 }
-                else if (p.tipo == "CONDICIONES") yield return cliente.EnviarCondicion("original");
+                else if (p.tipo == "CONDICIONES") yield return cliente.EnviarCondicion(MejorCondicion(p));
                 else if (p.tipo == "NEGOCIACION")
                 {
                     if (p.contraofertas != null && p.contraofertas.Length > 0)
@@ -394,7 +408,7 @@ namespace NeuralHub
             yield return GrabarHasta(carpeta, () => vista == Vista.Panel, 10);
             yield return Grabar(carpeta, 3.5f);
             IniciarSesion(new List<string>(eleccion.elegidos));
-            reproductor.factorExtra = 2.2f;
+            reproductor.factorExtra = 1f;       // el video lleva las voces completas, a velocidad normal
             yield return GrabarHasta(carpeta, () => vista == Vista.Resultado, 900);
             yield return Grabar(carpeta, 6f);
             mostrarHistorial = true;
@@ -506,13 +520,6 @@ namespace NeuralHub
             yield return new WaitForSeconds(0.8f);
             yield return Cap(carpeta, "11_vista_arriba");
             estudio.camara.instantaneo = false;
-            // el otro final, para revisarlo sin otra sesión
-            ocultarUI = false; estudio.camara.Cambiar(Plano.General, null);
-            yield return new WaitForSeconds(1.2f);
-            final_.Resultado(this, false, NombreEmpresa(), "");
-            yield return new WaitForSeconds(4.8f);
-            yield return Cap(carpeta, "17_sin_trato");
-            final_.Saltar();
             File.WriteAllText(Path.Combine(carpeta, "listo.txt"), "ok");
             Application.Quit();
 #if UNITY_EDITOR

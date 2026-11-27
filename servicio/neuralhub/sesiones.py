@@ -1,6 +1,7 @@
 """Sesiones: ejecutan el grafo en un hilo, guardan los eventos y esperan al usuario en los interrupt."""
 
 import json
+import re
 import threading
 import time
 import uuid
@@ -21,6 +22,14 @@ CARPETA = BASE / "sesiones"
 ESTADO_EMISOR = {"PITCH": "Presentando", "PREGUNTA": "Preguntando", "RESPUESTA": "Respondiendo",
                  "REPLICA": "Replicando", "VOTO": "Votando", "OFERTA": "Negociando", "DECISION": "Reaccionando"}
 
+# Marcas internas del historial («[R1]», «PITCH») que el modelo a veces copia: no deben verse ni escucharse.
+_ETIQUETA = r"(?:R\d+|PITCH|pitch)"
+ETIQUETAS = re.compile(rf"\s*[\(\[]\s*{_ETIQUETA}(?:\s*(?:,|/|y)\s*{_ETIQUETA})*\s*[\)\]]")
+
+
+def sin_etiquetas(texto: str) -> str:
+    return ETIQUETAS.sub("", texto).strip()
+
 
 class Sesion:
     def __init__(self, pitch: dict, panel: list, modo: str, llm: LLM, guion: dict | None = None, id_: str | None = None,
@@ -29,6 +38,7 @@ class Sesion:
         self.pitch, self.panel, self.modo, self.llm, self.guion = pitch, panel, modo, llm, guion
         self.ayuda = bool(ayuda) and modo == "humano"   # el agente empresario solo sugiere en el modo en vivo
         self.sugerencias = 0
+        self._sugeridas: dict[int, str] = {}   # una por pregunta: repetir el botón no gasta otra llamada
         self.nivel = nivel
         self.eventos: list[dict] = []
         self.estado = "creada"        # creada | corriendo | esperando | terminada | error
@@ -43,6 +53,7 @@ class Sesion:
 
     # --- eventos ---
     def emit(self, tipo, emisor, destino, texto, ronda, **extra):
+        texto = sin_etiquetas(texto)
         with self._lock:
             e = {"n": len(self.eventos) + 1, "ronda": ronda, "tipo": tipo, "emisor": emisor, "destino": destino,
                  "texto": texto, "estado": ESTADO_EMISOR.get(tipo, "")}
@@ -98,9 +109,17 @@ class Sesion:
             raise ValueError("Ese tiburón no está en el panel de esta sesión.")
         with self._lock:
             eventos = list(self.eventos)
-        texto = sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id)
+        # solo la pregunta en curso: la última que se hizo, si todavía no tiene respuesta
+        ultima = next((e for e in reversed(eventos) if e["tipo"] in ("PREGUNTA", "RESPUESTA")), None)
+        if not ultima or ultima["tipo"] != "PREGUNTA" or ultima["emisor"] != tiburon_id:
+            raise ValueError("Ese tiburón no tiene una pregunta esperando respuesta.")
+        n = ultima["n"]
+        if n in self._sugeridas:
+            return self._sugeridas[n]
+        texto = sin_etiquetas(sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id))
         with self._lock:
             self.sugerencias += 1
+            self._sugeridas[n] = texto
         return texto
 
     # --- salida ---

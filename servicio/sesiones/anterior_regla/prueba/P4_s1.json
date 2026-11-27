@@ -1,0 +1,431 @@
+{
+  "id": "P4_s1",
+  "pitch_id": "P4",
+  "panel": [
+    "tiburon_mentor",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar TutorBot. Todo empezó con un problema. Muchos estudiantes de secundaria no tienen quien los ayude con matemáticas fuera de la escuela. Por eso creamos nuestra solución. Un asistente de IA por WhatsApp que explica paso a paso los ejercicios de matemáticas y propone ejercicios nuevos. Está pensada para este mercado: Estudiantes de secundaria en escuelas públicas y privadas de México y sus familias. Así ganamos dinero: Suscripción mensual de $99 MXN para familias y licencias para escuelas. Y no es solo una idea: Un piloto con 30 estudiantes de una secundaria durante un mes; 22 lo usaron más de 5 veces. Por eso hoy venimos a pedirles $350,000 MXN a cambio del 10 % de nuestra empresa, para lo siguiente: Desarrollo del producto, pruebas con más escuelas y servidores. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "TutorBot",
+        "sector": "educacion",
+        "etapa": "prototipo",
+        "problema": "Muchos estudiantes de secundaria no tienen quien los ayude con matemáticas fuera de la escuela.",
+        "solucion": "Un asistente de IA por WhatsApp que explica paso a paso los ejercicios de matemáticas y propone ejercicios nuevos.",
+        "mercado_objetivo": "Estudiantes de secundaria en escuelas públicas y privadas de México y sus familias.",
+        "modelo_ingresos": "Suscripción mensual de $99 MXN para familias y licencias para escuelas.",
+        "competencia": "Videos de YouTube, apps como Khan Academy y tutores particulares.",
+        "diferenciador": "Responde en el chat que los estudiantes ya usan y se adapta a su nivel con el temario de la SEP.",
+        "validacion": "Un piloto con 30 estudiantes de una secundaria durante un mes; 22 lo usaron más de 5 veces.",
+        "propiedad_intelectual": "ninguna",
+        "equipo_fundadores": 1,
+        "equipo_roles": null,
+        "equipo_dedicacion": null,
+        "equipo_experiencia": null,
+        "monto_mxn": 350000,
+        "porcentaje": 10,
+        "uso_fondos": "Desarrollo del producto, pruebas con más escuelas y servidores.",
+        "ventas_12m_mxn": null,
+        "margen_bruto_pct": null,
+        "gasto_mensual_mxn": null
+      },
+      "valuacion_mxn": 3500000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón mentor, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_mentor",
+          "nombre": "Tiburón mentor",
+          "motivo": "te faltan datos de roles del equipo, dedicación del equipo, experiencia del equipo; su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "evalúa bien negocios en tu etapa"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "En el pitch no dices nada del equipo ni tu experiencia. ¿Tú solo estás detrás de TutorBot o tienes un equipo? ¿Qué compromiso y tiempo le dedicas al proyecto?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Soy yo solo; estudio ingeniería y trabajo en el proyecto en las tardes, tiempo parcial. Aún no he tenido un socio ni un equipo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con solo un fundador y tiempo parcial (R1), ¿cómo planeas escalar y defender TutorBot frente a competencia como Khan Academy que ya tienen mercado y recursos?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "El mercado son unos 6 millones de estudiantes de secundaria en México según datos de la SEP, y compito con videos gratuitos y tutores.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En el pitch (R0) no mencionas patente ni propiedad intelectual, ¿qué algoritmo o tecnología innovadora usas en tu prototipo para que TutorBot sea único y difícil de replicar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Uso un modelo de lenguaje con instrucciones y ejemplos del temario de la SEP; el prototipo ya resuelve ejercicios de álgebra y geometría básica.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_mentor",
+      "texto": "Mentor, coincido que falta equipo y experiencia sólida; un prototipo con IA y sin dedicación total limita innovación y desarrollo del algoritmo. Necesitan un equipo técnico para escalar y proteger la propiedad intelectual. Un fundador a tiempo parcial no es suficiente para avanzar en tecnología patentable.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con un solo fundador y sin patente (R0, R1), ¿cómo planeas crear una ventaja defendible que te permita escalar y competir con plataformas ya establecidas en el mercado educativo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Mi ventaja es que funciona dentro de WhatsApp y sigue el temario oficial; defenderla requiere crecer rápido con escuelas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué avances concretos en el algoritmo de IA y mejoras del prototipo planeas lograr con los $350,000 MXN (R0) para que TutorBot sea realmente innovador y con posible patente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "No tengo patente ni creo que el modelo sea protegible; la ventaja es el contenido adaptado y los datos de uso del piloto.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "Veo que tú solo manejas el proyecto a tiempo parcial (R1) y sin equipo. ¿Qué tan comprometido estás a dedicarle más tiempo y a armar un equipo sólido para que TutorBot crezca y no se quede solo en prototipo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Aún no he trabajado antes en una empresa; esta es mi primera. Sé que depender de una sola persona es un riesgo y por eso busco mentoría.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_mentor",
+      "destino": "tiburon_estratega",
+      "texto": "Estratega, coincido contigo. Sin equipo ni patente, y con un fundador a tiempo parcial, la ventaja defendible está muy débil. El emprendedor necesita compromiso total y un equipo que apoye para crecer y competir, no solo depender del contenido adaptado en WhatsApp.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Dado que el prototipo usa un modelo de lenguaje sin patente (R0, R2), ¿qué mejoras concretas en algoritmo o desarrollo planeas para crear propiedad intelectual y que TutorBot sea difícil de replicar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Lo siguiente es medir si los estudiantes realmente mejoran sus calificaciones, aún no tengo esa evidencia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "Tú estudias y trabajas a tiempo parcial en TutorBot (R1), pero no me dices cómo planeas formar un equipo comprometido que te apoye para crecer y no dejar todo en tus manos.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Mi compromiso es seguir con el proyecto aunque no me inviertan, pero con dinero podría dedicarme tiempo completo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con base en el piloto de 30 estudiantes (R0), ¿cómo planeas escalar rápido y defender tu mercado sin patente ni equipo para que TutorBot no sea fácilmente copiado por competidores grandes?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "El plan es llegar a escuelas primero y después a familias con la suscripción.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Tecnológico, coincido contigo. Sin patente ni mejora concreta en algoritmo, la ventaja defensible es débil. Sin un desarrollo tecnológico único y protegido, será difícil escalar y defender TutorBot frente a competidores con más recursos y propiedad intelectual.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_mentor",
+      "destino": "nodo_votacion",
+      "texto": "Tu compromiso es parcial y estás solo, sin equipo ni experiencia previa, lo que me preocupa. El piloto con 22 estudiantes activos es bueno, pero no me dices ventas ni margen. La valuación de 3.5 millones no se justifica en esta etapa. Propongo $175,000 por 20 % para apoyar tu dedicación y equipo. Contraoferta: $175,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 175000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado es grande con 6 millones de estudiantes, pero sin patente ni equipo y con un fundador a tiempo parcial la ventaja defensible es débil. La valuación implícita de 3.5 millones parece alta para esta etapa sin barreras claras. Contraoferta: $175,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 175000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "El prototipo usa IA pero sin patente ni equipo sólido, y el fundador solo le dedica tiempo parcial. Pido $200,000 MXN por 20% para equilibrar riesgo en innovación y falta de propiedad intelectual, pese a la valuación implícita de $3,500,000 MXN y la prueba con 30 estudiantes. Contraoferta: $200,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $350,000 MXN por el 10 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $350,000 MXN por el 10 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 350000.0,
+        "porcentaje": 10.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: El producto está adaptado al temario oficial de la SEP, lo que le da relevancia para el mercado mexicano.; El prototipo ya fue probado con 30 estudiantes y tuvo buena interacción (22 usaron más de 5 veces).; La solución se integra en WhatsApp, una plataforma que los estudiantes ya usan, facilitando su adopción.. Alertas: Falta de equipo y experiencia sólida para desarrollar y escalar el proyecto.; Ausencia de patente o propiedad intelectual que proteja la tecnología y la ventaja competitiva.; El fundador solo trabaja a tiempo parcial, lo que limita el avance y compromiso del proyecto.. Siguientes pasos: Dedicarte a tiempo completo a TutorBot para acelerar el desarrollo y crecimiento.; Formar un equipo multidisciplinario que aporte experiencia técnica, comercial y operativa.; Buscar evidencias claras de impacto educativo y desarrollar mejoras tecnológicas que puedan protegerse legalmente..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_mentor",
+            "calificacion": 3,
+            "frase_clave": "Tu compromiso es parcial y estás solo, sin equipo ni experiencia previa, lo que me preocupa.",
+            "necesitaria": "Un compromiso de tiempo completo y un equipo sólido que apoye el crecimiento del proyecto."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 3,
+            "frase_clave": "Sin patente ni equipo y con un fundador a tiempo parcial la ventaja defensible es débil.",
+            "necesitaria": "Ver una estrategia clara para crear barreras de entrada y un equipo comprometido para escalar rápido."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 2,
+            "frase_clave": "El prototipo usa IA pero sin patente ni equipo sólido, y el fundador solo le dedica tiempo parcial.",
+            "necesitaria": "Desarrollo de tecnología protegible y un equipo técnico dedicado para avanzar en innovación y propiedad intelectual."
+          }
+        ],
+        "fortalezas": [
+          "El producto está adaptado al temario oficial de la SEP, lo que le da relevancia para el mercado mexicano.",
+          "El prototipo ya fue probado con 30 estudiantes y tuvo buena interacción (22 usaron más de 5 veces).",
+          "La solución se integra en WhatsApp, una plataforma que los estudiantes ya usan, facilitando su adopción."
+        ],
+        "alertas": [
+          "Falta de equipo y experiencia sólida para desarrollar y escalar el proyecto.",
+          "Ausencia de patente o propiedad intelectual que proteja la tecnología y la ventaja competitiva.",
+          "El fundador solo trabaja a tiempo parcial, lo que limita el avance y compromiso del proyecto."
+        ],
+        "preguntas_sin_responder": [
+          "¿Qué ventas y margen bruto se han logrado hasta ahora?",
+          "¿Cómo planeas formar y comprometer un equipo que impulse el crecimiento?",
+          "¿Qué mejoras concretas en IA y propiedad intelectual se desarrollarán para defender el producto? "
+        ],
+        "siguientes_pasos": [
+          "Dedicarte a tiempo completo a TutorBot para acelerar el desarrollo y crecimiento.",
+          "Formar un equipo multidisciplinario que aporte experiencia técnica, comercial y operativa.",
+          "Buscar evidencias claras de impacto educativo y desarrollar mejoras tecnológicas que puedan protegerse legalmente."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 350000.0,
+          "porcentaje": 10.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 3500000.0,
+        "votos_primera_votacion": {
+          "tiburon_mentor": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "nombre": "Tiburón financiero",
+            "criterio": "márgenes, costo de adquisición de clientes y valuación"
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 17.5,
+    "segundos_total": 15.2,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 9,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "guion",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  "error": null
+}

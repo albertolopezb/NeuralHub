@@ -1,0 +1,448 @@
+{
+  "id": "7418f9ea",
+  "modo": "humano",
+  "ayuda": true,
+  "nivel": "facil",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "DataSense AI",
+    "sector": "tecnologia",
+    "etapa": "crecimiento",
+    "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+    "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+    "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+    "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+    "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+    "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+    "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+    "propiedad_intelectual": "marca",
+    "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+    "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+    "discurso": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+    "equipo_fundadores": 4,
+    "ventas_12m_mxn": 270000,
+    "margen_bruto_pct": 72,
+    "gasto_mensual_mxn": 60000,
+    "monto_mxn": 500000,
+    "porcentaje": 15
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "DataSense AI",
+        "sector": "tecnologia",
+        "etapa": "crecimiento",
+        "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+        "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+        "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+        "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+        "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+        "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+        "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+        "propiedad_intelectual": "marca",
+        "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+        "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+        "discurso": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+        "equipo_fundadores": 4,
+        "ventas_12m_mxn": 270000,
+        "margen_bruto_pct": 72,
+        "gasto_mensual_mxn": 60000,
+        "monto_mxn": 500000,
+        "porcentaje": 15
+      },
+      "valuacion_mxn": 3333333.33
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Qué historias de clientes te han demostrado que tu plataforma realmente les resuelve un problema importante?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Tenemos 50 clientes que ya pagan y muestran un crecimiento mensual del 15%, lo que indica que la plataforma les ayuda a tomar mejores decisiones de inventario y ventas sin necesidad de expertos. Para casos específicos, recolectamos testimonios directos que validan cómo mejoraron su operación gracias a nuestro análisis en lenguaje natural.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Qué historias de clientes te motivaron a crear esta plataforma y cómo la usan en su día a día?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Un cliente nos contó que perdía ventas por exceso o falta de inventario porque no sabía interpretar sus datos. Eso nos motivó: crear una plataforma que, sin técnicos, le diera alertas claras y análisis en lenguaje natural. En su día a día, conectan sus hojas y sistemas y reciben insights automáticos para optimizar ventas e inventario sin complicaciones.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo funciona el algoritmo que convierte datos en análisis en lenguaje natural sin configuración técnica?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Nuestro algoritmo utiliza técnicas de IA para conectarse directamente a hojas de cálculo y sistemas, procesar los datos automáticamente y generar análisis en lenguaje natural sin necesidad de configuración técnica. Esto permite a las PyMEs recibir insights claros y alertas oportunas sin contratar expertos. Para detalles técnicos específicos, puedo compartir información con nuestro equipo de ingeniería.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Concuerdo con la pregunta del tiburón financiero; es clave validar con historias reales el impacto. El emprendedor menciona 50 clientes y crecimiento, pero me gustaría saber más sobre el prototipo del algoritmo y si hay alguna patente para proteger esta innovación.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Qué te motivó a crear DataSense AI y cómo imaginas defender tu espacio en el mercado en cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Me motivó ver que muchas PyMEs mexicanas no podían aprovechar sus datos por falta de expertos; queríamos democratizar el análisis con IA fácil y sin configuración. Para defendernos, nuestra ventaja es la simplicidad y el análisis en lenguaje natural, además de crecer con más ingeniería y mejorar la IA, usando la suscripción escalable para mantenernos competitivos y cerca del cliente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Puedes contarme cómo desarrollaron el prototipo del algoritmo para análisis en lenguaje natural y qué innovaciones incluye?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Desarrollamos el prototipo integrando IA que conecta hojas de cálculo y sistemas sin configuración técnica, generando análisis en lenguaje natural para PyMEs. Las innovaciones incluyen automatización total y facilidad de uso. Para detalles técnicos específicos, puedo coordinar con nuestro equipo de ingeniería para compartir más información y validar innovaciones concretas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Cuéntame una historia de un cliente que mejoró su negocio gracias a DataSense AI.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Un cliente reportó que, al usar DataSense AI, logró optimizar su inventario y aumentar ventas al recibir alertas y análisis claros sin contratar expertos. Esto le permitió reducir pérdidas por exceso o falta de stock, mejorando su operación diaria y contribuyendo a nuestro crecimiento mensual del 15% en clientes activos. Podemos compartir testimonios directos para validar esta historia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con tu pregunta sobre la motivación y defensa del mercado. El emprendedor menciona simplicidad y análisis en lenguaje natural, pero no me dice cifras claras de costo de adquisición de clientes ni planes específicos para mantener margen con competencia creciente. Eso es clave para valorar la inversión.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Cuéntame la historia de cómo nació el prototipo del algoritmo y qué innovación lo hace único para PyMEs.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "El prototipo nació al identificar que las PyMEs no tenían acceso a científicos de datos. Diseñamos un algoritmo que conecta sus hojas y sistemas automáticamente, generando análisis en lenguaje natural sin configuración técnica. La innovación es esa simplicidad y automatización total, que permite a PyMEs usar IA sin expertos. Para más detalles técnicos, puedo compartir información con nuestro equipo de ingeniería.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Qué historia personal te motivó a fundar esta empresa y cómo ha impactado en tus primeros clientes?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Me motivó ver cómo muchas PyMEs mexicanas guardaban datos valiosos sin poder aprovecharlos por falta de expertos. Quise crear una solución accesible que les diera análisis claros sin complicaciones. Nuestros primeros 50 clientes ya pagan y crecen 15% mensual, mostrando que nuestra plataforma realmente mejora sus decisiones de ventas e inventario, optimizando su operación sin necesidad de científicos de datos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Qué historia personal te impulsó a crear DataSense AI y cómo imaginas escalar y defender tu mercado en cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Me impulsó ver muchas PyMEs mexicanas con datos valiosos pero sin expertos para analizarlos, lo que limita su crecimiento. Quise democratizar el análisis con IA fácil y sin configuración técnica. Para escalar y defender el mercado, creceremos nuestro equipo de ingeniería, mejoraremos la IA y potenciaremos ventas, aprovechando nuestra ventaja en simplicidad y análisis en lenguaje natural, además de un modelo de suscripción escalable.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Concuerdo contigo, Tiburón tecnológico, en que entender la innovación técnica es clave para evaluar la ventaja competitiva y barreras de entrada. El emprendedor explica bien la simplicidad y automatización, pero falta detalle sobre cómo esta innovación se defiende frente a competidores más grandes en el mercado SaaS para PyMEs.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "El margen bruto es saludable en 72%. Tienen 50 clientes pagando y un crecimiento mensual del 15%, lo que indica buen flujo y aceptación. La valuación implícita de 3.3 millones parece razonable para la etapa de crecimiento y el gasto mensual es moderado en 60,000.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado PyME en México es grande y el crecimiento mensual del 15% con 50 clientes valida que pueden escalar. La ventaja de análisis en lenguaje natural es defendible frente a BI genéricos. El margen del 72% y ventas de $270,000 MXN indican potencial para defender mercado y crecer en 5 años.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me interesa la innovación en IA que genera análisis en lenguaje natural sin configuración técnica, ideal para PyMEs. Tienen 50 clientes y 15% crecimiento mensual, lo que valida el prototipo y la tecnología. El margen bruto del 72% es sólido para escalar con su modelo SaaS.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $500,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 500000.0,
+        "porcentaje": 15.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Modelo SaaS con suscripción escalable y margen bruto sólido del 72%.; Validación con 50 clientes pagando y crecimiento mensual del 15%.; Innovación clave: análisis en lenguaje natural sin configuración técnica, accesible para PyMEs sin expertos.. Alertas: Falta información sobre costo de adquisición de clientes y planes para mantener márgenes.; No se profundizó en protecciones legales o patentes para la innovación tecnológica.; Se requiere mayor detalle sobre estrategia para defenderse de competidores más grandes en el mercado.. Siguientes pasos: Presentar métricas claras sobre costo de adquisición y retención de clientes.; Compartir documentación técnica detallada y evidencias de protección intelectual del algoritmo.; Desarrollar un plan estratégico para escalar y defender el mercado frente a competidores consolidados..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 5,
+            "frase_clave": "El margen bruto es saludable en 72%. Tienen 50 clientes pagando y un crecimiento mensual del 15%, lo que indica buen flujo y aceptación.",
+            "necesitaria": "Ver cifras claras de costo de adquisición de clientes y planes específicos para mantener margen con competencia creciente."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 5,
+            "frase_clave": "El mercado PyME en México es grande y el crecimiento mensual del 15% con 50 clientes valida que pueden escalar.",
+            "necesitaria": "Más detalles sobre cómo defender el espacio en el mercado frente a competidores grandes y plan estratégico a mediano plazo."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 5,
+            "frase_clave": "Me interesa la innovación en IA que genera análisis en lenguaje natural sin configuración técnica, ideal para PyMEs.",
+            "necesitaria": "Información técnica detallada del prototipo del algoritmo y si hay patente o protección para la innovación."
+          }
+        ],
+        "fortalezas": [
+          "Modelo SaaS con suscripción escalable y margen bruto sólido del 72%.",
+          "Validación con 50 clientes pagando y crecimiento mensual del 15%.",
+          "Innovación clave: análisis en lenguaje natural sin configuración técnica, accesible para PyMEs sin expertos."
+        ],
+        "alertas": [
+          "Falta información sobre costo de adquisición de clientes y planes para mantener márgenes.",
+          "No se profundizó en protecciones legales o patentes para la innovación tecnológica.",
+          "Se requiere mayor detalle sobre estrategia para defenderse de competidores más grandes en el mercado."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo de adquisición de clientes?",
+          "¿Qué planes específicos tienen para mantener el margen con competencia creciente?",
+          "¿Existen patentes o protecciones legales para el algoritmo innovador?"
+        ],
+        "siguientes_pasos": [
+          "Presentar métricas claras sobre costo de adquisición y retención de clientes.",
+          "Compartir documentación técnica detallada y evidencias de protección intelectual del algoritmo.",
+          "Desarrollar un plan estratégico para escalar y defender el mercado frente a competidores consolidados."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 500000.0,
+          "porcentaje": 15.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 3333333.33,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "invertir",
+          "tiburon_estratega": "invertir",
+          "tiburon_tecnologico": "invertir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 25,
+    "segundos_modelo": 27.1,
+    "segundos_total": 8.4,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 4,
+    "preguntas_citan_dato": 0,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "humano",
+    "ayuda": true,
+    "sugerencias": 9,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

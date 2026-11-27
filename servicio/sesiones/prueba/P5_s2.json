@@ -13,7 +13,7 @@
       "tipo": "PITCH",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "AguaLimpia: pide $200,000 MXN por el 5 % (valuación implícita $4,000,000 MXN). Problema: Hay colonias donde el agua de la llave no se puede tomar. Solución: Un filtro barato.",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar AguaLimpia. Todo empezó con un problema. Hay colonias donde el agua de la llave no se puede tomar. Por eso creamos nuestra solución. Un filtro barato. Está pensada para este mercado: Familias de colonias sin agua potable. Así ganamos dinero: Venta del filtro. Por eso hoy venimos a pedirles $200,000 MXN a cambio del 5 % de nuestra empresa, para lo siguiente: Fabricar los primeros filtros. ¿Quién quiere nadar con nosotros?",
       "estado": "Presentando",
       "pitch": {
         "nombre": "AguaLimpia",
@@ -72,29 +72,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "No me dices nada del compromiso y experiencia de tú y tu equipo para fabricar y vender estos filtros. ¿Cuánto tiempo le dedican y qué saben hacer ustedes para este proyecto?",
+      "texto": "¿Tú y tu equipo, qué experiencia o compromiso tienen para fabricar y vender este filtro barato, considerando que no me dices roles ni dedicación en el pitch?",
       "estado": "Preguntando"
     },
     {
       "n": 4,
-      "ronda": 1,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_financiero",
-      "destino": "emprendedor",
-      "texto": "No me dices margen bruto ni costo de adquisición de clientes. ¿Cuál es el margen neto por filtro y cuánto gastan para vender uno?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 5,
-      "ronda": 1,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_tecnologico",
-      "destino": "emprendedor",
-      "texto": "No me dices qué tecnología usa el filtro, ni si tienen algún prototipo probado o patente para proteger la innovación. ¿Qué tecnología usan y cómo planean proteger su ventaja competitiva?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 6,
       "ronda": 1,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -103,13 +85,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 7,
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Del pitch R0, me dices $200,000 por 5 %, valuación $4,000,000, pero no dices margen bruto ni costo por filtro. ¿Cuánto cuesta fabricar un filtro y a qué precio lo vendes para que valga 4 millones?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
       "ronda": 1,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_financiero",
       "texto": "No hay ventas, ni costos calculados. Pedimos $200,000 MXN por 5 %, o sea una valuación de $4,000,000 MXN, pero no sé cómo justificarla.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En el pitch R0 dices que tu producto es un filtro barato, ¿qué tipo de tecnología o prototipo tienen ya? ¿Han pensado en patentar alguna innovación en ese filtro para proteger la propiedad intelectual?",
+      "estado": "Preguntando"
     },
     {
       "n": 8,
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_mentor",
-      "texto": "Estoy de acuerdo con tu pregunta sobre compromiso y experiencia, porque sin roles claros y dedicación constante, difícilmente podrán desarrollar un prototipo robusto ni validar su algoritmo de filtrado. La innovación tecnológica requiere enfoque y equipo con habilidades definidas para avanzar hacia una patente o ventaja competitiva real.",
+      "texto": "Estoy de acuerdo contigo, mentor. Sin un equipo con roles definidos ni dedicación clara, es difícil avanzar en el desarrollo tecnológico y validación del filtro. Sin un prototipo ni pruebas de laboratorio, no hay base para una patente ni innovación real.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,29 +136,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_financiero",
       "destino": "emprendedor",
-      "texto": "Me dices que piden $200,000 por 5 %, valuación $4,000,000, pero sin ventas ni costos. ¿Cómo planean justificar esa valuación sin flujo o márgenes? Necesito números claros para considerar inversión.",
+      "texto": "Del pitch R0 y tu respuesta, no me dices margen bruto ni costo por filtro. ¿Cuánto te cuesta fabricar un filtro y a qué precio lo venderías para que la valuación de 4 millones tenga sentido?",
       "estado": "Preguntando"
     },
     {
       "n": 11,
-      "ronda": 2,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_tecnologico",
-      "destino": "emprendedor",
-      "texto": "No me dices si han pensado en registrar alguna patente o marca para proteger su filtro barato; sin protección intelectual, su innovación podría ser copiada fácilmente. ¿Tienen planes para desarrollar y proteger un prototipo único con patente o marca registrada?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 12,
-      "ronda": 2,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_mentor",
-      "destino": "emprendedor",
-      "texto": "No me dices nada de la historia personal que los motivó a crear AguaLimpia ni del compromiso real que tienen con las familias sin agua potable. ¿Por qué este proyecto y cómo garantizan que tú y tu equipo se mantendrán firmes hasta lograrlo?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 13,
       "ronda": 2,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -167,13 +149,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 14,
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Del pitch R0 y tu respuesta, sin prototipo ni pruebas de laboratorio, ¿qué algoritmo o método planean usar para asegurar que el filtro con carbón activado y arena realmente elimina contaminantes? ¿Han pensado en alguna patente para eso?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
       "ronda": 2,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
       "texto": "No sé si se puede patentar y aún no hemos hablado con nadie sobre eso. Falta definir qué tecnología usaremos exactamente.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "En R1 dices que tú y tu amigo solo trabajan después de clases y sin roles definidos; ¿cómo van a comprometerse para avanzar en fabricar y vender filtros si apenas es una idea y no hay dedicación clara?",
+      "estado": "Preguntando"
     },
     {
       "n": 15,
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_financiero",
-      "texto": "Estoy de acuerdo contigo, Tiburón financiero. Sin ventas, costos ni experiencia clara, esa valuación carece de fundamento. Invertir en personas requiere compromiso y claridad, y aquí falta definir roles, dedicación y métricas financieras para justificar ese monto. Sin esos datos, no puedo apoyar la inversión.",
+      "texto": "Estoy de acuerdo contigo, financiero. Sin costos claros ni precio definido, menos margen, esa valuación de 4 millones no tiene sustento. Más aún, ellos mismos no lo saben, lo cual muestra falta de compromiso y preparación para hacer crecer este negocio.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,29 +200,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "¿Cuál es el algoritmo o proceso específico de filtrado que hará único a su filtro barato y cómo planean validar su efectividad para poder patentar esa innovación, considerando que sólo mencionan carbón activado y arena sin prototipo ni pruebas?",
+      "texto": "Del pitch R0 y tus respuestas, ¿cuándo planean tener un prototipo funcional con pruebas de laboratorio para validar el filtro y empezar a pensar en patente o algoritmo de filtración?",
       "estado": "Preguntando"
     },
     {
       "n": 18,
-      "ronda": 3,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_mentor",
-      "destino": "emprendedor",
-      "texto": "No me dices nada sobre la historia personal que los motivó a crear AguaLimpia ni cómo tú y tu equipo garantizan compromiso real para seguir con este proyecto hasta lograrlo. ¿Por qué este proyecto y qué los hace seguir firmes?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 19,
-      "ronda": 3,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_financiero",
-      "destino": "emprendedor",
-      "texto": "Pides $200,000 por 5 %, valuación $4,000,000 MXN sin ventas ni costos. ¿Cuál es tu proyección de ventas y flujo para justificar esa valuación y cuándo esperas tener márgenes y CAC definidos?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 20,
       "ronda": 3,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -231,13 +213,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 21,
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "En tu pitch R0 y respuestas, no me dices ni roles ni dedicación clara; ¿cómo tú y tu equipo van a organizarse y comprometerse para que este proyecto no se quede solo en idea?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
       "ronda": 3,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_mentor",
       "texto": "Queremos hacerlo, pero reconozco que todavía no tenemos un plan claro.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Del pitch R0 y tus respuestas, sin margen bruto ni costo por filtro, ¿cuánto cobrarías por cada filtro para que el negocio sea rentable y justifique la valuación de 4 millones?",
+      "estado": "Preguntando"
     },
     {
       "n": 22,
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_financiero",
       "destino": "tiburon_tecnologico",
-      "texto": "Estoy de acuerdo contigo. Sin un proceso o algoritmo claro que haga único al filtro, ni pruebas o prototipo, no hay base para patentar ni para justificar inversión. Además, sin datos de margen ni CAC, la valuación no tiene sustento financiero.",
+      "texto": "Estoy de acuerdo contigo, tecnológico. Sin prototipo ni pruebas, no hay base para valorar ni plan de negocio serio. Además, sin validación técnica no se puede calcular margen ni costo, que son clave para mi inversión.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,7 +264,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "No hay prototipo ni algoritmo probado, ni patente para proteger la tecnología. La valuación de $4,000,000 MXN carece de sustento sin métricas financieras ni innovación clara. Sin datos de tecnología ni propiedad intelectual, no puedo invertir en esta idea solo en etapa conceptual.",
+      "texto": "No hay prototipo ni validación tecnológica ni patente; sin un algoritmo o prueba de filtración, no hay innovación. Además, la valuación de $4,000,000 MXN no tiene sustento con solo una idea y sin costos ni margen definidos.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -277,7 +277,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "No me dices compromiso ni experiencia clara del equipo ni dedicación para fabricar y vender. Tampoco hay ventas ni costos definidos para justificar la valuación de 4,000,000 MXN por 5%. Sin estos datos clave no puedo invertir.",
+      "texto": "No me dices compromiso ni roles definidos en tu equipo de 2 personas, solo trabajan después de clases y sin experiencia; además, no hay prototipo ni ventas y la valuación de 4,000,000 MXN no tiene sustento. La idea está muy verde para invertir $200,000 MXN por el 5 %.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -290,7 +290,7 @@
       "tipo": "VOTO",
       "emisor": "tiburon_financiero",
       "destino": "nodo_votacion",
-      "texto": "No me dices margen bruto ni costo de adquisición, ni ventas o flujo para justificar la valuación de $4,000,000 por 5 %. Sin datos financieros ni validación, no puedo invertir en un proyecto solo en idea y sin números claros.",
+      "texto": "No me dices margen bruto ni costo por filtro; sin ventas ni prototipo, la valuación de 4 millones no tiene sustento y no hay datos para calcular margen o CAC. Pides 200,000 por 5%, pero sin números claros no puedo invertir.",
       "estado": "Votando",
       "decision": "salir",
       "votacion": 1,
@@ -314,57 +314,48 @@
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Identifican un problema real y relevante en colonias sin agua potable.; La solución propuesta es sencilla y potencialmente accesible para el mercado objetivo.; Cuentan con la motivación inicial para desarrollar un filtro barato que mejore la calidad del agua.. Alertas: Falta total de experiencia y compromiso definido del equipo.; No hay prototipo ni validación técnica ni pruebas de la solución.; Ausencia de datos financieros, proyecciones y justificación de valuación.; No se ha definido modelo de negocio claro ni estrategia de ventas.; No se han considerado aspectos legales o protección de la tecnología.; No hay claridad en roles, dedicación ni plan de desarrollo concreto.. Siguientes pasos: Definir roles claros y compromiso de dedicación del equipo para desarrollar el proyecto.; Construir un prototipo funcional y realizar pruebas de calidad para validar la solución.; Elaborar un plan financiero con costos, precios y proyecciones de ventas para justificar la valuación..",
+      "texto": "Fortalezas: El emprendedor identifica un problema real y relevante en colonias con agua no potable.; Tiene un mercado objetivo claro: familias en colonias sin acceso a agua potable.; La propuesta de solución es sencilla y de bajo costo, lo cual puede ser atractivo para el mercado objetivo.. Alertas: No hay prototipo ni pruebas de laboratorio que respalden la solución propuesta.; El equipo no tiene roles definidos ni dedicación clara al proyecto, lo que limita su avance.; No se presentan datos financieros ni validación de costos, precios o márgenes, lo que hace inviable la valuación propuesta.. Siguientes pasos: Definir roles claros y compromiso de tiempo del equipo para avanzar en el desarrollo del filtro.; Desarrollar un prototipo funcional y realizar pruebas de laboratorio para validar la eficacia del filtro.; Elaborar un plan financiero con costos, precios, márgenes y proyecciones de ventas para justificar la valuación y atraer inversionistas..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
-            "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 1,
-            "frase_clave": "No hay prototipo ni algoritmo probado, ni patente para proteger la tecnología. La valuación de $4,000,000 MXN carece de sustento sin métricas financieras ni innovación clara.",
-            "necesitaria": "Necesito ver un prototipo funcional, pruebas de laboratorio que validen la tecnología y evidencia de protección intelectual como patente o marca registrada."
-          },
-          {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 1,
-            "frase_clave": "No me dices compromiso ni experiencia clara del equipo ni dedicación para fabricar y vender. Tampoco hay ventas ni costos definidos para justificar la valuación de 4,000,000 MXN por 5%.",
-            "necesitaria": "Necesito roles claros, dedicación definida, experiencia relacionada y un plan sólido que demuestre compromiso real con el proyecto y con la comunidad objetivo."
+            "frase_clave": "No me dices compromiso ni roles definidos en tu equipo de 2 personas, solo trabajan después de clases y sin experiencia; además, no hay prototipo ni ventas y la valuación de 4,000,000 MXN no tiene sustento.",
+            "necesitaria": "Necesitaría un equipo con roles claros, dedicación definida y experiencia relevante, además de un prototipo funcional y validación del mercado."
           },
           {
             "tiburon_id": "tiburon_financiero",
             "calificacion": 1,
-            "frase_clave": "No me dices margen bruto ni costo de adquisición, ni ventas o flujo para justificar la valuación de $4,000,000 por 5 %. Sin datos financieros ni validación, no puedo invertir en un proyecto solo en idea y sin números claros.",
-            "necesitaria": "Necesito un plan financiero con proyecciones de ventas, margen bruto, costos de adquisición de clientes y flujo de caja para evaluar la viabilidad económica."
+            "frase_clave": "No me dices margen bruto ni costo por filtro; sin ventas ni prototipo, la valuación de 4 millones no tiene sustento y no hay datos para calcular margen o CAC.",
+            "necesitaria": "Necesitaría datos financieros claros, como costo de producción, precio de venta, margen bruto y un plan de ventas con validación para justificar la valuación."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 1,
+            "frase_clave": "No hay prototipo ni validación tecnológica ni patente; sin un algoritmo o prueba de filtración, no hay innovación.",
+            "necesitaria": "Necesitaría un prototipo probado en laboratorio, evidencia de tecnología innovadora o un plan para proteger propiedad intelectual."
           }
         ],
         "fortalezas": [
-          "Identifican un problema real y relevante en colonias sin agua potable.",
-          "La solución propuesta es sencilla y potencialmente accesible para el mercado objetivo.",
-          "Cuentan con la motivación inicial para desarrollar un filtro barato que mejore la calidad del agua."
+          "El emprendedor identifica un problema real y relevante en colonias con agua no potable.",
+          "Tiene un mercado objetivo claro: familias en colonias sin acceso a agua potable.",
+          "La propuesta de solución es sencilla y de bajo costo, lo cual puede ser atractivo para el mercado objetivo."
         ],
         "alertas": [
-          "Falta total de experiencia y compromiso definido del equipo.",
-          "No hay prototipo ni validación técnica ni pruebas de la solución.",
-          "Ausencia de datos financieros, proyecciones y justificación de valuación.",
-          "No se ha definido modelo de negocio claro ni estrategia de ventas.",
-          "No se han considerado aspectos legales o protección de la tecnología.",
-          "No hay claridad en roles, dedicación ni plan de desarrollo concreto."
+          "No hay prototipo ni pruebas de laboratorio que respalden la solución propuesta.",
+          "El equipo no tiene roles definidos ni dedicación clara al proyecto, lo que limita su avance.",
+          "No se presentan datos financieros ni validación de costos, precios o márgenes, lo que hace inviable la valuación propuesta."
         ],
         "preguntas_sin_responder": [
-          "¿Cuál es el margen neto por filtro y cuánto gastan para vender uno?",
-          "¿Qué tecnología usan y cómo planean proteger su ventaja competitiva?",
-          "¿Cuál es el algoritmo o proceso específico de filtrado que hará único su filtro barato?",
-          "¿Tienen planes para desarrollar y proteger un prototipo único con patente o marca registrada?",
-          "¿Cuál es su proyección de ventas y flujo para justificar la valuación?",
-          "¿Qué los motiva y garantiza compromiso para seguir con este proyecto?",
-          "¿Cuánto tiempo le dedican y qué roles tienen en el proyecto?",
-          "¿Cuándo esperan tener márgenes y CAC definidos?",
-          "¿Qué plan tienen para validar la efectividad del filtro?"
+          "¿Cuánto cuesta fabricar un filtro y a qué precio se vendería para justificar la valuación?",
+          "¿Qué tecnología específica o innovación tiene el filtro y existe alguna patente o plan para protegerla?",
+          "¿Cómo se comprometerán tú y tu equipo para avanzar si sólo trabajan después de clases y sin roles definidos?"
         ],
         "siguientes_pasos": [
-          "Definir roles claros y compromiso de dedicación del equipo para desarrollar el proyecto.",
-          "Construir un prototipo funcional y realizar pruebas de calidad para validar la solución.",
-          "Elaborar un plan financiero con costos, precios y proyecciones de ventas para justificar la valuación."
+          "Definir roles claros y compromiso de tiempo del equipo para avanzar en el desarrollo del filtro.",
+          "Desarrollar un prototipo funcional y realizar pruebas de laboratorio para validar la eficacia del filtro.",
+          "Elaborar un plan financiero con costos, precios, márgenes y proyecciones de ventas para justificar la valuación y atraer inversionistas."
         ],
         "resultado": "SIN_TRATO",
         "condiciones": null,
@@ -397,8 +388,8 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 22.4,
-    "segundos_total": 19.5,
+    "segundos_modelo": 19.9,
+    "segundos_total": 17.5,
     "rondas_preguntas": 3,
     "n_eventos": 28,
     "eventos_en_orden": true,
@@ -407,11 +398,15 @@
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 9,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,
     "votos_publicados_juntos": true,
     "hubo_negociacion": false,
+    "modo": "guion",
+    "ayuda": false,
+    "sugerencias": 0,
     "resultado": "SIN_TRATO",
     "terminada": true
   },

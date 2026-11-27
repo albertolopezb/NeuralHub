@@ -113,6 +113,23 @@ def test_modo_humano_pausa_y_reanuda():
     assert len(resp) == 9 and all(e["emisor"] == "emprendedor" for e in resp)
 
 
+@pytest.mark.parametrize("opcion", ["rechazar", "tiburon_estratega"])
+def test_sin_mayoria_se_acepta_una_contraoferta_o_no_hay_trato(opcion):
+    panel = ["tiburon_financiero", "tiburon_estratega", "tiburon_mentor"]
+    s = Sesion(PITCH, panel, "humano", LLM(mock=True, mock_votos={t: "contraoferta" for t in panel}))
+    s.iniciar(esperar=True)
+    for _ in range(9):
+        s.reanudar({p["tiburon_id"]: "ok" for p in s.pendiente["preguntas"]}, esperar=True)
+    assert s.pendiente["tipo"] == "CONDICIONES" and s.pendiente["puede_original"] is False
+    s.reanudar({"opcion": opcion}, esperar=True)
+    assert s.estado == "terminada", s.error
+    dec = [e for e in s.eventos if e["tipo"] == "DECISION"][-1]
+    if opcion == "rechazar":
+        assert dec["resultado"] == "SIN_TRATO"
+    else:
+        assert dec["resultado"] == "TRATO" and dec["condiciones"]["origen"] == opcion
+
+
 def test_modo_humano_negociacion():
     panel = ["tiburon_estratega", "tiburon_tecnologico", "tiburon_mentor"]
     s = Sesion(PITCH, panel, "humano", LLM(mock=True, mock_votos={"tiburon_estratega": "salir", "tiburon_mentor": "salir", "tiburon_tecnologico": "invertir"},
@@ -161,7 +178,10 @@ def test_api_flujo_completo():
             break
         time.sleep(0.05)
     if est["estado"] == "esperando":
-        assert c.post(f"/sesiones/{sid}/condiciones", json={"opcion": "original"}).status_code == 200
+        pend = est["pendiente"]
+        assert c.post(f"/sesiones/{sid}/condiciones", json={"opcion": "nadie"}).status_code == 422
+        opcion = "original" if pend["puede_original"] else pend["contraofertas"][0]["tiburon_id"]
+        assert c.post(f"/sesiones/{sid}/condiciones", json={"opcion": opcion}).status_code == 200
         for _ in range(100):
             est = c.get(f"/sesiones/{sid}/eventos").json()
             if est["estado"] == "terminada":
@@ -187,5 +207,7 @@ def test_api_voz_e_historial_persistente():
     n = next(e["n"] for e in evs if e["tipo"] == "PREGUNTA")
     r = c.get(f"/sesiones/{sid}/audio/{n}")
     assert r.status_code == 200 and r.headers["content-type"] == "audio/wav" and len(r.content) > 10000
+    assert c.get(f"/sesiones/{sid}/metricas").status_code == 200      # también para sesiones guardadas en disco
+    assert c.get(f"/sesiones/{sid}/reporte").status_code == 200
     t = c.post("/voz/transcribir", content=r.content).json()
     assert len(t["texto"]) > 10

@@ -12,9 +12,9 @@ Equipo NeuralHub, TC2008B Gpo 305, Tec de Monterrey.
 ```
 cd servicio
 python -m venv .venv && .venv\Scripts\activate
-pip install langgraph langchain-openai python-dotenv fastapi uvicorn pytest httpx
+pip install -r requirements.txt
 copy .env.example .env        # y poner AZURE_API_KEY (nunca se sube a git)
-pytest                        # 21 pruebas con modelo simulado
+pytest                        # 42 pruebas (modelo simulado; la de voz usa SAPI y Whisper locales)
 python ejecutar_sesion.py --ejemplo 0
 python evaluar.py             # 15 sesiones reales
 uvicorn neuralhub.api:app --port 8000   # NEURALHUB_MOCK=1 para no usar el modelo

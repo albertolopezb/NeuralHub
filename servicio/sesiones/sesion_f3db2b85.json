@@ -1,0 +1,489 @@
+{
+  "id": "f3db2b85",
+  "modo": "humano",
+  "ayuda": true,
+  "nivel": "dificil",
+  "panel": [
+    "tiburon_financiero",
+    "tiburona_consumo",
+    "tiburon_negociador"
+  ],
+  "pitch": {
+    "nombre": "GreenPlate",
+    "sector": "alimentos_y_bebidas",
+    "etapa": "primeras_ventas",
+    "problema": "Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más.",
+    "solucion": "Contenedores de comida biodegradables hechos de fibra de plantas que se degradan en 90 días.",
+    "mercado_objetivo": "Restaurantes, apps de entrega y consumidores conscientes del ambiente en el área metropolitana de Monterrey.",
+    "modelo_ingresos": "Venta directa a restaurantes y mayoreo a tiendas, con margen por pieza.",
+    "competencia": "Proveedores de unicel (más baratos) y otras marcas de cartón compostable.",
+    "diferenciador": "Costo por pieza 15 % menor que el cartón compostable y resistencia al calor.",
+    "validacion": "Alianzas con 10 restaurantes locales y cartas de intención de 2 cadenas regionales.",
+    "propiedad_intelectual": "ninguna",
+    "equipo_roles": "Operaciones y desarrollo de producto",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Un fundador con experiencia en manufactura de empaques.",
+    "uso_fondos": "Aumentar la producción, certificaciones y distribución.",
+    "discurso": "¡Hola, tiburones! Cada comida para llevar suele venir en unicel o plástico que tarda siglos en desaparecer. Nosotros hacemos GreenPlate: contenedores de fibra de plantas que aguantan el calor y se degradan en 90 días. Se los vendemos directo a restaurantes y a tiendas por mayoreo. Ya trabajamos con 10 restaurantes de Monterrey y dos cadenas nos firmaron cartas de intención. Estamos pidiendo 250 mil pesos a cambio del 20 por ciento de la empresa para producir más y certificarnos. ¿Quién quiere cambiar el plato con nosotros?",
+    "equipo_fundadores": 2,
+    "monto_mxn": 250000,
+    "porcentaje": 20
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Cada comida para llevar suele venir en unicel o plástico que tarda siglos en desaparecer. Nosotros hacemos GreenPlate: contenedores de fibra de plantas que aguantan el calor y se degradan en 90 días. Se los vendemos directo a restaurantes y a tiendas por mayoreo. Ya trabajamos con 10 restaurantes de Monterrey y dos cadenas nos firmaron cartas de intención. Estamos pidiendo 250 mil pesos a cambio del 20 por ciento de la empresa para producir más y certificarnos. ¿Quién quiere cambiar el plato con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "GreenPlate",
+        "sector": "alimentos_y_bebidas",
+        "etapa": "primeras_ventas",
+        "problema": "Los restaurantes usan unicel y plástico que contaminan y que cada vez se regulan más.",
+        "solucion": "Contenedores de comida biodegradables hechos de fibra de plantas que se degradan en 90 días.",
+        "mercado_objetivo": "Restaurantes, apps de entrega y consumidores conscientes del ambiente en el área metropolitana de Monterrey.",
+        "modelo_ingresos": "Venta directa a restaurantes y mayoreo a tiendas, con margen por pieza.",
+        "competencia": "Proveedores de unicel (más baratos) y otras marcas de cartón compostable.",
+        "diferenciador": "Costo por pieza 15 % menor que el cartón compostable y resistencia al calor.",
+        "validacion": "Alianzas con 10 restaurantes locales y cartas de intención de 2 cadenas regionales.",
+        "propiedad_intelectual": "ninguna",
+        "equipo_roles": "Operaciones y desarrollo de producto",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Un fundador con experiencia en manufactura de empaques.",
+        "uso_fondos": "Aumentar la producción, certificaciones y distribución.",
+        "discurso": "¡Hola, tiburones! Cada comida para llevar suele venir en unicel o plástico que tarda siglos en desaparecer. Nosotros hacemos GreenPlate: contenedores de fibra de plantas que aguantan el calor y se degradan en 90 días. Se los vendemos directo a restaurantes y a tiendas por mayoreo. Ya trabajamos con 10 restaurantes de Monterrey y dos cadenas nos firmaron cartas de intención. Estamos pidiendo 250 mil pesos a cambio del 20 por ciento de la empresa para producir más y certificarnos. ¿Quién quiere cambiar el plato con nosotros?",
+        "equipo_fundadores": 2,
+        "monto_mxn": 250000,
+        "porcentaje": 20
+      },
+      "valuacion_mxn": 1250000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburona de consumo, Tiburón negociador.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "te faltan datos de ventas de los últimos 12 meses, margen bruto, gasto mensual; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_negociador",
+          "nombre": "Tiburón negociador",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el margen bruto exacto por pieza y cuánto cuesta adquirir a un cliente restaurante? Sin eso no puedo calcular si su valuación de 1.25 millones y su pedido de 250 mil por 20% tienen sentido.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no tengo el margen bruto exacto ni el costo de adquisición por cliente, pero estamos trabajando en obtener esos datos con nuestro equipo de operaciones y ventas para afinar la valuación y validar la inversión. Planeamos implementar un sistema de seguimiento de costos y ventas para tener métricas claras en las próximas semanas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "No me dices qué canales específicos usas para vender a restaurantes y tiendas, ni si el cliente ha dado reseñas o comprado repetidamente. ¿Cómo asegura la marca que el canal es efectivo y el cliente volverá a comprar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Actualmente vendemos directamente a restaurantes y por mayoreo a tiendas, lo que nos ha permitido consolidar alianzas con 10 restaurantes y cartas de intención de 2 cadenas regionales. Estamos en proceso de recopilar reseñas y datos de recompra para validar la efectividad del canal y asegurar la fidelidad del cliente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "¿Qué porcentaje exacto de la empresa están dispuestos a ceder si yo ofrezco 250,000 pesos hoy mismo? No me dices si ese 20 % es negociable o si buscas control o plazos especiales. Quiero condiciones claras para dar trato.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Estamos ofreciendo el 20 % por 250,000 pesos y estamos abiertos a negociar ese porcentaje dentro de un rango razonable, siempre buscando un acuerdo justo que no comprometa el control operativo. No buscamos plazos especiales por ahora, pero podemos discutir condiciones que beneficien a ambas partes. Si le interesa, podemos definir detalles específicos juntos para cerrar un trato claro y transparente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_negociador",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido contigo en que sin margen bruto ni CAC no puedo validar esa valuación de 1.25 M ni la oferta de 250,000 por 20%. Sin esos datos claros, no hay condiciones para trato serio, solo incertidumbre. Yo necesito números firmes para negociar porcentaje y control.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué porcentaje de los 10 restaurantes y 2 cadenas con cartas de intención ha comprado repetidamente o ha dado reseñas positivas que confirmen que el cliente final realmente prefiere y volverá a comprar su empaque biodegradable?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Aún no tenemos datos exactos sobre el porcentaje de compras repetidas o reseñas, pero estamos recopilando esta información directamente con los restaurantes y cadenas aliadas para validar la preferencia y fidelidad del cliente final. Planeamos implementar encuestas y seguimiento de ventas para obtener estos indicadores pronto.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "No me dices margen bruto ni CAC; sin esos números no hay trato. ¿Qué porcentaje mínimo están dispuestos a ceder si yo ofrezco 250,000 pesos hoy? Necesito condiciones claras para control y plazos, no promesas de obtener datos después.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Entiendo la importancia de esos datos para un trato claro. Actualmente, no tenemos margen bruto ni CAC definidos, pero para avanzar, podemos considerar ceder hasta un 20 % por 250,000 pesos, sin buscar control operativo ni plazos especiales. Estamos abiertos a formalizar condiciones que beneficien a ambas partes y a compartir datos concretos en cuanto los validemos con nuestro equipo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices margen bruto ni costo de adquisición por cliente, solo promesas de obtenerlos. Sin esos números exactos no puedo validar valuación ni inversión. ¿Cuánto margen bruto y CAC tienen ahora, con cifras concretas, para justificar $250,000 por 20 % a valuación $1.25 M?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no contamos con cifras exactas de margen bruto ni costo de adquisición por cliente, pero estamos implementando sistemas para medirlos con precisión en las próximas semanas. Esto nos permitirá validar y ajustar nuestra valuación de 1.25 millones y justificar la inversión. Mientras tanto, nos basamos en la experiencia y alianzas con 10 restaurantes y cartas de intención para demostrar el potencial de GreenPlate.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Concuerdo contigo en que sin datos claros de recompra o reseñas no hay evidencia de preferencia real ni fidelidad del cliente final. El emprendedor tampoco proporcionó esos números, solo promesas de conseguirlos. Sin métricas concretas, la valuación y la inversión son una apuesta, no una decisión informada.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_negociador",
+      "destino": "emprendedor",
+      "texto": "¿Qué porcentaje exacto están dispuestos a ceder si les doy hoy 250,000 pesos, con control operativo parcial y plazo máximo de 12 meses para validar métricas? Necesito condiciones claras y trato firme, no promesas de cifras futuras.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_negociador",
+      "texto": "Estamos dispuestos a ceder el 20 % por 250,000 pesos y podemos negociar un control operativo parcial y plazo de 12 meses para validar métricas, siempre buscando un acuerdo transparente y beneficioso. Aunque no tenemos aún métricas exactas, trabajaremos estrechamente para entregarlas en ese plazo y asegurar confianza en la inversión.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuánto es el margen bruto exacto por pieza y el costo de adquisición por cliente restaurante a la fecha? Sin esos dos datos concretos y actuales, no puedo validar ni la valuación de 1.25 millones ni la inversión de 250 mil por 20%, es una apuesta sin soporte numérico.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no contamos con el margen bruto exacto por pieza ni el costo de adquisición por cliente restaurante. Estamos implementando un sistema de seguimiento de costos y ventas para obtener estos datos concretos en las próximas semanas. Esto nos permitirá validar y ajustar la valuación y justificar la inversión con números precisos y actualizados.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué porcentaje exacto de clientes finales ha repetido compra o expresado preferencia por GreenPlate en sus canales actuales? Sin estos datos concretos de fidelidad y reseñas, no puedo confiar en que la marca y el canal generan demanda real y sostenida.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Aún no contamos con el porcentaje exacto de clientes finales que han repetido compra o dado reseñas, pero estamos en proceso de recopilar estos datos directamente con nuestros aliados restaurantes y cadenas para validar la fidelidad y preferencia. Implementaremos encuestas y seguimiento de ventas para obtener información concreta en las próximas semanas y así demostrar la demanda real y sostenida.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_negociador",
+      "texto": "Concuerdo contigo en que sin condiciones claras y trato firme no se avanza. El emprendedor ofrece negociar control operativo y plazo, pero falta definir porcentajes exactos y compromisos concretos. Sin claridad en estos puntos críticos, la incertidumbre persiste y no hay base sólida para tomar una decisión de inversión.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No dan margen bruto ni costo de adquisición, datos clave para validar valuación de 1.25 M y la inversión de 250,000 por 20%. Sin métricas claras y con solo 10 clientes y cartas de intención, es una apuesta, no inversión informada.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "No me dices margen bruto, ni canales de venta específicos con datos de recompra o reseñas. Sin evidencia de demanda ni fidelidad del cliente, no puedo validar la valuación de 1,250,000 MXN ni la oferta de 250,000 MXN por 20 %. Demasiada incertidumbre.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_negociador",
+      "destino": "nodo_votacion",
+      "texto": "Sin margen bruto ni CAC claros no puedo validar la valuación de 1,250,000 ni el 20 % por 250,000 pesos. Necesito mayor porcentaje para compensar riesgo e incertidumbre, busco control y plazos para trato serio. Contraoferta: $250,000 MXN por el 30 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 250000.0,
+      "contraoferta_porcentaje": 30.0
+    },
+    {
+      "n": 27,
+      "ronda": 4,
+      "tipo": "NEGOCIACION",
+      "emisor": "nodo_votacion",
+      "destino": "emprendedor",
+      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
+      "estado": ""
+    },
+    {
+      "n": 28,
+      "ronda": 4,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Acepto la contraoferta de Tiburón negociador. Nueva oferta: $250,000 MXN por el 30 %.",
+      "estado": "Negociando",
+      "oferta": {
+        "monto_mxn": 250000.0,
+        "porcentaje": 30.0
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No proporcionan margen bruto ni CAC, datos esenciales para validar la valuación de 1,250,000 MXN y la inversión de 250,000 MXN por 30%. Sin números claros, invertir es una apuesta, no una decisión fundamentada.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 30,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "No me dices margen bruto ni datos de recompra o reseñas que validen demanda y fidelidad del cliente, clave para mi criterio. Sin estas métricas, la valuación de 1,250,000 MXN y la oferta del 30 % por 250,000 MXN son una apuesta sin base real.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 31,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_negociador",
+      "destino": "nodo_votacion",
+      "texto": "Mi criterio principal es el porcentaje de capital y la valuación. La contraoferta de 30 % por 250,000 pesos me da mayor control y valor frente a la incertidumbre sin margen ni CAC, aceptando el riesgo con 10 restaurantes y cartas de intención como base.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 2
+    },
+    {
+      "n": 32,
+      "ronda": 4,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 33,
+      "ronda": 4,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Soluci\u0000f3n clara y con impacto ambiental relevante: contenedores biodegradables que se degradan en 90 d\u0000edas.; Alianzas iniciales con 10 restaurantes y cartas de intenci\u0000f3n con 2 cadenas regionales, mostrando inter\u0000e9s comercial.; Diferenciador competitivo de costo 15% menor que otros materiales compostables y resistencia al calor.. Alertas: Falta de datos clave financieros: no proporcionan margen bruto ni costo de adquisici\u0000f3n de clientes actuales.; No tienen informaci\u0000f3n concreta sobre recompra, rese\u0000f1as o fidelidad de clientes finales para validar demanda.; Condiciones de inversi\u0000f3n poco claras inicialmente; negociaci\u0000f3n de porcentaje y control no definida al principio.. Siguientes pasos: Implementar un sistema m\u0000e9trico riguroso para obtener y reportar margen bruto y costo de adquisici\u0000f3n de clientes con datos actuales.; Recolectar y analizar datos de recompra y rese\u0000f1as para demostrar la preferencia y fidelidad del cliente final.; Definir y comunicar claramente condiciones de inversi\u0000f3n, incluyendo porcentaje de participaci\u0000f3n, control operativo y plazos para validar m\u0000e9tricas..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "No dan margen bruto ni costo de adquisici\u0000f3n, datos clave para validar valuaci\u0000f3n de 1.25 M y la inversi\u0000f3n de 250,000 por 20%. Sin m\u0000e9tricas claras y con solo 10 clientes y cartas de intenci\u0000f3n, es una apuesta, no inversi\u0000f3n informada.",
+            "necesitaria": "Datos concretos y actuales de margen bruto por pieza y costo de adquisici\u0000f3n de clientes para validar valuaci\u0000f3n e inversi\u0000f3n."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 2,
+            "frase_clave": "No me dices margen bruto, ni canales de venta espec\u0000edficos con datos de recompra o rese\u0000f1as. Sin evidencia de demanda ni fidelidad del cliente, no puedo validar la valuaci\u0000f3n ni la oferta.",
+            "necesitaria": "Informaci\u0000f3n clara sobre canales de venta, datos de recompra, rese\u0000f1as y preferencia real del cliente final para confiar en la demanda y fidelidad."
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "calificacion": 3,
+            "frase_clave": "Sin margen bruto ni CAC claros no puedo validar la valuaci\u0000f3n ni el 20 % por 250,000 pesos. Necesito mayor porcentaje para compensar riesgo e incertidumbre, busco control y plazos para trato serio.",
+            "necesitaria": "Condiciones claras con control operativo, plazos definidos y un porcentaje de participaci\u0000f3n mayor que compense el riesgo."
+          }
+        ],
+        "fortalezas": [
+          "Soluci\u0000f3n clara y con impacto ambiental relevante: contenedores biodegradables que se degradan en 90 d\u0000edas.",
+          "Alianzas iniciales con 10 restaurantes y cartas de intenci\u0000f3n con 2 cadenas regionales, mostrando inter\u0000e9s comercial.",
+          "Diferenciador competitivo de costo 15% menor que otros materiales compostables y resistencia al calor."
+        ],
+        "alertas": [
+          "Falta de datos clave financieros: no proporcionan margen bruto ni costo de adquisici\u0000f3n de clientes actuales.",
+          "No tienen informaci\u0000f3n concreta sobre recompra, rese\u0000f1as o fidelidad de clientes finales para validar demanda.",
+          "Condiciones de inversi\u0000f3n poco claras inicialmente; negociaci\u0000f3n de porcentaje y control no definida al principio."
+        ],
+        "preguntas_sin_responder": [
+          "Cu\u0000e1l es el margen bruto exacto por pieza actualmente.",
+          "Cu\u0000e1l es el costo de adquisici\u0000f3n por cliente restaurante actual.",
+          "Porcentaje exacto de clientes que han realizado compras repetidas o han dado rese\u0000f1as que avalen preferencia y fidelidad."
+        ],
+        "siguientes_pasos": [
+          "Implementar un sistema m\u0000e9trico riguroso para obtener y reportar margen bruto y costo de adquisici\u0000f3n de clientes con datos actuales.",
+          "Recolectar y analizar datos de recompra y rese\u0000f1as para demostrar la preferencia y fidelidad del cliente final.",
+          "Definir y comunicar claramente condiciones de inversi\u0000f3n, incluyendo porcentaje de participaci\u0000f3n, control operativo y plazos para validar m\u0000e9tricas."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 1250000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburona_consumo": "salir",
+          "tiburon_negociador": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 28,
+    "segundos_modelo": 37.3,
+    "segundos_total": 14.5,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 8,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "modo": "humano",
+    "ayuda": true,
+    "sugerencias": 9,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+}

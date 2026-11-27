@@ -1,0 +1,378 @@
+{
+  "resumen": {
+    "mensajes": 60,
+    "aciertos": 44,
+    "porcentaje": 73.3,
+    "por_tiburon": {
+      "tiburon_financiero": "10/10",
+      "tiburon_estratega": "6/10",
+      "tiburon_tecnologico": "6/10",
+      "tiburona_consumo": "6/10",
+      "tiburon_mentor": "8/10",
+      "tiburon_negociador": "8/10"
+    },
+    "llamadas": 60
+  },
+  "detalle": [
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "En el pitch y respuestas dices que vendes en línea y pop-ups (R0, R1), pero no me has contado qué comentarios da el cliente sobre la marca y el empaque; ¿qué le gusta y si volvería a comprar o recomendar?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "otro tiburón, coincido contigo. Sin prototipo ni pruebas, no hay datos para calcular costos, márgenes ni validar la idea. Sin estos, la valuación de 4 millones no tiene sustento y el riesgo es altísimo para cualquier inversión."
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_financiero",
+      "acierto": false,
+      "mensaje": "Financiero, tu pregunta es clave para entender la viabilidad. El costo de adquisición de $2,100 MXN y recuperación en 3 meses indica un buen algoritmo de retención y venta, pero el gasto fijo mensual de $140,000 MXN podría afectar la utilidad neta. Necesito ver más sobre el prototipo y su escalabilidad para validar esos números."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_negociador",
+      "acierto": false,
+      "mensaje": "El mercado es grande con 90,000 consultorios, pero solo 0.15 % de penetración y sin barreras fuertes ni patente para defender la innovación. La valuación de 12 M es alta para 140 clientes y gasto mensual de 140,000 MXN. Necesitan defender y escalar mejor. Contraoferta: $800,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "Con $350,000 para desarrollo y sin equipo (pitch R0), ¿cómo vas a escalar TutorBot y defender mercado de competidores con más recursos y sin patente en los próximos 5 años?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "Con 61 % de ventas de recompra y 420 clientes recurrentes (R1), ¿cómo ayuda la marca, el empaque o las reseñas en sus canales propios para que el cliente decida volver a comprar sus tamales?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "No me dices margen bruto ni costo de adquisición de clientes; sin esas cifras no puedo evaluar rentabilidad ni valuación de 5,000,000 pesos. Tampoco hay control financiero ni ventas claras, solo estiman 150 prendas vendidas. La inversión es muy riesgosa sin números sólidos."
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "Me dices que vas a \"fabricar los primeros filtros\" con $200,000 (R0), pero no veo margen bruto ni costo por filtro. ¿Cuánto te cuesta hacer cada filtro y a qué precio exacto lo vas a vender?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) piden $600,000 por 12%, y en R1 dicen 15% si pongo cocina y vehículos. ¿Qué condiciones claras de control y plazos exigen para dar su trato y no perder la operación clave?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "Me dices 420 clientes recurrentes y 38% repite en el mes (R0). ¿Qué canales usan para vender y entregar? ¿Cómo es la experiencia del cliente con la marca y el empaque para que vuelvan a comprar?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "Del pitch (R0) faltan cifras clave: ¿cuánto te cuesta fabricar cada filtro y a qué precio exacto lo venderás para calcular margen bruto?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburon_negociador",
+      "acierto": false,
+      "mensaje": "Negociador, coincido contigo en pedir claridad en condiciones y plazos para ceder más porcentaje, porque el control es clave para cuidar la experiencia del cliente y la marca. El emprendedor dice no pasar de 18% para mantener control en cocina y recetas, pero no aclara plazos ni cómo garantizará ese control. Necesitamos más detalles para evaluar."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "Con 140 clientes y 4 % de cancelación mensual (R0), ¿qué barreras claras tienen para defenderse de software grande y barato y cómo planean escalar sin perder ventaja en este mercado?"
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_tecnologico",
+      "acierto": false,
+      "mensaje": "otro tiburón, coincido en que sin patente ni marca la barrera es débil. Depender solo del algoritmo y datos sin protección legal limita defender la ventaja en un mercado grande. Para escalar y blindar la empresa, necesitan crear barreras claras que impidan a competidores copiar rápido su modelo."
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Con base en que puedes ceder hasta 15 % (R1) y no más de 18 % (R2), ¿qué porcentaje exacto estás dispuesto a darme si te ofrezco $600,000 con condiciones firmes para control y plazos claros?"
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_mentor",
+      "acierto": false,
+      "mensaje": "Con un solo fundador y tiempo parcial (R1), ¿cómo piensas escalar TutorBot para defender mercado frente a competidores como Khan Academy y tutores particulares sin un equipo sólido?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburon_mentor",
+      "acierto": false,
+      "mensaje": "¿Qué te ha dicho el cliente sobre la marca y la experiencia de compra en línea o pop-ups? ¿Regresan o recomiendan? No me dices validación con clientes en el pitch."
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) me dices pides $600,000 por 12%, pero no me dices qué porcentaje están dispuestos a ceder si yo pongo los vehículos y la cocina. ¿Qué condiciones y control quieren mantener en ese trato?"
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "No hay prototipo ni validación tecnológica ni propiedad intelectual; no me dices avances claros y la valuación de $4,000,000 MXN no tiene sustento con solo una idea y sin datos técnicos ni costos. Muy alto riesgo sin innovación concreta ni patente."
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_financiero",
+      "acierto": false,
+      "mensaje": "otro tiburón, coincido en que saber el costo de adquisición y gasto por cliente es clave para valorar la inversión. El emprendedor dijo $120 por cliente, pero no dijo cuánto gastan para mantenerlos activos y asegurar ese margen. Sin esos datos, no puedo cerrar trato con confianza."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "Con 140 clientes actuales y sin patente ni marca, ¿cómo planean defenderse de competidores grandes y escalar rápido en un mercado de 90,000 consultorios (datos del pitch R0)?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburon_estratega",
+      "acierto": false,
+      "mensaje": "Estoy de acuerdo con tu pregunta sobre porcentaje y control. El emprendedor quiere conservar control para la cocina y recetas, clave para mantener la experiencia del cliente y la marca. Ceder más del 15% puede poner en riesgo esa calidad que el cliente valora y que permite la recompra."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_financiero",
+      "acierto": false,
+      "mensaje": "En el pitch (R0) dices que vendieron unas 150 prendas pero sin contabilidad clara (R1). ¿Cómo tú y tu equipo planean organizar y controlar las ventas y márgenes para ser transparentes con las artesanas y los inversionistas?"
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_mentor",
+      "acierto": false,
+      "mensaje": "Mentor, coincido contigo. Sin roles claros ni dedicación definida, es difícil que desarrollen el prototipo o el algoritmo del filtro, y menos protegerlo con patente. Sin compromiso tecnológico serio, la innovación queda en riesgo."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_tecnologico",
+      "acierto": false,
+      "mensaje": "Estoy de acuerdo, tecnológico. Sin mejoras concretas en el algoritmo que justifiquen una patente o propiedad fuerte, es difícil defender el mercado a largo plazo frente a competidores con más recursos. Solo adaptar contenido y usar WhatsApp no crea barreras de entrada sólidas para escalar y proteger TutorBot en 5 años."
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "Con el piloto de 30 estudiantes (pitch R0) y sin patente (R2), ¿qué barreras concretas vas a construir para defender y escalar tu mercado frente a competidores gratuitos y tutores particulares?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "Del gasto mensual de $140,000 MXN (R0), ¿cuánto destinas específicamente a marketing y ventas para sostener ese costo de adquisición de $2,100 MXN por cliente? Necesito números claros para hacer cuentas."
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) y respuestas veo que no hay prototipo ni algoritmo definido para el filtro. ¿Qué plan concreto tienen para desarrollar y validar la tecnología antes de fabricar?"
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "El mercado es grande con 90,000 consultorios, pero la ventaja defendible es débil sin patente y sólo 140 clientes (0.15% mercado). La valuación de 12 M es alta para la etapa y competencia. Necesitan más barreras y datos para defender el mercado. Contraoferta: $800,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburon_financiero",
+      "acierto": false,
+      "mensaje": "No hay datos claros de validación del cliente ni margen, y no sabes si repiten compra, pero la marca tiene buen concepto y vendes a $1,400. La valuación de $5,000,000 es alta para primeras ventas sin cifras claras. Contraoferta: $200,000 MXN por el 10 %."
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "El prototipo con algoritmo predictivo es prometedor pero no tienen patente ni protección IP clara, lo que es crucial para mi criterio tecnológico. La valuación de $12,000,000 MXN parece alta para 140 clientes y 4 % cancelación mensual. Contraoferta: $800,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "Tú estudias y trabajas a tiempo parcial en TutorBot (R1), pero no me dices cómo planeas formar un equipo comprometido que te apoye para crecer y no dejar todo en tus manos."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "Estoy de acuerdo con tu pregunta y preocupación. El piloto con 30 estudiantes es muy pequeño para validar barreras fuertes, y la competencia gratis es dura. El emprendedor dice que la ventaja es WhatsApp y temario SEP, pero sin un equipo sólido y estrategia clara, dudo que eso sea suficiente para sostener y escalar el negocio."
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) pedís $200,000 por 5 %, o valuación de $4,000,000, pero no hay margen ni costo por filtro (R1). ¿Cuánto te cuesta hacer un filtro y a qué precio lo vas a vender para que cuadren esos números?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Piden $600,000 por 12%, valuación de $5M me parece alta para margen 46% y gasto $85,000. Ofrezco $600,000 por 15% con condiciones para control, para asegurar que la expansión y retorno estén bien manejados. Contraoferta: $600,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "¿Puedes detallar qué algoritmo específico usas en tu prototipo de IA para personalizar los ejercicios y cómo planeas evolucionar ese algoritmo sin patente ni equipo dedicado? (R0, R1)"
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "No hay compromiso claro ni experiencia definida en el equipo, y no me dices ventas ni costos para justificar la valuación de 4,000,000 pesos. Sin roles ni plan, no puedo confiar en que este proyecto avance con honestidad y seriedad."
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_financiero",
+      "acierto": false,
+      "mensaje": "Estoy de acuerdo con tu pregunta sobre el costo de adquisición vs margen bruto. El emprendedor dice que el costo es $120 por cliente con margen 46%, eso limita su rentabilidad y obliga a negociar bien el porcentaje para asegurar control y retorno. Importante considerar para mi oferta."
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_negociador",
+      "acierto": false,
+      "mensaje": "El prototipo usa IA pero sin patente ni equipo sólido, y el fundador solo le dedica tiempo parcial. Pido $200,000 MXN por 20% para equilibrar riesgo en innovación y falta de propiedad intelectual, pese a la valuación implícita de $3,500,000 MXN y la prueba con 30 estudiantes. Contraoferta: $200,000 MXN por el 20 %."
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "Me dices que hay 420 clientes recurrentes y que 38 % repite en el mes (R0). ¿Qué dice la gente de la marca y el empaque en sus reseñas? ¿Volverían a comprar por el canal que usan?"
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_mentor",
+      "acierto": false,
+      "mensaje": "Mentor, coincido que falta equipo y experiencia sólida; un prototipo con IA y sin dedicación total limita innovación y desarrollo del algoritmo. Necesitan un equipo técnico para escalar y proteger la propiedad intelectual. Un fundador a tiempo parcial no es suficiente para avanzar en tecnología patentable."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_negociador",
+      "acierto": false,
+      "mensaje": "Me interesa el compromiso y la idea, pero trabajar solo tiempo parcial y sin equipo pone en riesgo el proyecto; necesito ver dedicación completa y equipo sólido. La validación con 22 usuarios activos es buena, pero la valuación de $3,500,000 MXN parece alta para un prototipo sin ventas. Contraoferta: $200,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "Me dices que solo hay un fundador (R0) y no dices su experiencia ni dedicación. ¿Cómo te mueves tú solo para hacer crecer TutorBot y asegurar el compromiso con tus clientes?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "Con gasto mensual de $140,000 (R0) y costo de adquisición $2,100 por cliente (R1), ¿cuántos clientes nuevos adquieren al mes y cómo afecta eso su flujo operativo?"
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) mencionas que el software baja ausencias de 30% a 12%, ¿qué tipo de algoritmo usa el sistema para confirmar citas y cómo planean protegerlo sin patente ni marca?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Piden $600,000 por 12% con valuación de $5,000,000. Ofrezco $600,000 por 15% cediendo más capital si pongo cocina y vehículos, pero exijo control claro sobre operación y decisiones en 12 meses. Falta detalle sobre condiciones y plazos para cerrar trato. Contraoferta: $600,000 MXN por el 15 %."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "Tu equipo son dos fundadoras con experiencia en diseño y cooperativas (R0). ¿Quiénes forman parte del día a día en operaciones y cómo aseguran su compromiso y honestidad con las artesanas?"
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) dices que eres solo y trabajas tiempo parcial (R1), ¿qué compromiso tienes para dedicarte completo y formar equipo que soporte el crecimiento y la confianza de tus clientes?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Me dices que pides $600,000 por 12 % y valuación de $5 millones (R0). ¿Qué porcentaje estás dispuesto a ceder si te ofrezco $600,000 con condiciones para controlar la expansión y plazos claros?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "Del gasto mensual de $85,000 (R0,R2), ¿cuánto asignan específicamente a mantener clientes activos y cuánto a operación fija? Necesito saber qué parte impacta margen y flujo."
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) dices que son dos fundadores pero no hay roles ni compromiso definido, ¿cómo piensan organizarse y dedicar tiempo real para que AguaLimpia avance y no quede solo en idea?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "Del pitch (R0) y respuestas, veo que vendes por tienda en línea y pop-ups, pero no me dices qué comentarios específicos da el cliente sobre el empaque y si volvería a comprar o recomienda la marca y el canal. ¿Qué te dicen?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Con base en tu pedido de $600,000 MXN por 12% (R0) y tu apertura al 15% con ayuda en distribución (R1), ¿qué condiciones y plazos propones para que yo controle el uso de fondos y el avance del negocio?"
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "De los 140 clientes y $1,100,000 MXN en ventas (R0), ¿cuánto gastan en promedio en marketing y cuánto les cuesta adquirir cada cliente nuevo?"
+    },
+    {
+      "real": "tiburon_estratega",
+      "juez": "tiburon_estratega",
+      "acierto": true,
+      "mensaje": "Con solo un fundador y tiempo parcial (R1), ¿cómo planeas escalar y defender TutorBot frente a competencia como Khan Academy que ya tienen mercado y recursos?"
+    },
+    {
+      "real": "tiburon_mentor",
+      "juez": "tiburon_mentor",
+      "acierto": true,
+      "mensaje": "En el pitch (R0) dices que eres solo y a tiempo parcial (R1), ¿qué pasos concretos vas a tomar tú para formar un equipo comprometido que te ayude a mantener la confianza de tus usuarios?"
+    },
+    {
+      "real": "tiburon_tecnologico",
+      "juez": "tiburon_tecnologico",
+      "acierto": true,
+      "mensaje": "En el pitch no dices si ya tienen un prototipo ni pruebas de laboratorio ni patente; ¿cuándo tendrán un prototipo funcional y qué pasos concretos harán para validar la innovación tecnológica y posible patente?"
+    },
+    {
+      "real": "tiburona_consumo",
+      "juez": "tiburona_consumo",
+      "acierto": true,
+      "mensaje": "otro tiburón, coincido en que es vital tener claridad en condiciones y control para no perder la esencia de la marca y calidad que el cliente busca. La respuesta del emprendedor deja claro que quieren mantener control, pero faltan detalles sobre plazos y cómo se garantiza la calidad y experiencia en la operación, clave para la fidelidad del cliente."
+    },
+    {
+      "real": "tiburon_financiero",
+      "juez": "tiburon_financiero",
+      "acierto": true,
+      "mensaje": "En el pitch no me dices margen bruto ni costo de adquisición por cliente. ¿Cuánto te cuesta producir y vender cada prenda a $1,400, y cuánto te queda neto para cubrir gastos y flujo?"
+    },
+    {
+      "real": "tiburon_negociador",
+      "juez": "tiburon_negociador",
+      "acierto": true,
+      "mensaje": "Me dices que puedes ceder hasta 15 % si hay distribución (R1). ¿Qué condiciones y control exijo para que esa expansión no te diluya ni te saque del mando?"
+    }
+  ]
+}

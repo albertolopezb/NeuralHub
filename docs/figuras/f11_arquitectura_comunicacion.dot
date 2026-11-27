@@ -5,7 +5,7 @@ subgraph cluster_s{label="Servicio de agentes (FastAPI + LangGraph)";fontcolor="
  API[label="API REST\n/sesiones, /respuestas,\n/negociacion, /audio, /voz"];
  subgraph cluster_g{label="Grafo de LangGraph: estado compartido (pizarra) + checkpointer";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded";
   ST[label="Estado de la sesión\nhistorial público, ronda,\noferta, votos secretos",shape=cylinder,fillcolor="#FFF3BF"];
-  MOD[label="Moderador\n(determinista)"]; T1[label="Tiburón 1"]; T2[label="Tiburón 2"]; T3[label="Tiburón 3"]; VOT[label="Nodo de votación\n(regla 2 de 3)"]; EMP[label="Emprendedor\n(usuario vía interrupt\no autopiloto)"];
+  MOD[label="Moderador\n(determinista)"]; T1[label="Tiburón 1"]; T2[label="Tiburón 2"]; T3[label="Tiburón 3"]; VOT[label="Nodo de votación\n(regla 2 de 3)"]; EMP[label="Emprendedor\n(usuario vía interrupt\no agente empresario)"];
   MOD->ST[label="turnos"]; T1->ST[label="REQUEST / INFORM"]; T2->ST; T3->ST[label="PROPOSE"]; ST->VOT[label="votos secretos"]; VOT->ST[label="DECISIÓN"]; EMP->ST[label="INFORM / ACCEPT"];
  }
  LLM[label="Azure OpenAI\ngpt-4.1-mini\nsalida estructurada (Pydantic)",shape=component,fillcolor="#E5DBFF"];

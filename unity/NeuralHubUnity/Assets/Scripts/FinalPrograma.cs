@@ -24,13 +24,13 @@ namespace NeuralHub
 
         public bool Activo { get { return fase != Fase.Nada; } }
         public bool EnCierre { get { return fase == Fase.Cierre; } }
-        float T { get { return Time.unscaledTime - desde; } }
+        float T { get { return Reloj.Ahora - desde; } }
 
         public void Reiniciar() { fase = Fase.Nada; cierreVisto = false; piezas.Clear(); }
 
         public void Resultado(AppNeuralHub app, bool trato, string nombreEmpresa, string textoCondiciones)
         {
-            fase = trato ? Fase.Trato : Fase.SinTrato; desde = Time.unscaledTime;
+            fase = trato ? Fase.Trato : Fase.SinTrato; desde = Reloj.Ahora;
             empresa = nombreEmpresa; condiciones = textoCondiciones;
             var dentro = new List<string>();
             foreach (var kv in app.reproductor.votos) if (kv.Value == "invertir" || kv.Value == "contraoferta") dentro.Add(kv.Key);
@@ -63,7 +63,7 @@ namespace NeuralHub
 
         public void Cerrar(AppNeuralHub app, string nombreEmpresa)
         {
-            fase = Fase.Cierre; desde = Time.unscaledTime; empresa = nombreEmpresa; cierreVisto = true; piezas.Clear();
+            fase = Fase.Cierre; desde = Reloj.Ahora; empresa = nombreEmpresa; cierreVisto = true; piezas.Clear();
             panel = app.reproductor.panelIds;
             if (app.sonidos) app.sonidos.Musical("cierre", DuraCierre);
         }
@@ -73,11 +73,11 @@ namespace NeuralHub
         public void Actualizar()
         {
             if (fase == Fase.Nada) return;
-            float dt = Mathf.Min(0.05f, Time.unscaledDeltaTime);
+            float dt = Mathf.Min(0.05f, Reloj.Delta);
             foreach (var p in piezas)
             {
                 if (fase == Fase.Trato) { p.vy += 0.75f * dt; p.vx *= 1f - 0.9f * dt; p.vy *= 1f - 0.55f * dt; p.giro += p.vgiro * dt; }
-                p.x += (p.vx + 0.02f * Mathf.Sin(Time.unscaledTime * 2.4f + p.fase)) * dt;
+                p.x += (p.vx + 0.02f * Mathf.Sin(Reloj.Ahora * 2.4f + p.fase)) * dt;
                 p.y += p.vy * dt;
             }
             if (T > (fase == Fase.Cierre ? DuraCierre : DuraResultado)) { fase = Fase.Nada; piezas.Clear(); }

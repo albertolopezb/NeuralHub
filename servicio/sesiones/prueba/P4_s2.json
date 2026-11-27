@@ -13,7 +13,7 @@
       "tipo": "PITCH",
       "emisor": "emprendedor",
       "destino": "tiburones",
-      "texto": "TutorBot: pide $350,000 MXN por el 10 % (valuación implícita $3,500,000 MXN). Problema: Muchos estudiantes de secundaria no tienen quien los ayude con matemáticas fuera de la escuela. Solución: Un asistente de IA por WhatsApp que explica paso a paso los ejercicios de matemáticas y propone ejercicios nuevos.",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar TutorBot. Todo empezó con un problema. Muchos estudiantes de secundaria no tienen quien los ayude con matemáticas fuera de la escuela. Por eso creamos nuestra solución. Un asistente de IA por WhatsApp que explica paso a paso los ejercicios de matemáticas y propone ejercicios nuevos. Está pensada para este mercado: Estudiantes de secundaria en escuelas públicas y privadas de México y sus familias. Así ganamos dinero: Suscripción mensual de $99 MXN para familias y licencias para escuelas. Y no es solo una idea: Un piloto con 30 estudiantes de una secundaria durante un mes; 22 lo usaron más de 5 veces. Por eso hoy venimos a pedirles $350,000 MXN a cambio del 10 % de nuestra empresa, para lo siguiente: Desarrollo del producto, pruebas con más escuelas y servidores. ¿Quién quiere nadar con nosotros?",
       "estado": "Presentando",
       "pitch": {
         "nombre": "TutorBot",
@@ -72,29 +72,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_mentor",
       "destino": "emprendedor",
-      "texto": "¿Quién eres tú, qué experiencia tienes y qué tan comprometido estás con TutorBot? No me dices nada del equipo ni tu dedicación.",
+      "texto": "Me dices que el equipo es de un fundador, pero no me dices quién eres ni tu experiencia. ¿Qué te motivó a crear TutorBot y cómo te comprometes a sacarlo adelante tú solo?",
       "estado": "Preguntando"
     },
     {
       "n": 4,
-      "ronda": 1,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_estratega",
-      "destino": "emprendedor",
-      "texto": "¿Cuál es el tamaño del mercado objetivo de estudiantes de secundaria en México y cómo planeas escalar frente a competidores como Khan Academy y tutores particulares? No me dices cifras ni estrategia para defender tu mercado.",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 5,
-      "ronda": 1,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_tecnologico",
-      "destino": "emprendedor",
-      "texto": "¿Cuál es el algoritmo o tecnología específica que usa TutorBot para adaptarse al nivel del alumno y personalizar la enseñanza, y tienes pensado protegerlo con patente o propiedad intelectual?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 6,
       "ronda": 1,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -103,13 +85,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 7,
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Para escalar y defender TutorBot en un mercado con competencia como Khan Academy (pitch R0), ¿qué barreras de entrada tienes o planeas crear para que no te copien rápido?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
       "ronda": 1,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_estratega",
       "texto": "El mercado son unos 6 millones de estudiantes de secundaria en México según datos de la SEP, y compito con videos gratuitos y tutores.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En el pitch R0 dices que es un asistente de IA por WhatsApp, ¿qué tipo de algoritmo usas y tienes prototipo funcionando para probar su eficacia con estudiantes?",
+      "estado": "Preguntando"
     },
     {
       "n": 8,
@@ -126,7 +126,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_tecnologico",
       "destino": "tiburon_mentor",
-      "texto": "Concuerdo con tu pregunta sobre el equipo y dedicación; sin un equipo sólido y compromiso total, es difícil avanzar en desarrollo tecnológico y protección intelectual, claves para un prototipo con IA y posible patente.",
+      "texto": "Mentor, coincido en que el equipo es clave. Un solo fundador con tiempo parcial puede limitar el desarrollo del prototipo y la innovación del algoritmo. Sin un equipo o experiencia clara, la evolución tecnológica y la propiedad intelectual podrían estancarse. Es un riesgo para la escalabilidad y la patente futura del sistema.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -136,29 +136,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_estratega",
       "destino": "emprendedor",
-      "texto": "¿Cómo planeas crear barreras de entrada y defender tu ventaja competitiva frente a competidores consolidados como Khan Academy y tutores particulares, dado que no cuentas con patente ni marca registrada y solo tienes un prototipo?",
+      "texto": "En el pitch R0 dices que quieres invertir $350,000 para desarrollar producto y servidores; ¿cómo planeas crear barreras de entrada para defender TutorBot de competidores como Khan Academy en ese mercado de 6 millones?",
       "estado": "Preguntando"
     },
     {
       "n": 11,
-      "ronda": 2,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_tecnologico",
-      "destino": "emprendedor",
-      "texto": "No me dices qué tecnología o arquitectura específica usas para el modelo de lenguaje ni cómo piensas escalar los servidores para mantener la calidad y velocidad en el chat de WhatsApp. ¿Puedes aclarar eso?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 12,
-      "ronda": 2,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_mentor",
-      "destino": "emprendedor",
-      "texto": "No me dices cómo planeas formar un equipo comprometido para avanzar rápido y honestamente con TutorBot, siendo tú solo y trabajando tiempo parcial.",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 13,
       "ronda": 2,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -167,13 +149,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 14,
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En el pitch dices que el prototipo usa un modelo de lenguaje para resolver álgebra y geometría, ¿qué innovaciones tecnológicas tiene tu algoritmo que puedas patentar o proteger para evitar copias?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
       "ronda": 2,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_tecnologico",
       "texto": "No tengo patente ni creo que el modelo sea protegible; la ventaja es el contenido adaptado y los datos de uso del piloto.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "Me dices que eres fundador único y trabajas en tiempo parcial, ¿cómo vas a organizarte para dedicarle más tiempo y armar un equipo que te ayude a crecer y sostener TutorBot?",
+      "estado": "Preguntando"
     },
     {
       "n": 15,
@@ -190,7 +190,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_mentor",
       "destino": "tiburon_estratega",
-      "texto": "Estoy de acuerdo con tu pregunta; sin patente ni marca, y solo con un prototipo, la ventaja del emprendedor es muy frágil. Crecer rápido es importante, pero sin un equipo sólido y protección legal, la competencia puede superar fácil. Debe fortalecer eso antes de pensar en escalar.",
+      "texto": "Estratega, coincido contigo. Sin una barrera clara, crecer rápido con sólo un fundador y un prototipo es arriesgado. Además, sin patente ni innovación protegida, la competencia puede copiar fácil. Necesitan un equipo fuerte y compromiso total para sostener esa ventaja y defenderse.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -200,29 +200,11 @@
       "tipo": "PREGUNTA",
       "emisor": "tiburon_tecnologico",
       "destino": "emprendedor",
-      "texto": "No me dices cómo planeas desarrollar un prototipo robusto ni qué estrategia tecnológica usarás para generar y mejorar el algoritmo que personaliza la enseñanza en WhatsApp, considerando que no tienes patente ni equipo.",
+      "texto": "En el pitch dices que el prototipo usa un modelo de lenguaje con el temario SEP, pero sin patente; ¿qué mejoras tecnológicas concretas planeas para que tu algoritmo sea único y protegible?",
       "estado": "Preguntando"
     },
     {
       "n": 18,
-      "ronda": 3,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_mentor",
-      "destino": "emprendedor",
-      "texto": "¿Cómo planeas formar un equipo comprometido y honesto que dedique tiempo completo para avanzar rápido con TutorBot, si hasta ahora trabajas solo y a tiempo parcial?",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 19,
-      "ronda": 3,
-      "tipo": "PREGUNTA",
-      "emisor": "tiburon_estratega",
-      "destino": "emprendedor",
-      "texto": "El mercado de 6 millones de estudiantes es enorme, pero para defenderlo y escalar frente a Khan Academy necesitas ventajas fuertes; ¿qué barreras de entrada concretas, aparte de WhatsApp y temario SEP, planeas construir para sostener tu crecimiento a 5 años? No me dices más que crecer rápido.",
-      "estado": "Preguntando"
-    },
-    {
-      "n": 20,
       "ronda": 3,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
@@ -231,13 +213,31 @@
       "estado": "Respondiendo"
     },
     {
-      "n": 21,
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "En el pitch dices que eres fundador único y trabajas tiempo parcial, ¿qué pasos concretos vas a dar para armar un equipo que te ayude a crecer y asumir el compromiso total que tu proyecto necesita?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
       "ronda": 3,
       "tipo": "RESPUESTA",
       "emisor": "emprendedor",
       "destino": "tiburon_mentor",
       "texto": "Mi compromiso es seguir con el proyecto aunque no me inviertan, pero con dinero podría dedicarme tiempo completo.",
       "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "En el pitch dices que buscarás crecer rápido con escuelas para defender TutorBot; ¿qué estrategia concreta tienes para que las escuelas adopten tu solución y no la reemplacen por otras opciones ya establecidas?",
+      "estado": "Preguntando"
     },
     {
       "n": 22,
@@ -254,7 +254,7 @@
       "tipo": "REPLICA",
       "emisor": "tiburon_estratega",
       "destino": "tiburon_tecnologico",
-      "texto": "Concuerdo contigo, Tiburón tecnológico. Sin equipo ni patente, y con solo un prototipo, la estrategia para robustecer y escalar la tecnología es débil. Esto limita la defensa y el crecimiento sostenible en un mercado tan competido. Sin barreras tecnológicas claras, será difícil mantener ventaja frente a competidores consolidados.",
+      "texto": "Tiburón tecnológico, coincido contigo: sin mejoras tecnológicas únicas o protegibles, el algoritmo es vulnerable a copias. Sin barreras claras que defiendan el producto, escalar y mantener ventaja en un mercado tan competido es complicado. Necesitan innovar para defender TutorBot a largo plazo.",
       "estado": "Replicando",
       "postura": "acuerdo"
     },
@@ -264,12 +264,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_mentor",
       "destino": "nodo_votacion",
-      "texto": "Tu compromiso es parcial y no tienes equipo ni experiencia, lo que afecta la viabilidad del proyecto y la honestidad en el avance. Pides 350,000 por 10 % con solo un prototipo y sin ventas ni margen, eso no me da confianza para invertir ahora.",
+      "texto": "Tu compromiso es parcial y eres fundador único sin equipo ni experiencia; necesitas dedicarte tiempo completo y armar un equipo para sostener TutorBot. Pides $350,000 por 10% con prototipo y 22 usuarios activos, pero falta validación y barreras claras. Contraoferta: $200,000 MXN por el 20 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 25,
@@ -277,12 +277,12 @@
       "tipo": "VOTO",
       "emisor": "tiburon_estratega",
       "destino": "nodo_votacion",
-      "texto": "El mercado es grande (6 millones) pero no hay barreras de entrada ni defensa clara; sin equipo ni patente y solo un prototipo, no hay ventaja sostenible para escalar ni defender mercado. Pide $350,000 por 10% sin ventas ni margen informado.",
+      "texto": "El mercado es grande (6 millones de estudiantes) pero no hay barreras defendibles ni patente. Valoro el piloto con 22 usuarios activos, pero la valuación de $3.5M para un prototipo y un solo fundador sin equipo es alta. Propongo $175,000 por 20% para escalar con equipo y mejorar barreras. Contraoferta: $175,000 MXN por el 20 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 175000.0,
+      "contraoferta_porcentaje": 20.0
     },
     {
       "n": 26,
@@ -290,81 +290,97 @@
       "tipo": "VOTO",
       "emisor": "tiburon_tecnologico",
       "destino": "nodo_votacion",
-      "texto": "Como Tiburón tecnológico, sin un algoritmo claro ni estrategia para proteger propiedad intelectual y sin equipo ni patente, el prototipo carece de barreras tecnológicas. No me dices tecnología ni servidor, y piden $350,000 por 10% sin base sólida para escalar o innovar.",
+      "texto": "El prototipo con IA en WhatsApp es innovador, pero no hay patente ni equipo dedicado, lo que limita la escalabilidad. El piloto con 22 estudiantes activos es bueno, pero $350,000 por 10% me parece alto sin barreras tecnológicas claras. Contraoferta: $200,000 MXN por el 15 %.",
       "estado": "Votando",
-      "decision": "salir",
+      "decision": "contraoferta",
       "votacion": 1,
-      "contraoferta_monto_mxn": null,
-      "contraoferta_porcentaje": null
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 15.0
     },
     {
       "n": 27,
       "ronda": 3,
-      "tipo": "DECISION",
-      "emisor": "nodo_votacion",
-      "destino": "todos",
-      "texto": "SIN TRATO",
-      "estado": "Reaccionando",
-      "resultado": "SIN_TRATO",
-      "condiciones": null
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Elijo la condición de Tiburón tecnológico. $200,000 MXN por el 15 %.",
+      "estado": "Negociando"
     },
     {
       "n": 28,
       "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $200,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 200000.0,
+        "porcentaje": 15.0,
+        "origen": "tiburon_tecnologico"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
       "tipo": "REPORTE",
       "emisor": "servicio",
       "destino": "emprendedor",
-      "texto": "Fortalezas: Identificó un problema real y común: estudiantes sin ayuda en matemáticas fuera de la escuela.; El prototipo ya está funcionando con un piloto inicial con 30 estudiantes y tiene uso repetido.; El servicio se ofrece en WhatsApp, una plataforma familiar y accesible para los estudiantes.. Alertas: Falta de equipo y experiencia del fundador, trabajando solo y a tiempo parcial.; No hay estrategia clara ni barreras de entrada para competir con jugadores consolidados.; No hay protección intelectual ni detalles técnicos para resguardar la tecnología ni modelo de negocio.. Siguientes pasos: Formar un equipo multidisciplinario comprometido que pueda trabajar tiempo completo en el proyecto.; Desarrollar una estrategia clara de propiedad intelectual y protección tecnológica, evaluando posibilidad de patentes o marcas.; Validar el impacto educativo del producto con métricas claras y comenzar a generar ventas para demostrar tracción..",
+      "texto": "Fortalezas: Identificaste un problema relevante para estudiantes de secundaria en México y propusiste una solución accesible vía WhatsApp, plataforma que ya usan.; Ya cuentas con un prototipo funcional que ha sido probado con 30 estudiantes, de los cuales 22 lo usaron activamente, mostrando interés y validación inicial.; Tu modelo de ingresos es claro y viable, con suscripciones para familias y licencias para escuelas, alineado al mercado objetivo.. Alertas: Equipo limitado: eres fundador único y trabajas a tiempo parcial, lo que limita el desarrollo y crecimiento rápido del proyecto.; No cuentas con barreras de entrada claras ni protección de propiedad intelectual, lo que hace vulnerable a la competencia y a copias.; Falta evidencia de impacto real en el aprendizaje de los estudiantes y estrategia concreta para escalar en el mercado escolar.. Siguientes pasos: Dedicarte tiempo completo al proyecto para acelerar desarrollo y consolidar el negocio.; Formar un equipo con perfiles complementarios para fortalecer áreas clave como tecnología, ventas y operaciones.; Desarrollar mejoras tecnológicas que puedan ser protegidas y crear barreras de entrada claras para defender la ventaja competitiva..",
       "estado": "",
       "reporte": {
         "por_tiburon": [
           {
             "tiburon_id": "tiburon_mentor",
             "calificacion": 2,
-            "frase_clave": "Tu compromiso es parcial y no tienes equipo ni experiencia, lo que afecta la viabilidad del proyecto y la honestidad en el avance.",
-            "necesitaria": "Un equipo comprometido y tiempo completo dedicado al proyecto, además de experiencia previa o un plan claro para adquirirla."
+            "frase_clave": "Tu compromiso es parcial y eres fundador único sin equipo ni experiencia; necesitas dedicarte tiempo completo y armar un equipo para sostener TutorBot.",
+            "necesitaria": "Que el fundador se comprometa a tiempo completo y forme un equipo sólido que pueda apoyar el crecimiento y operación del proyecto."
           },
           {
             "tiburon_id": "tiburon_estratega",
             "calificacion": 2,
-            "frase_clave": "Sin equipo ni patente y solo un prototipo, no hay ventaja sostenible para escalar ni defender mercado.",
-            "necesitaria": "Una estrategia clara de barreras de entrada, protección legal o tecnológica y evidencia de tracción comercial o ventas."
+            "frase_clave": "No hay barreras defendibles ni patente. Valoro el piloto con 22 usuarios activos, pero la valuación de $3.5M para un prototipo y un solo fundador sin equipo es alta.",
+            "necesitaria": "Que se desarrollen barreras de entrada claras y defensas competitivas, así como un equipo para poder escalar efectivamente el negocio."
           },
           {
             "tiburon_id": "tiburon_tecnologico",
-            "calificacion": 1,
-            "frase_clave": "Sin un algoritmo claro ni estrategia para proteger propiedad intelectual y sin equipo ni patente, el prototipo carece de barreras tecnológicas.",
-            "necesitaria": "Detalle técnico del algoritmo, plan para proteger la propiedad intelectual y un equipo técnico sólido para desarrollar y escalar la tecnología."
+            "calificacion": 2,
+            "frase_clave": "No hay patente ni equipo dedicado, lo que limita la escalabilidad. El piloto con 22 estudiantes activos es bueno, pero $350,000 por 10% me parece alto sin barreras tecnológicas claras.",
+            "necesitaria": "Innovaciones tecnológicas únicas o protegibles y un equipo dedicado que impulse el desarrollo y la protección del algoritmo."
           }
         ],
         "fortalezas": [
-          "Identificó un problema real y común: estudiantes sin ayuda en matemáticas fuera de la escuela.",
-          "El prototipo ya está funcionando con un piloto inicial con 30 estudiantes y tiene uso repetido.",
-          "El servicio se ofrece en WhatsApp, una plataforma familiar y accesible para los estudiantes."
+          "Identificaste un problema relevante para estudiantes de secundaria en México y propusiste una solución accesible vía WhatsApp, plataforma que ya usan.",
+          "Ya cuentas con un prototipo funcional que ha sido probado con 30 estudiantes, de los cuales 22 lo usaron activamente, mostrando interés y validación inicial.",
+          "Tu modelo de ingresos es claro y viable, con suscripciones para familias y licencias para escuelas, alineado al mercado objetivo."
         ],
         "alertas": [
-          "Falta de equipo y experiencia del fundador, trabajando solo y a tiempo parcial.",
-          "No hay estrategia clara ni barreras de entrada para competir con jugadores consolidados.",
-          "No hay protección intelectual ni detalles técnicos para resguardar la tecnología ni modelo de negocio."
+          "Equipo limitado: eres fundador único y trabajas a tiempo parcial, lo que limita el desarrollo y crecimiento rápido del proyecto.",
+          "No cuentas con barreras de entrada claras ni protección de propiedad intelectual, lo que hace vulnerable a la competencia y a copias.",
+          "Falta evidencia de impacto real en el aprendizaje de los estudiantes y estrategia concreta para escalar en el mercado escolar."
         ],
         "preguntas_sin_responder": [
-          "¿Cómo formarás un equipo comprometido y dedicado a tiempo completo?",
-          "¿Cuál es la tecnología específica y arquitectura del algoritmo que usas?",
-          "¿Cómo planeas escalar la infraestructura tecnológica para mantener calidad y velocidad?",
-          "¿Qué barreras de entrada concretas construirás para sostener el crecimiento a 5 años?"
+          "¿Qué innovaciones tecnológicas concretas planeas para que tu algoritmo sea único y protegible?",
+          "¿Cómo vas a organizarte para dedicarle más tiempo y armar un equipo que apoye el crecimiento?",
+          "¿Qué estrategia concreta tienes para que las escuelas adopten tu solución y no la reemplacen por otras opciones?"
         ],
         "siguientes_pasos": [
-          "Formar un equipo multidisciplinario comprometido que pueda trabajar tiempo completo en el proyecto.",
-          "Desarrollar una estrategia clara de propiedad intelectual y protección tecnológica, evaluando posibilidad de patentes o marcas.",
-          "Validar el impacto educativo del producto con métricas claras y comenzar a generar ventas para demostrar tracción."
+          "Dedicarte tiempo completo al proyecto para acelerar desarrollo y consolidar el negocio.",
+          "Formar un equipo con perfiles complementarios para fortalecer áreas clave como tecnología, ventas y operaciones.",
+          "Desarrollar mejoras tecnológicas que puedan ser protegidas y crear barreras de entrada claras para defender la ventaja competitiva."
         ],
-        "resultado": "SIN_TRATO",
-        "condiciones": null,
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 200000.0,
+          "porcentaje": 15.0,
+          "origen": "tiburon_tecnologico"
+        },
         "valuacion_mxn": 3500000.0,
         "votos_primera_votacion": {
-          "tiburon_mentor": "salir",
-          "tiburon_estratega": "salir",
-          "tiburon_tecnologico": "salir"
+          "tiburon_mentor": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "contraoferta"
         },
         "criterios_no_evaluados": [
           {
@@ -389,22 +405,26 @@
   ],
   "metricas": {
     "llamadas_modelo": 16,
-    "segundos_modelo": 25.5,
-    "segundos_total": 22.4,
+    "segundos_modelo": 19.3,
+    "segundos_total": 16.5,
     "rondas_preguntas": 3,
-    "n_eventos": 28,
+    "n_eventos": 29,
     "eventos_en_orden": true,
     "preguntas": 9,
     "replicas": 3,
     "replicas_con_postura": 3,
     "replicas_mencionan_otro_tiburon": 3,
     "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 4,
     "votos": 3,
     "justificaciones_mencionan_criterio": 3,
     "justificaciones_con_dato": 3,
     "votos_publicados_juntos": true,
     "hubo_negociacion": false,
-    "resultado": "SIN_TRATO",
+    "modo": "guion",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
     "terminada": true
   },
   "error": null

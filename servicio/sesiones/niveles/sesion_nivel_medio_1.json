@@ -1,0 +1,457 @@
+{
+  "id": "nivel_medio_1",
+  "modo": "autopiloto",
+  "ayuda": false,
+  "nivel": "medio",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "EcoTrack",
+    "sector": "sustentabilidad_y_energia",
+    "etapa": "primeras_ventas",
+    "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+    "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+    "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+    "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+    "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+    "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+    "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+    "propiedad_intelectual": "marca",
+    "equipo_fundadores": 3,
+    "equipo_roles": "Ingeniería, ventas y finanzas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+    "monto_mxn": 300000,
+    "porcentaje": 10,
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+    "ventas_12m_mxn": 180000,
+    "margen_bruto_pct": 38,
+    "gasto_mensual_mxn": 25000,
+    "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "EcoTrack",
+        "sector": "sustentabilidad_y_energia",
+        "etapa": "primeras_ventas",
+        "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+        "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+        "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+        "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+        "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+        "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+        "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, ventas y finanzas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+        "monto_mxn": 300000,
+        "porcentaje": 10,
+        "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+        "ventas_12m_mxn": 180000,
+        "margen_bruto_pct": 38,
+        "gasto_mensual_mxn": 25000,
+        "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+      },
+      "valuacion_mxn": 3000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices margen bruto de 38% sobre ventas anuales de 180,000, ¿cuánto te cuesta adquirir cada cliente y cuántos clientes tienes activos para justificar esos 25,000 de gasto mensual?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no tenemos calculado el costo exacto de adquisición de clientes ni el número preciso de usuarios activos. Para obtenerlo, implementaremos un sistema de seguimiento de campañas y análisis de usuarios activos mensuales, lo que nos permitirá optimizar el gasto y justificar mejor los costos actuales de $25,000 MXN mensuales.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con 500 usuarios beta y $50,000 MXN en preventas, ¿qué ventaja clara tiene EcoTrack frente a medidores genéricos para escalar y defender mercado en Nuevo León, donde la competencia puede copiar sin instalación profesional?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "EcoTrack se diferencia por su inteligencia artificial que ofrece recomendaciones personalizadas de ahorro, algo que medidores genéricos y apps no tienen. Además, no requiere instalación profesional, facilitando la adopción masiva. Nuestra marca registrada y el enfoque en el mercado de Nuevo León con recibos altos nos posicionan para escalar y defender mercado con una propuesta de valor única y altamente relevante.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Me dices que el medidor usa IA para recomendaciones personalizadas (P0), pero ¿tienen prototipo funcional y qué algoritmo específico están usando para detectar consumo excesivo y generar esas sugerencias?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Sí, contamos con un prototipo funcional que ya fue probado con 500 usuarios beta. Utilizamos algoritmos de machine learning supervisado para detectar patrones de consumo y anomalías que indican gasto excesivo, lo que nos permite generar recomendaciones personalizadas de ahorro adaptadas a cada usuario.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido contigo en que sin datos claros de costo de adquisición y usuarios activos, esos $25,000 mensuales no tienen respaldo sólido. Desde el punto tecnológico, optimizar el algoritmo y el prototipo debe ir acompañado de métricas claras para justificar inversión en marketing y desarrollo. Necesitan ese seguimiento para escalar con base técnica y financiera.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con $180,000 MXN en ventas y 500 usuarios beta (P0), ¿qué barreras específicas de entrada han desarrollado para que la competencia no copie rápido su IA y frene su escalamiento en Nuevo León?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra marca registrada protege la identidad de EcoTrack, y el desarrollo continuo de nuestra IA crea una ventaja competitiva difícil de replicar rápidamente. Además, el enfoque personalizado basado en datos reales de usuarios en Nuevo León y la facilidad de uso sin instalación profesional generan fidelidad y barreras de entrada para la competencia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En tu prototipo con 500 usuarios, ¿qué métricas específicas de consumo detecta tu algoritmo para generar recomendaciones y cómo planeas proteger esa innovación para evitar copia rápida?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Nuestro algoritmo detecta patrones como picos de consumo, horarios de uso y anomalías en el gasto para generar recomendaciones personalizadas. Para proteger esta innovación, contamos con marca registrada y seguimos mejorando continuamente la IA, creando una ventaja competitiva que dificulta la copia rápida por parte de la competencia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con $25,000 de gasto mensual y $180,000 de ventas anuales (P0), ¿cuántos clientes activos tienes y cuánto te cuesta traer cada uno para justificar esos gastos?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no tenemos el dato exacto de clientes activos ni el costo de adquisición de cada uno. Para obtener esta información, implementaremos sistemas de seguimiento que nos permitan medir usuarios activos mensuales y analizar el costo real de adquisición. Esto nos ayudará a optimizar el gasto mensual de $25,000 MXN y justificar mejor la inversión.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estratega, coincido contigo: sin barreras claras para proteger esa IA, la competencia puede copiar rápido. Solo marca registrada no es suficiente para defender tecnología ni mercado. Si no hay patente o exclusividad técnica, el escalamiento se vuelve vulnerable y eso afecta valoración y retorno.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Con base en tu prototipo y los algoritmos de machine learning que mencionas, ¿ya consideraron solicitar patente para proteger esa innovación tecnológica de detección de consumo excesivo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Por ahora contamos con marca registrada, pero no hemos solicitado patente para la innovación tecnológica. Evaluaremos la viabilidad y beneficios de tramitar una patente para proteger nuestro algoritmo y asegurar una mayor exclusividad y ventaja competitiva en el mercado.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices ventas anuales de 180,000 y margen bruto de 38% (P0), ¿cuánto te cuesta traer un cliente y cuántos clientes activos tienes para justificar gastos mensuales de 25,000? Sin ese dato no cuadra la inversión.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no contamos con datos exactos de costo de adquisición ni número de clientes activos. Para resolverlo, implementaremos sistemas de seguimiento y análisis de usuarios activos para medir costos reales y optimizar los gastos mensuales de $25,000 MXN, asegurando así que la inversión sea justificable y eficiente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con ventas de 180,000 y sin datos claros de clientes activos ni costo de adquisición, ¿cómo planean defender mercado y escalar sin medir bien quiénes usan y pagan el servicio?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Entendemos la importancia de medir usuarios activos y costo de adquisición para escalar y defender el mercado. Por eso implementaremos sistemas de seguimiento y análisis para obtener esos datos clave, optimizar inversiones y mejorar retención. Con esta información, ajustaremos estrategia y producto para fortalecer nuestra posición y crecimiento en Nuevo León, asegurando un escalamiento sustentable y basado en métricas reales.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Tiburón tecnológico, coincido contigo: sin patente que proteja la IA, la ventaja competitiva es débil. La marca registra identidad, pero no frena copia técnica. Para defender mercado y escalar, deben invertir en barreras fuertes como patente, o el competidor con recursos puede replicar rápido su algoritmo y frenar su crecimiento en Nuevo León.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No me dices costo de adquisición ni clientes activos para justificar gasto mensual de 25,000, margen es 38% sobre ventas de 180,000. Sin esos datos no cuadra valuación de 3,000,000 ni inversión de 300,000 por 10%. Contraoferta: $150,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 150000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "Para defender mercado y escalar se requiere patente, no solo marca; sin datos claros de clientes activos ni costo adquisición, $25,000 gastos mensuales no están justificados. Valoro 180,000 ventas pero falta ventaja defendible y métricas para escalar en 5 años. Contraoferta: $200,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "El prototipo con IA y 500 usuarios es un avance tecnológico clave, pero sin patente ni datos claros de costo de adquisición y usuarios activos no hay protección ni validación completa. La valuación de $3,000,000 MXN es alta para esta etapa. Contraoferta: $150,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 150000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Elijo la condición de Tiburón estratega. $200,000 MXN por el 15 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $200,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 200000.0,
+        "porcentaje": 15.0,
+        "origen": "tiburon_estratega"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Tienen un prototipo funcional probado con 500 usuarios beta.; El medidor no requiere instalación profesional, facilitando la adopción masiva.; La solución usa inteligencia artificial para ofrecer recomendaciones personalizadas de ahorro.. Alertas: No cuentan con datos claros de costo de adquisición ni usuarios activos, lo que afecta justificación financiera.; Falta protección tecnológica fuerte, solo tienen marca registrada y no patente.; Gastos mensuales actuales no están justificados con las métricas presentadas.. Siguientes pasos: Implementar sistemas de seguimiento para medir usuarios activos y costo de adquisición.; Evaluar y gestionar la solicitud de patente para proteger la tecnología de IA.; Optimizar el gasto mensual y ajustar la estrategia de marketing y desarrollo basada en métricas reales..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "Aún no tenemos calculado el costo exacto de adquisición de clientes ni el número preciso de usuarios activos.",
+            "necesitaria": "Datos claros y medibles sobre el costo de adquisición de clientes y el número real de usuarios activos que justifiquen los gastos mensuales."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 3,
+            "frase_clave": "Solo marca registrada no es suficiente para defender tecnología ni mercado.",
+            "necesitaria": "Una patente o barreras tecnológicas sólidas que protejan la innovación y una estrategia clara para escalar y defender el mercado."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 3,
+            "frase_clave": "Sin patente ni datos claros de costo de adquisición y usuarios activos no hay protección ni validación completa.",
+            "necesitaria": "Protección tecnológica mediante patente, métricas claras de usuarios activos y costos de adquisición para validar la inversión y el potencial de escalamiento."
+          }
+        ],
+        "fortalezas": [
+          "Tienen un prototipo funcional probado con 500 usuarios beta.",
+          "El medidor no requiere instalación profesional, facilitando la adopción masiva.",
+          "La solución usa inteligencia artificial para ofrecer recomendaciones personalizadas de ahorro."
+        ],
+        "alertas": [
+          "No cuentan con datos claros de costo de adquisición ni usuarios activos, lo que afecta justificación financiera.",
+          "Falta protección tecnológica fuerte, solo tienen marca registrada y no patente.",
+          "Gastos mensuales actuales no están justificados con las métricas presentadas."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo exacto de adquisición de clientes?",
+          "¿Cuántos clientes activos tienen actualmente?",
+          "¿Han considerado tramitar patente para proteger su innovación tecnológica?"
+        ],
+        "siguientes_pasos": [
+          "Implementar sistemas de seguimiento para medir usuarios activos y costo de adquisición.",
+          "Evaluar y gestionar la solicitud de patente para proteger la tecnología de IA.",
+          "Optimizar el gasto mensual y ajustar la estrategia de marketing y desarrollo basada en métricas reales."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 200000.0,
+          "porcentaje": 15.0,
+          "origen": "tiburon_estratega"
+        },
+        "valuacion_mxn": 3000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 25,
+    "segundos_modelo": 29.0,
+    "segundos_total": 0.0,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 8,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "autopiloto",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

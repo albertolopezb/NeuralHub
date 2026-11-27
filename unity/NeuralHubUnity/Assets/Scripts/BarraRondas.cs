@@ -57,7 +57,7 @@ namespace NeuralHub
             };
         }
 
-        public void Dibujar(ReproductorSesion r, float W)
+        public void Dibujar(ReproductorSesion r, float W, bool conLetrero)
         {
             Preparar();
             int etapa = Etapa(r);
@@ -71,9 +71,9 @@ namespace NeuralHub
                 else GUI.Box(rect, Pasos[i], i == etapa ? pastillaActual : pastilla);
             }
 
-            if (r.actual == null) return;
-            if (etapa != etapaAnterior) { etapaAnterior = etapa; desde = Time.unscaledTime; }
-            float t = Time.unscaledTime - desde;
+            if (r.actual == null || !conLetrero) return;   // con el historial abierto, el letrero lo taparía
+            if (etapa != etapaAnterior) { etapaAnterior = etapa; desde = Reloj.Ahora; }
+            float t = Reloj.Ahora - desde;
             if (t > Dura) return;
             float a = Mathf.Clamp01(t / 0.25f) * Mathf.Clamp01((Dura - t) / 0.4f);
             float crece = 1f - Mathf.Pow(1f - Mathf.Clamp01(t / 0.35f), 3f);

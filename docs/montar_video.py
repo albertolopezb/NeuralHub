@@ -57,6 +57,20 @@ def main():
             voces.append((ini, len(x)))
         fin = min(len(pista), ini + len(x))
         pista[ini:fin] += x[: fin - ini]
+    musica = leer(U / "Resources" / "Sonidos" / "musica.wav")
+    nivel = np.full(len(pista), 0.20, dtype=np.float32)
+    piezas = {"cortinilla": 7.2, "fanfarria": 7.0, "hundimiento": 7.0, "cierre": 6.2}
+    for linea in log:
+        f, tipo, dato = linea.split("|")
+        ini = int(int(f) / FPS * SR)
+        if tipo == "efecto" and dato in piezas:
+            nivel[ini:ini + int(piezas[dato] * SR)] = 0.0
+    for ini, largo in voces:
+        nivel[ini:ini + largo] = np.minimum(nivel[ini:ini + largo], 0.05)
+    suave = int(SR * 0.4)
+    acumulada = np.cumsum(np.concatenate([np.full(suave, nivel[0]), nivel]), dtype=np.float64)
+    nivel = ((acumulada[suave:] - acumulada[:-suave]) / suave).astype(np.float32)
+    pista += np.tile(musica, len(pista) // len(musica) + 1)[: len(pista)] * nivel
     pista = np.clip(pista / max(1.0, np.abs(pista).max() * 1.05), -1, 1)
     wav = carpeta / "pista.wav"
     with wave.open(str(wav), "wb") as w:

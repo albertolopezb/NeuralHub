@@ -48,7 +48,8 @@ namespace NeuralHub
             }
             GUILayout.Space(12);
             var c = app.cliente.usarMock ? "Modo sin conexión: se reproduce una sesión real guardada." :
-                    app.cliente.conectado ? "Conectado al servicio de agentes." : "Sin conexión con el servicio. Actívalo o usa la sesión de ejemplo.";
+                    app.cliente.conectado ? "Conectado al servicio de agentes." :
+                    app.cliente.probando ? "Conectando con el servicio…" : "Sin conexión con el servicio. Actívalo o usa la sesión de ejemplo.";
             GUILayout.Label(c, Estilos.Color_(Estilos.TextoChico, app.cliente.usarMock || app.cliente.conectado ? Estilos.Dentro : Estilos.Calido));
             if (!string.IsNullOrEmpty(app.mensaje)) GUILayout.Label(app.mensaje, Estilos.TextoChico);
             GUILayout.FlexibleSpace();
@@ -77,6 +78,7 @@ namespace NeuralHub
     {
         public PitchDto p = new PitchDto { sector = "tecnologia", etapa = "idea", equipo_dedicacion = "tiempo completo", propiedad_intelectual = "ninguna" };
         public string sFund = "1", sMonto = "", sPct = "", sVentas = "", sMargen = "", sGasto = "";
+        string discursoEjemplo, huellaEjemplo;
         Vector2 scroll;
         bool menuEjemplos;
         static readonly string[] Sectores = { "tecnologia", "alimentos_y_bebidas", "consumo_y_moda", "salud", "educacion", "sustentabilidad_y_energia", "servicios_profesionales" };
@@ -128,6 +130,7 @@ namespace NeuralHub
             sVentas = d.ventas_12m_mxn > 0 ? d.ventas_12m_mxn.ToString("0", CultureInfo.InvariantCulture) : "";
             sMargen = d.margen_bruto_pct > 0 ? d.margen_bruto_pct.ToString("0.##", CultureInfo.InvariantCulture) : "";
             sGasto = d.gasto_mensual_mxn > 0 ? d.gasto_mensual_mxn.ToString("0", CultureInfo.InvariantCulture) : "";
+            discursoEjemplo = d.discurso; Json(); huellaEjemplo = p.Huella();
         }
 
         public bool Completo()
@@ -141,6 +144,7 @@ namespace NeuralHub
         {
             p.equipo_fundadores = (int)Num(sFund, 1); p.monto_mxn = Num(sMonto); p.porcentaje = Num(sPct);
             p.ventas_12m_mxn = Num(sVentas); p.margen_bruto_pct = Num(sMargen); p.gasto_mensual_mxn = Num(sGasto);
+            p.discurso = huellaEjemplo != null && p.Huella() != huellaEjemplo ? "" : discursoEjemplo;
             return ClienteServicio.PitchAJson(p, p.ventas_12m_mxn >= 0 && sVentas != "", p.margen_bruto_pct >= 0 && sMargen != "", p.gasto_mensual_mxn >= 0 && sGasto != "");
         }
 
@@ -593,19 +597,26 @@ namespace NeuralHub
         {
             if (texto == textoPaginado && maximo == anchoPaginado) return paginasCache;
             var paginas = new List<string>();
-            var actual = "";
-            foreach (var frase in System.Text.RegularExpressions.Regex.Split(texto.Trim(), @"(?<=[\.\?\!:;])\s+"))
+            var resto = texto.Trim();
+            // páginas parejas: se calcula cuántas hacen falta y cada una se corta cerca de su parte,
+            // de preferencia al final de una frase, para que nunca quede una palabra suelta
+            while (resto.Length > maximo)
             {
-                if (actual.Length > 0 && actual.Length + 1 + frase.Length > maximo) { paginas.Add(actual); actual = ""; }
-                actual = actual.Length == 0 ? frase : actual + " " + frase;
-                while (actual.Length > maximo)
+                int faltan = Mathf.CeilToInt(resto.Length / (float)maximo);
+                int meta = Mathf.CeilToInt(resto.Length / (float)faltan);
+                int desde = Mathf.Max(1, meta - 50), hasta = Mathf.Min(maximo, meta + 30);
+                int corte = -1, mejor = int.MaxValue;
+                for (int i = desde; i <= hasta && i < resto.Length; i++)
                 {
-                    int corte = actual.LastIndexOf(' ', maximo);
-                    if (corte < 40) break;
-                    paginas.Add(actual.Substring(0, corte)); actual = actual.Substring(corte + 1);
+                    if (resto[i] != ' ') continue;
+                    int costo = Mathf.Abs(i - meta) + (".?!:;,".IndexOf(resto[i - 1]) >= 0 ? 0 : 40);
+                    if (costo < mejor) { mejor = costo; corte = i; }
                 }
+                if (corte < 0) corte = resto.LastIndexOf(' ', maximo);
+                if (corte <= 0) break;
+                paginas.Add(resto.Substring(0, corte)); resto = resto.Substring(corte + 1);
             }
-            if (actual.Length > 0) paginas.Add(actual);
+            if (resto.Length > 0) paginas.Add(resto);
             if (paginas.Count == 0) paginas.Add(texto);
             textoPaginado = texto; anchoPaginado = maximo; paginasCache = paginas;
             return paginas;
@@ -625,6 +636,10 @@ namespace NeuralHub
 
             // Título y ronda (arriba a la izquierda)
             string titulo, sub; Titulos(r, out titulo, out sub);
+            // fondo propio: sin él, el texto se encima con las pantallas del estudio
+            float anchoTitulo = Mathf.Max(Estilos.Encabezado.CalcSize(new GUIContent(titulo)).x,
+                string.IsNullOrEmpty(sub) ? 0f : Estilos.TextoChico.CalcSize(new GUIContent(sub)).x);
+            GUI.Box(new Rect(24, 14, Mathf.Max(240f, anchoTitulo + 44f), 152), GUIContent.none, Estilos.Caja);
             GUI.Label(new Rect(42, 24, 360, 28), "NIVEL " + Niveles.Nombre(app.nivel).ToUpper(), Estilos.Color_(Estilos.Quien, Niveles.ColorDe(app.nivel)));
             GUI.Label(new Rect(40, 82, 900, 44), titulo, Estilos.Encabezado);
             if (!string.IsNullOrEmpty(sub)) GUI.Label(new Rect(42, 128, 900, 28), sub, Estilos.TextoChico);
@@ -693,8 +708,9 @@ namespace NeuralHub
                 float ancho = Mathf.Min(1440, W - 80), xCaja = W / 2 - ancho / 2;
                 var cuerpo = new GUIStyle(Estilos.Texto) { fontSize = 29 };
                 float anchoTexto = ancho - 56 - (insignia ? 280 : 0);
-                var paginas = Paginas(e.texto, insignia ? 150 : 190);
-                int pagina = PaginaActual(paginas, r.Progreso);
+                bool respondiendo = r.turnoUsuario != null;
+                var paginas = respondiendo ? new List<string> { e.texto } : Paginas(e.texto, insignia ? 190 : 240);
+                int pagina = respondiendo ? 0 : PaginaActual(paginas, r.Progreso);
                 string visible = paginas[pagina];
                 float altoTexto = Mathf.Max(80, cuerpo.CalcHeight(new GUIContent(visible), anchoTexto));
                 float alto = Mathf.Max(insignia ? 130 : 0, 22 + 28 + 10 + altoTexto + 22);
@@ -796,16 +812,24 @@ namespace NeuralHub
             GUILayout.BeginArea(new Rect(W / 2 - 600, 140, 1200, H - 360), Estilos.Caja);
             if (pend.tipo == "CONDICIONES")
             {
-                GUILayout.Label("¡Hay trato! Elige las condiciones finales", Estilos.Subtitulo);
-                GUILayout.Label("Varios tiburones hicieron contraoferta. Tú decides con cuál te quedas.", Estilos.TextoChico);
+                GUILayout.Label(pend.puede_original ? "¡Hay trato! Elige las condiciones finales" : "Tienes contraofertas: tú decides", Estilos.Subtitulo);
+                GUILayout.Label(pend.puede_original
+                    ? "Dos o más tiburones aceptan tu oferta. Puedes mantenerla o tomar una contraoferta."
+                    : "Tu oferta original no tiene mayoría: acepta una contraoferta o sal sin trato.", Estilos.TextoChico);
                 GUILayout.Space(14);
-                if (GUILayout.Button("Mantener mi oferta: " + Perfiles.Mxn(pend.original.monto_mxn) + " por el " + pend.original.porcentaje.ToString("0.##") + " %", Estilos.Boton, GUILayout.Height(56)))
+                if (pend.puede_original && GUILayout.Button("Mantener mi oferta: " + Perfiles.Mxn(pend.original.monto_mxn) + " por el " + pend.original.porcentaje.ToString("0.##") + " %", Estilos.Boton, GUILayout.Height(56)))
                     app.StartCoroutine(app.cliente.EnviarCondicion("original"));
                 foreach (var c in pend.contraofertas)
                 {
                     GUILayout.Space(8);
                     if (GUILayout.Button("Contraoferta de " + Perfiles.Corto(c.tiburon_id) + ": " + Perfiles.Mxn(c.monto_mxn) + " por el " + c.porcentaje.ToString("0.##") + " %", Estilos.Boton, GUILayout.Height(56)))
                         app.StartCoroutine(app.cliente.EnviarCondicion(c.tiburon_id));
+                }
+                if (!pend.puede_original)
+                {
+                    GUILayout.Space(16);
+                    if (GUILayout.Button("Rechazar las contraofertas (salir sin trato)", Estilos.BotonChico, GUILayout.Height(50)))
+                        app.StartCoroutine(app.cliente.EnviarCondicion("rechazar"));
                 }
             }
             else

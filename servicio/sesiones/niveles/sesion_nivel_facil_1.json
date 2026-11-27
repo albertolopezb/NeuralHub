@@ -1,0 +1,448 @@
+{
+  "id": "nivel_facil_1",
+  "modo": "autopiloto",
+  "ayuda": false,
+  "nivel": "facil",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "EcoTrack",
+    "sector": "sustentabilidad_y_energia",
+    "etapa": "primeras_ventas",
+    "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+    "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+    "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+    "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+    "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+    "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+    "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+    "propiedad_intelectual": "marca",
+    "equipo_fundadores": 3,
+    "equipo_roles": "Ingeniería, ventas y finanzas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+    "monto_mxn": 300000,
+    "porcentaje": 10,
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+    "ventas_12m_mxn": 180000,
+    "margen_bruto_pct": 38,
+    "gasto_mensual_mxn": 25000,
+    "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "EcoTrack",
+        "sector": "sustentabilidad_y_energia",
+        "etapa": "primeras_ventas",
+        "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+        "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+        "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+        "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+        "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+        "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+        "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, ventas y finanzas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+        "monto_mxn": 300000,
+        "porcentaje": 10,
+        "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+        "ventas_12m_mxn": 180000,
+        "margen_bruto_pct": 38,
+        "gasto_mensual_mxn": 25000,
+        "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+      },
+      "valuacion_mxn": 3000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Qué les motivó a crear este medidor y cómo ha sido la experiencia de quienes ya lo usan?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nos motivó el alto costo y la falta de información clara en los recibos de luz para hogares y pequeños negocios. Los usuarios beta han tenido una experiencia positiva, valorando especialmente las recomendaciones personalizadas de ahorro sin necesidad de instalación profesional, lo que confirma la utilidad de nuestro medidor conectado con IA.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean defender su ventaja frente a medidores genéricos y apps eléctricas para escalar en el mercado local?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra defensa clave es la personalización con IA y la facilidad: no requerimos instalación profesional, a diferencia de medidores genéricos. Además, ofrecemos recomendaciones claras y accionables, algo que las apps eléctricas no hacen con tanta precisión. Esto nos diferencia para captar y mantener clientes en Nuevo León, y con la inversión planeamos fortalecer el producto y marketing para escalar localmente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo funciona el algoritmo de IA en su medidor para detectar consumos y generar recomendaciones personalizadas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Nuestro algoritmo de IA analiza patrones de consumo eléctrico detectados por el medidor en tiempo real, identificando picos y usos ineficientes. Con esta información, compara con perfiles de consumo estándar y genera recomendaciones personalizadas para reducir costos y consumo excesivo, sin necesidad de instalación profesional ni intervención manual del usuario.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Me gusta que preguntes por la motivación y experiencia, es clave para validar el prototipo. Coincido con la respuesta: la experiencia positiva y la personalización basada en IA son fundamentales para innovar y proteger la propiedad intelectual del producto. Eso me anima a seguir investigando cómo mejorar el algoritmo y la tecnología.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Qué historia hay detrás de EcoTrack y cómo visualizan su lugar en el mercado dentro de cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "EcoTrack nació al detectar el problema real de recibos altos y falta de información en hogares y pequeños negocios. Con 500 usuarios beta y ventas iniciales, visualizamos ser líderes locales en medición inteligente y ahorro energético, expandiendo nuestra base y mejorando el producto con IA, para impactar significativamente el mercado en Nuevo León en cinco años.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿qué innovaciones tecnológicas y prototipos clave han desarrollado para que su algoritmo sea único?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Nuestro algoritmo único usa IA para analizar en tiempo real patrones de consumo eléctrico, detectando picos y usos ineficientes específicos para cada usuario sin necesidad de instalación profesional. El prototipo integra el medidor conectado con este análisis personalizado, diferenciándonos de medidores genéricos y apps eléctricas. Esta innovación permite recomendaciones claras y accionables, optimizando el ahorro energético en hogares y pequeños negocios.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿qué te motivó a crear EcoTrack y cómo ha sido la experiencia de quienes ya lo usan?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nos motivó el alto costo y la falta de información clara en los recibos de luz para hogares y pequeños negocios. Los usuarios beta han tenido una experiencia positiva, valorando especialmente las recomendaciones personalizadas de ahorro sin necesidad de instalación profesional, lo que confirma la utilidad de nuestro medidor conectado con IA.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estoy de acuerdo con la pregunta del estratega sobre la visión a futuro y la historia, porque entender su trayectoria y proyección ayuda a valorar la sostenibilidad del negocio. Sin embargo, me falta saber el costo de adquisición por cliente y cómo planean mantener márgenes con sus gastos actuales.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cómo nació la idea del prototipo y qué innovación del algoritmo te emociona más para mejorar con la inversión?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "La idea del prototipo nació al identificar el problema de recibos eléctricos altos y la falta de información clara para hogares y pequeños negocios. Lo que más me emociona es mejorar nuestro algoritmo de IA que analiza en tiempo real patrones de consumo para ofrecer recomendaciones personalizadas sin instalación profesional, optimizando el ahorro y diferenciándonos en el mercado.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Qué historia personal o experiencia directa les motivó a crear EcoTrack y cómo ha cambiado la vida de sus primeros usuarios?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Nos motivó el alto costo y la falta de información clara en los recibos de luz para hogares y pequeños negocios. Los usuarios beta han valorado mucho las recomendaciones personalizadas de ahorro, lo que ha mejorado su experiencia y les ha permitido entender y reducir su consumo eléctrico sin necesidad de instalación profesional.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo visualizas que EcoTrack defenderá su mercado y escalará en los próximos cinco años frente a la competencia?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "EcoTrack defenderá su mercado con nuestra personalización basada en IA y facilidad de uso sin instalación profesional, diferenciándonos de medidores genéricos y apps eléctricas. Para escalar en cinco años, planeamos fortalecer el producto y marketing con la inversión, consolidarnos como líderes locales en Nuevo León y expandir nuestra base de hogares y pequeños negocios con recibos altos, manteniendo ventajas tecnológicas y de servicio.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Me gusta tu pregunta sobre la innovación del algoritmo, porque en cinco años la ventaja defendible debe estar en la tecnología. Coincido en que mejorar el algoritmo es clave para escalar y mantenernos por encima de medidores genéricos y apps. Sin esa innovación, no podremos defender ni crecer en el mercado local ni más allá.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Me gusta que tienen margen bruto del 38% y ventas de 180,000 MXN, aunque falta costo de adquisición, veo potencial con 500 usuarios beta y modelo de suscripción. La valuación de 3,000,000 MXN está alta, pero aceptable para primeras ventas. Invierto para mejorar producto y escalar.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado local de hogares y pequeños negocios con recibos altos es amplio y con poco competidor que ofrezca IA personalizada, lo que es una ventaja defendible. Con 500 usuarios beta y ventas de $180,000 MXN, el potencial para escalar y defender mercado en 5 años es claro.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me emociona la innovación del algoritmo IA que analiza consumo en tiempo real sin instalación profesional. La validación con 500 usuarios beta y $180,000 MXN en ventas respalda la utilidad del prototipo. La marca registrada protege la propiedad intelectual, clave para escalar.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $300,000 MXN por el 10 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 300000.0,
+        "porcentaje": 10.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: La propuesta de valor clara y diferenciada con IA que no requiere instalación profesional, facilitando la adopción y uso.; Validación inicial sólida con 500 usuarios beta y ventas por $180,000 MXN, que demuestran interés y tracción en el mercado.; Equipo fundador con experiencia técnica y comercial en el sector energético, dedicados a tiempo completo.. Alertas: Falta información clara sobre el costo de adquisición de clientes y cómo impactará en la rentabilidad futura.; La valuación implícita parece alta para el nivel actual de ventas y márgenes, lo que podría dificultar futuras rondas si no se escalan resultados.; No se mencionan estrategias concretas para proteger la tecnología o planes para enfrentar la competencia futura más allá del algoritmo.. Siguientes pasos: Realizar un análisis financiero detallado incluyendo costo de adquisición de clientes y proyecciones de margen para validar la escalabilidad.; Desarrollar un plan estratégico claro para defensa del mercado y escalamiento, con hitos concretos para los próximos cinco años.; Fortalecer la innovación tecnológica con mejoras al algoritmo y asegurar protección intelectual mediante patentes o registros adicionales..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 4,
+            "frase_clave": "Me gusta que tienen margen bruto del 38% y ventas de 180,000 MXN, aunque falta costo de adquisición, veo potencial con 500 usuarios beta y modelo de suscripción.",
+            "necesitaria": "Necesitaría ver un análisis claro del costo de adquisición de clientes y cómo planean mantener o mejorar los márgenes con el gasto actual para asegurar rentabilidad."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 4,
+            "frase_clave": "El mercado local de hogares y pequeños negocios con recibos altos es amplio y con poco competidor que ofrezca IA personalizada, lo que es una ventaja defendible.",
+            "necesitaria": "Necesitaría un plan detallado de escalamiento y defensa de mercado a cinco años, con estrategias claras para proteger la ventaja tecnológica y aumentar la base de clientes."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 5,
+            "frase_clave": "Me emociona la innovación del algoritmo IA que analiza consumo en tiempo real sin instalación profesional. La validación con 500 usuarios beta y $180,000 MXN en ventas respalda la utilidad del prototipo.",
+            "necesitaria": "Necesitaría ver avances concretos en la mejora del algoritmo y pruebas que demuestren superioridad tecnológica frente a competidores para asegurar la innovación y escalabilidad."
+          }
+        ],
+        "fortalezas": [
+          "La propuesta de valor clara y diferenciada con IA que no requiere instalación profesional, facilitando la adopción y uso.",
+          "Validación inicial sólida con 500 usuarios beta y ventas por $180,000 MXN, que demuestran interés y tracción en el mercado.",
+          "Equipo fundador con experiencia técnica y comercial en el sector energético, dedicados a tiempo completo."
+        ],
+        "alertas": [
+          "Falta información clara sobre el costo de adquisición de clientes y cómo impactará en la rentabilidad futura.",
+          "La valuación implícita parece alta para el nivel actual de ventas y márgenes, lo que podría dificultar futuras rondas si no se escalan resultados.",
+          "No se mencionan estrategias concretas para proteger la tecnología o planes para enfrentar la competencia futura más allá del algoritmo."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo de adquisición de clientes actual y cómo piensan optimizarlo?",
+          "¿Cómo mantendrán o mejorarán el margen bruto con el gasto mensual actual y la expansión planificada?",
+          "¿Qué planes específicos tienen para fortalecer la protección tecnológica y la propiedad intelectual?"
+        ],
+        "siguientes_pasos": [
+          "Realizar un análisis financiero detallado incluyendo costo de adquisición de clientes y proyecciones de margen para validar la escalabilidad.",
+          "Desarrollar un plan estratégico claro para defensa del mercado y escalamiento, con hitos concretos para los próximos cinco años.",
+          "Fortalecer la innovación tecnológica con mejoras al algoritmo y asegurar protección intelectual mediante patentes o registros adicionales."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 300000.0,
+          "porcentaje": 10.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 3000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "invertir",
+          "tiburon_estratega": "invertir",
+          "tiburon_tecnologico": "invertir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 25,
+    "segundos_modelo": 27.8,
+    "segundos_total": 0.0,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 5,
+    "preguntas_citan_dato": 0,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "autopiloto",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

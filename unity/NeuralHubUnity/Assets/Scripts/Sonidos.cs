@@ -42,10 +42,10 @@ namespace NeuralHub
         void Update()
         {
             if (!musica) return;
-            enCortinilla -= Time.unscaledDeltaTime;
+            enCortinilla -= Reloj.Delta;
             // Con voz la música queda muy abajo (más aún mientras alguien habla); sin voz sube para que no se sienta vacío
             float objetivo = !musicaActiva || enCortinilla > 0f ? 0f : voz.isPlaying ? 0.05f : vozActiva ? 0.16f : 0.34f;
-            musica.volume = Mathf.MoveTowards(musica.volume, objetivo, Time.unscaledDeltaTime * 0.5f);
+            musica.volume = Mathf.MoveTowards(musica.volume, objetivo, Reloj.Delta * 0.5f);
         }
 
         void Anotar(string tipo, string dato)
@@ -71,7 +71,7 @@ namespace NeuralHub
 
         bool vozEnPausa;
         /// <summary>Hay una línea sonando (o en pausa): la sesión no avanza hasta que termine.</summary>
-        public bool Hablando { get { return voz && voz.clip && (voz.isPlaying || vozEnPausa); } }
+        public bool Hablando { get { return !Reloj.Grabando && voz && voz.clip && (voz.isPlaying || vozEnPausa); } }
         /// <summary>Avance real (0 a 1) del audio en curso, para sincronizar los subtítulos.</summary>
         public float AvanceVoz { get { return voz && voz.clip && voz.clip.length > 0 ? Mathf.Clamp01(voz.time / voz.clip.length) : 0f; } }
 

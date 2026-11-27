@@ -34,7 +34,7 @@ def anonimizar(t: str) -> str:
 
 def main():
     por = {t: [] for t in IDS}
-    for f in sorted((BASE / "sesiones" / "prueba").glob("*.json")) + sorted((BASE / "sesiones").glob("demo_*.json")):
+    for f in sorted((BASE / "sesiones" / "prueba").glob("*.json")):
         for e in json.loads(f.read_text(encoding="utf-8"))["eventos"]:
             if e["tipo"] in ("PREGUNTA", "REPLICA", "VOTO") and e["emisor"] in por:
                 por[e["emisor"]].append(anonimizar(e["texto"]))

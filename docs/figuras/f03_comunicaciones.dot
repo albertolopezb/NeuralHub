@@ -1,13 +1,15 @@
 digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=LR; nodesep=.8; ranksep=1.3; compound=true;
 E[label="Emprendedor
 (usuario humano o
-agente autopiloto)",fillcolor="#13B8F0",fontcolor=white];
+agente empresario)",fillcolor="#13B8F0",fontcolor=white];
 M[label="Moderador
 (nodo determinista)"]; NV[label="Nodo de votación
 (determinista)"]; S[label="Servicio → Unity
 (eventos HTTP)",fillcolor="#FFF3BF"];
 subgraph cluster_t{label="Panel: 3 tiburones elegidos de 6";fontname="Helvetica";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded,dashed";
  T1[label="Tiburón 1"]; T2[label="Tiburón 2"]; T3[label="Tiburón 3"];}
-E->T1[label="PITCH, RESPUESTA"]; T1->E[label="PREGUNTA"]; T2->E[label="PREGUNTA, CONTRAOFERTA"]; E->T3[label="OFERTA"];
-T1->T2[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0"]; T3->T1[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0"]; T2->T3[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0"];
-M->T1[label="PANEL / turnos"]; T1->NV[label="VOTO (secreto)"]; T3->NV[label="VOTO (secreto)"]; NV->E[label="DECISIÓN, NEGOCIACIÓN"]; NV->S[label="DECISIÓN"]; S->E[label="REPORTE"];}
+E->T2[label="PITCH, RESPUESTA,
+OFERTA",lhead=cluster_t]; T2->E[label="PREGUNTA",ltail=cluster_t];
+T1->T2[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0",constraint=false]; T2->T3[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0",constraint=false]; T3->T1[label="RÉPLICA",color="#4F1FD0",penwidth=2.5,fontcolor="#4F1FD0",constraint=false];
+M->T2[label="PANEL / turnos",lhead=cluster_t]; T2->NV[label="VOTO secreto de cada uno
+(la CONTRAOFERTA viaja dentro)",ltail=cluster_t]; NV->E[label="DECISIÓN, NEGOCIACIÓN"]; NV->S[label="DECISIÓN"]; S->E[label="REPORTE"];}

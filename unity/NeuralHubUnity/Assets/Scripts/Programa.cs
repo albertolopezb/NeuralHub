@@ -30,7 +30,7 @@ namespace NeuralHub
 
         public void Iniciar(AppNeuralHub app, string nombre, string sectorId, string problema, string[] ids)
         {
-            activa = true; desde = Time.unscaledTime;
+            activa = true; desde = Reloj.Ahora;
             empresa = nombre; sector = sectorId; frase = problema; panel = ids ?? new string[0];
             app.reproductor.pausado = true;
             if (app.sonidos) app.sonidos.Cortinilla();
@@ -50,7 +50,7 @@ namespace NeuralHub
         public void Actualizar(AppNeuralHub app)
         {
             if (!activa) return;
-            float t = Time.unscaledTime - desde;
+            float t = Reloj.Ahora - desde;
             if (app.camara) app.camara.Vuelo(Mathf.Clamp01((t - Portada + 0.6f) / (Duracion - Portada)), false);
             if (t >= Duracion) Terminar(app);
         }
@@ -66,7 +66,7 @@ namespace NeuralHub
 
         public void Dibujar(AppNeuralHub app, float W, float H)
         {
-            float t = Time.unscaledTime - desde;
+            float t = Reloj.Ahora - desde;
             if (t < Portada)
             {
                 // Portada del programa: franjas con los colores del equipo que barren la pantalla

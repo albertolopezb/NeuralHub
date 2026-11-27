@@ -1,0 +1,497 @@
+{
+  "id": "nivel_dificil_0",
+  "modo": "autopiloto",
+  "ayuda": false,
+  "nivel": "dificil",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "EcoTrack",
+    "sector": "sustentabilidad_y_energia",
+    "etapa": "primeras_ventas",
+    "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+    "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+    "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+    "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+    "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+    "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+    "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+    "propiedad_intelectual": "marca",
+    "equipo_fundadores": 3,
+    "equipo_roles": "Ingeniería, ventas y finanzas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+    "monto_mxn": 300000,
+    "porcentaje": 10,
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+    "ventas_12m_mxn": 180000,
+    "margen_bruto_pct": 38,
+    "gasto_mensual_mxn": 25000,
+    "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "EcoTrack",
+        "sector": "sustentabilidad_y_energia",
+        "etapa": "primeras_ventas",
+        "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+        "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+        "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+        "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+        "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+        "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+        "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 3,
+        "equipo_roles": "Ingeniería, ventas y finanzas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+        "monto_mxn": 300000,
+        "porcentaje": 10,
+        "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+        "ventas_12m_mxn": 180000,
+        "margen_bruto_pct": 38,
+        "gasto_mensual_mxn": 25000,
+        "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?"
+      },
+      "valuacion_mxn": 3000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburón estratega, Tiburón tecnológico.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es el costo exacto de adquisición por cliente y cómo se refleja eso en tu flujo de caja actual, considerando que solo tienes 500 usuarios y $50,000 en preventas, con gastos mensuales de $25,000?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no sabemos el costo exacto de adquisición por cliente. Para calcularlo, analizaremos los gastos en marketing y ventas relacionados con la captación de usuarios. Sobre el flujo de caja, tenemos gastos mensuales de $25,000 y $50,000 en preventas, lo que indica que estamos invirtiendo en crecimiento. Usaremos los fondos para optimizar estos indicadores.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices el tamaño real del mercado en Nuevo León con recibos mayores a $2,500 bimestrales. ¿Cuántos hogares y negocios son? Sin ese dato no puedo evaluar si es escalable ni cómo defendernos de medidores genéricos y apps eléctricas.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aún no contamos con el dato exacto del tamaño del mercado en Nuevo León con recibos mayores a $2,500 bimestrales. Para obtenerlo, analizaremos estadísticas de consumo eléctrico y datos del INEGI para cuantificar hogares y negocios que cumplen ese criterio, lo que nos permitirá dimensionar la escalabilidad y diseñar estrategias para defendernos de la competencia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Dónde están el prototipo funcional y el algoritmo de IA patentado? Solo mencionas marca registrada, necesito ver innovación tecnológica protegida para apostar.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente, contamos con un prototipo funcional que ya ha sido utilizado por 500 usuarios beta. Respecto al algoritmo de IA, no está patentado, solo tenemos la marca registrada. Estamos evaluando la protección tecnológica para fortalecer nuestra innovación y poder ofrecer mayor seguridad a los inversionistas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido contigo: sin conocer el costo exacto de adquisición no podemos validar la escalabilidad ni la viabilidad financiera. El emprendedor admite que aún no lo sabe y solo tiene $50,000 en preventas con 500 usuarios, lo que indica que no han optimizado ni probado bien su modelo de negocio y flujo de caja.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices el número exacto de usuarios potenciales en Nuevo León con recibos mayores a $2,500 bimestrales; sin esa cifra no puedo evaluar si el mercado es suficientemente grande para escalar ni cómo defender la ventaja frente a competidores genéricos.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aún no contamos con el número exacto de usuarios potenciales en Nuevo León con recibos mayores a $2,500 bimestrales. Para obtener esta cifra, analizaremos datos del INEGI y del consumo eléctrico regional, lo que nos permitirá dimensionar el mercado y diseñar estrategias para defender nuestra ventaja competitiva.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Dónde está la patente o cualquier protección legal sobre el algoritmo de IA que diferencia su medidor? Sin patente ni protección tecnológica clara, su innovación es vulnerable y no es inversión tecnológica.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente, no contamos con patente sobre el algoritmo de IA que diferencia nuestro medidor; solo tenemos la marca registrada. Estamos evaluando proteger legalmente nuestra tecnología para fortalecer la innovación y ofrecer mayor seguridad a los inversionistas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices margen bruto 38% y ventas $180,000 en 12 meses, eso da costo de ventas $111,600. ¿Cuál es el costo exacto por medidor vendido y por suscripción activa? Sin esos datos no cuadran ni margen ni flujo.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no tenemos el costo exacto por medidor vendido ni por suscripción activa. Para obtener estos datos, revisaremos los costos de producción, distribución y servicio asociados a cada medidor y suscripción, para así validar que el margen bruto del 38% refleje correctamente nuestra estructura de costos y mejore el flujo de caja.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estratega, coincido en que sin el número exacto de usuarios potenciales no podemos evaluar escala ni competencia. El emprendedor no lo tiene y solo planea analizarlo, lo cual es insuficiente para justificar una inversión sólida basada en el mercado y ventaja competitiva.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "No me dices el algoritmo exacto que usa la IA ni cómo planean patentarlo; sin ese detalle técnico ni plan claro de protección, su medidor es solo un prototipo sin ventaja tecnológica real. ¿Cuál es el algoritmo diferencial y en qué estado está su solicitud de patente para esa innovación?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente, no hemos divulgado el algoritmo exacto que usa nuestra IA para proteger la propiedad intelectual. Tampoco tenemos una solicitud de patente en trámite. Estamos evaluando la mejor estrategia para proteger legalmente nuestra innovación y así fortalecer la ventaja tecnológica y la confianza de los inversionistas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices ventas $180,000 con margen 38%, o sea costo ventas $111,600. Sin costo exacto por medidor y suscripción, no cuadran márgenes ni flujo. ¿Cuál es el costo unitario exacto de producción y servicio por medidor y por cliente mensual? Sin eso, no invierto.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no tenemos el costo unitario exacto de producción por medidor ni el costo de servicio mensual por cliente. Para obtener estos datos, revisaremos detalladamente los costos directos de fabricación, logística y soporte técnico vinculados a cada unidad y suscripción, con el fin de validar el margen bruto reportado y presentar una propuesta financiera sólida.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "No me dices cuántos usuarios potenciales reales hay en Nuevo León con recibos mayores a $2,500 bimestrales; sin ese dato no puedo evaluar si es un mercado suficiente para escalar ni cómo defender la ventaja frente a medidores genéricos. ¿Cuál es esa cifra exacta y cómo planeas defenderla de la competencia en 5 años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Aún no tenemos la cifra exacta de usuarios potenciales en Nuevo León con recibos mayores a $2,500 bimestrales. Para defendernos, planeamos fortalecer nuestra ventaja con recomendaciones personalizadas vía IA, sin instalación profesional, y mejoraremos el producto y marketing para crear lealtad y diferenciación frente a medidores genéricos en los próximos 5 años.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Tiburón tecnológico, coincido en que sin patente ni detalle del algoritmo diferencial no hay barrera defensible. El emprendedor admite no tener solicitud ni plan claro de protección tecnológica, lo que deja su ventaja vulnerable a competidores genéricos y limita la escalabilidad y defensa en un mercado tan competitivo.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No me dices costo exacto de adquisición ni costos unitarios de producción y servicio, ni número exacto de usuarios potenciales. Sin esos datos clave, no puedo validar margen 38% ni valuación $3,000,000. Ventas $180,000 y 500 usuarios no justifican inversión segura. Pido datos completos antes de invertir.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No me dices tamaño exacto del mercado ni usuarios potenciales, ni costos unitarios claros que defiendan la ventaja ni permitan escalar. Sin patente ni barreras claras, la valuación de $3,000,000 con ventas de $180,000 y margen 38% no es defendible a 5 años.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Falta patente o protección legal del algoritmo IA, elemento clave de innovación tecnológica. Sin eso, su prototipo de 500 usuarios y $180,000 en ventas no tiene barrera tecnológica clara. Pido $300,000 por 25% para compensar alto riesgo tecnológico e incertidumbre en propiedad intelectual. Contraoferta: $300,000 MXN por el 25 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_porcentaje": 25.0
+    },
+    {
+      "n": 27,
+      "ronda": 4,
+      "tipo": "NEGOCIACION",
+      "emisor": "nodo_votacion",
+      "destino": "emprendedor",
+      "texto": "Solo 1 tiburón votó a favor. Hay una ronda de negociación: ajusta tu oferta o acepta una contraoferta.",
+      "estado": ""
+    },
+    {
+      "n": 28,
+      "ronda": 4,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Acepto la contraoferta de Tiburón tecnológico. Nueva oferta: $300,000 MXN por el 25 %.",
+      "estado": "Negociando",
+      "oferta": {
+        "monto_mxn": 300000.0,
+        "porcentaje": 25.0
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No me dices costo exacto de adquisición ni costos unitarios, ni número exacto de usuarios potenciales. Sin esos datos no valido margen 38% ni valuación 3,000,000. Ventas 180,000 y solo 500 usuarios no justifican inversión segura por 300,000 a cambio del 25%.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 30,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No me dices el tamaño exacto del mercado ni costos unitarios, ni protección tecnológica clara que defienda la ventaja competitiva a 5 años. Con ventas de solo $180,000 y margen 38%, no hay base para escalar ni defender una valuación de $3,000,000.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 31,
+      "ronda": 4,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Sin patente ni protección del algoritmo IA, la innovación tecnológica no está asegurada; el prototipo con 500 usuarios y ventas de $180,000 MXN no justifica la valuación ni la oferta de $300,000 por 25%. Falta propiedad intelectual clara para invertir.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 2
+    },
+    {
+      "n": 32,
+      "ronda": 4,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "SIN TRATO",
+      "estado": "Reaccionando",
+      "resultado": "SIN_TRATO",
+      "condiciones": null
+    },
+    {
+      "n": 33,
+      "ronda": 4,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: El producto aborda un problema real y común: recibos de luz altos sin entender el consumo.; Ya cuentan con un prototipo funcional y 500 usuarios beta, lo que muestra avance en desarrollo y validación.; El equipo está conformado por ingenieros con experiencia en empresas de energía y dedicación de tiempo completo.. Alertas: Falta información clave sobre costos unitarios y costo de adquisición de clientes que afecta la validación financiera.; No se cuenta con datos claros del tamaño del mercado potencial, limitando la evaluación de escalabilidad.; No hay patente ni protección legal del algoritmo de IA, lo que debilita la ventaja competitiva y representa riesgo tecnológico.. Siguientes pasos: Realizar un análisis detallado y documentado de costos unitarios por medidor y suscripción, así como del costo de adquisición de clientes para validar márgenes y flujo de caja.; Investigar y cuantificar el tamaño real del mercado potencial en Nuevo León con recibos mayores a $2,500 bimestrales, apoyándose en datos oficiales como INEGI y consumo eléctrico regional.; Buscar protección legal para el algoritmo de IA mediante patente o registros equivalentes, y preparar documentación técnica que respalde la innovación para fortalecer la propuesta ante inversionistas..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "Aún no sabemos el costo exacto de adquisición por cliente... Sin esos datos no cuadran ni margen ni flujo.",
+            "necesitaria": "Necesitaría ver costos exactos de adquisición, costos unitarios de producción y servicio, además de un flujo de caja claro y validado para considerar invertir."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 2,
+            "frase_clave": "No me dices el tamaño real del mercado en Nuevo León con recibos mayores a $2,500 bimestrales... Sin ese dato no puedo evaluar si es escalable ni cómo defendernos de medidores genéricos y apps eléctricas.",
+            "necesitaria": "Necesitaría conocer el tamaño exacto del mercado potencial, un análisis claro de competencia y una estrategia sólida para defender la ventaja competitiva."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 1,
+            "frase_clave": "Actualmente, no tenemos patente sobre el algoritmo de IA... Estamos evaluando proteger legalmente nuestra tecnología.",
+            "necesitaria": "Necesitaría ver una patente o protección legal clara del algoritmo de IA, detalles técnicos que prueben la innovación y barreras tecnológicas para apostar por la inversión."
+          }
+        ],
+        "fortalezas": [
+          "El producto aborda un problema real y común: recibos de luz altos sin entender el consumo.",
+          "Ya cuentan con un prototipo funcional y 500 usuarios beta, lo que muestra avance en desarrollo y validación.",
+          "El equipo está conformado por ingenieros con experiencia en empresas de energía y dedicación de tiempo completo."
+        ],
+        "alertas": [
+          "Falta información clave sobre costos unitarios y costo de adquisición de clientes que afecta la validación financiera.",
+          "No se cuenta con datos claros del tamaño del mercado potencial, limitando la evaluación de escalabilidad.",
+          "No hay patente ni protección legal del algoritmo de IA, lo que debilita la ventaja competitiva y representa riesgo tecnológico."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo exacto de adquisición por cliente?",
+          "¿Cuál es el tamaño exacto del mercado potencial en Nuevo León con recibos mayores a $2,500 bimestrales?",
+          "¿Dónde está la patente o protección legal del algoritmo de IA que diferencia el producto?",
+          "¿Cuál es el costo unitario exacto por medidor vendido y por suscripción activa?",
+          "¿Cuál es el algoritmo exacto y estado de la solicitud de patente para la innovación tecnológica?"
+        ],
+        "siguientes_pasos": [
+          "Realizar un análisis detallado y documentado de costos unitarios por medidor y suscripción, así como del costo de adquisición de clientes para validar márgenes y flujo de caja.",
+          "Investigar y cuantificar el tamaño real del mercado potencial en Nuevo León con recibos mayores a $2,500 bimestrales, apoyándose en datos oficiales como INEGI y consumo eléctrico regional.",
+          "Buscar protección legal para el algoritmo de IA mediante patente o registros equivalentes, y preparar documentación técnica que respalde la innovación para fortalecer la propuesta ante inversionistas."
+        ],
+        "resultado": "SIN_TRATO",
+        "condiciones": null,
+        "valuacion_mxn": 3000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburon_estratega": "salir",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 28,
+    "segundos_modelo": 48.1,
+    "segundos_total": 0.0,
+    "rondas_preguntas": 3,
+    "n_eventos": 33,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 9,
+    "preguntas_citan_dato": 7,
+    "votos": 6,
+    "justificaciones_mencionan_criterio": 6,
+    "justificaciones_con_dato": 6,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": true,
+    "modo": "autopiloto",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "SIN_TRATO",
+    "terminada": true
+  }
+}

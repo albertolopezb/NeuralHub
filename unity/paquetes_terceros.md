@@ -22,7 +22,3 @@ corbata, cuello, accesorios y objetos de podio hechos por código.
 
 ## Otros incluidos con licencia libre
 Fuentes Inter y Space Grotesk (SIL OFL) y Poppins (OFL) en `Assets/Resources/Fuentes`; Kenney (CC0) en `Assets/Terceros`.
-
-## Opcional
-Si se importa el paquete gratuito **Underwater Ambient** (Dmitriy Sirosh, Asset Store) como `Assets/Underwater Ambient.wav`,
-el estudio lo usa como sonido ambiente. Su licencia no permite publicarlo en el repositorio.

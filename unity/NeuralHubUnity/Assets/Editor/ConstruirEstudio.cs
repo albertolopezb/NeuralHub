@@ -373,15 +373,6 @@ namespace NeuralHub.Editor
             camGO.transform.rotation = Quaternion.LookRotation(camara.miraGeneral - camara.posGeneral);
             Posprocesado(camGO);
 
-            // Sonido ambiente submarino (opcional: paquete gratuito «Underwater Ambient» de la Asset Store)
-            var clip = AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Underwater Ambient.wav");
-            if (clip)
-            {
-                var a = new GameObject("SonidoAmbiente").AddComponent<AudioSource>();
-                a.transform.SetParent(estudioGO.transform, false);
-                a.clip = clip; a.loop = true; a.playOnAwake = true; a.volume = 0.14f; a.spatialBlend = 0f;
-            }
-
             var estudio = estudioGO.AddComponent<Estudio>();
             estudio.prefabTiburon = prefabTiburon; estudio.sillones = sillones; estudio.emprendedor = emp.GetComponent<Emprendedor>();
             estudio.setEmprendedor = setEmprendedor; estudio.camara = camara; estudio.reflector = reflector; estudio.pantalla = pantalla; estudio.letreroResultado = letrero;

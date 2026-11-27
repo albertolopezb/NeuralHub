@@ -32,6 +32,24 @@ def test_sugerencia_con_ayuda_cuenta_una_llamada():
     assert s.metricas()["sugerencias"] == 1
 
 
+def test_repetir_la_sugerencia_no_gasta_otra_llamada():
+    s = en_vivo(True)
+    primera = s.sugerir("tiburon_financiero")
+    antes = s.llm.llamadas
+    assert s.sugerir("tiburon_financiero") == primera
+    assert s.sugerencias == 1 and s.llm.llamadas == antes
+
+
+def test_no_hay_sugerencia_para_quien_aun_no_pregunta():
+    s = en_vivo(True)
+    en_turno = s.pendiente["preguntas"][0]["tiburon_id"]
+    otro = next(t for t in PANEL if t != en_turno)
+    antes = s.llm.llamadas
+    with pytest.raises(ValueError):
+        s.sugerir(otro)
+    assert s.llm.llamadas == antes
+
+
 def test_sin_ayuda_no_hay_sugerencia():
     s = en_vivo(False)
     with pytest.raises(PermissionError):

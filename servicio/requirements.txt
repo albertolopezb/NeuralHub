@@ -1,0 +1,14 @@
+# Servicio de agentes (Python 3.12+ en Windows; las voces usan SAPI)
+langgraph==1.2.23
+langchain-openai==1.8.5
+pydantic==2.14.4
+python-dotenv==1.2.4
+fastapi==0.165.0
+uvicorn==0.54.0
+# voz: texto a voz (SAPI) y voz a texto (Whisper local)
+comtypes==1.5.0
+faster-whisper==1.2.1
+numpy==2.5.5
+# pruebas
+pytest==9.2.0
+httpx==0.28.1

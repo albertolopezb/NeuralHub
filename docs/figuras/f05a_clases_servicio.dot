@@ -1,15 +1,15 @@
 digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=12,color="#00165C",fontcolor="#00165C",shape=record,style=filled]; edge[fontname="Helvetica",fontsize=10,color="#4F1FD0",fontcolor="#00165C"]; rankdir=TB; nodesep=.3; ranksep=.45;
-Pitch[fillcolor="#F1ECFF",label="{Pitch|nombre, sector, etapa\lproblema, solucion\lequipo_*\lmonto_mxn, porcentaje\lventas_12m_mxn, margen_bruto_pct\l|valuacion_mxn()\les_hueco(campo)\l}"];
+Pitch[fillcolor="#F1ECFF",label="{Pitch|nombre, sector, etapa\lproblema, solucion\lequipo_*, discurso\lmonto_mxn, porcentaje\lventas_12m_mxn, margen_bruto_pct\l|valuacion_mxn()\les_hueco(campo)\ldiscurso()\l}"];
 Panel[fillcolor="#F1ECFF",label="{Panel|TAM_PANEL = 3\l|recomendar(pitch)\lorden_de_turnos()\lcriterios_no_evaluados()\l}"];
-AgenteTiburon[fillcolor="#F1ECFF",label="{AgenteTiburon|id, perfil, criterio, estilo\lcampos, palabras_clave\l|preguntar()\lreplicar()\lvotar()\lrevotar()\l}"];
-AgenteEmprendedor[fillcolor="#F1ECFF",label="{AgenteEmprendedor|modo: humano | autopiloto | guion\l|responder(preguntas)\lnegociar()\lelegir_condiciones()\l}"];
+AgenteTiburon[fillcolor="#F1ECFF",label="{AgenteTiburon|id, perfil, criterio, estilo\lcampos, palabras_clave\l|preguntar()\lreplicar()\lvotar()\lrevotar()\l(nivel: facil|medio|dificil)\l}"];
+AgenteEmprendedor[fillcolor="#F1ECFF",label="{AgenteEmprendedor|modo: humano | agente | guion\l|responder(pregunta)\lsugerir(tiburon)\lnegociar()\lelegir_condiciones()\l}"];
 Moderador[fillcolor="#F1ECFF",label="{Moderador|(lógica dentro de presentar,\lpreguntar y replicar)\l|orden_de_turnos()\lasignar_replica()\l}"];
-NodoVotacion[fillcolor="#F1ECFF",label="{NodoVotacion|(nodos decidir y revotar)\l|primera_votacion()\lsegunda_votacion()\l}"];
+NodoVotacion[fillcolor="#F1ECFF",label="{NodoVotacion|(nodos decidir y revotar)\l|primera_votacion()\lpuede_mantener_original()\lsegunda_votacion()\l}"];
 GrafoSesion[fillcolor="#F1ECFF",label="{GrafoSesion|Estado: pitch, panel, ronda,\lhistorial, votos, oferta\lcheckpointer MemorySaver\l|presentar()\lpreguntar()\lresponder() [interrupt]\lreplicar()\lvotar()\ldecidir()\lcondiciones()\lnegociar()\lrevotar()\lreporte()\l}"];
 LLM[fillcolor="#F1ECFF",label="{LLM|llamadas, segundos\lAzure OpenAI gpt-4.1-mini\l|texto()\lestructurado(esquema)\l}"];
 Sesion[fillcolor="#F1ECFF",label="{Sesion|eventos[], estado, pendiente\l|emit(evento)\liniciar()\lreanudar(valor)\lmetricas()\lguardar()\l}"];
 API_FastAPI[fillcolor="#F1ECFF",label="{API_FastAPI|/tiburones, /ejemplos, /panel\l/sesiones, /eventos\l/respuestas, /negociacion\l/condiciones, /reporte\l/audio, /voz/transcribir\l|}"];
 Voz[fillcolor="#F1ECFF",label="{Voz|SAPI es-MX (texto a voz)\lWhisper base (voz a texto)\l|sintetizar(texto, emisor)\ltranscribir(wav)\l}"];
 Pitch->Panel; Panel->GrafoSesion; GrafoSesion->AgenteTiburon[label="3"]; GrafoSesion->AgenteEmprendedor; GrafoSesion->Moderador; GrafoSesion->NodoVotacion;
-AgenteTiburon->LLM; AgenteEmprendedor->LLM[style=dashed,label="autopiloto"]; Sesion->GrafoSesion; Sesion->LLM; API_FastAPI->Sesion; API_FastAPI->Voz;
+AgenteTiburon->LLM; AgenteEmprendedor->LLM[style=dashed,label="agente empresario"]; Sesion->GrafoSesion; Sesion->LLM; API_FastAPI->Sesion; API_FastAPI->Voz;
 }

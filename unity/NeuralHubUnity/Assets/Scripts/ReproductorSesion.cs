@@ -103,8 +103,9 @@ namespace NeuralHub
             if (!activo || pausado) return;
             float dt = Time.deltaTime;
             if (esperandoAudio) { esperaAudio += Time.unscaledDeltaTime; if (esperaAudio < 25f) return; esperandoAudio = false; }
+            if (restante > 0f) restante -= dt * velocidad * factorExtra;   // corre aunque sea el turno del usuario
             if (turnoUsuario != null) return;   // en vivo: espera a que el usuario responda
-            if (restante > 0f) { restante -= dt * velocidad * factorExtra; if (restante > 0f) return; }
+            if (restante > 0f) return;
             if (sonidos && sonidos.Hablando) return;      // nadie interrumpe: el siguiente turno espera a que acabe la voz
             if (!ColaVacia) ReproducirSiguiente();
         }

@@ -1,0 +1,431 @@
+{
+  "id": "P3_s1",
+  "pitch_id": "P3",
+  "panel": [
+    "tiburon_financiero",
+    "tiburona_consumo",
+    "tiburon_mentor"
+  ],
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar ModaRaíz. Todo empezó con un problema. La ropa con diseños indígenas la fabrican grandes marcas sin pagar a las comunidades artesanas. Por eso creamos nuestra solución. Marca de ropa con bordados hechos por cooperativas de artesanas, vendida en línea con la historia de cada pieza. Está pensada para este mercado: Mujeres de 25 a 45 años de ciudades grandes que valoran la moda sostenible y el diseño mexicano. Así ganamos dinero: Venta directa por tienda en línea y pop-ups; precio promedio de $1,400 MXN por prenda. Por eso hoy venimos a pedirles $400,000 MXN a cambio del 8 % de nuestra empresa, para lo siguiente: Inventario de la próxima colección, fotografía y publicidad en redes. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "ModaRaíz",
+        "sector": "consumo_y_moda",
+        "etapa": "primeras_ventas",
+        "problema": "La ropa con diseños indígenas la fabrican grandes marcas sin pagar a las comunidades artesanas.",
+        "solucion": "Marca de ropa con bordados hechos por cooperativas de artesanas, vendida en línea con la historia de cada pieza.",
+        "mercado_objetivo": "Mujeres de 25 a 45 años de ciudades grandes que valoran la moda sostenible y el diseño mexicano.",
+        "modelo_ingresos": "Venta directa por tienda en línea y pop-ups; precio promedio de $1,400 MXN por prenda.",
+        "competencia": "Marcas mexicanas de moda sostenible y grandes marcas que copian diseños.",
+        "diferenciador": "Cada prenda indica la cooperativa que la bordó y parte del precio va directo a ella.",
+        "validacion": "Aún no lo sé",
+        "propiedad_intelectual": "marca",
+        "equipo_fundadores": 2,
+        "equipo_roles": "Diseño de producto y relación con las cooperativas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Una fundadora estudió diseño de moda; la otra trabajó 4 años con cooperativas artesanales.",
+        "monto_mxn": 400000,
+        "porcentaje": 8,
+        "uso_fondos": "Inventario de la próxima colección, fotografía y publicidad en redes.",
+        "ventas_12m_mxn": null,
+        "margen_bruto_pct": null,
+        "gasto_mensual_mxn": null
+      },
+      "valuacion_mxn": 5000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Tiburón financiero, Tiburona de consumo, Tiburón mentor.",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "te faltan datos de ventas de los últimos 12 meses, margen bruto, gasto mensual; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "te faltan datos de validación con clientes; su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_mentor",
+          "nombre": "Tiburón mentor",
+          "motivo": "no hay datos que lo hagan imprescindible"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "No me dices margen bruto ni gasto mensual, pero pides $400,000 por 8% valuado en $5M. ¿Cuánto te cuesta adquirir un cliente y qué flujo neto generas por cada venta a $1,400?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Todavía no llevamos la contabilidad separada, así que aún no sé mis ventas de los últimos 12 meses ni el margen exacto por prenda. Estimo que vendimos unas 150 prendas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué te ha dicho el cliente sobre la marca y la experiencia de compra en línea o pop-ups? ¿Regresan o recomiendan? No me dices validación con clientes en el pitch.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Vendemos por tienda en línea y en dos pop-ups; los clientes llegan por Instagram. La demanda se ve en que algunas piezas se agotan, pero aún no tengo datos formales.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "Me dices que tú y tu socia trabajan tiempo completo (pitch) y una tiene experiencia con cooperativas, ¿qué tanto están comprometidas tú y tu equipo para superar la falta de datos formales y hacerlo crecer con honestidad?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Somos dos fundadoras dedicadas de tiempo completo; una diseña y la otra se encarga de las cooperativas. Nos conocemos desde la universidad.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_mentor",
+      "destino": "tiburon_financiero",
+      "texto": "Tiburón financiero, coincido contigo. No tener margen ni gasto claros es un riesgo. Para invertir, necesito ver que tú y tu socia tienen el compromiso y honestidad para poner orden y crecer con datos reales, no solo buenas intenciones. Sin esos números, no puedo apostar fuerte.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "En el pitch 0 dices que vendes en línea y pop-ups, ¿cómo describe el cliente la experiencia con la marca y el empaque? ¿Volverían a comprar o recomendar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Aún no sé qué porcentaje repite compra. La marca se reconoce por el bordado y la historia de cada cooperativa.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "Me dices en R1 que son dos fundadoras dedicadas desde la universidad, pero no veo plan para formalizar ventas ni margen (pitch). ¿Cómo van a poner orden tú y tu equipo para tener números claros y honestos ya?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Lo que me impulsa es que las artesanas reciban un pago justo; soy honesta en que me falta experiencia financiera y busco quien me asesore.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "En el pitch no me dices margen bruto ni costo de adquisición por cliente. ¿Cuánto te cuesta producir y vender cada prenda a $1,400, y cuánto te queda neto para cubrir gastos y flujo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "No tengo calculado el costo de adquisición de clientes ni el gasto mensual; me enfoqué en el producto y las cooperativas. Es lo primero que voy a ordenar.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburona_consumo",
+      "texto": "Tiburona de consumo, coincido en que sin saber la experiencia del cliente ni si recomiendan o repiten compra, es un riesgo. Si no hay datos claros de validación, cómo saber si el gasto en adquisición y retención vale la pena. Se necesita esa info para medir el verdadero flujo y margen.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_mentor",
+      "destino": "emprendedor",
+      "texto": "En el pitch no me dices margen ni gasto (R0), y en R2 dices que falta ordenar eso; ¿qué pasos van a hacer tú y tu socia para tener esos números claros y honestos en los próximos tres meses?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_mentor",
+      "texto": "Si invierten, aceptaría un consejo de administración chico para ordenar finanzas y operación.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Me dices en pitch y respuestas que no tienes margen bruto ni costo de adquisición (R0, R2). ¿Cuánto te cuesta producir y vender cada prenda a 1400, y cuánto te queda neto por venta para gastos y flujo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Entiendo que la valuación de $5,000,000 MXN no se puede defender sin cifras. Aún no sé cuánto cuesta cada prenda ya terminada.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "En el pitch y respuestas dices que vendes en línea y pop-ups (R0, R1), pero no me has contado qué comentarios da el cliente sobre la marca y el empaque; ¿qué le gusta y si volvería a comprar o recomendar?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Queremos entrar a tiendas departamentales, pero primero necesito definir bien precios y producción.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_mentor",
+      "texto": "Mentor, coincido contigo en que sin números claros es imposible saber si la marca conecta con el cliente y si la operación es sostenible. Aunque las fundadoras tienen ganas, sin datos de ventas, margen y validación de compra repetida, no podemos medir si el cliente realmente vuelve o recomienda. Eso es básico para crecer.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "No hay margen bruto ni costo por cliente, no me dices flujo neto ni ventas claras, solo una valuación de 5 millones por 8% a cambio de 400,000 pesos. Sin esos números, no puedo evaluar el negocio ni tomar riesgo.",
+      "estado": "Votando",
+      "decision": "salir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "No hay datos claros de validación del cliente ni margen, y no sabes si repiten compra, pero la marca tiene buen concepto y vendes a $1,400. La valuación de $5,000,000 es alta para primeras ventas sin cifras claras. Contraoferta: $200,000 MXN por el 10 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 10.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_mentor",
+      "destino": "nodo_votacion",
+      "texto": "Valoro el compromiso de las fundadoras, pero me falta honestidad y datos claros para confiar en la valuación de 5 millones. Sin margen ni ventas formales, es arriesgado invertir 400,000 por 8%. Propongo 400,000 por 20% para compensar la falta de números. Quiero ver orden y transparencia. Contraoferta: $400,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Mantengo mi oferta original. $400,000 MXN por el 8 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $400,000 MXN por el 8 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 400000.0,
+        "porcentaje": 8.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Tienen un propósito social fuerte y claro: pagar justo a las artesanas.; La fundadora con experiencia en diseño de moda y la otra con experiencia en cooperativas artesanales.; Dedicación a tiempo completo de las dos fundadoras y un equipo pequeño pero comprometido.. Alertas: No hay datos claros de ventas, margen bruto ni gastos mensuales.; No se cuenta con validación formal del cliente ni métricas de recompra o recomendación.; Valuación alta sin soporte numérico, lo que genera desconfianza en inversionistas.. Siguientes pasos: Ordenar la contabilidad para obtener datos claros de ventas, margen bruto y gastos mensuales.; Recolectar y analizar feedback formal del cliente sobre experiencia de compra, recompra y recomendación.; Definir un plan financiero y operativo con asesoría para justificar la valuación y preparar crecimiento sostenible..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 2,
+            "frase_clave": "No hay margen bruto ni costo por cliente, no me dices flujo neto ni ventas claras, solo una valuación de 5 millones por 8% a cambio de 400,000 pesos. Sin esos números, no puedo evaluar el negocio ni tomar riesgo.",
+            "necesitaria": "Ver números claros de margen bruto, gasto mensual, costo de adquisición de clientes y flujo neto para evaluar viabilidad y riesgo."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 2,
+            "frase_clave": "No hay datos claros de validación del cliente ni margen, y no sabes si repiten compra, pero la marca tiene buen concepto y vendes a $1,400. La valuación de $5,000,000 es alta para primeras ventas sin cifras claras.",
+            "necesitaria": "Tener información concreta sobre la experiencia del cliente, validación, tasa de recompra y recomendaciones para medir el potencial de mercado."
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "calificacion": 3,
+            "frase_clave": "Para invertir, necesito ver que tú y tu socia tienen el compromiso y honestidad para poner orden y crecer con datos reales, no solo buenas intenciones.",
+            "necesitaria": "Compromiso firme y evidencia clara de orden financiero, con datos reales de ventas y márgenes para confiar y apostar fuerte."
+          }
+        ],
+        "fortalezas": [
+          "Tienen un propósito social fuerte y claro: pagar justo a las artesanas.",
+          "La fundadora con experiencia en diseño de moda y la otra con experiencia en cooperativas artesanales.",
+          "Dedicación a tiempo completo de las dos fundadoras y un equipo pequeño pero comprometido."
+        ],
+        "alertas": [
+          "No hay datos claros de ventas, margen bruto ni gastos mensuales.",
+          "No se cuenta con validación formal del cliente ni métricas de recompra o recomendación.",
+          "Valuación alta sin soporte numérico, lo que genera desconfianza en inversionistas."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el margen bruto por prenda?",
+          "¿Cuánto cuesta adquirir un cliente y cuál es el flujo neto por venta?",
+          "¿Qué porcentaje de clientes repite compra o recomienda la marca?"
+        ],
+        "siguientes_pasos": [
+          "Ordenar la contabilidad para obtener datos claros de ventas, margen bruto y gastos mensuales.",
+          "Recolectar y analizar feedback formal del cliente sobre experiencia de compra, recompra y recomendación.",
+          "Definir un plan financiero y operativo con asesoría para justificar la valuación y preparar crecimiento sostenible."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 400000.0,
+          "porcentaje": 8.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 5000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "salir",
+          "tiburona_consumo": "contraoferta",
+          "tiburon_mentor": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_estratega",
+            "nombre": "Tiburón estratega",
+            "criterio": "tamaño de mercado, competencia y ventaja defendible"
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "nombre": "Tiburón tecnológico",
+            "criterio": "innovación, tecnología y propiedad intelectual"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 16,
+    "segundos_modelo": 18.8,
+    "segundos_total": 16.3,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 8,
+    "preguntas_citan_dato": 8,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "guion",
+    "ayuda": false,
+    "sugerencias": 0,
+    "resultado": "TRATO",
+    "terminada": true
+  },
+  "error": null
+}

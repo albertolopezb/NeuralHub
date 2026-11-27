@@ -3,7 +3,7 @@ node[fontname="Helvetica",fontsize=12,color="#00165C",fontcolor="#00165C",style=
 s[shape=circle,label="",width=.22,fillcolor="#00165C"]; fin[shape=doublecircle,label="",width=.22,fillcolor="#00165C"];
 v1[label="Recibe los 3 votos secretos\n(invertir, contraoferta, salir)"]; r1[label="Revela los votos\n(eventos VOTO juntos)"];
 c1[shape=diamond,fillcolor=white,label="¿votos a favor?\n(invertir + contraoferta)"];
-t1[label="Trato: el usuario elige condiciones\n(oferta original o contraoferta)"]; n1[label="Negociación: el usuario ajusta\nla oferta o acepta una contraoferta"]; rv[label="Segunda votación\n(solo invertir o salir)"];
+t1[label="Condiciones: oferta original solo si 2 o más\nvotaron «invertir»; si no, una contraoferta"]; n1[label="Negociación: el usuario ajusta\nla oferta o acepta una contraoferta"]; rv[label="Segunda votación\n(solo invertir o salir)"];
 c2[shape=diamond,fillcolor=white,label="¿2 o más\na favor?"];
 T[label="DECISIÓN: TRATO",fillcolor="#D3F9D8"]; S[label="DECISIÓN: SIN TRATO",fillcolor="#FFE3E3"];
-s->v1->r1->c1; c1->t1[label="2 o 3"]; c1->n1[label="1"]; c1->S[label="0"]; t1->T; n1->rv->c2; c2->T[label="sí"]; c2->S[label="no"]; T->fin; S->fin;}
+s->v1->r1->c1; c1->t1[label="2 o 3"]; t1->S[label="rechaza"]; c1->n1[label="1"]; c1->S[label="0"]; t1->T; n1->rv->c2; c2->T[label="sí"]; c2->S[label="no"]; T->fin; S->fin;}

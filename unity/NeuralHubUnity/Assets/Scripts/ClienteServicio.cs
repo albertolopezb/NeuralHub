@@ -20,6 +20,7 @@ namespace NeuralHub
         public string urlBase = "http://localhost:8000";
         public bool usarMock;
         public bool conectado;
+        public bool probando;      // comprobando la conexión: todavía no se sabe si hay servicio
         public string ultimoError;
 
         // Estado de la sesión en curso
@@ -76,6 +77,7 @@ namespace NeuralHub
             sb.Append(Campo("validacion", p.validacion)).Append(Campo("propiedad_intelectual", p.propiedad_intelectual));
             sb.Append(Campo("equipo_roles", p.equipo_roles)).Append(Campo("equipo_dedicacion", p.equipo_dedicacion));
             sb.Append(Campo("equipo_experiencia", p.equipo_experiencia)).Append(Campo("uso_fondos", p.uso_fondos));
+            if (!string.IsNullOrEmpty(p.discurso)) sb.Append(Campo("discurso", p.discurso));
             sb.Append("\"equipo_fundadores\":" + p.equipo_fundadores + ",");
             if (tieneVentas) sb.Append("\"ventas_12m_mxn\":" + Num(p.ventas_12m_mxn) + ",");
             if (tieneMargen) sb.Append("\"margen_bruto_pct\":" + Num(p.margen_bruto_pct) + ",");
@@ -356,8 +358,10 @@ namespace NeuralHub
         {
             if (usarMock) { conectado = true; yield break; }
             string t = null;
+            probando = true;
             yield return Get("/salud", x => t = x);
             conectado = t != null;
+            probando = false;
         }
 
         static string LeerStreaming(string archivo)

@@ -16,6 +16,14 @@ def panel_votos(votos, k):
     return [e for e in votos if e.get("votacion") == k]
 
 
+FALTA_DATO = re.compile(r"falta|no (me |nos )?(dices|das|mencionas|indicas|explicas|has dicho|veo|queda claro)|no (est[aá]|aparece|incluyes|tienes|hay)", re.I)
+
+
+def cita_dato_o_falta(texto: str) -> bool:
+    """Segunda parte del objetivo 3: la pregunta cita un dato (cifra o comillas) o señala que falta."""
+    return tiene_dato_concreto(texto) or bool(FALTA_DATO.search(texto))
+
+
 def calcular(ses) -> dict:
     ev = ses.eventos
     preguntas = [e for e in ev if e["tipo"] == "PREGUNTA"]
@@ -37,6 +45,7 @@ def calcular(ses) -> dict:
         "replicas_mencionan_otro_tiburon": sum(
             1 for e in replicas if e["destino"] != e["emisor"] and e["destino"] in ses.panel),
         "preguntas_mencionan_criterio": sum(1 for e in preguntas if menciona_criterio(e["texto"], e["emisor"])),
+        "preguntas_citan_dato": sum(1 for e in preguntas if cita_dato_o_falta(e["texto"])),
         "votos": len(votos),
         "justificaciones_mencionan_criterio": sum(1 for e in votos if menciona_criterio(e["texto"], e["emisor"])),
         "justificaciones_con_dato": sum(1 for e in votos if tiene_dato_concreto(e["texto"])),

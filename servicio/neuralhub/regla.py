@@ -23,8 +23,13 @@ def segunda_votacion(votos: dict) -> str:
     return "TRATO" if a_favor(votos) >= 2 else "SIN_TRATO"
 
 
-def elegir_contraoferta_autopiloto(contraofertas: list[dict], original: dict) -> dict:
-    """El emprendedor en autopiloto busca ceder lo menos posible: elige la condición con mayor valuación
-    implícita (monto / porcentaje). Si hay empate, la primera de la lista."""
-    opciones = [dict(original, origen="original")] + contraofertas
+def puede_mantener_original(votos: dict) -> bool:
+    """Una contraoferta no es aceptar la oferta original: solo se puede mantener si 2 o más votaron «invertir»."""
+    return sum(1 for v in votos.values() if v == "invertir") >= 2
+
+
+def elegir_contraoferta_autopiloto(contraofertas: list[dict], original: dict, puede_original: bool = True) -> dict:
+    """El emprendedor en autopiloto busca ceder lo menos posible: elige, entre las condiciones disponibles, la de mayor
+    valuación implícita (monto / porcentaje). Si hay empate, la primera de la lista."""
+    opciones = ([dict(original, origen="original")] if puede_original else []) + contraofertas
     return max(opciones, key=lambda o: o["monto_mxn"] / o["porcentaje"])

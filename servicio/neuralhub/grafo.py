@@ -85,16 +85,18 @@ NIVELES = {
                 "pide) solo si las condiciones son claramente desproporcionadas, y salir solo si no hay un negocio.",
     },
     "medio": {
-        "tono": " Estás en el nivel MEDIO: eres un inversionista razonable, como en televisión. Hablas claro, en lenguaje "
-                "cotidiano, una idea a la vez; reconoces lo que está bien antes de señalar un pendiente.",
-        "pregunta": "Haz UNA sola pregunta práctica (máximo 25 palabras), en lenguaje cotidiano, sobre algo de tu criterio que "
-                    "un emprendedor que conoce su negocio puede contestar sin estudios especializados: cómo vende, cuánto le "
-                    "cuesta producir, quién le compra, qué lo hace distinto o en qué usará el dinero. PROHIBIDO pedir "
-                    "proyecciones a varios años, tamaño total del mercado, porcentaje de captura o usar siglas como CAC, TAM o "
-                    "churn. No hagas preguntas de dos partes ni repitas lo ya contestado.",
-        "voto": "Calibra tu voto con equilibrio: si el negocio ya muestra avance (ventas, preventas o pruebas con usuarios) y "
-                "las respuestas fueron razonables, vota invertir o contraoferta; es normal que falten detalles en esta etapa. "
-                "Usa contraoferta si la valuación te parece alta, y salir solo si falta casi todo lo de tu criterio.",
+        "tono": " Estás en el nivel MEDIO: eres un inversionista razonable. Que se te reconozca por TU forma de ser: usa "
+                "siempre las palabras propias de tu criterio y tu estilo, nunca frases genéricas que diría cualquier tiburón. "
+                "Habla en lenguaje cotidiano, sin siglas.",
+        "pregunta": "Haz UNA sola pregunta práctica (máximo 30 palabras) desde TU criterio, con el vocabulario y la actitud de "
+                    "tu estilo. SIEMPRE cita en la pregunta el dato del pitch del que partes (con su número si lo "
+                    "tiene) o di claramente que ese dato falta. Debe poder contestarla alguien que conoce "
+                    "su negocio sin estudios especializados. PROHIBIDO pedir proyecciones a varios años, tamaño total del "
+                    "mercado, porcentaje de captura o usar siglas como CAC, TAM o churn. No hagas preguntas de dos partes ni "
+                    "repitas lo ya contestado.",
+        "voto": "Calibra tu voto con equilibrio: invertir si el avance es claro (ventas, preventas o pruebas con usuarios), tu "
+                "criterio se cumple y la valuación es razonable para la etapa; contraoferta si el negocio te interesa pero la "
+                "valuación o un dato importante no te convencen; salir solo si falta casi todo lo de tu criterio.",
     },
     "dificil": {
         "tono": " Estás en el nivel DIFÍCIL: eres un inversionista duro e impaciente. Presionas, no regalas elogios y "
@@ -120,7 +122,9 @@ def sistema_tiburon(tid: str, nivel: str = "medio") -> str:
 
 def sistema_emprendedor() -> str:
     return ("Eres el fundador que presenta su negocio ante un panel de inversionistas. Respondes en español de México, "
-            "con seguridad. NUNCA inventes cifras, fechas ni hechos: usa solo lo que está en tu ficha. Si el dato no está en tu ficha, "
+            "con seguridad. NUNCA inventes cifras, fechas ni hechos: usa solo lo que está en tu ficha. Tampoco calcules indicadores que "
+            "tu ficha no trae (costo de adquisición, flujo, margen neto, retención): por ejemplo, dividir el gasto mensual entre los "
+            "usuarios NO es el costo de adquisición. Si el dato no está en tu ficha, "
             "responde que aún no lo sabes y qué harías para averiguarlo. Máximo 70 palabras por respuesta.")
 
 
@@ -180,7 +184,8 @@ def construir_grafo(checkpointer=None):
         tid = rotar(estado["orden"], estado["ronda"])[turno]
         salida = llm.estructurado(E.Pregunta, sistema_tiburon(tid, ses.nivel), (
             f"PITCH:\n{ficha(pitch)}\n\nCONVERSACIÓN:\n{hist_texto(estado)}\n\n"
-            f"Vas en la ronda {r} de {MAX_RONDAS}. {NIVELES[ses.nivel]['pregunta']}"))
+            f"Vas en la ronda {r} de {MAX_RONDAS}. {NIVELES[ses.nivel]['pregunta']} "
+            f"Que se note que eres tú y no otro tiburón. {TIBURONES[tid]['estilo']}"))
         texto = salida.pregunta.strip()
         ses.emit("PREGUNTA", tid, "emprendedor", texto, r)
         previas = estado["preguntas"] if turno else {}
@@ -298,16 +303,25 @@ def construir_grafo(checkpointer=None):
         ses, _, _ = _cfg(config)
         orig = dict(estado["oferta"])
         contras = _contraofertas(estado)
+        # La oferta original solo sigue sobre la mesa si 2 o más la aceptaron («invertir»)
+        puede_original = regla.puede_mantener_original(estado["votos1"])
         elegida = dict(orig, origen="original")
         if contras:
             if estado["modo"] == "humano":
-                resp = interrupt({"tipo": "CONDICIONES", "original": orig, "contraofertas": contras})
+                resp = interrupt({"tipo": "CONDICIONES", "original": orig, "contraofertas": contras,
+                                  "puede_original": puede_original})
                 sel = resp.get("opcion", "original")
-                elegida = next((dict(c, origen=c["tiburon_id"]) for c in contras if c["tiburon_id"] == sel), elegida)
+                elegida = next((dict(c, origen=c["tiburon_id"]) for c in contras if c["tiburon_id"] == sel), None)
+                if elegida is None and puede_original:
+                    elegida = dict(orig, origen="original")
             else:
-                elegida = regla.elegir_contraoferta_autopiloto(contras, orig)
+                elegida = regla.elegir_contraoferta_autopiloto(contras, orig, puede_original)
                 if "tiburon_id" in elegida:
                     elegida["origen"] = elegida["tiburon_id"]
+            if elegida is None:   # sin mayoría para la oferta original y el emprendedor rechaza las contraofertas
+                ses.emit("OFERTA", "emprendedor", "tiburones", "No acepto las contraofertas.", MAX_RONDAS)
+                ses.emit("DECISION", "nodo_votacion", "todos", "SIN TRATO", MAX_RONDAS, resultado="SIN_TRATO", condiciones=None)
+                return {"resultado": "SIN_TRATO", "condiciones": None}
             texto = (f"Elijo la condición de {nombre(elegida['origen'])}." if elegida["origen"] != "original"
                      else "Mantengo mi oferta original.") + f" {mxn(elegida['monto_mxn'])} por el {elegida['porcentaje']:g} %."
             ses.emit("OFERTA", "emprendedor", "tiburones", texto, MAX_RONDAS)

@@ -5,22 +5,23 @@ a1[label="Usuario llena el formulario del pitch"]; a2[label="Python calcula la v
 a3[label="La app recomienda un panel de 3
 (regla en Python, 0 llamadas)"]; a4[label="Usuario acepta o cambia el panel
 y pulsa «Iniciar sesión»"];
-a5[label="Pantalla muestra pitch y panel"];
+a5[label="Intro del episodio y pitch hablado
+(la petición va al final)"];
 subgraph cluster_r{label="Ronda k (k = 1, 2, 3)";fontname="Helvetica";fontcolor="#4F1FD0";color="#4F1FD0";style="rounded,dashed";
- r1[label="Los 3 tiburones preguntan
-(en el orden del moderador)"]; r2[label="Usuario responde por escrito
+ r1[label="El siguiente tiburón pregunta
+(orden del moderador, 1 a la vez)"]; r2[label="Usuario responde esa pregunta
 (el grafo se pausa)",fillcolor="#FFF3BF"];
  r3[label="Un tiburón replica a otro
-(RÉPLICA)"]; r4[shape=diamond,label="¿k < 3?",fillcolor="white"]; r1->r2->r3->r4;}
+(RÉPLICA)"]; r4[shape=diamond,label="¿k < 3?",fillcolor="white"]; r1->r2; r2->r1[label="faltan tiburones",constraint=false]; r2->r3->r4;}
 v[label="Voto secreto y simultáneo
 de los 3 tiburones"]; d[shape=diamond,label="¿Cuántos votos
 a favor?",fillcolor="white"];
-c1[label="Usuario elige condiciones
-(oferta original o contraoferta)"]; n1[label="Negociación: usuario ajusta
+c1[label="Condiciones: oferta original solo si 2 o más
+votaron «invertir»; si no, una contraoferta"]; n1[label="Negociación: usuario ajusta
 la oferta o acepta una contraoferta"]; n2[label="Segunda votación (3 tiburones)"];
 d2[shape=diamond,label="¿2 o más
 a favor?",fillcolor="white"];
 t[label="DECISIÓN: TRATO",fillcolor="#D3F9D8"]; s[label="DECISIÓN: SIN TRATO",fillcolor="#FFE3E3"]; rep[label="Reporte de retroalimentación
-y entrega de eventos a Unity"];
+y cierre del episodio en Unity"];
 ini->a1->a2->a3->a4->a5->r1; r4->r1[label="sí"]; r4->v[label="no"]; v->d;
-d->c1[label="2 o 3"]; d->n1[label="1"]; d->s[label="0"]; c1->t; n1->n2->d2; d2->t[label="sí"]; d2->s[label="no"]; t->rep; s->rep; rep->fin;}
+d->c1[label="2 o 3"]; d->n1[label="1"]; d->s[label="0"]; c1->t; c1->s[label="rechaza"]; n1->n2->d2; d2->t[label="sí"]; d2->s[label="no"]; t->rep; s->rep; rep->fin;}
