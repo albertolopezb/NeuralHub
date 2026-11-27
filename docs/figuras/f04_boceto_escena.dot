@@ -1,24 +1,24 @@
-graph G{ bgcolor=white; node[fontname="Helvetica",fontsize=12,color="#00165C",fontcolor="#00165C",style="filled",fillcolor="#E8F0FF",shape=box]; edge[style=invis];
+graph G{ bgcolor=white; node[fontname="Helvetica",fontsize=18,color="#00165C",fontcolor="#00165C",style="filled",fillcolor="#E8F0FF",shape=box]; edge[style=invis];
 panta[label="PANTALLA PRINCIPAL
 lámina del tema de cada pregunta",pos="0,9!",width=6,height=.6,fillcolor="#00165C",fontcolor=white];
 s1[label="Podio 1
-tiburón + letrero",pos="-4.2,5.2!",width=2.1,height=.9,fillcolor="#E5DBFF"];
+tiburón + letrero",pos="-4.2,5.2!",width=2.7,height=.9,fillcolor="#E5DBFF"];
 s2[label="Podio 2
-tiburón + letrero",pos="0,6.4!",width=2.1,height=.9,fillcolor="#E5DBFF"];
+tiburón + letrero",pos="0,6.4!",width=2.7,height=.9,fillcolor="#E5DBFF"];
 s3[label="Podio 3
-tiburón + letrero",pos="4.2,5.2!",width=2.1,height=.9,fillcolor="#E5DBFF"];
+tiburón + letrero",pos="4.2,5.2!",width=2.7,height=.9,fillcolor="#E5DBFF"];
 emp[label="Emprendedor
-(avatar del usuario)",pos="0,1.5!",shape=ellipse,width=2.3,height=1.0,fillcolor="#13B8F0",fontcolor=white];
+(avatar del usuario)",pos="0,1.5!",shape=ellipse,width=3.0,height=1.0,fillcolor="#13B8F0",fontcolor=white];
 pod[label="Set del emprendedor
-(letrero del programa)",pos="0,0.0!",width=2.4,height=.55];
+(letrero del programa)",pos="0,0.0!",width=3.1,height=.55];
 ofe[label="Pantalla
-de la oferta",pos="-5.6,8.2!",width=1.6,fillcolor="#E8F0FF"];
+de la oferta",pos="-5.6,8.2!",width=2.1,fillcolor="#E8F0FF"];
 vot[label="Pantalla
-de votos",pos="5.6,8.2!",width=1.6,fillcolor="#E8F0FF"];
+de votos",pos="5.6,8.2!",width=2.1,fillcolor="#E8F0FF"];
 ven[label="Ventanal curvo al océano (peces y tiburón que nadan detrás)",pos="0,10.3!",width=9.5,height=.4,fillcolor="#D0F0FF"];
 cam[label="Cámara principal
-(cambia de plano)",pos="-5.2,-1.5!",shape=component,width=2.2,fillcolor="#FFF3BF"];
+(cambia de plano)",pos="-5.2,-1.5!",shape=component,width=2.9,fillcolor="#FFF3BF"];
 ref[label="Reflector
-(sigue al turno)",pos="5.2,1.5!",shape=house,width=1.8,fillcolor="#FFF3BF"];
+(sigue al turno)",pos="5.2,1.5!",shape=house,width=2.3,fillcolor="#FFF3BF"];
 ui[label="Interfaz: barra de rondas · tarjeta del tema · subtítulos · controles",pos="0,-1.6!",width=6,height=.5,fillcolor="#E8F0FF",style="dashed,filled"];
 }

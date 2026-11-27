@@ -27,7 +27,7 @@ ini->a1->a2->a3->a4->a5->r1; r4->r1[label="sí"]; r4->v[label="no"]; v->d;
 d->c1[label="2 o 3"]; d->n1[label="1"]; d->s[label="0"]; c1->t; c1->s[label="rechaza"]; n1->n2->d2; d2->t[label="sí"]; d2->s[label="no"]; t->rep; s->rep; rep->fin;}}''')
 
 # ---- F2 estados del tiburón
-render("f02_estados_tiburon", f'''digraph G{{ {HEAD} rankdir=LR; nodesep=.5; ranksep=.7;
+render("f02_estados_tiburon", f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.6; ranksep=.5;
 s[shape=circle,label="",width=.25,fillcolor="{N}"];
 Fuera[label="Fuera del panel"]; Esp[label="Esperando"]; Esc[label="Escuchando"]; Pre[label="Preguntando"]; Eva[label="Evaluando"]; Rep[label="Replicando",fillcolor="#E5DBFF"]; Vot[label="Votando"]; Rea[label="Reaccionando"];
 s->Fuera; Fuera->Esp[label="elegido en\nel panel"]; Esp->Esc[label="pitch"]; Esc->Pre[label="su turno\nde preguntar"]; Pre->Eva[label="el usuario\nresponde"];
@@ -45,17 +45,17 @@ T1->T2[label="RÉPLICA",color="{V}",penwidth=2.5,fontcolor="{V}",constraint=fals
 M->T2[label="PANEL / turnos",lhead=cluster_t]; T2->NV[label="VOTO secreto de cada uno\n(la CONTRAOFERTA viaja dentro)",ltail=cluster_t]; NV->E[label="DECISIÓN, NEGOCIACIÓN"]; NV->S[label="DECISIÓN"]; S->E[label="REPORTE"];}}''')
 
 # ---- F4 boceto (vista superior, posiciones fijas)
-render("f04_boceto_escena", f'''graph G{{ bgcolor=white; node[fontname="Helvetica",fontsize=12,color="{N}",fontcolor="{N}",style="filled",fillcolor="{L}",shape=box]; edge[style=invis];
+render("f04_boceto_escena", f'''graph G{{ bgcolor=white; node[fontname="Helvetica",fontsize=18,color="{N}",fontcolor="{N}",style="filled",fillcolor="{L}",shape=box]; edge[style=invis];
 panta[label="PANTALLA PRINCIPAL\nlámina del tema de cada pregunta",pos="0,9!",width=6,height=.6,fillcolor="{N}",fontcolor=white];
-s1[label="Podio 1\ntiburón + letrero",pos="-4.2,5.2!",width=2.1,height=.9,fillcolor="#E5DBFF"];
-s2[label="Podio 2\ntiburón + letrero",pos="0,6.4!",width=2.1,height=.9,fillcolor="#E5DBFF"];
-s3[label="Podio 3\ntiburón + letrero",pos="4.2,5.2!",width=2.1,height=.9,fillcolor="#E5DBFF"];
-emp[label="Emprendedor\n(avatar del usuario)",pos="0,1.5!",shape=ellipse,width=2.3,height=1.0,fillcolor="{C}",fontcolor=white];
-pod[label="Set del emprendedor\n(letrero del programa)",pos="0,0.0!",width=2.4,height=.55];
-ofe[label="Pantalla\nde la oferta",pos="-5.6,8.2!",width=1.6,fillcolor="{L}"];
-vot[label="Pantalla\nde votos",pos="5.6,8.2!",width=1.6,fillcolor="{L}"];
+s1[label="Podio 1\ntiburón + letrero",pos="-4.2,5.2!",width=2.7,height=.9,fillcolor="#E5DBFF"];
+s2[label="Podio 2\ntiburón + letrero",pos="0,6.4!",width=2.7,height=.9,fillcolor="#E5DBFF"];
+s3[label="Podio 3\ntiburón + letrero",pos="4.2,5.2!",width=2.7,height=.9,fillcolor="#E5DBFF"];
+emp[label="Emprendedor\n(avatar del usuario)",pos="0,1.5!",shape=ellipse,width=3.0,height=1.0,fillcolor="{C}",fontcolor=white];
+pod[label="Set del emprendedor\n(letrero del programa)",pos="0,0.0!",width=3.1,height=.55];
+ofe[label="Pantalla\nde la oferta",pos="-5.6,8.2!",width=2.1,fillcolor="{L}"];
+vot[label="Pantalla\nde votos",pos="5.6,8.2!",width=2.1,fillcolor="{L}"];
 ven[label="Ventanal curvo al océano (peces y tiburón que nadan detrás)",pos="0,10.3!",width=9.5,height=.4,fillcolor="#D0F0FF"];
-cam[label="Cámara principal\n(cambia de plano)",pos="-5.2,-1.5!",shape=component,width=2.2,fillcolor="#FFF3BF"];
-ref[label="Reflector\n(sigue al turno)",pos="5.2,1.5!",shape=house,width=1.8,fillcolor="#FFF3BF"];
+cam[label="Cámara principal\n(cambia de plano)",pos="-5.2,-1.5!",shape=component,width=2.9,fillcolor="#FFF3BF"];
+ref[label="Reflector\n(sigue al turno)",pos="5.2,1.5!",shape=house,width=2.3,fillcolor="#FFF3BF"];
 ui[label="Interfaz: barra de rondas · tarjeta del tema · subtítulos · controles",pos="0,-1.6!",width=6,height=.5,fillcolor="{L}",style="dashed,filled"];
 }}''', motor=NEATO)

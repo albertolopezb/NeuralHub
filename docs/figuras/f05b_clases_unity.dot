@@ -19,6 +19,7 @@ Programa[fillcolor="#E8F0FF",label="{Programa|IntroPrograma\lConocerTiburones\lF
 Pantallas_IMGUI[fillcolor="#E8F0FF",label="{Pantallas_IMGUI|MenuInicio, FormularioPitch,\lEleccionPanel, SeleccionModo,\lBurbujaRespuesta, InterfazDebate,\lPanelNegociacion, PantallaResultado\l|Dibujar()\l}"];
 AppNeuralHub->ClienteServicio; AppNeuralHub->ReproductorSesion; AppNeuralHub->Pantallas_IMGUI; AppNeuralHub->Programa; AppNeuralHub->Sonidos;
 ReproductorSesion->Estudio; ReproductorSesion->PantallasDatos; ReproductorSesion->Sonidos; ReproductorSesion->Evento; ReproductorSesion->ClienteServicio[label="audio"];
-Estudio->Tiburon[label="3"]; Estudio->Emprendedor; Estudio->CamaraEstudio; Estudio->Reflector; Estudio->Pantalla; Estudio->SetEmprendedor; Estudio->TemasPitch;
-Pantallas_IMGUI->GrabadorVoz; Pantallas_IMGUI->Niveles_Personas; Programa->CamaraEstudio;
+Estudio->Tiburon[label="3"]; Estudio->Emprendedor; Estudio->CamaraEstudio; Estudio->Reflector[minlen=2]; Estudio->Pantalla[minlen=2]; Estudio->SetEmprendedor[minlen=2]; Estudio->TemasPitch[minlen=3];
+ClienteServicio->PantallasDatos[style=invis]; Evento->GrabadorVoz[style=invis]; GrabadorVoz->Niveles_Personas[style=invis];
+Pantallas_IMGUI->GrabadorVoz; Pantallas_IMGUI->Niveles_Personas[constraint=false]; Programa->CamaraEstudio[constraint=false];
 }

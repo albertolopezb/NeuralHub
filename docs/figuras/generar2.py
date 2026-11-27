@@ -77,7 +77,7 @@ lines.append("}")
 render("f06_grafo_langgraph", "\n".join(lines))
 
 # ---- F8 estados emprendedor y sesión
-render("f08_estados_emprendedor_sesion", f'''digraph G{{ {HEAD} rankdir=LR; nodesep=.45; ranksep=.55;
+render("f08_estados_emprendedor_sesion", f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.3; ranksep=.45;
 subgraph cluster_e{{label="Emprendedor (usuario o agente empresario)";fontcolor="{V}";color="{V}";style="rounded,dashed";fontname="Helvetica";
  e0[shape=circle,label="",width=.2,fillcolor="{N}"]; Pres[label="Presentando"]; EspE[label="Esperando"]; Resp[label="Respondiendo"]; Neg[label="Negociando"]; Rec[label="Recibiendo\\nresultado"];
  e0->Pres; Pres->EspE[label="pitch enviado"]; EspE->Resp[label="llega una\\npregunta"]; Resp->EspE[label="respuesta\\nenviada"]; EspE->Neg[label="1 voto a favor"]; Elig[label="Eligiendo\\ncondiciones"]; EspE->Elig[label="contraofertas"]; Elig->Rec[label="elige o rechaza"]; Neg->EspE[label="oferta enviada"]; EspE->Rec[label="DECISIÓN"];}}
@@ -89,7 +89,7 @@ subgraph cluster_s{{label="Sesión (moderador y nodo de votación)";fontcolor="{
 
 # ---- F9 modelo del agente
 def agente(titulo, percep, creen, deseos, planes, accion, color):
-    return f'''digraph G{{ {HEAD} rankdir=LR; nodesep=.4; ranksep=.6;
+    return f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.35; ranksep=.4;
 subgraph cluster_a{{label="{titulo}";fontcolor="{color}";color="{color}";style="rounded";fontname="Helvetica";fontsize=14;
  P[label="Percepciones\\n{percep}"]; B[label="Creencias\\n{creen}"]; D[label="Deseos / metas\\n{deseos}"]; I[label="Planes / intenciones\\n{planes}"]; Ac[label="Acciones\\n{accion}",fillcolor="#D3F9D8"]; P->B->D->I->Ac;
  B->I[style=dashed,label="LLM (salida estructurada)"];}}

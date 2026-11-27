@@ -393,7 +393,7 @@ bullets([
     "El nodo de votación revela los votos y aplica la regla: con 2 o 3 a favor se eligen condiciones (la oferta original solo si 2 o más votaron «invertir»; si no, una contraoferta, o el usuario las rechaza y no hay trato); con 1 a favor hay una negociación y una segunda votación; con 0 no hay trato.",
     "Un último paso genera el reporte; Unity muestra la celebración o el hundimiento, el cierre del episodio y la retroalimentación.",
 ], style="List Number")
-figura("act", 9.0, "Diagrama de actividades de una sesión.")
+figura("act", 7.8, "Diagrama de actividades de una sesión.")
 figura("clases_s", 17.0, "Diagrama de clases del servicio de agentes (Python).")
 figura("clases_u", 16.5, "Diagrama de clases de la aplicación de Unity (C#).")
 
@@ -421,11 +421,11 @@ bullets([
 ])
 p("El agente empresario tiene como creencias su ficha del pitch y el historial público; planea responder con los datos de su ficha (sin inventar cifras) y elegir la condición de mayor valuación implícita; no aprende. "
   f"{F('agente_t').capitalize()} y {F('agente_e')} muestran el modelo de cada agente (percepciones, creencias, metas, planes y acciones) y su entorno.", align="j")
-figura("agente_t", 16.5, "Modelo del agente tiburón.")
-figura("agente_e", 16.5, "Modelo del agente empresario.")
+figura("agente_t", 10.4, "Modelo del agente tiburón.")
+figura("agente_e", 10.4, "Modelo del agente empresario.")
 p(f"El diagrama de estados del tiburón ({F('est_t')}) agrega el estado «Replicando» y el estado «Fuera del panel» para los tiburones no elegidos; En Unity, el tipo de cada evento cambia el estado del personaje y el estado elige la animación (saludar al pedir la palabra, asentir o negar al replicar y votar, celebrar o encogerse). "
   f"{F('est_es').capitalize()} muestra los estados del emprendedor y de la sesión (moderador).", align="j")
-figura("est_t", 16.5, "Diagrama de estados del agente tiburón.")
+figura("est_t", 12.4, "Diagrama de estados del agente tiburón.")
 figura("est_es", 16.5, "Diagramas de estados del emprendedor y de la sesión.")
 p(f"El nodo de votación y el moderador no usan el modelo de lenguaje; {F('vot')} muestra el diagrama de flujo del nodo de votación, que implementa la regla de decisión de la sección 7.3.", align="j", keep=True)
 figura("vot", 8.8, "Diagrama de flujo del nodo de votación.")
@@ -520,7 +520,7 @@ p("Se implementaron dos niveles. El primero es **un agente resolviendo el proble
 p(f"**Grafo.** {F('grafo').capitalize()} es el grafo exportado del código. Los nodos son presentar, preguntar, responder, replicar, votar, decidir, condiciones, negociar, revotar y reporte. preguntar y responder se repiten hasta que los 3 tiburones preguntaron; la lógica del moderador vive en presentar, preguntar y replicar, y la votación en decidir y revotar. "
   "Las aristas punteadas son condicionales (¿faltan tiburones?, ¿k < 3?, resultado de la votación). El estado de LangGraph guarda el pitch, el panel, la ronda, el historial público, los votos y la oferta vigente; "
   "el nodo «responder» usa interrupt para pausar el grafo hasta que el usuario responde.", align="j")
-figura("grafo", 6.4, "Grafo de LangGraph exportado del código (aristas punteadas: condicionales).")
+figura("grafo", 5.8, "Grafo de LangGraph exportado del código (aristas punteadas: condicionales).")
 
 # tabla del prototipo de un agente
 rows = []
@@ -658,7 +658,7 @@ tabla(["Pantalla", "Qué ve", "Controles"], [
 ], anchos=[3.0, 6.4, 7.6], size=9)
 p(f"**Expectativa y realidad.** {F('boceto').capitalize()} es el boceto visto desde arriba; {F('general')} y {F('arriba')} son el resultado en Unity. "
   "Las capturas de las pantallas (Figuras " + f"{NUM['s_inicio']} a {NUM['s_resultado']}) son del ejecutable compilado, con la sesión de ejemplo.", align="j")
-figura("boceto", 11.5, "Boceto de la escena vista desde arriba (3 podios).")
+figura("boceto", 15.5, "Boceto de la escena vista desde arriba (3 podios).")
 figura("general", 14.5, "Estudio submarino en Unity: plano general con el panel de 3 tiburones.")
 figura("arriba", 11.5, "Estudio en Unity visto desde arriba, para compararlo con el boceto.")
 figura("s_inicio", 11.5, "Inicio: el programa y los tres niveles de emprendedor.")
@@ -685,7 +685,7 @@ comp = [
     ("Identidad de cada tiburón", "Accesorio (sombrero de copa, gorra de capitana, audífonos, flor y perlas, birrete, fedora y cadena), objeto en el podio (monedas, pieza de ajedrez, laptop, bolsa, libros, maletín) y emblema flotante.", "tiburon_1", "Juan Esteban Jaramillo; creación propia por código."),
     ("Podios y paletas de voto", "Podio con aro del color del perfil y letrero; paleta con DENTRO (invertir), OFERTA (contraoferta) o FUERA (salir).", "paleta", "Equipo; creación propia."),
     ("Emprendedor y su escenografía", "Personaje animado (saluda, explica, celebra o se lamenta) y escenografía con el nombre del programa, el logotipo del sector y la empresa.", "emprendedor", "Quaternius, Ultimate Modular Men (CC0); escenografía propia."),
-    ("Fauna del ventanal", "Peces, mantarraya, delfín y tiburón animados que nadan detrás del cristal.", "fauna", "Quaternius, Animated Fish Pack y Pirate Kit (CC0)."),
+    ("Fauna del ventanal", "Peces, mantarraya, delfín y tiburón animados que nadan detrás del cristal (en la imagen, acercamiento a dos de los peces).", "fauna", "Quaternius, Animated Fish Pack y Pirate Kit (CC0)."),
     ("Pantallas", "Principal: lámina del tema de cada pregunta (15 ilustraciones propias por sector y tema). Laterales: oferta y votos con barras.", "estudio_general", "Equipo; ilustraciones propias (docs/figuras/generar_ilustraciones.py)."),
     ("Sonido", "Música de fondo, cortinilla, fanfarria, hundimiento y cierre originales; efectos de turno y voto; voces es-MX por personaje.", "estudio_general", "Equipo; música sintetizada (docs/figuras/generar_musica.py) y Windows SAPI [19]."),
 ]
@@ -848,5 +848,26 @@ encabezado()
 pie()
 assert usadas == FIGS, usadas
 out = BASE / "NeuralHub_Incremento_2.docx"
+def fijar_anchos(tabla_):
+    """Google Docs ignora el ancho de las celdas y reparte columnas iguales si la rejilla de la tabla no los declara."""
+    celdas = tabla_.rows[0].cells
+    anchos_ = [c.width for c in celdas]
+    columnas = tabla_._tbl.tblGrid.findall(qn("w:gridCol"))
+    if any(w is None for w in anchos_) or len(columnas) != len(anchos_):
+        return
+    for col, w in zip(columnas, anchos_):
+        col.set(qn("w:w"), str(int(w / 635)))          # EMU -> vigésimos de punto
+    tblPr = tabla_._tbl.tblPr
+    for nombre, atributos in (("w:tblW", {"w:w": str(int(sum(anchos_) / 635)), "w:type": "dxa"}), ("w:tblLayout", {"w:type": "fixed"})):
+        el = tblPr.find(qn(nombre))
+        if el is None:
+            el = OxmlElement(nombre); tblPr.append(el)
+        for k, v in atributos.items():
+            el.set(qn(k), v)
+
+
+for t_ in doc.tables:
+    fijar_anchos(t_)
+
 doc.save(out)
 print("guardado", out, out.stat().st_size // 1024, "KB;", len(usadas), "figuras")
