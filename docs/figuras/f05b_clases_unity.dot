@@ -1,7 +1,7 @@
 digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=12,color="#00165C",fontcolor="#00165C",shape=record,style=filled]; edge[fontname="Helvetica",fontsize=10,color="#4F1FD0",fontcolor="#00165C"]; rankdir=TB; nodesep=.3; ranksep=.45;
 AppNeuralHub[fillcolor="#E8F0FF",label="{AppNeuralHub|vista, nivel, modoEnVivo\l|Ir(vista)\lElegirNivel(n)\lIniciarSesion()\lEscucharPresentacion(id)\l}"];
-ClienteServicio[fillcolor="#E8F0FF",label="{ClienteServicio|urlBase, usarMock\lrecibidos: Evento[]\lpendiente\l|CrearSesion(nivel)\lSondear() cada 1 s\lEnviarRespuestas()\lPedirSugerencia()\lObtenerAudio(n)\lTranscribir(wav)\l}"];
-ReproductorSesion[fillcolor="#E8F0FF",label="{ReproductorSesion|pausado, velocidad\lturnoUsuario, Progreso\l|ReproducirSiguiente()\lResponder(texto)\lIrA(turno)\lAlternarPausa()\l}"];
+ClienteServicio[fillcolor="#E8F0FF",label="{ClienteServicio|urlBase, usarMock\lrecibidos: Evento[]\lpendiente\l|CrearSesion(nivel)\lSondear() cada 1 s\lEnviarRespuestas()\lPedirSugerencia(borrador)\lExtraerPitch(archivo)\lObtenerAudio(n)\lTranscribir(wav)\l}"];
+ReproductorSesion[fillcolor="#E8F0FF",label="{ReproductorSesion|pausado, velocidad\lturnoUsuario, Progreso\l|ReproducirSiguiente()\lPedirVoz(evento)\lResponder(texto)\lIrA(turno)\lAlternarPausa()\l}"];
 Estudio[fillcolor="#E8F0FF",label="{Estudio|sillones[3]\lpanel: Tiburon[3]\l|IniciarSesion()\lAplicar(evento)\lRetirarPanel()\l}"];
 Tiburon[fillcolor="#E8F0FF",label="{Tiburon|perfilId, estado\lmodelos[2], juegos[6]\l|Asignar(id)\lPreguntar()\lReplicar(postura)\lVotar()\lReaccionar()\l}"];
 Emprendedor[fillcolor="#E8F0FF",label="{Emprendedor|estado, animador\l|Presentar()\lResponder()\lNegociar()\lRecibirResultado()\l}"];
@@ -13,6 +13,7 @@ SetEmprendedor[fillcolor="#E8F0FF",label="{SetEmprendedor|empresa, logo\l|Vestir
 Sonidos[fillcolor="#E8F0FF",label="{Sonidos|vozActiva, musicaActiva\l|Efecto()\lVoz(clip)\lMusical()\lPausarVoz()\l}"];
 TemasPitch[fillcolor="#E8F0FF",label="{TemasPitch|(estática)\l|Detectar(pregunta)\lMostrar(pantalla)\l}"];
 Niveles_Personas[fillcolor="#E8F0FF",label="{Niveles_Personas|(datos estáticos)\l|Ejemplo(nivel)\lDe(id)\l}"];
+DialogoArchivo[fillcolor="#E8F0FF",label="{DialogoArchivo|(estática)\l|Elegir() : ruta\l}"];
 GrabadorVoz[fillcolor="#E8F0FF",label="{GrabadorVoz|(estática)\l|Iniciar()\lDetener() : WAV\l}"];
 Evento[fillcolor="#E8F0FF",label="{Evento|n, ronda, tipo\lemisor, destino, texto\lestado, decision, postura\l|}"];
 Programa[fillcolor="#E8F0FF",label="{Programa|IntroPrograma\lConocerTiburones\lFinalPrograma\lBarraRondas\l|Dibujar()\l}"];
@@ -20,6 +21,6 @@ Pantallas_IMGUI[fillcolor="#E8F0FF",label="{Pantallas_IMGUI|MenuInicio, Formular
 AppNeuralHub->ClienteServicio; AppNeuralHub->ReproductorSesion; AppNeuralHub->Pantallas_IMGUI; AppNeuralHub->Programa; AppNeuralHub->Sonidos;
 ReproductorSesion->Estudio; ReproductorSesion->PantallasDatos; ReproductorSesion->Sonidos; ReproductorSesion->Evento; ReproductorSesion->ClienteServicio[label="audio"];
 Estudio->Tiburon[label="3"]; Estudio->Emprendedor; Estudio->CamaraEstudio; Estudio->Reflector[minlen=2]; Estudio->Pantalla[minlen=2]; Estudio->SetEmprendedor[minlen=2]; Estudio->TemasPitch[minlen=3];
-ClienteServicio->PantallasDatos[style=invis]; Evento->GrabadorVoz[style=invis]; GrabadorVoz->Niveles_Personas[style=invis];
+Pantallas_IMGUI->DialogoArchivo; ClienteServicio->PantallasDatos[style=invis]; Evento->GrabadorVoz[style=invis]; GrabadorVoz->Niveles_Personas[style=invis];
 Pantallas_IMGUI->GrabadorVoz; Pantallas_IMGUI->Niveles_Personas[constraint=false]; Programa->CamaraEstudio[constraint=false];
 }

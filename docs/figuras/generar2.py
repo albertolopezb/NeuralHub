@@ -109,8 +109,8 @@ render("f09b_agente_emprendedor", agente(
     "una pregunta a la vez\\lcontraofertas\\lDECISIÓN\\l",
     "su ficha del pitch\\lhistorial público\\l(no inventa datos)\\l",
     "obtener trato cediendo\\lel menor porcentaje\\l",
-    "responder con su ficha\\lelegir la condición de\\lmayor valuación\\l",
-    "RESPUESTA · OFERTA\\l", A))
+    "responder con su ficha\\lsugerir o mejorar respuesta\\lelegir la condición de\\lmayor valuación\\l",
+    "RESPUESTA · OFERTA\\lSUGERENCIA (al usuario)\\l", A))
 
 # ---- F7 diagrama de secuencia de una ronda (matplotlib)
 import matplotlib

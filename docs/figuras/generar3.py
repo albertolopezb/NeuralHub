@@ -8,7 +8,7 @@ src = f'''digraph G{{ {HEAD} rankdir=LR; nodesep=.35; ranksep=.7; compound=true;
 subgraph cluster_u{{label="Unity (cliente)";fontcolor="{A}";color="{A}";style="rounded,dashed";
  UI[label="Interfaz del usuario\\n(formulario, respuestas,\\nvoz, negociación)"]; CS[label="ClienteServicio\\nUnityWebRequest\\nsondeo cada 1 s"]; RP[label="ReproductorSesion\\ncola de eventos,\\nvoz y navegación"]; UI->CS; CS->RP[label="eventos JSON"];}}
 subgraph cluster_s{{label="Servicio de agentes (FastAPI + LangGraph)";fontcolor="{V}";color="{V}";style="rounded,dashed";
- API[label="API REST\\n/sesiones, /respuestas,\\n/negociacion, /audio, /voz"];
+ API[label="API REST\\n/sesiones, /respuestas,\\n/negociacion, /condiciones,\\n/sugerencia, /pitch/extraer,\\n/audio, /voz"];
  subgraph cluster_g{{label="Grafo de LangGraph: estado compartido (pizarra) + checkpointer";fontcolor="{V}";color="{V}";style="rounded";
   ST[label="Estado de la sesión\\nhistorial público, ronda,\\noferta, votos secretos",shape=cylinder,fillcolor="#FFF3BF"];
   MOD[label="Moderador\\n(determinista)"]; T1[label="Tiburón 1"]; T2[label="Tiburón 2"]; T3[label="Tiburón 3"]; VOT[label="Nodo de votación\\n(regla 2 de 3)"]; EMP[label="Emprendedor\\n(usuario vía interrupt\\no agente empresario)"];

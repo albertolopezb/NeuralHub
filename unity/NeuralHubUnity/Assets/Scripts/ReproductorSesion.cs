@@ -60,6 +60,13 @@ namespace NeuralHub
         readonly Dictionary<int, float> pedidas = new Dictionary<int, float>();
         int tanda;
         const float EsperaMaximaVoz = 9f;
+        float vozRetenida;
+
+        /// <summary>El siguiente turno ya llegó pero su voz aún se está preparando: la interfaz lo avisa.</summary>
+        public bool PreparandoVoz
+        {
+            get { return activo && !pausado && turnoUsuario == null && restante <= 0f && !(sonidos && sonidos.Hablando) && vozRetenida > 0f && Time.realtimeSinceStartup - vozRetenida > 0.8f; }
+        }
 
         bool LlevaVoz(Evento e) { return sonidos && sonidos.vozActiva && TieneVoz(e); }
 
@@ -139,7 +146,11 @@ namespace NeuralHub
             if (turnoUsuario != null) return;   // en vivo: espera a que el usuario responda
             if (restante > 0f) return;
             if (sonidos && sonidos.Hablando) return;      // nadie interrumpe: el siguiente turno espera a que acabe la voz
-            if (!ColaVacia && VozLista(cliente.recibidos[siguiente])) ReproducirSiguiente();
+            if (!ColaVacia)
+            {
+                if (VozLista(cliente.recibidos[siguiente])) { vozRetenida = 0f; ReproducirSiguiente(); }
+                else if (vozRetenida <= 0f) vozRetenida = Time.realtimeSinceStartup;
+            }
         }
 
         public void ReproducirSiguiente()

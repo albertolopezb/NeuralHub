@@ -1,6 +1,7 @@
 digraph G{ bgcolor=white; fontname="Helvetica"; node[fontname="Helvetica",fontsize=13,color="#00165C",fontcolor="#00165C",style="rounded,filled",fillcolor="#E8F0FF",shape=box]; edge[fontname="Helvetica",fontsize=11,color="#4F1FD0",fontcolor="#00165C"]; rankdir=TB; nodesep=.35; ranksep=.32;
 ini[shape=circle,label="",width=.25,fillcolor="#00165C"]; fin[shape=doublecircle,label="",width=.25,fillcolor="#00165C"];
-a1[label="Usuario llena el formulario del pitch"]; a2[label="Python calcula la valuación
+a1[label="Usuario llena el formulario del pitch
+(o lo autocompleta con un documento o texto)"]; a2[label="Python calcula la valuación
 (monto / porcentaje)"];
 a3[label="La app recomienda un panel de 3
 (regla en Python, 0 llamadas)"]; a4[label="Usuario acepta o cambia el panel

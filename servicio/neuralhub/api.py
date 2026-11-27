@@ -10,7 +10,7 @@ import tempfile
 from fastapi.concurrency import run_in_threadpool
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import Response
 from pydantic import BaseModel, ValidationError
 
 from . import panel as P
@@ -176,7 +176,8 @@ def audio(id_: str, n: int):
     e = _evento(id_, n)
     if e["tipo"] in ("REPORTE",):
         raise HTTPException(404, "Este evento no tiene voz")
-    return FileResponse(sintetizar(e["texto"], e["emisor"]), media_type="audio/wav")
+    # se lee completo antes de contestar: así nunca se anuncia un audio que luego no se puede enviar
+    return Response(sintetizar(e["texto"], e["emisor"]).read_bytes(), media_type="audio/wav")
 
 
 @app.post("/voz/transcribir")

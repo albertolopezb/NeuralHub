@@ -100,10 +100,7 @@ namespace NeuralHub
                 if (json == null) { avisoAuto = "No se pudo autocompletar: " + error; return; }
                 var r = JsonUtility.FromJson<ExtraccionDto>(json);
                 var d = r.pitch;
-                if (string.IsNullOrEmpty(d.sector)) d.sector = p.sector;
-                if (string.IsNullOrEmpty(d.etapa)) d.etapa = p.etapa;
-                if (string.IsNullOrEmpty(d.equipo_dedicacion)) d.equipo_dedicacion = p.equipo_dedicacion;
-                if (string.IsNullOrEmpty(d.propiedad_intelectual)) d.propiedad_intelectual = "ninguna";
+                // sector, etapa, dedicación y patente que no vengan en el documento quedan sin marcar
                 Cargar(d);
                 if (d.equipo_fundadores <= 0) sFund = "";
                 if (d.monto_mxn <= 0) sMonto = "";
@@ -210,7 +207,8 @@ namespace NeuralHub
 
         public bool Completo()
         {
-            return !string.IsNullOrWhiteSpace(p.nombre) && !string.IsNullOrWhiteSpace(p.problema) && !string.IsNullOrWhiteSpace(p.solucion) &&
+            return !string.IsNullOrEmpty(p.sector) && !string.IsNullOrEmpty(p.etapa) &&
+                   !string.IsNullOrWhiteSpace(p.nombre) && !string.IsNullOrWhiteSpace(p.problema) && !string.IsNullOrWhiteSpace(p.solucion) &&
                    !string.IsNullOrWhiteSpace(p.mercado_objetivo) && !string.IsNullOrWhiteSpace(p.modelo_ingresos) && !string.IsNullOrWhiteSpace(p.uso_fondos) &&
                    Num(sMonto) > 0 && Num(sPct) > 0 && Num(sPct) <= 100 && Num(sFund) >= 1;
         }
@@ -799,6 +797,14 @@ namespace NeuralHub
                     GUILayout.Label(p.motivo, Estilos.TextoChico);
                 }
                 GUILayout.EndArea();
+            }
+
+            if (r.PreparandoVoz || (r.enVivo && r.turnoUsuario == null && r.ColaVacia && !r.Ocupado && app.cliente.pendiente == null && app.cliente.estadoSesion == "corriendo"))
+            {
+                string espera = (r.PreparandoVoz ? "Preparando la voz" : "Los tiburones están pensando") + new string('.', 1 + (int)(Time.unscaledTime * 3f) % 3);
+                var rEspera = new Rect(W / 2 - 210, 140, 420, 40);
+                GUI.Box(rEspera, GUIContent.none, Estilos.CajaClara);
+                GUI.Label(rEspera, espera, new GUIStyle(Estilos.Etiqueta) { alignment = TextAnchor.MiddleCenter });
             }
 
             // Resultado grande

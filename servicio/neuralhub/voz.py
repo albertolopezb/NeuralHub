@@ -5,6 +5,7 @@ Ambos corren en la computadora del servicio, sin costo y sin enviar audio a terc
 
 import hashlib
 import math
+import os
 import re
 import threading
 from pathlib import Path
@@ -73,9 +74,13 @@ def sintetizar(texto: str, emisor: str) -> Path:
     rate_sapi = max(-10, min(10, round(rate - 10 * math.log(timbre) / math.log(3))))
     clave = hashlib.sha1(f"{emisor}|{nombre}|{rate}|{timbre}|{graves}|{eco}|{texto}".encode("utf8")).hexdigest()[:20]
     ruta = CACHE / f"{clave}.wav"
-    if ruta.exists():
+    if ruta.exists():          # solo existe cuando ya está completo (se publica con un cambio de nombre)
         return ruta
     with _lock_tts:
+        if ruta.exists():      # otro hilo lo terminó mientras esperábamos
+            return ruta
+        # Se escribe en un archivo temporal: si se entregara a medio escribir, Unity recibe el audio cortado.
+        parcial = ruta.with_name(ruta.stem + ".parcial.wav")
         import comtypes
         import comtypes.client
         comtypes.CoInitialize()
@@ -88,14 +93,15 @@ def sintetizar(texto: str, emisor: str) -> Path:
             fmt = comtypes.client.CreateObject("SAPI.SpAudioFormat")
             fmt.Type = 22  # SAFT22kHz16BitMono
             stream.Format = fmt
-            stream.Open(str(ruta), 3)  # SSFMCreateForWrite
+            stream.Open(str(parcial), 3)  # SSFMCreateForWrite
             voz.AudioOutputStream = stream
             voz.Rate = rate_sapi
             voz.Speak(_limpiar(texto), 0)
             stream.Close()
         finally:
             comtypes.CoUninitialize()
-        _personalizar(ruta, timbre, graves, eco)
+        _personalizar(parcial, timbre, graves, eco)
+        os.replace(parcial, ruta)
     return ruta
 
 

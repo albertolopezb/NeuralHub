@@ -13,7 +13,7 @@ def render(nombre, src, motor=DOT, extra=()):
 # ---- F1 actividades
 render("f01_actividades", f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.35; ranksep=.32;
 ini[shape=circle,label="",width=.25,fillcolor="{N}"]; fin[shape=doublecircle,label="",width=.25,fillcolor="{N}"];
-a1[label="Usuario llena el formulario del pitch"]; a2[label="Python calcula la valuación\n(monto / porcentaje)"];
+a1[label="Usuario llena el formulario del pitch\n(o lo autocompleta con un documento o texto)"]; a2[label="Python calcula la valuación\n(monto / porcentaje)"];
 a3[label="La app recomienda un panel de 3\n(regla en Python, 0 llamadas)"]; a4[label="Usuario acepta o cambia el panel\ny pulsa «Iniciar sesión»"];
 a5[label="Intro del episodio y pitch hablado\n(la petición va al final)"];
 subgraph cluster_r{{label="Ronda k (k = 1, 2, 3)";fontname="Helvetica";fontcolor="{V}";color="{V}";style="rounded,dashed";
