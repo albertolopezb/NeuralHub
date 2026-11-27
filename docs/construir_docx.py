@@ -816,7 +816,7 @@ bullets([
     "Repositorio: " + REPO + " (carpetas servicio, prototipo_un_agente, unity y docs).",
     "Video del primer incremento (2 min): " + VIDEO,
     "Transcripciones completas y métricas: servicio/sesiones/ y servicio/resultados_prueba.json (15 sesiones); prototipo_un_agente/sesiones/ (6 corridas). Corridas anteriores citadas en la comparación: servicio/sesiones/anterior_inc2 (flujo anterior) y servicio/sesiones/anterior_regla (antes del ajuste de contraofertas) y servicio/sesiones/anterior_preguntas (antes de las preguntas por ángulos).",
-    "Pruebas automáticas: servicio/tests (52 pruebas con el modelo simulado; una recorre las 27 combinaciones de votos y la de voz usa SAPI y Whisper locales). Dependencias en servicio/requirements.txt.",
+    "Pruebas automáticas: servicio/tests (53 pruebas con el modelo simulado; una recorre las 27 combinaciones de votos y la de voz usa SAPI y Whisper locales). Dependencias en servicio/requirements.txt.",
     "Video de la sesión en vivo (Unity + servicio + voz): " + VIDEO2,
     "Evaluación del incremento 2: servicio/resultados_prueba.json (15 sesiones), resultados_prueba_ciega.json, pruebas/prueba_ciega_humana.csv (planilla para la prueba con una persona), resultados_niveles.json (niveles) y resultados_vivo.json (3 sesiones en vivo).",
     "Assets y licencias: unity/paquetes_terceros.md.",

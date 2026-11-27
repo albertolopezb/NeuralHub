@@ -485,7 +485,7 @@ namespace NeuralHub
             GUI.SetNextControlName("respuesta_en_vivo");
             var area = new Rect(x + 28, y + 56, anchoTexto, Alto - 56 - 46);
             string nuevo = GUI.TextArea(area, texto, 600, Estilos.Area);
-            if (nuevo != texto) { texto = nuevo; }
+            if (nuevo != texto) { texto = nuevo; sugerida = false; }
             if (enfocar && ev.type == EventType.Repaint) { GUI.FocusControl("respuesta_en_vivo"); enfocar = false; }
             GUI.Label(new Rect(x + 28, area.yMax + 8, anchoTexto, 26), texto.Length + " / 600   ·   Ctrl + Enter para responder", Estilos.Color_(Estilos.TextoChico, Estilos.Tenue));
 

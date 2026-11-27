@@ -88,3 +88,16 @@ def test_api_sugerencia(monkeypatch):
     assert r.status_code == 200 and r.json()["texto"]
     sid2 = c.post("/sesiones", json={"pitch": PITCH, "panel": PANEL, "modo": "humano"}).json()["sesion_id"]
     assert c.post(f"/sesiones/{sid2}/sugerencia", json={"tiburon_id": PANEL[0]}).status_code == 403
+
+
+def test_mejorar_solo_ve_la_pregunta_y_el_borrador(monkeypatch):
+    """Si el editor recibiera la ficha, cambiaría la respuesta del usuario por otra armada con el pitch."""
+    s = en_vivo(True)
+    turno = s.pendiente["preguntas"][0]["tiburon_id"]
+    vistos = []
+    original = s.llm.estructurado
+    monkeypatch.setattr(s.llm, "estructurado", lambda e, sis, usr: vistos.append((sis, usr)) or original(e, sis, usr))
+    s.sugerir(turno, "mi texto propio con una idea mia")
+    sistema, usuario = vistos[-1]
+    assert "editor de estilo" in sistema and "mi texto propio con una idea mia" in usuario
+    assert "TU FICHA" not in usuario and PITCH["problema"] not in usuario
