@@ -1,0 +1,8 @@
+Extracto de unity/servicio_vivo.log (27 nov 2026): prueba de dictado de una persona, sesión bcfa5336, con el modelo real.
+"POST /sesiones HTTP/1.1" 200 OK
+"POST /sesiones HTTP/1.1" 200 OK
+"POST /voz/transcribir HTTP/1.1" 200 OK
+"POST /voz/transcribir HTTP/1.1" 200 OK
+"POST /voz/transcribir HTTP/1.1" 200 OK
+"POST /sesiones/bcfa5336/sugerencia HTTP/1.1" 200 OK
+"POST /sesiones/bcfa5336/sugerencia HTTP/1.1" 200 OK
