@@ -546,7 +546,7 @@ for f in sorted((SERV.parent / "prototipo_un_agente" / "sesiones").glob("*.json"
     rondas = max(e["ronda"] for e in ev)
     from neuralhub.tiburones import TIBURONES
     crit = "sí" if menciona_criterio(voto["texto"], tib) else "no"
-    rows.append((idea, TIBURONES[tib]["nombre"], d["llamadas"], rondas, d["segundos"], dec.title(), crit))
+    rows.append((idea, TIBURONES[tib]["nombre"], d["llamadas"], rondas, d["segundos"], dec.capitalize(), crit))
 p("**Salida estructurada.** Cada agente devuelve su resultado con un esquema validado (Pydantic) y no como texto libre: la pregunta (Pregunta), la réplica (Replica con postura de acuerdo o desacuerdo), el voto (Voto con decisión, justificación y contraoferta opcional) y el reporte (Reporte con calificación de 1 a 5 por tiburón). Los demás usos del modelo también tienen esquema: respuestas del agente empresario (Respuestas), voto final (VotoFinal), sugerencia (Sugerencia) y autocompletar (PitchExtraido). Ejemplo de un evento real de voto producido por una corrida:", align="j", keep=True)
 ev_demo = next(e for e in json.load(open(SERV / "sesiones" / "demo_ejemplo2.json", encoding="utf8"))["eventos"] if e["tipo"] == "VOTO" and e.get("votacion") == 1)
 ev_demo = {k: ev_demo[k] for k in ("n", "ronda", "tipo", "emisor", "destino", "decision", "votacion", "texto")}
@@ -557,7 +557,7 @@ p("Cada corrida usó 8 llamadas (pitch, 3 preguntas, 3 respuestas y 1 voto). Una
 
 # transcripción de una sesión real
 demo = json.load(open(SERV / "sesiones" / "demo_ejemplo2.json", encoding="utf8"))
-p("**Transcripción real (recortada)** de una sesión completa con el panel financiero, estratega y tecnológico (pitch DataSense AI, responde el agente empresario). "
+p("**Transcripción real (recortada)** de una sesión completa con el panel financiero, estratega y tecnológico (pitch DataSense AI, responde el agente empresario; servicio/sesiones/demo_ejemplo2.json). "
   f"La sesión usó {demo['metricas']['llamadas_modelo']} llamadas en {demo['metricas']['segundos_total']} s y terminó en «{demo['metricas']['resultado'].replace('_', ' ')}»" + (" después de negociar." if demo["metricas"]["hubo_negociacion"] else " sin negociación."), align="j", keep=True)
 sel = []
 vistos = set()
@@ -574,7 +574,7 @@ p(f"**Resultados de las {NS} sesiones de prueba** (5 pitches × 3 sesiones, guio
 fil_res = []
 for pid in ("P1", "P2", "P3", "P4", "P5"):
     xs = [x for x in res if x["pitch_id"] == pid]
-    fil_res.append((pid, {"solido": "sólido", "debil": "débil"}.get(xs[0]["tipo"], xs[0]["tipo"].replace("_", " ")), ", ".join(TIBURONES[t]["nombre"].split()[-1].capitalize() for t in xs[0]["panel"]),
+    fil_res.append((pid, {"solido": "sólido", "debil": "débil"}.get(xs[0]["tipo"], xs[0]["tipo"].replace("_", " ").replace("debil", "débil")), ", ".join(TIBURONES[t]["nombre"].split()[-1].capitalize() for t in xs[0]["panel"]),
                     "/".join(str(x["llamadas_modelo"]) for x in xs), f"{sum(x['segundos_total'] for x in xs) / 3:.1f}",
                     ", ".join(x["resultado"].replace("_", " ").capitalize() for x in xs), "sí" if any(x["hubo_negociacion"] for x in xs) else "no"))
 tabla(["Pitch", "Tipo", "Panel fijo", "Llamadas (3 ses.)", "Seg. prom.", "Resultados", "Negoc."], fil_res, anchos=[1.2, 2.6, 4.2, 2.4, 1.6, 3.6, 1.4], size=8.5)
@@ -599,7 +599,7 @@ tabla(["Sesión", "Negocio", "Nivel", "Eventos", "Llamadas", "Resultado", "Enví
     (s_["sesion"], s_["negocio"], {"facil": "Fácil", "medio": "Medio", "dificil": "Difícil"}[s_["nivel"]], s_["eventos"], s_["llamadas"], s_["resultado"].replace("_", " ").capitalize(),
      f"{sum(1 for x in s_['latencias'] if x['segundos'] < 10)} de {len(s_['latencias'])} ({max(x['segundos'] for x in s_['latencias']):.1f} s)") for s_ in vivo["sesiones"]],
     anchos=[2.1, 2.6, 1.6, 1.6, 2.0, 2.4, 4.7], size=9)
-figura("vivo", 13.5, "Sesión en vivo: la pregunta del tiburón y la respuesta antes de enviarse, con «Recomendación del agente empresario» o «Mejorar lo que escribí» y «Dictar con voz».")
+figura("vivo", 16.5, "Sesión en vivo: la pregunta del tiburón y la respuesta antes de enviarse, con «Recomendación del agente empresario» o «Mejorar lo que escribí» y «Dictar con voz».")
 p(f"**Sesión con una persona** (27 nov, sesión {humana['id']}, servicio/sesiones/sesion_{humana['id']}.json): un integrante del equipo jugó en el editor de Unity en modo en vivo con ayuda, nivel Medio, con el negocio {humana['pitch']['nombre']}, "
   f"y llegó hasta el reporte: {hm['n_eventos']} eventos, {h_resp} respuestas enviadas, {hm['llamadas_modelo']} llamadas al modelo ({hm['sugerencias']} de ellas de ayuda) y resultado «{hm['resultado'].replace('_', ' ')}». "
   "En 8 de las 9 respuestas el texto enviado tiene la forma de las recomendaciones del agente y solo la del mensaje 4 es claramente suya, así que esta sesión prueba el flujo con una persona, no la calidad de sus respuestas. Como los votos a favor fueron contraofertas, eligió una de ellas, como exige la regla actual. El servicio no registró errores. En una segunda sesión (bcfa5336) la misma persona probó el dictado con su micrófono: el servicio completó 3 transcripciones sin errores y, según reportó, aguantó grabaciones de hasta 120 segundos; a veces cambia algunas palabras, por eso el texto se revisa antes de enviarlo. "
@@ -610,7 +610,7 @@ for nv, nom in (("facil", "Fácil"), ("medio", "Medio"), ("dificil", "Difícil")
     xs = [x for x in niveles if x["nivel"] == nv]
     votos_n = [v for x in xs for _, v in x["votos"][:3]]
     fil_niv.append((nom, f"{sum(x['palabras_por_pregunta'] for x in xs) / len(xs):.0f}", f"{sum(x['preguntas_con_tecnicismos'] for x in xs)} de {9 * len(xs)}",
-                    ", ".join(f"{votos_n.count(v)} {v}" for v in ("invertir", "contraoferta", "salir")), ", ".join(x["resultado"].replace("_", " ").title() for x in xs)))
+                    ", ".join(f"{votos_n.count(v)} {v}" for v in ("invertir", "contraoferta", "salir")), ", ".join(x["resultado"].replace("_", " ").capitalize() for x in xs)))
 tabla(["Nivel", "Palabras por pregunta", "Preguntas con tecnicismos", "Votos de la primera votación", "Resultados"], fil_niv, anchos=[2.0, 2.4, 2.8, 5.6, 4.2], size=9)
 p("Hallazgos del proceso: (a) el agente empresario inventaba cifras; se ajustó el prompt para que responda «aún no lo sé» y diga qué haría para averiguarlo, pero todavía afirma cosas que no están en la ficha (por ejemplo, en el mensaje 18 de la transcripción dice haber probado prototipos con más datos; ver la sección 10); "
   "(b) una réplica se dirigía a un tiburón distinto del indicado; ahora el moderador asigna el destino; (c) el mapeo de respuestas por id fallaba en una ronda; ahora tiene un respaldo por posición.", align="j")
@@ -786,7 +786,7 @@ p(f"**Incremento 2.** En las {NS} sesiones de prueba contra Azure OpenAI todas t
   f"El {pct(p_crit, p_tot)} de las preguntas aborda el criterio de quien pregunta y el {pct(p_dato, p_tot)} cita una cifra, comillas o dice que falta (indicador estrecho, meta 85 %); las justificaciones con criterio y cifra pasaron de {pct(cd1_ok, cd1_tot)} a {pct(cd_ok, cd_tot)}; hubo réplica en {r_tot} de {r_tot} rondas y el dueño del criterio débil votó «salir» o «contraoferta» en {dueno_sale} de {len(debiles)} sesiones. "
   f"En vivo, Unity y el servicio completaron 3 sesiones ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s). Al comparar los niveles con el mismo negocio, Fácil hizo preguntas más cortas y Difícil preguntas largas y más exigentes (ver la tabla de niveles). Tras probar el juego el 27 de noviembre se añadieron: autocompletar el pitch desde un documento o texto, mejora de la respuesta escrita, dictado de hasta 2 minutos, voz a la vez que el texto, voz que se calla al continuar, recomendar y mejorar por separado, tiburones que se presentan solos, nombre y personalidad de cada tiburón, preguntas con un ángulo distinto en cada ronda (las que mencionan algoritmo o patente pasaron de 35 a 25 de 135) y una apariencia nueva para Estela, Teo, Coral y Ramiro. En esta última versión el nivel Fácil usa ángulos amables y no vota «salir» por una situación hipotética.", align="j")
 p(f"**Lo que falta.** El objetivo 2 no se cumple todavía: en la prueba con una persona hubo {ciega_h['aciertos']} de {ciega_h['mensajes']} aciertos ({ciega_h['porcentaje']} %); el juez automático dio {ciega['porcentaje']} % con las instrucciones finales (antes {ciega_previa2['porcentaje']} % y {ciega_prev['porcentaje']} %, y {ciega_ant['porcentaje']} % con el flujo anterior; meta 80 %). "
-  f"En el objetivo 3, la cita de un dato quedó en {pct(p_dato, p_tot)} con el indicador automático. Al revisar este incremento vimos que una cifra más alta de ese indicador se debía a que contaba como dato el número de marcas internas como «(R0)»; esas marcas ya se retiran del texto y la cifra reportada es sin ellas. "
+  f"En el objetivo 3, la cita de un dato quedó en {pct(p_dato, p_tot)} con el indicador automático. Al revisar este incremento vimos que, en una medición intermedia distinta de la de 104 (servicio/sesiones/anterior_regla), una cifra más alta de ese indicador se debía a que contaba como dato el número de marcas internas como «(R0)»; esas marcas ya se retiran del texto y la cifra reportada es sin ellas. "
   "En la evaluación fija ningún tiburón votó «invertir» en la primera votación, así que los tratos salen de contraofertas y los pitches débiles P3 y P4 también cierran trato en peores condiciones; en el nivel Fácil sí hubo votos «invertir». "
   "Las sesiones automatizadas contestan con las recomendaciones del agente empresario, y en ellas se vio que a veces afirma cosas que el pitch no dice (un equipo dedicado a monitorear el algoritmo, ceder «hasta un 25 %» o entregar cifras en 6 meses). Por eso la respuesta sugerida se puede editar antes de enviarla; ajustar su instrucción y medirlo queda para el Sprint 3. "
   "Falta la prueba con 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
