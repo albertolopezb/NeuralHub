@@ -295,7 +295,7 @@ tabla(["Comentario de la profesora", "Cómo se atendió", "Sección"], [
     ("Dicen que los tiburones debaten, pero no hay mensajes de tiburón a tiburón.",
      "Se creó el mensaje RÉPLICA (tiburón → tiburón), una por ronda, presente en el grafo, la tabla de mensajes, la figura de comunicaciones, el código y la escena.", "7.3, 7.5, 8.1"),
     ("Seis jueces son muchos (≈40 llamadas): ¿se van a seleccionar entre ellos?",
-     "Hay 6 tiburones y en cada sesión participan 3, recomendados por una regla en Python (0 llamadas) y elegidos por el usuario. Presupuesto: máximo 19 llamadas si el usuario responde sin ayuda; medido en las 15 sesiones de prueba (guion fijo): máximo %d. En vivo, las sesiones con ayuda usaron de 25 a 28 porque cada recomendación que el usuario pide suma una (tope 37)." % llam_max, "7, 7.3"),
+     "Hay 6 tiburones y en cada sesión participan 3, recomendados por una regla en Python (0 llamadas) y elegidos por el usuario. Presupuesto: máximo 19 llamadas si el usuario responde sin ayuda; medido en las 15 sesiones de prueba (guion fijo): máximo %d. En vivo, las sesiones con ayuda usaron de 24 a 28 porque cada recomendación que el usuario pide suma una (tope 37)." % llam_max, "7, 7.3"),
     ("Escena: no se describen los controles del usuario.",
      "Se describen y se construyeron en Unity: formulario, elección de panel, respuestas, negociación, pausa, velocidad, anterior, siguiente e ir a un turno, voz y silencio, historial y repetir sesión.", "8.1"),
     ("Portada, créditos e identidad (10/10) y roles por integrante.",
