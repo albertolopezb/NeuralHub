@@ -402,7 +402,7 @@ bullets([
     "El nodo de votación revela los votos y aplica la regla: con 2 o 3 a favor se eligen condiciones (la oferta original solo si 2 o más votaron «invertir»; si no, una contraoferta, o el usuario las rechaza y no hay trato); con 1 a favor hay una negociación y una segunda votación; con 0 no hay trato.",
     "Un último paso genera el reporte; Unity muestra la celebración o el hundimiento, el cierre del episodio y la retroalimentación.",
 ], style="List Number")
-figura("act", 7.8, "Diagrama de actividades de una sesión.")
+figura("act", 6.8, "Diagrama de actividades de una sesión.")
 figura("clases_s", 17.0, "Diagrama de clases del servicio de agentes (Python).")
 figura("clases_u", 16.5, "Diagrama de clases de la aplicación de Unity (C#).")
 
