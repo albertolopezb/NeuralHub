@@ -36,6 +36,7 @@ render("f05a_clases_servicio", [
     'Pitch->Panel; Panel->GrafoSesion; GrafoSesion->AgenteTiburon[label="3"]; GrafoSesion->AgenteEmprendedor; GrafoSesion->Moderador; GrafoSesion->NodoVotacion;',
     'AgenteTiburon->LLM; AgenteEmprendedor->LLM[style=dashed,label="agente empresario"]; Sesion->GrafoSesion; Sesion->LLM; API_FastAPI->Sesion; API_FastAPI->Voz; API_FastAPI->Extraer; Extraer->LLM;',
 ])
+HEAD = HEAD.replace("fontsize=12,", "fontsize=17,").replace("fontsize=10,", "fontsize=15,")
 render("f05b_clases_unity", [
     rec("AppNeuralHub", ["vista, nivel, modoEnVivo"], ["Ir(vista)", "ElegirNivel(n)", "IniciarSesion()", "EscucharPresentacion(id)"], tipo="MonoBehaviour"),
     rec("ClienteServicio", ["urlBase, usarMock", "recibidos: Evento[]", "pendiente"], ["CrearSesion(nivel)", "Sondear() cada 1 s", "EnviarRespuestas()", "PedirSugerencia(borrador)", "ExtraerPitch(archivo)", "ObtenerAudio(n)", "Transcribir(wav)"], tipo="MonoBehaviour"),

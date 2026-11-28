@@ -27,7 +27,7 @@ ini->a1->a2->a3->a4->a5->r1; r4->r1[label="sí"]; r4->v[label="no"]; v->d;
 d->c1[label="2 o 3"]; d->n1[label="1"]; d->s[label="0"]; c1->t; c1->s[label="rechaza"]; n1->n2->d2; d2->t[label="sí"]; d2->s[label="no"]; t->rep; s->rep; rep->fin;}}''')
 
 # ---- F2 estados del tiburón
-render("f02_estados_tiburon", f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.6; ranksep=.5;
+render("f02_estados_tiburon", f'''digraph G{{ {HEAD.replace("fontsize=13,", "fontsize=18,").replace("fontsize=11,", "fontsize=17,")} rankdir=TB; nodesep=.6; ranksep=.5;
 s[shape=circle,label="",width=.25,fillcolor="{N}"];
 Fuera[label="Fuera del panel"]; Esp[label="Esperando"]; Esc[label="Escuchando"]; Pre[label="Preguntando"]; Eva[label="Evaluando"]; Rep[label="Replicando",fillcolor="#E5DBFF"]; Vot[label="Votando"]; Rea[label="Reaccionando"];
 s->Fuera; Fuera->Esp[label="elegido en\nel panel"]; Esp->Esc[label="pitch"]; Esc->Pre[label="su turno\nde preguntar"]; Pre->Esc[label="responden\nsu pregunta"];

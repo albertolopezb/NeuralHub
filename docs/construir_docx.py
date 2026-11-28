@@ -210,6 +210,37 @@ def _condiciones_debiles():
             contra += d["condiciones"]["origen"] != "original"
     return trato, contra
 deb_trato, deb_contra = _condiciones_debiles()
+
+
+def _valuacion_conservada():
+    """Fracción de la valuación pedida que conserva cada trato, por pitch (evento DECISIÓN de cada sesión)."""
+    datos = json.load(open(SERV / "pruebas" / "pitches_prueba.json", encoding="utf8"))
+    lista = datos if isinstance(datos, list) else datos.get("pitches") or datos.get("items")
+    base = {x.get("id") or x.get("pitch_id"): (x.get("pitch", x)["monto_mxn"] / x.get("pitch", x)["porcentaje"]) for x in lista}
+    por = {}
+    for f in sorted(glob.glob(str(SERV / "sesiones" / "prueba" / "P*_s*.json"))):
+        d = [e for e in json.load(open(f, encoding="utf8"))["eventos"] if e["tipo"] == "DECISION"][-1]
+        if d["resultado"] == "TRATO":
+            c = d["condiciones"]
+            pid = Path(f).name[:2]
+            por.setdefault(pid, []).append((c["monto_mxn"] / c["porcentaje"]) / base[pid])
+    return por
+
+
+vc = _valuacion_conservada()
+
+
+def _prom(*ids):
+    xs = [v for i in ids for v in vc.get(i, [])]
+    return round(100 * sum(xs) / len(xs))
+
+
+def _rango(pid):
+    return f"{round(100 * min(vc[pid]))} a {round(100 * max(vc[pid]))} %"
+
+
+texto_valuacion = (f"Los tratos sí distinguen por las condiciones: los pitches sólidos conservaron en promedio {_prom('P1', 'P2')} % de la valuación que pedían y los débiles {_prom('P3', 'P4')} %. "
+                   f"No es una separación limpia: el sólido P2 quedó en {_rango('P2')} y el débil P3 en {_rango('P3')}.")
 vivo = json.load(open(SERV / "resultados_vivo.json", encoding="utf8"))
 humana = json.load(open(SERV / "sesiones" / "sesion_86ddaa3a.json", encoding="utf8"))
 hm = humana["metricas"]
@@ -243,7 +274,7 @@ tabla(["Observación del primer incremento", "Cómo se atendió", "Sección"], [
     ("HU-08 dice solo «usuario»; especifiquen de qué tipo es.",
      "HU-08 ahora es «Como emprendedor o espectador…». Se revisaron todas las historias: ninguna usa un usuario genérico, y se agregaron HU-10 (emprendedor, voz) y HU-11 (espectador, voces y pantallas).", "6"),
     ("Siguen clasificando el entorno como estático; con la negociación y la segunda votación, revisen si eso sigue aplicando.",
-     "Se reclasificó como dinámico: en la votación los tres tiburones deliberan al mismo tiempo, así que los otros actúan mientras uno decide (sus votos se publican juntos al terminar los tres), y entre la primera y la segunda votación la oferta vigente cambia por una acción del usuario que el tiburón no controla. La razón se explica en la tabla del entorno.", "7.2"),
+     "Se reclasificó como dinámico: en la votación los tres tiburones deliberan al mismo tiempo, así que los otros actúan mientras uno decide (los votos se registran y publican juntos). Fuera de ese momento el grafo avanza por turnos; el alcance se explica en la tabla del entorno.", "7.2"),
 ], anchos=[5.6, 9.2, 2.2])
 h2("Correcciones del anteproyecto (atendidas en el primer incremento)")
 p("Se conservan para dar trazabilidad. Cada comentario de la retroalimentación del anteproyecto (80/100) y la sección donde se atendió:", align="j", keep=True)
@@ -341,7 +372,7 @@ tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)"
     ("7", "**Justificación con evidencia.** Para el final del Sprint 3, al menos el 85 % de las justificaciones de voto menciona el criterio principal del tiburón y al menos un dato concreto de la conversación.",
      f"{cd_ok} de {cd_tot} ({pct(cd_ok, cd_tot)}); en el incremento 1 era {pct(cd1_ok, cd1_tot)}. Cumplido tras ajustar los prompts (T20)."),
     ("8", "**Coherencia con el perfil.** Para el final del Sprint 3, en los pitches débiles o incompletos el tiburón dueño del criterio débil vota «salir» o «contraoferta» en al menos el 80 % de las sesiones; en los pitches sólidos hay trato en al menos 4 de 6 sesiones.",
-     f"{dueno_sale} de {len(debiles)} sesiones débiles o incompletas ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sólidas. Cumplido según la métrica, pero con un límite: en esta corrida hubo {votos_inv} votos «invertir», así que el dueño del criterio solo podía contraofertar o salir. En P3 y P4 (débiles) también hubo trato en {deb_trato} de 6 sesiones; todas por contraoferta, cediendo más que en la oferta original, porque sin votos «invertir» en la primera votación la oferta original ya no se puede conservar (el agente empresario siempre toma la mejor; una persona puede rechazarlas). El panel castiga con condiciones, no siempre con un rechazo."),
+     f"{dueno_sale} de {len(debiles)} sesiones débiles o incompletas ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sólidas. Cumplido según la métrica, pero con un límite: en esta corrida hubo {votos_inv} votos «invertir», así que el dueño del criterio solo podía contraofertar o salir. En P3 y P4 (débiles) también hubo trato en {deb_trato} de 6 sesiones; todas por contraoferta, cediendo más que en la oferta original, porque sin votos «invertir» en la primera votación la oferta original ya no se puede conservar (el agente empresario siempre toma la mejor; una persona puede rechazarlas). El panel castiga con condiciones, no siempre con un rechazo." + " " + texto_valuacion),
     ("9", "**Integración con Unity.** Para el final del Sprint 3, el servicio emite en orden el 100 % de los eventos de las 15 sesiones, Unity completa sesiones en vivo, y en el 90 % de los envíos del usuario la siguiente intervención llega en menos de 10 s.",
      f"Eventos en orden en {ordenok} de {NS} sesiones; 3 sesiones en vivo en Unity ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s, promedio {vivo['promedio_s']:.1f} s), con un usuario automatizado que contesta con la sugerencia del agente empresario, grabadas con la versión final. Además, una persona completó otra sesión en vivo (86ddaa3a). Cumplido en la prueba."),
     ("10", "**Retroalimentación útil.** Para la entrega final, al menos 5 usuarios ajenos al equipo usan la app con su propia idea y al menos el 80 % califica el reporte con 4 o 5 de 5 en utilidad.",
@@ -460,7 +491,7 @@ tabla(["Característica", "Clasificación", "Razón"], [
     ("**Observabilidad**", "Parcialmente observable", "Todos ven el pitch y el historial público, pero no el razonamiento interno de los demás. La votación es secreta y simultánea: nadie ve otros votos hasta que el nodo de votación los publica."),
     ("**Determinismo**", "Estocástico", "El modelo de lenguaje puede responder distinto con la misma entrada; el orden de turnos, la recomendación del panel y la regla de decisión son deterministas."),
     ("**Episodios**", "Secuencial", "Cada pregunta, respuesta y réplica depende de lo anterior, y el voto depende de todo el debate."),
-    ("**Cambio**", "Dinámico", "El entorno puede cambiar mientras un tiburón delibera: en la votación los otros dos actúan al mismo tiempo (los tres votan en paralelo y sus votos se publican juntos, sin verse antes), y en la negociación la oferta vigente cambia por una acción del usuario que el tiburón no controla. Fuera de la votación el grafo avanza por turnos y se pausa mientras el usuario responde. Se revisó tras la observación del primer incremento."),
+    ("**Cambio**", "Dinámico", "En la votación los otros dos agentes actúan mientras un tiburón delibera: las tres decisiones se toman al mismo tiempo y se registran juntas. Ese cambio no se ve hasta que se publican (por eso también es parcialmente observable). Fuera de la votación el grafo avanza por turnos y se pausa mientras el usuario responde u oferta, así que el carácter dinámico se limita a la votación. Se revisó tras la observación del primer incremento."),
     ("**Valores**", "Discreto", "Hay turnos y rondas contables y un conjunto finito de acciones."),
     ("**Agentes**", "Multiagente", "Tres tiburones por sesión, elegidos de un catálogo de seis, que cooperan y compiten, y un emprendedor con objetivo opuesto (obtener el trato cediendo lo menos posible)."),
 ], anchos=[3.2, 3.4, 10.4], size=9.5)
@@ -528,7 +559,7 @@ tabla(["Ruta", "Para qué"], [
 
 h2("7.5 Implementación preliminar del modelo")
 p("Se implementaron dos niveles. El primero es **un agente resolviendo el problema**: un tiburón y el agente emprendedor se comunican con los mensajes del modelo (PITCH, PREGUNTA, RESPUESTA, VOTO, DECISIÓN) en un grafo de 5 nodos sobre Azure OpenAI. "
-  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Video del primer incremento (corrida completa, 2 min): " + VIDEO + ". Video del incremento 2 en vivo (versión final): " + VIDEO2 + ". Código y evidencia ejecutable: " + REPO + " (carpetas prototipo_un_agente y servicio; las transcripciones completas están en las carpetas sesiones y los comandos para repetir cada corrida en el README).", align="j")
+  "El segundo es el **sistema completo** de este documento (3 tiburones, réplica, voto secreto, negociación, reporte y API). Video del primer incremento (corrida completa, 2 min): " + VIDEO + ". Video del incremento 2 en vivo (versión final): " + VIDEO2 + ". Código y evidencia ejecutable: " + REPO + " (carpetas prototipo_un_agente y servicio; las transcripciones completas están en las carpetas sesiones y los comandos para repetir cada corrida en el README).", align=None)
 p(f"**Grafo.** {'L' + F('grafo')[1:]} es el grafo exportado del código. Los nodos son presentar, preguntar, responder, replicar, votar, decidir, condiciones, negociar, revotar y reporte. preguntar y responder se repiten hasta que los 3 tiburones preguntaron; la lógica del moderador vive en presentar, preguntar y replicar, y la votación en decidir y revotar. "
   "Las aristas punteadas son condicionales (¿faltan tiburones?, ¿k < 3?, resultado de la votación). El estado de LangGraph guarda el pitch, el panel, la ronda, el historial público, los votos y la oferta vigente; "
   "el nodo «responder» usa interrupt para pausar el grafo hasta que el usuario responde.", align="j")
@@ -594,7 +625,7 @@ tabla(["Tiburón", "25 nov (flujo anterior)", "26 nov", "27 nov, antes", "27 nov
 h3("Múltiples agentes funcionando en vivo")
 p("Se probó el sistema completo de punta a punta: el ejecutable de Unity contra el servicio real con Azure OpenAI, con un usuario automatizado: en cada pregunta pide la sugerencia del agente empresario y la envía desde el mismo campo que usa una persona (cada sugerencia suma 1 llamada). "
   "En las tres sesiones los tiburones preguntaron uno por uno, replicaron entre ellos y votaron en secreto; el pitch, las preguntas, las réplicas y los votos se escucharon con su voz y las respuestas del usuario con la voz del emprendedor. La del nivel Difícil pasó por negociación y terminó sin trato; en las otras dos los votos a favor incluyeron contraofertas y se eligió una, como exige la regla. "
-  "Video de una sesión en vivo grabada desde el ejecutable con la versión final: " + VIDEO2 + " . Las tres sesiones de la tabla se grabaron el 27 de noviembre con esa versión.", align="j", keep=True)
+  "Video de una sesión en vivo grabada desde el ejecutable con la versión final: " + VIDEO2 + " . Las tres sesiones de la tabla se grabaron el 27 de noviembre con esa versión.", align=None, keep=True)
 tabla(["Sesión", "Negocio", "Nivel", "Eventos", "Llamadas", "Resultado", "Envíos bajo 10 s (máximo)"], [
     (s_["sesion"], s_["negocio"], {"facil": "Fácil", "medio": "Medio", "dificil": "Difícil"}[s_["nivel"]], s_["eventos"], s_["llamadas"], s_["resultado"].replace("_", " ").capitalize(),
      f"{sum(1 for x in s_['latencias'] if x['segundos'] < 10)} de {len(s_['latencias'])} ({max(x['segundos'] for x in s_['latencias']):.1f} s)") for s_ in vivo["sesiones"]],
@@ -701,13 +732,13 @@ comp = [
     ("Tiburones inversionistas", "Dos modelos animados (Sharky y Mako; Ramiro, Coral y Aurelio usan el cuerpo robusto) con corbata del color del perfil, salvo Estela y Coral, que llevan collar; saludan, asienten, niegan, saltan o se encogen según su estado.", "tiburon_2", "Quaternius, Pirate Kit (CC0); se quitaron las armas y se tiñó el pantalón."),
     ("Identidad de cada tiburón", "Accesorio (sombrero de copa; lentes de gato, melena, moño y perlas; lentes rectangulares y audífonos de diadema con micrófono; flor y collar de perlas con dije; birrete; fedora y cadena), objeto en el podio (monedas, pieza de ajedrez, laptop, bolsa, libros, maletín) y emblema flotante.", "tiburon_1", "Juan Esteban Jaramillo; creación propia por código."),
     ("Podios y paletas de voto", "Podio con aro del color del perfil y letrero; paleta con DENTRO (invertir), OFERTA (contraoferta) o FUERA (salir).", "paleta", "Equipo; creación propia."),
-    ("Emprendedor y su escenografía", "Personaje animado (saluda, explica, celebra o se lamenta) y escenografía con el nombre del programa, el logotipo del sector y la empresa.", "emprendedor", "Quaternius, Ultimate Modular Men (CC0); escenografía propia."),
+    ("Emprendedor y su escenografía", "Personaje animado (saluda, explica, celebra o se lamenta) y escenografía con el nombre del programa, el logotipo del sector y la empresa.", "comp_emprendedor", "Quaternius, Ultimate Modular Men (CC0); escenografía propia."),
     ("Fauna del ventanal", "Peces, mantarraya, delfín y tiburón animados que nadan detrás del cristal (en la imagen, acercamiento a dos de los peces).", "fauna", "Quaternius, Animated Fish Pack y Pirate Kit (CC0)."),
-    ("Pantallas", "Principal: lámina del tema de cada pregunta (15 ilustraciones propias por sector y tema). Laterales: oferta y votos con barras.", "estudio_general", "Equipo; ilustraciones propias (docs/figuras/generar_ilustraciones.py)."),
-    ("Sonido", "Música de fondo, cortinilla, fanfarria, hundimiento y cierre originales; efectos de turno y voto; voces es-MX por personaje.", "estudio_general", "Equipo; música sintetizada (docs/figuras/generar_musica.py) y Windows SAPI [19]."),
+    ("Pantallas", "Principal: lámina del tema de cada pregunta (15 ilustraciones propias por sector y tema). Laterales: oferta y votos con barras.", "comp_pantallas", "Equipo; ilustraciones propias (docs/figuras/generar_ilustraciones.py)."),
+    ("Sonido", "Música de fondo, cortinilla, fanfarria, hundimiento y cierre originales (la imagen muestra su forma de onda); efectos de turno y voto; voces es-MX por personaje.", "comp_sonido", "Equipo; música sintetizada (docs/figuras/generar_musica.py) y Windows SAPI [19]."),
 ]
 for n, d, im, fu in comp:
-    ficha_tabla([("Nombre", n), ("Descripción", d), ("Imagen", ""), ("Fuente", fu)], imagen=im, ancho_img=6.5)
+    ficha_tabla([("Nombre", n), ("Descripción", d), ("Imagen", ""), ("Fuente", fu)], imagen=im, ancho_img={"comp_pantallas": 12.5, "comp_sonido": 12.5}.get(im, 6.5))
 p("**Assets externos usados.** Todos están integrados en la escena de este incremento:", align="j", keep=True)
 tabla(["Asset", "Uso", "Autor", "Fuente", "Licencia"], [
     ("Pirate Kit (Sharky, Mako, Shark)", "Tiburones inversionistas y tiburón que nada", "Quaternius", "https://quaternius.com/packs/piratekit.html", "CC0"),
@@ -720,8 +751,8 @@ tabla(["Asset", "Uso", "Autor", "Fuente", "Licencia"], [
 h2("8.3 Prefabs")
 pref = [
     ("Tiburon", "Personaje del panel con los dos modelos, el juego de accesorios de cada perfil, aro, letrero y paleta de voto. Se instancia 3 veces al iniciar la sesión.", "tiburon_1", "Tiburon.cs"),
-    ("Sillon (estación: el podio)", "Tarima y podio redondeado. Hay 3 en semicírculo mirando al emprendedor.", "tiburon_2", "(solo geometría)"),
-    ("Emprendedor", "Personaje animado del usuario.", "emprendedor", "Emprendedor.cs"),
+    ("Sillon (estación: el podio)", "Tarima y podio redondeado. Hay 3 en semicírculo mirando al emprendedor.", "comp_podio", "(solo geometría)"),
+    ("Emprendedor", "Personaje animado del usuario.", "comp_emprendedor", "Emprendedor.cs"),
 ]
 for n, d, im, sc in pref:
     ficha_tabla([("Nombre", n), ("Descripción", d), ("Imagen", ""), ("Scripts", sc)], imagen=im, ancho_img=6.0)
@@ -787,7 +818,7 @@ p(f"**Incremento 2.** En las {NS} sesiones de prueba contra Azure OpenAI todas t
   f"En vivo, Unity y el servicio completaron 3 sesiones ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s). Al comparar los niveles con el mismo negocio, Fácil hizo preguntas más cortas y Difícil preguntas largas y más exigentes (ver la tabla de niveles). Tras probar el juego el 27 de noviembre se añadieron: autocompletar el pitch desde un documento o texto, mejora de la respuesta escrita, dictado de hasta 2 minutos, voz a la vez que el texto, voz que se calla al continuar, recomendar y mejorar por separado, tiburones que se presentan solos, nombre y personalidad de cada tiburón, preguntas con un ángulo distinto en cada ronda (las que mencionan algoritmo o patente pasaron de 35 a 25 de 135) y una apariencia nueva para Estela, Teo, Coral y Ramiro. En esta última versión el nivel Fácil usa ángulos amables y no vota «salir» por una situación hipotética.", align="j")
 p(f"**Lo que falta.** El objetivo 2 no se cumple todavía: en la prueba con una persona hubo {ciega_h['aciertos']} de {ciega_h['mensajes']} aciertos ({ciega_h['porcentaje']} %); el juez automático dio {ciega['porcentaje']} % con las instrucciones finales (antes {ciega_previa2['porcentaje']} % y {ciega_prev['porcentaje']} %, y {ciega_ant['porcentaje']} % con el flujo anterior; meta 80 %). "
   f"En el objetivo 3, la cita de un dato quedó en {pct(p_dato, p_tot)} con el indicador automático. Al revisar este incremento vimos que, en una medición intermedia distinta de la de 104 (servicio/sesiones/anterior_regla), una cifra más alta de ese indicador se debía a que contaba como dato el número de marcas internas como «(R0)»; esas marcas ya se retiran del texto y la cifra reportada es sin ellas. "
-  "En la evaluación fija ningún tiburón votó «invertir» en la primera votación, así que los tratos salen de contraofertas y los pitches débiles P3 y P4 también cierran trato en peores condiciones; en el nivel Fácil sí hubo votos «invertir». "
+  "En la evaluación fija ningún tiburón votó «invertir» en la primera votación, así que los tratos salen de contraofertas y los pitches débiles P3 y P4 también cierran trato. " + texto_valuacion + f" Además, en el nivel Fácil sí hubo votos «invertir». "
   "Las sesiones automatizadas contestan con las recomendaciones del agente empresario, y en ellas se vio que a veces afirma cosas que el pitch no dice (un equipo dedicado a monitorear el algoritmo, ceder «hasta un 25 %» o entregar cifras en 6 meses). Por eso la respuesta sugerida se puede editar antes de enviarla; ajustar su instrucción y medirlo queda para el Sprint 3. "
   "Falta la prueba con 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
 

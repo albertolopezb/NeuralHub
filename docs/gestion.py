@@ -129,7 +129,7 @@ BITACORA_E3 = [
     ("Sección de comunicación entre agentes y diagrama de arquitectura", "Gilberto Olavarrieta", "26 nov 2026"),
     ("Dictado por micrófono, voces y navegación por la conversación en Unity", "Franco Salazar", "25–26 nov 2026"),
     ("Iluminación submarina, pantallas con datos, íconos por sector y sonidos", "Juan Esteban Jaramillo", "25–26 nov 2026"),
-    ("Prueba en vivo Unity–servicio con medición de latencia", "Alberto López", "25–26 nov 2026"),
+    ("Prueba en vivo Unity–servicio con medición de latencia", "Alberto López", "25–27 nov 2026"),
     ("Pitch hablado y preguntas una por una", "Alberto López", "26 nov 2026"),
     ("Niveles de dificultad y modo en vivo con sugerencia del agente", "Gerardo Islas", "26 nov 2026"),
     ("Escenario caricatura con modelos CC0 y personalidad de cada tiburón", "Juan Esteban Jaramillo", "26 nov 2026"),
