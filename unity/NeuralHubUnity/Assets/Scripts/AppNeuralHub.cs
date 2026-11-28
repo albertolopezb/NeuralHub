@@ -62,6 +62,9 @@ namespace NeuralHub
 
         void Start()
         {
+            // 30 cuadros por segundo: sin límite, la gráfica integrada trabaja al máximo y al grabar la pantalla la computadora se traba
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 30;
             cliente.alError = m => mensaje = m;
             foreach (var a in Environment.GetCommandLineArgs())
                 if (a == "-nh-mock" || a == "-nh-capturar" || (a == "-nh-video" && !Arg("-nh-vivo"))) cliente.usarMock = true;
