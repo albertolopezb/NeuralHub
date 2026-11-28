@@ -278,7 +278,7 @@ p("**Estrategia de solución.** Un servicio en Python ejecuta los agentes con La
   "no en el modelo, para controlar el costo y evitar cifras inventadas.", align="j")
 p("**Alcance de este incremento.** Múltiples agentes funcionando en vivo: la app de Unity conversa con el servicio real y se documenta cómo se comunican y deciden los agentes. La sesión ahora funciona como un programa de televisión, «Aguas Profundas»: "
   "intro del episodio, el emprendedor presenta su pitch hablado y deja la petición para el final, los tiburones preguntan uno por uno y cada respuesta llega antes de la siguiente pregunta. Hay tres niveles de dificultad (Fácil, Medio y Difícil), "
-  "cada tiburón tiene nombre, voz y apariencia propios, la pantalla del estudio muestra el tema de cada pregunta y el episodio termina con celebración o hundimiento y un cierre. El usuario escribe sus respuestas; también puede dictarlas con la voz (implementado; se probará con usuarios en el Sprint 3).", align="j")
+  "cada tiburón tiene nombre, voz y apariencia propios, la pantalla del estudio muestra el tema de cada pregunta y el episodio termina con celebración o hundimiento y un cierre. El usuario escribe sus respuestas; también puede dictarlas con la voz (un integrante del equipo lo probó; falta probarlo con usuarios externos, en el Sprint 3).", align="j")
 
 # ---------- 2 créditos ----------
 h1("2. Créditos")
