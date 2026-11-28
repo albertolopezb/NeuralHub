@@ -17,7 +17,7 @@ HISTORIAS = [
     ("HU-01", "Como emprendedor, quiero capturar mi pitch en un formulario con campos guiados, para que el panel lo evalúe con datos completos.", "Emprendedor", "Alta", 5, "Sprint 1", "Hecha"),
     ("HU-02", "Como emprendedor, quiero ver qué tiburones me recomienda la app y por qué, y poder cambiarlos, para elegir un panel útil para mi negocio.", "Emprendedor", "Alta", 5, "Sprint 1", "Hecha"),
     ("HU-03", "Como emprendedor, quiero ver en el estudio quién habla, con subtítulos, cámara y reflector, para seguir la conversación.", "Emprendedor", "Alta", 5, "Sprint 1", "Hecha"),
-    ("HU-04", "Como emprendedor, quiero responder por escrito las preguntas de cada ronda, para defender mi idea con mis propios datos.", "Emprendedor", "Alta", 5, "Sprint 2", "Hecha (falta validar con una persona)"),
+    ("HU-04", "Como emprendedor, quiero responder por escrito las preguntas de cada ronda, para defender mi idea con mis propios datos.", "Emprendedor", "Alta", 5, "Sprint 2", "Hecha"),
     ("HU-05", "Como espectador, quiero ver a los tiburones debatir entre ellos, para entender por qué coinciden o discrepan.", "Espectador", "Media", 3, "Sprint 1", "Hecha"),
     ("HU-06", "Como emprendedor, quiero recibir la decisión (trato o sin trato) y poder negociar si solo hay un voto a favor, para mejorar mi oferta.", "Emprendedor", "Alta", 8, "Sprint 2", "Hecha"),
     ("HU-07", "Como emprendedor, quiero un reporte de retroalimentación por tiburón con los criterios que no se evaluaron, para saber qué mejorar en mi pitch.", "Emprendedor", "Alta", 5, "Sprint 2", "Hecha"),

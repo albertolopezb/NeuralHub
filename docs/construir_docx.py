@@ -210,6 +210,9 @@ def _condiciones_debiles():
     return trato, contra
 deb_trato, deb_contra = _condiciones_debiles()
 vivo = json.load(open(SERV / "resultados_vivo.json", encoding="utf8"))
+humana = json.load(open(SERV / "sesiones" / "sesion_86ddaa3a.json", encoding="utf8"))
+hm = humana["metricas"]
+h_resp = sum(1 for e in humana["eventos"] if e["tipo"] == "RESPUESTA")
 lat = [x["segundos"] for s_ in vivo["sesiones"] for x in s_["latencias"]]
 lat_ok = sum(1 for x in lat if x < 10)
 ev_vivo = sum(s_["eventos"] for s_ in vivo["sesiones"])
@@ -339,7 +342,7 @@ tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)"
     ("8", "**Coherencia con el perfil.** Para el final del Sprint 3, en los pitches débiles o incompletos el tiburón dueño del criterio débil vota «salir» o «contraoferta» en al menos el 80 % de las sesiones; en los pitches sólidos hay trato en al menos 4 de 6 sesiones.",
      f"{dueno_sale} de {len(debiles)} sesiones débiles o incompletas ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sólidas. Cumplido según la métrica, pero con un límite: en esta corrida hubo {votos_inv} votos «invertir», así que el dueño del criterio solo podía contraofertar o salir. En P3 y P4 (débiles) también hubo trato en {deb_trato} de 6 sesiones; todas por contraoferta, cediendo más que en la oferta original, porque sin votos «invertir» en la primera votación la oferta original ya no se puede conservar (el agente empresario siempre toma la mejor; una persona puede rechazarlas). El panel castiga con condiciones, no siempre con un rechazo."),
     ("9", "**Integración con Unity.** Para el final del Sprint 3, el servicio emite en orden el 100 % de los eventos de las 15 sesiones, Unity completa sesiones en vivo, y en el 90 % de los envíos del usuario la siguiente intervención llega en menos de 10 s.",
-     f"Eventos en orden en {ordenok} de {NS} sesiones; 3 sesiones en vivo en Unity ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s, promedio {vivo['promedio_s']:.1f} s), con un usuario automatizado que contesta con la sugerencia del agente empresario (grabadas antes del ajuste de la regla de contraofertas). Cumplido en la prueba."),
+     f"Eventos en orden en {ordenok} de {NS} sesiones; 3 sesiones en vivo en Unity ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s, promedio {vivo['promedio_s']:.1f} s), con un usuario automatizado que contesta con la sugerencia del agente empresario (grabadas antes del ajuste de la regla de contraofertas). Además, una persona completó una sesión en vivo con la versión final (86ddaa3a). Cumplido en la prueba."),
     ("10", "**Retroalimentación útil.** Para la entrega final, al menos 5 usuarios ajenos al equipo usan la app con su propia idea y al menos el 80 % califica el reporte con 4 o 5 de 5 en utilidad.",
      "Pendiente (tarea T31)."),
 ], anchos=[0.8, 10.4, 5.8], size=9)
@@ -595,6 +598,10 @@ tabla(["Sesión", "Negocio", "Nivel", "Eventos", "Llamadas", "Resultado", "Enví
      f"{sum(1 for x in s_['latencias'] if x['segundos'] < 10)} de {len(s_['latencias'])} ({max(x['segundos'] for x in s_['latencias']):.1f} s)") for s_ in vivo["sesiones"]],
     anchos=[2.0, 2.8, 1.6, 1.5, 1.6, 2.4, 5.1], size=9)
 figura("vivo", 13.5, "Sesión en vivo: la pregunta del tiburón y la respuesta antes de enviarse, con «Recomendación del agente empresario» o «Mejorar lo que escribí» y «Dictar con voz».")
+p(f"**Sesión con una persona y la versión final** (27 nov, sesión {humana['id']}, servicio/sesiones/sesion_{humana['id']}.json): un integrante del equipo jugó en el editor de Unity en modo en vivo con ayuda, nivel Medio, con el negocio {humana['pitch']['nombre']}, "
+  f"y llegó hasta el reporte: {hm['n_eventos']} eventos, {h_resp} respuestas enviadas, {hm['llamadas_modelo']} llamadas al modelo ({hm['sugerencias']} de ellas de ayuda, una por pregunta) y resultado «{hm['resultado'].replace('_', ' ')}». "
+  "Como los votos a favor fueron contraofertas, eligió una de ellas, como exige la regla actual. El servicio no registró errores. En esta sesión no se usó el dictado por voz, que sigue sin validarse con la versión final. "
+  "En un intento anterior ese mismo día el juego dejó de avanzar al responder porque el audio llegaba cortado; se corrigió antes de esta sesión.", align="j")
 p("**Los niveles se sienten distintos.** Mismo negocio (EcoTrack) y mismo panel en los tres niveles, 2 sesiones por nivel con el modelo real (servicio/resultados_niveles.json):", align="j", keep=True)
 fil_niv = []
 for nv, nom in (("facil", "Fácil"), ("medio", "Medio"), ("dificil", "Difícil")):
@@ -779,8 +786,8 @@ p(f"**Incremento 2.** En las {NS} sesiones de prueba contra Azure OpenAI todas t
 p(f"**Lo que falta.** El objetivo 2 requiere la prueba con una persona; el juez automático dio {ciega['porcentaje']} % con las instrucciones finales (antes {ciega_previa2['porcentaje']} % y {ciega_prev['porcentaje']} %, y {ciega_ant['porcentaje']} % con el flujo anterior; meta 80 %). "
   f"En el objetivo 3, la cita de un dato quedó en {pct(p_dato, p_tot)} con el indicador automático. Al revisar este incremento vimos que una cifra más alta de ese indicador se debía a que contaba como dato el número de marcas internas como «(R0)»; esas marcas ya se retiran del texto y la cifra reportada es sin ellas. "
   "En la evaluación fija ningún tiburón votó «invertir» en la primera votación, así que los tratos salen de contraofertas y los pitches débiles P3 y P4 también cierran trato en peores condiciones; en el nivel Fácil sí hubo votos «invertir». "
-  "Las pruebas en vivo usaron un usuario automatizado que contesta con las sugerencias del agente empresario; en una respuesta calculó mal el costo de adquisición (dividió el gasto mensual entre los usuarios de prueba) y los tiburones lo retomaron. Se corrigió su instrucción, pero no se han repetido las sesiones en vivo. "
-  "Faltan la prueba con una persona que dicte sus respuestas y la de 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
+  "Las pruebas en vivo usaron un usuario automatizado que contesta con las sugerencias del agente empresario; en una respuesta calculó mal el costo de adquisición (dividió el gasto mensual entre los usuarios de prueba) y los tiburones lo retomaron. Se corrigió su instrucción; las tres sesiones automatizadas no se han repetido, pero una persona completó una sesión con la versión final. "
+  "Faltan validar el dictado con una persona en la versión final y la prueba con 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
 
 h1("11. Referencias")
 refs = [
@@ -815,6 +822,7 @@ h2("Anexo A. Evidencias y código")
 bullets([
     "Repositorio: " + REPO + " (carpetas servicio, prototipo_un_agente, unity y docs).",
     "Video del primer incremento (2 min): " + VIDEO,
+    "Sesión jugada por una persona con la versión final: servicio/sesiones/sesion_86ddaa3a.json.",
     "Transcripciones completas y métricas: servicio/sesiones/ y servicio/resultados_prueba.json (15 sesiones); prototipo_un_agente/sesiones/ (6 corridas). Corridas anteriores citadas en la comparación: servicio/sesiones/anterior_inc2 (flujo anterior) y servicio/sesiones/anterior_regla (antes del ajuste de contraofertas) y servicio/sesiones/anterior_preguntas (antes de las preguntas por ángulos).",
     "Pruebas automáticas: servicio/tests (53 pruebas con el modelo simulado; una recorre las 27 combinaciones de votos y la de voz usa SAPI y Whisper locales). Dependencias en servicio/requirements.txt.",
     "Video de la sesión en vivo (Unity + servicio + voz): " + VIDEO2,
