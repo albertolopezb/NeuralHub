@@ -1,0 +1,457 @@
+{
+  "id": "f5d34d16",
+  "modo": "humano",
+  "ayuda": true,
+  "nivel": "medio",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "EcoTrack",
+    "sector": "sustentabilidad_y_energia",
+    "etapa": "primeras_ventas",
+    "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+    "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+    "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+    "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+    "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+    "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+    "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+    "propiedad_intelectual": "marca",
+    "equipo_roles": "Ingeniería, ventas y finanzas",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+    "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+    "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+    "equipo_fundadores": 3,
+    "ventas_12m_mxn": 180000,
+    "margen_bruto_pct": 38,
+    "gasto_mensual_mxn": 25000,
+    "monto_mxn": 300000,
+    "porcentaje": 10
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "EcoTrack",
+        "sector": "sustentabilidad_y_energia",
+        "etapa": "primeras_ventas",
+        "problema": "Los hogares y pequeños negocios no saben en qué gastan luz y sus recibos son muy altos.",
+        "solucion": "Un medidor conectado que usa IA para detectar consumo excesivo y sugerir ahorros.",
+        "mercado_objetivo": "Hogares y pequeños negocios de Nuevo León con recibos de luz de más de $2,500 MXN al bimestre.",
+        "modelo_ingresos": "Venta del medidor ($1,200 MXN) más suscripción mensual premium de $99 MXN.",
+        "competencia": "Medidores genéricos de ferretería y apps de las compañías eléctricas.",
+        "diferenciador": "Recomendaciones personalizadas con IA sin instalación profesional.",
+        "validacion": "500 usuarios beta y $50,000 MXN en preventas.",
+        "propiedad_intelectual": "marca",
+        "equipo_roles": "Ingeniería, ventas y finanzas",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Dos ingenieros con 4 años en empresas de energía.",
+        "uso_fondos": "Mejorar el producto, marketing y contratar al equipo.",
+        "discurso": "¡Buenas tardes, tiburones! Piensen en la última vez que les llegó un recibo de luz altísimo y no supieron por qué. Eso les pasa a miles de hogares y negocios pequeños. Les presentamos EcoTrack: un medidor que se conecta sin instalador y usa inteligencia artificial para detectar qué está gastando de más y cómo ahorrar. Vendemos el medidor en 1,200 pesos y tenemos una suscripción de 99 pesos al mes. Ya tenemos 500 usuarios de prueba y 50 mil pesos en preventas. Venimos por 300 mil pesos a cambio del 10 por ciento de EcoTrack para mejorar el producto y salir al mercado. ¿Quién se anima a ahorrar con nosotros?",
+        "equipo_fundadores": 3,
+        "ventas_12m_mxn": 180000,
+        "margen_bruto_pct": 38,
+        "gasto_mensual_mxn": 25000,
+        "monto_mxn": 300000,
+        "porcentaje": 10
+      },
+      "valuacion_mxn": 3000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Estela Marín (Tiburón estratega), Teo Navarro (Tiburón tecnológico).",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. Con esos $25,000 mensuales de gasto y $180,000 al año en ventas, ¿cuánto les cuesta atraer a un cliente y qué margen neto esperan después de ese gasto?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Aún no tenemos calculado el costo exacto de adquisición, pero con 500 usuarios beta y $50,000 en preventas, estamos analizando esos datos para optimizarlo. Sobre margen neto, nuestro margen bruto es 38%, y con $25,000 mensuales en gastos, trabajamos en eficientar costos para mejorar rentabilidad. Planeamos medir estos indicadores conforme escalamos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Soy Estela Marín, tiburón estratega. Me dices que tu mercado objetivo son hogares y pequeños negocios en Nuevo León con recibos mayores a $2,500. ¿Qué tan grande es ese mercado y cómo planeas defenderlo frente a medidores genéricos y apps de eléctricas para escalar en cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Estela, aún no tenemos el tamaño exacto del mercado, pero enfocarnos en hogares y negocios con recibos altos en Nuevo León nos da un nicho claro y rentable. Nos defendemos con IA que ofrece recomendaciones personalizadas sin instalación profesional, diferenciándonos de medidores genéricos y apps. Con la inversión, fortaleceremos nuestra tecnología y marketing para escalar y consolidar nuestra ventaja competitiva en cinco años.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. En tu pitch dices que usas IA para recomendaciones personalizadas, pero solo mencionas una marca, no patente. ¿Qué tan único es tu algoritmo y tienes pensado protegerlo para que no te copie un medidor genérico? ¡A ver, ábreme el capó!",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Teo, nuestro algoritmo es resultado de la experiencia de dos ingenieros con 4 años en energía, y está diseñado para ofrecer recomendaciones personalizadas únicas. Actualmente tenemos registrada la marca EcoTrack, y estamos evaluando la mejor estrategia para proteger la propiedad intelectual del algoritmo, incluyendo posible patente. Planeamos consultarlo con expertos en propiedad industrial para asegurar nuestra ventaja tecnológica.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Ramiro, tienes toda la razón en pedir números claros de CAC y margen neto; sin eso, la escalabilidad tecnológica puede ser solo un bonito prototipo sin fondo. Que estén analizando es bueno, pero ¡a ver cuándo nos muestran esos datos para validar el algoritmo en producción!",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Con todo respeto, si un medidor genérico baja precios o mejora su app, ¿cómo defenderás ese nicho de hogares con recibos altos en Nuevo León para no perder terreno y poder escalar sin que te quede jaque?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Entiendo el riesgo, pero nuestro diferencial es la IA que brinda recomendaciones personalizadas sin necesidad de instalación profesional, algo que los genéricos no ofrecen. Además, con la inversión mejoraremos el producto y marketing para fortalecer nuestra marca y fidelizar clientes. Seguiremos innovando para mantenernos un paso adelante y defender nuestro nicho ante cualquier competencia.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Si un cliente reporta que el algoritmo da recomendaciones erróneas o inconsistentes con su consumo real, ¿cómo detectan y corrigen esos fallos en producción sin que se les caiga la confianza ni truene el producto?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Contamos con un equipo dedicado que monitorea continuamente el desempeño del algoritmo con nuestros usuarios beta. Si detectamos recomendaciones erróneas, actuamos rápido para ajustar el modelo y comunicamos claramente las correcciones a los clientes para mantener su confianza. Planeamos fortalecer estos procesos con la inversión que pedimos para asegurar un producto confiable y en mejora constante.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Si un cliente con recibo mayor a $2,500 decide cancelar la suscripción mensual de $99 pero sigue usando el medidor, ¿cómo impacta eso tus márgenes y flujo? No me dices ese dato.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente no tenemos datos precisos sobre la tasa de cancelación de suscripciones y su impacto en márgenes y flujo. Para entenderlo mejor, planeamos analizar el comportamiento de nuestros usuarios beta y monitorear la retención mensual tras el lanzamiento, ajustando nuestro modelo financiero para mantener rentabilidad.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estela, coincido contigo en que defender el nicho es clave. Pero si el diferencial es solo la IA sin datos claros de costos y márgenes, eso no cabe en mi hoja de cálculo. Sin un CAC definido y sin flujo claro, la estrategia se queda en buenas intenciones.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "En tu pitch no mencionas si el prototipo o el algoritmo tienen alguna prueba de robustez ante variaciones en el consumo eléctrico real, ¿cómo garantizan que esa IA no se degrade o falsee con distintos perfiles de usuarios en producción?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Actualmente, nuestro algoritmo ha sido probado con 500 usuarios beta, lo que nos ha permitido validar su desempeño en diferentes perfiles de consumo. Seguimos monitoreando su robustez y planeamos mejorar sus capacidades con la inversión para asegurar que no se degrade ni falle ante variaciones reales, manteniendo recomendaciones precisas y confiables.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Con $180,000 anuales y $25,000 mensuales de gasto, ¿qué flujo neto mensual genera el producto hoy, considerando ventas y suscripciones? No me diste ese dato clave para validar rentabilidad.",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Actualmente, con $180,000 MXN en ventas anuales y $25,000 MXN mensuales en gastos, estamos operando con flujo neto negativo, ya que los gastos superan los ingresos. Estamos trabajando para aumentar ventas y optimizar costos. Planeamos monitorear y ajustar nuestro flujo conforme escalamos, para alcanzar rentabilidad sólida.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "En el pitch no me dices cuántos hogares o negocios con recibos mayores a $2,500 hay en Nuevo León; ¿no crees que sin ese dato clave no puedes planear cómo escalar y defender tu mercado en cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Tienes razón, no contamos con ese dato exacto aún. Para planear bien nuestra escalabilidad y defensa de mercado, vamos a realizar un estudio de mercado específico en Nuevo León que nos dé ese número preciso, y así ajustar nuestra estrategia y proyecciones con base en información sólida.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Teo, coincido contigo: sin datos sólidos del tamaño del mercado y sin defensa clara, la robustez técnica no basta para escalar. La IA debe sostenerse con estrategia y mercado definido para que no sea solo un bonito prototipo, sino un negocio que se pueda defender a largo plazo.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Sin un CAC definido ni flujo neto positivo, los números no cuadran para el 10% a 3,000,000. Pido $300,000 por 20% para ajustar valuación y riesgo con ventas de $180,000 y margen bruto 38%. Contraoferta: $300,000 MXN por el 20 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 300000.0,
+      "contraoferta_porcentaje": 20.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "No me dicen el tamaño exacto del mercado ni el CAC, clave para defender y escalar. El margen bruto es 38% y ventas 180,000 MXN; valuación de 3,000,000 MXN parece alta sin datos claros. Pensemos tres jugadas adelante para defender mercado y escalar. Contraoferta: $200,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me prende la idea de IA disruptiva con 500 usuarios beta, pero falta patente y datos de CAC y flujo neto. La valuación de 3M está alta para etapa con $180,000 en ventas y margen 38%. Quiero ver propiedad intelectual y números claros para sumarme. Contraoferta: $200,000 MXN por el 12 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 200000.0,
+      "contraoferta_porcentaje": 12.0
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Elijo la condición de Tiburón tecnológico. $200,000 MXN por el 12 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $200,000 MXN por el 12 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 200000.0,
+        "porcentaje": 12.0,
+        "origen": "tiburon_tecnologico"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Tienen un producto innovador que utiliza IA para ofrecer recomendaciones personalizadas sin instalación profesional, lo que diferencia a EcoTrack de medidores genéricos y apps eléctricas.; Ya cuentan con validación inicial: 500 usuarios beta y $50,000 MXN en preventas, lo que demuestra interés real del mercado.; El equipo fundador está compuesto por ingenieros con experiencia relevante en el sector energético y dedicación a tiempo completo.. Alertas: No cuentan con datos claros y calculados sobre el costo de adquisición de clientes (CAC) ni sobre la tasa de cancelación de suscripciones y su impacto en márgenes y flujo.; No tienen un estudio de mercado definido con el tamaño exacto del mercado objetivo en Nuevo León, lo que limita la planificación estratégica para escalar.; No existe protección definida de la propiedad intelectual del algoritmo; sólo tienen registrada la marca, lo que puede exponer a la empresa a copias y pérdida de ventaja competitiva.. Siguientes pasos: Realizar un estudio de mercado detallado para conocer el tamaño real del nicho objetivo en Nuevo León y ajustar la estrategia de escalabilidad.; Calcular y monitorear el costo de adquisición de clientes (CAC), tasa de retención y su impacto en márgenes para optimizar la rentabilidad.; Definir y ejecutar una estrategia clara de protección de propiedad intelectual para el algoritmo, incluyendo posible patente, que garantice la ventaja competitiva..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "Sin un CAC definido ni flujo neto positivo, los números no cuadran para el 10% a 3,000,000. Contraoferta: $300,000 MXN por el 20 %.",
+            "necesitaria": "Necesito un cálculo claro y confiable del costo de adquisición de clientes y un flujo de caja positivo para validar la rentabilidad y escalabilidad del negocio."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 3,
+            "frase_clave": "No me dicen el tamaño exacto del mercado ni el CAC, clave para defender y escalar. El margen bruto es 38% y ventas 180,000 MXN; valuación de 3,000,000 MXN parece alta sin datos claros.",
+            "necesitaria": "Quiero ver un estudio de mercado detallado con el tamaño real del nicho y una estrategia sólida para defender y escalar el mercado en los próximos cinco años."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 3,
+            "frase_clave": "Falta patente y datos de CAC y flujo neto. La valuación de 3M está alta para etapa con $180,000 en ventas y margen 38%. Quiero ver propiedad intelectual y números claros para sumarme.",
+            "necesitaria": "Requiero protección clara de la propiedad intelectual del algoritmo y evidencias de robustez técnica junto con indicadores financieros claros para confiar en la escalabilidad."
+          }
+        ],
+        "fortalezas": [
+          "Tienen un producto innovador que utiliza IA para ofrecer recomendaciones personalizadas sin instalación profesional, lo que diferencia a EcoTrack de medidores genéricos y apps eléctricas.",
+          "Ya cuentan con validación inicial: 500 usuarios beta y $50,000 MXN en preventas, lo que demuestra interés real del mercado.",
+          "El equipo fundador está compuesto por ingenieros con experiencia relevante en el sector energético y dedicación a tiempo completo."
+        ],
+        "alertas": [
+          "No cuentan con datos claros y calculados sobre el costo de adquisición de clientes (CAC) ni sobre la tasa de cancelación de suscripciones y su impacto en márgenes y flujo.",
+          "No tienen un estudio de mercado definido con el tamaño exacto del mercado objetivo en Nuevo León, lo que limita la planificación estratégica para escalar.",
+          "No existe protección definida de la propiedad intelectual del algoritmo; sólo tienen registrada la marca, lo que puede exponer a la empresa a copias y pérdida de ventaja competitiva."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuánto cuesta atraer a un cliente (CAC) y qué margen neto esperan después de gastos?",
+          "¿Cuál es el tamaño exacto del mercado objetivo de hogares y pequeños negocios con recibos mayores a $2,500 en Nuevo León?",
+          "¿Cómo impacta en márgenes y flujo la cancelación de suscripciones mensuales cuando el cliente sigue usando el medidor?"
+        ],
+        "siguientes_pasos": [
+          "Realizar un estudio de mercado detallado para conocer el tamaño real del nicho objetivo en Nuevo León y ajustar la estrategia de escalabilidad.",
+          "Calcular y monitorear el costo de adquisición de clientes (CAC), tasa de retención y su impacto en márgenes para optimizar la rentabilidad.",
+          "Definir y ejecutar una estrategia clara de protección de propiedad intelectual para el algoritmo, incluyendo posible patente, que garantice la ventaja competitiva."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 200000.0,
+          "porcentaje": 12.0,
+          "origen": "tiburon_tecnologico"
+        },
+        "valuacion_mxn": 3000000.0,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "contraoferta"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 25,
+    "segundos_modelo": 32.6,
+    "segundos_total": 14.4,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 8,
+    "preguntas_citan_dato": 6,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "humano",
+    "ayuda": true,
+    "sugerencias": 9,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

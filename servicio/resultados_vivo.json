@@ -1,8 +1,8 @@
 {
-  "descripcion": "3 sesiones en vivo: ejecutable de Unity contra el servicio con Azure OpenAI; un usuario automatizado contesta cada pregunta con la sugerencia del agente empresario. La latencia va del envío a la llegada del siguiente evento de un agente (no incluye pedir la sugerencia).",
+  "descripcion": "3 sesiones en vivo con la versión final: ejecutable de Unity contra el servicio con Azure OpenAI; un usuario automatizado contesta cada pregunta con la sugerencia del agente empresario. La latencia va del envío a la llegada del siguiente evento de un agente (no incluye pedir la sugerencia).",
   "sesiones": [
     {
-      "sesion": "6d02f5a1",
+      "sesion": "f5d34d16",
       "negocio": "EcoTrack",
       "nivel": "medio",
       "ayuda": true,
@@ -11,12 +11,13 @@
       "sugerencias": 9,
       "resultado": "TRATO",
       "replicas": 3,
-      "segundos_modelo": 29.6,
+      "segundos_modelo": 32.6,
       "panel": [
         "tiburon_financiero",
         "tiburon_estratega",
         "tiburon_tecnologico"
       ],
+      "negociacion": false,
       "latencias": [
         {
           "tipo": "RESPUESTAS",
@@ -24,15 +25,11 @@
         },
         {
           "tipo": "RESPUESTAS",
+          "segundos": 1.3
+        },
+        {
+          "tipo": "RESPUESTAS",
           "segundos": 1.2
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.7
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.4
         },
         {
           "tipo": "RESPUESTAS",
@@ -40,28 +37,32 @@
         },
         {
           "tipo": "RESPUESTAS",
-          "segundos": 1.1
+          "segundos": 1.7
         },
         {
           "tipo": "RESPUESTAS",
-          "segundos": 1.0
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.0
+          "segundos": 1.3
         },
         {
           "tipo": "RESPUESTAS",
           "segundos": 1.7
         },
         {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.3
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.5
+        },
+        {
           "tipo": "CONDICIONES",
-          "segundos": 0.3
+          "segundos": 0.2
         }
       ]
     },
     {
-      "sesion": "f3db2b85",
+      "sesion": "1c4bd10a",
       "negocio": "GreenPlate",
       "nivel": "dificil",
       "ayuda": true,
@@ -70,20 +71,93 @@
       "sugerencias": 9,
       "resultado": "SIN_TRATO",
       "replicas": 3,
-      "segundos_modelo": 37.3,
+      "segundos_modelo": 37.4,
       "panel": [
         "tiburon_financiero",
         "tiburona_consumo",
         "tiburon_negociador"
       ],
+      "negociacion": true,
       "latencias": [
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.5
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.0
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.0
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.6
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.9
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.5
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.7
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.3
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.7
+        },
+        {
+          "tipo": "NEGOCIACION",
+          "segundos": 2.2
+        }
+      ]
+    },
+    {
+      "sesion": "d6fc6910",
+      "negocio": "DataSense AI",
+      "nivel": "facil",
+      "ayuda": true,
+      "eventos": 29,
+      "llamadas": 25,
+      "sugerencias": 9,
+      "resultado": "TRATO",
+      "replicas": 3,
+      "segundos_modelo": 28.7,
+      "panel": [
+        "tiburon_financiero",
+        "tiburon_estratega",
+        "tiburon_tecnologico"
+      ],
+      "negociacion": false,
+      "latencias": [
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.3
+        },
         {
           "tipo": "RESPUESTAS",
           "segundos": 1.1
         },
         {
           "tipo": "RESPUESTAS",
-          "segundos": 1.1
+          "segundos": 1.4
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 0.9
+        },
+        {
+          "tipo": "RESPUESTAS",
+          "segundos": 1.4
         },
         {
           "tipo": "RESPUESTAS",
@@ -95,88 +169,21 @@
         },
         {
           "tipo": "RESPUESTAS",
-          "segundos": 1.3
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.8
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.8
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.6
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.2
-        },
-        {
-          "tipo": "NEGOCIACION",
-          "segundos": 2.1
-        }
-      ]
-    },
-    {
-      "sesion": "7418f9ea",
-      "negocio": "DataSense AI",
-      "nivel": "facil",
-      "ayuda": true,
-      "eventos": 28,
-      "llamadas": 25,
-      "sugerencias": 9,
-      "resultado": "TRATO",
-      "replicas": 3,
-      "segundos_modelo": 27.1,
-      "panel": [
-        "tiburon_financiero",
-        "tiburon_estratega",
-        "tiburon_tecnologico"
-      ],
-      "latencias": [
-        {
-          "tipo": "RESPUESTAS",
           "segundos": 1.2
         },
         {
           "tipo": "RESPUESTAS",
-          "segundos": 0.8
+          "segundos": 1.4
         },
         {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.6
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.1
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 0.9
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.5
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 0.9
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.5
-        },
-        {
-          "tipo": "RESPUESTAS",
-          "segundos": 1.6
+          "tipo": "CONDICIONES",
+          "segundos": 0.1
         }
       ]
     }
   ],
-  "esperas": 29,
-  "bajo_10_s": 29,
-  "maximo_s": 2.1,
-  "promedio_s": 1.31
+  "esperas": 30,
+  "bajo_10_s": 30,
+  "maximo_s": 2.2,
+  "promedio_s": 1.33
 }

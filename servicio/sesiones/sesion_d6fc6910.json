@@ -1,0 +1,457 @@
+{
+  "id": "d6fc6910",
+  "modo": "humano",
+  "ayuda": true,
+  "nivel": "facil",
+  "panel": [
+    "tiburon_financiero",
+    "tiburon_estratega",
+    "tiburon_tecnologico"
+  ],
+  "pitch": {
+    "nombre": "DataSense AI",
+    "sector": "tecnologia",
+    "etapa": "crecimiento",
+    "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+    "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+    "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+    "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+    "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+    "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+    "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+    "propiedad_intelectual": "marca",
+    "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+    "equipo_dedicacion": "tiempo completo",
+    "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+    "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+    "discurso": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+    "equipo_fundadores": 4,
+    "ventas_12m_mxn": 270000,
+    "margen_bruto_pct": 72,
+    "gasto_mensual_mxn": 60000,
+    "monto_mxn": 500000,
+    "porcentaje": 15
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "DataSense AI",
+        "sector": "tecnologia",
+        "etapa": "crecimiento",
+        "problema": "Las PyMEs tienen datos de ventas e inventario pero no cuentan con científicos de datos para usarlos.",
+        "solucion": "Plataforma SaaS que conecta sus hojas de cálculo y sistemas y genera análisis y alertas con IA.",
+        "mercado_objetivo": "PyMEs mexicanas de comercio y servicios con 10 a 100 empleados.",
+        "modelo_ingresos": "Suscripción SaaS por niveles según el volumen de datos.",
+        "competencia": "Herramientas de BI generales como Power BI y consultores independientes.",
+        "diferenciador": "No requiere configuración técnica: el análisis se entrega en lenguaje natural.",
+        "validacion": "50 clientes que pagan y 15 % de crecimiento mensual.",
+        "propiedad_intelectual": "marca",
+        "equipo_roles": "Ingeniería de datos, producto, ventas y operaciones",
+        "equipo_dedicacion": "tiempo completo",
+        "equipo_experiencia": "Tres años promedio en empresas de tecnología.",
+        "uso_fondos": "Crecer el equipo de ingeniería, mejorar la IA y ventas.",
+        "discurso": "¡Hola, tiburones! Les queremos presentar DataSense AI. ¿Han visto cuántas PyMEs guardan sus ventas e inventario en hojas de cálculo y no saben qué hacer con ellas? Contratar a un científico de datos les cuesta demasiado. Por eso creamos DataSense AI: conectas tus hojas y tus sistemas, y la plataforma te explica qué está pasando y te avisa a tiempo, sin configurar nada. Cobramos una suscripción según cuántos datos usas. En el último año vendimos 270 mil pesos, con un margen del 72 por ciento. Hoy venimos a pedirles 500 mil pesos a cambio del 15 por ciento de la empresa para crecer. ¿Quién quiere nadar con nosotros?",
+        "equipo_fundadores": 4,
+        "ventas_12m_mxn": 270000,
+        "margen_bruto_pct": 72,
+        "gasto_mensual_mxn": 60000,
+        "monto_mxn": 500000,
+        "porcentaje": 15
+      },
+      "valuacion_mxn": 3333333.33
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Ramiro Cifuentes (Tiburón financiero), Estela Marín (Tiburón estratega), Teo Navarro (Tiburón tecnológico).",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_financiero",
+          "nombre": "Tiburón financiero",
+          "motivo": "evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector"
+        },
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "su perfil encaja con tu sector"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "Soy Ramiro Cifuentes, tiburón financiero. ¿Cómo logran que el costo de atraer a cada cliente sea sostenible para mantener ese margen del 72%?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Gracias, Ramiro. Actualmente, nuestro margen bruto es del 72%, pero aún estamos analizando detalladamente el costo de adquisición por cliente para optimizarlo. Planeamos medirlo con precisión en nuestro CRM y campañas de marketing para asegurar que siga siendo sostenible y maximice la rentabilidad.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Soy Estela Marín, tiburón estratega. ¿Qué hace única a DataSense AI para que las PyMEs elijan su plataforma y no una herramienta general de BI o consultor independiente?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Hola Estela, DataSense AI es única porque no requiere configuración técnica. Mientras Power BI o consultores necesitan expertos, nosotros entregamos análisis en lenguaje natural, listos para que cualquier PyME entienda y actúe sin complicaciones. Esa simplicidad y enfoque en PyMEs mexicanas nos diferencia y facilita la adopción rápida.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. A ver, ábreme el capó: ¿cómo desarrollaron el algoritmo que traduce datos complejos a análisis en lenguaje natural para PyMEs?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Hola Teo, nuestro algoritmo fue desarrollado por nuestro equipo con experiencia en ingeniería de datos y producto, combinando técnicas de IA y procesamiento de lenguaje natural para interpretar datos complejos y generar análisis claros en lenguaje natural. Estamos continuamente mejorando esta tecnología para mantener nuestra ventaja competitiva y facilitar la toma de decisiones en PyMEs.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_financiero",
+      "texto": "Ramiro, tienes toda la razón en preguntar por el CAC. Sin medirlo bien, ese margen del 72% puede ser puro espejismo. Sin datos claros sobre adquisición, la startup puede truena en producción. ¡Órale, que afinen ese algoritmo financiero ya!",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "¿Cómo imaginas que tu plataforma ayudará a una PyME a defenderse de competidores que usan herramientas más generales en los próximos cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "En cinco años, nuestra plataforma seguirá siendo esencial porque ofrece análisis en lenguaje natural sin necesidad de expertos, facilitando decisiones rápidas y precisas para PyMEs. Esto les permitirá reaccionar ágilmente ante el mercado, algo que las herramientas generales no logran por su complejidad. Además, con el crecimiento actual y mejoras planeadas, reforzaremos esa ventaja adaptándonos a sus necesidades específicas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿cómo vive un usuario de PyME el primer día usando su prototipo con el algoritmo de análisis en lenguaje natural?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "El usuario conecta sus hojas de cálculo y sistemas sin configuraciones técnicas, y en minutos recibe análisis claros y alertas en lenguaje natural. Esto les permite entender rápidamente su situación de ventas e inventario y tomar decisiones informadas desde el primer día, sin necesidad de científicos de datos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Cómo planean que el dinero que piden se convierta en clientes rentables que mantengan o mejoren ese margen del 72%?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "Invertiremos en fortalecer nuestro equipo de ingeniería para perfeccionar la IA y en ventas para captar clientes de manera más eficiente. Esto reducirá costos operativos y mejorará la experiencia del usuario, incrementando la retención y crecimiento. Además, seguiremos analizando el costo de adquisición para mantener nuestro margen bruto del 72% o mejorarlo con estrategias basadas en datos.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_financiero",
+      "destino": "tiburon_estratega",
+      "texto": "Estela, coincido con tu preocupación sobre la ventaja competitiva a largo plazo. El emprendedor dice que la simplicidad y el enfoque en PyMEs son clave; bien, pero sin números claros de clientes ganados y retención, eso no cabe en mi hoja de cálculo. Necesito ver esos datos.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Cuál es la innovación tecnológica más desafiante que quieren implementar con esta inversión para evolucionar su algoritmo o prototipo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "La innovación más desafiante es mejorar la capacidad de nuestro algoritmo para interpretar volúmenes mayores y más variados de datos en tiempo real, manteniendo la precisión y claridad en lenguaje natural. Con la inversión, expandiremos el equipo de ingeniería para integrar técnicas avanzadas de IA que optimicen el análisis y las alertas, asegurando que nuestra plataforma siga siendo la opción más sencilla y eficaz para las PyMEs.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_financiero",
+      "destino": "emprendedor",
+      "texto": "¿Qué resultado financiero específico esperan ver dentro de un año para saber que su inversión mejoró sus márgenes y flujo de efectivo?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_financiero",
+      "texto": "En un año, esperamos aumentar nuestras ventas mensuales y mantener o superar el margen bruto actual del 72 %, reflejando una mayor rentabilidad. Para confirmar esto, implementaremos un sistema de seguimiento financiero detallado que nos permita medir el impacto directo de la inversión en margen y flujo de efectivo.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Querido, ¿qué barreras concretas planeas construir con esta inversión para defender y escalar tu mercado frente a competidores generales en 5 años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Con esta inversión, fortaleceremos nuestro equipo para mejorar la IA que traduce datos a lenguaje natural, creando una experiencia única sin configuración técnica. Así, construiremos barreras tecnológicas difíciles de replicar. También incrementaremos nuestras ventas para consolidar presencia en PyMEs mexicanas, generando fidelidad y volumen que dificulten la entrada de competidores generales.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburon_tecnologico",
+      "texto": "Teo, coincido en que mejorar el algoritmo para manejar datos en tiempo real es clave para escalar y defender el mercado. Sin embargo, me falta claridad en cómo esa innovación se traduce en barreras sostenibles contra competidores. Pensemos tres jugadas adelante.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_financiero",
+      "destino": "nodo_votacion",
+      "texto": "Piden $500,000 por 15%, valuación de $3.33 millones, margen bruto 72%, pero no me dicen el CAC exacto, clave para validar rentabilidad. Ofrezco $400,000 por 15% para mitigar riesgo mientras ajustan su costo de adquisición. Contraoferta: $400,000 MXN por el 15 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 400000.0,
+      "contraoferta_porcentaje": 15.0
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado de PyMEs es grande pero falta aclarar barreras de entrada fuertes. La valuación implícita de $3,333,333 MXN parece alta para $270,000 MXN en ventas y 50 clientes. Quero proteger mi inversión con un mejor porcentaje y margen para escalar. Contraoferta: $500,000 MXN por el 25 %.",
+      "estado": "Votando",
+      "decision": "contraoferta",
+      "votacion": 1,
+      "contraoferta_monto_mxn": 500000.0,
+      "contraoferta_porcentaje": 25.0
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me prende que tienen un algoritmo único que traduce datos a lenguaje natural, sin configuración técnica, algo muy valioso para PyMEs. La innovación tecnológica es clara y validada con 50 clientes y $270,000 MXN en ventas, con un margen del 72%.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "OFERTA",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "Elijo la condición de Tiburón financiero. $400,000 MXN por el 15 %.",
+      "estado": "Negociando"
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $400,000 MXN por el 15 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 400000.0,
+        "porcentaje": 15.0,
+        "origen": "tiburon_financiero"
+      }
+    },
+    {
+      "n": 29,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Solución clara y diferenciada que no requiere configuración técnica, haciendo sencillo el uso para PyMEs.; Validación con 50 clientes que pagan y crecimiento mensual del 15%, mostrando tracción inicial.; Equipo con experiencia relevante y roles definidos, dedicados a tiempo completo al proyecto.. Alertas: Falta de datos precisos sobre el costo de adquisición de clientes y su sostenibilidad para mantener márgenes.; La valuación implícita parece alta en relación con las ventas actuales y tamaño de la base de clientes.; No se mostraron barreras competitivas claras y sostenibles frente a competidores generales de BI o consultores.. Siguientes pasos: Implementar un sistema detallado de medición y control del CAC para optimizar la adquisición y asegurar rentabilidad.; Desarrollar y comunicar claramente barreras competitivas tecnológicas y de mercado para proteger la ventaja frente a competidores.; Fortalecer el equipo de ingeniería para mejorar el algoritmo, especialmente en manejo de datos en tiempo real y escalabilidad, y mostrar resultados concretos..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "calificacion": 3,
+            "frase_clave": "Piden $500,000 por 15%, valuación de $3.33 millones, margen bruto 72%, pero no me dicen el CAC exacto, clave para validar rentabilidad.",
+            "necesitaria": "Necesito ver datos claros y medibles sobre el costo de adquisición de clientes y su impacto en los márgenes para validar la rentabilidad."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 3,
+            "frase_clave": "El mercado de PyMEs es grande pero falta aclarar barreras de entrada fuertes. La valuación implícita de $3,333,333 MXN parece alta para $270,000 MXN en ventas y 50 clientes.",
+            "necesitaria": "Quiero ver barreras competitivas claras y datos precisos de retención y crecimiento de clientes para proteger mi inversión."
+          },
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 4,
+            "frase_clave": "Me prende que tienen un algoritmo único que traduce datos a lenguaje natural, sin configuración técnica, algo muy valioso para PyMEs.",
+            "necesitaria": "Necesitaría ver avances concretos en la mejora del algoritmo, manejo de datos en tiempo real y escalabilidad tecnológica."
+          }
+        ],
+        "fortalezas": [
+          "Solución clara y diferenciada que no requiere configuración técnica, haciendo sencillo el uso para PyMEs.",
+          "Validación con 50 clientes que pagan y crecimiento mensual del 15%, mostrando tracción inicial.",
+          "Equipo con experiencia relevante y roles definidos, dedicados a tiempo completo al proyecto."
+        ],
+        "alertas": [
+          "Falta de datos precisos sobre el costo de adquisición de clientes y su sostenibilidad para mantener márgenes.",
+          "La valuación implícita parece alta en relación con las ventas actuales y tamaño de la base de clientes.",
+          "No se mostraron barreras competitivas claras y sostenibles frente a competidores generales de BI o consultores."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuál es el costo de adquisición de clientes (CAC) y cómo planean mantenerlo sostenible?",
+          "¿Qué barreras concretas construirán para defender el mercado frente a competencia general en 5 años?",
+          "¿Cuáles son los datos precisos de retención y crecimiento de clientes para validar la escalabilidad?"
+        ],
+        "siguientes_pasos": [
+          "Implementar un sistema detallado de medición y control del CAC para optimizar la adquisición y asegurar rentabilidad.",
+          "Desarrollar y comunicar claramente barreras competitivas tecnológicas y de mercado para proteger la ventaja frente a competidores.",
+          "Fortalecer el equipo de ingeniería para mejorar el algoritmo, especialmente en manejo de datos en tiempo real y escalabilidad, y mostrar resultados concretos."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 400000.0,
+          "porcentaje": 15.0,
+          "origen": "tiburon_financiero"
+        },
+        "valuacion_mxn": 3333333.33,
+        "votos_primera_votacion": {
+          "tiburon_financiero": "contraoferta",
+          "tiburon_estratega": "contraoferta",
+          "tiburon_tecnologico": "invertir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburona_consumo",
+            "nombre": "Tiburona de consumo",
+            "criterio": "marca, canales de venta y demanda del producto"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 25,
+    "segundos_modelo": 28.7,
+    "segundos_total": 11.6,
+    "rondas_preguntas": 3,
+    "n_eventos": 29,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 7,
+    "preguntas_citan_dato": 3,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "humano",
+    "ayuda": true,
+    "sugerencias": 9,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}
