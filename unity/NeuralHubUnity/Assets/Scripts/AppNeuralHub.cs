@@ -492,6 +492,10 @@ namespace NeuralHub
             yield return Hasta(() => vista == Vista.Panel, 15f);
             yield return new WaitForSeconds(0.5f);
             yield return Cap(carpeta, "ui_panel");
+            conocer.Abrir(this, Vista.Panel);
+            conocer.Mostrar(this, 2); yield return new WaitForSeconds(1.2f);
+            yield return Cap(carpeta, "12_conocer");
+            conocer.Cerrar(this); yield return new WaitForSeconds(0.4f);
             modoEnVivo = true; ayudaActiva = true; Ir(Vista.Modo);
             yield return new WaitForSeconds(0.5f);
             yield return Cap(carpeta, "ui_modo");

@@ -14,10 +14,17 @@ cd servicio
 python -m venv .venv && .venv\Scripts\activate
 pip install -r requirements.txt
 copy .env.example .env        # y poner AZURE_API_KEY (nunca se sube a git)
-pytest                        # 42 pruebas (modelo simulado; la de voz usa SAPI y Whisper locales)
+pytest                        # 53 pruebas (modelo simulado; la de voz usa SAPI y Whisper locales)
 python ejecutar_sesion.py --ejemplo 0
 python evaluar.py             # 15 sesiones reales
+python comparar_niveles.py    # mismo pitch en los tres niveles
+python prueba_ciega.py        # juez automático del objetivo 2
 uvicorn neuralhub.api:app --port 8000   # NEURALHUB_MOCK=1 para no usar el modelo
+```
+
+Sesión en vivo automatizada (con el servicio encendido; `-nh-ejemplo` 0, 1 o 2 elige el negocio de ejemplo):
+```
+unity\NeuralHubUnity\Build\NeuralHub.exe -nh-vivo -nh-url http://127.0.0.1:8000 -nh-ejemplo 0 -nh-salida <carpeta>
 ```
 
 ## El programa «Aguas Profundas»

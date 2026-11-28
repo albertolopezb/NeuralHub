@@ -30,9 +30,9 @@ d->c1[label="2 o 3"]; d->n1[label="1"]; d->s[label="0"]; c1->t; c1->s[label="rec
 render("f02_estados_tiburon", f'''digraph G{{ {HEAD} rankdir=TB; nodesep=.6; ranksep=.5;
 s[shape=circle,label="",width=.25,fillcolor="{N}"];
 Fuera[label="Fuera del panel"]; Esp[label="Esperando"]; Esc[label="Escuchando"]; Pre[label="Preguntando"]; Eva[label="Evaluando"]; Rep[label="Replicando",fillcolor="#E5DBFF"]; Vot[label="Votando"]; Rea[label="Reaccionando"];
-s->Fuera; Fuera->Esp[label="elegido en\nel panel"]; Esp->Esc[label="pitch"]; Esc->Pre[label="su turno\nde preguntar"]; Pre->Eva[label="el usuario\nresponde"];
-Eva->Esc[label="pregunta\nde otro"]; Eva->Rep[label="se le asigna\nreplicar"]; Rep->Eva[label="réplica\nenviada"]; Eva->Pre[label="siguiente\nronda"]; Eva->Vot[label="terminan\nlas 3 rondas"];
-Vot->Eva[label="negociación"]; Vot->Rea[label="DECISIÓN"]; Rea->Fuera[label="sesión cerrada"];}}''')
+s->Fuera; Fuera->Esp[label="elegido en\nel panel"]; Esp->Esc[label="pitch"]; Esc->Pre[label="su turno\nde preguntar"]; Pre->Esc[label="responden\nsu pregunta"];
+Esc->Eva[label="responden a\notro tiburón"]; Eva->Esc[label="habla otro\ntiburón"]; Eva->Pre[label="su turno"]; Esc->Rep[label="se le asigna\nreplicar"]; Rep->Esc[label="habla otro\ntiburón"]; Esc->Vot[label="terminan las\n3 rondas"];
+Vot->Eva[label="negociación\n(solo una vez)"]; Eva->Vot[label="segunda\nvotación"]; Vot->Rea[label="DECISIÓN"]; Rea->Fuera[label="sesión cerrada"];}}''')
 
 # ---- F3 comunicaciones
 render("f03_comunicaciones", f'''digraph G{{ {HEAD} rankdir=LR; nodesep=.8; ranksep=1.3; compound=true;

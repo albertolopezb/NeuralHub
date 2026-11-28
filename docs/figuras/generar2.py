@@ -83,7 +83,7 @@ subgraph cluster_e{{label="Emprendedor (usuario o agente empresario)";fontcolor=
  e0->Pres; Pres->EspE[label="pitch enviado"]; EspE->Resp[label="llega una\\npregunta"]; Resp->EspE[label="respuesta\\nenviada"]; EspE->Neg[label="1 voto a favor"]; Elig[label="Eligiendo\\ncondiciones"]; EspE->Elig[label="contraofertas"]; Elig->Rec[label="elige o rechaza"]; Neg->EspE[label="oferta enviada"]; EspE->Rec[label="DECISIÓN"];}}
 subgraph cluster_s{{label="Sesión (moderador y nodo de votación)";fontcolor="{A}";color="{A}";style="rounded,dashed";fontname="Helvetica";
  s0[shape=circle,label="",width=.2,fillcolor="{N}"]; Cre[label="Creada"]; Pan[label="Panel de 3\\nlisto"]; Ron[label="Ronda k\\n(k = 1..3)"]; Vot[label="Votación"]; Ngc[label="Negociación"]; Cer[label="Cerrada"];
- s0->Cre; Cre->Pan[label="usuario inicia"]; Pan->Ron[label="pitch"]; Ron->Ron[label="k < 3"]; Ron->Vot[label="k = 3"]; Vot->Ngc[label="1 a favor"]; Ngc->Vot[label="2.ª votación"]; Eli[label="Eligiendo\\ncondiciones"]; Vot->Eli[label="2 o 3 a favor\\ncon contraofertas"]; Eli->Cer[label="trato, o sin trato\\nsi las rechaza"]; Vot->Cer[label="trato / sin trato\\n+ reporte"];}}
+ s0->Cre; Cre->Pan[label="usuario inicia"]; Pan->Ron[label="pitch"]; Ron->Ron[label="k < 3"]; Ron->Vot[label="k = 3"]; Vot->Ngc[label="1 a favor\\n(solo en la 1.ª)"]; Ngc->Vot[label="2.ª y última\\nvotación"]; Eli[label="Eligiendo\\ncondiciones"]; Vot->Eli[label="2 o 3 a favor\\ncon contraofertas"]; Eli->Cer[label="trato, o sin trato\\nsi las rechaza"]; Vot->Cer[label="trato / sin trato\\n+ reporte"];}}
 }}''')
 
 
