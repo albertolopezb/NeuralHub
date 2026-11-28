@@ -1,0 +1,20 @@
+{
+  "resumen": {
+    "fecha": "2026-11-27",
+    "participante": "Juan Esteban Jaramillo",
+    "mensajes": 60,
+    "aciertos": 46,
+    "porcentaje": 76.7,
+    "meta": 80,
+    "por_tiburon": {
+      "tiburon_financiero": "10/10",
+      "tiburon_estratega": "5/10",
+      "tiburon_tecnologico": "8/10",
+      "tiburona_consumo": "7/10",
+      "tiburon_mentor": "8/10",
+      "tiburon_negociador": "8/10"
+    }
+  },
+  "metodo": "Recibió la planilla pruebas/prueba_ciega_humana.csv, sin los autores, y no escribió los prompts. El líder del equipo comparó sus respuestas con el archivo que sí tiene los autores.",
+  "nota": "Se guardan solo los totales reportados por el equipo; las respuestas mensaje por mensaje no están en el repositorio."
+}

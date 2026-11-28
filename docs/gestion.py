@@ -9,7 +9,7 @@ MIEMBROS = ["Alberto López", "Gerardo Islas", "Gilberto Olavarrieta", "Juan Est
 SPRINTS = [
     ("Sprint 1", "lun 16 nov 2026", "vie 20 nov 2026", "Primer incremento: correcciones, servicio de agentes, escena 3D preliminar"),
     ("Sprint 2", "lun 23 nov 2026", "vie 27 nov 2026", "Integración Unity–servicio, prompts, escena 3D con assets, niveles y programa"),
-    ("Sprint 3", "lun 30 nov 2026", "vie 4 dic 2026", "Prueba ciega con persona, métricas en la app, prueba con 5 usuarios y entrega final"),
+    ("Sprint 3", "lun 30 nov 2026", "vie 4 dic 2026", "Subir la prueba ciega a la meta, métricas en la app, prueba con 5 usuarios y entrega final"),
 ]
 
 # id, historia, usuario, prioridad, puntos, sprint, estado
@@ -71,7 +71,7 @@ TAREAS = [
     ("T20", "Ajustar los prompts para que cada justificación cite un dato concreto (meta ≥ 85 %)", B, "Gerardo Islas", "23 nov", "26 nov", "Hecha", "HU-06"),
     ("T21", "Pruebas de integración API ↔ Unity con el servicio en vivo", B, "Gilberto Olavarrieta", "23 nov", "26 nov", "Hecha", "HU-04, HU-06"),
     ("T22", "Ampliar pruebas unitarias del panel recomendado y de la negociación", B, "Franco Salazar", "24 nov", "26 nov", "Hecha", "HU-02, HU-06"),
-    ("T23", "Prueba ciega con persona: identificar al tiburón autor de 60 mensajes sin nombre", B, "Juan Esteban Jaramillo", "30 nov", "3 dic", "Pendiente", "HU-05"),
+    ("T23", "Prueba ciega con persona: identificar al tiburón autor de 60 mensajes sin nombre", B, "Juan Esteban Jaramillo", "27 nov", "27 nov", "Hecha", "HU-05"),
     ("T24", "Historial persistente: cada sesión terminada se guarda en JSON (checkpointer en memoria durante la sesión)", B, "Alberto López", "24 nov", "27 nov", "Hecha", "HU-08"),
     ("T25", "Modelos 3D del estudio: integrar paquetes CC0 de Quaternius (tiburones, emprendedor y peces)", U, "Juan Esteban Jaramillo", "23 nov", "26 nov", "Hecha", "HU-03"),
     ("T26", "Animaciones por estado y ajuste de cámara", U, "Franco Salazar", "23 nov", "27 nov", "Hecha", "HU-03, HU-05"),
@@ -124,6 +124,7 @@ BITACORA_E1 = [
 BITACORA_E3 = [
     ("Correcciones del primer incremento (HU-08 con tipo de usuario; entorno reclasificado como dinámico)", "Gerardo Islas", "26 nov 2026"),
     ("Estilo distintivo por tiburón, prueba ciega automatizada y nueva evaluación de 15 sesiones", "Gerardo Islas", "25–26 nov 2026"),
+    ("Prueba ciega con persona sobre 60 mensajes sin nombre (46 aciertos)", "Juan Esteban Jaramillo", "27 nov 2026"),
     ("Servicio de voz (texto a voz y voz a texto)", "Gilberto Olavarrieta", "25 nov 2026"),
     ("Sección de comunicación entre agentes y diagrama de arquitectura", "Gilberto Olavarrieta", "26 nov 2026"),
     ("Dictado por micrófono, voces y navegación por la conversación en Unity", "Franco Salazar", "25–26 nov 2026"),
