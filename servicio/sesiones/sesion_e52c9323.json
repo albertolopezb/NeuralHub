@@ -1,0 +1,435 @@
+{
+  "id": "e52c9323",
+  "modo": "humano",
+  "ayuda": true,
+  "nivel": "facil",
+  "panel": [
+    "tiburon_tecnologico",
+    "tiburon_estratega",
+    "tiburona_consumo"
+  ],
+  "pitch": {
+    "nombre": "ParkVision",
+    "sector": "tecnologia",
+    "etapa": "prototipo",
+    "problema": "Conductor tarda en promedio 15 minutos en encontrar lugar en estacionamiento y 12% se van sin estacionar; plazas no generan ventas desde estacionamiento.",
+    "solucion": "Software que usa cámaras y plumas existentes para mostrar cajones libres en tiempo real y dar boleto digital por WhatsApp sin app.",
+    "mercado_objetivo": "Plazas comerciales y hospitales con estacionamientos en Monterrey y otras plazas.",
+    "modelo_ingresos": "Suscripción por analítica a plazas, comisión por pago digital, Fast-Pass para reservar lugar, Retail Media con promociones pagadas por tiendas.",
+    "competencia": "Kigo y operadores que cobran por tiempo de estancia; ParkVision vende clientes a tiendas y lugares garantizados sin app.",
+    "diferenciador": "No requiere app, ofrece boleto digital por WhatsApp, cuatro fuentes de ingreso más allá del cobro de estacionamiento.",
+    "validacion": "Demo funcionando y datos de campo propios en Galerías Monterrey.",
+    "equipo_roles": "Equipo de ingeniería del Tec que construyó el demo y midió el problema.",
+    "uso_fondos": "Para piloto pagado de seis meses en una plaza de Monterrey.",
+    "equipo_fundadores": 5,
+    "monto_mxn": 1000000,
+    "porcentaje": 10
+  },
+  "eventos": [
+    {
+      "n": 1,
+      "ronda": 0,
+      "tipo": "PITCH",
+      "emisor": "emprendedor",
+      "destino": "tiburones",
+      "texto": "¡Hola, tiburones! Hoy les quiero presentar ParkVision. Todo empezó con un problema. Conductor tarda en promedio 15 minutos en encontrar lugar en estacionamiento y 12% se van sin estacionar; plazas no generan ventas desde estacionamiento. Por eso creamos nuestra solución. Software que usa cámaras y plumas existentes para mostrar cajones libres en tiempo real y dar boleto digital por WhatsApp sin app. Está pensada para este mercado: Plazas comerciales y hospitales con estacionamientos en Monterrey y otras plazas. Así ganamos dinero: Suscripción por analítica a plazas, comisión por pago digital, Fast-Pass para reservar lugar, Retail Media con promociones pagadas por tiendas. Y no es solo una idea: Demo funcionando y datos de campo propios en Galerías Monterrey. Por eso hoy venimos a pedirles $1,000,000 MXN a cambio del 10 % de nuestra empresa, para lo siguiente: Para piloto pagado de seis meses en una plaza de Monterrey. ¿Quién quiere nadar con nosotros?",
+      "estado": "Presentando",
+      "pitch": {
+        "nombre": "ParkVision",
+        "sector": "tecnologia",
+        "etapa": "prototipo",
+        "problema": "Conductor tarda en promedio 15 minutos en encontrar lugar en estacionamiento y 12% se van sin estacionar; plazas no generan ventas desde estacionamiento.",
+        "solucion": "Software que usa cámaras y plumas existentes para mostrar cajones libres en tiempo real y dar boleto digital por WhatsApp sin app.",
+        "mercado_objetivo": "Plazas comerciales y hospitales con estacionamientos en Monterrey y otras plazas.",
+        "modelo_ingresos": "Suscripción por analítica a plazas, comisión por pago digital, Fast-Pass para reservar lugar, Retail Media con promociones pagadas por tiendas.",
+        "competencia": "Kigo y operadores que cobran por tiempo de estancia; ParkVision vende clientes a tiendas y lugares garantizados sin app.",
+        "diferenciador": "No requiere app, ofrece boleto digital por WhatsApp, cuatro fuentes de ingreso más allá del cobro de estacionamiento.",
+        "validacion": "Demo funcionando y datos de campo propios en Galerías Monterrey.",
+        "equipo_roles": "Equipo de ingeniería del Tec que construyó el demo y midió el problema.",
+        "uso_fondos": "Para piloto pagado de seis meses en una plaza de Monterrey.",
+        "equipo_fundadores": 5,
+        "monto_mxn": 1000000,
+        "porcentaje": 10
+      },
+      "valuacion_mxn": 10000000.0
+    },
+    {
+      "n": 2,
+      "ronda": 0,
+      "tipo": "PANEL",
+      "emisor": "moderador",
+      "destino": "todos",
+      "texto": "Panel de esta sesión: Teo Navarro (Tiburón tecnológico), Estela Marín (Tiburón estratega), Coral Medina (Tiburona de consumo).",
+      "estado": "",
+      "panel": [
+        {
+          "tiburon_id": "tiburon_tecnologico",
+          "nombre": "Tiburón tecnológico",
+          "motivo": "te faltan datos de patente o marca registrada; su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburon_estratega",
+          "nombre": "Tiburón estratega",
+          "motivo": "su perfil encaja con tu sector; evalúa bien negocios en tu etapa"
+        },
+        {
+          "tiburon_id": "tiburona_consumo",
+          "nombre": "Tiburona de consumo",
+          "motivo": "no hay datos que lo hagan imprescindible"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Soy Teo Navarro, tiburón tecnológico. ¿Cómo desarrollaron el algoritmo que detecta espacios libres y qué innovación tecnológica lo hace único en ParkVision?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 4,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Desarrollamos el algoritmo con nuestro equipo de ingeniería del Tec, que construyó el demo y midió el problema en campo. Usamos cámaras y plumas ya instaladas, integrando señales en tiempo real para identificar cajones libres sin necesidad de nuevas infraestructuras. La innovación clave es ofrecer esto sin app, con boleto digital por WhatsApp, facilitando la experiencia y acceso para cualquier usuario.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 5,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Soy Estela Marín, tiburón estratega. ¿Qué estrategia tienen para defender su ventaja y escalar ParkVision más allá de Monterrey en los próximos cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 6,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Nuestra estrategia es aprovechar la ventaja tecnológica de no requerir app y usar infraestructura existente para facilitar la adopción rápida. Además, diversificamos ingresos con suscripción, comisión, Fast-Pass y Retail Media, lo que fortalece nuestra posición. Para escalar, validaremos con pilotos en plazas clave y usaremos esos casos para replicar en otras ciudades. Seguiremos mejorando con datos reales y feedback para mantener la ventaja competitiva.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 7,
+      "ronda": 1,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "Soy Coral Medina, tiburona de consumo. ¿Cómo han visto que el cliente final reacciona al boleto digital por WhatsApp y cómo eso ayuda a la percepción de la marca ParkVision en las plazas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 8,
+      "ronda": 1,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Hemos observado que el boleto digital por WhatsApp es muy bien recibido porque no requiere descargar app y es accesible para todos. Esto mejora la experiencia del usuario y asocia a ParkVision con innovación y facilidad en las plazas. Estamos recopilando más datos en nuestros pilotos para medir el impacto en la percepción y ajustarnos según el feedback.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 9,
+      "ronda": 1,
+      "tipo": "REPLICA",
+      "emisor": "tiburona_consumo",
+      "destino": "tiburon_tecnologico",
+      "texto": "Teo, me gusta que preguntes por la innovación tecnológica, porque sin eso no hay marca fuerte ni canal efectivo. Usar cámaras y plumas existentes sin app es un plus para el cliente; facilita y mejora la experiencia, justo lo que mi comunidad valora.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 10,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿cómo convencieron a la primera plaza en Monterrey para apostar por su solución y qué los hizo diferentes a Kigo en esa negociación?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 11,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Convencimos a la primera plaza en Monterrey mostrando datos reales de nuestro demo y cómo reducimos el tiempo para encontrar lugar, mejorando la experiencia. Lo que nos diferenció de Kigo fue ofrecer acceso sin app, boleto digital por WhatsApp y un modelo con varias fuentes de ingreso para la plaza, no solo cobrar por tiempo, generando más valor y ventas para sus tiendas.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 12,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿cómo vive el cliente su primer uso del boleto digital por WhatsApp en la plaza y qué le gusta o no de la experiencia?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 13,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "El cliente vive el primer uso del boleto digital por WhatsApp como una experiencia sencilla y rápida, sin necesidad de descargar app. Les gusta la accesibilidad y comodidad. Aún estamos recopilando datos específicos de satisfacción en campo para entender mejor sus preferencias y ajustar la experiencia según el feedback real.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 14,
+      "ronda": 2,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "Cuéntame, ¿cómo usan los conductores el prototipo del boleto digital para interactuar con el algoritmo en tiempo real durante su primer estacionamiento?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 15,
+      "ronda": 2,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Los sectores del prototipo, básicamente, los probamos en pruebas de campo. Estos sectores son simulados y, en realidad, los conductores no interactúan directamente con el sistema. Lo que hacen es llegar y tomar un ticket; desde ahí, se solicita la información y, en realidad, es la plataforma la que se encarga de toda la interacción. No es necesario que el conductor regrese el ticket ni realice alguna acción adicional. Todo el proceso se maneja automáticamente, lo que facilita mucho la operación y mejora la experiencia del cliente.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 16,
+      "ronda": 2,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "tiburon_estratega",
+      "texto": "Estela, me late que preguntes por la diferencia con Kigo, porque ahí está el valor real. Usar datos de campo y no depender de app es un plus tecnológico que puede darles ventaja, aunque me falta saber si tienen patente para proteger ese algoritmo.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 17,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburona_consumo",
+      "destino": "emprendedor",
+      "texto": "¿Qué historia puedes contar sobre cómo la inversión ayudará a que más clientes conozcan y confíen en la marca ParkVision en nuevas plazas?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 18,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburona_consumo",
+      "texto": "Porque con esa inversion llevaremos a cvabp un piloto de 6 meses en una plaza en nuevo leon, ahora no solo seran pruebndad e campo, ya seran clientes reales, con feedback real",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 19,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_tecnologico",
+      "destino": "emprendedor",
+      "texto": "¿Qué mejoras tecnológicas y funcionalidades innovadoras planean implementar en el prototipo con esta inversión para sorprender al usuario?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 20,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_tecnologico",
+      "texto": "Con la inversión planeamos mejorar la integración en tiempo real del sistema con cámaras y plumas existentes para optimizar la precisión en la detección de espacios libres, así como desarrollar nuevas funciones de Fast-Pass para reservar lugar. También queremos enriquecer el sistema de Retail Media para ofrecer promociones personalizadas, todo sin requerir app, para sorprender y facilitar aún más la experiencia del usuario.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 21,
+      "ronda": 3,
+      "tipo": "PREGUNTA",
+      "emisor": "tiburon_estratega",
+      "destino": "emprendedor",
+      "texto": "Querido, ¿cómo visualizan que esta inversión les ayudará a defender su ventaja y ampliar su mercado en los próximos cinco años?",
+      "estado": "Preguntando"
+    },
+    {
+      "n": 22,
+      "ronda": 3,
+      "tipo": "RESPUESTA",
+      "emisor": "emprendedor",
+      "destino": "tiburon_estratega",
+      "texto": "Esta inversión nos permitirá ejecutar un piloto pagado de seis meses que validará nuestro modelo en una plaza real. Con datos y feedback concretos, fortaleceremos nuestra propuesta única sin app y con múltiples fuentes de ingreso, facilitando la expansión a otras plazas y ciudades. Así, defenderemos nuestra ventaja competitiva y escalaremos con confianza en los próximos cinco años.",
+      "estado": "Respondiendo"
+    },
+    {
+      "n": 23,
+      "ronda": 3,
+      "tipo": "REPLICA",
+      "emisor": "tiburon_estratega",
+      "destino": "tiburona_consumo",
+      "texto": "Coral, coincido contigo en que la inversión debe traducirse en confianza y reconocimiento de marca. Un piloto pagado es clave para validar y generar casos de éxito que permitan escalar y defender la ventaja en plazas nuevas, siempre pensando en el crecimiento sostenible a 5 años.",
+      "estado": "Replicando",
+      "postura": "acuerdo"
+    },
+    {
+      "n": 24,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_tecnologico",
+      "destino": "nodo_votacion",
+      "texto": "Me prende que usen cámaras y plumas existentes con boleto digital por WhatsApp, sin app, para innovar en experiencia. Falta patente, pero el demo y piloto real de 6 meses con $1,000,000 MXN muestran potencial para validar tecnología y algoritmo único.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 25,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburon_estratega",
+      "destino": "nodo_votacion",
+      "texto": "El mercado de plazas y hospitales es amplio, y ParkVision tiene ventaja defendible al no requerir app y ofrecer múltiples ingresos. La valuación implícita de $10,000,000 MXN y el piloto pagado de seis meses en Monterrey son apuestas claras para escalar y defender su nicho.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 26,
+      "ronda": 3,
+      "tipo": "VOTO",
+      "emisor": "tiburona_consumo",
+      "destino": "nodo_votacion",
+      "texto": "A ver, me pongo en sus zapatos: el cliente final disfruta el boleto digital por WhatsApp, que les facilita la vida sin app. La marca tiene potencial y el canal es claro en plazas. Pide $1,000,000 MXN por 10%, valuación de $10,000,000 MXN, me late para apoyar el piloto real.",
+      "estado": "Votando",
+      "decision": "invertir",
+      "votacion": 1,
+      "contraoferta_monto_mxn": null,
+      "contraoferta_porcentaje": null
+    },
+    {
+      "n": 27,
+      "ronda": 3,
+      "tipo": "DECISION",
+      "emisor": "nodo_votacion",
+      "destino": "todos",
+      "texto": "TRATO: $1,000,000 MXN por el 10 % de la empresa.",
+      "estado": "Reaccionando",
+      "resultado": "TRATO",
+      "condiciones": {
+        "monto_mxn": 1000000.0,
+        "porcentaje": 10.0,
+        "origen": "original"
+      }
+    },
+    {
+      "n": 28,
+      "ronda": 3,
+      "tipo": "REPORTE",
+      "emisor": "servicio",
+      "destino": "emprendedor",
+      "texto": "Fortalezas: Uso innovador de infraestructura existente (cámaras y plumas) sin necesidad de app, facilitando adopción.; Modelo de ingresos diversificado: suscripción, comisión, Fast-Pass y Retail Media, generando múltiples fuentes de valor.; Demo funcional y datos de campo reales que respaldan la solución y validan el problema y la propuesta.; Piloto pagado de seis meses para validar el modelo en una plaza real, mostrando compromiso con la ejecución.. Alertas: No se mencionó si cuentan con patente o protección tecnológica para su algoritmo, lo cual puede ser un riesgo competitivo.; Faltan datos financieros básicos como ventas, margen bruto y gastos mensuales para evaluar salud financiera.; No se especificó experiencia ni dedicación del equipo fundador, lo que dificulta evaluar capacidades para escalar el negocio.. Siguientes pasos: Gestionar y asegurar la protección intelectual mediante patente o registro de tecnología para el algoritmo y sistema.; Obtener y presentar información financiera clave: ventas, margen bruto y gastos, para dar mayor confianza a inversionistas.; Ejecutar el piloto pagado de seis meses en la plaza de Monterrey y recopilar datos concretos de uso, satisfacción y resultados comerciales para escalar..",
+      "estado": "",
+      "reporte": {
+        "por_tiburon": [
+          {
+            "tiburon_id": "tiburon_tecnologico",
+            "calificacion": 4,
+            "frase_clave": "Me prende que usen cámaras y plumas existentes con boleto digital por WhatsApp, sin app, para innovar en experiencia. Falta patente, pero el demo y piloto real de 6 meses con $1,000,000 MXN muestran potencial para validar tecnología y algoritmo único.",
+            "necesitaria": "Ver evidencia de patente o protección tecnológica para el algoritmo y la integración para asegurar ventaja competitiva."
+          },
+          {
+            "tiburon_id": "tiburon_estratega",
+            "calificacion": 4,
+            "frase_clave": "El mercado de plazas y hospitales es amplio, y ParkVision tiene ventaja defendible al no requerir app y ofrecer múltiples ingresos. La valuación implícita de $10,000,000 MXN y el piloto pagado de seis meses en Monterrey son apuestas claras para escalar y defender su nicho.",
+            "necesitaria": "Un plan más detallado de escalabilidad y defensa de mercado a mediano y largo plazo, con métricas financieras y operativas claras."
+          },
+          {
+            "tiburon_id": "tiburona_consumo",
+            "calificacion": 4,
+            "frase_clave": "A ver, me pongo en sus zapatos: el cliente final disfruta el boleto digital por WhatsApp, que les facilita la vida sin app. La marca tiene potencial y el canal es claro en plazas. Pide $1,000,000 MXN por 10%, valuación de $10,000,000 MXN, me late para apoyar el piloto real.",
+            "necesitaria": "Datos más concretos de satisfacción del cliente y cómo se traduce esto en fidelización y percepción de marca a mediano plazo."
+          }
+        ],
+        "fortalezas": [
+          "Uso innovador de infraestructura existente (cámaras y plumas) sin necesidad de app, facilitando adopción.",
+          "Modelo de ingresos diversificado: suscripción, comisión, Fast-Pass y Retail Media, generando múltiples fuentes de valor.",
+          "Demo funcional y datos de campo reales que respaldan la solución y validan el problema y la propuesta.",
+          "Piloto pagado de seis meses para validar el modelo en una plaza real, mostrando compromiso con la ejecución."
+        ],
+        "alertas": [
+          "No se mencionó si cuentan con patente o protección tecnológica para su algoritmo, lo cual puede ser un riesgo competitivo.",
+          "Faltan datos financieros básicos como ventas, margen bruto y gastos mensuales para evaluar salud financiera.",
+          "No se especificó experiencia ni dedicación del equipo fundador, lo que dificulta evaluar capacidades para escalar el negocio."
+        ],
+        "preguntas_sin_responder": [
+          "¿Cuentan con patente o algún mecanismo para proteger su algoritmo y tecnología?",
+          "¿Cuál es la dedicación y experiencia específica de cada fundador en el proyecto?",
+          "¿Cuál es el margen bruto actual y el gasto mensual para operar el prototipo y el piloto?"
+        ],
+        "siguientes_pasos": [
+          "Gestionar y asegurar la protección intelectual mediante patente o registro de tecnología para el algoritmo y sistema.",
+          "Obtener y presentar información financiera clave: ventas, margen bruto y gastos, para dar mayor confianza a inversionistas.",
+          "Ejecutar el piloto pagado de seis meses en la plaza de Monterrey y recopilar datos concretos de uso, satisfacción y resultados comerciales para escalar."
+        ],
+        "resultado": "TRATO",
+        "condiciones": {
+          "monto_mxn": 1000000.0,
+          "porcentaje": 10.0,
+          "origen": "original"
+        },
+        "valuacion_mxn": 10000000.0,
+        "votos_primera_votacion": {
+          "tiburon_tecnologico": "invertir",
+          "tiburon_estratega": "invertir",
+          "tiburona_consumo": "invertir"
+        },
+        "criterios_no_evaluados": [
+          {
+            "tiburon_id": "tiburon_financiero",
+            "nombre": "Tiburón financiero",
+            "criterio": "márgenes, costo de adquisición de clientes y valuación"
+          },
+          {
+            "tiburon_id": "tiburon_mentor",
+            "nombre": "Tiburón mentor",
+            "criterio": "equipo, compromiso y honestidad del fundador"
+          },
+          {
+            "tiburon_id": "tiburon_negociador",
+            "nombre": "Tiburón negociador",
+            "criterio": "porcentaje de capital, valuación y contraofertas"
+          }
+        ],
+        "aviso": "Simulación educativa; no es asesoría financiera."
+      }
+    }
+  ],
+  "metricas": {
+    "llamadas_modelo": 24,
+    "segundos_modelo": 29.0,
+    "segundos_total": 9.6,
+    "rondas_preguntas": 3,
+    "n_eventos": 28,
+    "eventos_en_orden": true,
+    "preguntas": 9,
+    "replicas": 3,
+    "replicas_con_postura": 3,
+    "replicas_mencionan_otro_tiburon": 3,
+    "preguntas_mencionan_criterio": 8,
+    "preguntas_citan_dato": 0,
+    "votos": 3,
+    "justificaciones_mencionan_criterio": 3,
+    "justificaciones_con_dato": 3,
+    "votos_publicados_juntos": true,
+    "hubo_negociacion": false,
+    "modo": "humano",
+    "ayuda": true,
+    "sugerencias": 8,
+    "resultado": "TRATO",
+    "terminada": true
+  }
+}

@@ -25,6 +25,7 @@ FECHA = "27 de noviembre de 2026"
 REPO = "https://github.com/albertolopezb/NeuralHub"
 VIDEO = "https://youtu.be/STD4X71H2I0"
 VIDEO2 = "https://github.com/albertolopezb/NeuralHub/blob/main/docs/video/NeuralHub_en_vivo.mp4"
+VIDEO3 = "https://youtu.be/wIopi7vFvmM"
 SHEET = "https://docs.google.com/spreadsheets/d/1Lq0ONh_gI4ibv0SCWzO404WvHAJkELCffuVmeLKgAsw/edit"
 
 doc = Document()
@@ -243,6 +244,12 @@ texto_valuacion = (f"Los tratos sí distinguen por las condiciones: los pitches 
                    f"No es una separación limpia: el sólido P2 quedó en {_rango('P2')} y el débil P3 en {_rango('P3')}.")
 vivo = json.load(open(SERV / "resultados_vivo.json", encoding="utf8"))
 humana = json.load(open(SERV / "sesiones" / "sesion_86ddaa3a.json", encoding="utf8"))
+grabada = json.load(open(SERV / "sesiones" / "sesion_e52c9323.json", encoding="utf8"))
+gm = grabada["metricas"]
+g_resp = sum(1 for e in grabada["eventos"] if e["tipo"] == "RESPUESTA")
+g_votos = [e["decision"] for e in grabada["eventos"] if e["tipo"] == "VOTO"]
+assert g_votos == ["invertir"] * 3 and g_resp == 9
+g_trato = [e for e in grabada["eventos"] if e["tipo"] == "DECISION"][-1]["texto"].replace("TRATO: ", "").rstrip(".")
 hm = humana["metricas"]
 h_resp = sum(1 for e in humana["eventos"] if e["tipo"] == "RESPUESTA")
 lat = [x["segundos"] for s_ in vivo["sesiones"] for x in s_["latencias"]]
@@ -374,7 +381,7 @@ tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)"
     ("8", "**Coherencia con el perfil.** Para el final del Sprint 3, en los pitches débiles o incompletos el tiburón dueño del criterio débil vota «salir» o «contraoferta» en al menos el 80 % de las sesiones; en los pitches sólidos hay trato en al menos 4 de 6 sesiones.",
      f"{dueno_sale} de {len(debiles)} sesiones débiles o incompletas ({pct(dueno_sale, len(debiles))}); trato en {trato_sol} de {len(solidos)} sólidas. Cumplido según la métrica, pero con un límite: en esta corrida hubo {votos_inv} votos «invertir», así que el dueño del criterio solo podía contraofertar o salir. En P3 y P4 (débiles) también hubo trato en {deb_trato} de 6 sesiones; todas por contraoferta, cediendo más que en la oferta original, porque sin votos «invertir» en la primera votación la oferta original ya no se puede conservar (el agente empresario siempre toma la mejor; una persona puede rechazarlas). El panel castiga con condiciones, no siempre con un rechazo." + " " + texto_valuacion),
     ("9", "**Integración con Unity.** Para el final del Sprint 3, el servicio emite en orden el 100 % de los eventos de las 15 sesiones, Unity completa sesiones en vivo, y en el 90 % de los envíos del usuario la siguiente intervención llega en menos de 10 s.",
-     f"Eventos en orden en {ordenok} de {NS} sesiones; 3 sesiones en vivo en Unity ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s, promedio {vivo['promedio_s']:.1f} s), con un usuario automatizado que contesta con la sugerencia del agente empresario, grabadas con la versión final. Además, una persona completó otra sesión en vivo (86ddaa3a). Cumplido en la prueba."),
+     f"Eventos en orden en {ordenok} de {NS} sesiones; 3 sesiones en vivo en Unity ({ev_vivo} eventos) con {lat_ok} de {len(lat)} envíos bajo 10 s (máximo {max(lat):.1f} s, promedio {vivo['promedio_s']:.1f} s), con un usuario automatizado que contesta con la sugerencia del agente empresario, grabadas con la versión final. Además, un integrante del equipo completó sesiones en vivo (86ddaa3a y e52c9323, esta con video). Cumplido en la prueba."),
     ("10", "**Retroalimentación útil.** Para la entrega final, al menos 5 usuarios ajenos al equipo usan la app con su propia idea y al menos el 80 % califica el reporte con 4 o 5 de 5 en utilidad.",
      "Pendiente (tarea T31)."),
 ], anchos=[0.8, 10.4, 5.8], size=9)
@@ -635,6 +642,9 @@ p(f"**Sesión con una persona** (27 nov, sesión {humana['id']}, servicio/sesion
   f"y llegó hasta el reporte: {hm['n_eventos']} eventos, {h_resp} respuestas enviadas, {hm['llamadas_modelo']} llamadas al modelo ({hm['sugerencias']} de ellas de ayuda) y resultado «{hm['resultado'].replace('_', ' ')}». "
   "En 8 de las 9 respuestas el texto enviado tiene la forma de las recomendaciones del agente y solo la del mensaje 4 es claramente suya, así que esta sesión prueba el flujo con una persona, no la calidad de sus respuestas. Como los votos a favor fueron contraofertas, eligió una de ellas, como exige la regla actual. El servicio no registró errores. En una segunda sesión (bcfa5336) la misma persona probó el dictado con su micrófono: el servicio completó 3 transcripciones sin errores y, según reportó, aguantó grabaciones de hasta 120 segundos; a veces cambia algunas palabras, por eso el texto se revisa antes de enviarlo. "
   "En un intento anterior ese mismo día el juego dejó de avanzar al responder porque el audio llegaba cortado; se corrigió antes de esta sesión. Después de estas pruebas se hicieron tres ajustes que ya incluyen las sesiones grabadas: «Continuar» calla la voz, recomendar y mejorar son independientes y cada tiburón se presenta al aparecer en «Conoce a los tiburones».", align="j")
+p(f"**Sesión grabada en video** (27 nov, sesión {grabada['id']}, servicio/sesiones/sesion_{grabada['id']}.json): un integrante del equipo grabó la pantalla mientras jugaba en el editor de Unity, en vivo y con ayuda, nivel Fácil, con el negocio {grabada['pitch']['nombre']}. Video de 10 minutos, del formulario al cierre: " + VIDEO3 + " . "
+  f"La sesión tuvo {gm['n_eventos']} eventos, {g_resp} respuestas y {gm['llamadas_modelo']} llamadas al modelo ({gm['sugerencias']} de ayuda). Los tres tiburones votaron «invertir» y cerró trato por la oferta original ({g_trato}). "
+  "Las respuestas de los mensajes 15 y 18 son claramente de la persona (por su redacción); las otras 7 tienen la forma de los textos del agente empresario, entre recomendaciones y mejoras.", align=None)
 p("**Los niveles se sienten distintos.** Mismo negocio (EcoTrack) y mismo panel en los tres niveles, 2 sesiones por nivel con el modelo real (servicio/resultados_niveles.json):", align="j", keep=True)
 fil_niv = []
 for nv, nom in (("facil", "Fácil"), ("medio", "Medio"), ("dificil", "Difícil")):
@@ -856,6 +866,7 @@ bullets([
     "Repositorio: " + REPO + " (carpetas servicio, prototipo_un_agente, unity y docs).",
     "Video del primer incremento (2 min): " + VIDEO,
     "Sesión jugada por una persona el 27 de noviembre, antes de los tres últimos ajustes (sección 7.5): servicio/sesiones/sesion_86ddaa3a.json.",
+    "Video de la sesión jugada por un integrante del equipo (10 min): " + VIDEO3 + " ; datos en servicio/sesiones/sesion_e52c9323.json.",
     "Transcripciones completas y métricas: servicio/sesiones/ y servicio/resultados_prueba.json (15 sesiones); prototipo_un_agente/sesiones/ (6 corridas). Corridas anteriores citadas en la comparación: servicio/sesiones/anterior_inc2 (flujo anterior) y servicio/sesiones/anterior_regla (antes del ajuste de contraofertas) y servicio/sesiones/anterior_preguntas (antes de las preguntas por ángulos).",
     "Pruebas automáticas: servicio/tests (53 pruebas con el modelo simulado; una recorre las 27 combinaciones de votos y la de voz usa SAPI y Whisper locales). Dependencias en servicio/requirements.txt.",
     "Video de la sesión en vivo (Unity + servicio + voz): " + VIDEO2,
