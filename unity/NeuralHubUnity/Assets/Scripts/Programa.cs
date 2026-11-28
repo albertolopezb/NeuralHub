@@ -123,7 +123,7 @@ namespace NeuralHub
                 }
                 GUI.color = antes;
             }
-            if (GUI.Button(new Rect(W - 250, H - 80, 210, 50), "Saltar intro ▶▶", Estilos.BotonChico)) { app.Clic(); Terminar(app); }
+            if (GUI.Button(new Rect(W - 250, H - 80, 210, 50), "Saltar intro ▶▶", Estilos.BotonChico)) { if (app.sonidos) app.sonidos.Callar(); app.Clic(); Terminar(app); }
         }
     }
 
@@ -157,7 +157,9 @@ namespace NeuralHub
             enEscena.Preguntar();
             app.camara.Cambiar(Plano.Conocer, enEscena.PuntoCabeza());
             if (e.pantalla) e.pantalla.MostrarLamina(p.lamina, "Conoce a los tiburones", p.nombre, p.apodo);
-            if (app.sonidos) app.sonidos.DetenerVoz();
+            // se presenta en cuanto aparece (si la voz está encendida)
+            app.CallarPresentacion();
+            if (app.sonidos && app.sonidos.vozActiva) app.EscucharPresentacion(p.id);
         }
 
         void Quitar(AppNeuralHub app) { if (enEscena) Object.Destroy(enEscena.gameObject); enEscena = null; }
@@ -165,7 +167,7 @@ namespace NeuralHub
         public void Cerrar(AppNeuralHub app)
         {
             Quitar(app); mostrado = null;
-            if (app.sonidos) app.sonidos.DetenerVoz();
+            app.CallarPresentacion();
             app.Ir(volverA);
         }
 
@@ -195,7 +197,7 @@ namespace NeuralHub
             GUILayout.Space(18);
             GUILayout.Label("«" + sel.presentacion + "»", new GUIStyle(Estilos.Texto) { fontSize = 26 });
             GUILayout.Space(14);
-            if (GUILayout.Button("▶  Escuchar su presentación", Estilos.BotonPrimario, GUILayout.Height(54))) { app.Clic(); app.EscucharPresentacion(sel.id); if (enEscena) enEscena.Preguntar(); }
+            if (GUILayout.Button("▶  Repetir presentación", Estilos.BotonPrimario, GUILayout.Height(54))) { app.Clic(); app.EscucharPresentacion(sel.id); if (enEscena) enEscena.Preguntar(); }
             GUILayout.Space(22);
             GUILayout.Label("CUÁNDO ELEGIRLO", Estilos.Quien);
             GUILayout.Label(sel.usalo, Estilos.Texto);

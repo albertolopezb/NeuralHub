@@ -335,8 +335,8 @@ tabla(["#", "Objetivo (específico, medible, alcanzable, relevante y con fecha)"
      f"{r_tot} réplicas en {r_tot} rondas ({r_otro} dirigidas a otro tiburón; {r_pos} con postura explícita). Cumplido."),
     ("5", "**Decisión que siempre termina.** Para el final del Sprint 2, el 100 % de las sesiones termina con trato o sin trato en un máximo de 3 rondas más 1 de negociación, y la regla de votación pasa las 27 combinaciones posibles de votos.",
      f"{terminadas} de {NS} sesiones terminadas; 27 de 27 combinaciones. Cumplido."),
-    ("6", "**Costo controlado.** Para el final del Sprint 3 (4 dic), ninguna sesión en la que responde el usuario sin ayuda usa más de 19 llamadas al modelo (28 como máximo con ayuda o si responde el agente empresario: hasta 9 respuestas o sugerencias, una por pregunta) y el servicio la completa en menos de 40 s sin contar las esperas del usuario.",
-     f"Máximo {llam_max} llamadas en las {NS} sesiones ({n16} con 16 y {n19} con 19); tiempo total {seg_prom} s en promedio y {seg_max} s como máximo. En vivo con negociación, la sesión usó 28: 19 propias más 9 sugerencias pedidas al agente empresario. Cumplido en la prueba."),
+    ("6", "**Costo controlado.** Para el final del Sprint 3 (4 dic), ninguna sesión en la que responde el usuario sin ayuda usa más de 19 llamadas al modelo (37 como máximo con ayuda: además, hasta 9 recomendaciones y 9 mejoras, una de cada una por pregunta; 28 si responde el agente empresario) y el servicio la completa en menos de 40 s sin contar las esperas del usuario.",
+     f"Máximo {llam_max} llamadas en las {NS} sesiones ({n16} con 16 y {n19} con 19); tiempo total {seg_prom} s en promedio y {seg_max} s como máximo. En vivo con negociación, la sesión usó 28: 19 propias más 9 sugerencias pedidas al agente empresario (antes de separar recomendar y mejorar). Cumplido en la prueba."),
     ("7", "**Justificación con evidencia.** Para el final del Sprint 3, al menos el 85 % de las justificaciones de voto menciona el criterio principal del tiburón y al menos un dato concreto de la conversación.",
      f"{cd_ok} de {cd_tot} ({pct(cd_ok, cd_tot)}); en el incremento 1 era {pct(cd1_ok, cd1_tot)}. Cumplido tras ajustar los prompts (T20)."),
     ("8", "**Coherencia con el perfil.** Para el final del Sprint 3, en los pitches débiles o incompletos el tiburón dueño del criterio débil vota «salir» o «contraoferta» en al menos el 80 % de las sesiones; en los pitches sólidos hay trato en al menos 4 de 6 sesiones.",
@@ -354,7 +354,7 @@ bullets([
     "**Debate acotado:** máximo 3 rondas; en cada una los 3 tiburones preguntan uno por uno, cada pregunta se responde antes de la siguiente y un tiburón replica a otro. Hay una ronda extra de negociación solo si hay un voto a favor.",
     "**Niveles:** Fácil, Medio y Difícil cambian cómo preguntan, replican y votan los tiburones; las reglas de la sesión y la regla de votación no cambian.",
     "**Pitch del usuario:** el usuario escribe su pitch en un formulario con campos obligatorios y un límite de 300 caracteres por campo; las respuestas tienen máximo 600 caracteres.",
-    "**Costo y latencia:** máximo 19 llamadas al modelo por sesión si responde el usuario sin ayuda (16 sin negociación) y 28 con ayuda o si responde el agente empresario (una sugerencia o respuesta por pregunta). El pitch hablado, la recomendación del panel, la valuación y la regla de votación no usan el modelo.",
+    "**Costo y latencia:** máximo 19 llamadas al modelo por sesión si responde el usuario sin ayuda (16 sin negociación), 28 si responde el agente empresario y 37 si el usuario pide en cada pregunta una recomendación y una mejora. El pitch hablado, la recomendación del panel, la valuación y la regla de votación no usan el modelo.",
     "**Idioma y moneda:** todo el diálogo es en español y los montos están en pesos mexicanos.",
     "**Una sola escena:** un estudio de televisión submarino con 3 podios fijos y una cámara que cambia de plano; el tiburón de cada podio cambia según el panel elegido.",
     "**Comunicación solo por HTTP:** Unity y el servicio se comunican únicamente por HTTP; los agentes no corren dentro de Unity.",
@@ -495,7 +495,7 @@ tabla(["Paso", "Llamadas"], [
     ("Reporte final", "1"),
     ("**Sesión sin negociación**", "**16** (25 con agente)"),
     ("Segunda votación (solo con 1 voto a favor)", "+3"),
-    ("**Máximo por sesión**", "**19** (28 con agente, o con ayuda usando una sugerencia por pregunta)"),
+    ("**Máximo por sesión**", "**19** (28 con agente; 37 con ayuda usando recomendar y mejorar en las 9 preguntas)"),
 ], anchos=[12.5, 4.5], size=9.5)
 p(f"En las {NS} sesiones de prueba (emprendedor con guion fijo) se midieron {n16} sesiones con 16 llamadas y {n19} con 19, sin excepciones.", align="j")
 p(f"El diagrama de comunicaciones ({F('com')}) incluye la flecha de tiburón a tiburón (RÉPLICA) y {F('sec')} muestra la secuencia de una ronda.", align="j")
@@ -514,7 +514,7 @@ tabla(["Ruta", "Para qué"], [
     ("POST /sesiones", "Recibe pitch, 3 tiburones, modo, ayuda y nivel; devuelve el id de la sesión"),
     ("GET /sesiones/{id}/eventos?desde=n", "Eventos nuevos, estado de la sesión y qué espera del usuario"),
     ("POST /sesiones/{id}/respuestas", "Envía la respuesta de la pregunta en turno y reanuda el grafo"),
-    ("POST /sesiones/{id}/sugerencia", "Modo en vivo con ayuda: el agente empresario propone una respuesta o mejora el borrador del usuario (una ayuda por pregunta)"),
+    ("POST /sesiones/{id}/sugerencia", "Modo en vivo con ayuda: el agente empresario propone una respuesta o mejora el borrador del usuario (una de cada una por pregunta)"),
     ("POST /pitch/extraer", "Llena el formulario desde un .docx, .pdf, .txt o texto pegado y avisa lo que falta (1 llamada, fuera de la sesión)"),
     ("GET /sesiones/{id}/audio/{n}", "Audio (WAV) con la voz del turno n"),
     ("POST /voz/transcribir", "Recibe un WAV y devuelve el texto (Whisper local)"),
@@ -599,8 +599,8 @@ tabla(["Sesión", "Negocio", "Nivel", "Eventos", "Llamadas", "Resultado", "Enví
     anchos=[2.0, 2.8, 1.6, 1.5, 1.6, 2.4, 5.1], size=9)
 figura("vivo", 13.5, "Sesión en vivo: la pregunta del tiburón y la respuesta antes de enviarse, con «Recomendación del agente empresario» o «Mejorar lo que escribí» y «Dictar con voz».")
 p(f"**Sesión con una persona y la versión final** (27 nov, sesión {humana['id']}, servicio/sesiones/sesion_{humana['id']}.json): un integrante del equipo jugó en el editor de Unity en modo en vivo con ayuda, nivel Medio, con el negocio {humana['pitch']['nombre']}, "
-  f"y llegó hasta el reporte: {hm['n_eventos']} eventos, {h_resp} respuestas enviadas, {hm['llamadas_modelo']} llamadas al modelo ({hm['sugerencias']} de ellas de ayuda, una por pregunta) y resultado «{hm['resultado'].replace('_', ' ')}». "
-  "Como los votos a favor fueron contraofertas, eligió una de ellas, como exige la regla actual. El servicio no registró errores. En esta sesión no se usó el dictado por voz, que sigue sin validarse con la versión final. "
+  f"y llegó hasta el reporte: {hm['n_eventos']} eventos, {h_resp} respuestas enviadas, {hm['llamadas_modelo']} llamadas al modelo ({hm['sugerencias']} de ellas de ayuda) y resultado «{hm['resultado'].replace('_', ' ')}». "
+  "Como los votos a favor fueron contraofertas, eligió una de ellas, como exige la regla actual. El servicio no registró errores. En una segunda sesión (bcfa5336) la misma persona probó el dictado con su micrófono: el servicio completó 3 transcripciones sin errores y, según reportó, aguantó grabaciones de hasta 120 segundos; a veces cambia algunas palabras, por eso el texto se revisa antes de enviarlo. "
   "En un intento anterior ese mismo día el juego dejó de avanzar al responder porque el audio llegaba cortado; se corrigió antes de esta sesión.", align="j")
 p("**Los niveles se sienten distintos.** Mismo negocio (EcoTrack) y mismo panel en los tres niveles, 2 sesiones por nivel con el modelo real (servicio/resultados_niveles.json):", align="j", keep=True)
 fil_niv = []
@@ -664,7 +664,7 @@ tabla(["Pantalla", "Qué ve", "Controles"], [
     ("Inicio", "Nombre del programa, 3 emprendedores por nivel y conexión con el servicio", "Fácil, Medio o Difícil; Escribir mi propio pitch; Conoce a los tiburones; Historial; «Usar sesión de ejemplo (sin conexión)»"),
     ("Formulario del pitch", "Campos del pitch, nivel y valuación calculada al momento", "Campos, nivel, «Autocompletar» (subir .docx, .pdf o .txt, o pegar texto), «Cargar ejemplo», «Siguiente» (activo solo con los obligatorios)"),
     ("Elección del panel", "Tarjetas con foto, nombre y especialidad; 3 recomendados con motivo", "Agregar o quitar (exactamente 3), «Conocer a los tiburones», «Siguiente»"),
-    ("Conoce a los tiburones", "El tiburón en el estudio, su presentación, cuándo elegirlo y en qué se fija", "Elegir tiburón, «Escuchar su presentación», «Volver»"),
+    ("Conoce a los tiburones", "El tiburón en el estudio, su presentación, cuándo elegirlo y en qué se fija", "Elegir tiburón, «Repetir presentación» (cada uno se presenta solo al aparecer), «Volver»"),
     ("Modo", "Responde el agente empresario o el usuario (con o sin ayuda)", "Elegir modo y ayuda; «Iniciar sesión»"),
     ("Sesión en el estudio", "Intro, barra de rondas con letrero de etapa, subtítulos por frases sincronizados con la voz, tarjeta del tema y marcador", "Saltar intro, Anterior, Pausa, Siguiente, 1x/2x, Voz, Silencio, Historial, Tu panel, Salir; en vivo: responder, «Dictar con voz», «Recomendación del agente empresario»"),
     ("Negociación", "Contraofertas y condiciones", "Aceptar contraoferta, ajustar monto y porcentaje, mantener mi oferta; elegir condiciones finales (oferta original solo con mayoría) o rechazar las contraofertas"),
@@ -787,7 +787,7 @@ p(f"**Lo que falta.** El objetivo 2 requiere la prueba con una persona; el juez 
   f"En el objetivo 3, la cita de un dato quedó en {pct(p_dato, p_tot)} con el indicador automático. Al revisar este incremento vimos que una cifra más alta de ese indicador se debía a que contaba como dato el número de marcas internas como «(R0)»; esas marcas ya se retiran del texto y la cifra reportada es sin ellas. "
   "En la evaluación fija ningún tiburón votó «invertir» en la primera votación, así que los tratos salen de contraofertas y los pitches débiles P3 y P4 también cierran trato en peores condiciones; en el nivel Fácil sí hubo votos «invertir». "
   "Las pruebas en vivo usaron un usuario automatizado que contesta con las sugerencias del agente empresario; en una respuesta calculó mal el costo de adquisición (dividió el gasto mensual entre los usuarios de prueba) y los tiburones lo retomaron. Se corrigió su instrucción; las tres sesiones automatizadas no se han repetido, pero una persona completó una sesión con la versión final. "
-  "Faltan validar el dictado con una persona en la versión final y la prueba con 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
+  "Falta la prueba con 5 usuarios externos (objetivo 10), planeadas para el Sprint 3.", align="j")
 
 h1("11. Referencias")
 refs = [

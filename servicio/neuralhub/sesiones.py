@@ -63,7 +63,8 @@ class Sesion:
         self.ayuda = bool(ayuda) and modo == "humano"   # el agente empresario solo sugiere en el modo en vivo
         self.sugerencias = 0
         self.preparar_voz = False
-        self._sugeridas: dict[int, str] = {}   # una por pregunta: repetir el botón no gasta otra llamada
+        # por pregunta: una recomendación y una mejora; repetir el mismo botón no gasta otra llamada
+        self._sugeridas: dict[tuple, tuple] = {}
         self.nivel = nivel
         self.eventos: list[dict] = []
         self.estado = "creada"        # creada | corriendo | esperando | terminada | error
@@ -142,14 +143,16 @@ class Sesion:
             raise ValueError("Ese tiburón no tiene una pregunta esperando respuesta.")
         n = ultima["n"]
         borrador = (borrador or "").strip()
-        if n in self._sugeridas:
-            if borrador and borrador != self._sugeridas[n]:
-                raise ValueError("Ya usaste la ayuda del agente en esta pregunta.")
-            return self._sugeridas[n]
+        clave = (n, "mejorar" if borrador else "recomendar")
+        if clave in self._sugeridas:
+            origen, listo = self._sugeridas[clave]
+            if borrador and borrador not in (origen, listo):
+                raise ValueError("Ya usaste «Mejorar» en esta pregunta.")
+            return listo
         texto = sin_etiquetas(sugerir_respuesta(self.llm, self.pitch, eventos, tiburon_id, borrador))
         with self._lock:
             self.sugerencias += 1
-            self._sugeridas[n] = texto
+            self._sugeridas[clave] = (borrador, texto)
         return texto
 
     # --- salida ---

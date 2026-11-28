@@ -78,15 +78,17 @@ namespace NeuralHub
 
         // ---------- navegación ----------
         /// <summary>Voz de la presentación de un tiburón (audios incluidos en la aplicación).</summary>
-        public void EscucharPresentacion(string id) { StartCoroutine(ReproducirArchivo("presentaciones/" + id + ".wav")); }
+        int pedidoVoz;      // si cambias de tiburón antes de que cargue su audio, el anterior ya no suena
+        public void EscucharPresentacion(string id) { StartCoroutine(ReproducirArchivo("presentaciones/" + id + ".wav", ++pedidoVoz)); }
+        public void CallarPresentacion() { pedidoVoz++; if (sonidos) sonidos.DetenerVoz(); }
 
-        IEnumerator ReproducirArchivo(string relativo)
+        IEnumerator ReproducirArchivo(string relativo, int pedido)
         {
             var uri = new Uri(System.IO.Path.Combine(Application.streamingAssetsPath, "audio/" + relativo)).AbsoluteUri;
             using (var req = UnityEngine.Networking.UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.WAV))
             {
                 yield return req.SendWebRequest();
-                if (req.result == UnityEngine.Networking.UnityWebRequest.Result.Success && sonidos)
+                if (pedido == pedidoVoz && req.result == UnityEngine.Networking.UnityWebRequest.Result.Success && sonidos)
                     sonidos.Voz(UnityEngine.Networking.DownloadHandlerAudioClip.GetContent(req), 1f, 0);
             }
         }
@@ -98,6 +100,7 @@ namespace NeuralHub
 
         public void Ir(Vista v)
         {
+            if (vista == Vista.Sesion && v != Vista.Sesion && sonidos) sonidos.Callar();   // salir de la sesión también calla
             if (v != Vista.Sesion) { intro.activa = false; final_.Saltar(); }
             vista = v; mostrarHistorial = false;
             if (v != Vista.Sesion && v != Vista.Resultado)

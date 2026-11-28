@@ -98,7 +98,7 @@ namespace NeuralHub
             if (fase == Fase.Trato) DibujarTrato(W, H);
             else if (fase == Fase.SinTrato) DibujarSinTrato(W, H);
             else if (fase == Fase.Cierre) DibujarCierre(W, H);
-            if (fase != Fase.Nada && GUI.Button(new Rect(W - 210, H - 74, 170, 48), "Continuar ▶▶", Estilos.BotonChico)) { app.Clic(); Saltar(); }
+            if (fase != Fase.Nada && GUI.Button(new Rect(W - 210, H - 74, 170, 48), "Continuar ▶▶", Estilos.BotonChico)) { app.reproductor.SaltarAnimacion(); if (app.sonidos) app.sonidos.Callar(); app.Clic(); Saltar(); }
         }
 
         void Confeti(float W, float H)

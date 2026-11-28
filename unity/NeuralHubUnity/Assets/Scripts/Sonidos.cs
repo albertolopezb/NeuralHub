@@ -82,6 +82,9 @@ namespace NeuralHub
             else if (!pausa && vozEnPausa) { voz.UnPause(); vozEnPausa = false; }
         }
 
+        /// <summary>Al saltar una parte: se calla la voz y también la pieza musical o el efecto que sonaba.</summary>
+        public void Callar() { DetenerVoz(); if (efectos) efectos.Stop(); enCortinilla = 0f; }
+
         public void DetenerVoz() { vozEnPausa = false; if (voz) voz.Stop(); }
 
         public void FijarSilencio(bool s) { silencio = s; AudioListener.volume = s ? 0f : 1f; }

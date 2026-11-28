@@ -50,13 +50,27 @@ def test_no_hay_sugerencia_para_quien_aun_no_pregunta():
     assert s.llm.llamadas == antes
 
 
-def test_mejorar_el_borrador_cuenta_como_la_ayuda_de_esa_pregunta():
+def test_recomendar_y_mejorar_son_independientes_y_tienen_tope():
+    """Si mejoras, borras todo y pides recomendación, debe llegar una recomendación y no tu texto mejorado."""
     s = en_vivo(True)
     turno = s.pendiente["preguntas"][0]["tiburon_id"]
-    assert s.sugerir(turno, "mi borrador de respuesta")
-    assert s.sugerencias == 1
+    llm = s.llm
+    textos = iter(["TEXTO MEJORADO", "RECOMENDACION NUEVA"])
+    original = llm.estructurado
+
+    def falso(esquema, sis, usr):
+        r = original(esquema, sis, usr)
+        r.texto = next(textos)
+        return r
+
+    llm.estructurado = falso
+    assert s.sugerir(turno, "mi borrador") == "TEXTO MEJORADO"
+    assert s.sugerir(turno, "") == "RECOMENDACION NUEVA"
+    antes = llm.llamadas
+    assert s.sugerir(turno, "") == "RECOMENDACION NUEVA" and s.sugerir(turno, "mi borrador") == "TEXTO MEJORADO"
     with pytest.raises(ValueError):
         s.sugerir(turno, "otro borrador distinto")
+    assert llm.llamadas == antes and s.sugerencias == 2
 
 
 def test_sin_ayuda_no_hay_sugerencia():

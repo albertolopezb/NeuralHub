@@ -419,7 +419,7 @@ namespace NeuralHub
                                         app.ayudaActiva ? "Ayuda activada" : "Ayuda desactivada", Estilos.Seleccion);
                 if (nueva != app.ayudaActiva) app.ayudaActiva = nueva;
                 GUI.Label(new Rect(caja.x + 24, caja.y + 80, caja.width - 48, 106),
-                          app.ayudaActiva ? "Junto a tu respuesta podrás pedir una recomendación o, si ya escribiste algo, que el agente lo mejore."
+                          app.ayudaActiva ? "En cada pregunta podrás pedir una recomendación (con el campo vacío) y mejorar una vez lo que tú escribas."
                                           : "Las respuestas las escribes tú y nadie más.", Estilos.TextoChico);
             }
             if (app.cliente.usarMock)
@@ -504,7 +504,7 @@ namespace NeuralHub
                         if (pedido != turno) return;   // ya cambió el turno
                         cargando = false;
                         if (!string.IsNullOrEmpty(s)) { texto = s.Length > 600 ? s.Substring(0, 600) : s; sugerida = true; }
-                        else avisoVoz = "El agente no pudo ayudar (hay una ayuda por pregunta). Edita tu respuesta y envíala.";
+                        else avisoVoz = hayBorrador ? "Solo puedes usar «Mejorar» una vez por pregunta. Edita tu texto y envíalo." : "El agente no pudo ayudar. Escribe tu respuesta y envíala.";
                     });
                 }
                 GUI.enabled = true;
